@@ -47,22 +47,10 @@
 			control: false,
 			description: 'Global visual theme',
     },
-    type: {
-			name: 'type',
-			type: 'string',
-			control: false,
-			description: 'Configure the type html option tag',
-    },
     isOutlined: {
 			name: 'isOutlined',
 			type: 'boolean',
 			description: 'Set if the visual background is solid or blank',
-			control: false,
-    },
-    isDisabled: {
-			name: 'isDisabled',
-			type: 'boolean',
-			description: 'Enable user interaction',
 			control: false,
     },
   }}
