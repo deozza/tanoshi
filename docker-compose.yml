@@ -1,0 +1,18 @@
+version: '3'
+services:
+  tanoshi-svelte:
+    image: node:16
+    container_name: tanoshi-svelte
+    volumes:
+      - ./:/home/tanoshi
+    working_dir: /home/tanoshi
+    ports:
+      - 3000:3000
+      - 6006:6006
+    environment:
+      - PUID=1000
+      - GUID=1000
+      - TZ=Europe/Paris
+      - HOST=0.0.0.0
+    restart: unless-stopped
+    tty: true
