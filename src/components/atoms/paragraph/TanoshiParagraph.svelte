@@ -8,6 +8,6 @@
 	<p
 		class="text-{tanoshiParagraphModel.displaySize} p-{tanoshiParagraphModel.theme} my-6"
 	>
-		{tanoshiParagraphModel.content}
+		{@html tanoshiParagraphModel.content}
 		<slot />
 	</p>
