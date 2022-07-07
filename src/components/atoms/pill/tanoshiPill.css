@@ -1,0 +1,68 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind components;
+
+@layer components {
+    .pill {
+        @apply m-2 border rounded-full;
+    }
+
+    .pill.pill-md {
+        @apply px-5
+    }
+
+    .pill.pill-sm {
+        @apply px-4 text-sm
+    }
+
+    .pill.pill-lg {
+        @apply px-6 text-lg
+    }
+
+    .pill.pill-primary {
+        @apply bg-blue-500 text-white;
+    }
+
+    .pill.pill-primary.pill-outlined {
+        @apply bg-white text-blue-600 border-blue-600;
+    }
+
+    .pill.pill-secondary {
+        @apply bg-gray-500 text-white;
+    }
+
+    .pill.pill-secondary.pill-outlined {
+        @apply bg-white text-gray-600 border-gray-600;
+    }
+
+    .pill.pill-success {
+        @apply bg-green-500  text-white ;
+    }
+
+    .pill.pill-success.pill-outlined {
+        @apply bg-white text-green-500 border-green-500;
+    }
+
+    .pill.pill-warning {
+        @apply bg-yellow-500 text-white;
+    }
+
+    .pill.pill-warning.pill-outlined {
+        @apply bg-white text-yellow-600 border-yellow-600;
+    }
+
+    .pill.pill-danger {
+        @apply bg-red-500 text-white;
+    }
+
+    .pill.pill-danger.pill-outlined {
+        @apply bg-white text-red-600 border-red-600;
+    }
+
+    .pill.pill-info {
+        @apply bg-cyan-300 text-white;
+    }
+
+    .pill.pill-info.pill-outlined {
+        @apply bg-white text-cyan-400 border-cyan-400;
+    }
+}
