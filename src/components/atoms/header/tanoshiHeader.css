@@ -1,0 +1,33 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind components;
+
+@layer components {
+    .h-black {
+        @apply text-black;
+    }
+
+    .h-white {
+        @apply text-black;
+    }
+
+    .h-secondary {
+        @apply text-gray-600;
+    }
+
+    .h-success {
+        @apply text-green-500;
+    }
+
+    .h-warning {
+        @apply text-yellow-600;
+    }
+
+    .h-danger {
+        @apply text-red-600;
+    }
+
+    .h-info {
+        @apply text-cyan-400;
+    }
+
+}

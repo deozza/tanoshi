@@ -1,0 +1,35 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    p.p-black {
+        @apply text-black;
+    }
+
+    p.p-white {
+        @apply text-white;
+    }
+
+    p.p-secondary {
+        @apply text-gray-600;
+    }
+
+    p.p-success {
+        @apply text-green-500;
+    }
+
+    p.p-warning {
+        @apply text-yellow-600;
+    }
+
+    p.p-danger {
+        @apply text-red-600;
+    }
+
+    p.p-info {
+        @apply text-cyan-400;
+    }
+
+}
