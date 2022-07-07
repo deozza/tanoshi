@@ -55,6 +55,12 @@
 			control: false,
 			description: 'Global visual theme',
     },
+    size: {
+			name: 'size',
+			type: 'string',
+			description: 'Size of the button',
+			control: false,
+    },
     type: {
 			name: 'type',
 			type: 'string',

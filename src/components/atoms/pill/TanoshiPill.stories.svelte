@@ -32,13 +32,13 @@
 				name: 'object',
 				required: true
 			},
-			description: 'Object used to configure the button element',
+			description: 'Object used to configure the pill element',
 			control: 'object',
     },
     content: {
 			name: 'content',
 			type: 'string',
-			description: 'Text displayed by the button',
+			description: 'Text displayed by the pill',
 			control: false,
     },
     theme: {
@@ -46,6 +46,12 @@
 			type: 'string',
 			control: false,
 			description: 'Global visual theme',
+    },
+    size: {
+			name: 'size',
+			type: 'string',
+			description: 'Size of the button',
+			control: false,
     },
     isOutlined: {
 			name: 'isOutlined',
