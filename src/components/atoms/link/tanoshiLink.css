@@ -1,0 +1,11 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    a {
+        @apply m-2 underline hover:text-blue-600
+    }
+
+}
