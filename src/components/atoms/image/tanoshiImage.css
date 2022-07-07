@@ -1,0 +1,17 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind components;
+
+@layer components {
+
+    img {
+        @apply m-2 border
+    }
+
+    img.rounded {
+        @apply rounded-md
+    }
+
+    img.circled {
+        @apply rounded-full
+    }
+}
