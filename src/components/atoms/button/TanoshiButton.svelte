@@ -1,6 +1,6 @@
 <script lang="ts">
 	import './tanoshiButton.css';
-	import TanoshiButtonModel from './TanoshiButtonModel';
+	import type TanoshiButtonModel from './TanoshiButtonModel';
 
 	export let tanoshiButtonModel: TanoshiButtonModel
 </script>
