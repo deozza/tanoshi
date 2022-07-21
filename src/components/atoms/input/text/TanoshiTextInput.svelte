@@ -9,7 +9,7 @@
 	}
 </script>
 
-<div>
+<div class="input-container">
 	<input
 		class="text-input"
 		class:border-red-500={tanoshiTextInputModel.error === true}
