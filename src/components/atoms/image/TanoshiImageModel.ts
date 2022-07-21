@@ -2,6 +2,7 @@ export default class TanoshiImageModel {
 	private _content: string|null = null;
 	private _alt: string|null = null;
 	private _theme: string = ''
+	private _filter: string = ''
 
 	constructor(content: string, alt: string) {
 		this.setContent(content);
@@ -25,12 +26,22 @@ export default class TanoshiImageModel {
 		this._alt = value;
 		return this
 	}
+
 	get theme(): string {
 		return this._theme!;
 	}
 
 	public setTheme(value: string): TanoshiImageModel {
 		this._theme = value;
+		return this
+	}
+
+	get filter(): string {
+		return this._filter!;
+	}
+
+	public setFilter(value: string): TanoshiImageModel {
+		this._filter = value;
 		return this
 	}
 }

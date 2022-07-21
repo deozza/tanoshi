@@ -7,6 +7,13 @@
 	const roundedImage = new TanoshiImageModel("https://via.placeholder.com/300", 'placeholder').setTheme('rounded')
 	const circledImage = new TanoshiImageModel("https://via.placeholder.com/300", 'placeholder').setTheme('circled')
 
+	const defaultFilterImage = new TanoshiImageModel("https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&h=320&q=80", 'placeholder')
+	const bluredImage = new TanoshiImageModel("https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&h=320&q=80", 'placeholder').setFilter('blur')
+	const grayscaledImage = new TanoshiImageModel("https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&h=320&q=80", 'placeholder').setFilter('grayscale')
+	const sepiaImage = new TanoshiImageModel("https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&h=320&q=80", 'placeholder').setFilter('sepia')
+	const invertedImage = new TanoshiImageModel("https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&h=320&q=80", 'placeholder').setFilter('invert')
+
+
 </script>
 
 <Meta
@@ -39,14 +46,30 @@
 			type: 'string',
 			control: false,
 			description: 'Additional styling',
+    },
+    filter: {
+			name: 'filter',
+			type: 'string',
+			control: false,
+			description: 'Filter to apply on the image',
     }
   }}
 />
-<Story name="Image">
+<Story name="Image form">
 	<div class='flex-c'>
-		<TanoshiImage tanoshiImageModel='{defaultImage}'  />
-		<TanoshiImage tanoshiImageModel='{roundedImage}'  />
-		<TanoshiImage tanoshiImageModel='{circledImage}'  />
+		<TanoshiImage tanoshiImageModel='{defaultImage}' />
+		<TanoshiImage tanoshiImageModel='{roundedImage}' />
+		<TanoshiImage tanoshiImageModel='{circledImage}' />
+	</div>
+</Story>
+
+<Story name="Image filter">
+	<div class='flex-c'>
+		<TanoshiImage tanoshiImageModel='{defaultFilterImage}' />
+		<TanoshiImage tanoshiImageModel='{bluredImage}' />
+		<TanoshiImage tanoshiImageModel='{grayscaledImage}' />
+		<TanoshiImage tanoshiImageModel='{sepiaImage}' />
+		<TanoshiImage tanoshiImageModel='{invertedImage}' />
 	</div>
 </Story>
 
