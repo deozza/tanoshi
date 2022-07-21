@@ -1,6 +1,6 @@
 <script lang="ts">
-	//import './tanoshiHeader.css';
-	import TanoshiHeaderModel from './TanoshiHeaderModel';
+	import './tanoshiHeader.css';
+	import type TanoshiHeaderModel from './TanoshiHeaderModel';
 
 	export let tanoshiHeaderModel: TanoshiHeaderModel
 </script>
