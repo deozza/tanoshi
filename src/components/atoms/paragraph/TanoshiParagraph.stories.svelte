@@ -23,7 +23,7 @@
 </script>
 
 <Meta
-	title="Atoms/Typography"
+	title="Atoms/Typography/Paragraph"
 	component={TanoshiParagraph}
 	argTypes={{
     TanoshiParagraphModel: {

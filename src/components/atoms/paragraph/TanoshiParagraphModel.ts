@@ -1,16 +1,16 @@
 export default class TanoshiParagraphModel {
-	private _content: string;
-	private _displaySize: string;
-	private _theme: string;
+	private _content: string|null = null;
+	private _displaySize: string|null = null;
+	private _theme: string|null = null;
 
 	constructor(content: string) {
-		this._content = content;
-		this._displaySize = 'base';
-		this._theme = 'black';
+		this.setContent(content);
+		this.setDisplaySize('base');
+		this.setTheme('black');
 	}
 
 	get content(): string {
-		return this._content;
+		return this._content!;
 	}
 
 	public setContent(value: string): TanoshiParagraphModel {
@@ -19,7 +19,7 @@ export default class TanoshiParagraphModel {
 	}
 
 	get theme(): string {
-		return this._theme;
+		return this._theme!;
 	}
 
 	public setTheme(value: string): TanoshiParagraphModel {
@@ -29,7 +29,7 @@ export default class TanoshiParagraphModel {
 
 
 	get displaySize(): string {
-		return this._displaySize;
+		return this._displaySize!;
 	}
 
 	public setDisplaySize(value: string): TanoshiParagraphModel {

@@ -1,18 +1,18 @@
 export default class TanoshiHeaderModel {
-	private _content: string;
-	private _displaySize: string;
-	private _htmlSize: string;
-	private _theme: string;
+	private _content: string|null = null;
+	private _displaySize: string|null = null;
+	private _htmlSize: string|null = null;
+	private _theme: string|null = null;
 
 	constructor(content: string) {
-		this._content = content;
-		this._displaySize = '3xl';
-		this._htmlSize = 'h1';
-		this._theme = 'black';
+		this.setContent(content);
+		this.setDisplaySize('3xl');
+		this.setHtmlSize('h1');
+		this.setTheme('black');
 	}
 
 	get content(): string {
-		return this._content;
+		return this._content!;
 	}
 
 	public setContent(value: string): TanoshiHeaderModel {
@@ -21,7 +21,7 @@ export default class TanoshiHeaderModel {
 	}
 
 	get theme(): string {
-		return this._theme;
+		return this._theme!;
 	}
 
 	public setTheme(value: string): TanoshiHeaderModel {
@@ -31,16 +31,16 @@ export default class TanoshiHeaderModel {
 
 
 	get displaySize(): string {
-		return this._displaySize;
+		return this._displaySize!;
 	}
 
-	public setdisplaySize(value: string): TanoshiHeaderModel {
+	public setDisplaySize(value: string): TanoshiHeaderModel {
 		this._displaySize = value;
 		return this
 	}
 
 	get htmlSize(): string {
-		return this._htmlSize;
+		return this._htmlSize!;
 	}
 
 	public setHtmlSize(value: string): TanoshiHeaderModel {

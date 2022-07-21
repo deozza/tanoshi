@@ -4,11 +4,11 @@
 	import TanoshiHeader from './TanoshiHeader.svelte';
 
 	const h1Header = new TanoshiHeaderModel("Lorem ipsum dolor sit amet")
-	const h2Header = new TanoshiHeaderModel("Lorem ipsum dolor sit amet").setdisplaySize('2xl').setHtmlSize('h2')
-	const h3Header = new TanoshiHeaderModel("Lorem ipsum dolor sit amet").setdisplaySize('xl').setHtmlSize('h3')
-	const h4Header = new TanoshiHeaderModel("Lorem ipsum dolor sit amet").setdisplaySize('lg').setHtmlSize('h4')
-	const h5Header = new TanoshiHeaderModel("Lorem ipsum dolor sit amet").setdisplaySize('base').setHtmlSize('h5')
-	const h6Header = new TanoshiHeaderModel("Lorem ipsum dolor sit amet").setdisplaySize('sm').setHtmlSize('h6')
+	const h2Header = new TanoshiHeaderModel("Lorem ipsum dolor sit amet").setDisplaySize('2xl').setHtmlSize('h2')
+	const h3Header = new TanoshiHeaderModel("Lorem ipsum dolor sit amet").setDisplaySize('xl').setHtmlSize('h3')
+	const h4Header = new TanoshiHeaderModel("Lorem ipsum dolor sit amet").setDisplaySize('lg').setHtmlSize('h4')
+	const h5Header = new TanoshiHeaderModel("Lorem ipsum dolor sit amet").setDisplaySize('base').setHtmlSize('h5')
+	const h6Header = new TanoshiHeaderModel("Lorem ipsum dolor sit amet").setDisplaySize('sm').setHtmlSize('h6')
 
 	const blackHeader = new TanoshiHeaderModel("Lorem ipsum dolor sit amet")
 	const whiteHeader = new TanoshiHeaderModel("Lorem ipsum dolor sit amet").setTheme('white')
@@ -21,7 +21,7 @@
 </script>
 
 <Meta
-	title="Atoms/Typography"
+	title="Atoms/Typography/Header"
 	component={TanoshiHeader}
 	argTypes={{
     tanoshiHeaderModel: {

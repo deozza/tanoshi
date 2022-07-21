@@ -1,16 +1,13 @@
 import TanoshiInputModel from "../TanoshitInputModel";
 
 export default class TanoshiTextInputModel extends TanoshiInputModel {
-    private _minLength: number | null
-    private _maxLength: number | null
-    private _placeholder: string | null
+    private _minLength: number | null = null
+    private _maxLength: number | null = null
+    private _placeholder: string | null = null
 
     constructor(name: string) {
         super(name)
         this.setType('text')
-        this._minLength = null;
-        this._maxLength = null;
-        this._placeholder = null;
     }
 
     get minLength(): number | null {
@@ -39,6 +36,4 @@ export default class TanoshiTextInputModel extends TanoshiInputModel {
         this._placeholder = value;
         return this;
     }
-
-
 }

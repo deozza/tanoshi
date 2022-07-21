@@ -1,22 +1,16 @@
 export default class TanoshiInputModel {
-    protected _type: string;
-	protected _id: string;
-	protected _name: string;
-	protected _required: boolean;
-	protected _value: string | null;
-	protected _readonly: boolean;
-	protected _error: boolean;
-	protected _errorMessage: string;
+    protected _type: string = '';
+	protected _id: string|null = null;
+	protected _name: string|null = null;
+	protected _required: boolean = false;
+	protected _value: string | null = null;
+	protected _readonly: boolean = false;
+	protected _error: boolean = false;
+	protected _errorMessage: string= ''
 
 	public constructor(name: string) {
-        this._type = '';
-		this._name = name;
-		this._id = name;
-		this._required = false;
-		this._value = null;
-		this._readonly = false;
-		this._error = false;
-		this._errorMessage = '';
+		this.setName(name);
+		this.setId(name);
 	}
 
     get type(): string {
@@ -29,7 +23,7 @@ export default class TanoshiInputModel {
 	}
 
 	get id(): string {
-		return this._id;
+		return this._id!;
 	}
 
 	setId(value: string): TanoshiInputModel {
@@ -38,7 +32,7 @@ export default class TanoshiInputModel {
 	}
 
 	get name(): string {
-		return this._name;
+		return this._name!;
 	}
 
 	setName(value: string): TanoshiInputModel {
