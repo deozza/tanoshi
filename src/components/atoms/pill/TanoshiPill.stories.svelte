@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Meta, Story } from "@storybook/addon-svelte-csf";
-  import TanoshiPill from './TanoshiPill.svelte';
+    import TanoshiPill from './TanoshiPill.svelte';
 	import TanoshiPillModel from './TanoshiPillModel';
 
 	const defaultPill = new TanoshiPillModel('Primary')

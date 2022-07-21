@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Meta, Story } from "@storybook/addon-svelte-csf";
-  import TanoshiButton from './TanoshiButton.svelte';
+    import TanoshiButton from './TanoshiButton.svelte';
 	import TanoshiButtonModel from './TanoshiButtonModel';
 
 	const defaultButton = new TanoshiButtonModel('Primary')

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import './tanoshiPill.css';
-
 	import type TanoshiPillModel from './TanoshiPillModel';
+	
 	export let tanoshiPillModel: TanoshiPillModel;
 </script>
 

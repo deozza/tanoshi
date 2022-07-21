@@ -1,6 +1,6 @@
 <script lang="ts">
 	import './tanoshiLink.css';
-	import TanoshiLinkModel from './TanoshiLinkModel';
+	import type TanoshiLinkModel from './TanoshiLinkModel';
 
 	export let tanoshiLinkModel: TanoshiLinkModel
 </script>
