@@ -5,7 +5,8 @@
 	import Fa from 'svelte-fa/src/fa.svelte';
 	import { faTimes } from '@fortawesome/free-solid-svg-icons/index.es'
 
-	import type TanoshiAlertModel from './TanoshiAlertModel';
+	import TanoshiContainer from "../container/TanoshiContainer.svelte";
+	import TanoshiContainerModel from "../container/TanoshiContainerModel";
 
 	import TanoshiHeader from '../../atoms/header/TanoshiHeader.svelte';
 	import TanoshiHeaderModel from '../../atoms/header/TanoshiHeaderModel';
@@ -13,10 +14,16 @@
 	import TanoshiParagraph from '../../atoms/paragraph/TanoshiParagraph.svelte';
 	import TanoshiParagraphModel from '../../atoms/paragraph/TanoshiParagraphModel';
 
+	import type TanoshiAlertModel from './TanoshiAlertModel';
+
 	export let tanoshiAlertModel: TanoshiAlertModel
 
-	let tanoshiHeaderModel: TanoshiHeaderModel = new TanoshiHeaderModel(tanoshiAlertModel.title)
-	let tanoshiParagraphModel: TanoshiParagraphModel = new TanoshiParagraphModel(tanoshiAlertModel.content)
+	const tanoshiMainContainerModel: TanoshiContainerModel = new TanoshiContainerModel('c').setTheme(tanoshiAlertModel.theme).setSize(tanoshiAlertModel.size)
+	const tanoshiTextContainerModel: TanoshiContainerModel = new TanoshiContainerModel('c').setDesktopSpacing('start')
+	const tanoshiCloseContainerModel: TanoshiContainerModel = new TanoshiContainerModel('c').setDesktopSpacing('end')
+
+	const tanoshiHeaderModel: TanoshiHeaderModel = new TanoshiHeaderModel(tanoshiAlertModel.title)
+	const tanoshiParagraphModel: TanoshiParagraphModel = new TanoshiParagraphModel(tanoshiAlertModel.content)
 
 	$: visible = tanoshiAlertModel.visible
 
@@ -28,14 +35,18 @@
 </script>
 
 {#if visible === true}
-	<div class="alert alert-{tanoshiAlertModel.theme} alert-{tanoshiAlertModel.size}" out:fade>
-		<div class="flex-r w-full justify-end">
-			<button  on:click={()=>close()}>
-				<Fa icon={faTimes} />
-			</button>
-		</div>
-		<TanoshiHeader tanoshiHeaderModel={tanoshiHeaderModel} />
+	<div class="{tanoshiMainContainerModel.size}" out:fade>
+		<TanoshiContainer tanoshiContainerModel={tanoshiMainContainerModel} customClasses="alert">
+			<TanoshiContainer tanoshiContainerModel={tanoshiCloseContainerModel} >
+				<button  on:click={()=>close()}>
+					<Fa icon={faTimes} />
+				</button>
+			</TanoshiContainer>
 
-		<TanoshiParagraph tanoshiParagraphModel={tanoshiParagraphModel} />
+			<TanoshiContainer tanoshiContainerModel={tanoshiTextContainerModel} >
+				<TanoshiHeader tanoshiHeaderModel={tanoshiHeaderModel} />
+				<TanoshiParagraph tanoshiParagraphModel={tanoshiParagraphModel} />
+			</TanoshiContainer>
+		</TanoshiContainer>
 	</div>
 {/if}

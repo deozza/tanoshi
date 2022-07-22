@@ -3,6 +3,11 @@
 	import TanoshiLinkModel from './TanoshiLinkModel';
 	import TanoshiLink from './TanoshiLink.svelte';
 
+	import TanoshiContainer from "../../molecules/container/TanoshiContainer.svelte";
+	import TanoshiContainerModel from "../../molecules/container/TanoshiContainerModel";
+
+	const rowContainer = new TanoshiContainerModel('r')
+
 	const defaultLink = new TanoshiLinkModel("Default link")
 	const internalLink = new TanoshiLinkModel("Open in current tab").setLink('https://github.com/deozza/tanoshi').setIsInternal(true)
 	const externalLink = new TanoshiLinkModel("Open in new tab").setLink('https://github.com/deozza/tanoshi').setIsInternal(false)
@@ -43,11 +48,11 @@
   }}
 />
 <Story name="Link destinations">
-	<div class='flex-r'>
+	<TanoshiContainer tanoshiContainerModel='{rowContainer}'>
 		<TanoshiLink tanoshiLinkModel='{defaultLink}'  />
 		<TanoshiLink tanoshiLinkModel='{internalLink}'  />
 		<TanoshiLink tanoshiLinkModel='{externalLink}'  />
-	</div>
+	</TanoshiContainer>
 </Story>
 
 

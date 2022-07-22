@@ -2,6 +2,11 @@
 	import { Meta, Story } from "@storybook/addon-svelte-csf";
 	import TanoshiAlertModel from "./TanoshiAlertModel";
 	import TanoshiAlert from "./TanoshiAlert.svelte";
+	import TanoshiContainer from "../container/TanoshiContainer.svelte";
+	import TanoshiContainerModel from "../container/TanoshiContainerModel";
+
+	const defaultColumnContainer = new TanoshiContainerModel('c')
+	
     
 	const defaultAlert = new TanoshiAlertModel('This is an alert', 'Hey you got a notification')
 	const secondaryAlert = new TanoshiAlertModel('This is an alert', 'Hey you got a notification').setTheme('secondary')
@@ -10,10 +15,10 @@
 	const warningAlert = new TanoshiAlertModel('This is an alert', 'Hey you got a notification').setTheme('warning')
 	const dangerAlert = new TanoshiAlertModel('This is an alert', 'Hey you got a notification').setTheme('danger')
 
-	const smallAlert = new TanoshiAlertModel('This is an alert', 'Hey you got a notification').setSize('sm')
-	const regularAlert = new TanoshiAlertModel('This is an alert', 'Hey you got a notification').setSize('md')
-	const largeAlert = new TanoshiAlertModel('This is an alert', 'Hey you got a notification').setSize('lg')
-	const blockAlert = new TanoshiAlertModel('This is an alert', 'Hey you got a notification').setSize('block')
+	const smallAlert = new TanoshiAlertModel('This is an alert', 'Hey you got a notification').setSize('px-4 text-sm')
+	const regularAlert = new TanoshiAlertModel('This is an alert', 'Hey you got a notification').setSize('px-5')
+	const largeAlert = new TanoshiAlertModel('This is an alert', 'Hey you got a notification').setSize('px-6 text-lg')
+	const blockAlert = new TanoshiAlertModel('This is an alert', 'Hey you got a notification').setSize('w-full px-6 text-lg')
 </script>
 
 <Meta
@@ -56,21 +61,21 @@
   }}
 />
 <Story name="Block">
-	<div class='flex-c'>
+	<TanoshiContainer tanoshiContainerModel='{defaultColumnContainer}'>
 		<TanoshiAlert tanoshiAlertModel='{defaultAlert}'  />
 		<TanoshiAlert tanoshiAlertModel='{secondaryAlert}'  />
 		<TanoshiAlert tanoshiAlertModel='{infoAlert}'  />
 		<TanoshiAlert tanoshiAlertModel='{successAlert}'  />
 		<TanoshiAlert tanoshiAlertModel='{warningAlert}'  />
 		<TanoshiAlert tanoshiAlertModel='{dangerAlert}'  />
-	</div>
+	</TanoshiContainer>
 </Story>
 
 <Story name="Sizing">
-	<div class='flex-c'>
+	<TanoshiContainer tanoshiContainerModel='{defaultColumnContainer}'>
 		<TanoshiAlert tanoshiAlertModel='{smallAlert}'  />
 		<TanoshiAlert tanoshiAlertModel='{regularAlert}'  />
 		<TanoshiAlert tanoshiAlertModel='{largeAlert}'  />
 		<TanoshiAlert tanoshiAlertModel='{blockAlert}'  />
-	</div>
+	</TanoshiContainer>
 </Story>

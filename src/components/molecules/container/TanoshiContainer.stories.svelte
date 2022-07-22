@@ -160,9 +160,9 @@
 		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">3</div>
 	</TanoshiContainer>
 	<TanoshiContainer tanoshiContainerModel='{primaryRowContainer}'>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">1</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">2</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">3</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-white">1</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-white">2</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-white">3</div>
 	</TanoshiContainer>
 	<TanoshiContainer tanoshiContainerModel='{secondaryRowContainer}'>
 		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">1</div>

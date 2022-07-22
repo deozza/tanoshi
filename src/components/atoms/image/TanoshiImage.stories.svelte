@@ -2,6 +2,12 @@
 	import { Meta, Story } from "@storybook/addon-svelte-csf";
 	import TanoshiImageModel from './TanoshiImageModel';
 	import TanoshiImage from './TanoshiImage.svelte';
+	
+	import TanoshiContainer from "../../molecules/container/TanoshiContainer.svelte";
+	import TanoshiContainerModel from "../../molecules/container/TanoshiContainerModel";
+
+	const columnContainer = new TanoshiContainerModel('c')
+
 
 	const defaultImage = new TanoshiImageModel("https://via.placeholder.com/300", 'placeholder')
 	const roundedImage = new TanoshiImageModel("https://via.placeholder.com/300", 'placeholder').setTheme('rounded')
@@ -56,21 +62,21 @@
   }}
 />
 <Story name="Image form">
-	<div class='flex-c'>
+	<TanoshiContainer tanoshiContainerModel='{columnContainer}'>
 		<TanoshiImage tanoshiImageModel='{defaultImage}' />
 		<TanoshiImage tanoshiImageModel='{roundedImage}' />
 		<TanoshiImage tanoshiImageModel='{circledImage}' />
-	</div>
+	</TanoshiContainer>
 </Story>
 
 <Story name="Image filter">
-	<div class='flex-c'>
+	<TanoshiContainer tanoshiContainerModel='{columnContainer}'>
 		<TanoshiImage tanoshiImageModel='{defaultFilterImage}' />
 		<TanoshiImage tanoshiImageModel='{bluredImage}' />
 		<TanoshiImage tanoshiImageModel='{grayscaledImage}' />
 		<TanoshiImage tanoshiImageModel='{sepiaImage}' />
 		<TanoshiImage tanoshiImageModel='{invertedImage}' />
-	</div>
+	</TanoshiContainer>
 </Story>
 
 

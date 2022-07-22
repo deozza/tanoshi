@@ -10,7 +10,7 @@ export default class TanoshiAlertModel {
 		this.setTitle(title)
 		this.setContent(content)
 		this.setTheme('primary')
-		this.setSize('block')
+		this.setSize('w-full')
 	}
 
 	get title(): string {

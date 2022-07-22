@@ -4,7 +4,7 @@
 @layer components {
 
     div.flex-container {
-        @apply flex items-center
+        @apply p-2 flex items-center
     }
     
     div.flex-container.flex-c {
@@ -24,7 +24,7 @@
     }
 
     div.flex-container.start {
-        @apply justify-start
+        @apply justify-start items-start
     }
 
     div.flex-container.centered {
@@ -32,7 +32,7 @@
     }
 
     div.flex-container.end {
-        @apply justify-end
+        @apply justify-end items-end
     }
 
     div.flex-container.between {

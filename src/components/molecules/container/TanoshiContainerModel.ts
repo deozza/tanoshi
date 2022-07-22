@@ -1,6 +1,7 @@
 export default class TanoshiContainerModel {
 
 	private _theme: string = 'transparent'
+	private _size: string = 'w-full'
 	private _backgroundImage : string | null = null
 	private _desktopOrientation : string | null = null
 	private _mobileOrientation : string | null = null
@@ -18,6 +19,15 @@ export default class TanoshiContainerModel {
 
 	public setTheme(value: string): TanoshiContainerModel {
 		this._theme = value;
+		return this
+	}
+
+	get size(): string {
+		return this._size;
+	}
+
+	public setSize(value: string): TanoshiContainerModel {
+		this._size = value;
 		return this
 	}
 

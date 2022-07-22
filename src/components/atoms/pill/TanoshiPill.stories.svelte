@@ -3,6 +3,11 @@
     import TanoshiPill from './TanoshiPill.svelte';
 	import TanoshiPillModel from './TanoshiPillModel';
 
+	import TanoshiContainer from "../../molecules/container/TanoshiContainer.svelte";
+	import TanoshiContainerModel from "../../molecules/container/TanoshiContainerModel";
+
+	const rowContainer = new TanoshiContainerModel('r')
+	
 	const defaultPill = new TanoshiPillModel('Primary')
 	const secondaryPill = new TanoshiPillModel('Secondary').setTheme('secondary')
 	const infoPill = new TanoshiPillModel('Info').setTheme('info')
@@ -62,31 +67,31 @@
   }}
 />
 <Story name="Block">
-	<div class='flex-r'>
+	<TanoshiContainer tanoshiContainerModel='{rowContainer}'>
 		<TanoshiPill tanoshiPillModel='{defaultPill}'  />
 		<TanoshiPill tanoshiPillModel='{secondaryPill}'  />
 		<TanoshiPill tanoshiPillModel='{infoPill}'  />
 		<TanoshiPill tanoshiPillModel='{successPill}'  />
 		<TanoshiPill tanoshiPillModel='{warningPill}'  />
 		<TanoshiPill tanoshiPillModel='{dangerPill}'  />
-	</div>
+	</TanoshiContainer>
 </Story>
 
 <Story name="Outlined">
-	<div class='flex-r'>
+	<TanoshiContainer tanoshiContainerModel='{rowContainer}'>
 		<TanoshiPill tanoshiPillModel='{outlinedDefaultPill}'  />
 		<TanoshiPill tanoshiPillModel='{outlinedSecondaryPill}'  />
 		<TanoshiPill tanoshiPillModel='{outlinedInfoPill}'  />
 		<TanoshiPill tanoshiPillModel='{outlinedSuccessPill}'  />
 		<TanoshiPill tanoshiPillModel='{outlinedWarningPill}'  />
 		<TanoshiPill tanoshiPillModel='{outlinedDangerPill}'  />
-	</div>
+	</TanoshiContainer>
 </Story>
 
 <Story name="Sizing">
-	<div class='flex-r'>
+	<TanoshiContainer tanoshiContainerModel='{rowContainer}'>
 		<TanoshiPill tanoshiPillModel='{smallPill}'  />
 		<TanoshiPill tanoshiPillModel='{regularPill}'  />
 		<TanoshiPill tanoshiPillModel='{largePill}'  />
-	</div>
+	</TanoshiContainer>
 </Story>

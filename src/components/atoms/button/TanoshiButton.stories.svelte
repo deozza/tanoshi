@@ -3,6 +3,11 @@
     import TanoshiButton from './TanoshiButton.svelte';
 	import TanoshiButtonModel from './TanoshiButtonModel';
 
+	import TanoshiContainer from "../../molecules/container/TanoshiContainer.svelte";
+	import TanoshiContainerModel from "../../molecules/container/TanoshiContainerModel";
+
+	const rowContainer = new TanoshiContainerModel('r')
+
 	const defaultButton = new TanoshiButtonModel('Primary')
 	const secondaryButton = new TanoshiButtonModel('Secondary').setTheme('secondary')
 	const infoButton = new TanoshiButtonModel('Info').setTheme('info')
@@ -82,43 +87,43 @@
   }}
 />
 <Story name="Block">
-	<div class='flex-r'>
+	<TanoshiContainer tanoshiContainerModel='{rowContainer}'>
 		<TanoshiButton tanoshiButtonModel='{defaultButton}'  />
 		<TanoshiButton tanoshiButtonModel='{secondaryButton}'  />
 		<TanoshiButton tanoshiButtonModel='{infoButton}'  />
 		<TanoshiButton tanoshiButtonModel='{successButton}'  />
 		<TanoshiButton tanoshiButtonModel='{warningButton}'  />
 		<TanoshiButton tanoshiButtonModel='{dangerButton}'  />
-	</div>
+	</TanoshiContainer>
 </Story>
 
 <Story name="Outlined">
-	<div class='flex-r'>
+	<TanoshiContainer tanoshiContainerModel='{rowContainer}'>
 		<TanoshiButton tanoshiButtonModel='{outlinedDefaultButton}'  />
 		<TanoshiButton tanoshiButtonModel='{outlinedSecondaryButton}'  />
 		<TanoshiButton tanoshiButtonModel='{outlinedInfoButton}'  />
 		<TanoshiButton tanoshiButtonModel='{outlinedSuccessButton}'  />
 		<TanoshiButton tanoshiButtonModel='{outlinedWarningButton}'  />
 		<TanoshiButton tanoshiButtonModel='{outlinedDangerButton}'  />
-	</div>
+	</TanoshiContainer>
 </Story>
 
 <Story name="Disabled">
-	<div class='flex-r'>
+	<TanoshiContainer tanoshiContainerModel='{rowContainer}'>
 		<TanoshiButton tanoshiButtonModel='{disabledDefaultButton}'  />
 		<TanoshiButton tanoshiButtonModel='{disabledSecondaryButton}'  />
 		<TanoshiButton tanoshiButtonModel='{disabledInfoButton}'  />
 		<TanoshiButton tanoshiButtonModel='{disabledSuccessButton}'  />
 		<TanoshiButton tanoshiButtonModel='{disabledWarningButton}'  />
 		<TanoshiButton tanoshiButtonModel='{disabledDangerButton}'  />
-	</div>
+	</TanoshiContainer>
 </Story>
 
 <Story name="Sizing">
-	<div class='flex-r'>
+	<TanoshiContainer tanoshiContainerModel='{rowContainer}'>
 		<TanoshiButton tanoshiButtonModel='{smallButton}'  />
 		<TanoshiButton tanoshiButtonModel='{regularButton}'  />
 		<TanoshiButton tanoshiButtonModel='{largeButton}'  />
 		<TanoshiButton tanoshiButtonModel='{blockButton}'  />
-	</div>
+	</TanoshiContainer>
 </Story>
