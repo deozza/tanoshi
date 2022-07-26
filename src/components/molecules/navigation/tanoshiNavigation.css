@@ -4,10 +4,11 @@
 @tailwind utilities;
 
 @layer components {
-    nav{
-        top: 0;
-        left: 0;
-        right: 0;
-    }
 
+}
+
+nav{
+    top: 0;
+    left: 0;
+    right: 0;
 }
