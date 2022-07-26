@@ -42,8 +42,7 @@
 
 	const tanoshiCloseContainerModel: TanoshiContainerModel = new TanoshiContainerModel('r').setDesktopSpacing('end')
 	const tanoshiTitleContainerModel: TanoshiContainerModel = new TanoshiContainerModel('r').setDesktopSpacing('start')
-
-	const tanoshiTextContainerModel: TanoshiContainerModel = new TanoshiContainerModel('c').setDesktopSpacing('start')
+	const tanoshiTextContainerModel: TanoshiContainerModel = new TanoshiContainerModel('r').setDesktopSpacing('start')
 
 	const tanoshiTitleModel: TanoshiParagraphModel = new TanoshiParagraphModel(tanoshiAlertModel.title).setDisplaySize(SIZE_MATCH[tanoshiAlertModel.size]["title"]).setHasSpacing(false)
 	const tanoshiParagraphModel: TanoshiParagraphModel = new TanoshiParagraphModel(tanoshiAlertModel.content).setDisplaySize(SIZE_MATCH[tanoshiAlertModel.size]["paragraph"]).setHasSpacing(false)
