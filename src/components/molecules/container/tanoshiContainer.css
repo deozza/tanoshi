@@ -24,7 +24,7 @@
     }
 
     div.flex-container.start {
-        @apply justify-start items-start
+        @apply justify-start
     }
 
     div.flex-container.centered {
@@ -32,7 +32,7 @@
     }
 
     div.flex-container.end {
-        @apply justify-end items-end
+        @apply justify-end
     }
 
     div.flex-container.between {
