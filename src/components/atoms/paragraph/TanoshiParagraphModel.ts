@@ -2,6 +2,7 @@ export default class TanoshiParagraphModel {
 	private _content: string|null = null;
 	private _displaySize: string|null = null;
 	private _theme: string|null = null;
+	private _hasSpacing: boolean = true;
 
 	constructor(content: string) {
 		this.setContent(content);
@@ -27,13 +28,21 @@ export default class TanoshiParagraphModel {
 		return this
 	}
 
-
 	get displaySize(): string {
 		return this._displaySize!;
 	}
 
 	public setDisplaySize(value: string): TanoshiParagraphModel {
 		this._displaySize = value;
+		return this
+	}
+
+	get hasSpacing(): boolean {
+		return this._hasSpacing!;
+	}
+
+	public setHasSpacing(value: boolean): TanoshiParagraphModel {
+		this._hasSpacing = value;
 		return this
 	}
 }
