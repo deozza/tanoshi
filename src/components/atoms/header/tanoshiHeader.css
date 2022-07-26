@@ -7,27 +7,31 @@
     }
 
     .h-white {
-        @apply text-black;
+        @apply text-white;
+    }
+
+    .h-primary {
+        @apply text-secondary-dark;
     }
 
     .h-secondary {
-        @apply text-gray-600;
+        @apply text-secondary-dark;
     }
 
     .h-success {
-        @apply text-green-500;
+        @apply text-success-dark;
     }
 
     .h-warning {
-        @apply text-yellow-600;
+        @apply text-warning-dark;
     }
 
     .h-danger {
-        @apply text-red-600;
+        @apply text-danger-dark;
     }
 
     .h-info {
-        @apply text-cyan-400;
+        @apply text-info-dark;
     }
 
 }

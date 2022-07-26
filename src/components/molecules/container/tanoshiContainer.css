@@ -60,26 +60,26 @@
     }
 
     div.flex-container.primary {
-        @apply bg-blue-500;
+        @apply bg-primary;
     }
 
     div.flex-container.secondary {
-        @apply bg-gray-500;
+        @apply bg-secondary;
     }
     
     div.flex-container.success {
-        @apply bg-green-500;
+        @apply bg-success;
     }
     
     div.flex-container.warning {
-        @apply bg-yellow-500;
+        @apply bg-warning;
     }
 
     div.flex-container.danger {
-        @apply bg-red-500;
+        @apply bg-danger;
     }
 
     div.flex-container.info {
-        @apply bg-cyan-300;
+        @apply bg-info;
     }
 }

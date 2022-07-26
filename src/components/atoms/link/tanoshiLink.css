@@ -5,7 +5,7 @@
 
 @layer components {
     a {
-        @apply m-2 underline hover:text-blue-600
+        @apply m-2 underline hover:text-primary-dark
     }
 
 }

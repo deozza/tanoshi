@@ -79,85 +79,85 @@
 
 <Story name="Container row orientation">
 	<TanoshiContainer tanoshiContainerModel='{defaultRowContainer}'>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">1</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">2</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">3</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">4</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">5</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">6</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">1</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">2</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">3</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">4</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">5</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">6</div>
 	</TanoshiContainer>
 </Story>
 
 <Story name="Container column orientation">
 	<TanoshiContainer tanoshiContainerModel='{defaultColumnContainer}'>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">1</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">2</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">3</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">4</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">5</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">6</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">1</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">2</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">3</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">4</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">5</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">6</div>
 	</TanoshiContainer>
 </Story>
 
 <Story name="Container start spacing">
 	<TanoshiContainer tanoshiContainerModel='{startRowContainer}'>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">1</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">2</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">3</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">1</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">2</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">3</div>
 	</TanoshiContainer>
 </Story>
 <Story name="Container centered spacing">
 	<TanoshiContainer tanoshiContainerModel='{centeredRowContainer}'>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">1</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">2</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">3</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">1</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">2</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">3</div>
 	</TanoshiContainer>
 </Story>
 <Story name="Container end spacing">
 	<TanoshiContainer tanoshiContainerModel='{endRowContainer}'>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">1</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">2</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">3</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">1</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">2</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">3</div>
 	</TanoshiContainer>
 </Story>
 <Story name="Container between spacing">
 	<TanoshiContainer tanoshiContainerModel='{betweenRowContainer}'>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">1</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">2</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">3</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">1</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">2</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">3</div>
 	</TanoshiContainer>
 </Story>
 <Story name="Container around spacing">
 	<TanoshiContainer tanoshiContainerModel='{aroundRowContainer}'>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">1</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">2</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">3</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">1</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">2</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">3</div>
 	</TanoshiContainer>
 </Story>
 <Story name="Container evenly spacing">
 	<TanoshiContainer tanoshiContainerModel='{evenlyRowContainer}'>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">1</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">2</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">3</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">1</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">2</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">3</div>
 	</TanoshiContainer>
 </Story>
 
 
 <Story name="Colored container">
 	<TanoshiContainer tanoshiContainerModel='{transparentRowContainer}'>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">1</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">2</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">3</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">1</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">2</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">3</div>
 	</TanoshiContainer>
 	<TanoshiContainer tanoshiContainerModel='{lightRowContainer}'>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">1</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">2</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">3</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">1</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">2</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">3</div>
 	</TanoshiContainer>
 	<TanoshiContainer tanoshiContainerModel='{darkRowContainer}'>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">1</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">2</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">3</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">1</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">2</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">3</div>
 	</TanoshiContainer>
 	<TanoshiContainer tanoshiContainerModel='{primaryRowContainer}'>
 		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-white">1</div>
@@ -165,28 +165,28 @@
 		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-white">3</div>
 	</TanoshiContainer>
 	<TanoshiContainer tanoshiContainerModel='{secondaryRowContainer}'>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">1</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">2</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">3</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">1</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">2</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">3</div>
 	</TanoshiContainer>
 	<TanoshiContainer tanoshiContainerModel='{successRowContainer}'>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">1</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">2</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">3</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">1</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">2</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">3</div>
 	</TanoshiContainer>
 	<TanoshiContainer tanoshiContainerModel='{warningRowContainer}'>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">1</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">2</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">3</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">1</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">2</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">3</div>
 	</TanoshiContainer>
 	<TanoshiContainer tanoshiContainerModel='{dangerRowContainer}'>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">1</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">2</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">3</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">1</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">2</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">3</div>
 	</TanoshiContainer>
 	<TanoshiContainer tanoshiContainerModel='{infoRowContainer}'>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">1</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">2</div>
-		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-blue-500">3</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">1</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">2</div>
+		<div class="p-4 flex-initial w-24 sm:w-64 rounded-lg flex items-center justify-center bg-primary">3</div>
 	</TanoshiContainer>
 </Story>

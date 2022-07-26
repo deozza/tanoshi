@@ -19,50 +19,50 @@
     }
 
     .pill.pill-primary {
-        @apply bg-blue-500 text-white;
+        @apply bg-primary text-white;
     }
 
     .pill.pill-primary.pill-outlined {
-        @apply bg-white text-blue-600 border-blue-600;
+        @apply bg-white text-primary-dark border-primary-dark;
     }
 
     .pill.pill-secondary {
-        @apply bg-gray-500 text-white;
+        @apply bg-secondary text-white;
     }
 
     .pill.pill-secondary.pill-outlined {
-        @apply bg-white text-gray-600 border-gray-600;
+        @apply bg-white text-secondary-dark border-secondary-dark;
     }
 
     .pill.pill-success {
-        @apply bg-green-500  text-white ;
+        @apply bg-success text-white ;
     }
 
     .pill.pill-success.pill-outlined {
-        @apply bg-white text-green-500 border-green-500;
+        @apply bg-white text-success-dark border-success-dark;
     }
 
     .pill.pill-warning {
-        @apply bg-yellow-500 text-white;
+        @apply bg-warning text-white;
     }
 
     .pill.pill-warning.pill-outlined {
-        @apply bg-white text-yellow-600 border-yellow-600;
+        @apply bg-white text-warning-dark border-warning-dark;
     }
 
     .pill.pill-danger {
-        @apply bg-red-500 text-white;
+        @apply bg-danger text-white;
     }
 
     .pill.pill-danger.pill-outlined {
-        @apply bg-white text-red-600 border-red-600;
+        @apply bg-white text-danger-dark border-danger-dark;
     }
 
     .pill.pill-info {
-        @apply bg-cyan-300 text-white;
+        @apply bg-info text-white;
     }
 
     .pill.pill-info.pill-outlined {
-        @apply bg-white text-cyan-400 border-cyan-400;
+        @apply bg-white text-info-dark border-info-dark;
     }
 }

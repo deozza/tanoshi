@@ -12,8 +12,8 @@
 <div class="input-container">
 	<input
 		class="text-input"
-		class:border-red-500={tanoshiTextInputModel.error === true}
-		class:text-red-500={tanoshiTextInputModel.error === true}
+		class:border-danger={tanoshiTextInputModel.error === true}
+		class:text-danger={tanoshiTextInputModel.error === true}
 		id={tanoshiTextInputModel.id}
 		maxlength={tanoshiTextInputModel.maxLength}
 		minlength={tanoshiTextInputModel.minLength}
@@ -29,6 +29,6 @@
 	/>
 
 	{#if tanoshiTextInputModel.error}
-		<span class="text-red-500">{tanoshiTextInputModel.errorMessage}</span>
+		<span class="text-danger">{tanoshiTextInputModel.errorMessage}</span>
 	{/if}
 </div>

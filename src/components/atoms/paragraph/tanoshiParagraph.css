@@ -13,23 +13,23 @@
     }
 
     p.p-secondary {
-        @apply text-gray-600;
+        @apply text-secondary-dark;
     }
 
     p.p-success {
-        @apply text-green-500;
+        @apply text-success-dark;
     }
 
     p.p-warning {
-        @apply text-yellow-600;
+        @apply text-warning-dark;
     }
 
     p.p-danger {
-        @apply text-red-600;
+        @apply text-danger-dark;
     }
 
     p.p-info {
-        @apply text-cyan-400;
+        @apply text-info-dark;
     }
 
 }
