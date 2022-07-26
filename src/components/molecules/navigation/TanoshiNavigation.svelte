@@ -41,7 +41,7 @@
 </script>
 
 
-<nav class="fixed hidden sm:block">
+<nav class="z-10 inset-0 fixed hidden sm:block">
     <TanoshiContainer tanoshiContainerModel={desktopNavigationContainer} customClasses="{tanoshiNavigationModel.orientation === "horizontal" ? "h-16" : "min-h-screen w-1/5"}">
         {#each tanoshiNavigationModel.items as tanoshiLinkModel}
             <TanoshiLink  tanoshiLinkModel="{tanoshiLinkModel}" />
@@ -49,7 +49,7 @@
     </TanoshiContainer>
 </nav>
 
-<nav class="fixed sm:hidden">
+<nav class="z-10 inset-0 fixed sm:hidden">
     <TanoshiContainer tanoshiContainerModel={horizontalNavigationContainer} customClasses="h-16">
         <TanoshiButton tanoshiButtonModel="{mobileMenuButton}"  on:click={mobileMenuHandler}>
             <span class="sr-only">Open main menu</span>
