@@ -14,5 +14,6 @@
 	on:click
 	type={tanoshiButtonModel.type}
 	label={tanoshiButtonModel.content}>
+	<slot></slot>
 	{tanoshiButtonModel.content}
 </button>
