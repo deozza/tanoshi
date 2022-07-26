@@ -15,10 +15,10 @@
 	const warningAlert = new TanoshiAlertModel('This is an alert', 'Hey you got a notification').setTheme('warning')
 	const dangerAlert = new TanoshiAlertModel('This is an alert', 'Hey you got a notification').setTheme('danger')
 
-	const smallAlert = new TanoshiAlertModel('This is an alert', 'Hey you got a notification').setSize('px-4 text-sm')
-	const regularAlert = new TanoshiAlertModel('This is an alert', 'Hey you got a notification').setSize('px-5')
-	const largeAlert = new TanoshiAlertModel('This is an alert', 'Hey you got a notification').setSize('px-6 text-lg')
-	const blockAlert = new TanoshiAlertModel('This is an alert', 'Hey you got a notification').setSize('w-full px-6 text-lg')
+	const smallAlert = new TanoshiAlertModel('This is an alert', 'Hey you got a notification').setSize('sm')
+	const regularAlert = new TanoshiAlertModel('This is an alert', 'Hey you got a notification').setSize('md')
+	const largeAlert = new TanoshiAlertModel('This is an alert', 'Hey you got a notification').setSize('lg')
+	const blockAlert = new TanoshiAlertModel('This is an alert', 'Hey you got a notification').setSize('block')
 </script>
 
 <Meta
@@ -60,14 +60,14 @@
     }
   }}
 />
-<Story name="Block">
+<Story name="Colors">
 	<TanoshiContainer tanoshiContainerModel='{defaultColumnContainer}'>
 		<TanoshiAlert tanoshiAlertModel='{defaultAlert}'  />
 		<TanoshiAlert tanoshiAlertModel='{secondaryAlert}'  />
-		<TanoshiAlert tanoshiAlertModel='{infoAlert}'  />
 		<TanoshiAlert tanoshiAlertModel='{successAlert}'  />
 		<TanoshiAlert tanoshiAlertModel='{warningAlert}'  />
 		<TanoshiAlert tanoshiAlertModel='{dangerAlert}'  />
+		<TanoshiAlert tanoshiAlertModel='{infoAlert}'  />
 	</TanoshiContainer>
 </Story>
 
