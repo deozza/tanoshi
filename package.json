@@ -13,8 +13,7 @@
     "lint": "prettier --check --plugin-search-dir=. . && eslint .",
     "format": "prettier --write --plugin-search-dir=. .",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook", 
-    "build-static-webapp": "expo build:web"
+    "build-storybook": "build-storybook -s /static"
   },
   "devDependencies": {
     "@babel/core": "^7.18.5",
