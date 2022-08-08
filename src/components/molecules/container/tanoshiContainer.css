@@ -4,7 +4,7 @@
 @layer components {
 
     div.flex-container {
-        @apply p-2 flex items-center
+        @apply p-2 flex
     }
     
     div.flex-container.flex-c {

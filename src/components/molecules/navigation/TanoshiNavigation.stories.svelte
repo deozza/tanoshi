@@ -18,45 +18,6 @@
 		.addItem(link2)
 		.addItem(link3)
 
-	const defaultThemeNav = new TanoshiNavigationModel()
-		.addItem(link1)
-		.addItem(link2)
-		.addItem(link3)
-	const transparentThemeNav = new TanoshiNavigationModel()
-		.setTheme('transparent')
-		.addItem(link1)
-		.addItem(link2)
-		.addItem(link3)
-	const secondaryThemeNav = new TanoshiNavigationModel()
-		.setTheme('secondary')
-		.addItem(link1)
-		.addItem(link2)
-		.addItem(link3)
-	const whiteThemeNav = new TanoshiNavigationModel()
-		.setTheme('light')	
-		.addItem(link1)
-		.addItem(link2)
-		.addItem(link3)
-	const blackThemeNav = new TanoshiNavigationModel()
-		.setTheme('dark')
-		.addItem(link1)
-		.addItem(link2)
-		.addItem(link3)
-	const successThemeNav = new TanoshiNavigationModel()
-		.setTheme('success')
-		.addItem(link1)
-		.addItem(link2)
-		.addItem(link3)
-	const warningThemeNav = new TanoshiNavigationModel()
-		.setTheme('warning')
-		.addItem(link1)
-		.addItem(link2)
-		.addItem(link3)
-	const dangerThemeNav = new TanoshiNavigationModel()
-		.setTheme('danger')
-		.addItem(link1)
-		.addItem(link2)
-		.addItem(link3)
 	const infoThemeNav = new TanoshiNavigationModel()
 		.setTheme('info')
 		.addItem(link1)
@@ -108,13 +69,5 @@
 </Story>
 
 <Story name="Theme">
-	<TanoshiNavigation tanoshiNavigationModel="{defaultThemeNav}" />	
-	<TanoshiNavigation tanoshiNavigationModel="{secondaryThemeNav}" />	
-	<TanoshiNavigation tanoshiNavigationModel="{transparentThemeNav}" />	
-	<TanoshiNavigation tanoshiNavigationModel="{whiteThemeNav}" />	
-	<TanoshiNavigation tanoshiNavigationModel="{blackThemeNav}" />	
-	<TanoshiNavigation tanoshiNavigationModel="{successThemeNav}" />	
-	<TanoshiNavigation tanoshiNavigationModel="{warningThemeNav}" />	
-	<TanoshiNavigation tanoshiNavigationModel="{dangerThemeNav}" />	
 	<TanoshiNavigation tanoshiNavigationModel="{infoThemeNav}" />	
 </Story>
