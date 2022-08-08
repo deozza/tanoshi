@@ -43,5 +43,5 @@ module.exports = {
     channelOptions: { allowFunction: false, maxDepth: 10 },
     disableTelemetry: true,
   },
-  staticDirs: ['../public'],
+  staticDirs: ['../static'],
 };
