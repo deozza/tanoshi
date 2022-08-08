@@ -4,10 +4,34 @@ export default class TanoshiParagraphModel {
 	private _theme: string|null = null;
 	private _hasSpacing: boolean = true;
 
+	readonly EXPECTED_DISPLAY_SIZES: object = {
+		sm: 'sm',
+		base: 'base',
+		lg: 'lg',
+		xl: 'xl',
+		'2xl': '2xl',
+		'3xl': '3xl'
+	}
+
+	readonly EXPECTED_THEMES: object = {
+		'black': 'black',
+		'white': 'white',
+		'primary': 'primary',
+		'secondary': 'secondary',
+		'success': 'success',
+		'warning': 'warning',
+		'danger': 'danger',
+		'info': 'info'
+	} 
+
 	constructor(content: string) {
 		this.setContent(content);
-		this.setDisplaySize('base');
-		this.setTheme('black');
+		
+		// @ts-ignore
+		this.setDisplaySize(this.EXPECTED_DISPLAY_SIZES.base);		
+		
+		// @ts-ignore
+		this.setTheme(this.EXPECTED_THEMES.black);
 	}
 
 	get content(): string {
@@ -24,6 +48,10 @@ export default class TanoshiParagraphModel {
 	}
 
 	public setTheme(value: string): TanoshiParagraphModel {
+		if(this.EXPECTED_THEMES.hasOwnProperty(value) === false){
+			throw new Error
+		}
+
 		this._theme = value;
 		return this
 	}
@@ -33,6 +61,11 @@ export default class TanoshiParagraphModel {
 	}
 
 	public setDisplaySize(value: string): TanoshiParagraphModel {
+
+		if(this.EXPECTED_DISPLAY_SIZES.hasOwnProperty(value) === false){
+			throw new Error
+		}
+
 		this._displaySize = value;
 		return this
 	}

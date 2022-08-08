@@ -17,10 +17,14 @@ test('value in constructor affects content',  () => {
     expect(defaultParagraph.content).toEqual('this is a content')
 })
 
-test('expect Exception when displaySize is invalid',  () => {
-
+test('expect Exception when displaySize is invalid', () => {
 	const defaultParagraph: TanoshiParagraphModel = new TanoshiParagraphModel('')
-    defaultParagraph.setDisplaySize('invalid')
 
-    expect(defaultParagraph.content).toEqual('')
+    expect(() => {defaultParagraph.setDisplaySize('invalid')}).toThrow();
+})
+
+test('expect Exception when theme is invalid', () => {
+	const defaultParagraph: TanoshiParagraphModel = new TanoshiParagraphModel('')
+
+    expect(() => {defaultParagraph.setTheme('invalid')}).toThrow();
 })
