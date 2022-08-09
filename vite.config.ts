@@ -1,21 +1,10 @@
-import { defineConfig } from 'vite'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
+import { sveltekit } from '@sveltejs/kit/vite'
 import path from 'path'
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  build:{
-    lib:{
-      entry: './src/lib/main.ts',
-      name: 'Tanoshi',
-    },
-  },
+const config =  {
   plugins: [
-    svelte({
-      compilerOptions:{
-        customElement: true,
-      }
-    })
+    sveltekit()
   ],
   resolve: {
     alias: {
@@ -24,4 +13,6 @@ export default defineConfig({
         '$lib/molecules': path.resolve('./src/lib/molecules')
     },
   }
-})
+}
+
+export default config;
