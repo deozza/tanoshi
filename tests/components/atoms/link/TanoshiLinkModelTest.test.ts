@@ -1,4 +1,4 @@
-import TanoshiLinkModel from '../../../../src/components/atoms/link/TanoshiLinkModel'
+import TanoshiLinkModel from '$lib/atoms/link/TanoshiLinkModel'
 
 test('default values are valid',  () => {
 

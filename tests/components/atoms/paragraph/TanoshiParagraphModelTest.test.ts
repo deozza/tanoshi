@@ -1,4 +1,4 @@
-import TanoshiParagraphModel from '../../../../src/components/atoms/paragraph/TanoshiParagraphModel'
+import TanoshiParagraphModel from '$lib/atoms/paragraph/TanoshiParagraphModel'
 
 test('default values are valid',  () => {
 

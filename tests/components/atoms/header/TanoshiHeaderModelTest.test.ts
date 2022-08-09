@@ -1,4 +1,4 @@
-import TanoshiHeaderModel from '../../../../src/components/atoms/header/TanoshiHeaderModel'
+import TanoshiHeaderModel from '$lib/atoms/header/TanoshiHeaderModel'
 
 test('default values are valid',  () => {
 
