@@ -1,11 +1,12 @@
 const sveltePreprocess = require('svelte-preprocess');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const path = require('path');
 
 module.exports = {
   stories: [
-    '../src/components/**/*.stories.svelte',
-    '../src/components/**/*.stories.mdx',
+    '../src/storybook/**/*.stories.svelte',
+    '../src/storybook/**/*.stories.mdx',
   ],
   svelteOptions: {
     preprocess: sveltePreprocess(),
@@ -36,6 +37,7 @@ module.exports = {
       include: [path.resolve(__dirname, '../src')],
       enforce: 'pre',
     });
+    config.resolve.plugins = [new TsconfigPathsPlugin()];
     return config;
   },
   core: {

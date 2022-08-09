@@ -1,0 +1,84 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind components;
+
+@layer components {
+	div.flex-container {
+		@apply p-2 flex;
+	}
+
+	div.flex-container.flex-c {
+		@apply flex-col;
+	}
+
+	div.flex-container.flex-r {
+		@apply flex-row justify-items-center flex-wrap;
+	}
+
+	div.flex-container.flex-sm-c {
+		@apply sm:flex-col;
+	}
+
+	div.flex-container.flex-sm-r {
+		@apply sm:flex-row justify-items-center flex-wrap;
+	}
+
+	div.flex-container.start {
+		@apply justify-start;
+	}
+
+	div.flex-container.centered {
+		@apply justify-center;
+	}
+
+	div.flex-container.end {
+		@apply justify-end;
+	}
+
+	div.flex-container.between {
+		@apply justify-between;
+	}
+
+	div.flex-container.around {
+		@apply justify-around;
+	}
+
+	div.flex-container.evenly {
+		@apply justify-evenly;
+	}
+
+	div.flex-container.transparent {
+		@apply bg-transparent;
+	}
+
+	div.flex-container.light {
+		@apply bg-neutral-100;
+	}
+
+	div.flex-container.dark {
+		@apply bg-black;
+	}
+
+	div.flex-container.primary {
+		@apply bg-primary;
+	}
+
+	div.flex-container.secondary {
+		@apply bg-secondary;
+	}
+
+	div.flex-container.success {
+		@apply bg-success;
+	}
+
+	div.flex-container.warning {
+		@apply bg-warning;
+	}
+
+	div.flex-container.danger {
+		@apply bg-danger;
+	}
+
+	div.flex-container.info {
+		@apply bg-info;
+	}
+}

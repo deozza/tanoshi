@@ -1,6 +1,6 @@
 import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
-import path from 'path'
+import path from 'path';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -17,10 +17,12 @@ const config = {
 		vite: {
 			resolve: {
 				alias: {
-					'@components': path.resolve('./src/components'),
-				},
-			},
-		},
+					$lib: path.resolve('./src/lib'),
+					'$lib/atoms': path.resolve('./src/lib/atoms'),
+					'$lib/molecules': path.resolve('./src/lib/molecules')
+				}
+			}
+		}
 	}
 };
 

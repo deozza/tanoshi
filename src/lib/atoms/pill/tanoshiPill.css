@@ -1,0 +1,68 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind components;
+
+@layer components {
+	.pill {
+		@apply m-2 border rounded-full;
+	}
+
+	.pill.pill-md {
+		@apply px-5;
+	}
+
+	.pill.pill-sm {
+		@apply px-4 text-sm;
+	}
+
+	.pill.pill-lg {
+		@apply px-6 text-lg;
+	}
+
+	.pill.pill-primary {
+		@apply bg-primary text-white;
+	}
+
+	.pill.pill-primary.pill-outlined {
+		@apply bg-white text-primary-dark border-primary-dark;
+	}
+
+	.pill.pill-secondary {
+		@apply bg-secondary text-white;
+	}
+
+	.pill.pill-secondary.pill-outlined {
+		@apply bg-white text-secondary-dark border-secondary-dark;
+	}
+
+	.pill.pill-success {
+		@apply bg-success text-white;
+	}
+
+	.pill.pill-success.pill-outlined {
+		@apply bg-white text-success-dark border-success-dark;
+	}
+
+	.pill.pill-warning {
+		@apply bg-warning text-white;
+	}
+
+	.pill.pill-warning.pill-outlined {
+		@apply bg-white text-warning-dark border-warning-dark;
+	}
+
+	.pill.pill-danger {
+		@apply bg-danger text-white;
+	}
+
+	.pill.pill-danger.pill-outlined {
+		@apply bg-white text-danger-dark border-danger-dark;
+	}
+
+	.pill.pill-info {
+		@apply bg-info text-white;
+	}
+
+	.pill.pill-info.pill-outlined {
+		@apply bg-white text-info-dark border-info-dark;
+	}
+}
