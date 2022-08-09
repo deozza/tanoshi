@@ -12,16 +12,24 @@ jobs:
   testing:
     uses: ./.github/workflows/workflow-tests.yml
 
-  netlify-release:
-  
+  tagging:
     if: ${{ always() }}
     needs: [testing]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: butlerlogic/action-autotag@stable
+      with:
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
+  netlify-release:
+    if: ${{ always() }}
+    needs: [tagging]
 
     uses: ./.github/workflows/workflow-netfliy.yml
 
   npm-release:
-  
     if: ${{ always() }}
-    needs: [testing]
+    needs: [tagging]
 
     uses: ./.github/workflows/workflow-npm.yml
