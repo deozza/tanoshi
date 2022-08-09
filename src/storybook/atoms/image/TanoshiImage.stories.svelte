@@ -1,13 +1,12 @@
 <script lang="ts">
 	import { Meta, Story } from "@storybook/addon-svelte-csf";
-	import TanoshiImageModel from './TanoshiImageModel';
-	import TanoshiImage from './TanoshiImage.svelte';
+	import TanoshiImageModel from '$lib/atoms/image/TanoshiImageModel';
+	import TanoshiImage from '$lib/atoms/image/TanoshiImage.svelte';
 	
-	import TanoshiContainer from "../../molecules/container/TanoshiContainer.svelte";
-	import TanoshiContainerModel from "../../molecules/container/TanoshiContainerModel";
+	import TanoshiContainer from "$lib/molecules/container/TanoshiContainer.svelte";
+	import TanoshiContainerModel from "$lib/molecules/container/TanoshiContainerModel";
 
 	const columnContainer = new TanoshiContainerModel('c')
-
 
 	const defaultImage = new TanoshiImageModel("https://via.placeholder.com/300", 'placeholder')
 	const roundedImage = new TanoshiImageModel("https://via.placeholder.com/300", 'placeholder').setTheme('rounded')

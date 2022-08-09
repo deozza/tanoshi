@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { Meta, Story } from "@storybook/addon-svelte-csf";
-	import TanoshiLinkModel from './TanoshiLinkModel';
-	import TanoshiLink from './TanoshiLink.svelte';
+	
+	import TanoshiLinkModel from '$lib/atoms/link/TanoshiLinkModel';
+	import TanoshiLink from '$lib/atoms/link/TanoshiLink.svelte';
 
-	import TanoshiContainer from "../../molecules/container/TanoshiContainer.svelte";
-	import TanoshiContainerModel from "../../molecules/container/TanoshiContainerModel";
+	import TanoshiContainer from "$lib/molecules/container/TanoshiContainer.svelte";
+	import TanoshiContainerModel from "$lib/molecules/container/TanoshiContainerModel";
 
 	const rowContainer = new TanoshiContainerModel('r')
 

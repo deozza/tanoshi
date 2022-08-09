@@ -1,17 +1,18 @@
 <script lang="ts">
-	import './tanoshiAlert.css';
 	import { fade } from 'svelte/transition';
 
 	import Fa from 'svelte-fa/src/fa.svelte';
 	import { faTimes } from '@fortawesome/free-solid-svg-icons/index.es'
 
-	import TanoshiContainer from "../container/TanoshiContainer.svelte";
-	import TanoshiContainerModel from "../container/TanoshiContainerModel";
-
-	import TanoshiParagraph from '../../atoms/paragraph/TanoshiParagraph.svelte';
-	import TanoshiParagraphModel from '../../atoms/paragraph/TanoshiParagraphModel';
-
 	import type TanoshiAlertModel from './TanoshiAlertModel';
+	import './tanoshiAlert.css';
+
+	import TanoshiContainer from "$lib/molecules/container/TanoshiContainer.svelte";
+	import TanoshiContainerModel from "$lib/molecules/container/TanoshiContainerModel";
+
+	import TanoshiParagraph from '$lib/atoms/paragraph/TanoshiParagraph.svelte';
+	import TanoshiParagraphModel from '$lib/atoms/paragraph/TanoshiParagraphModel';
+
 
 	export let tanoshiAlertModel: TanoshiAlertModel
 

@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { Meta, Story } from "@storybook/addon-svelte-csf";
-    import TanoshiButton from './TanoshiButton.svelte';
-	import TanoshiButtonModel from './TanoshiButtonModel';
+    import TanoshiButton from '$lib/atoms/button/TanoshiButton.svelte';
+	import TanoshiButtonModel from '$lib/atoms/button/TanoshiButtonModel';
 
-	import TanoshiContainer from "../../molecules/container/TanoshiContainer.svelte";
-	import TanoshiContainerModel from "../../molecules/container/TanoshiContainerModel";
+	import TanoshiContainer from "$lib/molecules/container/TanoshiContainer.svelte";
+	import TanoshiContainerModel from "$lib/molecules/container/TanoshiContainerModel";
 
 	const rowContainer = new TanoshiContainerModel('r')
 

@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { Meta, Story } from "@storybook/addon-svelte-csf";
-	import TanoshiParagraphModel from './TanoshiParagraphModel';
-	import TanoshiParagraph from './TanoshiParagraph.svelte';
+
+	import TanoshiParagraphModel from '$lib/atoms/paragraph/TanoshiParagraphModel';
+	import TanoshiParagraph from '$lib/atoms/paragraph/TanoshiParagraph.svelte';
 
 	const h1Paragraph = new TanoshiParagraphModel("Lorem ipsum dolor sit amet").setDisplaySize('3xl')
 	const h2Paragraph = new TanoshiParagraphModel("Lorem ipsum dolor sit amet").setDisplaySize('2xl')

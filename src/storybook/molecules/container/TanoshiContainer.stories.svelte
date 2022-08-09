@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { Meta, Story } from "@storybook/addon-svelte-csf";
-	import TanoshiContainer from "./TanoshiContainer.svelte";
-	import TanoshiContainerModel from "./TanoshiContainerModel";
 
+	import TanoshiContainer from "$lib/molecules/container/TanoshiContainer.svelte";
+	import TanoshiContainerModel from "$lib/molecules/container/TanoshiContainerModel";
 
 	const defaultRowContainer = new TanoshiContainerModel('r')
 	const defaultColumnContainer = new TanoshiContainerModel('c')

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Meta, Story } from "@storybook/addon-svelte-csf";
-	import TanoshiHeaderModel from './TanoshiHeaderModel';
-	import TanoshiHeader from './TanoshiHeader.svelte';
+	import TanoshiHeaderModel from '$lib/atoms/header/TanoshiHeaderModel';
+	import TanoshiHeader from '$lib/atoms/header/TanoshiHeader.svelte';
 
 	const h1Header = new TanoshiHeaderModel("Lorem ipsum dolor sit amet")
 	const h2Header = new TanoshiHeaderModel("Lorem ipsum dolor sit amet").setDisplaySize('2xl').setHtmlSize('h2')

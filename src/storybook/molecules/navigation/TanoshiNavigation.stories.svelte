@@ -1,8 +1,10 @@
 <script lang="ts">
 	import { Meta, Story } from "@storybook/addon-svelte-csf";
-    import TanoshiLinkModel from "../../atoms/link/TanoshiLinkModel";
-	import TanoshiNavigation from "./TanoshiNavigation.svelte";
-	import TanoshiNavigationModel from "./TanoshiNavigationModel";
+
+	import TanoshiLinkModel from "$lib/atoms/link/TanoshiLinkModel";
+
+	import TanoshiNavigation from "$lib/molecules/navigation/TanoshiNavigation.svelte";
+	import TanoshiNavigationModel from "$lib/molecules/navigation/TanoshiNavigationModel";
 
 	const link1 = new TanoshiLinkModel('link 1')
 	const link2 = new TanoshiLinkModel('link 2')

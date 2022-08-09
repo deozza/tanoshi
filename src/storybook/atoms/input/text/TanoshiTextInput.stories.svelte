@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { Meta, Story } from "@storybook/addon-svelte-csf";
-  	import TanoshiTextInput from './TanoshiTextInput.svelte';
-	import TanoshiTextInputModel from './TanoshiTextInputModel';
+  	
+	import TanoshiTextInput from '$lib/atoms/input/text/TanoshiTextInput.svelte';
+	import TanoshiTextInputModel from '$lib/atoms/input/text/TanoshiTextInputModel';
 
 	const defaultTextInput = new TanoshiTextInputModel('Default')
 	const limitedLengthTextInput = new TanoshiTextInputModel('Limited length').setMinLength(2).setMaxLength(5)

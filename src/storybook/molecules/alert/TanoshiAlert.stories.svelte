@@ -1,12 +1,14 @@
 <script lang="ts">
 	import { Meta, Story } from "@storybook/addon-svelte-csf";
-	import TanoshiAlertModel from "./TanoshiAlertModel";
-	import TanoshiAlert from "./TanoshiAlert.svelte";
-	import TanoshiContainer from "../container/TanoshiContainer.svelte";
-	import TanoshiContainerModel from "../container/TanoshiContainerModel";
+	
+	import TanoshiAlertModel from "$lib/molecules/alert/TanoshiAlertModel";
+	import TanoshiAlert from "$lib/molecules/alert/TanoshiAlert.svelte";
+
+	import TanoshiContainer from "$lib/molecules/container/TanoshiContainer.svelte";
+	import TanoshiContainerModel from "$lib/molecules/container/TanoshiContainerModel";
 
 	const defaultColumnContainer = new TanoshiContainerModel('c')
-	
+
     
 	const defaultAlert = new TanoshiAlertModel('This is an alert', 'Hey you got a notification')
 	const secondaryAlert = new TanoshiAlertModel('This is an alert', 'Hey you got a notification').setTheme('secondary')

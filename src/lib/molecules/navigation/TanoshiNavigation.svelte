@@ -1,18 +1,20 @@
 <script lang="ts">
   import { onMount, onDestroy } from "svelte";
 
-	import './tanoshiNavigation.css';
-
     import Fa from 'svelte-fa/src/fa.svelte';
 	import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons/index.es'
 
+    import './tanoshiNavigation.css';
 	import type TanoshiNavigationModel from './TanoshiNavigationModel';
-    import TanoshiContainerModel from '../container/TanoshiContainerModel';
-    import TanoshiContainer from '../container/TanoshiContainer.svelte';
-    import TanoshiLink from '../../atoms/link/TanoshiLink.svelte';
-    import TanoshiButton from "../../atoms/button/TanoshiButton.svelte";
-    import TanoshiButtonModel from "../../atoms/button/TanoshiButtonModel";
 
+    import TanoshiContainerModel from '$lib/molecules/container/TanoshiContainerModel';
+    import TanoshiContainer from '$lib/molecules/container/TanoshiContainer.svelte';
+
+    import TanoshiLink from '$lib/atoms/link/TanoshiLink.svelte';
+
+    import TanoshiButton from "$lib/atoms/button/TanoshiButton.svelte";
+    import TanoshiButtonModel from "$lib/atoms/button/TanoshiButtonModel";	
+    
 	export let tanoshiNavigationModel: TanoshiNavigationModel
 
 	const horizontalNavigationContainer = new TanoshiContainerModel('r').setTheme(tanoshiNavigationModel.theme).setDesktopSpacing('start')

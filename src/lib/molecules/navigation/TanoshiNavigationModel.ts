@@ -1,4 +1,4 @@
-import type TanoshiLinkModel from "src/components/atoms/link/TanoshiLinkModel";
+import type TanoshiLinkModel from "$lib/atoms/link/TanoshiLinkModel";
 
 export default class TanoshiNavigationModel {
     private _items: Array<TanoshiLinkModel> = []
