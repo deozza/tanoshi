@@ -9,4 +9,4 @@ on:
 
 jobs:
   testing:
-    uses: deozza/tanoshi/.github/workflows/workflow-tests.yml
+    uses: ./.github/workflows/workflow-tests.yml
