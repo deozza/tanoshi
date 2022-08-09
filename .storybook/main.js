@@ -4,8 +4,8 @@ const path = require('path');
 
 module.exports = {
   stories: [
-    '../src/components/**/*.stories.svelte',
-    '../src/components/**/*.stories.mdx',
+    '../src/storybook/**/*.stories.svelte',
+    '../src/storybook/**/*.stories.mdx',
   ],
   svelteOptions: {
     preprocess: sveltePreprocess(),
