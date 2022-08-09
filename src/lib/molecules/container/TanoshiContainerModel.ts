@@ -2,10 +2,10 @@ export default class TanoshiContainerModel {
 	private _theme: string = 'transparent';
 	private _size: string = 'w-full';
 	private _backgroundImage: string | null = null;
-	private _desktopOrientation: string | null = null;
-	private _mobileOrientation: string | null = null;
-	private _desktopSpacing: string | null = 'centered';
-	private _mobileSpacing: string | null = 'centered';
+	private _desktopOrientation!: string;
+	private _mobileOrientation!: string;
+	private _desktopSpacing: string = 'centered';
+	private _mobileSpacing: string = 'centered';
 
 	public constructor(desktopOrientation: string) {
 		this.setDesktopOrientation(desktopOrientation);
@@ -41,7 +41,7 @@ export default class TanoshiContainerModel {
 	}
 
 	get desktopOrientation(): string {
-		return this._desktopOrientation!;
+		return this._desktopOrientation;
 	}
 
 	public setDesktopOrientation(value: string): TanoshiContainerModel {
@@ -50,7 +50,7 @@ export default class TanoshiContainerModel {
 	}
 
 	get mobileOrientation(): string {
-		return this._mobileOrientation!;
+		return this._mobileOrientation;
 	}
 
 	public setMobileOrientation(value: string): TanoshiContainerModel {
@@ -59,7 +59,7 @@ export default class TanoshiContainerModel {
 	}
 
 	get desktopSpacing(): string {
-		return this._desktopSpacing!;
+		return this._desktopSpacing;
 	}
 
 	public setDesktopSpacing(value: string): TanoshiContainerModel {
@@ -68,7 +68,7 @@ export default class TanoshiContainerModel {
 	}
 
 	get mobileSpacing(): string {
-		return this._mobileSpacing!;
+		return this._mobileSpacing;
 	}
 
 	public setMobileSpacing(value: string): TanoshiContainerModel {

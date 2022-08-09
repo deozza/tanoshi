@@ -1,8 +1,8 @@
 export default class TanoshiPillModel {
-	private _content: string | null = null;
-	private _theme: string | null = null;
+	private _content!: string;
+	private _theme!: string;
 	private _isOutlined: boolean = false;
-	private _size: string | null = null;
+	private _size!: string;
 
 	constructor(content: string) {
 		this.setContent(content);
@@ -11,7 +11,7 @@ export default class TanoshiPillModel {
 	}
 
 	get content(): string {
-		return this._content!;
+		return this._content;
 	}
 
 	public setContent(value: string): TanoshiPillModel {
@@ -20,7 +20,7 @@ export default class TanoshiPillModel {
 	}
 
 	get style(): string {
-		return this._theme!;
+		return this._theme;
 	}
 
 	public setTheme(theme: string): TanoshiPillModel {
@@ -38,7 +38,7 @@ export default class TanoshiPillModel {
 	}
 
 	get size(): string {
-		return this._size!;
+		return this._size;
 	}
 
 	public setSize(value: string): TanoshiPillModel {

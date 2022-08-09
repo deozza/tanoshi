@@ -20,7 +20,7 @@ module.exports = {
 	},
 	parserOptions: {
 		sourceType: 'module',
-		ecmaVersion: 2020,
+		ecmaVersion: 2020
 	},
 	env: {
 		browser: true,
@@ -28,6 +28,7 @@ module.exports = {
 		node: true
 	},
 	rules: {
-		"@typescript-eslint/no-inferrable-types": "off",
+		'@typescript-eslint/no-inferrable-types': 'off',
+		'@typescript-eslint/ban-ts-comment': 'off'
 	}
 };

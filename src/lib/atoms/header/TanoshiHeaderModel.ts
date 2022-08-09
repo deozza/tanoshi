@@ -1,8 +1,8 @@
 export default class TanoshiHeaderModel {
-	private _content: string | null = null;
-	private _displaySize: string | null = null;
-	private _htmlSize: string | null = null;
-	private _theme: string | null = null;
+	private _content!: string;
+	private _displaySize!: string;
+	private _htmlSize!: string;
+	private _theme!: string;
 
 	readonly EXPECTED_DISPLAY_SIZES: object = {
 		sm: 'sm',
@@ -47,7 +47,7 @@ export default class TanoshiHeaderModel {
 	}
 
 	get content(): string {
-		return this._content!;
+		return this._content;
 	}
 
 	public setContent(value: string): TanoshiHeaderModel {
@@ -56,11 +56,11 @@ export default class TanoshiHeaderModel {
 	}
 
 	get theme(): string {
-		return this._theme!;
+		return this._theme;
 	}
 
 	public setTheme(value: string): TanoshiHeaderModel {
-		if (this.EXPECTED_THEMES.hasOwnProperty(value) === false) {
+		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_THEMES, value) === false) {
 			throw new Error();
 		}
 
@@ -69,11 +69,11 @@ export default class TanoshiHeaderModel {
 	}
 
 	get displaySize(): string {
-		return this._displaySize!;
+		return this._displaySize;
 	}
 
 	public setDisplaySize(value: string): TanoshiHeaderModel {
-		if (this.EXPECTED_DISPLAY_SIZES.hasOwnProperty(value) === false) {
+		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_DISPLAY_SIZES, value) === false) {
 			throw new Error();
 		}
 
@@ -82,11 +82,11 @@ export default class TanoshiHeaderModel {
 	}
 
 	get htmlSize(): string {
-		return this._htmlSize!;
+		return this._htmlSize;
 	}
 
 	public setHtmlSize(value: string): TanoshiHeaderModel {
-		if (this.EXPECTED_HTML_SIZES.hasOwnProperty(value) === false) {
+		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_HTML_SIZES, value) === false) {
 			throw new Error();
 		}
 

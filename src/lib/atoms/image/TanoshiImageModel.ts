@@ -1,6 +1,6 @@
 export default class TanoshiImageModel {
-	private _content: string | null = null;
-	private _alt: string | null = null;
+	private _content!: string;
+	private _alt!: string;
 	private _theme: string = '';
 	private _filter: string = '';
 
@@ -10,7 +10,7 @@ export default class TanoshiImageModel {
 	}
 
 	get content(): string {
-		return this._content!;
+		return this._content;
 	}
 
 	public setContent(value: string): TanoshiImageModel {
@@ -19,7 +19,7 @@ export default class TanoshiImageModel {
 	}
 
 	get alt(): string {
-		return this._alt!;
+		return this._alt;
 	}
 
 	public setAlt(value: string): TanoshiImageModel {

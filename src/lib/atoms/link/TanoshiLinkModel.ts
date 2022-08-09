@@ -1,7 +1,7 @@
 export default class TanoshiLinkModel {
-	private _content: string | null = null;
-	private _link: string | null = null;
-	private _isInternal: string | null = null;
+	private _content!: string;
+	private _link!: string;
+	private _isInternal!: string;
 
 	constructor(content: string) {
 		this.setContent(content);
@@ -10,7 +10,7 @@ export default class TanoshiLinkModel {
 	}
 
 	get content(): string {
-		return this._content!;
+		return this._content;
 	}
 
 	public setContent(value: string): TanoshiLinkModel {
@@ -19,7 +19,7 @@ export default class TanoshiLinkModel {
 	}
 
 	get link(): string {
-		return this._link!;
+		return this._link;
 	}
 
 	public setLink(value: string): TanoshiLinkModel {
@@ -28,7 +28,7 @@ export default class TanoshiLinkModel {
 	}
 
 	get isInternal(): string {
-		return this._isInternal!;
+		return this._isInternal;
 	}
 
 	public setIsInternal(value: boolean): TanoshiLinkModel {

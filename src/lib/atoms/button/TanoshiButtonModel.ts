@@ -1,8 +1,8 @@
 export default class TanoshiButtonModel {
-	private _content: string | null = null;
-	private _theme: string | null = null;
-	private _type: string | null = null;
-	private _size: string | null = null;
+	private _content!: string;
+	private _theme!: string;
+	private _type!: string;
+	private _size!: string;
 	private _isDisabled: boolean = false;
 	private _isOutlined: boolean = false;
 
@@ -14,7 +14,7 @@ export default class TanoshiButtonModel {
 	}
 
 	get content(): string {
-		return this._content!;
+		return this._content;
 	}
 
 	public setContent(value: string): TanoshiButtonModel {
@@ -23,7 +23,7 @@ export default class TanoshiButtonModel {
 	}
 
 	get theme(): string {
-		return this._theme!;
+		return this._theme;
 	}
 
 	public setTheme(value: string): TanoshiButtonModel {
@@ -32,7 +32,7 @@ export default class TanoshiButtonModel {
 	}
 
 	get type(): string {
-		return this._type!;
+		return this._type;
 	}
 
 	public setType(value: string): TanoshiButtonModel {
@@ -41,7 +41,7 @@ export default class TanoshiButtonModel {
 	}
 
 	get size(): string {
-		return this._size!;
+		return this._size;
 	}
 
 	public setSize(value: string): TanoshiButtonModel {
