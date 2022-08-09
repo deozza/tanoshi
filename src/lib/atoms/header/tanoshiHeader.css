@@ -2,36 +2,35 @@
 @tailwind components;
 
 @layer components {
-    .h-black {
-        @apply text-black;
-    }
+	.h-black {
+		@apply text-black;
+	}
 
-    .h-white {
-        @apply text-white;
-    }
+	.h-white {
+		@apply text-white;
+	}
 
-    .h-primary {
-        @apply text-secondary-dark;
-    }
+	.h-primary {
+		@apply text-secondary-dark;
+	}
 
-    .h-secondary {
-        @apply text-secondary-dark;
-    }
+	.h-secondary {
+		@apply text-secondary-dark;
+	}
 
-    .h-success {
-        @apply text-success-dark;
-    }
+	.h-success {
+		@apply text-success-dark;
+	}
 
-    .h-warning {
-        @apply text-warning-dark;
-    }
+	.h-warning {
+		@apply text-warning-dark;
+	}
 
-    .h-danger {
-        @apply text-danger-dark;
-    }
+	.h-danger {
+		@apply text-danger-dark;
+	}
 
-    .h-info {
-        @apply text-info-dark;
-    }
-
+	.h-info {
+		@apply text-info-dark;
+	}
 }

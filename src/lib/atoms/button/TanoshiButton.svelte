@@ -2,7 +2,7 @@
 	import './tanoshiButton.css';
 	import type TanoshiButtonModel from './TanoshiButtonModel';
 
-	export let tanoshiButtonModel: TanoshiButtonModel
+	export let tanoshiButtonModel: TanoshiButtonModel;
 </script>
 
 <button
@@ -13,7 +13,8 @@
 	disabled={tanoshiButtonModel.isDisabled}
 	on:click
 	type={tanoshiButtonModel.type}
-	label={tanoshiButtonModel.content}>
-	<slot></slot>
+	label={tanoshiButtonModel.content}
+>
+	<slot />
 	{tanoshiButtonModel.content}
 </button>

@@ -4,8 +4,7 @@
 @tailwind utilities;
 
 @layer components {
-    a {
-        @apply m-2 underline hover:text-primary-dark
-    }
-
+	a {
+		@apply m-2 underline hover:text-primary-dark;
+	}
 }

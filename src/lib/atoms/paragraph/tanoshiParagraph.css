@@ -4,32 +4,31 @@
 @tailwind utilities;
 
 @layer components {
-    p.p-black {
-        @apply text-black;
-    }
+	p.p-black {
+		@apply text-black;
+	}
 
-    p.p-white {
-        @apply text-white;
-    }
+	p.p-white {
+		@apply text-white;
+	}
 
-    p.p-secondary {
-        @apply text-secondary-dark;
-    }
+	p.p-secondary {
+		@apply text-secondary-dark;
+	}
 
-    p.p-success {
-        @apply text-success-dark;
-    }
+	p.p-success {
+		@apply text-success-dark;
+	}
 
-    p.p-warning {
-        @apply text-warning-dark;
-    }
+	p.p-warning {
+		@apply text-warning-dark;
+	}
 
-    p.p-danger {
-        @apply text-danger-dark;
-    }
+	p.p-danger {
+		@apply text-danger-dark;
+	}
 
-    p.p-info {
-        @apply text-info-dark;
-    }
-
+	p.p-info {
+		@apply text-info-dark;
+	}
 }

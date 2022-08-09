@@ -1,12 +1,27 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Develop branch workflow
+name: Release branch workflow
 
 on:
   pull_request:
-    branches: [ "develop" ]
+    branches: [ "release" ]
 
 jobs:
+
   testing:
     uses: ./.github/workflows/workflow-tests.yml
+
+  netlify-release:
+  
+    if: ${{ always() }}
+    needs: [testing]
+
+    uses: ./.github/workflows/workflow-netfliy.yml
+
+  npm-release:
+  
+    if: ${{ always() }}
+    needs: [testing]
+
+    uses: ./.github/workflows/workflow-npm.yml
