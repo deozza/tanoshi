@@ -18,6 +18,8 @@ const config = {
 			resolve: {
 				alias: {
 					'@components': path.resolve('./src/components'),
+					"@atoms": path.resolve("./src/lib/atoms"),
+		   			"@molecules": path.resolve("./src/lib/molecules"),
 				},
 			},
 		},
