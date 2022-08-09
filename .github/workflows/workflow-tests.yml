@@ -35,7 +35,10 @@ jobs:
      - name: Install dependencies
        if: steps.cache.outputs.cache-hit != 'true'
        run: npm ci --ignore-scripts
-     
+
+     - name: Build project
+       run: npm run build --if-present
+
      - name: Run prettier
        run: npm run lint
      
