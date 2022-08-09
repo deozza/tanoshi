@@ -2,8 +2,7 @@
 @tailwind components;
 
 @layer components {
-
-    .alert {
-        @apply m-2 border rounded-md text-white;
-    }
+	.alert {
+		@apply m-2 border rounded-md text-white;
+	}
 }

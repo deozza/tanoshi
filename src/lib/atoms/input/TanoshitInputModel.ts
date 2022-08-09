@@ -1,25 +1,25 @@
 export default class TanoshiInputModel {
-    protected _type: string = '';
-	protected _id: string|null = null;
-	protected _name: string|null = null;
+	protected _type: string = '';
+	protected _id: string | null = null;
+	protected _name: string | null = null;
 	protected _required: boolean = false;
 	protected _value: string | null = null;
 	protected _readonly: boolean = false;
 	protected _error: boolean = false;
-	protected _errorMessage: string= ''
+	protected _errorMessage: string = '';
 
 	public constructor(name: string) {
 		this.setName(name);
 		this.setId(name);
 	}
 
-    get type(): string {
+	get type(): string {
 		return this._type;
 	}
 
 	setType(value: string): TanoshiInputModel {
 		this._type = value;
-        return this;
+		return this;
 	}
 
 	get id(): string {
@@ -28,7 +28,7 @@ export default class TanoshiInputModel {
 
 	setId(value: string): TanoshiInputModel {
 		this._id = value;
-        return this;
+		return this;
 	}
 
 	get name(): string {
@@ -37,7 +37,7 @@ export default class TanoshiInputModel {
 
 	setName(value: string): TanoshiInputModel {
 		this._name = value;
-        return this;
+		return this;
 	}
 
 	get required(): boolean {
@@ -46,7 +46,7 @@ export default class TanoshiInputModel {
 
 	setRequired(value: boolean): TanoshiInputModel {
 		this._required = value;
-        return this;
+		return this;
 	}
 
 	get value(): string | null {
@@ -55,7 +55,7 @@ export default class TanoshiInputModel {
 
 	setValue(value: string | null): TanoshiInputModel {
 		this._value = value;
-        return this;
+		return this;
 	}
 
 	get readonly(): boolean {
@@ -64,7 +64,7 @@ export default class TanoshiInputModel {
 
 	setReadonly(value: boolean): TanoshiInputModel {
 		this._readonly = value;
-        return this;
+		return this;
 	}
 
 	get error(): boolean {
@@ -73,7 +73,7 @@ export default class TanoshiInputModel {
 
 	setError(value: boolean): TanoshiInputModel {
 		this._error = value;
-        return this;
+		return this;
 	}
 
 	get errorMessage(): string {
@@ -82,6 +82,6 @@ export default class TanoshiInputModel {
 
 	setErrorMessage(value: string): TanoshiInputModel {
 		this._errorMessage = value;
-        return this;
+		return this;
 	}
 }

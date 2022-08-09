@@ -1,8 +1,8 @@
 export default class TanoshiImageModel {
-	private _content: string|null = null;
-	private _alt: string|null = null;
-	private _theme: string = ''
-	private _filter: string = ''
+	private _content: string | null = null;
+	private _alt: string | null = null;
+	private _theme: string = '';
+	private _filter: string = '';
 
 	constructor(content: string, alt: string) {
 		this.setContent(content);
@@ -15,7 +15,7 @@ export default class TanoshiImageModel {
 
 	public setContent(value: string): TanoshiImageModel {
 		this._content = value;
-		return this
+		return this;
 	}
 
 	get alt(): string {
@@ -24,7 +24,7 @@ export default class TanoshiImageModel {
 
 	public setAlt(value: string): TanoshiImageModel {
 		this._alt = value;
-		return this
+		return this;
 	}
 
 	get theme(): string {
@@ -33,7 +33,7 @@ export default class TanoshiImageModel {
 
 	public setTheme(value: string): TanoshiImageModel {
 		this._theme = value;
-		return this
+		return this;
 	}
 
 	get filter(): string {
@@ -42,6 +42,6 @@ export default class TanoshiImageModel {
 
 	public setFilter(value: string): TanoshiImageModel {
 		this._filter = value;
-		return this
+		return this;
 	}
 }

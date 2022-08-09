@@ -1,7 +1,7 @@
 export default class TanoshiParagraphModel {
-	private _content: string|null = null;
-	private _displaySize: string|null = null;
-	private _theme: string|null = null;
+	private _content: string | null = null;
+	private _displaySize: string | null = null;
+	private _theme: string | null = null;
 	private _hasSpacing: boolean = true;
 
 	readonly EXPECTED_DISPLAY_SIZES: object = {
@@ -11,25 +11,25 @@ export default class TanoshiParagraphModel {
 		xl: 'xl',
 		'2xl': '2xl',
 		'3xl': '3xl'
-	}
+	};
 
 	readonly EXPECTED_THEMES: object = {
-		'black': 'black',
-		'white': 'white',
-		'primary': 'primary',
-		'secondary': 'secondary',
-		'success': 'success',
-		'warning': 'warning',
-		'danger': 'danger',
-		'info': 'info'
-	} 
+		black: 'black',
+		white: 'white',
+		primary: 'primary',
+		secondary: 'secondary',
+		success: 'success',
+		warning: 'warning',
+		danger: 'danger',
+		info: 'info'
+	};
 
 	constructor(content: string) {
 		this.setContent(content);
-		
+
 		// @ts-ignore
-		this.setDisplaySize(this.EXPECTED_DISPLAY_SIZES.base);		
-		
+		this.setDisplaySize(this.EXPECTED_DISPLAY_SIZES.base);
+
 		// @ts-ignore
 		this.setTheme(this.EXPECTED_THEMES.black);
 	}
@@ -40,7 +40,7 @@ export default class TanoshiParagraphModel {
 
 	public setContent(value: string): TanoshiParagraphModel {
 		this._content = value;
-		return this
+		return this;
 	}
 
 	get theme(): string {
@@ -48,12 +48,12 @@ export default class TanoshiParagraphModel {
 	}
 
 	public setTheme(value: string): TanoshiParagraphModel {
-		if(this.EXPECTED_THEMES.hasOwnProperty(value) === false){
-			throw new Error
+		if (this.EXPECTED_THEMES.hasOwnProperty(value) === false) {
+			throw new Error();
 		}
 
 		this._theme = value;
-		return this
+		return this;
 	}
 
 	get displaySize(): string {
@@ -61,13 +61,12 @@ export default class TanoshiParagraphModel {
 	}
 
 	public setDisplaySize(value: string): TanoshiParagraphModel {
-
-		if(this.EXPECTED_DISPLAY_SIZES.hasOwnProperty(value) === false){
-			throw new Error
+		if (this.EXPECTED_DISPLAY_SIZES.hasOwnProperty(value) === false) {
+			throw new Error();
 		}
 
 		this._displaySize = value;
-		return this
+		return this;
 	}
 
 	get hasSpacing(): boolean {
@@ -76,6 +75,6 @@ export default class TanoshiParagraphModel {
 
 	public setHasSpacing(value: boolean): TanoshiParagraphModel {
 		this._hasSpacing = value;
-		return this
+		return this;
 	}
 }

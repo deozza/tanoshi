@@ -2,11 +2,11 @@
 	import './tanoshiContainer.css';
 	import type TanoshiContainerModel from './TanoshiContainerModel';
 
-	export let tanoshiContainerModel: TanoshiContainerModel
-	export let customClasses: string = ''
+	export let tanoshiContainerModel: TanoshiContainerModel;
+	export let customClasses: string = '';
 </script>
 
-<div 
+<div
 	class="
 		flex-container 
 		{tanoshiContainerModel.theme} 
@@ -15,7 +15,6 @@
 		{tanoshiContainerModel.desktopSpacing}
 		{customClasses}
 	"
-	
 >
-	<slot></slot>
+	<slot />
 </div>

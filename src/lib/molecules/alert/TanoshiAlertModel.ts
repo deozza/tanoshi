@@ -1,16 +1,15 @@
 export default class TanoshiAlertModel {
-
-	private _title: string|null = null
-	private _content: string|null = null
-	private _theme: string|null = null
-	private _size: string|null = null
-	private _visible: boolean = true
+	private _title: string | null = null;
+	private _content: string | null = null;
+	private _theme: string | null = null;
+	private _size: string | null = null;
+	private _visible: boolean = true;
 
 	public constructor(content: string, title: string) {
-		this.setTitle(title)
-		this.setContent(content)
-		this.setTheme('primary')
-		this.setSize('block')
+		this.setTitle(title);
+		this.setContent(content);
+		this.setTheme('primary');
+		this.setSize('block');
 	}
 
 	get title(): string {
@@ -19,7 +18,7 @@ export default class TanoshiAlertModel {
 
 	public setTitle(value: string): TanoshiAlertModel {
 		this._title = value;
-		return this
+		return this;
 	}
 
 	get content(): string {
@@ -28,7 +27,7 @@ export default class TanoshiAlertModel {
 
 	public setContent(value: string): TanoshiAlertModel {
 		this._content = value;
-		return this
+		return this;
 	}
 
 	get theme(): string {
@@ -37,9 +36,8 @@ export default class TanoshiAlertModel {
 
 	public setTheme(value: string): TanoshiAlertModel {
 		this._theme = value;
-		return this
+		return this;
 	}
-
 
 	get size(): string {
 		return this._size!;
@@ -47,7 +45,7 @@ export default class TanoshiAlertModel {
 
 	public setSize(value: string): TanoshiAlertModel {
 		this._size = value;
-		return this
+		return this;
 	}
 
 	get visible(): boolean {
@@ -56,6 +54,6 @@ export default class TanoshiAlertModel {
 
 	public setVisible(value: boolean): TanoshiAlertModel {
 		this._visible = value;
-		return this
+		return this;
 	}
 }

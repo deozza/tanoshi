@@ -1,10 +1,10 @@
 <script lang="ts">
-    import './tanoshiTextInput.css';
-    import type TanoshiTextInputModel from './TanoshiTextInputModel';
+	import './tanoshiTextInput.css';
+	import type TanoshiTextInputModel from './TanoshiTextInputModel';
 
-	export let tanoshiTextInputModel: TanoshiTextInputModel
+	export let tanoshiTextInputModel: TanoshiTextInputModel;
 
-    function handleInput(e: any) {
+	function handleInput(e: any) {
 		tanoshiTextInputModel.setValue(e.target.value);
 	}
 </script>

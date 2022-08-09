@@ -1,16 +1,16 @@
 export default class TanoshiButtonModel {
-	private _content: string|null = null
-	private _theme: string|null = null
-	private _type: string|null = null
-	private _size: string|null = null
-	private _isDisabled: boolean = false
-	private _isOutlined: boolean= false
+	private _content: string | null = null;
+	private _theme: string | null = null;
+	private _type: string | null = null;
+	private _size: string | null = null;
+	private _isDisabled: boolean = false;
+	private _isOutlined: boolean = false;
 
 	public constructor(content: string) {
-		this.setContent(content)
-		this.setTheme('primary')
-		this.setType('button')
-		this.setSize('md')
+		this.setContent(content);
+		this.setTheme('primary');
+		this.setType('button');
+		this.setSize('md');
 	}
 
 	get content(): string {
@@ -19,7 +19,7 @@ export default class TanoshiButtonModel {
 
 	public setContent(value: string): TanoshiButtonModel {
 		this._content = value;
-		return this
+		return this;
 	}
 
 	get theme(): string {
@@ -28,7 +28,7 @@ export default class TanoshiButtonModel {
 
 	public setTheme(value: string): TanoshiButtonModel {
 		this._theme = value;
-		return this
+		return this;
 	}
 
 	get type(): string {
@@ -37,7 +37,7 @@ export default class TanoshiButtonModel {
 
 	public setType(value: string): TanoshiButtonModel {
 		this._type = value;
-		return this
+		return this;
 	}
 
 	get size(): string {
@@ -46,9 +46,8 @@ export default class TanoshiButtonModel {
 
 	public setSize(value: string): TanoshiButtonModel {
 		this._size = value;
-		return this
+		return this;
 	}
-
 
 	get isDisabled(): boolean {
 		return this._isDisabled;
@@ -56,7 +55,7 @@ export default class TanoshiButtonModel {
 
 	public setIsDisabled(value: boolean): TanoshiButtonModel {
 		this._isDisabled = value;
-		return this
+		return this;
 	}
 
 	get isOutlined(): boolean {
@@ -65,6 +64,6 @@ export default class TanoshiButtonModel {
 
 	public setIsOutlined(value: boolean): TanoshiButtonModel {
 		this._isOutlined = value;
-		return this
+		return this;
 	}
 }

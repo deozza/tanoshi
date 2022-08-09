@@ -1,5 +1,5 @@
-describe("Test if Jest is working", () => {
-    test("Welcome", () => {});
+describe('Test if Jest is working', () => {
+	test('Welcome', () => {});
 });
 
-export{}
+export {};
