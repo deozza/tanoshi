@@ -11,9 +11,6 @@ jobs:
   lint-and-test:
     runs-on: ubuntu-latest
     
-    if: ${{ always() }}
-    needs: [lint]
-
     strategy:
       matrix:
         node-version: [16.x, 14.x]
