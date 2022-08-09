@@ -21,12 +21,11 @@ jobs:
     - uses: butlerlogic/action-autotag@stable
       with:
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-
   netlify-release:
     if: ${{ always() }}
     needs: [tagging]
 
-    uses: ./.github/workflows/workflow-netfliy.yml
+    uses: ./.github/workflows/workflow-netlify.yml
 
   npm-release:
     if: ${{ always() }}
