@@ -26,7 +26,7 @@ jobs:
     if: ${{ always() }}
     needs: [tagging]
 
-    uses: ./.github/workflows/workflow-netfliy.yml
+    uses: ./.github/workflows/workflow-netlify.yml
 
   npm-release:
     if: ${{ always() }}
