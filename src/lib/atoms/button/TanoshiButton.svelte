@@ -1,5 +1,3 @@
-<svelte:options tag="tanoshi-button" />
-
 <script lang="ts">
 	import './tanoshiButton.css';
 	import type TanoshiButtonModel from './TanoshiButtonModel';
