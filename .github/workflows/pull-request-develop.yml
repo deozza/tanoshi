@@ -1,0 +1,9 @@
+name: Develop branch workflow
+
+on:
+  pull_request:
+    branches: [ "develop" ]
+
+jobs:
+  testing:
+    uses: ./.github/workflows/workflow-tests.yml
