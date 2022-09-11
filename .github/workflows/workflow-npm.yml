@@ -31,10 +31,9 @@ jobs:
       with:
         node-version: '16.x'
         registry-url: 'https://registry.npmjs.org'
+        token: '["NPM_TOKEN"]'
     - run: npm run package
     - run: npm publish ./package --access public
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      with:
-        token: '["NPM_TOKEN"]'
 
