@@ -6,16 +6,5 @@ on:
 
 jobs:
 
-  npm-deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - uses: ./workflow-npm.yml
-  
-  netflify-deploy:
-    if: ${{ always() }}
-    needs: [npm-deploy]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: ./workflow-netlify.yml
+  npm-and-netlify-deploy:
+    uses: ./.github/workflows/workflow-npm.yml
