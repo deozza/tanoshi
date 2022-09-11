@@ -17,25 +17,23 @@ export default class TanoshiContainerModel {
 		info: 'info'
 	};
 
-
 	readonly EXPECTED_SIZES: object = {
-		'w-full': 'w-full',
+		'w-full': 'w-full'
 	};
 
 	readonly EXPECTED_ORIENTATIONS: object = {
-		'c': 'c',
-		'r': 'r',
+		c: 'c',
+		r: 'r'
 	};
 
 	readonly EXPECTED_SPACING: object = {
-		'start': 'start',
-		'centered': 'centered',
-		'end': 'end',
-		'between': 'between',
-		'around': 'around',
-		'evenly': 'evenly'
+		start: 'start',
+		centered: 'centered',
+		end: 'end',
+		between: 'between',
+		around: 'around',
+		evenly: 'evenly'
 	};
-
 
 	public constructor(desktopOrientation: string) {
 		this.setDesktopOrientation(desktopOrientation);

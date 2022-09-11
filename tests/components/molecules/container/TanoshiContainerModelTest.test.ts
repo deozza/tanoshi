@@ -7,7 +7,6 @@ test('default values are valid', () => {
 	expect(defaultContainer.theme).toEqual('transparent');
 });
 
-
 test('expect Exception when displaySize is invalid', () => {
 	const defaultContainer: TanoshiContainerModel = new TanoshiContainerModel('c');
 

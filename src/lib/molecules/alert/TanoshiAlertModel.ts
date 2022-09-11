@@ -24,10 +24,10 @@ export default class TanoshiAlertModel {
 	public constructor(title: string, content: string) {
 		this.setTitle(title);
 		this.setContent(content);
-		
+
 		// @ts-ignore
 		this.setTheme(this.EXPECTED_THEMES.primary);
-		
+
 		// @ts-ignore
 		this.setSize(this.EXPECTED_SIZES.block);
 	}

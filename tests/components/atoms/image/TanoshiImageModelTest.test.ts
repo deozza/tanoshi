@@ -10,14 +10,12 @@ test('default values are valid', () => {
 });
 
 test('expect Exception when content size is invalid', () => {
-
 	expect(() => {
 		const defaultImage: TanoshiImageModel = new TanoshiImageModel('', 'description');
 	}).toThrow();
 });
 
 test('expect Exception when alt size is invalid', () => {
-
 	expect(() => {
 		const defaultImage: TanoshiImageModel = new TanoshiImageModel('path', '');
 	}).toThrow();

@@ -16,7 +16,7 @@ export default class TanoshiPillModel {
 	readonly EXPECTED_SIZES: object = {
 		sm: 'sm',
 		md: 'md',
-		lg: 'lg',
+		lg: 'lg'
 	};
 
 	constructor(content: string) {

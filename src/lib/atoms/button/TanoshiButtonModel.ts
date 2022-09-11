@@ -25,7 +25,7 @@ export default class TanoshiButtonModel {
 	readonly EXPECTED_TYPES: object = {
 		button: 'button',
 		submit: 'submit',
-		reset: 'reset',
+		reset: 'reset'
 	};
 
 	public constructor(content: string) {
@@ -33,10 +33,10 @@ export default class TanoshiButtonModel {
 
 		// @ts-ignore
 		this.setTheme(this.EXPECTED_THEMES.primary);
-	
+
 		// @ts-ignore
 		this.setType(this.EXPECTED_TYPES.button);
-	
+
 		// @ts-ignore
 		this.setSize(this.EXPECTED_SIZES.md);
 	}

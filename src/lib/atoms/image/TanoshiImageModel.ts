@@ -26,7 +26,7 @@ export default class TanoshiImageModel {
 	}
 
 	public setContent(value: string): TanoshiImageModel {
-		if(value.length <= 0){
+		if (value.length <= 0) {
 			throw new Error();
 		}
 
@@ -39,7 +39,7 @@ export default class TanoshiImageModel {
 	}
 
 	public setAlt(value: string): TanoshiImageModel {
-		if(value.length <= 0){
+		if (value.length <= 0) {
 			throw new Error();
 		}
 

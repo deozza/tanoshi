@@ -16,8 +16,8 @@ export default class TanoshiNavigationModel {
 	};
 
 	readonly EXPECTED_ORIENTATIONS: object = {
-		'vertical': 'vertical',
-		'horizontal': 'horizontal',
+		vertical: 'vertical',
+		horizontal: 'horizontal'
 	};
 
 	public constructor() {
@@ -27,7 +27,7 @@ export default class TanoshiNavigationModel {
 		// @ts-ignore
 		this.setOrientation(this.EXPECTED_ORIENTATIONS.horizontal);
 	}
-	
+
 	get items(): Array<TanoshiLinkModel> {
 		return this._items;
 	}
