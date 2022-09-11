@@ -4,10 +4,29 @@ export default class TanoshiPillModel {
 	private _isOutlined: boolean = false;
 	private _size!: string;
 
+	readonly EXPECTED_THEMES: object = {
+		primary: 'primary',
+		secondary: 'secondary',
+		success: 'success',
+		warning: 'warning',
+		danger: 'danger',
+		info: 'info'
+	};
+
+	readonly EXPECTED_SIZES: object = {
+		sm: 'sm',
+		md: 'md',
+		lg: 'lg'
+	};
+
 	constructor(content: string) {
 		this.setContent(content);
-		this.setTheme('primary');
-		this.setSize('md');
+
+		// @ts-ignore
+		this.setTheme(this.EXPECTED_THEMES.primary);
+
+		// @ts-ignore
+		this.setSize(this.EXPECTED_SIZES.md);
 	}
 
 	get content(): string {
@@ -19,12 +38,16 @@ export default class TanoshiPillModel {
 		return this;
 	}
 
-	get style(): string {
+	get theme(): string {
 		return this._theme;
 	}
 
-	public setTheme(theme: string): TanoshiPillModel {
-		this._theme = theme;
+	public setTheme(value: string): TanoshiPillModel {
+		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_THEMES, value) === false) {
+			throw new Error();
+		}
+
+		this._theme = value;
 		return this;
 	}
 
@@ -42,6 +65,10 @@ export default class TanoshiPillModel {
 	}
 
 	public setSize(value: string): TanoshiPillModel {
+		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_SIZES, value) === false) {
+			throw new Error();
+		}
+
 		this._size = value;
 		return this;
 	}

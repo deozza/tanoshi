@@ -6,11 +6,39 @@ export default class TanoshiButtonModel {
 	private _isDisabled: boolean = false;
 	private _isOutlined: boolean = false;
 
+	readonly EXPECTED_THEMES: object = {
+		primary: 'primary',
+		secondary: 'secondary',
+		success: 'success',
+		warning: 'warning',
+		danger: 'danger',
+		info: 'info'
+	};
+
+	readonly EXPECTED_SIZES: object = {
+		sm: 'sm',
+		md: 'md',
+		lg: 'lg',
+		block: 'block'
+	};
+
+	readonly EXPECTED_TYPES: object = {
+		button: 'button',
+		submit: 'submit',
+		reset: 'reset'
+	};
+
 	public constructor(content: string) {
 		this.setContent(content);
-		this.setTheme('primary');
-		this.setType('button');
-		this.setSize('md');
+
+		// @ts-ignore
+		this.setTheme(this.EXPECTED_THEMES.primary);
+
+		// @ts-ignore
+		this.setType(this.EXPECTED_TYPES.button);
+
+		// @ts-ignore
+		this.setSize(this.EXPECTED_SIZES.md);
 	}
 
 	get content(): string {
@@ -27,6 +55,10 @@ export default class TanoshiButtonModel {
 	}
 
 	public setTheme(value: string): TanoshiButtonModel {
+		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_THEMES, value) === false) {
+			throw new Error();
+		}
+
 		this._theme = value;
 		return this;
 	}
@@ -36,6 +68,9 @@ export default class TanoshiButtonModel {
 	}
 
 	public setType(value: string): TanoshiButtonModel {
+		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_TYPES, value) === false) {
+			throw new Error();
+		}
 		this._type = value;
 		return this;
 	}
@@ -45,6 +80,9 @@ export default class TanoshiButtonModel {
 	}
 
 	public setSize(value: string): TanoshiButtonModel {
+		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_SIZES, value) === false) {
+			throw new Error();
+		}
 		this._size = value;
 		return this;
 	}

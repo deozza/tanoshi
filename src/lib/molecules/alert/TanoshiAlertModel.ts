@@ -5,11 +5,31 @@ export default class TanoshiAlertModel {
 	private _size!: string;
 	private _visible: boolean = true;
 
-	public constructor(content: string, title: string) {
+	readonly EXPECTED_THEMES: object = {
+		primary: 'primary',
+		secondary: 'secondary',
+		success: 'success',
+		warning: 'warning',
+		danger: 'danger',
+		info: 'info'
+	};
+
+	readonly EXPECTED_SIZES: object = {
+		sm: 'sm',
+		md: 'md',
+		lg: 'lg',
+		block: 'block'
+	};
+
+	public constructor(title: string, content: string) {
 		this.setTitle(title);
 		this.setContent(content);
-		this.setTheme('primary');
-		this.setSize('block');
+
+		// @ts-ignore
+		this.setTheme(this.EXPECTED_THEMES.primary);
+
+		// @ts-ignore
+		this.setSize(this.EXPECTED_SIZES.block);
 	}
 
 	get title(): string {
@@ -35,6 +55,10 @@ export default class TanoshiAlertModel {
 	}
 
 	public setTheme(value: string): TanoshiAlertModel {
+		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_THEMES, value) === false) {
+			throw new Error();
+		}
+
 		this._theme = value;
 		return this;
 	}
@@ -44,6 +68,9 @@ export default class TanoshiAlertModel {
 	}
 
 	public setSize(value: string): TanoshiAlertModel {
+		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_SIZES, value) === false) {
+			throw new Error();
+		}
 		this._size = value;
 		return this;
 	}
