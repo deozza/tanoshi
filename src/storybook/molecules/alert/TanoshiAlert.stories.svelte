@@ -9,43 +9,43 @@
 
 	const defaultColumnContainer = new TanoshiContainerModel('c');
 
-	const defaultAlert = new TanoshiAlertModel('This is an alert', 'Hey you got a notification');
+	const defaultAlert = new TanoshiAlertModel('Hey you got a notification', 'This is an alert');
 	const secondaryAlert = new TanoshiAlertModel(
-		'This is an alert',
-		'Hey you got a notification'
+		'Hey you got a notification',
+		'This is an alert'
 	).setTheme('secondary');
 	const infoAlert = new TanoshiAlertModel(
-		'This is an alert',
-		'Hey you got a notification'
+		'Hey you got a notification',
+		'This is an alert'
 	).setTheme('info');
 	const successAlert = new TanoshiAlertModel(
-		'This is an alert',
-		'Hey you got a notification'
+		'Hey you got a notification',
+		'This is an alert'
 	).setTheme('success');
 	const warningAlert = new TanoshiAlertModel(
-		'This is an alert',
-		'Hey you got a notification'
+		'Hey you got a notification',
+		'This is an alert'
 	).setTheme('warning');
 	const dangerAlert = new TanoshiAlertModel(
-		'This is an alert',
-		'Hey you got a notification'
+		'Hey you got a notification',
+		'This is an alert'
 	).setTheme('danger');
 
 	const smallAlert = new TanoshiAlertModel(
-		'This is an alert',
-		'Hey you got a notification'
+		'Hey you got a notification',
+		'This is an alert'
 	).setSize('sm');
 	const regularAlert = new TanoshiAlertModel(
-		'This is an alert',
-		'Hey you got a notification'
+		'Hey you got a notification',
+		'This is an alert'
 	).setSize('md');
 	const largeAlert = new TanoshiAlertModel(
-		'This is an alert',
-		'Hey you got a notification'
+		'Hey you got a notification',
+		'This is an alert'
 	).setSize('lg');
 	const blockAlert = new TanoshiAlertModel(
-		'This is an alert',
-		'Hey you got a notification'
+		'Hey you got a notification',
+		'This is an alert'
 	).setSize('block');
 </script>
 
