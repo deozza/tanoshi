@@ -1,15 +1,51 @@
 export default class TanoshiContainerModel {
-	private _theme: string = 'transparent';
+	private _theme!: string;
 	private _size: string = 'w-full';
 	private _backgroundImage: string | null = null;
 	private _desktopOrientation!: string;
 	private _mobileOrientation!: string;
-	private _desktopSpacing: string = 'centered';
-	private _mobileSpacing: string = 'centered';
+	private _desktopSpacing!: string;
+	private _mobileSpacing!: string;
+
+	readonly EXPECTED_THEMES: object = {
+		transparent: 'transparent',
+		primary: 'primary',
+		secondary: 'secondary',
+		success: 'success',
+		warning: 'warning',
+		danger: 'danger',
+		info: 'info'
+	};
+
+
+	readonly EXPECTED_SIZES: object = {
+		'w-full': 'w-full',
+	};
+
+	readonly EXPECTED_ORIENTATIONS: object = {
+		'c': 'c',
+		'r': 'r',
+	};
+
+	readonly EXPECTED_SPACING: object = {
+		'start': 'start',
+		'centered': 'centered',
+		'end': 'end',
+		'between': 'between',
+		'around': 'around',
+		'evenly': 'evenly'
+	};
+
 
 	public constructor(desktopOrientation: string) {
 		this.setDesktopOrientation(desktopOrientation);
 		this.setMobileOrientation(desktopOrientation);
+
+		// @ts-ignore
+		this.setTheme(this.EXPECTED_THEMES.transparent);
+
+		// @ts-ignore
+		this.setSize(this.EXPECTED_SIZES['w-full']);
 	}
 
 	get theme(): string {
@@ -17,6 +53,10 @@ export default class TanoshiContainerModel {
 	}
 
 	public setTheme(value: string): TanoshiContainerModel {
+		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_THEMES, value) === false) {
+			throw new Error();
+		}
+
 		this._theme = value;
 		return this;
 	}
@@ -26,6 +66,9 @@ export default class TanoshiContainerModel {
 	}
 
 	public setSize(value: string): TanoshiContainerModel {
+		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_SIZES, value) === false) {
+			throw new Error();
+		}
 		this._size = value;
 		return this;
 	}
@@ -45,6 +88,9 @@ export default class TanoshiContainerModel {
 	}
 
 	public setDesktopOrientation(value: string): TanoshiContainerModel {
+		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_ORIENTATIONS, value) === false) {
+			throw new Error();
+		}
 		this._desktopOrientation = value;
 		return this;
 	}
@@ -54,6 +100,9 @@ export default class TanoshiContainerModel {
 	}
 
 	public setMobileOrientation(value: string): TanoshiContainerModel {
+		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_ORIENTATIONS, value) === false) {
+			throw new Error();
+		}
 		this._mobileOrientation = value;
 		return this;
 	}
@@ -63,6 +112,9 @@ export default class TanoshiContainerModel {
 	}
 
 	public setDesktopSpacing(value: string): TanoshiContainerModel {
+		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_SPACING, value) === false) {
+			throw new Error();
+		}
 		this._desktopSpacing = value;
 		return this;
 	}
@@ -72,6 +124,9 @@ export default class TanoshiContainerModel {
 	}
 
 	public setMobileSpacing(value: string): TanoshiContainerModel {
+		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_SPACING, value) === false) {
+			throw new Error();
+		}
 		this._mobileSpacing = value;
 		return this;
 	}
