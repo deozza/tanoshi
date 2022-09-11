@@ -18,3 +18,5 @@ jobs:
       - run: npm publish ./package --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        with:
+          secrets: '["NPM_TOKEN"]'
