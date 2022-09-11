@@ -14,7 +14,7 @@ jobs:
   
   netflify-deploy:
     if: ${{ always() }}
-    needs: [testing]
+    needs: [npm-deploy]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
