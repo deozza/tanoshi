@@ -9,5 +9,5 @@ jobs:
   npm-and-netlify-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: .github/workflows/workflow-npm.yml
+      - uses: ./.github/workflows/workflow-npm.yml
       - uses: ./.github/workflows/workflow-netlify.yml
