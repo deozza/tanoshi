@@ -24,7 +24,7 @@ jobs:
         key: modules-${{ hashFiles('package-lock.json') }}
 
     - name: Build storybook
-      run: npm run build-storybook
+      run: npm ci; npm run build-storybook
     
     - name: Deploy to netlify
       uses: netlify/actions/cli@master
@@ -33,4 +33,4 @@ jobs:
         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
       with:
         args: deploy --dir=storybook-static --prod
-        secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
+
