@@ -14,7 +14,9 @@ export default class TanoshiContainerModel {
 		success: 'success',
 		warning: 'warning',
 		danger: 'danger',
-		info: 'info'
+		info: 'info',
+		light: 'light',
+		dark: 'dark'
 	};
 
 	readonly EXPECTED_SIZES: object = {
