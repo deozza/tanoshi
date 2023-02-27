@@ -6,4 +6,7 @@ node_modules
 .env
 .env.*
 !.env.example
-/coverage
+.vercel
+.output
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*

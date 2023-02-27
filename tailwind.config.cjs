@@ -1,11 +1,9 @@
 const colors = require('tailwindcss/colors');
 
-const config = {
-	mode: 'jit',
-	content: ['./src/**/*.{html,js,svelte,ts}'],
-	darkMode: 'media', // or 'media' or 'class'
-
-	theme: {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ['./src/**/*.{html,js,svelte,ts}'],
+  theme: {
 		extend: {
 			colors: {
 				primary: colors.blue[500],
@@ -23,8 +21,5 @@ const config = {
 			}
 		}
 	},
-
-	plugins: []
-};
-
-module.exports = config;
+  plugins: [],
+}
