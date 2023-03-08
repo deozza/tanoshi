@@ -1,4 +1,6 @@
-import TanoshiButtonModel from '$lib/atoms/button/TanoshiButtonModel';
+import { test, expect } from 'vitest'
+
+import TanoshiButtonModel from '$atoms/button/TanoshiButtonModel';
 
 test('default values are valid', () => {
 	const defaultButton: TanoshiButtonModel = new TanoshiButtonModel('');

@@ -1,4 +1,6 @@
-import TanoshiPillModel from '$lib/atoms/pill/TanoshiPillModel';
+import { test, expect } from 'vitest'
+
+import TanoshiPillModel from '$atoms/pill/TanoshiPillModel';
 
 test('default values are valid', () => {
 	const defaultPill: TanoshiPillModel = new TanoshiPillModel('');

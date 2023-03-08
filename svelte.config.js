@@ -13,10 +13,8 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter(),
 		alias: {
-			"$lib/atoms": "./src/lib/atoms",
-			"$lib/molecules": "./src/lib/molecules",
-			"$lib": "./src/lib",
-			"$lib/*": "./src/lib/*"
+			"$atoms": "./src/lib/atoms",
+			"$molecules": "./src/lib/molecules",
 		}
 	}
 };
