@@ -11,6 +11,12 @@ export default defineConfig({
 		}
 	},
 	test: {
-		include: ['tests/**/*.{test,spec}.{js,ts}']
+		include: ['tests/**/*.{test,spec}.{js,ts}'],
+		coverage: {
+			provider: 'c8',
+			reporter: ['html'],
+			reportsDirectory: './tests/coverage'
+		}
+		
 	}
 });
