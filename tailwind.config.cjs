@@ -2,7 +2,32 @@ const colors = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  mode: 'jit',
   content: ['./src/**/*.{html,js,svelte,ts}'],
+  safelist: [
+	'text-sm',
+	'text-md',
+	'text-lg',
+	'text-xl',
+	'text-2xl',
+	'text-3xl',
+	'h-black',
+	'h-white',
+	'h-primary',
+	'h-secondary',
+	'h-info',
+	'h-success',
+	'h-warning',
+	'h-danger',
+	'p-black',
+	'p-white',
+	'p-primary',
+	'p-secondary',
+	'p-info',
+	'p-success',
+	'p-warning',
+	'p-danger',
+  ],
   theme: {
 		extend: {
 			colors: {

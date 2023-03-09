@@ -11,7 +11,7 @@
 	}
 
 	.h-primary {
-		@apply text-secondary-dark;
+		@apply text-primary-dark;
 	}
 
 	.h-secondary {
