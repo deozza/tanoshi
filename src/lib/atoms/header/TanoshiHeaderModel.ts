@@ -1,6 +1,7 @@
 export default class TanoshiHeaderModel {
 	private _content!: string;
 	private _displaySize!: string;
+	private _alignment!: string;
 	private _htmlSize!: string;
 	private _theme!: string;
 
@@ -36,6 +37,13 @@ export default class TanoshiHeaderModel {
 		info: 'info'
 	};
 
+	readonly EXPECTED_ALIGNMENT: object = {
+		left: 'left',
+		center: 'center',
+		right: 'right',
+		justify: 'justify',
+	};
+
 	constructor(content: string) {
 		this.setContent(content);
 
@@ -47,6 +55,9 @@ export default class TanoshiHeaderModel {
 
 		// @ts-ignore
 		this.setTheme(this.EXPECTED_THEMES.black);
+
+		// @ts-ignore
+		this.setAligment(this.EXPECTED_ALIGNMENT.left);
 	}
 
 	get content(): string {
@@ -94,6 +105,19 @@ export default class TanoshiHeaderModel {
 		}
 
 		this._htmlSize = value;
+		return this;
+	}
+
+	get aligment(): string {
+		return this._alignment;
+	}
+
+	public setAligment(value: string): TanoshiHeaderModel {
+		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_ALIGNMENT, value) === false) {
+			throw new Error();
+		}
+
+		this._alignment = value;
 		return this;
 	}
 }

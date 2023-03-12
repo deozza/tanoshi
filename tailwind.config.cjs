@@ -42,6 +42,7 @@ module.exports = {
 	'items-start',
 	'items-end',
 	'items-end',
+	'text-center'
 
   ],
   theme: {
