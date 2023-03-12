@@ -6,7 +6,7 @@
 </script>
 
 <p
-	class="text-{tanoshiParagraphModel.displaySize} p-{tanoshiParagraphModel.theme}"
+	class="text-{tanoshiParagraphModel.displaySize} p-{tanoshiParagraphModel.theme} text-{tanoshiParagraphModel.aligment}"
 	class:my-6={tanoshiParagraphModel.hasSpacing}
 >
 	{@html tanoshiParagraphModel.content}

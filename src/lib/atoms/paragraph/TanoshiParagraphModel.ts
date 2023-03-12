@@ -1,6 +1,7 @@
 export default class TanoshiParagraphModel {
 	private _content!: string;
 	private _displaySize!: string;
+	private _alignment!: string;
 	private _theme!: string;
 	private _hasSpacing: boolean = true;
 
@@ -24,6 +25,13 @@ export default class TanoshiParagraphModel {
 		info: 'info'
 	};
 
+	readonly EXPECTED_ALIGNMENT: object = {
+		left: 'left',
+		center: 'center',
+		right: 'right',
+		justify: 'justify',
+	};
+
 	constructor(content: string) {
 		this.setContent(content);
 
@@ -32,6 +40,9 @@ export default class TanoshiParagraphModel {
 
 		// @ts-ignore
 		this.setTheme(this.EXPECTED_THEMES.black);
+
+		// @ts-ignore
+		this.setAligment(this.EXPECTED_ALIGNMENT.left);
 	}
 
 	get content(): string {
@@ -75,6 +86,19 @@ export default class TanoshiParagraphModel {
 
 	public setHasSpacing(value: boolean): TanoshiParagraphModel {
 		this._hasSpacing = value;
+		return this;
+	}
+	
+	get aligment(): string {
+		return this._alignment;
+	}
+
+	public setAligment(value: string): TanoshiParagraphModel {
+		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_ALIGNMENT, value) === false) {
+			throw new Error();
+		}
+
+		this._alignment = value;
 		return this;
 	}
 }
