@@ -11,6 +11,10 @@
 	p.p-white {
 		@apply text-white;
 	}
+	
+	p.p-primary {
+		@apply text-primary-dark;
+	}
 
 	p.p-secondary {
 		@apply text-secondary-dark;

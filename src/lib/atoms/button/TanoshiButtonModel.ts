@@ -12,7 +12,9 @@ export default class TanoshiButtonModel {
 		success: 'success',
 		warning: 'warning',
 		danger: 'danger',
-		info: 'info'
+		info: 'info',
+		dark: 'dark',
+		light: 'light'
 	};
 
 	readonly EXPECTED_SIZES: object = {

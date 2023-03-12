@@ -1,4 +1,6 @@
-import TanoshiLinkModel from '$lib/atoms/link/TanoshiLinkModel';
+import { test, expect } from 'vitest'
+
+import TanoshiLinkModel from '$atoms/link/TanoshiLinkModel';
 
 test('default values are valid', () => {
 	const defaultLink: TanoshiLinkModel = new TanoshiLinkModel('');

@@ -6,6 +6,7 @@ export default class TanoshiContainerModel {
 	private _mobileOrientation!: string;
 	private _desktopSpacing!: string;
 	private _mobileSpacing!: string;
+	private _itemsAlignment!: string;
 
 	readonly EXPECTED_THEMES: object = {
 		transparent: 'transparent',
@@ -17,10 +18,6 @@ export default class TanoshiContainerModel {
 		info: 'info',
 		light: 'light',
 		dark: 'dark'
-	};
-
-	readonly EXPECTED_SIZES: object = {
-		'w-full': 'w-full'
 	};
 
 	readonly EXPECTED_ORIENTATIONS: object = {
@@ -37,15 +34,23 @@ export default class TanoshiContainerModel {
 		evenly: 'evenly'
 	};
 
+	readonly EXPECTED_ALIGNMENT: object = {
+		start: 'start',
+		center: 'center',
+		end: 'end',
+		stretch: 'stretch',
+		baseline: 'baseline',
+	};
+
 	public constructor(desktopOrientation: string) {
+		// @ts-ignore
+		this.setItemsAlignment(this.EXPECTED_ALIGNMENT['start']);
+		
 		this.setDesktopOrientation(desktopOrientation);
 		this.setMobileOrientation(desktopOrientation);
 
 		// @ts-ignore
 		this.setTheme(this.EXPECTED_THEMES.transparent);
-
-		// @ts-ignore
-		this.setSize(this.EXPECTED_SIZES['w-full']);
 	}
 
 	get theme(): string {
@@ -60,15 +65,11 @@ export default class TanoshiContainerModel {
 		this._theme = value;
 		return this;
 	}
-
 	get size(): string {
 		return this._size;
 	}
 
 	public setSize(value: string): TanoshiContainerModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_SIZES, value) === false) {
-			throw new Error();
-		}
 		this._size = value;
 		return this;
 	}
@@ -116,6 +117,19 @@ export default class TanoshiContainerModel {
 			throw new Error();
 		}
 		this._desktopSpacing = value;
+		return this;
+	}
+
+
+	get itemsAlignment(): string {
+		return this._itemsAlignment;
+	}
+
+	public setItemsAlignment(value: string): TanoshiContainerModel {
+		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_ALIGNMENT, value) === false) {
+			throw new Error();
+		}
+		this._itemsAlignment = value;
 		return this;
 	}
 

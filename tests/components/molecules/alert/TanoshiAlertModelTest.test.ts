@@ -1,4 +1,6 @@
-import TanoshiAlertModel from '$lib/molecules/alert/TanoshiAlertModel';
+import { test, expect } from 'vitest'
+
+import TanoshiAlertModel from '$molecules/alert/TanoshiAlertModel';
 
 test('default values are valid', () => {
 	const defaultAlert: TanoshiAlertModel = new TanoshiAlertModel('', '');

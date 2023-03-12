@@ -1,4 +1,6 @@
-import TanoshiImageModel from '$lib/atoms/image/TanoshiImageModel';
+import { test, expect } from 'vitest'
+
+import TanoshiImageModel from '$atoms/image/TanoshiImageModel';
 
 test('default values are valid', () => {
 	const defaultImage: TanoshiImageModel = new TanoshiImageModel('path', 'description');

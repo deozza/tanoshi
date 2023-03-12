@@ -1,4 +1,6 @@
-import TanoshiContainerModel from '$lib/molecules/container/TanoshiContainerModel';
+import { test, expect } from 'vitest'
+
+import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel';
 
 test('default values are valid', () => {
 	const defaultContainer: TanoshiContainerModel = new TanoshiContainerModel('c');

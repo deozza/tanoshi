@@ -1,4 +1,6 @@
-import TanoshiHeaderModel from '$lib/atoms/header/TanoshiHeaderModel';
+import { test, expect } from 'vitest'
+
+import TanoshiHeaderModel from '$atoms/header/TanoshiHeaderModel';
 
 test('default values are valid', () => {
 	const defaultHeader: TanoshiHeaderModel = new TanoshiHeaderModel('');

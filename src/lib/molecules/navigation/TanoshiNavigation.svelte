@@ -2,7 +2,7 @@
 	import { onMount, onDestroy } from 'svelte';
 
 	import Fa from 'svelte-fa/src/fa.svelte';
-	import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons/index.es';
+	import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons/index.js';
 
 	import './tanoshiNavigation.css';
 	import type TanoshiNavigationModel from './TanoshiNavigationModel';
@@ -30,9 +30,7 @@
 		desktopNavigationContainer.setDesktopOrientation('c');
 	}
 
-	const mobileMenuButton: TanoshiButtonModel = new TanoshiButtonModel('').setTheme(
-		tanoshiNavigationModel.theme
-	);
+	const mobileMenuButton: TanoshiButtonModel = new TanoshiButtonModel('').setTheme(tanoshiNavigationModel.theme);
 
 	let showMobileMenu: boolean = false;
 
@@ -49,7 +47,7 @@
 	}
 </script>
 
-<nav class="z-10 inset-0 fixed hidden sm:block">
+<nav class="z-10 sticky inset-0 sm:block">
 	<TanoshiContainer
 		tanoshiContainerModel={desktopNavigationContainer}
 		customClasses={tanoshiNavigationModel.orientation === 'horizontal'
