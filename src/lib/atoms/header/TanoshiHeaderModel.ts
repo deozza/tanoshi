@@ -10,7 +10,10 @@ export default class TanoshiHeaderModel {
 		lg: 'lg',
 		xl: 'xl',
 		'2xl': '2xl',
-		'3xl': '3xl'
+		'3xl': '3xl',
+		'4xl': '4xl',
+		'5xl': '5xl',
+		'6xl': '6xl',
 	};
 
 	readonly EXPECTED_HTML_SIZES: object = {
