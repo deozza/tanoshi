@@ -23,15 +23,15 @@
 
     const heroSectionBackgroundModel = new TanoshiContainerModel('r').setTheme('primary').setDesktopSpacing('centered')
     const heroSectionContentModel = new TanoshiContainerModel('c').setDesktopSpacing('centered').setItemsAlignment('center')
-    const heroHeaderModel = new TanoshiHeaderModel('Dramatically Engage').setDisplaySize('6xl').setHtmlSize('h1')
-    const heroParagraphModel = new TanoshiParagraphModel('Objectively innovate empowered manufactured products whereas parallel platforms').setDisplaySize('lg').setHasSpacing(false)
+    const heroHeaderModel = new TanoshiHeaderModel('Dramatically Engage').setDisplaySize('6xl').setHtmlSize('h1').setAligment('center')
+    const heroParagraphModel = new TanoshiParagraphModel('Objectively innovate empowered manufactured products whereas parallel platforms').setDisplaySize('lg').setHasSpacing(false).setAligment('center')
     const heroButtonModel = new TanoshiButtonModel('Engage Now').setTheme('success').setSize('md')
 
     const collaborationSectionAlignementModel = new TanoshiContainerModel('c').setDesktopSpacing('centered').setItemsAlignment('center')
-    const collaborationSectionContentModel = new TanoshiContainerModel('c').setDesktopSpacing('centered').setItemsAlignment('center').setSize('w-8/12')
+    const collaborationSectionContentModel = new TanoshiContainerModel('c').setDesktopSpacing('centered').setItemsAlignment('center').setSize('sm:w-8/12')
     const collaborationSectionHeaderModel = new TanoshiContainerModel('r').setDesktopSpacing('centered').setItemsAlignment('end')
     const cardListSectionModel = new TanoshiContainerModel('r').setDesktopSpacing('between')
-    const cardSectionModel = new TanoshiContainerModel('c').setDesktopSpacing('centered').setItemsAlignment('center').setSize('w-1/3')
+    const cardSectionModel = new TanoshiContainerModel('c').setDesktopSpacing('centered').setItemsAlignment('center').setSize('sm:w-1/3')
  
     const collaborationHeaderModel = new TanoshiHeaderModel('Superior Collaboration').setDisplaySize('3xl').setHtmlSize('h2')
     const collaborationSubHeaderModel = new TanoshiHeaderModel('Visualize Quality').setDisplaySize('2xl').setHtmlSize('h2')
