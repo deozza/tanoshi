@@ -11,6 +11,9 @@ module.exports = {
 	'text-xl',
 	'text-2xl',
 	'text-3xl',
+	'text-4xl',
+	'text-5xl',
+	'text-6xl',
 	'h-black',
 	'h-white',
 	'h-primary',
@@ -27,6 +30,19 @@ module.exports = {
 	'p-success',
 	'p-warning',
 	'p-danger',
+	'a-black',
+	'a-white',
+	'a-primary',
+	'a-secondary',
+	'a-info',
+	'a-success',
+	'a-warning',
+	'a-danger',
+	'items-center',
+	'items-start',
+	'items-end',
+	'items-end',
+
   ],
   theme: {
 		extend: {
@@ -42,7 +58,9 @@ module.exports = {
 				danger: colors.red[500],
 				'danger-dark': colors.red[600],
 				info: colors.cyan[300],
-				'info-dark': colors.cyan[400]
+				'info-dark': colors.cyan[400],
+				'white-dark': colors.slate[500],
+				'black-dark': colors.slate[500]
 			}
 		}
 	},
