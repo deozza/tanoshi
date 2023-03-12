@@ -6,6 +6,8 @@ export default class TanoshiNavigationModel {
 	private _theme!: string;
 
 	readonly EXPECTED_THEMES: object = {
+		dark: 'dark',
+		light: 'light',
 		transparent: 'transparent',
 		primary: 'primary',
 		secondary: 'secondary',
