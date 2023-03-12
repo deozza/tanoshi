@@ -10,9 +10,10 @@
 	class="
 		flex-container 
 		{tanoshiContainerModel.theme} 
-		{tanoshiContainerModel.size} 
 		flex-{tanoshiContainerModel.desktopOrientation} 
 		{tanoshiContainerModel.desktopSpacing}
+		items-{tanoshiContainerModel.itemsAlignment}
+		{tanoshiContainerModel.size}
 		{customClasses}
 	"
 >
