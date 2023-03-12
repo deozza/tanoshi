@@ -23,7 +23,7 @@
 	}
 
 	.btn.btn-primary {
-		@apply bg-primary hover:bg-white text-white hover:text-primary-dark hover:border-primary-dark;
+		@apply bg-primary hover:bg-white text-white hover:text-primary-dark border-primary hover:border-primary-dark;
 	}
 
 	.btn.btn-primary.btn-outlined {
@@ -31,7 +31,7 @@
 	}
 
 	.btn.btn-secondary {
-		@apply bg-secondary-dark hover:bg-white text-white hover:text-secondary-dark hover:border-secondary-dark;
+		@apply bg-secondary-dark hover:bg-white text-white hover:text-secondary-dark border-secondary hover:border-secondary-dark;
 	}
 
 	.btn.btn-secondary.btn-outlined {
@@ -39,7 +39,7 @@
 	}
 
 	.btn.btn-success {
-		@apply bg-success hover:bg-white text-white hover:text-success-dark hover:border-success-dark;
+		@apply bg-success hover:bg-white text-white hover:text-success-dark border-success hover:border-success-dark;
 	}
 
 	.btn.btn-success.btn-outlined {
@@ -47,7 +47,7 @@
 	}
 
 	.btn.btn-warning {
-		@apply bg-warning hover:bg-white text-white hover:text-warning-dark hover:border-warning-dark;
+		@apply bg-warning hover:bg-white text-white hover:text-warning-dark border-warning hover:border-warning-dark;
 	}
 
 	.btn.btn-warning.btn-outlined {
@@ -55,7 +55,7 @@
 	}
 
 	.btn.btn-danger {
-		@apply bg-danger hover:bg-white text-white hover:text-danger-dark hover:border-danger-dark;
+		@apply bg-danger hover:bg-white text-white hover:text-danger-dark border-danger hover:border-danger-dark;
 	}
 
 	.btn.btn-danger.btn-outlined {
@@ -63,10 +63,26 @@
 	}
 
 	.btn.btn-info {
-		@apply bg-info hover:bg-white text-white hover:text-info-dark hover:border-info-dark;
+		@apply bg-info hover:bg-white text-white hover:text-info-dark border-info hover:border-info-dark;
 	}
 
 	.btn.btn-info.btn-outlined {
 		@apply bg-white hover:bg-info-dark text-info-dark hover:text-white border-info-dark;
+	}
+
+	.btn.btn-dark {
+		@apply bg-black hover:bg-white text-white hover:text-black border-black hover:border-black;
+	}
+
+	.btn.btn-dark.btn-outlined {
+		@apply bg-white hover:bg-black text-black hover:text-white border-black;
+	}
+	
+	.btn.btn-light {
+		@apply bg-white hover:bg-black text-black hover:text-white border-white hover:border-black;
+	}
+
+	.btn.btn-light.btn-outlined {
+		@apply bg-white hover:bg-black text-black hover:text-white border-black;
 	}
 }
