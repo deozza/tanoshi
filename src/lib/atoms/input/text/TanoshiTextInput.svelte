@@ -2,7 +2,7 @@
 	import './tanoshiTextInput.css';
 	import type TanoshiTextInputModel from './TanoshiTextInputModel';
 
-	export let tanoshiTextInputModel: TanoshiTextInputModel;
+	export let tanoshiTextInputModel: TanoshiInputModel;
 
 	function handleInput(e: any) {
 		tanoshiTextInputModel.setValue(e.target.value);
