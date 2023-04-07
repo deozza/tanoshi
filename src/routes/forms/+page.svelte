@@ -29,7 +29,7 @@
                 <TanoshiContainer tanoshiContainerModel={formContainer}>
                         <form class="min-w-full" on:submit|preventDefault={() => handleForm}>
                             <ul class="space-y-6">
-                                <li class="flex-container flex-c">
+                                <li class="">
                                     <div class="flex-container flex-r">
                                         <label class="flex-1" for='email'>Email</label>
                                         <div class="input-container">
@@ -38,7 +38,7 @@
 
                                     </div>
                                 </li>
-                                <li class="flex-container flex-c">
+                                <li class="">
                                     <div class="flex-container flex-r">
                                         <label class="flex-1" for='password'>Password</label>
                                         <div class="input-container">
@@ -47,8 +47,11 @@
 
                                     </div>
                                 </li>
-                                <li class="flex-container flex-c space-y-2">
-                                    <button class="btn btn-primary btn-block" type="submit">Send</button>
+                                <li class="">
+                                    <div class="flex-container flex-r space-y-2 centered items-center">
+                                        <button class="btn btn-primary btn-block" type="submit">Send</button>
+
+                                    </div>
                                 </li>
                             </ul>
                         </form>
