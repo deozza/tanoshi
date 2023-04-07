@@ -19,7 +19,7 @@
 	}
 
 	.btn.btn-block {
-		@apply w-full h-12 px-6 text-lg;
+		@apply w-full h-12 px-6 text-lg m-0;
 	}
 
 	.btn.btn-primary {
