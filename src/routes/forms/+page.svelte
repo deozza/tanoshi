@@ -3,7 +3,7 @@
 	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
 	import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel'
     import TanoshiTextInputModel from '$atoms/input/text/TanoshiTextInputModel';
-	import type TanoshiInputModel from '$atoms/input/TanoshitInputModel';
+	import type TanoshiInputModel from '$atoms/input/TanoshiInputModel';
 	import TanoshiLabelModel from '$atoms/label/TanoshiLabelModel';
 	import TanoshiForm from '$molecules/form/TanoshiForm.svelte';
 	import TanoshiFormModel from '$molecules/form/TanoshiFormModel';
@@ -26,7 +26,7 @@
 
 </script>
 <main>
-    <section id="button">
+    <section id="form">
         <TanoshiContainer tanoshiContainerModel={columnContainer} customClasses={'min-h-screen'}>
                 <TanoshiContainer tanoshiContainerModel={formContainer}>
                     <TanoshiForm tanoshiFormModel={loginFormModel}/>

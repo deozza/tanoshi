@@ -1,5 +1,5 @@
 import type TanoshiButtonModel from "$atoms/button/TanoshiButtonModel";
-import type TanoshiInputModel from "$atoms/input/TanoshitInputModel";
+import type TanoshiInputModel from "$atoms/input/TanoshiInputModel";
 import type TanoshiLabelModel from "$atoms/label/TanoshiLabelModel";
 import type { TanoshiLabelAndInputModel } from "./TanoshiLabelAndInputModel";
 

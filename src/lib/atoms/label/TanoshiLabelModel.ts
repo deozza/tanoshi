@@ -1,4 +1,4 @@
-import type TanoshiInputModel from "$atoms/input/TanoshitInputModel";
+import type TanoshiInputModel from "$atoms/input/TanoshiInputModel";
 
 export default class TanoshiLabelModel {
 

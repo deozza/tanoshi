@@ -1,4 +1,4 @@
-import TanoshiInputModel from '../TanoshitInputModel';
+import TanoshiInputModel from '../TanoshiInputModel';
 
 export default class TanoshiTextInputModel extends TanoshiInputModel {
 	private _minLength: number | null = null;

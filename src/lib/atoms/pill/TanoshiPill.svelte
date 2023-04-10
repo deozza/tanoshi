@@ -6,7 +6,7 @@
 </script>
 
 <span
-	class="pill pill-{tanoshiPillModel.style} pill-{tanoshiPillModel.size}"
+	class="pill pill-{tanoshiPillModel.theme} pill-{tanoshiPillModel.size}"
 	class:pill-outlined={tanoshiPillModel.isOutlined === true}
 >
 	{tanoshiPillModel.content}
