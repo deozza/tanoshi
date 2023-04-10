@@ -17,6 +17,5 @@ export default defineConfig({
 			reporter: ['html'],
 			reportsDirectory: './tests/coverage'
 		}
-		
 	}
 });

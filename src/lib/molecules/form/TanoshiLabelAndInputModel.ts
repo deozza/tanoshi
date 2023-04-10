@@ -1,7 +1,7 @@
-import type TanoshiInputModel from "$atoms/input/TanoshiInputModel"
-import type TanoshiLabelModel from "$atoms/label/TanoshiLabelModel"
+import type TanoshiInputModel from '$atoms/input/TanoshiInputModel';
+import type TanoshiLabelModel from '$atoms/label/TanoshiLabelModel';
 
 export type TanoshiLabelAndInputModel = {
-    tanoshiLabelModel: TanoshiLabelModel,
-    tanoshiInputModel: TanoshiInputModel 
-}
+	tanoshiLabelModel: TanoshiLabelModel;
+	tanoshiInputModel: TanoshiInputModel;
+};

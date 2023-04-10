@@ -30,7 +30,9 @@
 		desktopNavigationContainer.setDesktopOrientation('c');
 	}
 
-	const mobileMenuButton: TanoshiButtonModel = new TanoshiButtonModel('').setTheme(tanoshiNavigationModel.theme);
+	const mobileMenuButton: TanoshiButtonModel = new TanoshiButtonModel('').setTheme(
+		tanoshiNavigationModel.theme
+	);
 
 	let showMobileMenu: boolean = false;
 

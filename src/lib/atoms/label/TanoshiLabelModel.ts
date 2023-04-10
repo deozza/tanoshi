@@ -1,7 +1,6 @@
-import type TanoshiInputModel from "$atoms/input/TanoshiInputModel";
+import type TanoshiInputModel from '$atoms/input/TanoshiInputModel';
 
 export default class TanoshiLabelModel {
-
 	protected _name!: string;
 	protected _value!: string;
 
@@ -10,11 +9,11 @@ export default class TanoshiLabelModel {
 		this.setValue(name);
 	}
 
-    initWithInput(tanoshiInputModel: TanoshiInputModel): TanoshiLabelModel{
-        this.setName(tanoshiInputModel.id)
-        this.setValue(tanoshiInputModel.name)
-        return this;
-    }
+	initWithInput(tanoshiInputModel: TanoshiInputModel): TanoshiLabelModel {
+		this.setName(tanoshiInputModel.id);
+		this.setValue(tanoshiInputModel.name);
+		return this;
+	}
 
 	get name(): string {
 		return this._name;
@@ -24,7 +23,6 @@ export default class TanoshiLabelModel {
 		this._name = value;
 		return this;
 	}
-
 
 	get value(): string {
 		return this._value;

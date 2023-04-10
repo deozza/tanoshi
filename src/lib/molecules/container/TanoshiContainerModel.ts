@@ -39,13 +39,13 @@ export default class TanoshiContainerModel {
 		center: 'center',
 		end: 'end',
 		stretch: 'stretch',
-		baseline: 'baseline',
+		baseline: 'baseline'
 	};
 
 	public constructor(desktopOrientation: string) {
 		// @ts-ignore
 		this.setItemsAlignment(this.EXPECTED_ALIGNMENT['start']);
-		
+
 		this.setDesktopOrientation(desktopOrientation);
 		this.setMobileOrientation(desktopOrientation);
 
@@ -119,7 +119,6 @@ export default class TanoshiContainerModel {
 		this._desktopSpacing = value;
 		return this;
 	}
-
 
 	get itemsAlignment(): string {
 		return this._itemsAlignment;

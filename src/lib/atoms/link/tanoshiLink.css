@@ -15,7 +15,7 @@
 	a.a-white {
 		@apply text-white hover:text-white-dark;
 	}
-	
+
 	a.a-primary {
 		@apply text-primary hover:text-primary-dark;
 	}

@@ -30,7 +30,7 @@ export default class TanoshiLinkModel {
 		left: 'left',
 		center: 'center',
 		right: 'right',
-		justify: 'justify',
+		justify: 'justify'
 	};
 
 	constructor(content: string) {
@@ -104,7 +104,6 @@ export default class TanoshiLinkModel {
 
 		this._displaySize = value;
 		return this;
-
 	}
 	get aligment(): string {
 		return this._alignment;
