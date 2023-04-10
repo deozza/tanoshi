@@ -1,60 +1,35 @@
 <script lang="ts">
-	import TanoshiHeader from '$atoms/header/TanoshiHeader.svelte';
-    import TanoshiHeaderModel from '$atoms/header/TanoshiHeaderModel';
-    import TanoshiButton from '$atoms/button/TanoshiButton.svelte';
 	import TanoshiButtonModel from '$atoms/button/TanoshiButtonModel';
 	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
 	import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel'
-    import TanoshiTextInput from '$atoms/input/text/TanoshiTextInput.svelte';
     import TanoshiTextInputModel from '$atoms/input/text/TanoshiTextInputModel';
 	import type TanoshiInputModel from '$atoms/input/TanoshitInputModel';
+	import TanoshiLabelModel from '$atoms/label/TanoshiLabelModel';
+	import TanoshiForm from '$molecules/form/TanoshiForm.svelte';
+	import TanoshiFormModel from '$molecules/form/TanoshiFormModel';
 
 
 	const columnContainer = new TanoshiContainerModel('c').setItemsAlignment('center').setDesktopSpacing('centered');
-	const formContainer = new TanoshiContainerModel('c').setTheme('secondary').setSize('w-2/3').setDesktopSpacing('centered');
+	const formContainer = new TanoshiContainerModel('c').setTheme('secondary').setSize('w-1/3').setDesktopSpacing('centered');
 
-    const emailInput: TanoshiInputModel = new TanoshiTextInputModel('email').setType('email')
-    const passwordInput: TanoshiInputModel = new TanoshiTextInputModel('password').setType('password')
 
-    const loginButtonModel: TanoshiButtonModel = new TanoshiButtonModel('Send')
+    const emailInput: TanoshiInputModel = new TanoshiTextInputModel('Email').setType('email')
+    const emailLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(emailInput)
 
-    function handleForm(){
-        console.log('coucou')
-    }
+    const passwordInput: TanoshiInputModel = new TanoshiTextInputModel('Password').setType('password')
+    const passwordLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(passwordInput)
+
+    const loginButtonModel: TanoshiButtonModel = new TanoshiButtonModel('Send').setSize('block').setType('submit')
+    const loginFormModel: TanoshiFormModel = new TanoshiFormModel(loginButtonModel)
+        .addLabelAndInput(emailLabel, emailInput)
+        .addLabelAndInput(passwordLabel, passwordInput)
 
 </script>
 <main>
     <section id="button">
         <TanoshiContainer tanoshiContainerModel={columnContainer} customClasses={'min-h-screen'}>
                 <TanoshiContainer tanoshiContainerModel={formContainer}>
-                        <form class="min-w-full" on:submit|preventDefault={() => handleForm}>
-                            <ul class="space-y-6">
-                                <li class="">
-                                    <div class="flex-container flex-r">
-                                        <label class="flex-1" for='email'>Email</label>
-                                        <div class="input-container">
-                                            <input class="text-input" type="email" id='email' name="email">
-                                        </div>
-
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="flex-container flex-r">
-                                        <label class="flex-1" for='password'>Password</label>
-                                        <div class="input-container">
-                                            <input class="text-input" type="password" id='password' name="password">
-                                        </div>
-
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="flex-container flex-r space-y-2 centered items-center">
-                                        <button class="btn btn-primary btn-block" type="submit">Send</button>
-
-                                    </div>
-                                </li>
-                            </ul>
-                        </form>
+                    <TanoshiForm tanoshiFormModel={loginFormModel}/>
                 </TanoshiContainer>
         </TanoshiContainer >
     </section>
