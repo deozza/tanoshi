@@ -30,13 +30,18 @@
 	const loginFormModel: TanoshiFormModel = new TanoshiFormModel(loginButtonModel)
 		.addLabelAndInput(emailLabel, emailInput)
 		.addLabelAndInput(passwordLabel, passwordInput);
+
+
+	function handleForm(){
+		console.log(emailInput)
+	}
 </script>
 
 <main>
 	<section id="form">
 		<TanoshiContainer tanoshiContainerModel={columnContainer} customClasses={'min-h-screen'}>
 			<TanoshiContainer tanoshiContainerModel={formContainer}>
-				<TanoshiForm tanoshiFormModel={loginFormModel} />
+				<TanoshiForm tanoshiFormModel={loginFormModel} on:submit={handleForm}/>
 			</TanoshiContainer>
 		</TanoshiContainer>
 	</section>

@@ -3,11 +3,15 @@
 	import TanoshiTextInput from '$atoms/input/text/TanoshiTextInput.svelte';
 	import TanoshiLabel from '$atoms/label/TanoshiLabel.svelte';
 	import type TanoshiFormModel from './TanoshiFormModel';
+	import { createEventDispatcher } from 'svelte';
 
 	//import './tanoshiLabel.css';
 
+
+	const dispatch = createEventDispatcher();
+
 	function handleForm() {
-		console.log('coucou');
+		dispatch('submit')
 	}
 
 	export let tanoshiFormModel: TanoshiFormModel;
