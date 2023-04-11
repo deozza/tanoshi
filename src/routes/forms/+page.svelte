@@ -13,7 +13,7 @@
 	const formContainer = new TanoshiContainerModel('c')
 		.setTheme('secondary')
 		.setBorders('md')
-		.setSize('w-1/3')
+		.setSize('sm:w-1/3 w-full')
 		.setDesktopSpacing('centered');
 
 	const emailInput: TanoshiTextInputModel = new TanoshiTextInputModel('Email').setType('email');
