@@ -11,7 +11,7 @@
 	p.p-white {
 		@apply text-white;
 	}
-	
+
 	p.p-primary {
 		@apply text-primary-dark;
 	}

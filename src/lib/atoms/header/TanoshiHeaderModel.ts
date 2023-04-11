@@ -14,7 +14,7 @@ export default class TanoshiHeaderModel {
 		'3xl': '3xl',
 		'4xl': '4xl',
 		'5xl': '5xl',
-		'6xl': '6xl',
+		'6xl': '6xl'
 	};
 
 	readonly EXPECTED_HTML_SIZES: object = {
@@ -41,7 +41,7 @@ export default class TanoshiHeaderModel {
 		left: 'left',
 		center: 'center',
 		right: 'right',
-		justify: 'justify',
+		justify: 'justify'
 	};
 
 	constructor(content: string) {

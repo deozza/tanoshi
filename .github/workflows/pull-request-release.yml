@@ -2,10 +2,9 @@ name: Release branch workflow
 
 on:
   pull_request:
-    branches: [ "release" ]
+    branches: ['release']
 
 jobs:
-
   testing:
     uses: ./.github/workflows/workflow-tests.yml
 
@@ -14,8 +13,7 @@ jobs:
     needs: [testing]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: butlerlogic/action-autotag@stable
-      with:
-        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
- 
+      - uses: actions/checkout@v2
+      - uses: butlerlogic/action-autotag@stable
+        with:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'

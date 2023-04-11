@@ -1,4 +1,4 @@
-import { test, expect } from 'vitest'
+import { test, expect } from 'vitest';
 
 import TanoshiLinkModel from '$atoms/link/TanoshiLinkModel';
 

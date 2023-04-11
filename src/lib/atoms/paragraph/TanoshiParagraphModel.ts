@@ -29,7 +29,7 @@ export default class TanoshiParagraphModel {
 		left: 'left',
 		center: 'center',
 		right: 'right',
-		justify: 'justify',
+		justify: 'justify'
 	};
 
 	constructor(content: string) {
@@ -88,7 +88,7 @@ export default class TanoshiParagraphModel {
 		this._hasSpacing = value;
 		return this;
 	}
-	
+
 	get aligment(): string {
 		return this._alignment;
 	}
