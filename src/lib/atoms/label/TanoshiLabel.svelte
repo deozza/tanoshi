@@ -5,4 +5,4 @@
 	export let tanoshiLabelModel: TanoshiLabelModel;
 </script>
 
-<label class="flex-1" for={tanoshiLabelModel.name}>{tanoshiLabelModel.value}</label>
+<label class="flex items-center flex-1" for={tanoshiLabelModel.name}>{tanoshiLabelModel.value}</label>
