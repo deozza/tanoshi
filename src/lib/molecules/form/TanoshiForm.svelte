@@ -5,9 +5,6 @@
 	import type TanoshiFormModel from './TanoshiFormModel';
 	import { createEventDispatcher } from 'svelte';
 
-	//import './tanoshiLabel.css';
-
-
 	const dispatch = createEventDispatcher();
 
 	function handleForm() {
