@@ -3,7 +3,6 @@
 	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
 	import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel';
 	import TanoshiTextInputModel from '$atoms/input/text/TanoshiTextInputModel';
-	import type TanoshiInputModel from '$atoms/input/TanoshiInputModel';
 	import TanoshiLabelModel from '$atoms/label/TanoshiLabelModel';
 	import TanoshiForm from '$molecules/form/TanoshiForm.svelte';
 	import TanoshiFormModel from '$molecules/form/TanoshiFormModel';
@@ -16,12 +15,10 @@
 		.setSize('w-1/3')
 		.setDesktopSpacing('centered');
 
-	const emailInput: TanoshiInputModel = new TanoshiTextInputModel('Email').setType('email');
+	const emailInput: TanoshiTextInputModel = new TanoshiTextInputModel('Email').setType('email');
 	const emailLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(emailInput);
 
-	const passwordInput: TanoshiInputModel = new TanoshiTextInputModel('Password').setType(
-		'password'
-	);
+	const passwordInput: TanoshiTextInputModel = new TanoshiTextInputModel('Password').setType('password').setError(true).setErrorMessage('You must enter a password');
 	const passwordLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(passwordInput);
 
 	const loginButtonModel: TanoshiButtonModel = new TanoshiButtonModel('Send')

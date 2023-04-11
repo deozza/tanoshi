@@ -7,6 +7,6 @@
 	}
 
 	input.text-input {
-		@apply w-full py-2 px-3 border rounded-md border-black px-2 text-black;
+		@apply w-full py-2 px-3 border rounded-md px-2;
 	}
 }

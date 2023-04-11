@@ -1,6 +1,7 @@
 <script lang="ts">
 	import TanoshiButton from '$atoms/button/TanoshiButton.svelte';
 	import TanoshiTextInput from '$atoms/input/text/TanoshiTextInput.svelte';
+	import TanoshiTextInputModel from '$atoms/input/text/TanoshiTextInputModel';
 	import TanoshiLabel from '$atoms/label/TanoshiLabel.svelte';
 	import type TanoshiFormModel from './TanoshiFormModel';
 	import { createEventDispatcher } from 'svelte';
@@ -20,7 +21,11 @@
 			<li>
 				<div class="flex-container flex-r">
 					<TanoshiLabel {tanoshiLabelModel} />
-					<TanoshiTextInput tanoshiTextInputModel={tanoshiInputModel} />
+
+					{#if tanoshiInputModel instanceof TanoshiTextInputModel}
+						<TanoshiTextInput tanoshiTextInputModel={tanoshiInputModel} />
+					{/if}
+
 				</div>
 			</li>
 		{/each}

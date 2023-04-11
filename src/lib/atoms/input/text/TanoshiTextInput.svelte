@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type TanoshiInputModelInterface from '../TanoshiInputModelInterface';
 	import './tanoshiTextInput.css';
 	import type TanoshiTextInputModel from './TanoshiTextInputModel';
 
@@ -12,9 +11,9 @@
 
 <div class="input-container">
 	<input
-		class="text-input"
 		class:border-danger={tanoshiTextInputModel.error === true}
 		class:text-danger={tanoshiTextInputModel.error === true}
+		class="text-input"
 		id={tanoshiTextInputModel.id}
 		maxlength={tanoshiTextInputModel.maxLength}
 		minlength={tanoshiTextInputModel.minLength}
