@@ -12,6 +12,7 @@
 		.setDesktopSpacing('centered');
 	const formContainer = new TanoshiContainerModel('c')
 		.setTheme('secondary')
+		.setBorders('md')
 		.setSize('w-1/3')
 		.setDesktopSpacing('centered');
 

@@ -10,6 +10,7 @@
 	class="
 		flex-container 
 		{tanoshiContainerModel.theme} 
+		rounded-{tanoshiContainerModel.borders} 
 		flex-{tanoshiContainerModel.desktopOrientation} 
 		{tanoshiContainerModel.desktopSpacing}
 		items-{tanoshiContainerModel.itemsAlignment}

@@ -1,5 +1,6 @@
 export default class TanoshiContainerModel {
 	private _theme!: string;
+	private _borders!: string;
 	private _size: string = 'w-full';
 	private _backgroundImage: string | null = null;
 	private _desktopOrientation!: string;
@@ -42,6 +43,12 @@ export default class TanoshiContainerModel {
 		baseline: 'baseline'
 	};
 
+	readonly EXPECTED_BORDERS: object = {
+		none: 'none',
+		md: 'md',
+		full: 'full',
+	};
+
 	public constructor(desktopOrientation: string) {
 		// @ts-ignore
 		this.setItemsAlignment(this.EXPECTED_ALIGNMENT['start']);
@@ -51,6 +58,9 @@ export default class TanoshiContainerModel {
 
 		// @ts-ignore
 		this.setTheme(this.EXPECTED_THEMES.transparent);
+		
+		// @ts-ignore
+		this.setBorders(this.EXPECTED_BORDERS.none);
 	}
 
 	get theme(): string {
@@ -65,6 +75,20 @@ export default class TanoshiContainerModel {
 		this._theme = value;
 		return this;
 	}
+
+	get borders(): string {
+		return this._borders;
+	}
+
+	public setBorders(value: string): TanoshiContainerModel {
+		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_BORDERS, value) === false) {
+			throw new Error();
+		}
+
+		this._borders = value;
+		return this;
+	}
+	
 	get size(): string {
 		return this._size;
 	}
