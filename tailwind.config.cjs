@@ -42,7 +42,8 @@ module.exports = {
 		'items-start',
 		'items-end',
 		'items-end',
-		'text-center'
+		'text-center',
+		'circled'
 	],
 	theme: {
 		extend: {

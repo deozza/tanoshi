@@ -3,7 +3,7 @@
 
 @layer components {
 	img {
-		@apply m-2 border;
+		@apply m-2;
 	}
 
 	img.rounded {

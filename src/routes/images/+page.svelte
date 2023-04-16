@@ -5,6 +5,8 @@
 	import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel';
 	import TanoshiImageModel from '$atoms/image/TanoshiImageModel';
 	import TanoshiImage from '$atoms/image/TanoshiImage.svelte';
+	import TanoshiCarousel from '$molecules/carousel/TanoshiCarousel.svelte';
+	import TanoshiCarouselModel from '$molecules/carousel/TanoshiCarouselModel';
 	
 	const rowContainer = new TanoshiContainerModel('r').setDesktopSpacing('evenly');
 	const columnContainer = new TanoshiContainerModel('c');
@@ -80,7 +82,6 @@
 					<TanoshiImage tanoshiImageModel={sepiaedImageModel} />
 					<TanoshiImage tanoshiImageModel={invertedImageModel} />
 				</TanoshiContainer>
-					
 			</TanoshiContainer>
 		</TanoshiContainer>
 	</section>
