@@ -3,6 +3,8 @@ export default class TanoshiImageModel {
 	private _alt!: string;
 	private _theme: string = '';
 	private _filter: string = '';
+	private _width: string = 'w-auto';
+	private _height: string = 'h-full';
 
 	readonly EXPECTED_THEMES: object = {
 		rounded: 'rounded',
@@ -68,6 +70,31 @@ export default class TanoshiImageModel {
 			throw new Error();
 		}
 		this._filter = value;
+		return this;
+	}
+
+	get width(): string {
+		return this._width!;
+	}
+
+	public setWidth(value: string): TanoshiImageModel {
+		this._width = value;
+		return this;
+	}
+
+	get height(): string {
+		return this._height!;
+	}
+
+	public setHeight(value: string): TanoshiImageModel {
+		this._height = value;
+		return this;
+	}
+
+	public setCircle(size: string): TanoshiImageModel {
+		this._theme = 'circled';
+		this._width = 'w-'+size;
+		this._height = 'h-'+size;
 		return this;
 	}
 }

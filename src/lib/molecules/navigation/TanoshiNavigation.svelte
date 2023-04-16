@@ -49,7 +49,7 @@
 	}
 </script>
 
-<nav class="z-10 sticky inset-0 sm:block">
+<nav class="sticky inset-0 sm:block">
 	<TanoshiContainer
 		tanoshiContainerModel={desktopNavigationContainer}
 		customClasses={tanoshiNavigationModel.orientation === 'horizontal'
@@ -62,7 +62,7 @@
 	</TanoshiContainer>
 </nav>
 
-<nav class="z-10 inset-0 fixed sm:hidden">
+<nav class="inset-0 fixed sm:hidden" class:z-10={showMobileMenu === true}>
 	<TanoshiContainer tanoshiContainerModel={horizontalNavigationContainer} customClasses="h-16">
 		<TanoshiButton tanoshiButtonModel={mobileMenuButton} on:click={mobileMenuHandler}>
 			<span class="sr-only">Open main menu</span>

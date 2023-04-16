@@ -23,6 +23,7 @@ export default class TanoshiContainerModel {
 
 	readonly EXPECTED_ORIENTATIONS: object = {
 		c: 'c',
+		'c-reverse': 'c-reverse',
 		r: 'r'
 	};
 

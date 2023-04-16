@@ -1,4 +1,5 @@
 <script lang="ts">
+
 	import './tanoshiImage.css';
 	import type TanoshiImageModel from './TanoshiImageModel';
 
@@ -6,7 +7,7 @@
 </script>
 
 <img
-	class="object-cover {tanoshiImageModel.theme} {tanoshiImageModel.filter} {tanoshiImageModel.width} {tanoshiImageModel.height}"
+	class="{tanoshiImageModel.theme} {tanoshiImageModel.filter} m-0 {tanoshiImageModel.height}"
 	src={tanoshiImageModel.content}
 	alt={tanoshiImageModel.alt}
 />
