@@ -4,6 +4,7 @@ export default class TanoshiCarouselModel {
 	private _items: Array<TanoshiImageModel> = [];
 	private _autoplay: boolean = false;
 	private _autoplaySpeed: number = 5000;
+	private _transitionDuration: number = 1000;
 
 
 	get items(): Array<TanoshiImageModel> {
@@ -37,6 +38,16 @@ export default class TanoshiCarouselModel {
 	public setAutoplaySpeed(value: number): TanoshiCarouselModel {
 
 		this._autoplaySpeed = value;
+		return this;
+	}
+
+	get transitionDuration(): number {
+		return this._transitionDuration;
+	}
+
+	public setTransitionDuration(value: number): TanoshiCarouselModel {
+
+		this._transitionDuration = value;
 		return this;
 	}
 }

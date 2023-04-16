@@ -1,6 +1,7 @@
 <script lang="ts">
   import Fa from 'svelte-fa/src/fa.svelte';
 	import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons/index.js';
+	import { fade } from 'svelte/transition';
 
   import TanoshiImageInCarousel from '$atoms/image/TanoshiImageInCarousel.svelte';
   import TanoshiContainer from "$molecules/container/TanoshiContainer.svelte";
@@ -10,6 +11,7 @@
 
   export let tanoshiCarouselModel: TanoshiCarouselModel
   let interval: any;
+  let startTouchXAxis: number = 0;
 
   const paginatorContainer: TanoshiContainerModel = new TanoshiContainerModel('r').setItemsAlignment('center').setDesktopSpacing('centered')
   const carouselContainer: TanoshiContainerModel = new TanoshiContainerModel('c').setItemsAlignment('center')
@@ -46,6 +48,15 @@
     return
   }
 
+  function onPointerMove(e: TouchEvent & { currentTarget: EventTarget & HTMLDivElement; }){
+    if(e.changedTouches[0].clientX > startTouchXAxis) {
+      moveCarouselBackward(true)
+      return
+    }
+    
+    moveCarouselForward(true)
+  }
+
   function updateCurrentImage(index: number){
     currentImageIndex = index;
     stopAutoPlay()
@@ -70,7 +81,10 @@
 </script>
 
 <TanoshiContainer tanoshiContainerModel={carouselContainer} customClasses={'relative'}>
-  <TanoshiImageInCarousel tanoshiImageModel={currentImage} />
+  <div transition:fade={{duration:tanoshiCarouselModel.transitionDuration}} on:touchstart={(e) => startTouchXAxis = e.changedTouches[0].clientX} on:touchend={(e) => onPointerMove(e)}>
+    <TanoshiImageInCarousel tanoshiImageModel={currentImage} tanoshiCarouselModel={tanoshiCarouselModel}/>
+
+  </div>
   <TanoshiContainer tanoshiContainerModel={paginatorContainer} customClasses={'absolute bottom-10'}>
     <button type="button" class="mx-5"  on:click={() => moveCarouselBackward(true)}> <Fa icon={faAngleLeft} /> </button>
 
