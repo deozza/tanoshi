@@ -28,7 +28,7 @@
 		.setAutoplay(true)
 		.setAutoplaySpeed(5000)
 		.showControls(true)
-		.setHeight('h-screen')
+		.setHeight('h-[700px]')
 </script>
 
 <div>
@@ -45,7 +45,31 @@
 	</section>
 
 	<section id="content" class="relative">
-		<p>ouesh</p>
+		<p>data</p>
+		<p>data</p>
+		<p>data</p>
+		<p>data</p>
+		<p>data</p>
+		<p>data</p>
+		<p>data</p>
+		<p>data</p>
+		<p>data</p>
+		<p>data</p>
+		<p>data</p>
+		<p>data</p>
+		<p>data</p>
+		<p>data</p>
+		<p>data</p>
+		<p>data</p>
+		<p>data</p>
+		<p>data</p>
+		<p>data</p>
+		<p>data</p>
+		<p>data</p>
+		<p>data</p>
+		<p>data</p>
+		<p>data</p>
+		<p>data</p>
 	
 	</section>
 </div>
