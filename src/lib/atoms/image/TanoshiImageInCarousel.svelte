@@ -2,14 +2,12 @@
 
 	import './tanoshiImage.css';
 	import type TanoshiImageModel from './TanoshiImageModel';
-	import type TanoshiCarouselModel from '$molecules/carousel/TanoshiCarouselModel';
 
 	export let tanoshiImageModel: TanoshiImageModel;
-	export let tanoshiCarouselModel: TanoshiCarouselModel
 </script>
 
 <img
-	class="{tanoshiImageModel.theme} {tanoshiImageModel.filter}"
+	class="{tanoshiImageModel.theme} {tanoshiImageModel.filter} m-0 {tanoshiImageModel.height}"
 	src={tanoshiImageModel.content}
 	alt={tanoshiImageModel.alt}
 />

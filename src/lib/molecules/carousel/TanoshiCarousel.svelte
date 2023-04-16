@@ -16,10 +16,8 @@
   const paginatorContainer: TanoshiContainerModel = new TanoshiContainerModel('r').setItemsAlignment('center').setDesktopSpacing('centered')
   const carouselContainer: TanoshiContainerModel = new TanoshiContainerModel('c').setItemsAlignment('center')
 
-
-
   let currentImageIndex: number = 0;
-  $: currentImage = tanoshiCarouselModel.items[currentImageIndex];
+  $: currentImage = tanoshiCarouselModel.items[currentImageIndex].setHeight(tanoshiCarouselModel.height);
 
   function moveCarouselForward(manually: boolean = false){
     if(currentImageIndex === tanoshiCarouselModel.items.length - 1){
@@ -53,7 +51,7 @@
       moveCarouselBackward(true)
       return
     }
-    
+
     moveCarouselForward(true)
   }
 
@@ -80,18 +78,33 @@
 
 </script>
 
-<TanoshiContainer tanoshiContainerModel={carouselContainer} customClasses={'relative'}>
-  <div transition:fade={{duration:tanoshiCarouselModel.transitionDuration}} on:touchstart={(e) => startTouchXAxis = e.changedTouches[0].clientX} on:touchend={(e) => onPointerMove(e)}>
-    <TanoshiImageInCarousel tanoshiImageModel={currentImage} tanoshiCarouselModel={tanoshiCarouselModel}/>
+<TanoshiContainer tanoshiContainerModel={carouselContainer} customClasses={tanoshiCarouselModel.height}>
 
-  </div>
-  <TanoshiContainer tanoshiContainerModel={paginatorContainer} customClasses={'absolute bottom-10'}>
-    <button type="button" class="mx-5"  on:click={() => moveCarouselBackward(true)}> <Fa icon={faAngleLeft} /> </button>
+  {#key currentImageIndex}
+    <div class="absolute"
+      transition:fade={{duration:tanoshiCarouselModel.transitionDuration}} 
+      on:touchstart={(e) => startTouchXAxis = e.changedTouches[0].clientX} 
+      on:touchend={(e) => onPointerMove(e)}
+      >
+      <TanoshiImageInCarousel tanoshiImageModel={currentImage}/>
+    </div>
+	{/key}
 
-    {#each tanoshiCarouselModel.items as _,index}
-      <button type="button" class="mx-5 w-5 h-5 opacity-50 bg-white-dark rounded-full" class:bg-white="{index !== currentImageIndex}" on:click={() => updateCurrentImage(index)}></button>
-    {/each}
+  <TanoshiContainer tanoshiContainerModel={paginatorContainer} customClasses={'z-10'}>
+    {#if tanoshiCarouselModel.showArrows === true}
+      <button type="button" class="mx-5"  on:click={() => moveCarouselBackward(true)}> <Fa icon={faAngleLeft} /> </button>
+    {/if}
 
-    <button type="button" class="mx-5"  on:click={() => moveCarouselForward(true)}> <Fa icon={faAngleRight} /> </button>
-  </TanoshiContainer>
+    {#if tanoshiCarouselModel.showDots === true}
+      {#each tanoshiCarouselModel.items as _,index}
+        <button type="button" class="my-1 mx-5 w-5 h-5 opacity-50 bg-white-dark rounded-full" class:bg-white="{index !== currentImageIndex}" on:click={() => updateCurrentImage(index)}></button>
+      {/each}
+    {/if}
+
+    {#if tanoshiCarouselModel.showArrows === true}
+      <button type="button" class="mx-5"  on:click={() => moveCarouselForward(true)}> <Fa icon={faAngleRight} /> </button>
+    {/if}
+
+  </TanoshiContainer>  
+  
 </TanoshiContainer>

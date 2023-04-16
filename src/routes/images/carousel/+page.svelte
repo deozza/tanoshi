@@ -27,15 +27,27 @@
 		.addItem(invertedImageModel)
 		.setAutoplay(true)
 		.setAutoplaySpeed(5000)
+		.showControls(true)
+		.setHeight('h-screen')
 </script>
 
-<main>
-	<section id="button">
+<div>
+	<section id="title">
 		<TanoshiContainer tanoshiContainerModel={columnContainer}>
 			<TanoshiContainer tanoshiContainerModel={columnContainer}>
 				<TanoshiHeader tanoshiHeaderModel={pageHeader} />
-				<TanoshiCarousel tanoshiCarouselModel={carouselModel}/>
 			</TanoshiContainer>
 		</TanoshiContainer>
+
 	</section>
-</main>
+	<section id="carousel" class="{carouselModel.height}">
+		<TanoshiCarousel tanoshiCarouselModel={carouselModel}/>
+	</section>
+
+	<section id="content" class="relative">
+		<p>ouesh</p>
+	
+	</section>
+</div>
+
+
