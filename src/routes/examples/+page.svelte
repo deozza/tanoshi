@@ -3,23 +3,12 @@
 	import TanoshiButton from '$atoms/button/TanoshiButton.svelte';
 	import TanoshiHeader from '$atoms/header/TanoshiHeader.svelte';
 	import TanoshiHeaderModel from '$atoms/header/TanoshiHeaderModel';
-	import TanoshiLinkModel from '$atoms/link/TanoshiLinkModel';
 	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
 	import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel';
-	import TanoshiNavigation from '$molecules/navigation/TanoshiNavigation.svelte';
-	import TanoshiNavigationModel from '$molecules/navigation/TanoshiNavigationModel';
 	import TanoshiParagraphModel from '$atoms/paragraph/TanoshiParagraphModel';
 	import TanoshiParagraph from '$atoms/paragraph/TanoshiParagraph.svelte';
 	import TanoshiImageModel from '$atoms/image/TanoshiImageModel';
 	import TanoshiImage from '$atoms/image/TanoshiImage.svelte';
-
-	const navbarItemModels: Array<TanoshiLinkModel> = [
-		new TanoshiLinkModel('Home').setTheme('white'),
-		new TanoshiLinkModel('About').setTheme('white'),
-		new TanoshiLinkModel('Products').setTheme('white'),
-		new TanoshiLinkModel('Services').setTheme('white')
-	];
-	const navbarModel = new TanoshiNavigationModel().setTheme('dark').setItems(navbarItemModels);
 
 	const heroSectionBackgroundModel = new TanoshiContainerModel('r')
 		.setTheme('primary')
