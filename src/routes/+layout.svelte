@@ -7,13 +7,12 @@
 	import '../app.css';
 
 	const navbarItemModels: Array<TanoshiLinkModel> = [
-		new TanoshiLinkModel('Home').setTheme('white').setLink('/'),
+		new TanoshiLinkModel('Tanoshi').setTheme('white').setLink('/'),
 		new TanoshiLinkModel('Typography').setTheme('white').setLink('/typography'),
 		new TanoshiLinkModel('Buttons').setTheme('white').setLink('/buttons'),
 		new TanoshiLinkModel('Pills').setTheme('white').setLink('/pills'),
 		new TanoshiLinkModel('Forms').setTheme('white').setLink('/forms'),
 		new TanoshiLinkModel('Images').setTheme('white').setLink('/images'),
-		new TanoshiLinkModel('Navigations').setTheme('white').setLink('/navigations')
 	];
 
 	const navbarModel = new TanoshiNavigationModel().setTheme('dark').setItems(navbarItemModels);
