@@ -49,7 +49,7 @@
 	}
 </script>
 
-<nav class="sticky inset-0 sm:block">
+<nav class="sticky inset-0 sm:block z-10">
 	<TanoshiContainer
 		tanoshiContainerModel={desktopNavigationContainer}
 		customClasses={tanoshiNavigationModel.orientation === 'horizontal'

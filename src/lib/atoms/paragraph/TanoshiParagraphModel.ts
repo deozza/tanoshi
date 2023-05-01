@@ -42,7 +42,7 @@ export default class TanoshiParagraphModel {
 		this.setTheme(this.EXPECTED_THEMES.black);
 
 		// @ts-ignore
-		this.setAligment(this.EXPECTED_ALIGNMENT.left);
+		this.setAlignment(this.EXPECTED_ALIGNMENT.left);
 	}
 
 	get content(): string {
@@ -89,11 +89,11 @@ export default class TanoshiParagraphModel {
 		return this;
 	}
 
-	get aligment(): string {
+	get alignment(): string {
 		return this._alignment;
 	}
 
-	public setAligment(value: string): TanoshiParagraphModel {
+	public setAlignment(value: string): TanoshiParagraphModel {
 		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_ALIGNMENT, value) === false) {
 			throw new Error();
 		}
