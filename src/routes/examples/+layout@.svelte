@@ -4,15 +4,13 @@
 	import TanoshiNavigation from '$molecules/navigation/TanoshiNavigation.svelte';
 
 
-	import '../app.css';
+	import '../../app.css';
 
 	const navbarItemModels: Array<TanoshiLinkModel> = [
-		new TanoshiLinkModel('Tanoshi').setTheme('white').setLink('/'),
-		new TanoshiLinkModel('Typography').setTheme('white').setLink('/typography'),
-		new TanoshiLinkModel('Buttons').setTheme('white').setLink('/buttons'),
-		new TanoshiLinkModel('Pills').setTheme('white').setLink('/pills'),
-		new TanoshiLinkModel('Forms').setTheme('white').setLink('/forms'),
-		new TanoshiLinkModel('Images').setTheme('white').setLink('/images'),
+		new TanoshiLinkModel('Home').setTheme('white'),
+		new TanoshiLinkModel('About').setTheme('white'),
+		new TanoshiLinkModel('Products').setTheme('white'),
+		new TanoshiLinkModel('Services').setTheme('white')
 	];
 
 	const navbarModel = new TanoshiNavigationModel().setTheme('dark').setItems(navbarItemModels);

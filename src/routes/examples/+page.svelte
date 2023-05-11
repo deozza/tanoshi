@@ -3,23 +3,12 @@
 	import TanoshiButton from '$atoms/button/TanoshiButton.svelte';
 	import TanoshiHeader from '$atoms/header/TanoshiHeader.svelte';
 	import TanoshiHeaderModel from '$atoms/header/TanoshiHeaderModel';
-	import TanoshiLinkModel from '$atoms/link/TanoshiLinkModel';
 	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
 	import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel';
-	import TanoshiNavigation from '$molecules/navigation/TanoshiNavigation.svelte';
-	import TanoshiNavigationModel from '$molecules/navigation/TanoshiNavigationModel';
 	import TanoshiParagraphModel from '$atoms/paragraph/TanoshiParagraphModel';
 	import TanoshiParagraph from '$atoms/paragraph/TanoshiParagraph.svelte';
 	import TanoshiImageModel from '$atoms/image/TanoshiImageModel';
 	import TanoshiImage from '$atoms/image/TanoshiImage.svelte';
-
-	const navbarItemModels: Array<TanoshiLinkModel> = [
-		new TanoshiLinkModel('Home').setTheme('white'),
-		new TanoshiLinkModel('About').setTheme('white'),
-		new TanoshiLinkModel('Products').setTheme('white'),
-		new TanoshiLinkModel('Services').setTheme('white')
-	];
-	const navbarModel = new TanoshiNavigationModel().setTheme('dark').setItems(navbarItemModels);
 
 	const heroSectionBackgroundModel = new TanoshiContainerModel('r')
 		.setTheme('primary')
@@ -36,7 +25,7 @@
 	)
 		.setDisplaySize('lg')
 		.setHasSpacing(false)
-		.setAligment('center');
+		.setAlignment('center');
 	const heroButtonModel = new TanoshiButtonModel('Engage Now').setTheme('success').setSize('md');
 
 	const collaborationSectionAlignementModel = new TanoshiContainerModel('c')
@@ -65,7 +54,7 @@
 		'Proactively envisioned multimedia based expertise and cross-media growth strategies. Seamlessly visualize quality intellectual capital without superior collaboration and idea-sharing. Holistically pontificate installed base portals after maintainable products.'
 	)
 		.setHasSpacing(false)
-		.setAligment('center');
+		.setAlignment('center');
 
 	const squareImageSource =
 		'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22700%22%20height%3D%22300%22%20viewBox%3D%220%200%20700%20300%22%20preserveAspectRatio%3D%22none%22%3E%3C!--%0ASource%20URL%3A%20holder.js%2F700x300%0ACreated%20with%20Holder.js%202.8.0.%0ALearn%20more%20at%20http%3A%2F%2Fholderjs.com%0A(c)%202012-2015%20Ivan%20Malopinsky%20-%20http%3A%2F%2Fimsky.co%0A--%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%3C!%5BCDATA%5B%23holder_186c8610a6d%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A35pt%20%7D%20%5D%5D%3E%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_186c8610a6d%22%3E%3Crect%20width%3D%22700%22%20height%3D%22300%22%20fill%3D%22%23EEEEEE%22%2F%3E%3Cg%3E%3Ctext%20x%3D%22259.171875%22%20y%3D%22165.6%22%3E700x300%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E';
@@ -88,89 +77,85 @@
 	const cardParagraphModel = new TanoshiParagraphModel(
 		'Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.'
 	)
-		.setAligment('center')
+		.setAlignment('center')
 		.setDisplaySize('sm');
 
 	const footerParagraphModel = new TanoshiParagraphModel('Copyright tanoshi 2023')
-		.setAligment('center')
+		.setAlignment('center')
 		.setDisplaySize('sm');
 </script>
 
-<div>
-	<TanoshiNavigation tanoshiNavigationModel={navbarModel} />
-	<main class="relative">
-		<section id="header">
-			<TanoshiContainer tanoshiContainerModel={heroSectionBackgroundModel}>
-				<TanoshiContainer tanoshiContainerModel={heroSectionContentModel}>
-					<TanoshiHeader tanoshiHeaderModel={heroHeaderModel} />
-					<TanoshiParagraph tanoshiParagraphModel={heroParagraphModel} />
+
+<section id="header">
+	<TanoshiContainer tanoshiContainerModel={heroSectionBackgroundModel}>
+		<TanoshiContainer tanoshiContainerModel={heroSectionContentModel}>
+			<TanoshiHeader tanoshiHeaderModel={heroHeaderModel} />
+			<TanoshiParagraph tanoshiParagraphModel={heroParagraphModel} />
+			<TanoshiButton tanoshiButtonModel={heroButtonModel} />
+		</TanoshiContainer>
+	</TanoshiContainer>
+</section>
+<section id="collaboration">
+	<TanoshiContainer tanoshiContainerModel={collaborationSectionAlignementModel}>
+		<TanoshiContainer tanoshiContainerModel={collaborationSectionContentModel}>
+			<TanoshiContainer
+				tanoshiContainerModel={collaborationSectionHeaderModel}
+				customClasses="space-x-4"
+			>
+				<TanoshiHeader tanoshiHeaderModel={collaborationHeaderModel} />
+				<TanoshiHeader tanoshiHeaderModel={collaborationSubHeaderModel} />
+			</TanoshiContainer>
+			<TanoshiParagraph tanoshiParagraphModel={collaborationParagraphModel} />
+			<TanoshiContainer tanoshiContainerModel={cardListSectionModel}>
+				<TanoshiContainer tanoshiContainerModel={cardSectionModel}>
+					<TanoshiImage tanoshiImageModel={squareImageModel} />
+					<TanoshiHeader tanoshiHeaderModel={cardHeaderModel} />
+					<TanoshiParagraph tanoshiParagraphModel={cardParagraphModel} />
+				</TanoshiContainer>
+				<TanoshiContainer tanoshiContainerModel={cardSectionModel}>
+					<TanoshiImage tanoshiImageModel={squareImageModel} />
+					<TanoshiHeader tanoshiHeaderModel={cardHeaderModel} />
+					<TanoshiParagraph tanoshiParagraphModel={cardParagraphModel} />
+				</TanoshiContainer>
+				<TanoshiContainer tanoshiContainerModel={cardSectionModel}>
+					<TanoshiImage tanoshiImageModel={squareImageModel} />
+					<TanoshiHeader tanoshiHeaderModel={cardHeaderModel} />
+					<TanoshiParagraph tanoshiParagraphModel={cardParagraphModel} />
+				</TanoshiContainer>
+			</TanoshiContainer>
+		</TanoshiContainer>
+	</TanoshiContainer>
+</section>
+<section id="orange">
+	<TanoshiContainer tanoshiContainerModel={orangeSectionContentModel}>
+		<TanoshiContainer tanoshiContainerModel={collaborationSectionContentModel}>
+			<TanoshiContainer tanoshiContainerModel={cardListSectionModel}>
+				<TanoshiContainer tanoshiContainerModel={cardSectionModel}>
+					<TanoshiImage tanoshiImageModel={roundImageModel} />
+					<TanoshiHeader tanoshiHeaderModel={cardHeaderModel} />
+					<TanoshiParagraph tanoshiParagraphModel={cardParagraphModel} />
+					<TanoshiButton tanoshiButtonModel={heroButtonModel} />
+				</TanoshiContainer>
+				<TanoshiContainer tanoshiContainerModel={cardSectionModel}>
+					<TanoshiImage tanoshiImageModel={roundImageModel} />
+					<TanoshiHeader tanoshiHeaderModel={cardHeaderModel} />
+					<TanoshiParagraph tanoshiParagraphModel={cardParagraphModel} />
+					<TanoshiButton tanoshiButtonModel={heroButtonModel} />
+				</TanoshiContainer>
+				<TanoshiContainer tanoshiContainerModel={cardSectionModel}>
+					<TanoshiImage tanoshiImageModel={roundImageModel} />
+					<TanoshiHeader tanoshiHeaderModel={cardHeaderModel} />
+					<TanoshiParagraph tanoshiParagraphModel={cardParagraphModel} />
 					<TanoshiButton tanoshiButtonModel={heroButtonModel} />
 				</TanoshiContainer>
 			</TanoshiContainer>
-		</section>
-		<section id="collaboration">
-			<TanoshiContainer tanoshiContainerModel={collaborationSectionAlignementModel}>
-				<TanoshiContainer tanoshiContainerModel={collaborationSectionContentModel}>
-					<TanoshiContainer
-						tanoshiContainerModel={collaborationSectionHeaderModel}
-						customClasses="space-x-4"
-					>
-						<TanoshiHeader tanoshiHeaderModel={collaborationHeaderModel} />
-						<TanoshiHeader tanoshiHeaderModel={collaborationSubHeaderModel} />
-					</TanoshiContainer>
-					<TanoshiParagraph tanoshiParagraphModel={collaborationParagraphModel} />
-					<TanoshiContainer tanoshiContainerModel={cardListSectionModel}>
-						<TanoshiContainer tanoshiContainerModel={cardSectionModel}>
-							<TanoshiImage tanoshiImageModel={squareImageModel} />
-							<TanoshiHeader tanoshiHeaderModel={cardHeaderModel} />
-							<TanoshiParagraph tanoshiParagraphModel={cardParagraphModel} />
-						</TanoshiContainer>
-						<TanoshiContainer tanoshiContainerModel={cardSectionModel}>
-							<TanoshiImage tanoshiImageModel={squareImageModel} />
-							<TanoshiHeader tanoshiHeaderModel={cardHeaderModel} />
-							<TanoshiParagraph tanoshiParagraphModel={cardParagraphModel} />
-						</TanoshiContainer>
-						<TanoshiContainer tanoshiContainerModel={cardSectionModel}>
-							<TanoshiImage tanoshiImageModel={squareImageModel} />
-							<TanoshiHeader tanoshiHeaderModel={cardHeaderModel} />
-							<TanoshiParagraph tanoshiParagraphModel={cardParagraphModel} />
-						</TanoshiContainer>
-					</TanoshiContainer>
-				</TanoshiContainer>
-			</TanoshiContainer>
-		</section>
-		<section id="orange">
-			<TanoshiContainer tanoshiContainerModel={orangeSectionContentModel}>
-				<TanoshiContainer tanoshiContainerModel={collaborationSectionContentModel}>
-					<TanoshiContainer tanoshiContainerModel={cardListSectionModel}>
-						<TanoshiContainer tanoshiContainerModel={cardSectionModel}>
-							<TanoshiImage tanoshiImageModel={roundImageModel} />
-							<TanoshiHeader tanoshiHeaderModel={cardHeaderModel} />
-							<TanoshiParagraph tanoshiParagraphModel={cardParagraphModel} />
-							<TanoshiButton tanoshiButtonModel={heroButtonModel} />
-						</TanoshiContainer>
-						<TanoshiContainer tanoshiContainerModel={cardSectionModel}>
-							<TanoshiImage tanoshiImageModel={roundImageModel} />
-							<TanoshiHeader tanoshiHeaderModel={cardHeaderModel} />
-							<TanoshiParagraph tanoshiParagraphModel={cardParagraphModel} />
-							<TanoshiButton tanoshiButtonModel={heroButtonModel} />
-						</TanoshiContainer>
-						<TanoshiContainer tanoshiContainerModel={cardSectionModel}>
-							<TanoshiImage tanoshiImageModel={roundImageModel} />
-							<TanoshiHeader tanoshiHeaderModel={cardHeaderModel} />
-							<TanoshiParagraph tanoshiParagraphModel={cardParagraphModel} />
-							<TanoshiButton tanoshiButtonModel={heroButtonModel} />
-						</TanoshiContainer>
-					</TanoshiContainer>
-				</TanoshiContainer>
-			</TanoshiContainer>
-		</section>
-		<section id="footer">
-			<TanoshiContainer tanoshiContainerModel={collaborationSectionAlignementModel}>
-				<TanoshiContainer tanoshiContainerModel={collaborationSectionContentModel}>
-					<TanoshiParagraph tanoshiParagraphModel={footerParagraphModel} />
-				</TanoshiContainer>
-			</TanoshiContainer>
-		</section>
-	</main>
-</div>
+		</TanoshiContainer>
+	</TanoshiContainer>
+</section>
+<section id="footer">
+	<TanoshiContainer tanoshiContainerModel={collaborationSectionAlignementModel}>
+		<TanoshiContainer tanoshiContainerModel={collaborationSectionContentModel}>
+			<TanoshiParagraph tanoshiParagraphModel={footerParagraphModel} />
+		</TanoshiContainer>
+	</TanoshiContainer>
+</section>
