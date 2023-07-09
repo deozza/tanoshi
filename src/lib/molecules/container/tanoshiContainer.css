@@ -1,6 +1,7 @@
 div.flex-container {
 	padding: 0.5rem/* 8px */;
 	display: flex;
+	box-sizing: border-box;
 }
 
 div.flex-container.flex-c {
