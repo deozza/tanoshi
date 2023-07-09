@@ -1,29 +1,24 @@
-/* Write your global styles here, in PostCSS syntax */
-@tailwind components;
+.pill {
+	margin: 0.5rem/* 8px */;
+	border-width: 1px;
+	border-radius: 9999px;
+}
 
-@layer components {
-	.pill {
-		margin: 0.5rem/* 8px */;
-		border-width: 1px;
-		border-radius: 9999px;
-	}
+.pill.pill-md {
+	padding-left: 1.25rem/* 20px */;
+	padding-right: 1.25rem/* 20px */;
+}
 
-	.pill.pill-md {
-		padding-left: 1.25rem/* 20px */;
-		padding-right: 1.25rem/* 20px */;
-	}
+.pill.pill-sm {
+	padding-left: 1rem/* 16px */;
+	padding-right: 1rem/* 16px */;
+	font-size: 0.875rem/* 14px */;
+	line-height: 1.25rem/* 20px */;
+}
 
-	.pill.pill-sm {
-		padding-left: 1rem/* 16px */;
-    	padding-right: 1rem/* 16px */;
-		font-size: 0.875rem/* 14px */;
-    	line-height: 1.25rem/* 20px */;
-	}
-
-	.pill.pill-lg {
-		padding-left: 1.5rem/* 24px */;
-    	padding-right: 1.5rem/* 24px */;
-		font-size: 1.125rem/* 18px */;
-    	line-height: 1.75rem/* 28px */;
-	}
+.pill.pill-lg {
+	padding-left: 1.5rem/* 24px */;
+	padding-right: 1.5rem/* 24px */;
+	font-size: 1.125rem/* 18px */;
+	line-height: 1.75rem/* 28px */;
 }
