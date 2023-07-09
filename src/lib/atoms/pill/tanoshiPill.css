@@ -3,66 +3,27 @@
 
 @layer components {
 	.pill {
-		@apply m-2 border rounded-full;
+		margin: 0.5rem/* 8px */;
+		border-width: 1px;
+		border-radius: 9999px;
 	}
 
 	.pill.pill-md {
-		@apply px-5;
+		padding-left: 1.25rem/* 20px */;
+		padding-right: 1.25rem/* 20px */;
 	}
 
 	.pill.pill-sm {
-		@apply px-4 text-sm;
+		padding-left: 1rem/* 16px */;
+    	padding-right: 1rem/* 16px */;
+		font-size: 0.875rem/* 14px */;
+    	line-height: 1.25rem/* 20px */;
 	}
 
 	.pill.pill-lg {
-		@apply px-6 text-lg;
-	}
-
-	.pill.pill-primary {
-		@apply bg-primary text-white;
-	}
-
-	.pill.pill-primary.pill-outlined {
-		@apply bg-white text-primary-dark border-primary-dark;
-	}
-
-	.pill.pill-secondary {
-		@apply bg-secondary text-white;
-	}
-
-	.pill.pill-secondary.pill-outlined {
-		@apply bg-white text-secondary-dark border-secondary-dark;
-	}
-
-	.pill.pill-success {
-		@apply bg-success text-white;
-	}
-
-	.pill.pill-success.pill-outlined {
-		@apply bg-white text-success-dark border-success-dark;
-	}
-
-	.pill.pill-warning {
-		@apply bg-warning text-white;
-	}
-
-	.pill.pill-warning.pill-outlined {
-		@apply bg-white text-warning-dark border-warning-dark;
-	}
-
-	.pill.pill-danger {
-		@apply bg-danger text-white;
-	}
-
-	.pill.pill-danger.pill-outlined {
-		@apply bg-white text-danger-dark border-danger-dark;
-	}
-
-	.pill.pill-info {
-		@apply bg-info text-white;
-	}
-
-	.pill.pill-info.pill-outlined {
-		@apply bg-white text-info-dark border-info-dark;
+		padding-left: 1.5rem/* 24px */;
+    	padding-right: 1.5rem/* 24px */;
+		font-size: 1.125rem/* 18px */;
+    	line-height: 1.75rem/* 28px */;
 	}
 }
