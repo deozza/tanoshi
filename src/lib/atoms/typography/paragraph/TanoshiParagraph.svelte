@@ -1,5 +1,5 @@
 <script lang="ts">
-	import './../typography.css';
+	import './../../../main.css';
 	import './tanoshiParagraph.css';
 	import type TanoshiParagraphModel from './TanoshiParagraphModel';
 

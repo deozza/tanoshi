@@ -5,38 +5,11 @@
 
 @layer components {
 	a {
-		@apply m-2 underline transition-colors duration-300 hover:text-primary-dark;
-	}
-
-	a.a-black {
-		@apply text-black hover:text-black-dark;
-	}
-
-	a.a-white {
-		@apply text-white hover:text-white-dark;
-	}
-
-	a.a-primary {
-		@apply text-primary hover:text-primary-dark;
-	}
-
-	a.a-secondary {
-		@apply text-secondary hover:text-secondary-dark;
-	}
-
-	a.a-success {
-		@apply text-success hover:text-success-dark;
-	}
-
-	a.a-warning {
-		@apply text-warning hover:text-warning-dark;
-	}
-
-	a.a-danger {
-		@apply text-danger hover:text-danger-dark;
-	}
-
-	a.a-info {
-		@apply text-info hover:text-info-dark;
+		margin: 0.5rem/* 8px */;
+		text-decoration-line: underline;
+		transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 150ms;
+		transition-duration: 300ms;
 	}
 }
