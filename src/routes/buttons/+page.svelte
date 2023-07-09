@@ -1,6 +1,6 @@
 <script lang="ts">
-	import TanoshiHeader from '$atoms/header/TanoshiHeader.svelte';
-	import TanoshiHeaderModel from '$atoms/header/TanoshiHeaderModel';
+	import TanoshiHeader from '$atoms/typography/header/TanoshiHeader.svelte';
+	import TanoshiHeaderModel from '$atoms/typography/header/TanoshiHeaderModel';
 	import TanoshiButton from '$atoms/button/TanoshiButton.svelte';
 	import TanoshiButtonModel from '$atoms/button/TanoshiButtonModel';
 	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';

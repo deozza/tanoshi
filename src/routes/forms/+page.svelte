@@ -10,11 +10,11 @@
 	const columnContainer = new TanoshiContainerModel('c')
 		.setItemsAlignment('center')
 		.setDesktopSpacing('centered');
-	const formContainer = new TanoshiContainerModel('c')
-		.setTheme('secondary')
+	const formContainer: TanoshiContainerModel = new TanoshiContainerModel('c')
+		.setDesktopSpacing('centered')
+		.setItemsAlignment('center')
 		.setBorders('md')
-		.setSize('sm:w-1/3 w-full')
-		.setDesktopSpacing('centered');
+		.setSize('w-4');
 
 	const emailInput: TanoshiTextInputModel = new TanoshiTextInputModel('Email').setType('email');
 	const emailLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(emailInput);
@@ -32,12 +32,13 @@
 
 	function handleForm(){
 		console.log(emailInput)
+		console.log(passwordInput)
 	}
 </script>
 
 <main>
 	<section id="form">
-		<TanoshiContainer tanoshiContainerModel={columnContainer} customClasses={'min-h-screen'}>
+		<TanoshiContainer tanoshiContainerModel={columnContainer} customClasses={'h-screen'}>
 			<TanoshiContainer tanoshiContainerModel={formContainer}>
 				<TanoshiForm tanoshiFormModel={loginFormModel} on:submit={handleForm}/>
 			</TanoshiContainer>

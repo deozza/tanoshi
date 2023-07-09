@@ -1,8 +1,8 @@
 <script lang="ts">
-	import TanoshiHeader from "$atoms/header/TanoshiHeader.svelte";
-	import TanoshiHeaderModel from "$atoms/header/TanoshiHeaderModel";
-	import TanoshiParagraphModel from "$atoms/paragraph/TanoshiParagraphModel";
-	import TanoshiParagraph from "$atoms/paragraph/TanoshiParagraph.svelte";
+	import TanoshiHeader from "$atoms/typography/header/TanoshiHeader.svelte";
+	import TanoshiHeaderModel from "$atoms/typography/header/TanoshiHeaderModel";
+	import TanoshiParagraphModel from "$atoms/typography/paragraph/TanoshiParagraphModel";
+	import TanoshiParagraph from "$atoms/typography/paragraph/TanoshiParagraph.svelte";
 	import TanoshiContainer from "$molecules/container/TanoshiContainer.svelte";
     import TanoshiContainerModel from "$molecules/container/TanoshiContainerModel";
 	import TanoshiLinkModel from "$atoms/link/TanoshiLinkModel";

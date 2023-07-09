@@ -1,7 +1,7 @@
 export default class TanoshiContainerModel {
 	private _theme!: string;
 	private _borders!: string;
-	private _size: string = 'w-full';
+	private _size: string = 'w-12';
 	private _backgroundImage: string | null = null;
 	private _desktopOrientation!: string;
 	private _mobileOrientation!: string;

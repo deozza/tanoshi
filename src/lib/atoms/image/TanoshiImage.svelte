@@ -1,4 +1,5 @@
 <script lang="ts">
+	import './../../main.css';
 	import './tanoshiImage.css';
 	import type TanoshiImageModel from './TanoshiImageModel';
 

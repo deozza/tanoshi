@@ -1,8 +1,8 @@
 <script lang="ts">
-	import TanoshiHeader from '$atoms/header/TanoshiHeader.svelte';
-	import TanoshiHeaderModel from '$atoms/header/TanoshiHeaderModel';
-	import TanoshiParagraph from '$atoms/paragraph/TanoshiParagraph.svelte';
-	import TanoshiParagraphModel from '$atoms/paragraph/TanoshiParagraphModel';
+	import TanoshiHeader from '$atoms/typography/header/TanoshiHeader.svelte';
+	import TanoshiHeaderModel from '$atoms/typography/header/TanoshiHeaderModel';
+	import TanoshiParagraph from '$atoms/typography/paragraph/TanoshiParagraph.svelte';
+	import TanoshiParagraphModel from '$atoms/typography/paragraph/TanoshiParagraphModel';
     import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
 	import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel';
 
@@ -31,50 +31,6 @@
 		h4Header,
 		h5Header,
 		h6Header,
-	];
-
-    const themedHeadersHeader: TanoshiHeaderModel = new TanoshiHeaderModel('Themed headers')
-		.setDisplaySize('2xl')
-		.setHtmlSize('h3');
-
-	const blackHeader = new TanoshiHeaderModel('<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>').setDisplaySize('2xl').setHtmlSize('h3');
-	const primaryHeader = new TanoshiHeaderModel('<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>').setDisplaySize('2xl').setHtmlSize('h3').setTheme('primary');
-	const secondaryHeader = new TanoshiHeaderModel('<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>').setDisplaySize('2xl').setHtmlSize('h3').setTheme('secondary');
-	const successHeader = new TanoshiHeaderModel('<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>').setDisplaySize('2xl').setHtmlSize('h3').setTheme('success');
-	const dangerHeader = new TanoshiHeaderModel('<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>').setDisplaySize('2xl').setHtmlSize('h3').setTheme('danger');
-	const warningHeader = new TanoshiHeaderModel('<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>').setDisplaySize('2xl').setHtmlSize('h3').setTheme('warning');
-	const infoHeader = new TanoshiHeaderModel('<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>').setDisplaySize('2xl').setHtmlSize('h3').setTheme('info');
-    
-    const themedHeadersModels: Array<TanoshiHeaderModel> = [
-		blackHeader,
-		primaryHeader,
-		secondaryHeader,
-		successHeader,
-		dangerHeader,
-		warningHeader,
-		infoHeader,
-	];
-
-    const themedParagraphsHeader: TanoshiHeaderModel = new TanoshiHeaderModel('Themed paragraph')
-		.setDisplaySize('2xl')
-		.setHtmlSize('h3');
-
-	const blackParagraph = new TanoshiParagraphModel('Lorem ipsum dolor sit amet, consectetur adipiscing elit');
-	const primaryParagraph = new TanoshiParagraphModel('Lorem ipsum dolor sit amet, consectetur adipiscing elit').setTheme('primary');
-	const secondaryParagraph = new TanoshiParagraphModel('Lorem ipsum dolor sit amet, consectetur adipiscing elit').setTheme('secondary');
-	const successParagraph = new TanoshiParagraphModel('Lorem ipsum dolor sit amet, consectetur adipiscing elit').setTheme('success');
-	const dangerParagraph = new TanoshiParagraphModel('Lorem ipsum dolor sit amet, consectetur adipiscing elit').setTheme('danger');
-	const warningParagraph = new TanoshiParagraphModel('Lorem ipsum dolor sit amet, consectetur adipiscing elit').setTheme('warning');
-	const infoParagraph = new TanoshiParagraphModel('Lorem ipsum dolor sit amet, consectetur adipiscing elit').setTheme('info');
-    
-    const themedParagraphsModels: Array<TanoshiParagraphModel> = [
-		blackParagraph,
-		primaryParagraph,
-		secondaryParagraph,
-		successParagraph,
-		dangerParagraph,
-		warningParagraph,
-		infoParagraph,
 	];
 
 	const alignementParagraphsHeader: TanoshiHeaderModel = new TanoshiHeaderModel('Paragraph alignement')
@@ -106,21 +62,6 @@
 				<TanoshiContainer tanoshiContainerModel={columnContainer}>
 					{#each standardHeadersModels as standardHeadersModel}
                     <TanoshiHeader tanoshiHeaderModel={standardHeadersModel} />
-					{/each}
-				</TanoshiContainer>
-
-			
-                <TanoshiHeader tanoshiHeaderModel={themedHeadersHeader} />
-				<TanoshiContainer tanoshiContainerModel={columnContainer}>
-					{#each themedHeadersModels as themedHeadersModel}
-                    <TanoshiHeader tanoshiHeaderModel={themedHeadersModel} />
-					{/each}
-				</TanoshiContainer>
-
-                <TanoshiHeader tanoshiHeaderModel={themedParagraphsHeader} />
-				<TanoshiContainer tanoshiContainerModel={columnContainer}>
-					{#each themedParagraphsModels as themedParagraphsModel}
-                    <TanoshiParagraph tanoshiParagraphModel={themedParagraphsModel} />
 					{/each}
 				</TanoshiContainer>
 

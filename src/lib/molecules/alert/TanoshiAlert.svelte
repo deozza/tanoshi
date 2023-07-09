@@ -10,8 +10,8 @@
 	import TanoshiContainer from '$lib/molecules/container/TanoshiContainer.svelte';
 	import TanoshiContainerModel from '$lib/molecules/container/TanoshiContainerModel';
 
-	import TanoshiParagraph from '$lib/atoms/paragraph/TanoshiParagraph.svelte';
-	import TanoshiParagraphModel from '$lib/atoms/paragraph/TanoshiParagraphModel';
+	import TanoshiParagraph from '$atoms/typography/paragraph/TanoshiParagraph.svelte';
+	import TanoshiParagraphModel from '$atoms/typography/paragraph/TanoshiParagraphModel';
 
 	export let tanoshiAlertModel: TanoshiAlertModel;
 
