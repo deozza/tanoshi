@@ -1,6 +1,11 @@
+.carousel-commands {
+    z-index: 10;
+}
+
 button.arrow{
     margin-left: 1.25rem/* 20px */;
     margin-right: 1.25rem/* 20px */;
+    background-color: transparent;
 }
 
 button.dot{
@@ -22,3 +27,4 @@ button.dot.bg-white{
     background-color: rgb(255 255 255 / var(--tw-bg-opacity));
     opacity: 1;
 }
+

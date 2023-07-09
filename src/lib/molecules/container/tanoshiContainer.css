@@ -41,3 +41,9 @@ div.flex-container.around {
 div.flex-container.evenly {
 	justify-content: space-evenly;
 }
+
+@media (max-width: 640px) {
+	div.flex-container{
+		width: 100%;
+	}
+}

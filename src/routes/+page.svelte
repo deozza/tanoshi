@@ -103,20 +103,6 @@
     </TanoshiContainer>
 </section>
 
-<section id="style">
-    adapts to your style
-
-</section>
-
-<section id="best-practices">
-    Enforce best practices
-
-</section>
-
-<section id="reusability">
-    Ease of reuse
-</section>
-
 <section id="built">
     <TanoshiContainer tanoshiContainerModel={builtSectionAlignementModel}>
 		<TanoshiContainer tanoshiContainerModel={builtSectionContentModel}>

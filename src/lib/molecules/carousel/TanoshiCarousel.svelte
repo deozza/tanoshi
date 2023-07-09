@@ -1,4 +1,6 @@
 <script lang="ts">
+  import './tanoshiCarousel.css';
+
   import Fa from 'svelte-fa/src/fa.svelte';
 	import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons/index.js';
 	import { fade } from 'svelte/transition';
@@ -90,7 +92,7 @@
       </div>
     {/key}
 
-    <TanoshiContainer tanoshiContainerModel={paginatorContainer} customClasses={'z-10 '}>
+    <TanoshiContainer tanoshiContainerModel={paginatorContainer} customClasses={'carousel-commands'}>
       {#if tanoshiCarouselModel.showArrows === true}
         <button type="button" class="arrow"  on:click={() => moveCarouselBackward(true)}> <Fa icon={faAngleLeft} /> </button>
       {/if}
