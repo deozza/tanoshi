@@ -92,17 +92,17 @@
 
     <TanoshiContainer tanoshiContainerModel={paginatorContainer} customClasses={'z-10 '}>
       {#if tanoshiCarouselModel.showArrows === true}
-        <button type="button" class="mx-5"  on:click={() => moveCarouselBackward(true)}> <Fa icon={faAngleLeft} /> </button>
+        <button type="button" class="arrow"  on:click={() => moveCarouselBackward(true)}> <Fa icon={faAngleLeft} /> </button>
       {/if}
 
       {#if tanoshiCarouselModel.showDots === true}
         {#each tanoshiCarouselModel.items as _,index}
-          <button type="button" class="my-1 mx-5 w-5 h-5 opacity-50 bg-white-dark rounded-full" class:bg-white="{index !== currentImageIndex}" on:click={() => updateCurrentImage(index)}></button>
+          <button type="button" class="dot" class:bg-white="{index !== currentImageIndex}" on:click={() => updateCurrentImage(index)}></button>
         {/each}
       {/if}
 
       {#if tanoshiCarouselModel.showArrows === true}
-        <button type="button" class="mx-5"  on:click={() => moveCarouselForward(true)}> <Fa icon={faAngleRight} /> </button>
+        <button type="button" class="arrow"  on:click={() => moveCarouselForward(true)}> <Fa icon={faAngleRight} /> </button>
       {/if}
 
     </TanoshiContainer>  
