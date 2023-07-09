@@ -58,6 +58,26 @@ video {
   border-color: theme('borderColor.DEFAULT', currentColor);
 }
 
+.static {
+  position: static;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.sticky {
+  position: sticky;
+}
+
 .flex {
     display: flex;
 }
