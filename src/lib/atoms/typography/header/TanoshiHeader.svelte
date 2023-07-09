@@ -1,4 +1,5 @@
 <script lang="ts">
+	import './../typography.css';
 	import './tanoshiHeader.css';
 	import type TanoshiHeaderModel from './TanoshiHeaderModel';
 
