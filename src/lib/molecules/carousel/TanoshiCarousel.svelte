@@ -94,17 +94,17 @@
 
     <TanoshiContainer tanoshiContainerModel={paginatorContainer} customClasses={'carousel-commands'}>
       {#if tanoshiCarouselModel.showArrows === true}
-        <button type="button" class="arrow"  on:click={() => moveCarouselBackward(true)}> <Fa icon={faAngleLeft} /> </button>
+        <button type="button" class="btn arrow"  on:click={() => moveCarouselBackward(true)}> <Fa icon={faAngleLeft} /> </button>
       {/if}
 
       {#if tanoshiCarouselModel.showDots === true}
         {#each tanoshiCarouselModel.items as _,index}
-          <button type="button" class="dot" class:bg-white="{index !== currentImageIndex}" on:click={() => updateCurrentImage(index)}></button>
+          <button type="button" class="btn dot" class:bg-white="{index !== currentImageIndex}" on:click={() => updateCurrentImage(index)}></button>
         {/each}
       {/if}
 
       {#if tanoshiCarouselModel.showArrows === true}
-        <button type="button" class="arrow"  on:click={() => moveCarouselForward(true)}> <Fa icon={faAngleRight} /> </button>
+        <button type="button" class="btn arrow"  on:click={() => moveCarouselForward(true)}> <Fa icon={faAngleRight} /> </button>
       {/if}
 
     </TanoshiContainer>  

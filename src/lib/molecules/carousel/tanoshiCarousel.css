@@ -6,6 +6,7 @@ button.arrow{
     margin-left: 1.25rem/* 20px */;
     margin-right: 1.25rem/* 20px */;
     background-color: transparent;
+    border: none;
 }
 
 button.dot{
@@ -19,6 +20,7 @@ button.dot{
     --tw-bg-opacity: 1;
     background-color: rgb(100 116 139 / var(--tw-bg-opacity));
     border-radius: 9999px;
+    border: none;
 
 }
 
