@@ -42,6 +42,42 @@ div.flex-container.evenly {
 	justify-content: space-evenly;
 }
 
+div.flex-container.transparent {
+	background-color: transparent;
+}
+
+div.flex-container.light {
+	background-color: rgb(245 245 245);
+}
+
+div.flex-container.dark {
+	background-color: black;
+}
+
+div.flex-container.primary {
+	background-color: var(--primary);
+}
+
+div.flex-container.secondary {
+	background-color: var(--secondary);
+}
+
+div.flex-container.success {
+	background-color: var(--success);
+}
+
+div.flex-container.warning {
+	background-color: var(--warning);
+}
+
+div.flex-container.danger {
+	background-color: var(--danger);
+}
+
+div.flex-container.info {
+	background-color: var(--info);
+}
+
 @media (max-width: 640px) {
 	div.flex-container{
 		width: 100%;

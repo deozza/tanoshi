@@ -42,7 +42,7 @@
 	const builtSectionContentModel = new TanoshiContainerModel('c')
 		.setDesktopSpacing('centered')
 		.setItemsAlignment('center')
-		.setSize('sm:w-8/12');
+		.setSize('w-8');
     const builtHeaderModel: TanoshiHeaderModel  = new TanoshiHeaderModel('Built on the shoulders of giants')
         .setDisplaySize('4xl')
         .setHtmlSize('h2')
@@ -51,7 +51,7 @@
 	const cardSectionModel = new TanoshiContainerModel('c')
 		.setDesktopSpacing('centered')
 		.setItemsAlignment('center')
-		.setSize('sm:w-1/3');
+		.setSize('w-4');
     
 	const sveltekitCardParagraphModel = new TanoshiParagraphModel('Tanoshi has been built to be used with Sveltekit, for a lightweight and powerful app.')
 		.setAlignment('center')

@@ -1,15 +1,72 @@
-/* Write your global styles here, in PostCSS syntax */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+a {
+	margin: 0.5rem/* 8px */;
+	text-decoration-line: none;
+	transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+	transition-duration: 300ms;
+}
 
-@layer components {
-	a {
-		margin: 0.5rem/* 8px */;
-		text-decoration-line: underline;
-		transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-		transition-duration: 150ms;
-		transition-duration: 300ms;
-	}
+a.a-black {
+	color: var(--black-text-link, var(--black));
+}
+
+a.a-black:hover {
+	color: var(--black-text-link-hover, var(--black-dark));
+}
+
+a.a-white {
+	color: var(--white-text-link, var(--white));
+}
+
+a.a-white:hover {
+	color: var(--white-text-link-hover, var(--white-dark));
+}
+
+a.a-primary {
+	color: var(--primary-text-link, var(--primary));
+}
+
+a.a-primary:hover {
+	color: var(--primary-text-link-hover, var(--primary-dark));
+}
+
+a.a-secondary {
+	color: var(--secondary-text-link, var(--secondary));
+}
+
+a.a-secondary:hover {
+	color: var(--secondary-text-link-hover, var(--secondary-dark));
+}
+
+a.a-success {
+	color: var(--success-text-link, var(--success));
+}
+
+a.a-success:hover {
+	color: var(--success-text-link-hover, var(--success-dark));
+}
+
+a.a-warning {
+	color: var(--warning-text-link, var(--warning));
+}
+
+a.a-warning:hover {
+	color: var(--warning-text-link-hover, var(--warning-dark));
+}
+
+a.a-danger {
+	color: var(--danger-text-link, var(--danger));
+}
+
+a.a-danger:hover {
+	color: var(--danger-text-link-hover, var(--danger-dark));
+}
+
+a.a-info {
+	color: var(--info-text-link, var(--info));
+}
+
+a.a-info:hover {
+	color: var(--info-text-link-hover, var(--info-dark));
 }

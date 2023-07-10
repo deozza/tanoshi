@@ -13,3 +13,7 @@ input.text-input {
 	border-width: 1px;
 	border-radius: 0.375rem/* 6px */;
 }
+
+span.text-danger {
+	color: var(--danger-color-text-span, var(--danger));
+}

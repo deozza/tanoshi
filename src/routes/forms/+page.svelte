@@ -24,7 +24,8 @@
 
 	const loginButtonModel: TanoshiButtonModel = new TanoshiButtonModel('Send')
 		.setSize('block')
-		.setType('submit');
+		.setType('submit')
+		.setTheme('success');
 	const loginFormModel: TanoshiFormModel = new TanoshiFormModel(loginButtonModel)
 		.addLabelAndInput(emailLabel, emailInput)
 		.addLabelAndInput(passwordLabel, passwordInput);

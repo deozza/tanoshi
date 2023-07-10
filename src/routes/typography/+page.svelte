@@ -6,14 +6,13 @@
     import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
 	import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel';
 
-	const rowContainer = new TanoshiContainerModel('r');
 	const columnContainer = new TanoshiContainerModel('c');
 
 	const typographyHeader: TanoshiHeaderModel = new TanoshiHeaderModel('Typography')
 		.setDisplaySize('3xl')
 		.setHtmlSize('h1');
 
-	const standardHeadersHeader: TanoshiHeaderModel = new TanoshiHeaderModel('Standard headers')
+	const standardHeadersHeader: TanoshiHeaderModel = new TanoshiHeaderModel('Header sizes')
 		.setDisplaySize('2xl')
 		.setHtmlSize('h3');
 
@@ -32,6 +31,51 @@
 		h5Header,
 		h6Header,
 	];
+
+	const coloredHeadersHeader: TanoshiHeaderModel = new TanoshiHeaderModel('Header colors')
+		.setDisplaySize('2xl')
+		.setHtmlSize('h3');
+
+	const blackHeader = new TanoshiHeaderModel('<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>').setDisplaySize('xl').setHtmlSize('h4');
+	const primaryHeader = new TanoshiHeaderModel('<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>').setDisplaySize('xl').setHtmlSize('h4').setTheme('primary');
+	const secondaryHeader = new TanoshiHeaderModel('<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>').setDisplaySize('xl').setHtmlSize('h4').setTheme('secondary');
+	const successHeader = new TanoshiHeaderModel('<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>').setDisplaySize('xl').setHtmlSize('h4').setTheme('success');
+	const dangerHeader = new TanoshiHeaderModel('<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>').setDisplaySize('xl').setHtmlSize('h4').setTheme('danger');
+	const warningHeader = new TanoshiHeaderModel('<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>').setDisplaySize('xl').setHtmlSize('h4').setTheme('warning');
+	const infoHeader = new TanoshiHeaderModel('<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>').setDisplaySize('xl').setHtmlSize('h4').setTheme('info');
+
+	const coloredHeadersModels: Array<TanoshiHeaderModel> = [
+		blackHeader,
+		primaryHeader,
+		secondaryHeader,
+		successHeader,
+		dangerHeader,
+		warningHeader,
+		infoHeader,
+	];
+
+	const coloredParagraphsHeader: TanoshiHeaderModel = new TanoshiHeaderModel('Paragraph colors')
+		.setDisplaySize('2xl')
+		.setHtmlSize('h3');
+	
+	const blackParagraph = new TanoshiParagraphModel('Lorem ipsum dolor sit amet, consectetur adipiscing elit');
+	const primaryParagraph = new TanoshiParagraphModel('Lorem ipsum dolor sit amet, consectetur adipiscing elit').setTheme('primary');
+	const secondaryParagraph = new TanoshiParagraphModel('Lorem ipsum dolor sit amet, consectetur adipiscing elit').setTheme('secondary');
+	const successParagraph = new TanoshiParagraphModel('Lorem ipsum dolor sit amet, consectetur adipiscing elit').setTheme('success');
+	const dangerParagraph = new TanoshiParagraphModel('Lorem ipsum dolor sit amet, consectetur adipiscing elit').setTheme('danger');
+	const warningParagraph = new TanoshiParagraphModel('Lorem ipsum dolor sit amet, consectetur adipiscing elit').setTheme('warning');
+	const infoParagraph = new TanoshiParagraphModel('Lorem ipsum dolor sit amet, consectetur adipiscing elit').setTheme('info');
+	
+	const coloredParagraphsModels: Array<TanoshiParagraphModel> = [
+		blackParagraph,
+		primaryParagraph,
+		secondaryParagraph,
+		successParagraph,
+		dangerParagraph,
+		warningParagraph,
+		infoParagraph
+	];
+
 
 	const alignementParagraphsHeader: TanoshiHeaderModel = new TanoshiHeaderModel('Paragraph alignement')
 		.setDisplaySize('2xl')
@@ -62,6 +106,20 @@
 				<TanoshiContainer tanoshiContainerModel={columnContainer}>
 					{#each standardHeadersModels as standardHeadersModel}
                     <TanoshiHeader tanoshiHeaderModel={standardHeadersModel} />
+					{/each}
+				</TanoshiContainer>
+
+				<TanoshiHeader tanoshiHeaderModel={coloredHeadersHeader} />
+				<TanoshiContainer tanoshiContainerModel={columnContainer}>
+					{#each coloredHeadersModels as coloredHeadersModel}
+                    <TanoshiHeader tanoshiHeaderModel={coloredHeadersModel} />
+					{/each}
+				</TanoshiContainer>
+
+				<TanoshiHeader tanoshiHeaderModel={coloredParagraphsHeader} />
+				<TanoshiContainer tanoshiContainerModel={columnContainer}>
+					{#each coloredParagraphsModels as coloredParagraphsModel}
+                    <TanoshiParagraph tanoshiParagraphModel={coloredParagraphsModel} />
 					{/each}
 				</TanoshiContainer>
 
