@@ -5,6 +5,11 @@
 	import TanoshiLabel from '$atoms/label/TanoshiLabel.svelte';
 	import type TanoshiFormModel from './TanoshiFormModel';
 	import { createEventDispatcher } from 'svelte';
+	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
+	import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel';
+
+	const inputContainerModel: TanoshiContainerModel = new TanoshiContainerModel('r');
+	const buttonContainerModel: TanoshiContainerModel = new TanoshiContainerModel('r').setItemsAlignment('center').setDesktopSpacing('centered');
 
 	const dispatch = createEventDispatcher();
 
@@ -15,24 +20,23 @@
 	export let tanoshiFormModel: TanoshiFormModel;
 </script>
 
-<form class="min-w-full" on:submit|preventDefault={handleForm} method="POST">
-	<ul class="space-y-6">
+<form on:submit|preventDefault={handleForm} method="POST">
+	<ul>
 		{#each tanoshiFormModel.labelsAndInputs as { tanoshiLabelModel, tanoshiInputModel }}
 			<li>
-				<div class="flex-container flex-r">
+				<TanoshiContainer tanoshiContainerModel={inputContainerModel}>
 					<TanoshiLabel {tanoshiLabelModel} />
 
 					{#if tanoshiInputModel instanceof TanoshiTextInputModel}
 						<TanoshiTextInput tanoshiTextInputModel={tanoshiInputModel} />
 					{/if}
-
-				</div>
+				</TanoshiContainer>
 			</li>
 		{/each}
-		<li>
-			<div class="flex-container flex-r space-y-2 centered items-center">
+		<li class='space-y-2'>
+			<TanoshiContainer tanoshiContainerModel={buttonContainerModel}>
 				<TanoshiButton tanoshiButtonModel={tanoshiFormModel.submitButton} />
-			</div>
+			</TanoshiContainer>
 		</li>
 	</ul>
 </form>

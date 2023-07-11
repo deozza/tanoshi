@@ -1,8 +1,8 @@
 <script lang="ts">
-	import TanoshiHeader from "$atoms/header/TanoshiHeader.svelte";
-	import TanoshiHeaderModel from "$atoms/header/TanoshiHeaderModel";
-	import TanoshiParagraphModel from "$atoms/paragraph/TanoshiParagraphModel";
-	import TanoshiParagraph from "$atoms/paragraph/TanoshiParagraph.svelte";
+	import TanoshiHeader from "$atoms/typography/header/TanoshiHeader.svelte";
+	import TanoshiHeaderModel from "$atoms/typography/header/TanoshiHeaderModel";
+	import TanoshiParagraphModel from "$atoms/typography/paragraph/TanoshiParagraphModel";
+	import TanoshiParagraph from "$atoms/typography/paragraph/TanoshiParagraph.svelte";
 	import TanoshiContainer from "$molecules/container/TanoshiContainer.svelte";
     import TanoshiContainerModel from "$molecules/container/TanoshiContainerModel";
 	import TanoshiLinkModel from "$atoms/link/TanoshiLinkModel";
@@ -42,7 +42,7 @@
 	const builtSectionContentModel = new TanoshiContainerModel('c')
 		.setDesktopSpacing('centered')
 		.setItemsAlignment('center')
-		.setSize('sm:w-8/12');
+		.setSize('w-8');
     const builtHeaderModel: TanoshiHeaderModel  = new TanoshiHeaderModel('Built on the shoulders of giants')
         .setDisplaySize('4xl')
         .setHtmlSize('h2')
@@ -51,7 +51,7 @@
 	const cardSectionModel = new TanoshiContainerModel('c')
 		.setDesktopSpacing('centered')
 		.setItemsAlignment('center')
-		.setSize('sm:w-1/3');
+		.setSize('w-4');
     
 	const sveltekitCardParagraphModel = new TanoshiParagraphModel('Tanoshi has been built to be used with Sveltekit, for a lightweight and powerful app.')
 		.setAlignment('center')
@@ -101,20 +101,6 @@
             <TanoshiParagraph tanoshiParagraphModel={heroParagraphModel} />
         </TanoshiContainer>
     </TanoshiContainer>
-</section>
-
-<section id="style">
-    adapts to your style
-
-</section>
-
-<section id="best-practices">
-    Enforce best practices
-
-</section>
-
-<section id="reusability">
-    Ease of reuse
 </section>
 
 <section id="built">

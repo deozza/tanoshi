@@ -1,6 +1,6 @@
 <script lang="ts">
-	import TanoshiHeader from '$atoms/header/TanoshiHeader.svelte';
-	import TanoshiHeaderModel from '$atoms/header/TanoshiHeaderModel';
+	import TanoshiHeader from '$atoms/typography/header/TanoshiHeader.svelte';
+	import TanoshiHeaderModel from '$atoms/typography/header/TanoshiHeaderModel';
 	import TanoshiButton from '$atoms/button/TanoshiButton.svelte';
 	import TanoshiButtonModel from '$atoms/button/TanoshiButtonModel';
 	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
@@ -13,90 +13,74 @@
 		.setDisplaySize('3xl')
 		.setHtmlSize('h2');
 
-	const standardButtonHeader: TanoshiHeaderModel = new TanoshiHeaderModel('Standard buttons')
+	const coloredButtonHeader: TanoshiHeaderModel = new TanoshiHeaderModel('Buttons colors')
 		.setDisplaySize('2xl')
 		.setHtmlSize('h3');
 
-	const defaultButton = new TanoshiButtonModel('Primary');
+	const primaryButton = new TanoshiButtonModel('Primary');
 	const secondaryButton = new TanoshiButtonModel('Secondary').setTheme('secondary');
-	const infoButton = new TanoshiButtonModel('Info').setTheme('info');
 	const successButton = new TanoshiButtonModel('Success').setTheme('success');
-	const warningButton = new TanoshiButtonModel('Warning').setTheme('warning');
 	const dangerButton = new TanoshiButtonModel('Danger').setTheme('danger');
+	const warningButton = new TanoshiButtonModel('Warning').setTheme('warning');
+	const infoButton = new TanoshiButtonModel('Info').setTheme('info');
 
-	const standardButtonsModels: Array<TanoshiButtonModel> = [
-		defaultButton,
+	const coloredButtonsModels: Array<TanoshiButtonModel> = [
+		primaryButton,
 		secondaryButton,
-		infoButton,
 		successButton,
+		dangerButton,
 		warningButton,
-		dangerButton
+		infoButton
 	];
-
-	const disabledButtonHeader: TanoshiHeaderModel = new TanoshiHeaderModel('Outlined buttons')
+	
+	const disabledButtonHeader: TanoshiHeaderModel = new TanoshiHeaderModel('Disabled buttons')
 		.setDisplaySize('2xl')
 		.setHtmlSize('h3');
 
-	const disabledDefaultButton = new TanoshiButtonModel('Primary').setIsDisabled(true);
-	const disabledSecondaryButton = new TanoshiButtonModel('Secondary')
-		.setTheme('secondary')
-		.setIsDisabled(true);
-	const disabledInfoButton = new TanoshiButtonModel('Info').setTheme('info').setIsDisabled(true);
-	const disabledsuccessButton = new TanoshiButtonModel('Success')
-		.setTheme('success')
-		.setIsDisabled(true);
-	const disabledWarningButton = new TanoshiButtonModel('Warning')
-		.setTheme('warning')
-		.setIsDisabled(true);
-	const disabledDangerButton = new TanoshiButtonModel('Danger')
-		.setTheme('danger')
-		.setIsDisabled(true);
+	const disabledPrimaryButton = new TanoshiButtonModel('Disabled').setIsDisabled(true);
+	const disabledSecondaryButton = new TanoshiButtonModel('Disabled').setIsDisabled(true).setTheme('secondary');
+	const disabledSuccessButton = new TanoshiButtonModel('Disabled').setIsDisabled(true).setTheme('success');
+	const disabledDangerButton = new TanoshiButtonModel('Disabled').setIsDisabled(true).setTheme('danger');
+	const disabledWarningButton = new TanoshiButtonModel('Disabled').setIsDisabled(true).setTheme('warning');
+	const disabledInfoButton = new TanoshiButtonModel('Disabled').setIsDisabled(true).setTheme('info');
 
 	const disabledButtonsModels: Array<TanoshiButtonModel> = [
-		disabledDefaultButton,
+		disabledPrimaryButton,
 		disabledSecondaryButton,
-		disabledInfoButton,
-		disabledsuccessButton,
+		disabledSuccessButton,
+		disabledDangerButton,
 		disabledWarningButton,
-		disabledDangerButton
+		disabledInfoButton
 	];
 
 	const outlinedButtonHeader: TanoshiHeaderModel = new TanoshiHeaderModel('Outlined buttons')
 		.setDisplaySize('2xl')
 		.setHtmlSize('h3');
 
-	const outlinedDefaultButton = new TanoshiButtonModel('Primary').setIsOutlined(true);
-	const outlinedSecondaryButton = new TanoshiButtonModel('Secondary')
-		.setTheme('secondary')
-		.setIsOutlined(true);
-	const outlinedInfoButton = new TanoshiButtonModel('Info').setTheme('info').setIsOutlined(true);
-	const outlinedsuccessButton = new TanoshiButtonModel('Success')
-		.setTheme('success')
-		.setIsOutlined(true);
-	const outlinedWarningButton = new TanoshiButtonModel('Warning')
-		.setTheme('warning')
-		.setIsOutlined(true);
-	const outlinedDangerButton = new TanoshiButtonModel('Danger')
-		.setTheme('danger')
-		.setIsOutlined(true);
+	const outlinedPrimarytButton = new TanoshiButtonModel('Outlined').setIsOutlined(true);
+	const outlinedSecondaryButton = new TanoshiButtonModel('Outlined').setIsOutlined(true).setTheme('secondary');
+	const outlinedSuccessButton = new TanoshiButtonModel('Outlined').setIsOutlined(true).setTheme('success');
+	const outlinedDangerButton = new TanoshiButtonModel('Outlined').setIsOutlined(true).setTheme('danger');
+	const outlinedWarningButton = new TanoshiButtonModel('Outlined').setIsOutlined(true).setTheme('warning');
+	const outlinedInfoButton = new TanoshiButtonModel('Outlined').setIsOutlined(true).setTheme('info');
 
 	const outlinedButtonsModels: Array<TanoshiButtonModel> = [
-		outlinedDefaultButton,
+		outlinedPrimarytButton,
 		outlinedSecondaryButton,
-		outlinedInfoButton,
-		outlinedsuccessButton,
+		outlinedSuccessButton,
+		outlinedDangerButton,
 		outlinedWarningButton,
-		outlinedDangerButton
+		outlinedInfoButton
 	];
 
 	const sizeButtonHeader: TanoshiHeaderModel = new TanoshiHeaderModel('Button sizes')
 		.setDisplaySize('2xl')
 		.setHtmlSize('h3');
 
-	const smallButton = new TanoshiButtonModel('Primary').setSize('sm');
-	const mediumButton = new TanoshiButtonModel('Primary').setSize('md');
-	const largeButton = new TanoshiButtonModel('Primary').setSize('lg');
-	const blockButton = new TanoshiButtonModel('Primary').setSize('block');
+	const smallButton = new TanoshiButtonModel('Small').setSize('sm');
+	const mediumButton = new TanoshiButtonModel('Medium').setSize('md');
+	const largeButton = new TanoshiButtonModel('Large').setSize('lg');
+	const blockButton = new TanoshiButtonModel('Block').setSize('block');
 
 	const sizeButtonsModels: Array<TanoshiButtonModel> = [
 		smallButton,
@@ -112,10 +96,10 @@
 			<TanoshiContainer tanoshiContainerModel={columnContainer}>
 				<TanoshiHeader tanoshiHeaderModel={buttonHeader} />
 
-				<TanoshiHeader tanoshiHeaderModel={standardButtonHeader} />
+				<TanoshiHeader tanoshiHeaderModel={coloredButtonHeader} />
 				<TanoshiContainer tanoshiContainerModel={rowContainer}>
-					{#each standardButtonsModels as standardButtonsModel}
-						<TanoshiButton tanoshiButtonModel={standardButtonsModel} />
+					{#each coloredButtonsModels as coloredButtonsModel}
+						<TanoshiButton tanoshiButtonModel={coloredButtonsModel} />
 					{/each}
 				</TanoshiContainer>
 
@@ -126,6 +110,13 @@
 					{/each}
 				</TanoshiContainer>
 
+				<TanoshiHeader tanoshiHeaderModel={outlinedButtonHeader} />
+				<TanoshiContainer tanoshiContainerModel={rowContainer}>
+					{#each outlinedButtonsModels as outlinedButtonsModel}
+						<TanoshiButton tanoshiButtonModel={outlinedButtonsModel} />
+					{/each}
+				</TanoshiContainer>
+
 				<TanoshiHeader tanoshiHeaderModel={sizeButtonHeader} />
 				<TanoshiContainer tanoshiContainerModel={rowContainer}>
 					{#each sizeButtonsModels as sizeButtonsModel}
@@ -133,12 +124,7 @@
 					{/each}
 				</TanoshiContainer>
 
-				<TanoshiHeader tanoshiHeaderModel={outlinedButtonHeader} />
-				<TanoshiContainer tanoshiContainerModel={rowContainer}>
-					{#each outlinedButtonsModels as outlinedButtonsModel}
-						<TanoshiButton tanoshiButtonModel={outlinedButtonsModel} />
-					{/each}
-				</TanoshiContainer>
+				
 			</TanoshiContainer>
 		</TanoshiContainer>
 	</section>

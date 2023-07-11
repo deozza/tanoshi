@@ -1,88 +1,239 @@
-/* Write your global styles here, in PostCSS syntax */
-@tailwind components;
+.btn {
+	margin: 0.5rem;
+	border-width: 1px;
+	border-radius: 0.375rem;
+	transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+	transition-duration: 300ms;	
+	cursor: pointer;
+}
 
-@layer components {
-	.btn {
-		@apply m-2 border rounded-md transition-colors duration-300;
-	}
+.btn.btn-md {
+	height: 2.5rem/* 40px */;
+	padding-left: 1.25rem/* 20px */;
+	padding-right: 1.25rem/* 20px */;
+}
 
-	.btn.btn-md {
-		@apply h-10 px-5;
-	}
+.btn.btn-sm {
+	height: 2rem/* 32px */;
+	padding-left: 1rem/* 16px */;
+	padding-right: 1rem/* 16px */;
+	font-size: 0.875rem/* 14px */;
+	line-height: 1.25rem/* 20px */;
+}
 
-	.btn.btn-sm {
-		@apply h-8 px-4 text-sm;
-	}
+.btn.btn-lg {
+	height: 3rem/* 48px */;
+	padding-left: 1.5rem/* 24px */;
+	padding-right: 1.5rem/* 24px */;
+	font-size: 1.125rem/* 18px */;
+	line-height: 1.75rem/* 28px */;
+}
 
-	.btn.btn-lg {
-		@apply h-12 px-6 text-lg;
-	}
+.btn.btn-block {
+	width: 100%;
+	height: 3rem/* 48px */;
+	padding-left: 1.5rem/* 24px */;
+	padding-right: 1.5rem/* 24px */;
+	font-size: 1.125rem/* 18px */;
+	line-height: 1.75rem/* 28px */;
+	margin: 0px;
+}
 
-	.btn.btn-block {
-		@apply w-full h-12 px-6 text-lg m-0;
-	}
+.btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
 
-	.btn.btn-primary {
-		@apply bg-primary hover:bg-white text-white hover:text-primary-dark border-primary hover:border-primary-dark;
-	}
+.btn.btn-primary {
+    background-color: var(--primary-bg-button, var(--primary));
+    color: var(--primary-text-button, var(--white));
+    border: 1px solid var(--primary-border-button, var(--primary));
+}
 
-	.btn.btn-primary.btn-outlined {
-		@apply bg-white hover:bg-primary-dark text-primary-dark hover:text-white border-primary-dark;
-	}
+.btn.btn-primary:hover:not([disabled]) {
+    background-color: var(--primary-bg-button-hover, var(--white));
+    color: var(--primary-text-button-hover, var(--primary-dark));
+    border: 1px solid var(--primary-border-button-hover, var(--primary-dark));
+}
 
-	.btn.btn-secondary {
-		@apply bg-secondary-dark hover:bg-white text-white hover:text-secondary-dark border-secondary hover:border-secondary-dark;
-	}
+.btn.btn-primary.btn-outlined {
+    background-color: var(--primary-bg-button-outlined, var(--white));
+    color: var(--primary-text-button-outlined , var(--primary-dark));
+    border: 1px solid var(--primary-border-button-outlined, var(--primary-dark));
+}
 
-	.btn.btn-secondary.btn-outlined {
-		@apply bg-white hover:bg-secondary-dark text-secondary-dark hover:text-white border-secondary-dark;
-	}
+.btn.btn-primary.btn-outlined:hover:not([disabled]) {
+    background-color: var(--primary-bg-button-outlined-hover, var(--primary-dark));
+    color: var(--primary-text-button-outlined-hover, var(--white));
+    border: 1px solid var(--primary-border-button-outlined-hover, var(--primary-dark));
+}
 
-	.btn.btn-success {
-		@apply bg-success hover:bg-white text-white hover:text-success-dark border-success hover:border-success-dark;
-	}
+.btn.btn-secondary {
+    background-color: var(--secondary-bg-button, var(--secondary));
+    color: var(--secondary-bg-button, var(--white));
+    border: 1px solid var(--secondary-border-button, var(--secondary));
+}
 
-	.btn.btn-success.btn-outlined {
-		@apply bg-white hover:bg-success-dark text-success-dark hover:text-white border-success-dark;
-	}
+.btn.btn-secondary:hover:not([disabled]) {
+    background-color: var(--secondary-bg-button-hover, var(--white));
+    color: var(--secondary-text-button-hover, var(--secondary-dark));
+    border: 1px solid var(--secondary-border-button-hover, var(--secondary-dark));
+}
 
-	.btn.btn-warning {
-		@apply bg-warning hover:bg-white text-white hover:text-warning-dark border-warning hover:border-warning-dark;
-	}
+.btn.btn-secondary.btn-outlined {
+    background-color: var(--secondary-bg-button-outlined, var(--white));
+    color: var(--secondary-text-button-outlined , var(--secondary-dark));
+    border: 1px solid var(--secondary-border-button-outlined, var(--secondary-dark));
+}
 
-	.btn.btn-warning.btn-outlined {
-		@apply bg-white hover:bg-warning-dark text-warning-dark hover:text-white border-warning-dark;
-	}
+.btn.btn-secondary.btn-outlined:hover:not([disabled]) {
+    background-color: var(--secondary-bg-button-outlined-hover, var(--secondary-dark));
+    color: var(--secondary-text-button-outlined-hover, var(--white));
+    border: 1px solid var(--secondary-border-button-outlined-hover, var(--secondary-dark));
+}
 
-	.btn.btn-danger {
-		@apply bg-danger hover:bg-white text-white hover:text-danger-dark border-danger hover:border-danger-dark;
-	}
+.btn.btn-success {
+    background-color: var(--success-bg-button, var(--success));
+    color: var(--success-bg-button, var(--white));
+    border: 1px solid var(--success-border-button, var(--success));
+}
 
-	.btn.btn-danger.btn-outlined {
-		@apply bg-white hover:bg-danger-dark text-danger-dark hover:text-white border-danger-dark;
-	}
+.btn.btn-success:hover:not([disabled]) {
+    background-color: var(--success-bg-button-hover, var(--white));
+    color: var(--success-text-button-hover, var(--success-dark));
+    border: 1px solid var(--success-border-button-hover, var(--success-dark));
+}
 
-	.btn.btn-info {
-		@apply bg-info hover:bg-white text-white hover:text-info-dark border-info hover:border-info-dark;
-	}
+.btn.btn-success.btn-outlined {
+    background-color: var(--success-bg-button-outlined, var(--white));
+    color: var(--success-text-button-outlined , var(--success-dark));
+    border: 1px solid var(--success-border-button-outlined, var(--success-dark));
+}
 
-	.btn.btn-info.btn-outlined {
-		@apply bg-white hover:bg-info-dark text-info-dark hover:text-white border-info-dark;
-	}
+.btn.btn-success.btn-outlined:hover:not([disabled]) {
+    background-color: var(--success-bg-button-outlined-hover, var(--success-dark));
+    color: var(--success-text-button-outlined-hover, var(--white));
+    border: 1px solid var(--success-border-button-outlined-hover, var(--success-dark));
+}
 
-	.btn.btn-dark {
-		@apply bg-black hover:bg-white text-white hover:text-black border-black hover:border-black;
-	}
+.btn.btn-danger {
+    background-color: var(--danger-bg-button, var(--danger));
+    color: var(--danger-bg-button, var(--white));
+    border: 1px solid var(--danger-border-button, var(--danger));
+}
 
-	.btn.btn-dark.btn-outlined {
-		@apply bg-white hover:bg-black text-black hover:text-white border-black;
-	}
+.btn.btn-danger:hover:not([disabled]) {
+    background-color: var(--danger-bg-button-hover, var(--white));
+    color: var(--danger-text-button-hover, var(--danger-dark));
+    border: 1px solid var(--danger-border-button-hover, var(--danger-dark));
+}
 
-	.btn.btn-light {
-		@apply bg-white hover:bg-black text-black hover:text-white border-white hover:border-black;
-	}
+.btn.btn-danger.btn-outlined {
+    background-color: var(--danger-bg-button-outlined, var(--white));
+    color: var(--danger-text-button-outlined , var(--danger-dark));
+    border: 1px solid var(--danger-border-button-outlined, var(--danger-dark));
+}
 
-	.btn.btn-light.btn-outlined {
-		@apply bg-white hover:bg-black text-black hover:text-white border-black;
-	}
+.btn.btn-danger.btn-outlined:hover:not([disabled]) {
+    background-color: var(--danger-bg-button-outlined-hover, var(--danger-dark));
+    color: var(--danger-text-button-outlined-hover, var(--white));
+    border: 1px solid var(--danger-border-button-outlined-hover, var(--danger-dark));
+}
+
+.btn.btn-warning {
+    background-color: var(--warning-bg-button, var(--warning));
+    color: var(--warning-bg-button, var(--white));
+    border: 1px solid var(--warning-border-button, var(--warning));
+}
+
+.btn.btn-warning:hover:not([disabled]) {
+    background-color: var(--warning-bg-button-hover, var(--white));
+    color: var(--warning-text-button-hover, var(--warning-dark));
+    border: 1px solid var(--warning-border-button-hover, var(--warning-dark));
+}
+
+.btn.btn-warning.btn-outlined {
+    background-color: var(--warning-bg-button-outlined, var(--white));
+    color: var(--warning-text-button-outlined , var(--warning-dark));
+    border: 1px solid var(--warning-border-button-outlined, var(--warning-dark));
+}
+
+.btn.btn-warning.btn-outlined:hover:not([disabled]) {
+    background-color: var(--warning-bg-button-outlined-hover, var(--warning-dark));
+    color: var(--warning-text-button-outlined-hover, var(--white));
+    border: 1px solid var(--warning-border-button-outlined-hover, var(--warning-dark));
+}
+
+.btn.btn-info {
+    background-color: var(--info-bg-button, var(--info));
+    color: var(--info-bg-button, var(--white));
+    border: 1px solid var(--info-border-button, var(--info));
+}
+
+.btn.btn-info:hover:not([disabled]) {
+    background-color: var(--info-bg-button-hover, var(--white));
+    color: var(--info-text-button-hover, var(--info-dark));
+    border: 1px solid var(--info-border-button-hover, var(--info-dark));
+}
+
+.btn.btn-info.btn-outlined {
+    background-color: var(--info-bg-button-outlined, var(--white));
+    color: var(--info-text-button-outlined , var(--info-dark));
+    border: 1px solid var(--info-border-button-outlined, var(--info-dark));
+}
+
+.btn.btn-info.btn-outlined:hover:not([disabled]) {
+    background-color: var(--info-bg-button-outlined-hover, var(--info-dark));
+    color: var(--info-text-button-outlined-hover, var(--white));
+    border: 1px solid var(--info-border-button-outlined-hover, var(--info-dark));
+}
+
+.btn.btn-white {
+    background-color: var(--white-bg-button, var(--white));
+    color: var(--white-bg-button, var(--black));
+    border: 1px solid var(--white-border-button, var(--white));
+}
+
+.btn.btn-white:hover:not([disabled]) {
+    background-color: var(--white-bg-button-hover, var(--black));
+    color: var(--white-text-button-hover, var(--white-dark));
+    border: 1px solid var(--white-border-button-hover, var(--white-dark));
+}
+
+.btn.btn-white.btn-outlined {
+    background-color: var(--white-bg-button-outlined, var(--white));
+    color: var(--white-text-button-outlined , var(--white-dark));
+    border: 1px solid var(--white-border-button-outlined, var(--white-dark));
+}
+
+.btn.btn-white.btn-outlined:hover:not([disabled]) {
+    background-color: var(--white-bg-button-outlined-hover, var(--white-dark));
+    color: var(--white-text-button-outlined-hover, var(--black));
+    border: 1px solid var(--white-border-button-outlined-hover, var(--white-dark));
+}
+
+.btn.btn-black {
+    background-color: var(--black-bg-button, var(--black));
+    color: var(--black-bg-button, var(--white));
+    border: 1px solid var(--black-border-button, var(--black));
+}
+
+.btn.btn-black:hover:not([disabled]) {
+    background-color: var(--black-bg-button-hover, var(--white));
+    color: var(--black-text-button-hover, var(--black-dark));
+    border: 1px solid var(--black-border-button-hover, var(--black-dark));
+}
+
+.btn.btn-black.btn-outlined {
+    background-color: var(--black-bg-button-outlined, var(--white));
+    color: var(--black-text-button-outlined , var(--black-dark));
+    border: 1px solid var(--black-border-button-outlined, var(--black-dark));
+}
+
+.btn.btn-black.btn-outlined:hover:not([disabled]) {
+    background-color: var(--black-bg-button-outlined-hover, var(--black-dark));
+    color: var(--black-text-button-outlined-hover, var(--white));
+    border: 1px solid var(--black-border-button-outlined-hover, var(--black-dark));
 }

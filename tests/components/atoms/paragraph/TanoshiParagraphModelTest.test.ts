@@ -1,6 +1,6 @@
 import { test, expect } from 'vitest';
 
-import TanoshiParagraphModel from '$atoms/paragraph/TanoshiParagraphModel';
+import TanoshiParagraphModel from '$atoms/typography/paragraph/TanoshiParagraphModel';
 
 test('default values are valid', () => {
 	const defaultParagraph: TanoshiParagraphModel = new TanoshiParagraphModel('');

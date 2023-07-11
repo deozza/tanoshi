@@ -1,4 +1,5 @@
 <script lang="ts">
+	import './../../../main.css';
 	import './tanoshiParagraph.css';
 	import type TanoshiParagraphModel from './TanoshiParagraphModel';
 
@@ -7,7 +8,7 @@
 
 <p
 	class="text-{tanoshiParagraphModel.displaySize} p-{tanoshiParagraphModel.theme} text-{tanoshiParagraphModel.alignment}"
-	class:my-6={tanoshiParagraphModel.hasSpacing}
+	class:p-spacing={tanoshiParagraphModel.hasSpacing}
 >
 	{@html tanoshiParagraphModel.content}
 	<slot />

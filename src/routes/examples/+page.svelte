@@ -1,12 +1,12 @@
 <script lang="ts">
 	import TanoshiButtonModel from '$atoms/button/TanoshiButtonModel';
 	import TanoshiButton from '$atoms/button/TanoshiButton.svelte';
-	import TanoshiHeader from '$atoms/header/TanoshiHeader.svelte';
-	import TanoshiHeaderModel from '$atoms/header/TanoshiHeaderModel';
+	import TanoshiHeader from '$atoms/typography/header/TanoshiHeader.svelte';
+	import TanoshiHeaderModel from '$atoms/typography/header/TanoshiHeaderModel';
 	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
 	import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel';
-	import TanoshiParagraphModel from '$atoms/paragraph/TanoshiParagraphModel';
-	import TanoshiParagraph from '$atoms/paragraph/TanoshiParagraph.svelte';
+	import TanoshiParagraphModel from '$atoms/typography/paragraph/TanoshiParagraphModel';
+	import TanoshiParagraph from '$atoms/typography/paragraph/TanoshiParagraph.svelte';
 	import TanoshiImageModel from '$atoms/image/TanoshiImageModel';
 	import TanoshiImage from '$atoms/image/TanoshiImage.svelte';
 

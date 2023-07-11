@@ -4,7 +4,7 @@ export default class TanoshiImageModel {
 	private _theme: string = '';
 	private _filter: string = '';
 	private _width: string = 'w-auto';
-	private _height: string = 'h-full';
+	private _height: string = 'h-100';
 
 	readonly EXPECTED_THEMES: object = {
 		rounded: 'rounded',
@@ -91,10 +91,10 @@ export default class TanoshiImageModel {
 		return this;
 	}
 
-	public setCircle(size: string): TanoshiImageModel {
+	public setCircle(value: string): TanoshiImageModel {
 		this._theme = 'circled';
-		this._width = 'w-'+size;
-		this._height = 'h-'+size;
+		this._height = value;
+		this._width = value;
 		return this;
 	}
 }

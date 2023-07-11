@@ -1,4 +1,5 @@
 <script lang="ts">
+	import './../../main.css';
 	import './tanoshiContainer.css';
 	import type TanoshiContainerModel from './TanoshiContainerModel';
 

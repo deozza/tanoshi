@@ -1,4 +1,18 @@
-/* Write your global styles here, in PostCSS syntax */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root{
+    --primary: rgb(59 130 246);
+    --primary-dark: rgb(37 99 235);
+    --secondary: rgb(107 114 128);
+    --secondary-dark: rgb(75 85 99);
+    --success: rgb(34 197 94);
+    --success-dark: rgb(22 163 74);
+    --warning: rgb(234 179 8);
+    --warning-dark: rgb(202 138 4);
+    --danger: rgb(239 68 68);
+    --danger-dark: rgb(220 38 38);
+    --info: rgb(103 232 249);
+    --info-dark: rgb(34 211 238);
+    --white: rgb(255 255 255);
+    --white-dark: rgb(100 116 139);
+    --black: rgb(0 0 0);
+    --black-dark: rgb(100 116 139);
+}
