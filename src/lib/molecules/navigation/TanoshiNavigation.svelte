@@ -26,9 +26,29 @@
 	const desktopNavigationContainer = new TanoshiContainerModel('r')
 		.setTheme(tanoshiNavigationModel.theme)
 		.setDesktopSpacing('start');
+
+	const desktopNavigationLeftModuleContainer = new TanoshiContainerModel('r')
+		.setTheme(tanoshiNavigationModel.theme)
+		.setDesktopSpacing('start')
+		.setSize('w-4');
+
+	const desktopNavigationCenterModuleContainer = new TanoshiContainerModel('r')
+		.setTheme(tanoshiNavigationModel.theme)
+		.setDesktopSpacing('centered')
+		.setSize('w-4');
+
+	const desktopNavigationRightModuleContainer = new TanoshiContainerModel('r')
+		.setTheme(tanoshiNavigationModel.theme)
+		.setDesktopSpacing('end')
+		.setSize('w-4');
+
 	if (tanoshiNavigationModel.orientation === 'vertical') {
 		desktopNavigationContainer.setDesktopOrientation('c');
+		desktopNavigationLeftModuleContainer.setDesktopOrientation('c');
+		desktopNavigationCenterModuleContainer.setDesktopOrientation('c');
+		desktopNavigationRightModuleContainer.setDesktopOrientation('c');
 	}
+
 
 	const mobileMenuButton: TanoshiButtonModel = new TanoshiButtonModel('').setTheme(
 		tanoshiNavigationModel.theme
@@ -46,22 +66,26 @@
 
 	function mobileMenuHandler() {
 		showMobileMenu = !showMobileMenu;
-
-		console.log(showMobileMenu);
-
 	}
 </script>
 
 <nav class="sticky-nav">
-	<TanoshiContainer
-		tanoshiContainerModel={desktopNavigationContainer}
-		customClasses={tanoshiNavigationModel.orientation === 'horizontal'
-			? 'h-16'
-			: 'min-h-screen w-1/5'}
-	>
-		{#each tanoshiNavigationModel.items as tanoshiLinkModel}
-			<TanoshiLink {tanoshiLinkModel} />
-		{/each}
+	<TanoshiContainer tanoshiContainerModel={desktopNavigationContainer}>
+		<TanoshiContainer tanoshiContainerModel={desktopNavigationLeftModuleContainer} >
+			{#each tanoshiNavigationModel.itemsAtLeft as tanoshiLinkModel}
+				<TanoshiLink {tanoshiLinkModel} />
+			{/each}
+		</TanoshiContainer>
+		<TanoshiContainer tanoshiContainerModel={desktopNavigationCenterModuleContainer} >
+			{#each tanoshiNavigationModel.itemsAtCenter as tanoshiLinkModel}
+				<TanoshiLink {tanoshiLinkModel} />
+			{/each}
+		</TanoshiContainer>
+		<TanoshiContainer tanoshiContainerModel={desktopNavigationRightModuleContainer} >
+			{#each tanoshiNavigationModel.itemsAtRight as tanoshiLinkModel}
+				<TanoshiLink {tanoshiLinkModel} />
+			{/each}
+		</TanoshiContainer>
 	</TanoshiContainer>
 </nav>
 
@@ -80,7 +104,7 @@
 	{#if showMobileMenu === true}
 		<div id="mobile-menu">
 			<TanoshiContainer tanoshiContainerModel={mobileNavigationContainer}>
-				{#each tanoshiNavigationModel.items as tanoshiLinkModel}
+				{#each [...tanoshiNavigationModel.itemsAtLeft, ...tanoshiNavigationModel.itemsAtCenter, ...tanoshiNavigationModel.itemsAtRight,] as tanoshiLinkModel}
 					<TanoshiLink {tanoshiLinkModel} />
 				{/each}
 			</TanoshiContainer>
