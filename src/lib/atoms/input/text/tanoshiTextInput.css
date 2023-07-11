@@ -17,3 +17,9 @@ input.text-input {
 span.text-danger {
 	color: var(--danger-color-text-span, var(--danger));
 }
+
+@media (max-width: 639px) {
+	input.text-input {
+		width: 90%;
+	}
+}

@@ -214,25 +214,25 @@
     border: 1px solid var(--white-border-button-outlined-hover, var(--white-dark));
 }
 
-.btn.btn-black {
+.btn.btn-dark {
     background-color: var(--black-bg-button, var(--black));
     color: var(--black-bg-button, var(--white));
     border: 1px solid var(--black-border-button, var(--black));
 }
 
-.btn.btn-black:hover:not([disabled]) {
+.btn.btn-dark:hover:not([disabled]) {
     background-color: var(--black-bg-button-hover, var(--white));
     color: var(--black-text-button-hover, var(--black-dark));
     border: 1px solid var(--black-border-button-hover, var(--black-dark));
 }
 
-.btn.btn-black.btn-outlined {
+.btn.btn-dark.btn-outlined {
     background-color: var(--black-bg-button-outlined, var(--white));
     color: var(--black-text-button-outlined , var(--black-dark));
     border: 1px solid var(--black-border-button-outlined, var(--black-dark));
 }
 
-.btn.btn-black.btn-outlined:hover:not([disabled]) {
+.btn.btn-dark.btn-outlined:hover:not([disabled]) {
     background-color: var(--black-bg-button-outlined-hover, var(--black-dark));
     color: var(--black-text-button-outlined-hover, var(--white));
     border: 1px solid var(--black-border-button-outlined-hover, var(--black-dark));

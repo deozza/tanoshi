@@ -62,6 +62,12 @@ video {
   border-color: theme('borderColor.DEFAULT', currentColor);
 }
 
+@media (max-width: 639px) {
+	main {
+		margin-top: 3.5rem;
+	}
+}
+
 .static {
   position: static;
 }

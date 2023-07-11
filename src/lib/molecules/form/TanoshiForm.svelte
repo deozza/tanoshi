@@ -8,7 +8,7 @@
 	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
 	import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel';
 
-	const inputContainerModel: TanoshiContainerModel = new TanoshiContainerModel('r');
+	const inputContainerModel: TanoshiContainerModel = new TanoshiContainerModel('r').setItemsAlignment('center');
 	const buttonContainerModel: TanoshiContainerModel = new TanoshiContainerModel('r').setItemsAlignment('center').setDesktopSpacing('centered');
 
 	const dispatch = createEventDispatcher();
