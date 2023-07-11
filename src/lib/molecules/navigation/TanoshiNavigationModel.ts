@@ -1,7 +1,9 @@
 import type TanoshiLinkModel from '$lib/atoms/link/TanoshiLinkModel';
 
 export default class TanoshiNavigationModel {
-	private _items: Array<TanoshiLinkModel> = [];
+	private _itemsAtLeft: Array<TanoshiLinkModel> = [];
+	private _itemsAtCenter: Array<TanoshiLinkModel> = [];
+	private _itemsAtRight: Array<TanoshiLinkModel> = [];
 	private _orientation!: string;
 	private _theme!: string;
 
@@ -30,19 +32,48 @@ export default class TanoshiNavigationModel {
 		this.setOrientation(this.EXPECTED_ORIENTATIONS.horizontal);
 	}
 
-	get items(): Array<TanoshiLinkModel> {
-		return this._items;
+	get itemsAtLeft(): Array<TanoshiLinkModel> {
+		return this._itemsAtLeft;
 	}
 
-	public setItems(value: Array<TanoshiLinkModel>): TanoshiNavigationModel {
-		this._items = value;
+	public setItemsAtLeft(value: Array<TanoshiLinkModel>): TanoshiNavigationModel {
+		this._itemsAtLeft = value;
 		return this;
 	}
 
-	public addItem(value: TanoshiLinkModel): TanoshiNavigationModel {
-		this._items = [...this._items, value];
+	public addItemAtLeft(value: TanoshiLinkModel): TanoshiNavigationModel {
+		this._itemsAtLeft = [...this._itemsAtLeft, value];
 		return this;
 	}
+
+	get itemsAtCenter(): Array<TanoshiLinkModel> {
+		return this._itemsAtCenter;
+	}
+
+	public setItemsAtCenter(value: Array<TanoshiLinkModel>): TanoshiNavigationModel {
+		this._itemsAtCenter = value;
+		return this;
+	}
+
+	public addItemAtCenter(value: TanoshiLinkModel): TanoshiNavigationModel {
+		this._itemsAtCenter = [...this._itemsAtCenter, value];
+		return this;
+	}
+
+	get itemsAtRight(): Array<TanoshiLinkModel> {
+		return this._itemsAtRight;
+	}
+
+	public setItemsAtRight(value: Array<TanoshiLinkModel>): TanoshiNavigationModel {
+		this._itemsAtRight = value;
+		return this;
+	}
+
+	public addItemAtRight(value: TanoshiLinkModel): TanoshiNavigationModel {
+		this._itemsAtRight = [...this._itemsAtRight, value];
+		return this;
+	}
+
 
 	get orientation(): string {
 		return this._orientation;
