@@ -12,6 +12,7 @@
 		new TanoshiLinkModel('Pills').setTheme('white').setLink('/pills'),
 		new TanoshiLinkModel('Forms').setTheme('white').setLink('/forms'),
 		new TanoshiLinkModel('Images').setTheme('white').setLink('/images'),
+		new TanoshiLinkModel('Links').setTheme('white').setLink('/links'),
 	];
 
 	const navbarModel = new TanoshiNavigationModel()
