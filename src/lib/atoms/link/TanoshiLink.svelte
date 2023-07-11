@@ -12,4 +12,5 @@
 	target={tanoshiLinkModel.isInternal}
 >
 	{tanoshiLinkModel.content}
+	<slot />
 </a>
