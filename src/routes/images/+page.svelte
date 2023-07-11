@@ -25,25 +25,25 @@
 		.setHtmlSize('h2');
 
 	const roundedImageModel = new TanoshiImageModel(catImageSource, 'rounded image').setTheme('rounded');
-	const circledImageModel = new TanoshiImageModel(catImageSource, 'rounded image').setTheme('circled');
+	const circledImageModel = new TanoshiImageModel(catImageSource, 'rounded image').setTheme('circled').setCircle('48rem');
 
 	const sizeHeader: TanoshiHeaderModel = new TanoshiHeaderModel('Sizes')
 		.setDisplaySize('2xl')
 		.setHtmlSize('h2');
 
-	const quarterImageModel = new TanoshiImageModel(catImageSource, 'rounded image').setWidth('w-3');
-	const halfImageModel = new TanoshiImageModel(catImageSource, 'rounded image').setWidth('w-6');
-	const thirdImageModel = new TanoshiImageModel(catImageSource, 'rounded image').setWidth('w-9');
-	const fullImageModel = new TanoshiImageModel(catImageSource, 'rounded image').setWidth('w-12');
+	const quarterImageModel = new TanoshiImageModel(catImageSource, 'rounded image').setWidth('25%');
+	const halfImageModel = new TanoshiImageModel(catImageSource, 'rounded image').setWidth('50%');
+	const thirdImageModel = new TanoshiImageModel(catImageSource, 'rounded image').setWidth('75%');
+	const fullImageModel = new TanoshiImageModel(catImageSource, 'rounded image').setWidth('100%');
 
 	const filterHeader: TanoshiHeaderModel = new TanoshiHeaderModel('With filters')
 		.setDisplaySize('2xl')
 		.setHtmlSize('h2');
 
-	const bluredImageModel = new TanoshiImageModel(catImageSource, 'rounded image').setFilter('blur').setWidth('w-2');
-	const grayscaledImageModel = new TanoshiImageModel(catImageSource, 'rounded image').setFilter('grayscale').setWidth('w-2');
-	const sepiaedImageModel = new TanoshiImageModel(catImageSource, 'rounded image').setFilter('sepia').setWidth('w-2');
-	const invertedImageModel = new TanoshiImageModel(catImageSource, 'rounded image').setFilter('invert').setWidth('w-2');
+	const bluredImageModel = new TanoshiImageModel(catImageSource, 'rounded image').setFilter('blur').setWidth('16%');
+	const grayscaledImageModel = new TanoshiImageModel(catImageSource, 'rounded image').setFilter('grayscale').setWidth('16%');
+	const sepiaedImageModel = new TanoshiImageModel(catImageSource, 'rounded image').setFilter('sepia').setWidth('16%');
+	const invertedImageModel = new TanoshiImageModel(catImageSource, 'rounded image').setFilter('invert').setWidth('16%');
 	
 </script>
 

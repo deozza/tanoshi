@@ -90,4 +90,11 @@ export default class TanoshiImageModel {
 		this._height = value;
 		return this;
 	}
+
+	public setCircle(value: string): TanoshiImageModel {
+		this._theme = 'circled';
+		this._height = value;
+		this._width = value;
+		return this;
+	}
 }
