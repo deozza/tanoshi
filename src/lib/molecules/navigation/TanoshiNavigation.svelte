@@ -19,13 +19,16 @@
 
 	const horizontalNavigationContainer = new TanoshiContainerModel('r')
 		.setTheme(tanoshiNavigationModel.theme)
-		.setDesktopSpacing('start');
+		.setDesktopSpacing('start')
+
 	const mobileNavigationContainer = new TanoshiContainerModel('c').setTheme(
 		tanoshiNavigationModel.theme
 	);
 	const desktopNavigationContainer = new TanoshiContainerModel('r')
 		.setTheme(tanoshiNavigationModel.theme)
-		.setDesktopSpacing('start');
+		.setDesktopSpacing('start')
+		.setHeight('');
+
 
 	const desktopNavigationLeftModuleContainer = new TanoshiContainerModel('r')
 		.setTheme(tanoshiNavigationModel.theme)
@@ -90,7 +93,7 @@
 </nav>
 
 <nav class="burger-nav" class:z-10={showMobileMenu === true}>
-	<TanoshiContainer tanoshiContainerModel={horizontalNavigationContainer} customClasses="h-16">
+	<TanoshiContainer tanoshiContainerModel={horizontalNavigationContainer} >
 		<TanoshiButton tanoshiButtonModel={mobileMenuButton} on:click={mobileMenuHandler}>
 			<span class="sr-only">Open main menu</span>
 			{#if showMobileMenu === false}
