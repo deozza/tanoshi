@@ -1,8 +1,8 @@
 <script lang="ts">
   import './tanoshiCarousel.css';
 
-  import Fa from 'svelte-fa/src/fa.svelte';
-	import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons/index.js';
+	import Fa from 'svelte-fa/src/fa.svelte';
+  import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons/index.js';
 	import { fade } from 'svelte/transition';
 
   import TanoshiImageInCarousel from '$atoms/image/TanoshiImageInCarousel.svelte';
@@ -15,8 +15,8 @@
   let interval: any;
   let startTouchXAxis: number = 0;
 
-  const paginatorContainer: TanoshiContainerModel = new TanoshiContainerModel('r').setItemsAlignment('center').setDesktopSpacing('centered')
-  const carouselContainer: TanoshiContainerModel = new TanoshiContainerModel('c-reverse').setItemsAlignment('center')
+  const paginatorContainer: TanoshiContainerModel = new TanoshiContainerModel('r').setItemsAlignment('center').setDesktopSpacing('centered').setHeight('5px')
+  const carouselContainer: TanoshiContainerModel = new TanoshiContainerModel('c-reverse').setItemsAlignment('center').setHeight(tanoshiCarouselModel.height)
 
   let currentImageIndex: number = 0;
   $: currentImage = tanoshiCarouselModel.items[currentImageIndex].setHeight(tanoshiCarouselModel.height);
@@ -80,7 +80,7 @@
 
 </script>
 
-<TanoshiContainer tanoshiContainerModel={carouselContainer} customClasses={tanoshiCarouselModel.height}>
+<TanoshiContainer tanoshiContainerModel={carouselContainer} >
 
     {#key currentImageIndex}
       <div class="absolute"
