@@ -1,5 +1,7 @@
 .carousel-commands {
     z-index: 10;
+    position: relative;
+    bottom: 40px;
 }
 
 button.arrow{

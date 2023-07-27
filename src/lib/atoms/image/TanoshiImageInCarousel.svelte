@@ -8,6 +8,10 @@
 
 <img
 	class="{tanoshiImageModel.theme} {tanoshiImageModel.filter} carousel {tanoshiImageModel.height}"
+	style="height: {tanoshiImageModel.height};width: {tanoshiImageModel.width};"
 	src={tanoshiImageModel.content}
+	height="{tanoshiImageModel.height}"
+	width="{tanoshiImageModel.width}"
 	alt={tanoshiImageModel.alt}
+	
 />

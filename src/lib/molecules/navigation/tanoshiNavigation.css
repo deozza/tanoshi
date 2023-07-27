@@ -9,6 +9,14 @@ nav.sticky-nav {
   display: none;
 }
 
+nav.burger-nav > div{
+  height: 4rem!important;
+}
+
+nav.burger-nav > div#mobile-menu{
+  height: auto!important;
+}
+
 @media (min-width: 640px) {
   nav.sticky-nav {
     display: block;

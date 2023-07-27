@@ -2,7 +2,7 @@
 	import { fade } from 'svelte/transition';
 
 	import Fa from 'svelte-fa/src/fa.svelte';
-	import { faTimes } from '@fortawesome/free-solid-svg-icons/index.es';
+	import { faTimes } from '@fortawesome/free-solid-svg-icons/index.js';
 
 	import type TanoshiAlertModel from './TanoshiAlertModel';
 	import './tanoshiAlert.css';

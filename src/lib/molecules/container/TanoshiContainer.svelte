@@ -18,6 +18,8 @@
 		{tanoshiContainerModel.size}
 		{customClasses}
 	"
+
+	style="height: {tanoshiContainerModel.height};"
 >
 	<slot />
 </div>
