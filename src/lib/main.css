@@ -198,48 +198,96 @@ video {
 	width: 100%;
 }
 
+.min-w-12{
+	min-width: 100%;
+}
+
 .w-11{
 	width: 91.666667%;
+}
+
+.min-w-11{
+	min-width: 91.666667%;
 }
 
 .w-10{
 	width: 83.333333%;
 }
 
+.min-w-10{
+	min-width: 83.333333%;
+}
+
 .w-9{
 	width: 75%;
+}
+
+.min-w-9{
+	min-width: 75%;
 }
 
 .w-8{
 	width: 66.666667%;
 }
 
+.min-w-8{
+	min-width: 66.666667%;
+}
+
 .w-7{
 	width: 58.333333%;
+}
+
+.min-w-7{
+	min-width: 58.333333%;
 }
 
 .w-6{
 	width: 50%;
 }
 
+.min-w-6{
+	min-width: 50%;
+}
+
 .w-5{
 	width: 41.666667%;
+}
+
+.min-w-5{
+	min-width: 41.666667%;
 }
 
 .w-4{
 	width: 33.333333%;
 }
 
+.min-w-4{
+	min-width: 33.333333%;
+}
+
 .w-3{
 	width: 25%;
+}
+
+.min-w-3{
+	min-width: 25%;
 }
 
 .w-2{
 	width: 16.666667%;
 }
 
+.min-w-2{
+	min-width: 16.666667%;
+}
+
 .w-1{
 	width: 8.333333%;
+}
+
+.min-w-1{
+	min-width: 8.333333%;
 }
 
 .w-0{

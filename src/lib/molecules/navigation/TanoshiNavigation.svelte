@@ -20,6 +20,8 @@
 	const horizontalNavigationContainer = new TanoshiContainerModel('r')
 		.setTheme(tanoshiNavigationModel.theme)
 		.setDesktopSpacing('start')
+		.setItemsAlignment('center')
+
 
 	const mobileNavigationContainer = new TanoshiContainerModel('c').setTheme(
 		tanoshiNavigationModel.theme
@@ -27,23 +29,26 @@
 	const desktopNavigationContainer = new TanoshiContainerModel('r')
 		.setTheme(tanoshiNavigationModel.theme)
 		.setDesktopSpacing('start')
+		.setItemsAlignment('center')
 		.setHeight('');
-
 
 	const desktopNavigationLeftModuleContainer = new TanoshiContainerModel('r')
 		.setTheme(tanoshiNavigationModel.theme)
 		.setDesktopSpacing('start')
-		.setSize('w-4');
+		.setItemsAlignment('center')
+		.setSize('min-w-4')
 
 	const desktopNavigationCenterModuleContainer = new TanoshiContainerModel('r')
 		.setTheme(tanoshiNavigationModel.theme)
 		.setDesktopSpacing('centered')
-		.setSize('w-4');
+		.setItemsAlignment('center')
+		.setSize('min-w-4')
 
 	const desktopNavigationRightModuleContainer = new TanoshiContainerModel('r')
 		.setTheme(tanoshiNavigationModel.theme)
 		.setDesktopSpacing('end')
-		.setSize('w-4');
+		.setItemsAlignment('center')
+		.setSize('min-w-4')
 
 	if (tanoshiNavigationModel.orientation === 'vertical') {
 		desktopNavigationContainer.setDesktopOrientation('c');
