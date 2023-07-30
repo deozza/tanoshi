@@ -1,4 +1,7 @@
 <script lang="ts">
+	import Fa from 'svelte-fa/src/fa.svelte';
+	import { faSpinner } from '@fortawesome/free-solid-svg-icons/index.js';
+
 	import './tanoshiButton.css';
 	import type TanoshiButtonModel from './TanoshiButtonModel';
 
@@ -15,6 +18,10 @@
 	type={tanoshiButtonModel.type}
 	label={tanoshiButtonModel.content}
 >
+	{#if tanoshiButtonModel.isLoading === true}
+		<Fa icon={faSpinner} spin={true} size={'lg'}/>
+	{/if}
 	<slot />
 	{tanoshiButtonModel.content}
+	
 </button>
