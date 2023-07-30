@@ -2,7 +2,7 @@ export default class TanoshiContainerModel {
 	private _theme!: string;
 	private _borders!: string;
 	private _size: string = 'w-12';
-	private _height: string = '100%';
+	private _height: string = 'h-100';
 	private _backgroundImage: string | null = null;
 	private _desktopOrientation!: string;
 	private _mobileOrientation!: string;
@@ -63,6 +63,8 @@ export default class TanoshiContainerModel {
 		
 		// @ts-ignore
 		this.setBorders(this.EXPECTED_BORDERS.none);
+
+		this.setHeight('h-100-prct');
 	}
 
 	get theme(): string {

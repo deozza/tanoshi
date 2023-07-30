@@ -16,10 +16,9 @@
 		{tanoshiContainerModel.desktopSpacing}
 		items-{tanoshiContainerModel.itemsAlignment}
 		{tanoshiContainerModel.size}
+		{tanoshiContainerModel.height}
 		{customClasses}
 	"
-
-	style="height: {tanoshiContainerModel.height};"
 >
 	<slot />
 </div>
