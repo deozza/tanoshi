@@ -1,10 +1,12 @@
 export default class TanoshiButtonModel {
 	private _content!: string;
+	private _label!: string;
 	private _theme!: string;
 	private _type!: string;
 	private _size!: string;
 	private _isDisabled: boolean = false;
 	private _isOutlined: boolean = false;
+	private _isLoading: boolean = false;
 
 	readonly EXPECTED_THEMES: object = {
 		primary: 'primary',
@@ -32,6 +34,7 @@ export default class TanoshiButtonModel {
 
 	public constructor(content: string) {
 		this.setContent(content);
+		this.setLabel(content);
 
 		// @ts-ignore
 		this.setTheme(this.EXPECTED_THEMES.primary);
@@ -49,6 +52,15 @@ export default class TanoshiButtonModel {
 
 	public setContent(value: string): TanoshiButtonModel {
 		this._content = value;
+		return this;
+	}
+	
+	get label(): string {
+		return this._label;
+	}
+
+	public setLabel(value: string): TanoshiButtonModel {
+		this._label = value;
 		return this;
 	}
 
@@ -104,6 +116,22 @@ export default class TanoshiButtonModel {
 
 	public setIsOutlined(value: boolean): TanoshiButtonModel {
 		this._isOutlined = value;
+		return this;
+	}
+
+	get isLoading(): boolean {
+		return this._isLoading;
+	}
+
+	public setLoaderOn() : TanoshiButtonModel {
+		this._isLoading = true;
+		this.setIsDisabled(true)
+		return this;
+	}
+
+	public setLoaderOff() : TanoshiButtonModel {
+		this._isLoading = false;
+		this.setIsDisabled(false)
 		return this;
 	}
 }

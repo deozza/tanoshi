@@ -237,3 +237,7 @@
     color: var(--black-text-button-outlined-hover, var(--white));
     border: 1px solid var(--black-border-button-outlined-hover, var(--black-dark));
 }
+
+.btn > svg {
+    display: inline-block;
+}

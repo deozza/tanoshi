@@ -86,3 +86,9 @@ export const BlockPrimary: Story = {
     tanoshiButtonModel: new TanoshiButtonModel('content').setSize('block')
   },
 };
+
+export const Loading: Story = { 
+  args: {
+    tanoshiButtonModel: new TanoshiButtonModel('content content content content content content').setLoaderOn()
+  },
+};
