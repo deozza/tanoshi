@@ -1,13 +1,13 @@
 import { TanoshiImage, TanoshiImageModel } from '$atoms';
 import type { Meta, StoryObj } from '@storybook/svelte';
-import "../app.css";
+import "../../../app.css";
+import { HEIGHTS, IMAGE_FILTERS, IMAGE_SHAPES, WIDTHS } from '$lib';
 
 
 // More on how to set up stories at: https://storybook.js.org/docs/svelte/writing-stories/introduction
 const meta = {
   title: 'atoms/Image',
   component: TanoshiImage,
-  tags: ['autodocs'],
   argTypes: {
     tanoshiImageModel: {
       description: 'The model for the image',
@@ -32,42 +32,42 @@ export const Default: Story = {
 
 export const Rounded: Story = {
   args: {
-    tanoshiImageModel: new TanoshiImageModel(catImageSource, 'alt text').setTheme('rounded')
+    tanoshiImageModel: new TanoshiImageModel(catImageSource, 'alt text').setShape(IMAGE_SHAPES.Rounded)
   },
 };
 
 export const Circle: Story = {
   args: {
-    tanoshiImageModel: new TanoshiImageModel(catImageSource, 'alt text').setCircle('48rem')
+    tanoshiImageModel: new TanoshiImageModel(catImageSource, 'alt text').setCircle('circledSize')
   },
 };
 
 export const Blur: Story = {
   args: {
-    tanoshiImageModel: new TanoshiImageModel(catImageSource, 'alt text').setFilter('blur')
+    tanoshiImageModel: new TanoshiImageModel(catImageSource, 'alt text').setFilter(IMAGE_FILTERS.Blur)
   },
 };
 
 export const Grayscale: Story = {
   args: {
-    tanoshiImageModel: new TanoshiImageModel(catImageSource, 'alt text').setFilter('grayscale')
+    tanoshiImageModel: new TanoshiImageModel(catImageSource, 'alt text').setFilter(IMAGE_FILTERS.Grayscale)
   },
 };
 
 export const Sepia: Story = {
   args: {
-    tanoshiImageModel: new TanoshiImageModel(catImageSource, 'alt text').setFilter('sepia')
+    tanoshiImageModel: new TanoshiImageModel(catImageSource, 'alt text').setFilter(IMAGE_FILTERS.Sepia)
   },
 };
 
 export const Invert: Story = {
   args: {
-    tanoshiImageModel: new TanoshiImageModel(catImageSource, 'alt text').setFilter('invert')
+    tanoshiImageModel: new TanoshiImageModel(catImageSource, 'alt text').setFilter(IMAGE_FILTERS.Invert)
   },
 };
 
-export const Width: Story = {
+export const Sizes: Story = {
   args: {
-    tanoshiImageModel: new TanoshiImageModel(catImageSource, 'alt text').setWidth('25%')
+    tanoshiImageModel: new TanoshiImageModel(catImageSource, 'alt text').setWidth(WIDTHS.W6).setHeight(HEIGHTS.H25PRCT)
   },
 };

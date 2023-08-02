@@ -1,0 +1,132 @@
+import { Canvas, Meta, Controls } from '@storybook/blocks';
+
+import * as TanoshiImageStories from './TanoshiImage.stories';
+
+<Meta of={TanoshiImageStories} />
+
+# Image
+
+Use an image atom component when you want to display a picture on your interface.
+
+## Basic usage
+
+```html
+
+<script lang="ts">
+    import { TanoshiImage, TanoshiImageModel } from 'tanoshi';
+
+    const imageSource: string = 'https://images.unsplash.com/flagged/photo-1557427161-4701a0fa2f42?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';
+    const imageAlt: string = 'A beautiful picture of a cat';
+    const image: TanoshiImageModel = new TanoshiImageModel(imageSource, imageAlt);
+
+</script>
+
+<TanoshiImage tanoshiImageModel={image} />
+
+```
+
+<Canvas of={TanoshiImageStories.Default} />
+
+## How to customize
+
+### Changing size
+
+You can change the width and the height of the image. You can use predefined values with the `WIDTHS` and `HEIGHTS` enum.
+
+```html
+
+<script lang="ts">
+    import { TanoshiImage, TanoshiImageModel, WIDTHS, HEIGHTS } from 'tanoshi';
+
+    const imageSource: string = 'https://images.unsplash.com/flagged/photo-1557427161-4701a0fa2f42?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';
+    const imageAlt: string = 'A beautiful picture of a cat';
+    const image: TanoshiImageModel = new TanoshiImageModel(imageSource, imageAlt)
+    .setWidth(WIDTHS.W6)
+    .setHeight(HEIGHTS.H25PRCT);
+
+</script>
+
+<TanoshiImage tanoshiImageModel={image} />
+
+```
+
+<Canvas of={TanoshiImageStories.Sizes} />
+
+You can also use custom values. We do not recommand using this method, as we can not guarantee that the image will be responsive or display as wanted.
+
+If you chose this method, make sure that the value you use is a valid CSS class that exists in your stylesheet.
+
+
+```html
+
+<script lang="ts">
+    import { TanoshiImage, TanoshiImageModel, WIDTHS, HEIGHTS } from 'tanoshi';
+
+    const imageSource: string = 'https://images.unsplash.com/flagged/photo-1557427161-4701a0fa2f42?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';
+    const imageAlt: string = 'A beautiful picture of a cat';
+    const image: TanoshiImageModel = new TanoshiImageModel(imageSource, imageAlt)
+    .setCustomWidth('customWidthClass')
+    .setCustomHeight('customHeightClass');
+
+</script>
+
+```
+
+### Changing the shape
+
+```html
+
+<script lang="ts">
+    import { TanoshiImage, TanoshiImageModel, IMAGE_SHAPES } from 'tanoshi';
+
+    const imageSource: string = 'https://images.unsplash.com/flagged/photo-1557427161-4701a0fa2f42?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';
+    const imageAlt: string = 'A beautiful picture of a cat';
+    const image: TanoshiImageModel = new TanoshiImageModel(imageSource, imageAlt).setShape(IMAGE_SHAPES.Rounded);
+
+</script>
+
+<TanoshiImage tanoshiImageModel={image} />
+
+```
+
+<Canvas of={TanoshiImageStories.Rounded} />
+
+```html
+<script lang="ts">
+    import { TanoshiImage, TanoshiImageModel, IMAGE_SHAPES } from 'tanoshi';
+
+    const imageSource: string = 'https://images.unsplash.com/flagged/photo-1557427161-4701a0fa2f42?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';
+    const imageAlt: string = 'A beautiful picture of a cat';
+    const image: TanoshiImageModel = new TanoshiImageModel(imageSource, imageAlt).setCircle('customClass');
+
+</script>
+
+<TanoshiImage tanoshiImageModel={image} />
+
+```
+
+<Canvas of={TanoshiImageStories.Circle} />
+
+### Setting a filter
+
+```html
+
+<script lang="ts">
+    import { TanoshiImage, TanoshiImageModel, IMAGE_FILTERS } from 'tanoshi';
+
+    const imageSource: string = 'https://images.unsplash.com/flagged/photo-1557427161-4701a0fa2f42?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';
+    const imageAlt: string = 'A beautiful picture of a cat';
+    const image: TanoshiImageModel = new TanoshiImageModel(imageSource, imageAlt).setFilter(IMAGE_FILTERS.Sepia);
+
+</script>
+
+<TanoshiImage tanoshiImageModel={image} />
+
+```
+
+<Canvas of={TanoshiImageStories.Sepia} />
+
+
+## Options
+
+<Controls />

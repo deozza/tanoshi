@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
-import "../app.css";
+import "../../../../app.css";
 import { TanoshiParagraph, TanoshiParagraphModel } from '$atoms';
 
 

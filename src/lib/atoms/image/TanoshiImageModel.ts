@@ -90,7 +90,7 @@ export default class TanoshiImageModel {
 	}
 
 	public setCircle(value: string): TanoshiImageModel {
-		this.setShape(IMAGE_SHAPE.Circled);
+		this.setShape(IMAGE_SHAPES.Circled);
 		this.setCustomWidth(value);
 		this.setCustomHeight(value);
 		return this;

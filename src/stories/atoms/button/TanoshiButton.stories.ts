@@ -1,6 +1,6 @@
 import { TanoshiButton, TanoshiButtonModel } from '$atoms';
 import type { Meta, StoryObj } from '@storybook/svelte';
-import "../app.css";
+import "../../../app.css";
 import { BUTTON_SIZES, THEMES } from '$lib';
 
 

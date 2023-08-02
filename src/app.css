@@ -16,3 +16,8 @@
     --black: rgb(0 0 0);
     --black-dark: rgb(100 116 139);
 }
+
+img.circledSize {
+    height: 48rem;
+    width: 48rem;
+}
