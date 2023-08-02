@@ -36,7 +36,7 @@ export default class TanoshiParagraphModel {
 		return this._size;
 	}
 
-	public setDisplaySize(value: SIZES): TanoshiParagraphModel {
+	public setSize(value: SIZES): TanoshiParagraphModel {
 		this._size = value;
 		return this;
 	}

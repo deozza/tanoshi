@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
 import "../../../../app.css";
 import { TanoshiParagraph, TanoshiParagraphModel } from '$atoms';
+import { SIZES, THEMES } from '$lib';
 
 
 // More on how to set up stories at: https://storybook.js.org/docs/svelte/writing-stories/introduction
 const meta = {
   title: 'atoms/Typography/Paragraph',
   component: TanoshiParagraph,
-  tags: ['autodocs'],
   argTypes: {
     tanoshiParagraphModel: {
       description: 'The model for the paragraph',
@@ -29,73 +29,73 @@ export const Dark: Story = {
 
 export const Primary: Story = {
   args: {
-    tanoshiParagraphModel: new TanoshiParagraphModel('content').setTheme('primary')
+    tanoshiParagraphModel: new TanoshiParagraphModel('content').setTheme(THEMES.Primary)
   },
 };
 
 export const Secondary: Story = {
   args: {
-    tanoshiParagraphModel: new TanoshiParagraphModel('content').setTheme('secondary')
+    tanoshiParagraphModel: new TanoshiParagraphModel('content').setTheme(THEMES.Secondary)
   },
 };
 
 export const Success: Story = {
   args: {
-    tanoshiParagraphModel: new TanoshiParagraphModel('content').setTheme('success')
+    tanoshiParagraphModel: new TanoshiParagraphModel('content').setTheme(THEMES.Success)
   },
 };
 
 export const Danger: Story = {
   args: {
-    tanoshiParagraphModel: new TanoshiParagraphModel('content').setTheme('danger')
+    tanoshiParagraphModel: new TanoshiParagraphModel('content').setTheme(THEMES.Danger)
   },
 };
 
 export const Warning: Story = {
   args: {
-    tanoshiParagraphModel: new TanoshiParagraphModel('content').setTheme('warning')
+    tanoshiParagraphModel: new TanoshiParagraphModel('content').setTheme(THEMES.Warning)
   },
 };
 
 export const Info: Story = {
   args: {
-    tanoshiParagraphModel: new TanoshiParagraphModel('content').setTheme('info')
+    tanoshiParagraphModel: new TanoshiParagraphModel('content').setTheme(THEMES.Info)
   },
 };
 
 export const Small: Story = {
   args: {
-    tanoshiParagraphModel: new TanoshiParagraphModel('content').setDisplaySize('sm')
+    tanoshiParagraphModel: new TanoshiParagraphModel('content').setSize(SIZES.Sm)
   },
 };
 
 export const Base: Story = {
   args: {
-    tanoshiParagraphModel: new TanoshiParagraphModel('content').setDisplaySize('base')
+    tanoshiParagraphModel: new TanoshiParagraphModel('content').setSize(SIZES.Md)
   },
 };
 
 export const Large: Story = {
   args: {
-    tanoshiParagraphModel: new TanoshiParagraphModel('content').setDisplaySize('lg')
+    tanoshiParagraphModel: new TanoshiParagraphModel('content').setSize(SIZES.Lg)
   },
 };
 
 export const ExtraLarge: Story = {
   args: {
-    tanoshiParagraphModel: new TanoshiParagraphModel('content').setDisplaySize('xl')
+    tanoshiParagraphModel: new TanoshiParagraphModel('content').setSize(SIZES.Xl)
   },
 };
 
 export const DoubleExtraLarge: Story = {
   args: {
-    tanoshiParagraphModel: new TanoshiParagraphModel('content').setDisplaySize('2xl')
+    tanoshiParagraphModel: new TanoshiParagraphModel('content').setSize(SIZES['2Xl'])
   },
 };
 
 export const TripleExtraLarge: Story = {
   args: {
-    tanoshiParagraphModel: new TanoshiParagraphModel('content').setDisplaySize('3xl')
+    tanoshiParagraphModel: new TanoshiParagraphModel('content').setSize(SIZES['3Xl'])
   },
 };
 
