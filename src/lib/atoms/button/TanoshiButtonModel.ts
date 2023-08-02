@@ -4,8 +4,8 @@ import ThemeError from "$lib/errors/ThemeError";
 export default class TanoshiButtonModel {
 	private _content!: string;
 	private _label!: string;
-	private _backroundTheme!: string;
-	private _backroundHoverTheme!: string;
+	private _backgroundTheme!: string;
+	private _backgroundHoverTheme!: string;
 	private _borderTheme!: string;
 	private _borderHoverTheme!: string;
 	private _textTheme!: string;
@@ -44,20 +44,20 @@ export default class TanoshiButtonModel {
 	}
 
 	get backgroundTheme(): string {
-		return this._backroundTheme;
+		return this._backgroundTheme;
 	}
 
 	public setBackgroundTheme(value: THEMES): TanoshiButtonModel {
-		this._backroundTheme = value;
+		this._backgroundTheme = value;
 		return this;
 	}
 
 	get backgroundHoverTheme(): string {
-		return this._backroundHoverTheme;
+		return this._backgroundHoverTheme;
 	}
 
 	public setBackgroundHoverTheme(value: THEMES): TanoshiButtonModel {
-		this._backroundHoverTheme = value;
+		this._backgroundHoverTheme = value;
 		return this;
 	}
 
@@ -85,7 +85,7 @@ export default class TanoshiButtonModel {
 	}
 
 	public setTextTheme(value: THEMES): TanoshiButtonModel {
-		if(this._backroundTheme === value ) {
+		if(this._backgroundTheme === value ) {
 			throw new ThemeError('Background and text themes cannot be the same');
 		}
 		
@@ -98,7 +98,7 @@ export default class TanoshiButtonModel {
 	}
 
 	public setTextHoverTheme(value: THEMES): TanoshiButtonModel {
-		if(this._backroundHoverTheme === value ) {
+		if(this._backgroundHoverTheme === value ) {
 			throw new ThemeError('Background and text themes cannot be the same');
 		}
 		

@@ -24,89 +24,100 @@
 }
 
 .pill.pill-primary {
-	background-color: var(--primary-bg-pill, var(--primary));
-	color: var(--primary-text-pill, var(--white));
+    background-color: var(--primary-bg-pill, var(--primary));
 }
 
-.pill.pill-primary.pill-outlined {
-	background-color: var(--primary-bg-pill-outlined, var(--white));
-	color: var(--primary-text-pill-outlined, var(--primary-dark));
-	border: 1px solid var(--primary-border-pill-outlined, var(--primary-dark));
+.pill.pill-text-primary {
+    color: var(--primary-text-pill, var(--primary));
 }
+
+.pill.pill-border-primary {
+    border: 1px solid var(--primary-border-pill, var(--primary));
+}
+
 
 .pill.pill-secondary {
-	background-color: var(--secondary-bg-pill, var(--secondary));
-	color: var(--secondary-text-pill, var(--white));
+    background-color: var(--secondary-bg-pill, var(--secondary));
 }
 
-.pill.pill-secondary.pill-outlined {
-	background-color: var(--secondary-bg-pill-outlined, var(--white));
-	color: var(--secondary-text-pill-outlined, var(--secondary-dark));
-	border: 1px solid var(--secondary-border-pill-outlined, var(--secondary-dark));
+.pill.pill-text-secondary {
+    color: var(--secondary-text-pill, var(--secondary));
+}
+
+.pill.pill-border-secondary {
+    border: 1px solid var(--secondary-border-pill, var(--secondary));
 }
 
 .pill.pill-success {
-	background-color: var(--success-bg-pill, var(--success));
-	color: var(--success-text-pill, var(--white));
+    background-color: var(--success-bg-pill, var(--success));
 }
 
-.pill.pill-success.pill-outlined {
-	background-color: var(--success-bg-pill-outlined, var(--white));
-	color: var(--success-text-pill-outlined, var(--success-dark));
-	border: 1px solid var(--success-border-pill-outlined, var(--success-dark));
+.pill.pill-text-success {
+    color: var(--success-text-pill, var(--success));
 }
+
+.pill.pill-border-success {
+    border: 1px solid var(--success-border-pill, var(--success));
+}
+
 
 .pill.pill-warning {
-	background-color: var(--warning-bg-pill, var(--warning));
-	color: var(--warning-text-pill, var(--white));
+    background-color: var(--warning-bg-pill, var(--warning));
 }
 
-.pill.pill-warning.pill-outlined {
-	background-color: var(--warning-bg-pill-outlined, var(--white));
-	color: var(--warning-text-pill-outlined, var(--warning-dark));
-	border: 1px solid var(--warning-border-pill-outlined, var(--warning-dark));
+.pill.pill-text-warning {
+    color: var(--warning-text-pill, var(--warning));
 }
+
+.pill.pill-border-warning {
+    border: 1px solid var(--warning-border-pill, var(--warning));
+}
+
 
 .pill.pill-danger {
-	background-color: var(--danger-bg-pill, var(--danger));
-	color: var(--danger-text-pill, var(--white));
+    background-color: var(--danger-bg-pill, var(--danger));
 }
 
-.pill.pill-danger.pill-outlined {
-	background-color: var(--danger-bg-pill-outlined, var(--white));
-	color: var(--danger-text-pill-outlined, var(--danger-dark));
-	border: 1px solid var(--danger-border-pill-outlined, var(--danger-dark));
+.pill.pill-text-danger {
+    color: var(--danger-text-pill, var(--danger));
+}
+
+.pill.pill-border-danger {
+    border: 1px solid var(--danger-border-pill, var(--danger));
 }
 
 .pill.pill-info {
-	background-color: var(--info-bg-pill, var(--info));
-	color: var(--info-text-pill, var(--white));
+    background-color: var(--info-bg-pill, var(--info));
 }
 
-.pill.pill-info.pill-outlined {
-	background-color: var(--info-bg-pill-outlined, var(--white));
-	color: var(--info-text-pill-outlined, var(--info-dark));
-	border: 1px solid var(--info-border-pill-outlined, var(--info-dark));
+.pill.pill-text-info {
+    color: var(--info-text-pill, var(--info));
+}
+
+.pill.pill-border-info {
+    border: 1px solid var(--info-border-pill, var(--info));
 }
 
 .pill.pill-white {
-	background-color: var(--white-bg-pill, var(--white));
-	color: var(--white-text-pill, var(--black));
+    background-color: var(--white-bg-pill, var(--white));
 }
 
-.pill.pill-white.pill-outlined {
-	background-color: var(--white-bg-pill-outlined, var(--white));
-	color: var(--white-text-pill-outlined, var(--black));
-	border: 1px solid var(--white-border-pill-outlined, var(--black));
+.pill.pill-text-white {
+    color: var(--white-text-pill, var(--white));
+}
+
+.pill.pill-border-white {
+    border: 1px solid var(--white-border-pill, var(--white));
 }
 
 .pill.pill-black {
-	background-color: var(--black-bg-pill, var(--black));
-	color: var(--black-text-pill, var(--white));
+    background-color: var(--black-bg-pill, var(--black));
 }
 
-.pill.pill-black.pill-outlined {
-	background-color: var(--black-bg-pill-outlined, var(--black));
-	color: var(--black-text-pill-outlined, var(--white));
-	border: 1px solid var(--black-border-pill-outlined, var(--white));
+.pill.pill-text-black {
+    color: var(--black-text-pill, var(--black));
+}
+
+.pill.pill-border-black {
+    border: 1px solid var(--black-border-pill, var(--black));
 }
