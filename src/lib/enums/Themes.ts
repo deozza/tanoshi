@@ -148,3 +148,8 @@ export enum HEIGHTS {
     H25PRCT = 'h-25-prct',
     MINH25PRCT = 'min-h-25-prct',
 }
+
+export enum NAVIGATION_ORIENTATIONS {
+    Horizontal = 'horizontal',
+    Vertical = 'vertical'
+}
