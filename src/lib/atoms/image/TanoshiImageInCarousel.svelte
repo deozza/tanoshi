@@ -7,7 +7,7 @@
 </script>
 
 <img
-	class="{tanoshiImageModel.theme} {tanoshiImageModel.filter} carousel {tanoshiImageModel.height}"
+	class="{tanoshiImageModel.shape} {tanoshiImageModel.filter} carousel {tanoshiImageModel.height}"
 	style="height: {tanoshiImageModel.height};width: {tanoshiImageModel.width};"
 	src={tanoshiImageModel.content}
 	height="{tanoshiImageModel.height}"

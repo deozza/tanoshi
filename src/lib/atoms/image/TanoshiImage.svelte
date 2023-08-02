@@ -6,7 +6,7 @@
 </script>
 
 <img
-	class="object-cover {tanoshiImageModel.theme} {tanoshiImageModel.filter}"
+	class="object-cover {tanoshiImageModel.shape} {tanoshiImageModel.filter}"
 	style="height: {tanoshiImageModel.height};width: {tanoshiImageModel.width};"
 	height="{tanoshiImageModel.height}"
 	width="{tanoshiImageModel.width}"

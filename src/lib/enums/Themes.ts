@@ -50,7 +50,7 @@ export enum IMAGE_FILTERS {
     Blur = 'blur'
 }
 
-export enum IMAGE_SHAPE {
+export enum IMAGE_SHAPES {
     Rounded = 'rounded',
     Circled = 'circled'
 }
@@ -94,6 +94,7 @@ export enum CONTAINER_BORDERS {
 }
 
 export enum WIDTHS {
+    w0 = 'w-0',
     W1 = 'w-1',
     MinW1 = 'min-w-1',
     W2 = 'w-2',
@@ -119,4 +120,31 @@ export enum WIDTHS {
     W12 = 'w-12',
     MinW12 = 'min-w-12',
     WAuto = 'w-auto',
+}
+
+export enum HEIGHTS {
+    H100VH = 'h-100-vh',
+    MINH100VH = 'min-h-100-vh',
+    H100PRCT = 'h-100-prct',
+    MINH100PRCT = 'min-h-100-prct',
+    H75VH = 'h-75-vh',
+    MINH75VH = 'min-h-75-vh',
+    H175PRCT = 'h-75-prct',
+    MINH75PRCT = 'min-h-75-prct',
+    H66VH = 'h-66-vh',
+    MINH66VH = 'min-h-66-vh',
+    H66PRCT = 'h-66-prct',
+    MINH66PRCT = 'min-h-66-prct',
+    H50VH = 'h-50-vh',
+    MINH50VH = 'min-h-50-vh',
+    H50PRCT = 'h-50-prct',
+    MINH50PRCT = 'min-h-50-prct',
+    H33VH = 'h-33-vh',
+    MINH33VH = 'min-h-33-vh',
+    H33PRCT = 'h-33-prct',
+    MINH33PRCT = 'min-h-33-prct',
+    H25VH = 'h-25-vh',
+    MINH25VH = 'min-h-25-vh',
+    H25PRCT = 'h-25-prct',
+    MINH25PRCT = 'min-h-25-prct',
 }
