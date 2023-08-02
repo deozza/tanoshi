@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
 import "../../../../app.css";
 import { TanoshiHeader, TanoshiHeaderModel } from '$atoms';
+import { HEADER_TAGS, SIZES, THEMES } from '$lib';
 
 
 // More on how to set up stories at: https://storybook.js.org/docs/svelte/writing-stories/introduction
 const meta = {
   title: 'atoms/Typography/Header',
   component: TanoshiHeader,
-  tags: ['autodocs'],
   argTypes: {
     tanoshiHeaderModel: {
       description: 'The model for the header',
@@ -29,91 +29,91 @@ export const Dark: Story = {
 
 export const Primary: Story = {
   args: {
-    tanoshiHeaderModel: new TanoshiHeaderModel('content').setTheme('primary')
+    tanoshiHeaderModel: new TanoshiHeaderModel('content').setTheme(THEMES.Primary)
   },
 };
 
 export const Secondary: Story = {
   args: {
-    tanoshiHeaderModel: new TanoshiHeaderModel('content').setTheme('secondary')
+    tanoshiHeaderModel: new TanoshiHeaderModel('content').setTheme(THEMES.Secondary)
   },
 };
 
 export const Success: Story = {
   args: {
-    tanoshiHeaderModel: new TanoshiHeaderModel('content').setTheme('success')
+    tanoshiHeaderModel: new TanoshiHeaderModel('content').setTheme(THEMES.Success)
   },
 };
 
 export const Danger: Story = {
   args: {
-    tanoshiHeaderModel: new TanoshiHeaderModel('content').setTheme('danger')
+    tanoshiHeaderModel: new TanoshiHeaderModel('content').setTheme(THEMES.Danger)
   },
 };
 
 export const Warning: Story = {
   args: {
-    tanoshiHeaderModel: new TanoshiHeaderModel('content').setTheme('warning')
+    tanoshiHeaderModel: new TanoshiHeaderModel('content').setTheme(THEMES.Warning)
   },
 };
 
 export const Info: Story = {
   args: {
-    tanoshiHeaderModel: new TanoshiHeaderModel('content').setTheme('info')
+    tanoshiHeaderModel: new TanoshiHeaderModel('content').setTheme(THEMES.Info)
   },
 };
 
 export const Small: Story = {
   args: {
-    tanoshiHeaderModel: new TanoshiHeaderModel('content').setDisplaySize('sm').setHtmlSize('h6')
+    tanoshiHeaderModel: new TanoshiHeaderModel('content').setSize(SIZES.Sm).setTag(HEADER_TAGS.H6)
   },
 };
 
 export const Base: Story = {
   args: {
-    tanoshiHeaderModel: new TanoshiHeaderModel('content').setDisplaySize('base').setHtmlSize('h6')
+    tanoshiHeaderModel: new TanoshiHeaderModel('content').setSize(SIZES.Md).setTag(HEADER_TAGS.H6)
   },
 };
 
 export const Large: Story = {
   args: {
-    tanoshiHeaderModel: new TanoshiHeaderModel('content').setDisplaySize('lg').setHtmlSize('h6')
+    tanoshiHeaderModel: new TanoshiHeaderModel('content').setSize(SIZES.Lg).setTag(HEADER_TAGS.H6)
   },
 };
 
 export const ExtraLarge: Story = {
   args: {
-    tanoshiHeaderModel: new TanoshiHeaderModel('content').setDisplaySize('xl').setHtmlSize('h6')
+    tanoshiHeaderModel: new TanoshiHeaderModel('content').setSize(SIZES.Xl).setTag(HEADER_TAGS.H6)
   },
 };
 
 export const DoubleExtraLarge: Story = {
   args: {
-    tanoshiHeaderModel: new TanoshiHeaderModel('content').setDisplaySize('2xl').setHtmlSize('h5')
+    tanoshiHeaderModel: new TanoshiHeaderModel('content').setSize(SIZES['2Xl']).setTag(HEADER_TAGS.H5)
   },
 };
 
 export const TripleExtraLarge: Story = {
   args: {
-    tanoshiHeaderModel: new TanoshiHeaderModel('content').setDisplaySize('3xl').setHtmlSize('h4')
+    tanoshiHeaderModel: new TanoshiHeaderModel('content').setSize(SIZES['3Xl']).setTag(HEADER_TAGS.H4)
   },
 };
 
 export const QuadrupleExtraLarge: Story = {
   args: {
-    tanoshiHeaderModel: new TanoshiHeaderModel('content').setDisplaySize('4xl').setHtmlSize('h3')
+    tanoshiHeaderModel: new TanoshiHeaderModel('content').setSize(SIZES['4Xl']).setTag(HEADER_TAGS.H3)
   },
 };
 
 export const QuintupleExtraLarge: Story = {
   args: {
-    tanoshiHeaderModel: new TanoshiHeaderModel('content').setDisplaySize('5xl').setHtmlSize('h2')
+    tanoshiHeaderModel: new TanoshiHeaderModel('content').setSize(SIZES['5Xl']).setTag(HEADER_TAGS.H2)
   },
 };
 
 export const SextupleExtraLarge: Story = {
   args: {
-    tanoshiHeaderModel: new TanoshiHeaderModel('content').setDisplaySize('6xl').setHtmlSize('h1')
+    tanoshiHeaderModel: new TanoshiHeaderModel('content').setSize(SIZES['6Xl']).setTag(HEADER_TAGS.H1)
   },
 };
 

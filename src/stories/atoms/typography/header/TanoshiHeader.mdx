@@ -1,0 +1,87 @@
+import { Canvas, Meta, Controls } from '@storybook/blocks';
+
+import * as TanoshiHeaderStories from './TanoshiHeader.stories';
+
+<Meta of={TanoshiHeaderStories} />
+
+# Header
+
+Use a header atom component to add titles to your page. This will also be used for the SEO.
+
+## Basic usage
+
+```html
+
+<script lang="ts">
+    import { TanoshiHeader, TanoshiHeaderModel } from 'tanoshi';
+
+    const link: TanoshiHeaderModel = new TanoshiHeaderModel('content');
+
+</script>
+
+<TanoshiHeader TanoshiHeaderModel={link} />
+
+```
+
+<Canvas of={TanoshiHeaderStories.Dark} />
+
+## How to customize
+
+### Themes
+
+
+```html
+
+<script lang="ts">
+    import { TanoshiHeader, TanoshiHeaderModel } from 'tanoshi';
+    import { THEMES } from 'tanoshi';
+
+    const link: TanoshiHeaderModel = new TanoshiHeaderModel('content').setTheme(THEMES.Danger);
+
+</script>
+
+<TanoshiHeader tanoshiHeaderModel={link} />
+
+```
+
+<Canvas of={TanoshiHeaderStories.Danger} />
+
+### Size
+ 
+
+```html
+
+<script lang="ts">
+    import { TanoshiHeader, TanoshiHeaderModel } from 'tanoshi';
+    import { SIZES } from 'tanoshi';
+
+    const link: TanoshiHeaderModel = new TanoshiHeaderModel('content').setSize(SIZES.Sm);
+
+</script>
+
+<TanoshiHeader tanoshiHeaderModel={link} />
+
+```
+
+<Canvas of={TanoshiHeaderStories.Small} />
+
+### Header tag
+
+```html
+
+<script lang="ts">
+    import { TanoshiHeaderModel, TanoshiHeaderModel, HEADER_TAGS } from 'tanoshi';
+
+    const link: TanoshiHeaderModel = new TanoshiHeaderModel('content').setTag(HEADER_TAGS.H6);
+
+</script>
+
+<TanoshiHeader tanoshiHeaderModel={link} />
+
+```
+
+<Canvas of={TanoshiHeaderStories.TripleExtraLarge} />
+
+## Options
+
+<Controls />
