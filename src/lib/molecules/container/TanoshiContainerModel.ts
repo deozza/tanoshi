@@ -1,8 +1,10 @@
+import { CONTAINER_BORDERS, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, HEIGHTS, THEMES, WIDTHS } from "$lib/enums";
+
 export default class TanoshiContainerModel {
 	private _theme!: string;
 	private _borders!: string;
-	private _size: string = 'w-12';
-	private _height: string = 'h-100';
+	private _width!: string;
+	private _height!: string;
 	private _backgroundImage: string | null = null;
 	private _desktopOrientation!: string;
 	private _mobileOrientation!: string;
@@ -10,72 +12,20 @@ export default class TanoshiContainerModel {
 	private _mobileSpacing!: string;
 	private _itemsAlignment!: string;
 
-	readonly EXPECTED_THEMES: object = {
-		transparent: 'transparent',
-		primary: 'primary',
-		secondary: 'secondary',
-		success: 'success',
-		warning: 'warning',
-		danger: 'danger',
-		info: 'info',
-		light: 'light',
-		dark: 'dark'
-	};
-
-	readonly EXPECTED_ORIENTATIONS: object = {
-		c: 'c',
-		'c-reverse': 'c-reverse',
-		r: 'r'
-	};
-
-	readonly EXPECTED_SPACING: object = {
-		start: 'start',
-		centered: 'centered',
-		end: 'end',
-		between: 'between',
-		around: 'around',
-		evenly: 'evenly'
-	};
-
-	readonly EXPECTED_ALIGNMENT: object = {
-		start: 'start',
-		center: 'center',
-		end: 'end',
-		stretch: 'stretch',
-		baseline: 'baseline'
-	};
-
-	readonly EXPECTED_BORDERS: object = {
-		none: 'none',
-		md: 'md',
-		full: 'full',
-	};
-
-	public constructor(desktopOrientation: string) {
-		// @ts-ignore
-		this.setItemsAlignment(this.EXPECTED_ALIGNMENT['start']);
-
+	public constructor(desktopOrientation: CONTAINER_ORIENTATIONS) {
+		this.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Start);
 		this.setDesktopOrientation(desktopOrientation);
 		this.setMobileOrientation(desktopOrientation);
-
-		// @ts-ignore
-		this.setTheme(this.EXPECTED_THEMES.transparent);
-		
-		// @ts-ignore
-		this.setBorders(this.EXPECTED_BORDERS.none);
-
-		this.setHeight('h-100-prct');
+		this.setTheme(THEMES.Transparent);
+		this.setBorders(CONTAINER_BORDERS.None);
+		this.setHeight(HEIGHTS.H100PRCT);
 	}
 
 	get theme(): string {
 		return this._theme;
 	}
 
-	public setTheme(value: string): TanoshiContainerModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_THEMES, value) === false) {
-			throw new Error();
-		}
-
+	public setTheme(value: THEMES): TanoshiContainerModel {
 		this._theme = value;
 		return this;
 	}
@@ -84,21 +34,17 @@ export default class TanoshiContainerModel {
 		return this._borders;
 	}
 
-	public setBorders(value: string): TanoshiContainerModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_BORDERS, value) === false) {
-			throw new Error();
-		}
-
+	public setBorders(value: CONTAINER_BORDERS): TanoshiContainerModel {
 		this._borders = value;
 		return this;
 	}
 	
-	get size(): string {
-		return this._size;
+	get width(): string {
+		return this._width;
 	}
 
-	public setSize(value: string): TanoshiContainerModel {
-		this._size = value;
+	public setWidth(value: WIDTHS): TanoshiContainerModel {
+		this._width = value;
 		return this;
 	}
 
@@ -106,7 +52,7 @@ export default class TanoshiContainerModel {
 		return this._height;
 	}
 
-	public setHeight(value: string): TanoshiContainerModel {
+	public setHeight(value: HEIGHTS): TanoshiContainerModel {
 		this._height = value;
 		return this;
 	}
@@ -125,10 +71,7 @@ export default class TanoshiContainerModel {
 		return this._desktopOrientation;
 	}
 
-	public setDesktopOrientation(value: string): TanoshiContainerModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_ORIENTATIONS, value) === false) {
-			throw new Error();
-		}
+	public setDesktopOrientation(value: CONTAINER_ORIENTATIONS): TanoshiContainerModel {
 		this._desktopOrientation = value;
 		return this;
 	}
@@ -137,10 +80,7 @@ export default class TanoshiContainerModel {
 		return this._mobileOrientation;
 	}
 
-	public setMobileOrientation(value: string): TanoshiContainerModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_ORIENTATIONS, value) === false) {
-			throw new Error();
-		}
+	public setMobileOrientation(value: CONTAINER_ORIENTATIONS): TanoshiContainerModel {
 		this._mobileOrientation = value;
 		return this;
 	}
@@ -149,10 +89,7 @@ export default class TanoshiContainerModel {
 		return this._desktopSpacing;
 	}
 
-	public setDesktopSpacing(value: string): TanoshiContainerModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_SPACING, value) === false) {
-			throw new Error();
-		}
+	public setDesktopSpacing(value: CONTAINER_ITEMS_SPACING): TanoshiContainerModel {
 		this._desktopSpacing = value;
 		return this;
 	}
@@ -161,10 +98,7 @@ export default class TanoshiContainerModel {
 		return this._itemsAlignment;
 	}
 
-	public setItemsAlignment(value: string): TanoshiContainerModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_ALIGNMENT, value) === false) {
-			throw new Error();
-		}
+	public setItemsAlignment(value: CONTAINER_ITEMS_ALIGNMENTS): TanoshiContainerModel {
 		this._itemsAlignment = value;
 		return this;
 	}
@@ -173,10 +107,7 @@ export default class TanoshiContainerModel {
 		return this._mobileSpacing;
 	}
 
-	public setMobileSpacing(value: string): TanoshiContainerModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_SPACING, value) === false) {
-			throw new Error();
-		}
+	public setMobileSpacing(value: CONTAINER_ITEMS_SPACING): TanoshiContainerModel {
 		this._mobileSpacing = value;
 		return this;
 	}

@@ -14,47 +14,48 @@
 
 	import TanoshiButton from '$lib/atoms/button/TanoshiButton.svelte';
 	import TanoshiButtonModel from '$lib/atoms/button/TanoshiButtonModel';
+	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, WIDTHS } from '$lib/enums';
 
 	export let tanoshiNavigationModel: TanoshiNavigationModel;
 
-	const horizontalNavigationContainer = new TanoshiContainerModel('r')
+	const horizontalNavigationContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
 		.setTheme(tanoshiNavigationModel.theme)
-		.setDesktopSpacing('start')
-		.setItemsAlignment('center')
+		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Start)
+		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
 
 
-	const mobileNavigationContainer = new TanoshiContainerModel('c').setTheme(
+	const mobileNavigationContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C).setTheme(
 		tanoshiNavigationModel.theme
 	);
-	const desktopNavigationContainer = new TanoshiContainerModel('r')
+	const desktopNavigationContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
 		.setTheme(tanoshiNavigationModel.theme)
-		.setDesktopSpacing('start')
-		.setItemsAlignment('center')
+		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Start)
+		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
 		.setHeight('');
 
-	const desktopNavigationLeftModuleContainer = new TanoshiContainerModel('r')
+	const desktopNavigationLeftModuleContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
 		.setTheme(tanoshiNavigationModel.theme)
-		.setDesktopSpacing('start')
-		.setItemsAlignment('center')
-		.setSize('min-w-4')
+		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Start)
+		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
+		.setWidth(WIDTHS.MinW4)
 
-	const desktopNavigationCenterModuleContainer = new TanoshiContainerModel('r')
+	const desktopNavigationCenterModuleContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
 		.setTheme(tanoshiNavigationModel.theme)
-		.setDesktopSpacing('centered')
-		.setItemsAlignment('center')
-		.setSize('min-w-4')
+		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Centered)
+		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
+		.setWidth(WIDTHS.MinW4)
 
-	const desktopNavigationRightModuleContainer = new TanoshiContainerModel('r')
+	const desktopNavigationRightModuleContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
 		.setTheme(tanoshiNavigationModel.theme)
-		.setDesktopSpacing('end')
-		.setItemsAlignment('center')
-		.setSize('min-w-4')
+		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.End)
+		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
+		.setWidth(WIDTHS.MinW4)
 
 	if (tanoshiNavigationModel.orientation === 'vertical') {
-		desktopNavigationContainer.setDesktopOrientation('c');
-		desktopNavigationLeftModuleContainer.setDesktopOrientation('c');
-		desktopNavigationCenterModuleContainer.setDesktopOrientation('c');
-		desktopNavigationRightModuleContainer.setDesktopOrientation('c');
+		desktopNavigationContainer.setDesktopOrientation(CONTAINER_ORIENTATIONS.C);
+		desktopNavigationLeftModuleContainer.setDesktopOrientation(CONTAINER_ORIENTATIONS.C);
+		desktopNavigationCenterModuleContainer.setDesktopOrientation(CONTAINER_ORIENTATIONS.C);
+		desktopNavigationRightModuleContainer.setDesktopOrientation(CONTAINER_ORIENTATIONS.C);
 	}
 
 

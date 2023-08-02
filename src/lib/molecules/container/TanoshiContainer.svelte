@@ -15,7 +15,7 @@
 		flex-{tanoshiContainerModel.desktopOrientation} 
 		{tanoshiContainerModel.desktopSpacing}
 		items-{tanoshiContainerModel.itemsAlignment}
-		{tanoshiContainerModel.size}
+		{tanoshiContainerModel.width}
 		{tanoshiContainerModel.height}
 		{customClasses}
 	"
