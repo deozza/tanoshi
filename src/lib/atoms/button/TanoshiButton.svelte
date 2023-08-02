@@ -9,8 +9,16 @@
 </script>
 
 <button
-	class="btn btn-{tanoshiButtonModel.theme} btn-{tanoshiButtonModel.size}"
-	class:btn-outlined={tanoshiButtonModel.isOutlined === true}
+	class="
+	btn 
+	btn-{tanoshiButtonModel.backgroundTheme}
+	btn-text-{tanoshiButtonModel.textTheme}
+	btn-border-{tanoshiButtonModel.borderTheme}
+	btn-hover-{tanoshiButtonModel.backgroundHoverTheme}
+	btn-text-hover-{tanoshiButtonModel.textHoverTheme}
+	btn-border-hover-{tanoshiButtonModel.borderHoverTheme}
+	btn-{tanoshiButtonModel.size}
+	"
 	class:disabled:opacity-50={tanoshiButtonModel.isDisabled === true}
 	class:pointer-events-none={tanoshiButtonModel.isDisabled === true}
 	disabled={tanoshiButtonModel.isDisabled}
