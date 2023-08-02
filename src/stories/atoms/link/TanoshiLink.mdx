@@ -1,0 +1,137 @@
+import { Canvas, Meta, Controls } from '@storybook/blocks';
+
+import * as TanoshiLinkStories from './TanoshiLink.stories';
+
+<Meta of={TanoshiLinkStories} />
+
+# Link
+
+Use a link atom component when you want the user to navigate inside or outside your website.
+
+## Basic usage
+
+```html
+
+<script lang="ts">
+    import { TanoshiLink, TanoshiLinkModel } from 'tanoshi';
+
+    const link: TanoshiLinkModel = new TanoshiLinkModel('content').setLink('/');
+
+</script>
+
+<TanoshiLink TanoshiLinkModel={link} />
+
+```
+
+<Canvas of={TanoshiLinkStories.Default} />
+
+## How to customize
+
+### Themes
+
+
+```html
+
+<script lang="ts">
+    import { TanoshiLink, TanoshiLinkModel } from 'tanoshi';
+    import { THEMES } from 'tanoshi';
+
+    const link: TanoshiLinkModel = new TanoshiLinkModel('content').setTheme(THEMES.Danger);
+
+</script>
+
+<TanoshiLink tanoshiLinkModel={link} />
+
+```
+
+<Canvas of={TanoshiLinkStories.Danger} />
+
+### Size
+ 
+
+```html
+
+<script lang="ts">
+    import { TanoshiLink, TanoshiLinkModel } from 'tanoshi';
+    import { SIZES } from 'tanoshi';
+
+    const link: TanoshiLinkModel = new TanoshiLinkModel('content').setSize(SIZES.['3Xl']);
+
+</script>
+
+<TanoshiLink tanoshiLinkModel={link} />
+
+```
+
+<Canvas of={TanoshiLinkStories.TripleExtraLarge} />
+
+### Link target
+
+```html
+
+<script lang="ts">
+    import { TanoshiLinkModel, TanoshiLinkModel } from 'tanoshi';
+
+    const link: TanoshiLinkModel = new TanoshiLinkModel('content').setIsInternal(false).setLink('www.github.com/deozza/tanoshi');
+
+</script>
+
+<TanoshiLink tanoshiLinkModel={link} />
+
+```
+
+<Canvas of={TanoshiLinkStories.TripleExtraLarge} />
+
+### Change content
+
+#### Make a button link
+
+```html
+
+<script lang="ts">
+    import { TanoshiLinkModel, TanoshiLinkModel, TanoshiButtonModel } from 'tanoshi';
+
+    const button: TanoshiButtonModel = new TanoshiButtonModel('My github page');
+
+    const link: TanoshiLinkModel = new TanoshiLinkModel('content')
+        .setIsInternal(false)
+        .setLink('www.github.com/deozza/tanoshi')
+        .setContentAsButton(button);
+
+</script>
+
+<TanoshiLink tanoshiLinkModel={link} />
+
+```
+
+<Canvas of={TanoshiLinkStories.ContentAsButton} />
+
+
+#### Make an image link
+
+```html
+
+<script lang="ts">
+    import { TanoshiLinkModel, TanoshiLinkModel, TanoshiImageModel } from 'tanoshi';
+
+    const imageSource: string = 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png';
+
+    const image: TanoshiImageModel = new TanoshiImageModel(imageSource, 'github logo');
+
+    const link: TanoshiLinkModel = new TanoshiLinkModel('content')
+        .setIsInternal(false)
+        .setLink('www.github.com/deozza/tanoshi')
+        .setContentAsImage(image);
+
+</script>
+
+<TanoshiLink tanoshiLinkModel={link} />
+
+```
+
+<Canvas of={TanoshiLinkStories.ContentAsImage} />
+
+
+## Options
+
+<Controls />
