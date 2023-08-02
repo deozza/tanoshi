@@ -1,4 +1,5 @@
 import type TanoshiLinkModel from '$lib/atoms/link/TanoshiLinkModel';
+import { NAVIGATION_ORIENTATIONS, THEMES } from '$lib/enums';
 
 export default class TanoshiNavigationModel {
 	private _itemsAtLeft: Array<TanoshiLinkModel> = [];
@@ -7,29 +8,10 @@ export default class TanoshiNavigationModel {
 	private _orientation!: string;
 	private _theme!: string;
 
-	readonly EXPECTED_THEMES: object = {
-		dark: 'dark',
-		light: 'light',
-		transparent: 'transparent',
-		primary: 'primary',
-		secondary: 'secondary',
-		success: 'success',
-		warning: 'warning',
-		danger: 'danger',
-		info: 'info'
-	};
-
-	readonly EXPECTED_ORIENTATIONS: object = {
-		vertical: 'vertical',
-		horizontal: 'horizontal'
-	};
 
 	public constructor() {
-		// @ts-ignore
-		this.setTheme(this.EXPECTED_THEMES.primary);
-
-		// @ts-ignore
-		this.setOrientation(this.EXPECTED_ORIENTATIONS.horizontal);
+		this.setTheme(THEMES.Primary);
+		this.setOrientation(NAVIGATION_ORIENTATIONS.Horizontal);
 	}
 
 	get itemsAtLeft(): Array<TanoshiLinkModel> {
@@ -79,11 +61,7 @@ export default class TanoshiNavigationModel {
 		return this._orientation;
 	}
 
-	public setOrientation(value: string): TanoshiNavigationModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_ORIENTATIONS, value) === false) {
-			throw new Error();
-		}
-
+	public setOrientation(value: NAVIGATION_ORIENTATIONS): TanoshiNavigationModel {
 		this._orientation = value;
 		return this;
 	}
@@ -92,11 +70,7 @@ export default class TanoshiNavigationModel {
 		return this._theme;
 	}
 
-	public setTheme(value: string): TanoshiNavigationModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_THEMES, value) === false) {
-			throw new Error();
-		}
-
+	public setTheme(value: THEMES): TanoshiNavigationModel {
 		this._theme = value;
 		return this;
 	}
