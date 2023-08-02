@@ -2,7 +2,7 @@ import { TanoshiImageModel } from '$atoms';
 import { TanoshiCarousel, TanoshiCarouselModel } from '$molecules';
 
 import type { Meta, StoryObj } from '@storybook/svelte';
-import "../../../../app.css";
+import "../../../app.css";
 
 
 // More on how to set up stories at: https://storybook.js.org/docs/svelte/writing-stories/introduction
