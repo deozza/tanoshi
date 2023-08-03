@@ -1,7 +1,7 @@
 nav{
     z-index: 10;
     inset: 0;
-    height: 3rem;
+    margin-bottom: 64px;
 }
 
 nav.sticky-nav {

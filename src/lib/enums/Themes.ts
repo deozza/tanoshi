@@ -153,3 +153,13 @@ export enum NAVIGATION_ORIENTATIONS {
     Horizontal = 'horizontal',
     Vertical = 'vertical'
 }
+
+export function getThemeEnumKeyByEnumValue(enumValue: string): THEMES | undefined {
+    const enumKey = Object.keys(THEMES).find(
+        (key) => THEMES[key as keyof typeof THEMES] === enumValue
+      );
+      if (enumKey !== undefined) {
+        return THEMES[enumKey as keyof typeof THEMES];
+      }
+      return undefined;
+  }

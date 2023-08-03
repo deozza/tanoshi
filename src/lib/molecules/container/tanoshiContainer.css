@@ -46,36 +46,36 @@ div.flex-container.transparent {
 	background-color: transparent;
 }
 
-div.flex-container.light {
-	background-color: rgb(245 245 245);
+div.flex-container.white {
+	background-color: var(--white-container, var(--white));
 }
 
-div.flex-container.dark {
-	background-color: black;
+div.flex-container.black {
+	background-color: var(--black-container, var(--black));
 }
 
 div.flex-container.primary {
-	background-color: var(--primary);
+	background-color: var(--primary-container, var(--primary));
 }
 
 div.flex-container.secondary {
-	background-color: var(--secondary);
+	background-color: var(--secondary-container, var(--secondary));
 }
 
 div.flex-container.success {
-	background-color: var(--success);
+	background-color: var(--success-container, var(--success));
 }
 
 div.flex-container.warning {
-	background-color: var(--warning);
+	background-color: var(--warning-container, var(--warning));
 }
 
 div.flex-container.danger {
-	background-color: var(--danger);
+	background-color: var(--danger-container, var(--danger));
 }
 
 div.flex-container.info {
-	background-color: var(--info);
+	background-color: var(--info-container, var(--info));
 }
 
 @media (max-width: 640px) {
