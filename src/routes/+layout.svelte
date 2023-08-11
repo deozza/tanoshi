@@ -4,7 +4,7 @@
 	import TanoshiNavigation from '$molecules/navigation/TanoshiNavigation.svelte';
 
 	import '../app.css';
-	import { THEMES } from '$lib';
+	import { SIZES, THEMES } from '$lib';
 
 	const navbarItemModels: Array<TanoshiLinkModel> = [
 		new TanoshiLinkModel('Typography').setTheme(THEMES.Danger).setLink('/typography'),
@@ -25,7 +25,8 @@
 
 	const tanoshiMobileNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
 		.setTheme(THEMES.Black)
-		.setItemsAtLeft([new TanoshiLinkModel('Tanoshi').setTheme(THEMES.Danger).setLink('/'), ...navbarItemModels])
+		.setItemsAtLeft([new TanoshiLinkModel('Tanoshi').setTheme(THEMES.Danger).setLink('/').setDisplaySize(SIZES['2Xl'])])
+		.setItemsAtCenter(navbarItemModels);
 
 </script>
 

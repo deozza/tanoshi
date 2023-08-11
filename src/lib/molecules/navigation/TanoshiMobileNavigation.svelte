@@ -5,7 +5,7 @@
 	import Fa from "svelte-fa/src/fa.svelte";
 
 	import { TanoshiButton, TanoshiButtonModel, TanoshiLink } from "$atoms";
-	import { CONTAINER_ORIENTATIONS, THEMES } from "$lib/enums";
+	import { CONTAINER_ORIENTATIONS, THEMES, CONTAINER_ITEMS_ALIGNMENTS, HEIGHTS } from "$lib/enums";
 	import { TanoshiContainer, TanoshiContainerModel, TanoshiNavigationModel } from "$molecules";
 
     export let tanoshiMobileNavigationModel: TanoshiNavigationModel;
@@ -14,11 +14,29 @@
 
     export let mobileTheme: THEMES;
 
-    const expandedMobileNavigationContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
-    .setTheme(mobileTheme);
+	const expandedMobileNavigationContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
+	    .setTheme(mobileTheme)
+		.setHeight(HEIGHTS.H100VH);
+
+    const expandedTopMobileNavigationContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
+	    .setTheme(mobileTheme)
+		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
+		.setHeight(HEIGHTS.H25PRCT);
+
+	const expandedCenterMobileNavigationContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
+	    .setTheme(mobileTheme)
+		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
+		.setHeight(HEIGHTS.H25PRCT);
+
+
+	const expandedBottomMobileNavigationContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
+	    .setTheme(mobileTheme)
+		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
+		.setHeight(HEIGHTS.H25PRCT);
+
 
 	const mobileMenuButton: TanoshiButtonModel = new TanoshiButtonModel('')
-    .setBasicTheme(mobileTheme);
+    	.setBasicTheme(mobileTheme);
 
     let showMobileMenu: boolean = false;
 
@@ -51,9 +69,21 @@
 	{#if showMobileMenu === true}
 		<div id="mobile-menu">
 			<TanoshiContainer tanoshiContainerModel={expandedMobileNavigationContainer}>
-				{#each [...tanoshiMobileNavigationModel.itemsAtLeft, ...tanoshiMobileNavigationModel.itemsAtCenter, ...tanoshiMobileNavigationModel.itemsAtRight,] as tanoshiLinkModel}
-					<TanoshiLink {tanoshiLinkModel} />
-				{/each}
+				<TanoshiContainer tanoshiContainerModel={expandedTopMobileNavigationContainer}>
+					{#each tanoshiMobileNavigationModel.itemsAtLeft as tanoshiLinkModel}
+						<TanoshiLink {tanoshiLinkModel} />
+					{/each}
+				</TanoshiContainer>
+				<TanoshiContainer tanoshiContainerModel={expandedCenterMobileNavigationContainer}>
+					{#each tanoshiMobileNavigationModel.itemsAtCenter as tanoshiLinkModel}
+						<TanoshiLink {tanoshiLinkModel} />
+					{/each}
+				</TanoshiContainer>
+				<TanoshiContainer tanoshiContainerModel={expandedBottomMobileNavigationContainer}>
+					{#each tanoshiMobileNavigationModel.itemsAtRight as tanoshiLinkModel}
+						<TanoshiLink {tanoshiLinkModel} />
+					{/each}
+				</TanoshiContainer>
 			</TanoshiContainer>
 		</div>
 	{/if}
