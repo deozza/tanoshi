@@ -1,12 +1,7 @@
-import type TanoshiButtonModel from "$atoms/button/TanoshiButtonModel";
-import type TanoshiImageModel from "$atoms/image/TanoshiImageModel";
-
 import { SIZES, TEXT_ALIGNMENT, THEMES } from "$lib/enums";
 
 export default class TanoshiLinkModel {
 	private _content!: string;
-	private _contentAsImage: TanoshiImageModel | null = null;
-	private _contentAsButton: TanoshiButtonModel | null = null;
 	private _link!: string;
 	private _isInternal!: string;
 	private _displaySize!: string;
@@ -28,24 +23,6 @@ export default class TanoshiLinkModel {
 
 	public setContent(value: string): TanoshiLinkModel {
 		this._content = value;
-		return this;
-	}
-
-	get contentAsImage(): TanoshiImageModel | null {
-		return this._contentAsImage;
-	}
-
-	public setContentAsImage(value: TanoshiImageModel): TanoshiLinkModel {
-		this._contentAsImage = value;
-		return this;
-	}
-
-	get contentAsButton(): TanoshiButtonModel | null {
-		return this._contentAsButton;
-	}
-
-	public setContentAsButton(value: TanoshiButtonModel): TanoshiLinkModel {
-		this._contentAsButton = value;
 		return this;
 	}
 

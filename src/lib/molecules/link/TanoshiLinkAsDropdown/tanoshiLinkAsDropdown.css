@@ -1,0 +1,12 @@
+li.dropdown {
+  display: inline-block;
+}
+
+li.dropdown > div.dropdown-content {
+  display: none;
+  height: 100px
+}
+
+li.dropdown:hover > div.dropdown-content {
+  display: flex;
+}

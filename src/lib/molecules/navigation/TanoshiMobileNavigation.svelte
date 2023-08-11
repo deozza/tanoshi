@@ -70,19 +70,19 @@
 		<div id="mobile-menu">
 			<TanoshiContainer tanoshiContainerModel={expandedMobileNavigationContainer}>
 				<TanoshiContainer tanoshiContainerModel={expandedTopMobileNavigationContainer}>
-					{#each tanoshiMobileNavigationModel.itemsAtLeft as tanoshiLinkModel}
-						<TanoshiLink {tanoshiLinkModel} />
-					{/each}
+					{#each tanoshiMobileNavigationModel.itemsAtLeft as tanoshiNavigationLinkModel}
+					<svelte:component this={tanoshiNavigationLinkModel.component} tanoshiLinkModel={tanoshiNavigationLinkModel.link} />
+				{/each}
 				</TanoshiContainer>
 				<TanoshiContainer tanoshiContainerModel={expandedCenterMobileNavigationContainer}>
-					{#each tanoshiMobileNavigationModel.itemsAtCenter as tanoshiLinkModel}
-						<TanoshiLink {tanoshiLinkModel} />
-					{/each}
+					{#each tanoshiMobileNavigationModel.itemsAtCenter as tanoshiNavigationLinkModel}
+					<svelte:component this={tanoshiNavigationLinkModel.component} tanoshiLinkModel={tanoshiNavigationLinkModel.link} />
+				{/each}
 				</TanoshiContainer>
 				<TanoshiContainer tanoshiContainerModel={expandedBottomMobileNavigationContainer}>
-					{#each tanoshiMobileNavigationModel.itemsAtRight as tanoshiLinkModel}
-						<TanoshiLink {tanoshiLinkModel} />
-					{/each}
+					{#each tanoshiMobileNavigationModel.itemsAtRight as tanoshiNavigationLinkModel}
+					<svelte:component this={tanoshiNavigationLinkModel.component} tanoshiLinkModel={tanoshiNavigationLinkModel.link} />
+				{/each}
 				</TanoshiContainer>
 			</TanoshiContainer>
 		</div>

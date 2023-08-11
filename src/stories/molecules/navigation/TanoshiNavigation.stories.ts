@@ -3,6 +3,7 @@ import { TanoshiNavigation, TanoshiNavigationModel } from '$molecules';
 
 import type { Meta, StoryObj } from '@storybook/svelte';
 import "../../../app.css";
+import { THEMES } from '$lib';
 
 
 // More on how to set up stories at: https://storybook.js.org/docs/svelte/writing-stories/introduction
@@ -23,8 +24,8 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const navbarItemModels: Array<TanoshiLinkModel> = [
-  new TanoshiLinkModel('Link 1').setTheme('white'),
-  new TanoshiLinkModel('Link 2').setTheme('white'),
+  new TanoshiLinkModel('Link 1').setTheme(THEMES.White),
+  new TanoshiLinkModel('Link 2').setTheme(THEMES.White),
 ];
 
 
@@ -32,70 +33,70 @@ const navbarItemModels: Array<TanoshiLinkModel> = [
 export const Dark: Story = {
   args: {
     tanoshiNavigationModel: new TanoshiNavigationModel()
-    .setTheme('dark')
+    .setTheme(THEMES.Black)
     .setItemsAtRight(navbarItemModels)
-    .addItemAtLeft(new TanoshiLinkModel('Tanoshi').setTheme('white').setLink('/'))
+    .addItemAtLeft(new TanoshiLinkModel('Tanoshi').setTheme(THEMES.White).setLink('/'))
   },
 };
 
 export const Primary: Story = {
   args: {
     tanoshiNavigationModel: new TanoshiNavigationModel()
-    .setTheme('primary')
+    .setTheme(THEMES.Primary)
     .setItemsAtRight(navbarItemModels)
-    .addItemAtLeft(new TanoshiLinkModel('Tanoshi').setTheme('white').setLink('/'))
+    .addItemAtLeft(new TanoshiLinkModel('Tanoshi').setTheme(THEMES.White).setLink('/'))
   },
 };
 
 export const Secondary: Story = {
   args: {
     tanoshiNavigationModel: new TanoshiNavigationModel()
-    .setTheme('secondary')
+    .setTheme(THEMES.Secondary)
     .setItemsAtRight(navbarItemModels)
-    .addItemAtLeft(new TanoshiLinkModel('Tanoshi').setTheme('white').setLink('/'))
+    .addItemAtLeft(new TanoshiLinkModel('Tanoshi').setTheme(THEMES.White).setLink('/'))
   },
 };
 
 export const Success: Story = {
   args: {
     tanoshiNavigationModel: new TanoshiNavigationModel()
-    .setTheme('success')
+    .setTheme(THEMES.Success)
     .setItemsAtRight(navbarItemModels)
-    .addItemAtLeft(new TanoshiLinkModel('Tanoshi').setTheme('white').setLink('/'))
+    .addItemAtLeft(new TanoshiLinkModel('Tanoshi').setTheme(THEMES.White).setLink('/'))
   },
 };
 
 export const Danger: Story = {
   args: {
     tanoshiNavigationModel: new TanoshiNavigationModel()
-    .setTheme('danger')
+    .setTheme(THEMES.Danger)
     .setItemsAtRight(navbarItemModels)
-    .addItemAtLeft(new TanoshiLinkModel('Tanoshi').setTheme('white').setLink('/'))
+    .addItemAtLeft(new TanoshiLinkModel('Tanoshi').setTheme(THEMES.White).setLink('/'))
   },
 };
 
 export const Warning: Story = {
   args: {
     tanoshiNavigationModel: new TanoshiNavigationModel()
-    .setTheme('warning')
+    .setTheme(THEMES.Warning)
     .setItemsAtRight(navbarItemModels)
-    .addItemAtLeft(new TanoshiLinkModel('Tanoshi').setTheme('white').setLink('/'))
+    .addItemAtLeft(new TanoshiLinkModel('Tanoshi').setTheme(THEMES.White).setLink('/'))
   },
 };
 
 export const Info: Story = {
   args: {
     tanoshiNavigationModel: new TanoshiNavigationModel()
-    .setTheme('info')
+    .setTheme(THEMES.Info)
     .setItemsAtRight(navbarItemModels)
-    .addItemAtLeft(new TanoshiLinkModel('Tanoshi').setTheme('white').setLink('/'))
+    .addItemAtLeft(new TanoshiLinkModel('Tanoshi').setTheme(THEMES.White).setLink('/'))
   },
 };
 
 export const ItemsAtLeft: Story = {
   args: {
     tanoshiNavigationModel: new TanoshiNavigationModel()
-    .setTheme('dark')
+    .setTheme(THEMES.Black)
     .setItemsAtLeft(navbarItemModels)
   },
 };
@@ -103,7 +104,7 @@ export const ItemsAtLeft: Story = {
 export const ItemsAtCenter: Story = {
   args: {
     tanoshiNavigationModel: new TanoshiNavigationModel()
-    .setTheme('dark')
+    .setTheme(THEMES.Black)
     .setItemsAtCenter(navbarItemModels)
   },
 };
@@ -111,7 +112,7 @@ export const ItemsAtCenter: Story = {
 export const ItemsAtRight: Story = {
   args: {
     tanoshiNavigationModel: new TanoshiNavigationModel()
-    .setTheme('dark')
+    .setTheme(THEMES.Black)
     .setItemsAtRight(navbarItemModels)
   },
 };

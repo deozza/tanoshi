@@ -29,7 +29,12 @@
 	{#if tanoshiButtonModel.isLoading === true}
 		<Fa icon={faSpinner} spin={true} size={'lg'}/>
 	{/if}
-	<slot />
+	{#if tanoshiButtonModel.iconAtLeft !== null && tanoshiButtonModel.isLoading === false}
+		<Fa icon={tanoshiButtonModel.iconAtLeft} />
+	{/if}
 	{tanoshiButtonModel.content}
+	{#if tanoshiButtonModel.iconAtRight !== null && tanoshiButtonModel.isLoading === false}
+		<Fa icon={tanoshiButtonModel.iconAtRight} />
+	{/if}
 	
 </button>

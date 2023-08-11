@@ -238,6 +238,14 @@
     border: 1px solid var(--black-border-button-hover, var(--black-dark));
 }
 
+.btn.btn-transparent {
+    background-color: transparent;
+}
+
+.btn.btn-border-transparent {
+    border: none;
+}
+
 .btn > svg {
     display: inline-block;
 }

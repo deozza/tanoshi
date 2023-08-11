@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { TanoshiLink } from "$atoms";
 	import { CONTAINER_ORIENTATIONS, CONTAINER_ITEMS_SPACING, CONTAINER_ITEMS_ALIGNMENTS, WIDTHS, THEMES } from "$lib/enums";
 	import { TanoshiContainer, TanoshiContainerModel, TanoshiNavigationModel } from "$molecules";
 
@@ -26,22 +25,21 @@
 
 </script>
 
-
 <nav class="sticky-nav">
 	<TanoshiContainer bind:tanoshiContainerModel={navigationDesktopContainerModel}>
 		<TanoshiContainer bind:tanoshiContainerModel={desktopNavigationLeftModuleContainer} >
-			{#each tanoshiDesktopNavigationModel.itemsAtLeft as tanoshiLinkModel}
-				<TanoshiLink {tanoshiLinkModel} />
+			{#each tanoshiDesktopNavigationModel.itemsAtLeft as tanoshiNavigationLinkModel}
+				<svelte:component this={tanoshiNavigationLinkModel.component} tanoshiLinkModel={tanoshiNavigationLinkModel.link} />
 			{/each}
 		</TanoshiContainer>
 		<TanoshiContainer bind:tanoshiContainerModel={desktopNavigationCenterModuleContainer} >
-			{#each tanoshiDesktopNavigationModel.itemsAtCenter as tanoshiLinkModel}
-				<TanoshiLink {tanoshiLinkModel} />
+			{#each tanoshiDesktopNavigationModel.itemsAtCenter as tanoshiNavigationLinkModel}
+				<svelte:component this={tanoshiNavigationLinkModel.component} tanoshiLinkModel={tanoshiNavigationLinkModel.link} />
 			{/each}
 		</TanoshiContainer>
 		<TanoshiContainer bind:tanoshiContainerModel={desktopNavigationRightModuleContainer} >
-			{#each tanoshiDesktopNavigationModel.itemsAtRight as tanoshiLinkModel}
-				<TanoshiLink {tanoshiLinkModel} />
+			{#each tanoshiDesktopNavigationModel.itemsAtRight as tanoshiNavigationLinkModel}
+				<svelte:component this={tanoshiNavigationLinkModel.component} tanoshiLinkModel={tanoshiNavigationLinkModel.link} />
 			{/each}
 		</TanoshiContainer>
 	</TanoshiContainer>
