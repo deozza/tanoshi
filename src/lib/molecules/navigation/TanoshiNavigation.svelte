@@ -8,21 +8,26 @@
 	import TanoshiDesktopNavigation from './TanoshiDesktopNavigation.svelte';
 	import TanoshiMobileNavigation from './TanoshiMobileNavigation.svelte';
 
-	export let tanoshiNavigationModel: TanoshiNavigationModel;
+	export let tanoshiDesktopNavigationModel: TanoshiNavigationModel;
+	export let tanoshiMobileNavigationModel: TanoshiNavigationModel;
 
-	const theme: THEMES | undefined = getThemeEnumKeyByEnumValue(tanoshiNavigationModel.theme)
+	$: desktopTheme = getThemeEnumKeyByEnumValue(tanoshiDesktopNavigationModel.theme)
+	const mobileTheme: THEMES | undefined = getThemeEnumKeyByEnumValue(tanoshiMobileNavigationModel.theme)
 	
-	if(!theme) {
-		throw new Error('Theme is not defined');
-	}
-
-	const navigationContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
-		.setTheme(theme)
+	$: navigationDesktopContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
+		.setTheme(desktopTheme)
 		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Start)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
+		.setHeight(HEIGHTS.HAUTO)
+
+	const navigationMobileContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
+		.setTheme(mobileTheme)
+		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Start)
+		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
+		.setHeight(HEIGHTS.HAUTO)
 
 </script>
 
-<TanoshiDesktopNavigation {tanoshiNavigationModel} {navigationContainerModel} {theme} />
+<TanoshiDesktopNavigation bind:tanoshiDesktopNavigationModel={tanoshiDesktopNavigationModel} bind:navigationDesktopContainerModel={navigationDesktopContainerModel} />
 
-<TanoshiMobileNavigation {tanoshiNavigationModel} {navigationContainerModel} {theme}/>
+<TanoshiMobileNavigation {tanoshiMobileNavigationModel} {navigationMobileContainerModel} {mobileTheme}/>

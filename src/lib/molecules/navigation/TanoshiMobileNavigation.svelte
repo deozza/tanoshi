@@ -8,17 +8,17 @@
 	import { CONTAINER_ORIENTATIONS, THEMES } from "$lib/enums";
 	import { TanoshiContainer, TanoshiContainerModel, TanoshiNavigationModel } from "$molecules";
 
-    export let tanoshiNavigationModel: TanoshiNavigationModel;
+    export let tanoshiMobileNavigationModel: TanoshiNavigationModel;
 
-    export let navigationContainerModel: TanoshiContainerModel;
+    export let navigationMobileContainerModel: TanoshiContainerModel;
 
-    export let theme: THEMES;
+    export let mobileTheme: THEMES;
 
     const expandedMobileNavigationContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
-    .setTheme(theme);
+    .setTheme(mobileTheme);
 
 	const mobileMenuButton: TanoshiButtonModel = new TanoshiButtonModel('')
-    .setBasicTheme(theme);
+    .setBasicTheme(mobileTheme);
 
     let showMobileMenu: boolean = false;
 
@@ -37,7 +37,7 @@
 </script>
 
 <nav class="burger-nav" class:z-10={showMobileMenu === true}>
-	<TanoshiContainer tanoshiContainerModel={navigationContainerModel} >
+	<TanoshiContainer tanoshiContainerModel={navigationMobileContainerModel} >
 		<TanoshiButton tanoshiButtonModel={mobileMenuButton} on:click={mobileMenuHandler}>
 			<span class="sr-only">Open main menu</span>
 			{#if showMobileMenu === false}
@@ -51,7 +51,7 @@
 	{#if showMobileMenu === true}
 		<div id="mobile-menu">
 			<TanoshiContainer tanoshiContainerModel={expandedMobileNavigationContainer}>
-				{#each [...tanoshiNavigationModel.itemsAtLeft, ...tanoshiNavigationModel.itemsAtCenter, ...tanoshiNavigationModel.itemsAtRight,] as tanoshiLinkModel}
+				{#each [...tanoshiMobileNavigationModel.itemsAtLeft, ...tanoshiMobileNavigationModel.itemsAtCenter, ...tanoshiMobileNavigationModel.itemsAtRight,] as tanoshiLinkModel}
 					<TanoshiLink {tanoshiLinkModel} />
 				{/each}
 			</TanoshiContainer>

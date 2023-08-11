@@ -147,6 +147,8 @@ export enum HEIGHTS {
     MINH25VH = 'min-h-25-vh',
     H25PRCT = 'h-25-prct',
     MINH25PRCT = 'min-h-25-prct',
+    H0PRCT = 'h-0-prct',
+    HAUTO = 'h-auto',
 }
 
 export enum NAVIGATION_ORIENTATIONS {
@@ -154,12 +156,12 @@ export enum NAVIGATION_ORIENTATIONS {
     Vertical = 'vertical'
 }
 
-export function getThemeEnumKeyByEnumValue(enumValue: string): THEMES | undefined {
+export function getThemeEnumKeyByEnumValue(enumValue: string): THEMES  {
     const enumKey = Object.keys(THEMES).find(
         (key) => THEMES[key as keyof typeof THEMES] === enumValue
       );
       if (enumKey !== undefined) {
         return THEMES[enumKey as keyof typeof THEMES];
       }
-      return undefined;
-  }
+      throw new Error(enumValue + ' is not a valid value for enum Themes');
+    }

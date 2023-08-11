@@ -3,46 +3,44 @@
 	import { CONTAINER_ORIENTATIONS, CONTAINER_ITEMS_SPACING, CONTAINER_ITEMS_ALIGNMENTS, WIDTHS, THEMES } from "$lib/enums";
 	import { TanoshiContainer, TanoshiContainerModel, TanoshiNavigationModel } from "$molecules";
 
-    export let tanoshiNavigationModel: TanoshiNavigationModel;
+    export let tanoshiDesktopNavigationModel: TanoshiNavigationModel;
+    export let navigationDesktopContainerModel: TanoshiContainerModel;
 
-    export let navigationContainerModel: TanoshiContainerModel;
-
-    export let theme: THEMES;
-
-	const desktopNavigationLeftModuleContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
-		.setTheme(theme)
+	$: desktopNavigationLeftModuleContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
+		.setTheme(THEMES.Transparent)
 		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Start)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
 		.setWidth(WIDTHS.MinW4)
 
-	const desktopNavigationCenterModuleContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
-		.setTheme(theme)
+	$: desktopNavigationCenterModuleContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
+		.setTheme(THEMES.Transparent)
 		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Centered)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
 		.setWidth(WIDTHS.MinW4)
 
-	const desktopNavigationRightModuleContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
-		.setTheme(theme)
+	$: desktopNavigationRightModuleContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
+		.setTheme(THEMES.Transparent)
 		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.End)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
 		.setWidth(WIDTHS.MinW4)
+
 </script>
 
 
 <nav class="sticky-nav">
-	<TanoshiContainer tanoshiContainerModel={navigationContainerModel}>
-		<TanoshiContainer tanoshiContainerModel={desktopNavigationLeftModuleContainer} >
-			{#each tanoshiNavigationModel.itemsAtLeft as tanoshiLinkModel}
+	<TanoshiContainer bind:tanoshiContainerModel={navigationDesktopContainerModel}>
+		<TanoshiContainer bind:tanoshiContainerModel={desktopNavigationLeftModuleContainer} >
+			{#each tanoshiDesktopNavigationModel.itemsAtLeft as tanoshiLinkModel}
 				<TanoshiLink {tanoshiLinkModel} />
 			{/each}
 		</TanoshiContainer>
-		<TanoshiContainer tanoshiContainerModel={desktopNavigationCenterModuleContainer} >
-			{#each tanoshiNavigationModel.itemsAtCenter as tanoshiLinkModel}
+		<TanoshiContainer bind:tanoshiContainerModel={desktopNavigationCenterModuleContainer} >
+			{#each tanoshiDesktopNavigationModel.itemsAtCenter as tanoshiLinkModel}
 				<TanoshiLink {tanoshiLinkModel} />
 			{/each}
 		</TanoshiContainer>
-		<TanoshiContainer tanoshiContainerModel={desktopNavigationRightModuleContainer} >
-			{#each tanoshiNavigationModel.itemsAtRight as tanoshiLinkModel}
+		<TanoshiContainer bind:tanoshiContainerModel={desktopNavigationRightModuleContainer} >
+			{#each tanoshiDesktopNavigationModel.itemsAtRight as tanoshiLinkModel}
 				<TanoshiLink {tanoshiLinkModel} />
 			{/each}
 		</TanoshiContainer>

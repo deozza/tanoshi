@@ -389,3 +389,11 @@ video {
 .min-h-25-prct{
 	min-height: 25%;
 }
+
+.h-0-prct{
+	height: 0;
+}
+
+.h-auto{
+	height: auto;
+}

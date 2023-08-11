@@ -5,8 +5,9 @@ nav{
 }
 
 nav.sticky-nav {
-  position: sticky;
+  position: fixed;
   display: none;
+  height: auto;
 }
 
 nav.burger-nav > div{
@@ -14,7 +15,7 @@ nav.burger-nav > div{
 }
 
 nav.burger-nav > div#mobile-menu{
-  height: auto!important;
+  height: 100vh!important;
 }
 
 @media (min-width: 640px) {
