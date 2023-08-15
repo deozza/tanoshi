@@ -39,13 +39,12 @@ ul {
 ul li {
 	display: flex;
 	flex-direction: column;
-	padding-right: 2em;
-
+	padding: 1rem;
 }
-
 
 ul.transparent {
 	background-color: transparent;
+	border: 1px solid var(--primary);
 }
 
 ul.white {
@@ -83,6 +82,12 @@ ul.info {
 @media (max-width: 639px) {
 	ul {
 		position: relative;
+		padding-left: 8rem;
+		background-color: transparent!important;
+	}
+
+	ul li {
+		padding: 0;
 	}
 }
 </style>

@@ -10,13 +10,16 @@
 	import TanoshiLinkAsDropdownModel from '$molecules/link/TanoshiLinkAsDropdown/TanoshiLinkAsDropdownModel';
 	import TanoshiLinkAsDropdown from '$molecules/link/TanoshiLinkAsDropdown/TanoshiLinkAsDropdown.svelte';
 
+	let positionY: number;
+	let divHeight: number;
+
 	const dropdownTitle: TanoshiLinkModel = new TanoshiLinkModel('Dropdown').setTheme(THEMES.Danger);
 	const linkPrimary: TanoshiLinkModel = new TanoshiLinkModel('Primary').setTheme(THEMES.Danger);
 	const linkSecondary: TanoshiLinkModel = new TanoshiLinkModel('Secondary').setTheme(THEMES.Danger);
 	const linkSuccess: TanoshiLinkModel = new TanoshiLinkModel('Success').setTheme(THEMES.Danger);
 
 
-	const subLinks: Array<TanoshiNavigationLinkModel> = [
+	const dropdownItems: Array<TanoshiNavigationLinkModel> = [
 		{
 			link: linkPrimary,
 			component: TanoshiLink
@@ -28,38 +31,16 @@
 		{
 			link: linkSuccess,
 			component: TanoshiLink
-		},
-	]
+		}
+	];
 
-	const subDropdownLinkModel: TanoshiLinkAsDropdownModel = new TanoshiLinkAsDropdownModel(dropdownTitle)
-	.setLinks(subLinks)
-	.setBackgroundTheme(THEMES.Black)
-	.setLinksTheme(THEMES.Danger);
-
-
-	const links: Array<TanoshiNavigationLinkModel> = [
-		{
-			link: linkPrimary,
-			component: TanoshiLink
-		},
-		{
-			link: linkSecondary,
-			component: TanoshiLink
-		},
-		{
-			link: subDropdownLinkModel,
-			component: TanoshiLinkAsDropdown
-		},
-	]
-
-	const dropdownLinkModel: TanoshiLinkAsDropdownModel = new TanoshiLinkAsDropdownModel(dropdownTitle)
-	.setLinks(links)
-	.setBackgroundTheme(THEMES.Black)
-	.setLinksTheme(THEMES.Danger);
+	const dropdownLink : TanoshiLinkAsDropdownModel = new TanoshiLinkAsDropdownModel(dropdownTitle)
+		.setLinks(dropdownItems)
+		.setBackgroundTheme(THEMES.Secondary)
 
 	const navbarRightItemModels: Array<TanoshiNavigationLinkModel> = [
 		{
-			link: dropdownLinkModel,
+			link: dropdownLink,
 			component: TanoshiLinkAsDropdown
 		},
 		{
@@ -96,13 +77,12 @@
 		}
 	]
 
-	let positionY: number;
-	let divHeight: number;
+
 
 	$: tanoshiDesktopNavigationModel = new TanoshiNavigationModel()
 		.setTheme(positionY > (divHeight - 192) ? THEMES.Black : THEMES.Transparent)
-		.setItemsAtCenter(navbarRightItemModels)
-		.setItemsAtLeft(logoNavbarModel)
+		.setItemsAtRight(navbarRightItemModels)
+		.setItemsAtCenter(logoNavbarModel)
 
 	const tanoshiMobileNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
 		.setTheme(THEMES.Black)

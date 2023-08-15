@@ -10,23 +10,23 @@
 		.setTheme(THEMES.Transparent)
 		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Start)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
-		.setWidth(tanoshiDesktopNavigationModel.itemsAtLeft.length > 0 ? WIDTHS.MinW4 : WIDTHS.W4)
+		.setWidth(WIDTHS.WAuto)
 
 	$: desktopNavigationCenterModuleContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
 		.setTheme(THEMES.Transparent)
 		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Centered)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
-		.setWidth(tanoshiDesktopNavigationModel.itemsAtCenter.length > 0 ? WIDTHS.MinW4 : WIDTHS.W4)
+		.setWidth(WIDTHS.WAuto)
 
 	$: desktopNavigationRightModuleContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
 		.setTheme(THEMES.Transparent)
 		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.End)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
-		.setWidth(tanoshiDesktopNavigationModel.itemsAtRight.length > 0 ? WIDTHS.MinW4 : WIDTHS.W4)
+		.setWidth(WIDTHS.WAuto)
 
 	const tanoshiNavWidthContainerModel: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
 		.setTheme(THEMES.Transparent)
-		.setWidth(WIDTHS.W10)
+		.setWidth(WIDTHS.W12)
 		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Between)
 
 </script>
