@@ -2,6 +2,7 @@
 	import './tanoshiLink.css';
 	import './../../main.css';
 	import type TanoshiLinkModel from './TanoshiLinkModel';
+	import Fa from 'svelte-fa/src/index.js';
 
 	export let tanoshiLinkModel: TanoshiLinkModel;
 
@@ -13,6 +14,11 @@
 	href={tanoshiLinkModel.link}
 	target={tanoshiLinkModel.isInternal}
 >
+	{#if tanoshiLinkModel.iconAtLeft !== null}
+		<Fa icon={tanoshiLinkModel.iconAtLeft} />
+	{/if}
 	{tanoshiLinkModel.content}
-	<slot />
+	{#if tanoshiLinkModel.iconAtRight !== null}
+		<Fa icon={tanoshiLinkModel.iconAtRight} />
+	{/if}
 </a>

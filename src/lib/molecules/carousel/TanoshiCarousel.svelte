@@ -1,7 +1,7 @@
 <script lang="ts">
   import './tanoshiCarousel.css';
 
-	import Fa from 'svelte-fa/src/fa.svelte';
+	import Fa from 'svelte-fa/src/index.js';
   import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons/index.js';
 	import { fade } from 'svelte/transition';
 
@@ -110,3 +110,42 @@
     </TanoshiContainer>  
 
 </TanoshiContainer>
+
+
+<style>
+  .carousel-commands {
+    z-index: 10;
+    position: relative;
+    bottom: 40px;
+}
+
+button.arrow{
+    margin-left: 1.25rem/* 20px */;
+    margin-right: 1.25rem/* 20px */;
+    background-color: transparent;
+    border: none;
+}
+
+button.dot{
+    margin-left: 1.25rem/* 20px */;
+    margin-right: 1.25rem/* 20px */;
+    margin-top: 0.25rem/* 4px */;
+    margin-bottom: 0.25rem/* 4px */;
+    width: 1.25rem/* 20px */;
+    height: 1.25rem/* 20px */;
+    opacity: 0.5;
+    --tw-bg-opacity: 1;
+    background-color: rgb(100 116 139 / var(--tw-bg-opacity));
+    border-radius: 9999px;
+    border: none;
+
+}
+
+button.dot.bg-white{
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    opacity: 1;
+}
+
+
+</style>

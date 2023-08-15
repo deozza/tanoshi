@@ -94,7 +94,7 @@ export enum CONTAINER_BORDERS {
 }
 
 export enum WIDTHS {
-    w0 = 'w-0',
+    W0 = 'w-0',
     W1 = 'w-1',
     MinW1 = 'min-w-1',
     W2 = 'w-2',

@@ -4,7 +4,9 @@ export default class TanoshiContainerModel {
 	private _theme!: string;
 	private _borders!: string;
 	private _width!: string;
+	private _customWidth: string = '';
 	private _height!: string;
+	private _customHeight: string = '';
 	private _backgroundImage: string | null = null;
 	private _desktopOrientation!: string;
 	private _mobileOrientation!: string;
@@ -19,6 +21,7 @@ export default class TanoshiContainerModel {
 		this.setTheme(THEMES.Transparent);
 		this.setBorders(CONTAINER_BORDERS.None);
 		this.setHeight(HEIGHTS.H100PRCT);
+		this.setWidth(WIDTHS.W12);
 	}
 
 	get theme(): string {
@@ -48,12 +51,30 @@ export default class TanoshiContainerModel {
 		return this;
 	}
 
+	get customWidth(): string {
+		return this._customWidth;
+	}
+
+	public setCustomWidth(value: string): TanoshiContainerModel {
+		this._customWidth = value;
+		return this;
+	}
+
 	get height(): string {
 		return this._height;
 	}
 
 	public setHeight(value: HEIGHTS): TanoshiContainerModel {
 		this._height = value;
+		return this;
+	}
+
+	get customHeight(): string {
+		return this._customHeight;
+	}
+
+	public setCustomHeight(value: string): TanoshiContainerModel {
+		this._customHeight = value;
 		return this;
 	}
 

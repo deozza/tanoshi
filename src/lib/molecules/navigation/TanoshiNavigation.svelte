@@ -16,7 +16,7 @@
 	
 	$: navigationDesktopContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
 		.setTheme(desktopTheme)
-		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Start)
+		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Centered)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
 		.setHeight(HEIGHTS.HAUTO)
 

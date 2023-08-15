@@ -70,3 +70,7 @@ a.a-info {
 a.a-info:hover {
 	color: var(--info-text-link-hover, var(--info-dark));
 }
+
+a > svg {
+    display: inline-block;
+}

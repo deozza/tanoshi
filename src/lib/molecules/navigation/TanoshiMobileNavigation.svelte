@@ -2,7 +2,7 @@
     import { onMount, onDestroy } from 'svelte';
 
     import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
-	import Fa from "svelte-fa/src/fa.svelte";
+	import Fa from "svelte-fa/src/index.js";
 
 	import { TanoshiButton, TanoshiButtonModel, TanoshiLink } from "$atoms";
 	import { CONTAINER_ORIENTATIONS, THEMES, CONTAINER_ITEMS_ALIGNMENTS, HEIGHTS } from "$lib/enums";
@@ -21,18 +21,18 @@
     const expandedTopMobileNavigationContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
 	    .setTheme(mobileTheme)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
-		.setHeight(HEIGHTS.H25PRCT);
+		.setHeight(tanoshiMobileNavigationModel.itemsAtLeft.length > 0 ? HEIGHTS.MINH25PRCT : HEIGHTS.H25PRCT);
 
 	const expandedCenterMobileNavigationContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
 	    .setTheme(mobileTheme)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
-		.setHeight(HEIGHTS.H25PRCT);
+		.setHeight(tanoshiMobileNavigationModel.itemsAtCenter.length > 0 ? HEIGHTS.MINH25PRCT : HEIGHTS.H25PRCT);
 
 
 	const expandedBottomMobileNavigationContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
 	    .setTheme(mobileTheme)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
-		.setHeight(HEIGHTS.H25PRCT);
+		.setHeight(tanoshiMobileNavigationModel.itemsAtRight.length > 0 ? HEIGHTS.MINH25PRCT : HEIGHTS.H25PRCT);
 
 
 	const mobileMenuButton: TanoshiButtonModel = new TanoshiButtonModel('')
@@ -54,7 +54,7 @@
 
 </script>
 
-<nav class="burger-nav" class:z-10={showMobileMenu === true}>
+<nav class:z-10={showMobileMenu === true}>
 	<TanoshiContainer tanoshiContainerModel={navigationMobileContainerModel} >
 		<TanoshiButton tanoshiButtonModel={mobileMenuButton} on:click={mobileMenuHandler}>
 			<span class="sr-only">Open main menu</span>
@@ -88,3 +88,42 @@
 		</div>
 	{/if}
 </nav>
+
+<style>
+
+nav {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  z-index: 10;
+
+}
+
+nav > div{
+  height: 4rem!important;
+}
+
+nav > div#mobile-menu{
+  height: 100vh!important;
+  z-index: 10;
+}
+
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+@media (max-width: 639px) {
+  nav {
+    display: block;
+  }
+}
+
+</style>

@@ -10,17 +10,54 @@
 	import TanoshiLinkAsDropdownModel from '$molecules/link/TanoshiLinkAsDropdown/TanoshiLinkAsDropdownModel';
 	import TanoshiLinkAsDropdown from '$molecules/link/TanoshiLinkAsDropdown/TanoshiLinkAsDropdown.svelte';
 
+	const dropdownTitle: TanoshiLinkModel = new TanoshiLinkModel('Dropdown').setTheme(THEMES.Danger);
 	const linkPrimary: TanoshiLinkModel = new TanoshiLinkModel('Primary').setTheme(THEMES.Danger);
 	const linkSecondary: TanoshiLinkModel = new TanoshiLinkModel('Secondary').setTheme(THEMES.Danger);
 	const linkSuccess: TanoshiLinkModel = new TanoshiLinkModel('Success').setTheme(THEMES.Danger);
 
-	const links: Array<TanoshiLinkModel> = [
-		linkPrimary, linkSecondary, linkSuccess
-	];
 
-	const dropdownLinkModel: TanoshiLinkAsDropdownModel = new TanoshiLinkAsDropdownModel(links).setTheme(THEMES.Danger);
+	const subLinks: Array<TanoshiNavigationLinkModel> = [
+		{
+			link: linkPrimary,
+			component: TanoshiLink
+		},
+		{
+			link: linkSecondary,
+			component: TanoshiLink
+		},
+		{
+			link: linkSuccess,
+			component: TanoshiLink
+		},
+	]
 
-	const navbarItemModels: Array<TanoshiNavigationLinkModel> = [
+	const subDropdownLinkModel: TanoshiLinkAsDropdownModel = new TanoshiLinkAsDropdownModel(dropdownTitle)
+	.setLinks(subLinks)
+	.setBackgroundTheme(THEMES.Black)
+	.setLinksTheme(THEMES.Danger);
+
+
+	const links: Array<TanoshiNavigationLinkModel> = [
+		{
+			link: linkPrimary,
+			component: TanoshiLink
+		},
+		{
+			link: linkSecondary,
+			component: TanoshiLink
+		},
+		{
+			link: subDropdownLinkModel,
+			component: TanoshiLinkAsDropdown
+		},
+	]
+
+	const dropdownLinkModel: TanoshiLinkAsDropdownModel = new TanoshiLinkAsDropdownModel(dropdownTitle)
+	.setLinks(links)
+	.setBackgroundTheme(THEMES.Black)
+	.setLinksTheme(THEMES.Danger);
+
+	const navbarRightItemModels: Array<TanoshiNavigationLinkModel> = [
 		{
 			link: dropdownLinkModel,
 			component: TanoshiLinkAsDropdown
@@ -52,44 +89,45 @@
 		}
 	];
 
-	const logoNavbarModel: TanoshiNavigationLinkModel = {
-		link: new TanoshiLinkModel('Tanoshi').setTheme(THEMES.Danger).setLink('/'),
-		component: TanoshiLink
-	};
+	const logoNavbarModel: Array<TanoshiNavigationLinkModel> = [
+		{
+			link: new TanoshiLinkModel('Tanoshi').setTheme(THEMES.Danger).setLink('/'),
+			component: TanoshiLink
+		}
+	]
 
 	let positionY: number;
 	let divHeight: number;
 
 	$: tanoshiDesktopNavigationModel = new TanoshiNavigationModel()
-		.setTheme(positionY > divHeight ? THEMES.Black : THEMES.Transparent)
-		.setItemsAtRight(navbarItemModels)
-		.addItemAtLeft(logoNavbarModel)
+		.setTheme(positionY > (divHeight - 192) ? THEMES.Black : THEMES.Transparent)
+		.setItemsAtCenter(navbarRightItemModels)
+		.setItemsAtLeft(logoNavbarModel)
 
 	const tanoshiMobileNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
 		.setTheme(THEMES.Black)
-		.setItemsAtLeft([logoNavbarModel])
-		.setItemsAtCenter(navbarItemModels);
+		.setItemsAtLeft(logoNavbarModel)
+		.setItemsAtCenter(navbarRightItemModels);
 
 </script>
 
 <svelte:window bind:scrollY={positionY} />
 
 <div class="hero-background" bind:clientHeight={divHeight}>
-	<TanoshiNavigation bind:tanoshiDesktopNavigationModel={tanoshiDesktopNavigationModel} {tanoshiMobileNavigationModel}/>
+	<TanoshiNavigation bind:tanoshiDesktopNavigationModel={tanoshiDesktopNavigationModel} {tanoshiMobileNavigationModel} />
 </div>
 
 <main class="relative">
 	<slot />
 </main>
 
-<style>
+<style style="css">
  div.hero-background {
 	 background-image: url('https://wallpapers.com/images/featured/kawaii-cat-7va4ri70il24d2u7.jpg');
 	 background-size: cover;
 	 background-position: center;
 	 background-repeat: no-repeat;
 	 height: 100vh;
-	 width: 100vw;
 	 top: 0;
 	 left: 0;
  }

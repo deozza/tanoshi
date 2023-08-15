@@ -1,31 +1,60 @@
 
 import type { TanoshiLinkModel } from "$atoms";
 import { THEMES } from "$lib/enums";
+import type { TanoshiNavigationLinkModel } from "$lib/types/Types";
 
 export default class TanoshiLinkAsDropdownModel {
-	private _links!: Array<TanoshiLinkModel>;
-	private _theme!: string;
+	private _linkTitle!: TanoshiLinkModel;
+	private _links: Array<TanoshiNavigationLinkModel> = [];
+	private _linksTheme!: string;
+	private _backgroundTheme!: string;
 
-	constructor(links: Array<TanoshiLinkModel>) {
-		this.setLinks(links);
-		this.setTheme(THEMES.Black);
+	constructor(linkTitle: TanoshiLinkModel) {
+		this.setLinkTitle(linkTitle);
+		this.setLinks([]);
+		this.setLinksTheme(THEMES.Black);
+		this.setBackgroundTheme(THEMES.Transparent);
 	}
 
-	get links(): Array<TanoshiLinkModel> {
+	get linkTitle(): TanoshiLinkModel {
+		return this._linkTitle;
+	}
+
+	public setLinkTitle(value: TanoshiLinkModel): TanoshiLinkAsDropdownModel {
+		this._linkTitle = value;
+		return this;
+	}
+
+
+	get links(): Array<TanoshiNavigationLinkModel> {
 		return this._links;
 	}
 
-	public setLinks(value: Array<TanoshiLinkModel>): TanoshiLinkAsDropdownModel {
+	public setLinks(value: Array<TanoshiNavigationLinkModel>): TanoshiLinkAsDropdownModel {
 		this._links = value;
 		return this;
 	}
 
-	get theme(): string {
-		return this._theme;
+	public addLink(value: TanoshiNavigationLinkModel): TanoshiLinkAsDropdownModel {
+		this._links = [...this._links, value];
+		return this;
 	}
 
-	public setTheme(value: THEMES): TanoshiLinkAsDropdownModel {
-		this._theme = value;
+	get linksTheme(): string {
+		return this._linksTheme;
+	}
+
+	public setLinksTheme(value: THEMES): TanoshiLinkAsDropdownModel {
+		this._linksTheme = value;
+		return this;
+	}
+
+	get backgroundTheme(): string {
+		return this._backgroundTheme;
+	}
+	
+	public setBackgroundTheme(value: THEMES): TanoshiLinkAsDropdownModel {
+		this._backgroundTheme = value;
 		return this;
 	}
 }
