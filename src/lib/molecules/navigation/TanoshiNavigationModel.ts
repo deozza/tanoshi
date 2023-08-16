@@ -5,12 +5,10 @@ export default class TanoshiNavigationModel {
 	private _itemsAtLeft: Array<TanoshiNavigationLinkModel> = [];
 	private _itemsAtCenter: Array<TanoshiNavigationLinkModel> = [];
 	private _itemsAtRight: Array<TanoshiNavigationLinkModel> = [];
-	private _orientation!: string;
 	private _theme!: string;
 
 	public constructor() {
 		this.setTheme(THEMES.Primary);
-		this.setOrientation(NAVIGATION_ORIENTATIONS.Horizontal);
 	}
 
 	get itemsAtLeft(): Array<TanoshiNavigationLinkModel> {
@@ -52,16 +50,6 @@ export default class TanoshiNavigationModel {
 
 	public addItemAtRight(value: TanoshiNavigationLinkModel): TanoshiNavigationModel {
 		this._itemsAtRight = [...this._itemsAtRight, value];
-		return this;
-	}
-
-
-	get orientation(): string {
-		return this._orientation;
-	}
-
-	public setOrientation(value: NAVIGATION_ORIENTATIONS): TanoshiNavigationModel {
-		this._orientation = value;
 		return this;
 	}
 

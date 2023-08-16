@@ -9,7 +9,7 @@
 
 <div
 	class="
-		 
+		{tanoshiContainerModel.backgroundImage !== '' && tanoshiContainerModel.backgroundImage !== null ? 'bg-image' : ''}
 		{tanoshiContainerModel.theme} 
 		rounded-{tanoshiContainerModel.borders} 
 		flex-{tanoshiContainerModel.desktopOrientation} 
@@ -104,6 +104,16 @@ div.danger {
 div.info {
 	background-color: var(--info-container, var(--info));
 }
+
+div.bg-image {
+	 background-image: url('https://wallpapers.com/images/featured/kawaii-cat-7va4ri70il24d2u7.jpg');
+	 background-size: cover;
+	 background-position: center;
+	 background-repeat: no-repeat;
+	 top: 0;
+	 left: 0;
+ }
+
 
 @media (max-width: 640px) {
 	div.flex-container{

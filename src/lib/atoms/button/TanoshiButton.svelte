@@ -247,15 +247,15 @@ button.btn-border-white {
 }
 
 button.btn-hover-white:hover:not([disabled]){
-    background-color: var(--white-bg-button-hover, var(--white-dark));
+    background-color: var(--white-bg-button-hover, var(--white));
 }
 
 button.btn-text-hover-white:hover:not([disabled]) {
-    color: var(--white-text-button-hover, var(--white-dark));
+    color: var(--white-text-button-hover, var(--white));
 }
 
 button.btn-border-hover-white:hover:not([disabled]) {
-    border: 1px solid var(--white-border-button-hover, var(--white-dark));
+    border: 1px solid var(--white-border-button-hover, var(--white));
 }
 
 button.btn-black {
@@ -271,15 +271,15 @@ button.btn-border-black {
 }
 
 button.btn-hover-black:hover:not([disabled]){
-    background-color: var(--black-bg-button-hover, var(--black-dark));
+    background-color: var(--black-bg-button-hover, var(--black));
 }
 
 button.btn-text-hover-black:hover:not([disabled]) {
-    color: var(--black-text-button-hover, var(--black-dark));
+    color: var(--black-text-button-hover, var(--black));
 }
 
 button.btn-border-hover-black:hover:not([disabled]) {
-    border: 1px solid var(--black-border-button-hover, var(--black-dark));
+    border: 1px solid var(--black-border-button-hover, var(--black));
 }
 
 button.btn-transparent {
@@ -290,7 +290,7 @@ button.btn-border-transparent {
     border: none;
 }
 
-button > svg {
+:global(button > svg) {
     display: inline-block;
 }
 </style>

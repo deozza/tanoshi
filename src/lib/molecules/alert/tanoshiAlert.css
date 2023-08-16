@@ -1,8 +1,0 @@
-/* Write your global styles here, in PostCSS syntax */
-@tailwind components;
-
-@layer components {
-	.alert {
-		@apply m-2 border rounded-md text-white;
-	}
-}

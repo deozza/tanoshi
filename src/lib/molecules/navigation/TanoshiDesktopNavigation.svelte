@@ -34,39 +34,46 @@
 <nav>
 	<TanoshiContainer tanoshiContainerModel={navigationDesktopContainerModel}>
 		<TanoshiContainer tanoshiContainerModel={tanoshiNavWidthContainerModel}>
-			<TanoshiContainer tanoshiContainerModel={desktopNavigationLeftModuleContainer}>
-				{#each tanoshiDesktopNavigationModel.itemsAtLeft as navbarItemModel }
-					{#if navbarItemModel.component === TanoshiLinkAsDropdown}
-					<div class="dropdown">
-						<svelte:component this={navbarItemModel.component} tanoshiLinkModel={navbarItemModel.link} />
-					</div>
-					{:else}
-						<svelte:component this={navbarItemModel.component} tanoshiLinkModel={navbarItemModel.link} />
-					{/if}
-				{/each}
-			</TanoshiContainer>
-			<TanoshiContainer tanoshiContainerModel={desktopNavigationCenterModuleContainer}>
-				{#each tanoshiDesktopNavigationModel.itemsAtCenter as navbarItemModel }
-					{#if navbarItemModel.component === TanoshiLinkAsDropdown}
-					<div class="dropdown">
-						<svelte:component this={navbarItemModel.component} tanoshiLinkModel={navbarItemModel.link} />
-					</div>
-					{:else}
-						<svelte:component this={navbarItemModel.component} tanoshiLinkModel={navbarItemModel.link} />
-					{/if}
-				{/each}
-			</TanoshiContainer>
-			<TanoshiContainer tanoshiContainerModel={desktopNavigationRightModuleContainer}>
-				{#each tanoshiDesktopNavigationModel.itemsAtRight as navbarItemModel }
-					{#if navbarItemModel.component === TanoshiLinkAsDropdown}
-					<div class="dropdown">
-						<svelte:component this={navbarItemModel.component} tanoshiLinkModel={navbarItemModel.link} />
-					</div>
-					{:else}
-						<svelte:component this={navbarItemModel.component} tanoshiLinkModel={navbarItemModel.link} />
-					{/if}
-				{/each}
-			</TanoshiContainer>
+			{#if tanoshiDesktopNavigationModel.itemsAtLeft.length > 0}
+				<TanoshiContainer tanoshiContainerModel={desktopNavigationLeftModuleContainer}>
+					{#each tanoshiDesktopNavigationModel.itemsAtLeft as navbarItemModel }
+						{#if navbarItemModel.component === TanoshiLinkAsDropdown}
+						<div class="dropdown">
+							<svelte:component this={navbarItemModel.component} tanoshiLinkModel={navbarItemModel.link} />
+						</div>
+						{:else}
+							<svelte:component this={navbarItemModel.component} tanoshiLinkModel={navbarItemModel.link} />
+						{/if}
+					{/each}
+				</TanoshiContainer>				
+			{/if}
+			{#if tanoshiDesktopNavigationModel.itemsAtCenter.length > 0}
+				<TanoshiContainer tanoshiContainerModel={desktopNavigationCenterModuleContainer}>
+					{#each tanoshiDesktopNavigationModel.itemsAtCenter as navbarItemModel }
+						{#if navbarItemModel.component === TanoshiLinkAsDropdown}
+						<div class="dropdown">
+							<svelte:component this={navbarItemModel.component} tanoshiLinkModel={navbarItemModel.link} />
+						</div>
+						{:else}
+							<svelte:component this={navbarItemModel.component} tanoshiLinkModel={navbarItemModel.link} />
+						{/if}
+					{/each}
+				</TanoshiContainer>
+			{/if}
+			{#if tanoshiDesktopNavigationModel.itemsAtRight.length > 0}
+				<TanoshiContainer tanoshiContainerModel={desktopNavigationRightModuleContainer}>
+					{#each tanoshiDesktopNavigationModel.itemsAtRight as navbarItemModel }
+						{#if navbarItemModel.component === TanoshiLinkAsDropdown}
+						<div class="dropdown">
+							<svelte:component this={navbarItemModel.component} tanoshiLinkModel={navbarItemModel.link} />
+						</div>
+						{:else}
+							<svelte:component this={navbarItemModel.component} tanoshiLinkModel={navbarItemModel.link} />
+						{/if}
+					{/each}
+				</TanoshiContainer>
+			{/if}
+
 		</TanoshiContainer>
 	</TanoshiContainer>
 </nav>

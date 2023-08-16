@@ -30,7 +30,7 @@ p.p-black {
 }
 
 p.p-white {
-    color: var(--white-text-header, var(--white-dark));
+    color: var(--white-text-header, var(--white));
 }
 
 p.p-primary {

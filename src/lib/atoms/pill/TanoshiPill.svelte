@@ -17,7 +17,7 @@
 
 
 <style>
-.pill {
+span {
 	margin: 0.5rem/* 8px */;
 	border-width: 1px;
 	border-radius: 9999px;
