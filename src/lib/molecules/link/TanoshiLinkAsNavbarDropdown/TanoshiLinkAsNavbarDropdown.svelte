@@ -1,15 +1,14 @@
 <script lang="ts">
-	import type TanoshiLinkAsDropdownModel from './TanoshiLinkAsDropdownModel';
+	import type TanoshiLinkAsNavbarDropdownModel from './TanoshiLinkAsNavbarDropdownModel';
 	import { TanoshiLink } from '$atoms';
 	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ORIENTATIONS, HEIGHTS, THEMES, getThemeEnumKeyByEnumValue } from '$lib/enums';
 	import { TanoshiContainer } from '$molecules';
 	import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel';
 	import './../../../atoms/link/tanoshiLink.css';
 	import './../../../main.css';
-    import './tanoshiLinkAsDropdown.css'
 	import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
-    export let tanoshiLinkModel: TanoshiLinkAsDropdownModel;
+    export let tanoshiLinkModel: TanoshiLinkAsNavbarDropdownModel;
     tanoshiLinkModel.linkTitle.setIconAtRight(faCaretDown)
     let theme: THEMES = getThemeEnumKeyByEnumValue(tanoshiLinkModel.backgroundTheme)
 

@@ -7,8 +7,8 @@
 	import { THEMES } from '$lib';
 	import type { TanoshiNavigationLinkModel } from '$lib/types/Types';
 	import TanoshiLink from '$atoms/link/TanoshiLink.svelte';
-	import TanoshiLinkAsDropdownModel from '$molecules/link/TanoshiLinkAsDropdown/TanoshiLinkAsDropdownModel';
-	import TanoshiLinkAsDropdown from '$molecules/link/TanoshiLinkAsDropdown/TanoshiLinkAsDropdown.svelte';
+	import TanoshiLinkAsNavbarDropdownModel from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdownModel';
+	import TanoshiLinkAsNavbarDropdown from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte';
 
 	let positionY: number;
 	let divHeight: number;
@@ -34,14 +34,14 @@
 		}
 	];
 
-	const dropdownLink : TanoshiLinkAsDropdownModel = new TanoshiLinkAsDropdownModel(dropdownTitle)
+	const dropdownLink : TanoshiLinkAsNavbarDropdownModel = new TanoshiLinkAsNavbarDropdownModel(dropdownTitle)
 		.setLinks(dropdownItems)
 		.setBackgroundTheme(THEMES.Secondary)
 
 	const navbarRightItemModels: Array<TanoshiNavigationLinkModel> = [
 		{
 			link: dropdownLink,
-			component: TanoshiLinkAsDropdown
+			component: TanoshiLinkAsNavbarDropdown
 		},
 		{
 			link: new TanoshiLinkModel('Typography').setTheme(THEMES.Danger).setLink('/typography'),

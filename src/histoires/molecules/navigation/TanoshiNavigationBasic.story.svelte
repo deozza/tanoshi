@@ -6,14 +6,19 @@
     import type { Hst } from '@histoire/plugin-svelte';
 	import type { TanoshiNavigationLinkModel } from '$lib/types/Types';
 	import TanoshiLink from '$atoms/link/TanoshiLink.svelte';
-	import TanoshiLinkAsDropdown from '$molecules/link/TanoshiLinkAsDropdown/TanoshiLinkAsDropdown.svelte';
-	import TanoshiLinkAsDropdownModel from '$molecules/link/TanoshiLinkAsDropdown/TanoshiLinkAsDropdownModel';
+	import TanoshiLinkAsNavbarDropdown from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte';
+	import TanoshiLinkAsNavbarDropdownModel from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdownModel';
 	import TanoshiNavigation from '$molecules/navigation/TanoshiNavigation.svelte';
     export let Hst: Hst;
 	const dropdownTitle: TanoshiLinkModel = new TanoshiLinkModel('Dropdown').setTheme(THEMES.White);
 	const linkPrimary: TanoshiLinkModel = new TanoshiLinkModel('Primary').setTheme(THEMES.White);
 	const linkSecondary: TanoshiLinkModel = new TanoshiLinkModel('Secondary').setTheme(THEMES.White);
 	const linkSuccess: TanoshiLinkModel = new TanoshiLinkModel('Success').setTheme(THEMES.White);
+
+    const dropdownTitleBlack: TanoshiLinkModel = new TanoshiLinkModel('Dropdown').setTheme(THEMES.Black);
+	const linkPrimaryBlack: TanoshiLinkModel = new TanoshiLinkModel('Primary').setTheme(THEMES.Black);
+	const linkSecondaryBlack: TanoshiLinkModel = new TanoshiLinkModel('Secondary').setTheme(THEMES.Black);
+	const linkSuccessBlack: TanoshiLinkModel = new TanoshiLinkModel('Success').setTheme(THEMES.Black);
 
 
 	const dropdownItems: Array<TanoshiNavigationLinkModel> = [
@@ -31,14 +36,33 @@
 		}
 	];
 
-	const dropdownLink : TanoshiLinkAsDropdownModel = new TanoshiLinkAsDropdownModel(dropdownTitle)
+    	const dropdownItemsBlack: Array<TanoshiNavigationLinkModel> = [
+		{
+			link: linkPrimaryBlack,
+			component: TanoshiLink
+		},
+		{
+			link: linkSecondaryBlack,
+			component: TanoshiLink
+		},
+		{
+			link: linkSuccessBlack,
+			component: TanoshiLink
+		}
+	];
+
+	const dropdownLink : TanoshiLinkAsNavbarDropdownModel = new TanoshiLinkAsNavbarDropdownModel(dropdownTitle)
 		.setLinks(dropdownItems)
+		.setBackgroundTheme(THEMES.Secondary)
+
+    const dropdownLinkBlack : TanoshiLinkAsNavbarDropdownModel = new TanoshiLinkAsNavbarDropdownModel(dropdownTitle)
+		.setLinks(dropdownItemsBlack)
 		.setBackgroundTheme(THEMES.Secondary)
 
 	const navbarRightItemModels: Array<TanoshiNavigationLinkModel> = [
 		{
 			link: dropdownLink,
-			component: TanoshiLinkAsDropdown
+			component: TanoshiLinkAsNavbarDropdown
 		},
 		{
 			link: new TanoshiLinkModel('Typography').setTheme(THEMES.White).setLink('/typography'),
@@ -67,9 +91,49 @@
 		}
 	];
 
+	const navbarRightItemModelsBlack: Array<TanoshiNavigationLinkModel> = [
+		{
+			link: dropdownLinkBlack,
+			component: TanoshiLinkAsNavbarDropdown
+		},
+		{
+			link: new TanoshiLinkModel('Typography').setTheme(THEMES.Black).setLink('/typography'),
+			component: TanoshiLink
+		},
+		{
+			link: new TanoshiLinkModel('Buttons').setTheme(THEMES.Black).setLink('/buttons'),
+			component: TanoshiLink
+		},
+		{
+			link: new TanoshiLinkModel('Pills').setTheme(THEMES.Black).setLink('/pills'),
+			component: TanoshiLink
+		},
+		{
+			link: new TanoshiLinkModel('Forms').setTheme(THEMES.Black).setLink('/forms'),
+			component: TanoshiLink
+		},
+		{
+			link: new TanoshiLinkModel('Images').setTheme(THEMES.Black).setLink('/images'),
+			component: TanoshiLink
+
+		},
+		{
+			link: new TanoshiLinkModel('Links').setTheme(THEMES.Black).setLink('/links'),
+			component: TanoshiLink
+		}
+	];
+
+
 	const logoNavbarModel: Array<TanoshiNavigationLinkModel> = [
 		{
 			link: new TanoshiLinkModel('Tanoshi').setTheme(THEMES.White).setLink('/'),
+			component: TanoshiLink
+		}
+	]
+
+    const logoNavbarModelBlack: Array<TanoshiNavigationLinkModel> = [
+		{
+			link: new TanoshiLinkModel('Tanoshi').setTheme(THEMES.Black).setLink('/'),
 			component: TanoshiLink
 		}
 	]
@@ -106,8 +170,8 @@
 
     const whiteDesktopNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
         .setTheme(THEMES.White)
-        .setItemsAtRight(navbarRightItemModels)
-        .setItemsAtCenter(logoNavbarModel)
+        .setItemsAtRight(navbarRightItemModelsBlack)
+        .setItemsAtCenter(logoNavbarModelBlack)
 
     const whiteMobileNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
         .setTheme(THEMES.White)

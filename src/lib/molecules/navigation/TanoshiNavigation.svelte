@@ -1,5 +1,4 @@
 <script lang="ts">
-	import './tanoshiNavigation.css';
 	import type TanoshiNavigationModel from './TanoshiNavigationModel';
 
 	import TanoshiContainerModel from '$lib/molecules/container/TanoshiContainerModel';

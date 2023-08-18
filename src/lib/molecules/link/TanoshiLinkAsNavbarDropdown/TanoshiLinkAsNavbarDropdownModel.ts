@@ -3,7 +3,7 @@ import type { TanoshiLinkModel } from "$atoms";
 import { THEMES } from "$lib/enums";
 import type { TanoshiNavigationLinkModel } from "$lib/types/Types";
 
-export default class TanoshiLinkAsDropdownModel {
+export default class TanoshiLinkAsNavbarDropdownModel {
 	private _linkTitle!: TanoshiLinkModel;
 	private _links: Array<TanoshiNavigationLinkModel> = [];
 	private _linksTheme!: string;
@@ -20,7 +20,7 @@ export default class TanoshiLinkAsDropdownModel {
 		return this._linkTitle;
 	}
 
-	public setLinkTitle(value: TanoshiLinkModel): TanoshiLinkAsDropdownModel {
+	public setLinkTitle(value: TanoshiLinkModel): TanoshiLinkAsNavbarDropdownModel {
 		this._linkTitle = value;
 		return this;
 	}
@@ -30,12 +30,12 @@ export default class TanoshiLinkAsDropdownModel {
 		return this._links;
 	}
 
-	public setLinks(value: Array<TanoshiNavigationLinkModel>): TanoshiLinkAsDropdownModel {
+	public setLinks(value: Array<TanoshiNavigationLinkModel>): TanoshiLinkAsNavbarDropdownModel {
 		this._links = value;
 		return this;
 	}
 
-	public addLink(value: TanoshiNavigationLinkModel): TanoshiLinkAsDropdownModel {
+	public addLink(value: TanoshiNavigationLinkModel): TanoshiLinkAsNavbarDropdownModel {
 		this._links = [...this._links, value];
 		return this;
 	}
@@ -44,7 +44,7 @@ export default class TanoshiLinkAsDropdownModel {
 		return this._linksTheme;
 	}
 
-	public setLinksTheme(value: THEMES): TanoshiLinkAsDropdownModel {
+	public setLinksTheme(value: THEMES): TanoshiLinkAsNavbarDropdownModel {
 		this._linksTheme = value;
 		return this;
 	}
@@ -53,7 +53,7 @@ export default class TanoshiLinkAsDropdownModel {
 		return this._backgroundTheme;
 	}
 	
-	public setBackgroundTheme(value: THEMES): TanoshiLinkAsDropdownModel {
+	public setBackgroundTheme(value: THEMES): TanoshiLinkAsNavbarDropdownModel {
 		this._backgroundTheme = value;
 		return this;
 	}

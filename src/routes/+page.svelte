@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { TanoshiLinkModel } from "$atoms";
 	import { THEMES } from "$lib";
-	import TanoshiLinkAsDropdown from "$molecules/link/TanoshiLinkAsDropdown/TanoshiLinkAsDropdown.svelte";
-	import TanoshiLinkAsDropdownModel from "$molecules/link/TanoshiLinkAsDropdown/TanoshiLinkAsDropdownModel";
+	import TanoshiLinkAsNavbarDropdown from "$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte";
+	import TanoshiLinkAsNavbarDropdownModel from "$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdownModel";
 
 
 	const linkPrimary: TanoshiLinkModel = new TanoshiLinkModel('Primary').setTheme(THEMES.Danger);
@@ -13,10 +13,10 @@
 		linkPrimary, linkSecondary, linkSuccess
 	];
 
-	// const dropdownLinkModel: TanoshiLinkAsDropdownModel = new TanoshiLinkAsDropdownModel(links).setTheme(THEMES.Danger);
+	// const dropdownLinkModel: TanoshiLinkAsNavbarDropdownModel = new TanoshiLinkAsNavbarDropdownModel(links).setTheme(THEMES.Danger);
 
 </script>
-<!-- <TanoshiLinkAsDropdown tanoshiLinkModel={dropdownLinkModel}/> -->
+<!-- <TanoshiLinkAsNavbarDropdown tanoshiLinkModel={dropdownLinkModel}/> -->
 
 <p>test</p>
 <p>test</p>

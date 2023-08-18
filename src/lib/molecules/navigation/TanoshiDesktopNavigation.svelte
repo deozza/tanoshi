@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { CONTAINER_ORIENTATIONS, CONTAINER_ITEMS_SPACING, CONTAINER_ITEMS_ALIGNMENTS, WIDTHS, THEMES, HEIGHTS } from "$lib/enums";
 	import { TanoshiContainer, TanoshiContainerModel, TanoshiNavigationModel } from "$molecules";
-	import TanoshiLinkAsDropdown from '$molecules/link/TanoshiLinkAsDropdown/TanoshiLinkAsDropdown.svelte';
+	import TanoshiLinkAsNavbarDropdown from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte';
 
     export let tanoshiDesktopNavigationModel: TanoshiNavigationModel;
     export let navigationDesktopContainerModel: TanoshiContainerModel;
@@ -37,7 +37,7 @@
 			{#if tanoshiDesktopNavigationModel.itemsAtLeft.length > 0}
 				<TanoshiContainer tanoshiContainerModel={desktopNavigationLeftModuleContainer}>
 					{#each tanoshiDesktopNavigationModel.itemsAtLeft as navbarItemModel }
-						{#if navbarItemModel.component === TanoshiLinkAsDropdown}
+						{#if navbarItemModel.component === TanoshiLinkAsNavbarDropdown}
 						<div class="dropdown">
 							<svelte:component this={navbarItemModel.component} tanoshiLinkModel={navbarItemModel.link} />
 						</div>
@@ -50,7 +50,7 @@
 			{#if tanoshiDesktopNavigationModel.itemsAtCenter.length > 0}
 				<TanoshiContainer tanoshiContainerModel={desktopNavigationCenterModuleContainer}>
 					{#each tanoshiDesktopNavigationModel.itemsAtCenter as navbarItemModel }
-						{#if navbarItemModel.component === TanoshiLinkAsDropdown}
+						{#if navbarItemModel.component === TanoshiLinkAsNavbarDropdown}
 						<div class="dropdown">
 							<svelte:component this={navbarItemModel.component} tanoshiLinkModel={navbarItemModel.link} />
 						</div>
@@ -63,7 +63,7 @@
 			{#if tanoshiDesktopNavigationModel.itemsAtRight.length > 0}
 				<TanoshiContainer tanoshiContainerModel={desktopNavigationRightModuleContainer}>
 					{#each tanoshiDesktopNavigationModel.itemsAtRight as navbarItemModel }
-						{#if navbarItemModel.component === TanoshiLinkAsDropdown}
+						{#if navbarItemModel.component === TanoshiLinkAsNavbarDropdown}
 						<div class="dropdown">
 							<svelte:component this={navbarItemModel.component} tanoshiLinkModel={navbarItemModel.link} />
 						</div>
