@@ -1,5 +1,4 @@
 <script lang="ts">
-	import './tanoshiTextInput.css';
 	import type TanoshiTextInputModel from './TanoshiTextInputModel';
 
 	export let tanoshiTextInputModel: TanoshiTextInputModel;
@@ -32,3 +31,32 @@
 		<span class="text-danger">{tanoshiTextInputModel.errorMessage}</span>
 	{/if}
 </div>
+
+
+<style>
+	
+div.input-container {
+	margin: 0.5rem/* 8px */;
+	flex: 2;
+}
+
+input.text-input {
+	width: 100%;
+	padding-top: 0.5rem/* 8px */;
+	padding-bottom: 0.5rem/* 8px */;
+	padding-left: 0.75rem/* 12px */;
+	padding-right: 0.75rem/* 12px */;
+	border-width: 1px;
+	border-radius: 0.375rem/* 6px */;
+}
+
+span.text-danger {
+	color: var(--danger-color-text-span, var(--danger));
+}
+
+@media (max-width: 639px) {
+	input.text-input {
+		width: 90%;
+	}
+}
+</style>

@@ -1,121 +1,32 @@
 <script lang="ts">
-	import { onMount, onDestroy } from 'svelte';
-
-	import Fa from 'svelte-fa/src/fa.svelte';
-	import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons/index.js';
-
-	import './tanoshiNavigation.css';
 	import type TanoshiNavigationModel from './TanoshiNavigationModel';
 
 	import TanoshiContainerModel from '$lib/molecules/container/TanoshiContainerModel';
-	import TanoshiContainer from '$lib/molecules/container/TanoshiContainer.svelte';
+	
+	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, getThemeEnumKeyByEnumValue, HEIGHTS, THEMES } from '$lib/enums';
+	import TanoshiDesktopNavigation from './TanoshiDesktopNavigation.svelte';
+	import TanoshiMobileNavigation from './TanoshiMobileNavigation.svelte';
 
-	import TanoshiLink from '$lib/atoms/link/TanoshiLink.svelte';
+	export let tanoshiDesktopNavigationModel: TanoshiNavigationModel;
+	export let tanoshiMobileNavigationModel: TanoshiNavigationModel;
 
-	import TanoshiButton from '$lib/atoms/button/TanoshiButton.svelte';
-	import TanoshiButtonModel from '$lib/atoms/button/TanoshiButtonModel';
+	$: desktopTheme = getThemeEnumKeyByEnumValue(tanoshiDesktopNavigationModel.theme)
+	const mobileTheme: THEMES | undefined = getThemeEnumKeyByEnumValue(tanoshiMobileNavigationModel.theme)
+	
+	$: navigationDesktopContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
+		.setTheme(desktopTheme)
+		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Centered)
+		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
+		.setHeight(HEIGHTS.HAUTO)
 
-	export let tanoshiNavigationModel: TanoshiNavigationModel;
+	const navigationMobileContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
+		.setTheme(mobileTheme)
+		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Start)
+		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
+		.setHeight(HEIGHTS.HAUTO)
 
-	const horizontalNavigationContainer = new TanoshiContainerModel('r')
-		.setTheme(tanoshiNavigationModel.theme)
-		.setDesktopSpacing('start')
-		.setItemsAlignment('center')
-
-
-	const mobileNavigationContainer = new TanoshiContainerModel('c').setTheme(
-		tanoshiNavigationModel.theme
-	);
-	const desktopNavigationContainer = new TanoshiContainerModel('r')
-		.setTheme(tanoshiNavigationModel.theme)
-		.setDesktopSpacing('start')
-		.setItemsAlignment('center')
-		.setHeight('');
-
-	const desktopNavigationLeftModuleContainer = new TanoshiContainerModel('r')
-		.setTheme(tanoshiNavigationModel.theme)
-		.setDesktopSpacing('start')
-		.setItemsAlignment('center')
-		.setSize('min-w-4')
-
-	const desktopNavigationCenterModuleContainer = new TanoshiContainerModel('r')
-		.setTheme(tanoshiNavigationModel.theme)
-		.setDesktopSpacing('centered')
-		.setItemsAlignment('center')
-		.setSize('min-w-4')
-
-	const desktopNavigationRightModuleContainer = new TanoshiContainerModel('r')
-		.setTheme(tanoshiNavigationModel.theme)
-		.setDesktopSpacing('end')
-		.setItemsAlignment('center')
-		.setSize('min-w-4')
-
-	if (tanoshiNavigationModel.orientation === 'vertical') {
-		desktopNavigationContainer.setDesktopOrientation('c');
-		desktopNavigationLeftModuleContainer.setDesktopOrientation('c');
-		desktopNavigationCenterModuleContainer.setDesktopOrientation('c');
-		desktopNavigationRightModuleContainer.setDesktopOrientation('c');
-	}
-
-
-	const mobileMenuButton: TanoshiButtonModel = new TanoshiButtonModel('').setTheme(
-		tanoshiNavigationModel.theme
-	);
-
-	let showMobileMenu: boolean = false;
-
-	onMount(() => {
-		showMobileMenu = false;
-	});
-
-	onDestroy(() => {
-		showMobileMenu = false;
-	});
-
-	function mobileMenuHandler() {
-		showMobileMenu = !showMobileMenu;
-	}
 </script>
 
-<nav class="sticky-nav">
-	<TanoshiContainer tanoshiContainerModel={desktopNavigationContainer}>
-		<TanoshiContainer tanoshiContainerModel={desktopNavigationLeftModuleContainer} >
-			{#each tanoshiNavigationModel.itemsAtLeft as tanoshiLinkModel}
-				<TanoshiLink {tanoshiLinkModel} />
-			{/each}
-		</TanoshiContainer>
-		<TanoshiContainer tanoshiContainerModel={desktopNavigationCenterModuleContainer} >
-			{#each tanoshiNavigationModel.itemsAtCenter as tanoshiLinkModel}
-				<TanoshiLink {tanoshiLinkModel} />
-			{/each}
-		</TanoshiContainer>
-		<TanoshiContainer tanoshiContainerModel={desktopNavigationRightModuleContainer} >
-			{#each tanoshiNavigationModel.itemsAtRight as tanoshiLinkModel}
-				<TanoshiLink {tanoshiLinkModel} />
-			{/each}
-		</TanoshiContainer>
-	</TanoshiContainer>
-</nav>
+<TanoshiDesktopNavigation bind:tanoshiDesktopNavigationModel={tanoshiDesktopNavigationModel} bind:navigationDesktopContainerModel={navigationDesktopContainerModel} />
 
-<nav class="burger-nav" class:z-10={showMobileMenu === true}>
-	<TanoshiContainer tanoshiContainerModel={horizontalNavigationContainer} >
-		<TanoshiButton tanoshiButtonModel={mobileMenuButton} on:click={mobileMenuHandler}>
-			<span class="sr-only">Open main menu</span>
-			{#if showMobileMenu === false}
-				<Fa icon={faBars} />
-			{:else}
-				<Fa icon={faTimes} />
-			{/if}
-		</TanoshiButton>
-	</TanoshiContainer>
-
-	{#if showMobileMenu === true}
-		<div id="mobile-menu">
-			<TanoshiContainer tanoshiContainerModel={mobileNavigationContainer}>
-				{#each [...tanoshiNavigationModel.itemsAtLeft, ...tanoshiNavigationModel.itemsAtCenter, ...tanoshiNavigationModel.itemsAtRight,] as tanoshiLinkModel}
-					<TanoshiLink {tanoshiLinkModel} />
-				{/each}
-			</TanoshiContainer>
-		</div>
-	{/if}
-</nav>
+<TanoshiMobileNavigation {tanoshiMobileNavigationModel} {navigationMobileContainerModel} {mobileTheme}/>

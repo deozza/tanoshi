@@ -1,49 +1,31 @@
+import { BUTTON_TYPES, THEMES, SIZES, BUTTON_SIZES } from "$lib/enums";
+import ThemeError from "$lib/errors/ThemeError";
+import type { IconDefinition } from "@fortawesome/fontawesome-common-types"; 
+
 export default class TanoshiButtonModel {
 	private _content!: string;
+	private _iconAtLeft: IconDefinition | null = null;
+	private _iconAtRight: IconDefinition | null = null;
 	private _label!: string;
-	private _theme!: string;
+	private _backgroundTheme!: string;
+	private _backgroundHoverTheme!: string;
+	private _borderTheme!: string;
+	private _borderHoverTheme!: string;
+	private _textTheme!: string;
+	private _textHoverTheme!: string;
 	private _type!: string;
 	private _size!: string;
 	private _isDisabled: boolean = false;
-	private _isOutlined: boolean = false;
 	private _isLoading: boolean = false;
-
-	readonly EXPECTED_THEMES: object = {
-		primary: 'primary',
-		secondary: 'secondary',
-		success: 'success',
-		warning: 'warning',
-		danger: 'danger',
-		info: 'info',
-		dark: 'dark',
-		light: 'light'
-	};
-
-	readonly EXPECTED_SIZES: object = {
-		sm: 'sm',
-		md: 'md',
-		lg: 'lg',
-		block: 'block'
-	};
-
-	readonly EXPECTED_TYPES: object = {
-		button: 'button',
-		submit: 'submit',
-		reset: 'reset'
-	};
 
 	public constructor(content: string) {
 		this.setContent(content);
 		this.setLabel(content);
 
-		// @ts-ignore
-		this.setTheme(this.EXPECTED_THEMES.primary);
+		this.setBasicTheme(THEMES.Primary);
 
-		// @ts-ignore
-		this.setType(this.EXPECTED_TYPES.button);
-
-		// @ts-ignore
-		this.setSize(this.EXPECTED_SIZES.md);
+		this.setType(BUTTON_TYPES.Button);
+		this.setSize(BUTTON_SIZES.Md);
 	}
 
 	get content(): string {
@@ -52,6 +34,24 @@ export default class TanoshiButtonModel {
 
 	public setContent(value: string): TanoshiButtonModel {
 		this._content = value;
+		return this;
+	}
+
+	get iconAtLeft(): IconDefinition | null {
+		return this._iconAtLeft;
+	}
+
+	public setIconAtLeft(value: IconDefinition): TanoshiButtonModel {
+		this._iconAtLeft = value;
+		return this;
+	}
+
+	get iconAtRight(): IconDefinition | null {
+		return this._iconAtRight;
+	}
+
+	public setIconAtRight(value: IconDefinition): TanoshiButtonModel {
+		this._iconAtRight = value;
 		return this;
 	}
 	
@@ -64,16 +64,66 @@ export default class TanoshiButtonModel {
 		return this;
 	}
 
-	get theme(): string {
-		return this._theme;
+	get backgroundTheme(): string {
+		return this._backgroundTheme;
 	}
 
-	public setTheme(value: string): TanoshiButtonModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_THEMES, value) === false) {
-			throw new Error();
-		}
+	public setBackgroundTheme(value: THEMES): TanoshiButtonModel {
+		this._backgroundTheme = value;
+		return this;
+	}
 
-		this._theme = value;
+	get backgroundHoverTheme(): string {
+		return this._backgroundHoverTheme;
+	}
+
+	public setBackgroundHoverTheme(value: THEMES): TanoshiButtonModel {
+		this._backgroundHoverTheme = value;
+		return this;
+	}
+
+
+	get borderTheme(): string {
+		return this._borderTheme;
+	}
+
+	public setBorderTheme(value: THEMES): TanoshiButtonModel {
+		this._borderTheme = value;
+		return this;
+	}
+
+	get borderHoverTheme(): string {
+		return this._borderHoverTheme;
+	}
+
+	public setBorderHoverTheme(value: THEMES): TanoshiButtonModel {
+		this._borderHoverTheme = value;
+		return this;
+	}
+	
+	get textTheme(): string {
+		return this._textTheme;
+	}
+
+	public setTextTheme(value: THEMES): TanoshiButtonModel {
+		if(this._backgroundTheme === value ) {
+			throw new ThemeError('Background and text themes cannot be the same');
+		}
+		
+		this._textTheme = value;
+		return this;
+	}
+
+	get textHoverTheme(): string {
+		return this._textHoverTheme;
+	}
+
+	public setTextHoverTheme(value: THEMES): TanoshiButtonModel {
+		if(this._backgroundHoverTheme === value ) {
+			throw new ThemeError('Background and text themes cannot be the same');
+		}
+		
+		this._textHoverTheme = value;
 		return this;
 	}
 
@@ -81,10 +131,7 @@ export default class TanoshiButtonModel {
 		return this._type;
 	}
 
-	public setType(value: string): TanoshiButtonModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_TYPES, value) === false) {
-			throw new Error();
-		}
+	public setType(value: BUTTON_TYPES): TanoshiButtonModel {
 		this._type = value;
 		return this;
 	}
@@ -93,10 +140,7 @@ export default class TanoshiButtonModel {
 		return this._size;
 	}
 
-	public setSize(value: string): TanoshiButtonModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_SIZES, value) === false) {
-			throw new Error();
-		}
+	public setSize(value: BUTTON_SIZES): TanoshiButtonModel {
 		this._size = value;
 		return this;
 	}
@@ -107,15 +151,6 @@ export default class TanoshiButtonModel {
 
 	public setIsDisabled(value: boolean): TanoshiButtonModel {
 		this._isDisabled = value;
-		return this;
-	}
-
-	get isOutlined(): boolean {
-		return this._isOutlined;
-	}
-
-	public setIsOutlined(value: boolean): TanoshiButtonModel {
-		this._isOutlined = value;
 		return this;
 	}
 
@@ -132,6 +167,24 @@ export default class TanoshiButtonModel {
 	public setLoaderOff() : TanoshiButtonModel {
 		this._isLoading = false;
 		this.setIsDisabled(false)
+		return this;
+	}
+
+	public setBasicTheme(value: THEMES):TanoshiButtonModel {
+		this.setBackgroundTheme(value);
+		this.setBackgroundHoverTheme(value);
+		this.setBorderTheme(value);
+		this.setBorderHoverTheme(value);
+
+		if(value === THEMES.White) {
+			this.setTextTheme(THEMES.Black);
+			this.setTextHoverTheme(THEMES.Black);
+		}else{
+			this.setTextTheme(THEMES.White);
+			this.setTextHoverTheme(THEMES.White);
+		}
+
+
 		return this;
 	}
 }

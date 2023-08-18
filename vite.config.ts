@@ -1,5 +1,6 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vitest/config';
+import { HstSvelte } from '@histoire/plugin-svelte'
 import path from 'path';
 
 export default defineConfig({
@@ -13,9 +14,17 @@ export default defineConfig({
 	test: {
 		include: ['tests/**/*.{test,spec}.{js,ts}'],
 		coverage: {
-			provider: 'c8',
+			provider: 'v8',
 			reporter: ['html'],
 			reportsDirectory: './tests/coverage'
 		}
-	}
+	},
+	histoire: {
+		plugins: [
+		  HstSvelte(),
+		],
+	  },
+	  server: {
+		host: '0.0.0.0'
+	  }
 });

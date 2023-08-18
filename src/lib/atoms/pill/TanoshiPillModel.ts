@@ -1,32 +1,17 @@
+import { BUTTON_SIZES, THEMES } from "$lib/enums";
+import ThemeError from "$lib/errors/ThemeError";
+
 export default class TanoshiPillModel {
 	private _content!: string;
-	private _theme!: string;
-	private _isOutlined: boolean = false;
+	private _backgroundTheme!: string;
+	private _borderTheme!: string;
+	private _textTheme!: string;
 	private _size!: string;
-
-	readonly EXPECTED_THEMES: object = {
-		primary: 'primary',
-		secondary: 'secondary',
-		success: 'success',
-		warning: 'warning',
-		danger: 'danger',
-		info: 'info'
-	};
-
-	readonly EXPECTED_SIZES: object = {
-		sm: 'sm',
-		md: 'md',
-		lg: 'lg'
-	};
 
 	constructor(content: string) {
 		this.setContent(content);
-
-		// @ts-ignore
-		this.setTheme(this.EXPECTED_THEMES.primary);
-
-		// @ts-ignore
-		this.setSize(this.EXPECTED_SIZES.md);
+		this.setBasicTheme(THEMES.Primary);
+		this.setSize(BUTTON_SIZES.Md);
 	}
 
 	get content(): string {
@@ -38,25 +23,35 @@ export default class TanoshiPillModel {
 		return this;
 	}
 
-	get theme(): string {
-		return this._theme;
+	get backgroundTheme(): string {
+		return this._backgroundTheme;
 	}
 
-	public setTheme(value: string): TanoshiPillModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_THEMES, value) === false) {
-			throw new Error();
-		}
-
-		this._theme = value;
+	public setBackgroundTheme(value: THEMES): TanoshiPillModel {
+		this._backgroundTheme = value;
 		return this;
 	}
 
-	get isOutlined(): boolean {
-		return this._isOutlined;
+
+	get borderTheme(): string {
+		return this._borderTheme;
 	}
 
-	public setIsOutlined(value: boolean): TanoshiPillModel {
-		this._isOutlined = value;
+	public setBorderTheme(value: THEMES): TanoshiPillModel {
+		this._borderTheme = value;
+		return this;
+	}
+	
+	get textTheme(): string {
+		return this._textTheme;
+	}
+
+	public setTextTheme(value: THEMES): TanoshiPillModel {
+		if(this._backgroundTheme === value ) {
+			throw new ThemeError('Background and text themes cannot be the same');
+		}
+		
+		this._textTheme = value;
 		return this;
 	}
 
@@ -64,12 +59,22 @@ export default class TanoshiPillModel {
 		return this._size;
 	}
 
-	public setSize(value: string): TanoshiPillModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_SIZES, value) === false) {
-			throw new Error();
+	public setSize(value: BUTTON_SIZES): TanoshiPillModel {
+		this._size = value;
+		return this;
+	}
+
+	public setBasicTheme(value: THEMES):TanoshiPillModel {
+		this.setBackgroundTheme(value);
+		this.setBorderTheme(value);
+
+		if(value === THEMES.White) {
+			this.setTextTheme(THEMES.Black);
+		}else{
+			this.setTextTheme(THEMES.White);
 		}
 
-		this._size = value;
+
 		return this;
 	}
 }

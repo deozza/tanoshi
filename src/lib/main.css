@@ -183,7 +183,7 @@ video {
 
 .rounded-md {
 	border-radius: 0.375rem/* 6px */;
-	border: 2px solid black;
+	border: 2px;
 }
 
 .rounded-full {
@@ -298,46 +298,119 @@ video {
 	height: 100vh;
 }
 
+.min-h-100-vh{
+	min-height: 100vh;
+}
+
 .h-75-vh{
 	height: 75vh;
+}
+
+.min-h-75-vh{
+	min-height: 75vh;
 }
 
 .h-66-vh{
 	height: 66.666667vh;
 }
 
+.min-h-66-vh{
+	min-height: 66.666667vh;
+}
+
 .h-50-vh{
 	height: 50vh;
+}
+
+.min-h-50-vh{
+	min-height: 50vh;
 }
 
 .h-33-vh{
 	height: 33.333333vh;
 }
 
+.min-h-33-vh{
+	min-height: 33.333333vh;
+}
+
 .h-25-vh{
 	height: 25vh;
+}
+
+.min-h-25-vh{
+	min-height: 25vh;
 }
 
 .h-100-prct{
 	height: 100%;
 }
 
+.min-h-100-prct{
+	min-height: 100%;
+}
+
 .h-75-prct{
 	height: 75%;
+}
+
+.min-h-75-prct{
+	min-height: 75%;
 }
 
 .h-66-prct{
 	height: 66.666667%;
 }
 
+.min-h-66-prct{
+	min-height: 66.666667%;
+}
+
 .h-50-prct{
 	height: 50%;
+}
+
+.min-h-50-prct{
+	min-height: 50%;
 }
 
 .h-33-prct{
 	height: 33.333333%;
 }
 
+.min-h-33-prct{
+	min-height: 33.333333%;
+}
+
 .h-25-prct{
 	height: 25%;
+}
+
+.min-h-25-prct{
+	min-height: 25%;
+}
+
+.h-0-prct{
+	height: 0;
+}
+
+.h-auto{
+	height: auto;
+}
+
+div.dropdown {
+	padding: 0!important;
+}
+
+div.dropdown:hover > ul {
+	display: block;
+}
+
+
+
+@media (min-width: 640px) {
+	div.dropdown:hover > ul {
+		background: #777;
+		margin-top: 30px;
+	}
 }

@@ -1,56 +1,23 @@
-import type TanoshiButtonModel from "$atoms/button/TanoshiButtonModel";
-import type TanoshiImageModel from "$atoms/image/TanoshiImageModel";
+import { SIZES, TEXT_ALIGNMENT, THEMES } from "$lib/enums";
+import type { IconDefinition } from "@fortawesome/fontawesome-common-types"; 
 
 export default class TanoshiLinkModel {
 	private _content!: string;
-	private _contentAsImage: TanoshiImageModel | null = null;
-	private _contentAsButton: TanoshiButtonModel | null = null;
+	private _iconAtLeft: IconDefinition | null = null;
+	private _iconAtRight: IconDefinition | null = null;
 	private _link!: string;
 	private _isInternal!: string;
 	private _displaySize!: string;
 	private _alignment!: string;
 	private _theme!: string;
 
-	readonly EXPECTED_DISPLAY_SIZES: object = {
-		sm: 'sm',
-		base: 'base',
-		lg: 'lg',
-		xl: 'xl',
-		'2xl': '2xl',
-		'3xl': '3xl'
-	};
-
-	readonly EXPECTED_THEMES: object = {
-		black: 'black',
-		white: 'white',
-		primary: 'primary',
-		secondary: 'secondary',
-		success: 'success',
-		warning: 'warning',
-		danger: 'danger',
-		info: 'info'
-	};
-
-	readonly EXPECTED_ALIGNMENT: object = {
-		left: 'left',
-		center: 'center',
-		right: 'right',
-		justify: 'justify'
-	};
-
 	constructor(content: string) {
 		this.setContent(content);
 		this.setLink('#');
 		this.setIsInternal(true);
-
-		// @ts-ignore
-		this.setDisplaySize(this.EXPECTED_DISPLAY_SIZES.base);
-
-		// @ts-ignore
-		this.setTheme(this.EXPECTED_THEMES.black);
-
-		// @ts-ignore
-		this.setAligment(this.EXPECTED_ALIGNMENT.left);
+		this.setDisplaySize(SIZES.Md);
+		this.setTheme(THEMES.Black);
+		this.setAligment(TEXT_ALIGNMENT.Left);
 	}
 
 	get content(): string {
@@ -62,23 +29,24 @@ export default class TanoshiLinkModel {
 		return this;
 	}
 
-	get contentAsImage(): TanoshiImageModel | null {
-		return this._contentAsImage;
+	get iconAtLeft(): IconDefinition | null {
+		return this._iconAtLeft;
 	}
 
-	public setContentAsImage(value: TanoshiImageModel): TanoshiLinkModel {
-		this._contentAsImage = value;
+	public setIconAtLeft(value: IconDefinition): TanoshiLinkModel {
+		this._iconAtLeft = value;
 		return this;
 	}
 
-	get contentAsButton(): TanoshiButtonModel | null {
-		return this._contentAsButton;
+	get iconAtRight(): IconDefinition | null {
+		return this._iconAtRight;
 	}
 
-	public setContentAsButton(value: TanoshiButtonModel): TanoshiLinkModel {
-		this._contentAsButton = value;
+	public setIconAtRight(value: IconDefinition): TanoshiLinkModel {
+		this._iconAtRight = value;
 		return this;
 	}
+
 
 	get link(): string {
 		return this._link;
@@ -107,11 +75,7 @@ export default class TanoshiLinkModel {
 		return this._theme;
 	}
 
-	public setTheme(value: string): TanoshiLinkModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_THEMES, value) === false) {
-			throw new Error();
-		}
-
+	public setTheme(value: THEMES): TanoshiLinkModel {
 		this._theme = value;
 		return this;
 	}
@@ -120,11 +84,7 @@ export default class TanoshiLinkModel {
 		return this._displaySize;
 	}
 
-	public setDisplaySize(value: string): TanoshiLinkModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_DISPLAY_SIZES, value) === false) {
-			throw new Error();
-		}
-
+	public setDisplaySize(value: SIZES): TanoshiLinkModel {
 		this._displaySize = value;
 		return this;
 	}
@@ -132,11 +92,7 @@ export default class TanoshiLinkModel {
 		return this._alignment;
 	}
 
-	public setAligment(value: string): TanoshiLinkModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_ALIGNMENT, value) === false) {
-			throw new Error();
-		}
-
+	public setAligment(value: TEXT_ALIGNMENT): TanoshiLinkModel {
 		this._alignment = value;
 		return this;
 	}

@@ -1,22 +1,13 @@
+import { WIDTHS } from "$lib/enums";
+import { HEIGHTS, IMAGE_FILTERS, IMAGE_SHAPES } from "../../enums/Themes";
+
 export default class TanoshiImageModel {
 	private _content!: string;
 	private _alt!: string;
-	private _theme: string = '';
 	private _filter: string = '';
-	private _width: string = 'w-auto';
-	private _height: string = 'h-100';
-
-	readonly EXPECTED_THEMES: object = {
-		rounded: 'rounded',
-		circled: 'circled'
-	};
-
-	readonly EXPECTED_FILTERS: object = {
-		blur: 'blur',
-		grayscale: 'grayscale',
-		sepia: 'sepia',
-		invert: 'invert'
-	};
+	private _shape: string = '';
+	private _width: string = WIDTHS.WAuto;
+	private _height: string = HEIGHTS.H100PRCT;
 
 	constructor(content: string, alt: string) {
 		this.setContent(content);
@@ -49,27 +40,22 @@ export default class TanoshiImageModel {
 		return this;
 	}
 
-	get theme(): string {
-		return this._theme!;
-	}
-
-	public setTheme(value: string): TanoshiImageModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_THEMES, value) === false) {
-			throw new Error();
-		}
-		this._theme = value;
-		return this;
-	}
 
 	get filter(): string {
 		return this._filter!;
 	}
 
-	public setFilter(value: string): TanoshiImageModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_FILTERS, value) === false) {
-			throw new Error();
-		}
+	public setFilter(value: IMAGE_FILTERS): TanoshiImageModel {
 		this._filter = value;
+		return this;
+	}
+
+	get shape(): string {
+		return this._shape!;
+	}
+
+	public setShape(value: IMAGE_SHAPES): TanoshiImageModel {
+		this._shape = value;
 		return this;
 	}
 
@@ -77,7 +63,13 @@ export default class TanoshiImageModel {
 		return this._width!;
 	}
 
-	public setWidth(value: string): TanoshiImageModel {
+	public setWidth(value: WIDTHS): TanoshiImageModel {
+		this._width = value;
+		return this;
+	}
+
+	public setCustomWidth(value: string): TanoshiImageModel {
+		console.warn('Custom width is not recommended. Use setWidth() instead. If you continue, make sure the value you set exists as a css class in your styles.');
 		this._width = value;
 		return this;
 	}
@@ -86,15 +78,21 @@ export default class TanoshiImageModel {
 		return this._height!;
 	}
 
-	public setHeight(value: string): TanoshiImageModel {
+	public setHeight(value: HEIGHTS): TanoshiImageModel {
+		this._height = value;
+		return this;
+	}
+
+	public setCustomHeight(value: string): TanoshiImageModel {
+		console.warn('Custom height is not recommended. Use setHeight() instead. If you continue, make sure the value you set exists as a css class in your styles.');
 		this._height = value;
 		return this;
 	}
 
 	public setCircle(value: string): TanoshiImageModel {
-		this._theme = 'circled';
-		this._height = value;
-		this._width = value;
+		this.setShape(IMAGE_SHAPES.Circled);
+		this.setCustomWidth(value);
+		this.setCustomHeight(value);
 		return this;
 	}
 }

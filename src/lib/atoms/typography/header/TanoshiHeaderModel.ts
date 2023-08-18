@@ -1,63 +1,19 @@
+import { HEADER_TAGS, SIZES } from "$lib/enums";
+import { TEXT_ALIGNMENT, THEMES } from "../../../enums/Themes";
+
 export default class TanoshiHeaderModel {
 	private _content!: string;
-	private _displaySize!: string;
+	private _size!: string;
 	private _alignment!: string;
-	private _htmlSize!: string;
+	private _tag!: string;
 	private _theme!: string;
-
-	readonly EXPECTED_DISPLAY_SIZES: object = {
-		sm: 'sm',
-		base: 'base',
-		lg: 'lg',
-		xl: 'xl',
-		'2xl': '2xl',
-		'3xl': '3xl',
-		'4xl': '4xl',
-		'5xl': '5xl',
-		'6xl': '6xl'
-	};
-
-	readonly EXPECTED_HTML_SIZES: object = {
-		h1: 'h1',
-		h2: 'h2',
-		h3: 'h3',
-		h4: 'h4',
-		h5: 'h5',
-		h6: 'h6'
-	};
-
-	readonly EXPECTED_THEMES: object = {
-		black: 'black',
-		white: 'white',
-		primary: 'primary',
-		secondary: 'secondary',
-		success: 'success',
-		warning: 'warning',
-		danger: 'danger',
-		info: 'info'
-	};
-
-	readonly EXPECTED_ALIGNMENT: object = {
-		left: 'left',
-		center: 'center',
-		right: 'right',
-		justify: 'justify'
-	};
 
 	constructor(content: string) {
 		this.setContent(content);
-
-		// @ts-ignore
-		this.setDisplaySize(this.EXPECTED_DISPLAY_SIZES['3xl']);
-
-		// @ts-ignore
-		this.setHtmlSize(this.EXPECTED_HTML_SIZES.h1);
-
-		// @ts-ignore
-		this.setTheme(this.EXPECTED_THEMES.black);
-
-		// @ts-ignore
-		this.setAligment(this.EXPECTED_ALIGNMENT.left);
+		this.setSize(SIZES['3Xl']);
+		this.setTag(HEADER_TAGS.H1);
+		this.setTheme(THEMES.Black);
+		this.setAligment(TEXT_ALIGNMENT.Left);
 	}
 
 	get content(): string {
@@ -73,38 +29,26 @@ export default class TanoshiHeaderModel {
 		return this._theme;
 	}
 
-	public setTheme(value: string): TanoshiHeaderModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_THEMES, value) === false) {
-			throw new Error();
-		}
-
+	public setTheme(value: THEMES): TanoshiHeaderModel {
 		this._theme = value;
 		return this;
 	}
 
-	get displaySize(): string {
-		return this._displaySize;
+	get size(): string {
+		return this._size;
 	}
 
-	public setDisplaySize(value: string): TanoshiHeaderModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_DISPLAY_SIZES, value) === false) {
-			throw new Error();
-		}
-
-		this._displaySize = value;
+	public setSize(value: SIZES): TanoshiHeaderModel {
+		this._size = value;
 		return this;
 	}
 
-	get htmlSize(): string {
-		return this._htmlSize;
+	get tag(): string {
+		return this._tag;
 	}
 
-	public setHtmlSize(value: string): TanoshiHeaderModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_HTML_SIZES, value) === false) {
-			throw new Error();
-		}
-
-		this._htmlSize = value;
+	public setTag(value: HEADER_TAGS): TanoshiHeaderModel {
+		this._tag = value;
 		return this;
 	}
 
@@ -112,11 +56,7 @@ export default class TanoshiHeaderModel {
 		return this._alignment;
 	}
 
-	public setAligment(value: string): TanoshiHeaderModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_ALIGNMENT, value) === false) {
-			throw new Error();
-		}
-
+	public setAligment(value: TEXT_ALIGNMENT): TanoshiHeaderModel {
 		this._alignment = value;
 		return this;
 	}

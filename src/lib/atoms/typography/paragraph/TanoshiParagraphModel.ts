@@ -1,48 +1,17 @@
+import { SIZES, TEXT_ALIGNMENT, THEMES } from "$lib/enums";
+
 export default class TanoshiParagraphModel {
 	private _content!: string;
-	private _displaySize!: string;
+	private _size!: string;
 	private _alignment!: string;
 	private _theme!: string;
 	private _hasSpacing: boolean = true;
 
-	readonly EXPECTED_DISPLAY_SIZES: object = {
-		sm: 'sm',
-		base: 'base',
-		lg: 'lg',
-		xl: 'xl',
-		'2xl': '2xl',
-		'3xl': '3xl'
-	};
-
-	readonly EXPECTED_THEMES: object = {
-		black: 'black',
-		white: 'white',
-		primary: 'primary',
-		secondary: 'secondary',
-		success: 'success',
-		warning: 'warning',
-		danger: 'danger',
-		info: 'info'
-	};
-
-	readonly EXPECTED_ALIGNMENT: object = {
-		left: 'left',
-		center: 'center',
-		right: 'right',
-		justify: 'justify'
-	};
-
 	constructor(content: string) {
 		this.setContent(content);
-
-		// @ts-ignore
-		this.setDisplaySize(this.EXPECTED_DISPLAY_SIZES.base);
-
-		// @ts-ignore
-		this.setTheme(this.EXPECTED_THEMES.black);
-
-		// @ts-ignore
-		this.setAlignment(this.EXPECTED_ALIGNMENT.left);
+		this.setSize(SIZES.Md);
+		this.setTheme(THEMES.Black);
+		this.setAlignment(TEXT_ALIGNMENT.Left);
 	}
 
 	get content(): string {
@@ -58,25 +27,17 @@ export default class TanoshiParagraphModel {
 		return this._theme;
 	}
 
-	public setTheme(value: string): TanoshiParagraphModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_THEMES, value) === false) {
-			throw new Error();
-		}
-
+	public setTheme(value: THEMES): TanoshiParagraphModel {
 		this._theme = value;
 		return this;
 	}
 
-	get displaySize(): string {
-		return this._displaySize;
+	get size(): string {
+		return this._size;
 	}
 
-	public setDisplaySize(value: string): TanoshiParagraphModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_DISPLAY_SIZES, value) === false) {
-			throw new Error();
-		}
-
-		this._displaySize = value;
+	public setSize(value: SIZES): TanoshiParagraphModel {
+		this._size = value;
 		return this;
 	}
 
@@ -93,11 +54,7 @@ export default class TanoshiParagraphModel {
 		return this._alignment;
 	}
 
-	public setAlignment(value: string): TanoshiParagraphModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_ALIGNMENT, value) === false) {
-			throw new Error();
-		}
-
+	public setAlignment(value: TEXT_ALIGNMENT): TanoshiParagraphModel {
 		this._alignment = value;
 		return this;
 	}
