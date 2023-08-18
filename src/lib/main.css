@@ -398,9 +398,15 @@ video {
 	height: auto;
 }
 
+div.dropdown {
+	padding: 0!important;
+}
+
 div.dropdown:hover > ul {
 	display: block;
 }
+
+
 
 @media (min-width: 640px) {
 	div.dropdown:hover > ul {
