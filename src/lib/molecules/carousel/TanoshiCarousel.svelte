@@ -1,6 +1,4 @@
 <script lang="ts">
-  import './tanoshiCarousel.css';
-
 	import Fa from 'svelte-fa/src/index.js';
   import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons/index.js';
 	import { fade } from 'svelte/transition';

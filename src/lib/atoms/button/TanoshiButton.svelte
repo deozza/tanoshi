@@ -2,7 +2,6 @@
 	import Fa from 'svelte-fa/src/index.js';
 	import { faSpinner } from '@fortawesome/free-solid-svg-icons/index.js';
 
-	import './tanoshiButton.css';
 	import type TanoshiButtonModel from './TanoshiButtonModel';
 
 	export let tanoshiButtonModel: TanoshiButtonModel;

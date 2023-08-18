@@ -1,5 +1,4 @@
 <script lang="ts">
-	import './tanoshiImage.css';
 	import type TanoshiImageModel from './TanoshiImageModel';
 
 	export let tanoshiImageModel: TanoshiImageModel;

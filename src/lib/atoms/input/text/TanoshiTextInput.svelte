@@ -1,5 +1,4 @@
 <script lang="ts">
-	import './tanoshiTextInput.css';
 	import type TanoshiTextInputModel from './TanoshiTextInputModel';
 
 	export let tanoshiTextInputModel: TanoshiTextInputModel;
