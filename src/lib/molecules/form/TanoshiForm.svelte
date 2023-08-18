@@ -7,9 +7,14 @@
 	import { createEventDispatcher } from 'svelte';
 	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
 	import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel';
+	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS } from '$lib/enums';
 
-	const inputContainerModel: TanoshiContainerModel = new TanoshiContainerModel('r').setItemsAlignment('center');
-	const buttonContainerModel: TanoshiContainerModel = new TanoshiContainerModel('r').setItemsAlignment('center').setDesktopSpacing('centered');
+	const inputContainerModel: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
+		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center);
+	
+	const buttonContainerModel: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
+		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
+		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Centered);
 
 	const dispatch = createEventDispatcher();
 
@@ -43,7 +48,7 @@
 
 
 <style>
-	form{
+form{
     min-width: 100%;
 }
 

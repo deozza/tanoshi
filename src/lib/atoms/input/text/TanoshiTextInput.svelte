@@ -40,7 +40,7 @@ div.input-container {
 	flex: 2;
 }
 
-input.text-input {
+input {
 	width: 100%;
 	padding-top: 0.5rem/* 8px */;
 	padding-bottom: 0.5rem/* 8px */;
@@ -48,14 +48,23 @@ input.text-input {
 	padding-right: 0.75rem/* 12px */;
 	border-width: 1px;
 	border-radius: 0.375rem/* 6px */;
+	color: var(--black-text-input, var(--black))
+}
+
+input:read-only:hover {
+	cursor: not-allowed;
 }
 
 span.text-danger {
-	color: var(--danger-color-text-span, var(--danger));
+	color: var(--danger-text-input, var(--danger));
+}
+
+input.text-danger, input.text-danger:focus {
+	border: 1px solid var(--danger-border-input, var(--danger));
 }
 
 @media (max-width: 639px) {
-	input.text-input {
+	input {
 		width: 90%;
 	}
 }

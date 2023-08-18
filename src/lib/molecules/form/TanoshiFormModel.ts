@@ -1,11 +1,10 @@
 import type TanoshiButtonModel from '$atoms/button/TanoshiButtonModel';
-import type TanoshiInputModelInterface from '$atoms/input/TanoshiInputModelInterface';
 import type TanoshiLabelModel from '$atoms/label/TanoshiLabelModel';
-import type TanoshiLabelAndInputModelInterface from './TanoshiLabelAndInputModelInterface';
+import type { TanoshiInputModel, TanoshiLabelAndInputModel } from '$lib/types/Types';
 
 export default class TanoshiFormModel {
 	private _submitButton!: TanoshiButtonModel;
-	private _labelsAndInputs: Array<TanoshiLabelAndInputModelInterface> = [];
+	private _labelsAndInputs: Array<TanoshiLabelAndInputModel> = [];
 
 	public constructor(submitButton: TanoshiButtonModel) {
 		this.setSubmitButton(submitButton);
@@ -24,12 +23,12 @@ export default class TanoshiFormModel {
 		return this;
 	}
 
-	get labelsAndInputs(): Array<TanoshiLabelAndInputModelInterface> {
+	get labelsAndInputs(): Array<TanoshiLabelAndInputModel> {
 		return this._labelsAndInputs;
 	}
 
-	public addLabelAndInput(label: TanoshiLabelModel, input: TanoshiInputModelInterface): TanoshiFormModel {
-		const tanoshiLabelAndInputModel: TanoshiLabelAndInputModelInterface = {
+	public addLabelAndInput(label: TanoshiLabelModel, input: TanoshiInputModel): TanoshiFormModel {
+		const tanoshiLabelAndInputModel: TanoshiLabelAndInputModel = {
 			tanoshiLabelModel: label,
 			tanoshiInputModel: input
 		};

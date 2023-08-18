@@ -1,6 +1,6 @@
-import type TanoshiInputModelInterface from '../TanoshiInputModelInterface';
+import { INPUT_TEXT_TYPES } from "$lib/enums";
 
-export default class TanoshiTextInputModel implements TanoshiInputModelInterface {
+export default class TanoshiTextInputModel {
 	private _type: string = '';
 	private _id!: string;
 	private _name!: string;
@@ -14,7 +14,7 @@ export default class TanoshiTextInputModel implements TanoshiInputModelInterface
 	private _placeholder: string | null = null;
 
 	constructor(name: string) {
-		this.setType('text');
+		this.setType(INPUT_TEXT_TYPES.Text);
 		this.setName(name);
 		this.setId(name);
 	}
@@ -23,7 +23,7 @@ export default class TanoshiTextInputModel implements TanoshiInputModelInterface
 		return this._type;
 	}
 
-	setType(value: string): TanoshiTextInputModel {
+	setType(value: INPUT_TEXT_TYPES): TanoshiTextInputModel {
 		this._type = value;
 		return this;
 	}

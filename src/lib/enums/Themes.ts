@@ -156,6 +156,15 @@ export enum NAVIGATION_ORIENTATIONS {
     Vertical = 'vertical'
 }
 
+export enum INPUT_TEXT_TYPES {
+    Text = 'text',
+    Password = 'password',
+    Email = 'email',
+    Tel = 'tel',
+    Date = 'date',
+    Color = 'color',
+}
+
 export function getThemeEnumKeyByEnumValue(enumValue: string): THEMES  {
     const enumKey = Object.keys(THEMES).find(
         (key) => THEMES[key as keyof typeof THEMES] === enumValue
