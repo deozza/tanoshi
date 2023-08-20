@@ -8,30 +8,20 @@
     import type { Hst } from '@histoire/plugin-svelte';
     export let Hst: Hst;
 
-    const defaultChoiceInput: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('default', 'value')
+    const defaultChoiceInput: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('value')
         .setType(INPUT_CHOICES_TYPES.Checkbox)
 
-    const checkedChoiceInput: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('checked', 'value')
+    const checkedChoiceInput: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('value')
         .setType(INPUT_CHOICES_TYPES.Checkbox)
         .setChecked(true)
 
-    const readonlyChoiceInput: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('readonly', 'value')
+    const readonlyChoiceInput: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('value')
         .setType(INPUT_CHOICES_TYPES.Checkbox)
         .setReadonly(true)
 
-    const requiredChoiceInput: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('required', 'value')
+    const requiredChoiceInput: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('value')
         .setType(INPUT_CHOICES_TYPES.Checkbox)
         .setRequired(true)
-
-    const errorChoiceInput: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('error', 'value')
-        .setType(INPUT_CHOICES_TYPES.Checkbox)
-        
-        .setError(true)
-
-    const errorWithMessageChoiceInput: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('error with message', 'value')
-        .setType(INPUT_CHOICES_TYPES.Checkbox)
-        .setError(true)
-        .setErrorMessage('error message')
 
 </script>
   
@@ -51,13 +41,4 @@
     <Hst.Variant title="required">
         <TanoshiChoiceInput tanoshiInputModel={requiredChoiceInput} />
     </Hst.Variant>
-
-    <Hst.Variant title="error">
-        <TanoshiChoiceInput tanoshiInputModel={errorChoiceInput} />
-    </Hst.Variant>
-
-    <Hst.Variant title="error with message">
-        <TanoshiChoiceInput tanoshiInputModel={errorWithMessageChoiceInput} />
-    </Hst.Variant>
-
 </Hst.Story>

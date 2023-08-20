@@ -21,8 +21,21 @@
         .addChoice({label: radioChoice2InputLabel, input: radioChoice2Input})
         .addChoice({label: radioChoice3InputLabel, input: radioChoice3Input})
 
+    const tanoshiChoiceGroupModelErrorMessage: TanoshiChoiceGroupModel = new TanoshiChoiceGroupModel('radio')
+        .addChoice({label: radioChoice1InputLabel, input: radioChoice1Input})
+        .addChoice({label: radioChoice2InputLabel, input: radioChoice2Input})
+        .addChoice({label: radioChoice3InputLabel, input: radioChoice3Input})
+        .setError(true)
+        .setErrorMessage('This is an error message')
+
 </script>
   
 <Hst.Story title="molecules/input/choice/choice group" layout={{ type: 'grid', width: 600 }}>
+    <Hst.Variant title="default">
         <TanoshiChoiceGroup tanoshiInputModel={tanoshiChoiceGroupModel} />
+    </Hst.Variant>
+
+    <Hst.Variant title="error message">
+        <TanoshiChoiceGroup tanoshiInputModel={tanoshiChoiceGroupModelErrorMessage} />
+    </Hst.Variant>
 </Hst.Story>

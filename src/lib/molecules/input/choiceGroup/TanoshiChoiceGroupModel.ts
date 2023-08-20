@@ -4,6 +4,8 @@ export default class TanoshiChoiceGroupModel {
 	private _choices: Array<TanoshiChoiceAndLabelModel> = [];
 	private _id!: string;
 	private _radioValue: string | null = null;
+	private _error: boolean = false;
+	private _errorMessage: string = '';
 
 	public constructor(id: string) {
 		this.setId(id);
@@ -42,6 +44,24 @@ export default class TanoshiChoiceGroupModel {
 
 	public setRadioValue(value: string): TanoshiChoiceGroupModel {
 		this._radioValue = value;
+		return this;
+	}
+
+	get error(): boolean {
+		return this._error;
+	}
+
+	setError(value: boolean): TanoshiChoiceGroupModel {
+		this._error = value;
+		return this;
+	}
+
+	get errorMessage(): string {
+		return this._errorMessage;
+	}
+
+	setErrorMessage(value: string): TanoshiChoiceGroupModel {
+		this._errorMessage = value;
 		return this;
 	}
 

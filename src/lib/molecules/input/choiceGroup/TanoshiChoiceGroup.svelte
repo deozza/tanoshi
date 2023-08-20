@@ -26,5 +26,16 @@
 				<TanoshiChoiceInput tanoshiInputModel={tanoshiChoiceAndLabelModel.input} on:choiced={(e) => tanoshiInputModel.setRadioValue(e.detail)}/>
 			</TanoshiContainer>
 		{/each}
+
 	</TanoshiContainer>
+	{#if tanoshiInputModel.error}
+		<span class="text-danger">{tanoshiInputModel.errorMessage}</span>
+	{/if}
 </div>
+
+
+<style>
+span.text-danger {
+	color: var(--danger-text-input, var(--danger));
+}
+</style>

@@ -67,14 +67,6 @@ input.readonly:hover {
 	cursor: not-allowed;
 }
 
-span.text-danger {
-	color: var(--danger-text-input, var(--danger));
-}
-
-input.text-danger, input.text-danger:focus {
-	border: 1px solid var(--danger-border-input, var(--danger));
-}
-
 @media (max-width: 639px) {
 	input {
 		width: 90%;

@@ -8,8 +8,6 @@ export default class TanoshiChoiceInputModel {
 	private _value!: string;
 	private _checked: boolean = false;
 	private _readonly: boolean = false;
-	private _error: boolean = false;
-	private _errorMessage: string = '';
 
 	constructor(value: string) {
 		this.setValue(value);
@@ -81,24 +79,6 @@ export default class TanoshiChoiceInputModel {
 
 	setReadonly(value: boolean): TanoshiChoiceInputModel {
 		this._readonly = value;
-		return this;
-	}
-
-	get error(): boolean {
-		return this._error;
-	}
-
-	setError(value: boolean): TanoshiChoiceInputModel {
-		this._error = value;
-		return this;
-	}
-
-	get errorMessage(): string {
-		return this._errorMessage;
-	}
-
-	setErrorMessage(value: string): TanoshiChoiceInputModel {
-		this._errorMessage = value;
 		return this;
 	}
 }

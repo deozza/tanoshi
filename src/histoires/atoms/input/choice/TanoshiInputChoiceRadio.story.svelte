@@ -7,23 +7,16 @@
     import type { Hst } from '@histoire/plugin-svelte';
     export let Hst: Hst;
 
-    const defaultChoiceInput: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('default', 'value')
+    const defaultChoiceInput: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('value')
 
-    const checkedChoiceInput: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('checked', 'value')
+    const checkedChoiceInput: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('value')
         .setChecked(true)
 
-    const readonlyChoiceInput: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('readonly', 'value')
+    const readonlyChoiceInput: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('value')
         .setReadonly(true)
 
-    const requiredChoiceInput: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('required', 'value')
+    const requiredChoiceInput: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('value')
         .setRequired(true)
-
-    const errorChoiceInput: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('error', 'value')
-        .setError(true)
-
-    const errorWithMessageChoiceInput: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('error with message', 'value')
-        .setError(true)
-        .setErrorMessage('error message')
 
 </script>
   
