@@ -14,22 +14,21 @@
     import type { Hst } from '@histoire/plugin-svelte';
     export let Hst: Hst;
 
-    const emailInput: TanoshiTextInputModel = new TanoshiTextInputModel('email')
+    const emailInput: TanoshiTextInputModel = new TanoshiTextInputModel('Email')
         .setType(INPUT_TEXT_TYPES.Email)
         .setRequired(true)
-    const emailInputLabel: TanoshiLabelModel = new TanoshiLabelModel('email', 'Email')
+    const emailInputLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(emailInput)
 
-    const passwordInput: TanoshiTextInputModel = new TanoshiTextInputModel('password')
+    const passwordInput: TanoshiTextInputModel = new TanoshiTextInputModel('Password')
         .setType(INPUT_TEXT_TYPES.Password)
         .setRequired(true)
         .setMinLength(8)
-    const passwordInputLabel: TanoshiLabelModel = new TanoshiLabelModel('password', 'Password')
+    const passwordInputLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(passwordInput)
 
-    const ageInput: TanoshiNumberInputModel = new TanoshiNumberInputModel('age')
+    const ageInput: TanoshiNumberInputModel = new TanoshiNumberInputModel('Age')
         .setMin(18)
-    const ageInputLabel: TanoshiLabelModel = new TanoshiLabelModel('age', 'Age')
+    const ageInputLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(ageInput)
 
-    
     const submitButton: TanoshiButtonModel = new TanoshiButtonModel('submit')
         .setBasicTheme(THEMES.Success)
         .setType(BUTTON_TYPES.Submit)

@@ -4,4 +4,10 @@
 	export let tanoshiLabelModel: TanoshiLabelModel;
 </script>
 
-<label class="flex items-center flex-1" for={tanoshiLabelModel.name}>{tanoshiLabelModel.value}</label>
+<label 
+	class="flex items-center"
+	class:flex-1={tanoshiLabelModel.spacing === true}
+	for={tanoshiLabelModel.name}
+>
+	{tanoshiLabelModel.value}
+</label>

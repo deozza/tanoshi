@@ -165,6 +165,11 @@ export enum INPUT_TEXT_TYPES {
     Color = 'color',
 }
 
+export enum INPUT_CHOICES_TYPES {
+    Radio = 'radio',
+    Checkbox = 'checkbox'
+}
+
 export function getThemeEnumKeyByEnumValue(enumValue: string): THEMES  {
     const enumKey = Object.keys(THEMES).find(
         (key) => THEMES[key as keyof typeof THEMES] === enumValue

@@ -17,7 +17,7 @@ export default class TanoshiLabelAndInputModel {
 		return this._label;
 	}
 
-	public setLabel(value: TanoshiLabelModel): TanoshiFormModel {
+	public setLabel(value: TanoshiLabelModel): TanoshiLabelAndInputModel {
 		this._label = value;
 		return this;
 	}
@@ -26,7 +26,7 @@ export default class TanoshiLabelAndInputModel {
 		return this._input;
 	}
 
-	public setInput(value: TanoshiInputModel): TanoshiFormModel {
+	public setInput(value: TanoshiInputModel): TanoshiLabelAndInputModel {
 		this._input = value;
 		return this;
 	}
@@ -35,7 +35,7 @@ export default class TanoshiLabelAndInputModel {
 		return this._component;
 	}
 
-	public setComponent(value: ComponentType): TanoshiFormModel {
+	public setComponent(value: ComponentType): TanoshiLabelAndInputModel {
 		this._component = value;
 		return this;
 	}
