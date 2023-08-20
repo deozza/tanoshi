@@ -5,6 +5,7 @@ import type TanoshiLinkAsButtonModel from "$molecules/link/TanoshiLinkAsButton/T
 import type TanoshiLinkAsImageModel from "$molecules/link/TanoshiLinkAsImage/TanoshiLinkAsImageModel";
 import type TanoshiChoiceGroupModel from "$molecules/input/choiceGroup/TanoshiChoiceGroupModel";
 import type TanoshiChoiceInputModel from "$atoms/input/choice/TanoshiChoiceInputModel";
+import type TanoshiSelectInputModel from "$molecules/input/select/TanoshiSelectInputModel";
 
 export type TanoshiGlobalLinkModel = TanoshiLinkModel | TanoshiLinkAsButtonModel | TanoshiLinkAsImageModel | TanoshiLinkAsNavbarDropdownModel;
 
@@ -18,4 +19,4 @@ export type TanoshiChoiceAndLabelModel = {
     input: TanoshiChoiceInputModel,
 }
 
-export type TanoshiInputModel = TanoshiTextInputModel | TanoshiNumberInputModel | TanoshiChoiceGroupModel
+export type TanoshiInputModel = TanoshiTextInputModel | TanoshiNumberInputModel | TanoshiChoiceGroupModel | TanoshiSelectInputModel

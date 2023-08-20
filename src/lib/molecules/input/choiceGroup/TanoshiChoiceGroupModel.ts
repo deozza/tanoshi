@@ -1,3 +1,4 @@
+import ChoiceOptionError from '$lib/errors/ChoiceOptionError';
 import type { TanoshiChoiceAndLabelModel } from '$lib/types/Types';
 
 export default class TanoshiChoiceGroupModel {
@@ -30,6 +31,12 @@ export default class TanoshiChoiceGroupModel {
 	}
 
 	public addChoice(choice: TanoshiChoiceAndLabelModel): TanoshiChoiceGroupModel {
+
+		const index = this._choices.findIndex((c) => c.label.value === choice.label.value);
+		if (index > -1) {
+			throw new ChoiceOptionError(`Choice with value ${choice.label.value} already exists`);
+		}
+
 		choice.input.setId(this.id);
 		choice.input.setName(this.id);
 		choice.label.setName(this.id);

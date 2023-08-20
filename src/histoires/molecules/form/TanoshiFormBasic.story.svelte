@@ -13,9 +13,11 @@
 
     import type { Hst } from '@histoire/plugin-svelte';
 	import TanoshiChoiceInputModel from '$atoms/input/choice/TanoshiChoiceInputModel';
-	import TanoshiChoiceInput from '$atoms/input/choice/TanoshiChoiceInput.svelte';
 	import TanoshiChoiceGroupModel from '$molecules/input/choiceGroup/TanoshiChoiceGroupModel';
 	import TanoshiChoiceGroup from '$molecules/input/choiceGroup/TanoshiChoiceGroup.svelte';
+	import TanoshiSelectOptionModel from '$atoms/input/select/option/TanoshiSelectOptionModel';
+	import TanoshiSelectInput from '$molecules/input/select/TanoshiSelectInput.svelte';
+	import TanoshiSelectInputModel from '$molecules/input/select/TanoshiSelectInputModel';
     export let Hst: Hst;
 
     const emailInput: TanoshiTextInputModel = new TanoshiTextInputModel('Email')
@@ -61,6 +63,18 @@
 
     const tanoshiCheckboxChoiceGroupLabelModel: TanoshiLabelModel = new TanoshiLabelModel('checkbox', 'Checkbox choices')
 
+    const selectOption1: TanoshiSelectOptionModel = new TanoshiSelectOptionModel('option 1', 'option 1')
+    const selectOption2: TanoshiSelectOptionModel = new TanoshiSelectOptionModel('option 2', 'option 2')
+    const selectOption3: TanoshiSelectOptionModel = new TanoshiSelectOptionModel('option 3', 'option 3')
+
+    const tanoshiSelectInputModel: TanoshiSelectInputModel = new TanoshiSelectInputModel('select')
+        .addOption(selectOption1)
+        .addOption(selectOption2)
+        .addOption(selectOption3)
+        .setMultiple(true)
+
+    const tanoshiSelectInputLabelModel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(tanoshiSelectInputModel)
+
     const submitButton: TanoshiButtonModel = new TanoshiButtonModel('submit')
         .setBasicTheme(THEMES.Success)
         .setType(BUTTON_TYPES.Submit)
@@ -71,6 +85,7 @@
         .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(tanoshiRadioChoiceGroupLabelModel, tanoshiRadioChoiceGroupModel, TanoshiChoiceGroup))
         .addLabelAndInput(new TanoshiLabelAndInputModel(tanoshiCheckboxChoiceGroupLabelModel, tanoshiCheckboxChoiceGroupModel, TanoshiChoiceGroup))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(tanoshiSelectInputLabelModel, tanoshiSelectInputModel, TanoshiSelectInput))
 
 
     function handleForm(){
