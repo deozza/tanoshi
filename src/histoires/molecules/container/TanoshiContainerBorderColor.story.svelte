@@ -8,31 +8,31 @@
     export let Hst: Hst;
 
     const primaryContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
-        .setBackgroundTheme(THEMES.Primary)
+        .setBorderTheme(THEMES.Primary)
 
     const secondaryContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
-        .setBackgroundTheme(THEMES.Secondary)
+        .setBorderTheme(THEMES.Secondary)
 
     const whiteContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
-        .setBackgroundTheme(THEMES.White)
+        .setBorderTheme(THEMES.White)
 
     const blackContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
-        .setBackgroundTheme(THEMES.Black)
+        .setBorderTheme(THEMES.Black)
 
     const successContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
-        .setBackgroundTheme(THEMES.Success)
+        .setBorderTheme(THEMES.Success)
 
     const warningContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
-        .setBackgroundTheme(THEMES.Warning)
+        .setBorderTheme(THEMES.Warning)
         
     const dangerContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
-        .setBackgroundTheme(THEMES.Danger)
+        .setBorderTheme(THEMES.Danger)
 
     const infoContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
-        .setBackgroundTheme(THEMES.Info)
+        .setBorderTheme(THEMES.Info)
 </script>
   
-<Hst.Story title="molecules/container/background color" layout={{ type: 'grid', width: 600 }}>
+<Hst.Story title="molecules/container/border color" layout={{ type: 'grid', width: 600 }}>
 
     <Hst.Variant title="primary">
         <TanoshiContainer tanoshiContainerModel={primaryContainer} >

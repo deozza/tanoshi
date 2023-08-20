@@ -14,7 +14,6 @@
     import type { Hst } from '@histoire/plugin-svelte';
     export let Hst: Hst;
 
-
     const emailInput: TanoshiTextInputModel = new TanoshiTextInputModel('email')
         .setType(INPUT_TEXT_TYPES.Email)
         .setRequired(true)

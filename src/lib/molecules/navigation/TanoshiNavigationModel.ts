@@ -1,4 +1,4 @@
-import { NAVIGATION_ORIENTATIONS, THEMES } from '$lib/enums';
+import { THEMES } from '$lib/enums';
 import type { TanoshiNavigationLinkModel } from '$lib/types/Types';
 
 export default class TanoshiNavigationModel {

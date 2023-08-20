@@ -14,13 +14,13 @@
 	const mobileTheme: THEMES | undefined = getThemeEnumKeyByEnumValue(tanoshiMobileNavigationModel.theme)
 	
 	$: navigationDesktopContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
-		.setTheme(desktopTheme)
+		.setBackgroundTheme(desktopTheme)
 		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Centered)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
 		.setHeight(HEIGHTS.HAUTO)
 
 	const navigationMobileContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
-		.setTheme(mobileTheme)
+		.setBackgroundTheme(mobileTheme)
 		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Start)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
 		.setHeight(HEIGHTS.HAUTO)

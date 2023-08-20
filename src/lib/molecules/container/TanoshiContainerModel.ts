@@ -31,7 +31,7 @@ export default class TanoshiContainerModel {
 	}
 
 	public setBackgroundTheme(value: THEMES): TanoshiContainerModel {
-		this._backgroundTheme
+		this._backgroundTheme = value;
 		return this;
 	}
 
@@ -40,7 +40,7 @@ export default class TanoshiContainerModel {
 	}
 
 	public setBorderTheme(value: THEMES): TanoshiContainerModel {
-		this._borderTheme
+		this._borderTheme = value;
 		return this;
 	}
 
@@ -94,7 +94,7 @@ export default class TanoshiContainerModel {
 	}
 
 	public setBackgroundImage(value: string): TanoshiContainerModel {
-		this._theme = '';
+		this._backgroundTheme = '';
 		this._backgroundImage = value;
 		return this;
 	}

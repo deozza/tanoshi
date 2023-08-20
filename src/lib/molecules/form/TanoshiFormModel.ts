@@ -1,5 +1,5 @@
 import type TanoshiButtonModel from '$atoms/button/TanoshiButtonModel';
-import { BUTTON_TYPES } from '$lib/enums';
+import { BUTTON_TYPES, THEMES } from '$lib/enums';
 import FormButtonTypeError from '$lib/errors/FormButtonTypeError';
 import type TanoshiLabelAndInputModel from '$molecules/labelAndInput/TanoshiLabelAndInputModel';
 

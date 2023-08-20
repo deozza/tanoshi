@@ -4,16 +4,15 @@
 	import { createEventDispatcher } from 'svelte';
 	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
 	import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel';
-	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS } from '$lib/enums';
+	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, getThemeEnumKeyByEnumValue } from '$lib/enums';
 	import TanoshiLabelAndInput from '$molecules/labelAndInput/TanoshiLabelAndInput.svelte';
-
 
 	export let tanoshiFormModel: TanoshiFormModel;
 
 	const inputContainerModel: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
-		.setBackgroundTheme(tanoshiFormModel.backgroundTheme)
-		.setBorderTheme(tanoshiFormModel.borderTheme)
+		.setBackgroundTheme(getThemeEnumKeyByEnumValue(tanoshiFormModel.backgroundTheme))
+		.setBorderTheme(getThemeEnumKeyByEnumValue(tanoshiFormModel.borderTheme))
 	
 	const buttonContainerModel: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
@@ -30,7 +29,7 @@
 	<ul>
 		{#each tanoshiFormModel.labelsAndInputs as tanoshiLabelAndInputModel}
 			<li>
-				<TanoshiLabelAndInput {tanoshiLabelAndInputModel} />
+				<TanoshiLabelAndInput {tanoshiLabelAndInputModel} {inputContainerModel}/>
 			</li>
 		{/each}
 		<li class='space-y-2'>

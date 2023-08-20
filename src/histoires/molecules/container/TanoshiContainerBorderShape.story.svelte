@@ -8,20 +8,20 @@
     export let Hst: Hst;
 
     const noneContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
-        .setTheme(THEMES.Primary)
-        .setBorders(CONTAINER_BORDERS.None)
+        .setBackgroundTheme(THEMES.Primary)
+        .setBorderShape(CONTAINER_BORDERS.None)
 
     const mdContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
-        .setTheme(THEMES.Primary)
-        .setBorders(CONTAINER_BORDERS.Md)
+        .setBackgroundTheme(THEMES.Primary)
+        .setBorderShape(CONTAINER_BORDERS.Md)
 
     const fullContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
-        .setTheme(THEMES.Primary)
-        .setBorders(CONTAINER_BORDERS.Full)
+        .setBackgroundTheme(THEMES.Primary)
+        .setBorderShape(CONTAINER_BORDERS.Full)
 
 </script>
   
-<Hst.Story title="molecules/container/border style" layout={{ type: 'grid', width: 600 }}>
+<Hst.Story title="molecules/container/border shape" layout={{ type: 'grid', width: 600 }}>
 
     <Hst.Variant title="none">
         <TanoshiContainer tanoshiContainerModel={noneContainer} >
