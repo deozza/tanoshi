@@ -9,7 +9,7 @@
 
 	export let tanoshiFormModel: TanoshiFormModel;
 
-	const inputContainerModel: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
+	const formContainerModel: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
 		.setBackgroundTheme(getThemeEnumKeyByEnumValue(tanoshiFormModel.backgroundTheme))
 		.setBorderTheme(getThemeEnumKeyByEnumValue(tanoshiFormModel.borderTheme))
@@ -25,21 +25,22 @@
 	}
 </script>
 
-<form on:submit|preventDefault={handleForm} method="POST">
-	<ul>
-		{#each tanoshiFormModel.labelsAndInputs as tanoshiLabelAndInputModel}
-			<li>
-				<TanoshiLabelAndInput {tanoshiLabelAndInputModel} {inputContainerModel}/>
+<TanoshiContainer tanoshiContainerModel={formContainerModel}>
+	<form on:submit|preventDefault={handleForm} method="POST">
+		<ul>
+			{#each tanoshiFormModel.labelsAndInputs as tanoshiLabelAndInputModel}
+				<li>
+					<TanoshiLabelAndInput {tanoshiLabelAndInputModel}/>
+				</li>
+			{/each}
+			<li class='space-y-2'>
+				<TanoshiContainer tanoshiContainerModel={buttonContainerModel}>
+					<TanoshiButton tanoshiButtonModel={tanoshiFormModel.submitButton} />
+				</TanoshiContainer>
 			</li>
-		{/each}
-		<li class='space-y-2'>
-			<TanoshiContainer tanoshiContainerModel={buttonContainerModel}>
-				<TanoshiButton tanoshiButtonModel={tanoshiFormModel.submitButton} />
-			</TanoshiContainer>
-		</li>
-	</ul>
-</form>
-
+		</ul>
+	</form>
+</TanoshiContainer>
 
 <style>
 form{
