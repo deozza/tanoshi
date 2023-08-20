@@ -7,8 +7,13 @@
 	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS } from '$lib/enums';
 	import TanoshiLabelAndInput from '$molecules/labelAndInput/TanoshiLabelAndInput.svelte';
 
+
+	export let tanoshiFormModel: TanoshiFormModel;
+
 	const inputContainerModel: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
-		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center);
+		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
+		.setBackgroundTheme(tanoshiFormModel.backgroundTheme)
+		.setBorderTheme(tanoshiFormModel.borderTheme)
 	
 	const buttonContainerModel: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
@@ -19,8 +24,6 @@
 	function handleForm() {
 		dispatch('submit')
 	}
-
-	export let tanoshiFormModel: TanoshiFormModel;
 </script>
 
 <form on:submit|preventDefault={handleForm} method="POST">

@@ -6,6 +6,9 @@ import type TanoshiLabelAndInputModel from '$molecules/labelAndInput/TanoshiLabe
 export default class TanoshiFormModel {
 	private _submitButton!: TanoshiButtonModel;
 	private _labelsAndInputs: Array<TanoshiLabelAndInputModel> = [];
+	private _backgroundTheme: string = THEMES.Transparent;
+	private _borderTheme: string = THEMES.Transparent;
+
 
 	public constructor(submitButton: TanoshiButtonModel) {
 		this.setSubmitButton(submitButton);
@@ -31,6 +34,24 @@ export default class TanoshiFormModel {
 	public addLabelAndInput(tanoshiLabelAndInputModel: TanoshiLabelAndInputModel): TanoshiFormModel {
 		
 		this._labelsAndInputs.push(tanoshiLabelAndInputModel);
+		return this;
+	}
+
+	get backgroundTheme(): string {
+		return this._backgroundTheme;
+	}
+
+	public setBackgroundTheme(value: THEMES): TanoshiFormModel {
+		this._backgroundTheme = value;
+		return this;
+	}
+
+	get borderTheme(): string {
+		return this._borderTheme;
+	}
+
+	public setBorderTheme(value: THEMES): TanoshiFormModel {
+		this._borderTheme = value;
 		return this;
 	}
 }

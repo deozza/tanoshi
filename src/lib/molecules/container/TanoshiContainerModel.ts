@@ -1,8 +1,9 @@
 import { CONTAINER_BORDERS, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, HEIGHTS, THEMES, WIDTHS } from "$lib/enums";
 
 export default class TanoshiContainerModel {
-	private _theme!: string;
-	private _borders!: string;
+	private _backgroundTheme!: string;
+	private _borderTheme!: string;
+	private _borderShape!: string;
 	private _width!: string;
 	private _customWidth: string = '';
 	private _height!: string;
@@ -18,27 +19,37 @@ export default class TanoshiContainerModel {
 		this.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Start);
 		this.setDesktopOrientation(desktopOrientation);
 		this.setMobileOrientation(desktopOrientation);
-		this.setTheme(THEMES.Transparent);
-		this.setBorders(CONTAINER_BORDERS.None);
+		this.setBackgroundTheme(THEMES.Transparent);
+		this.setBorderTheme(THEMES.Transparent);
+		this.setBorderShape(CONTAINER_BORDERS.None);
 		this.setHeight(HEIGHTS.H100PRCT);
 		this.setWidth(WIDTHS.W12);
 	}
 
-	get theme(): string {
-		return this._theme;
+	get backgroundTheme(): string {
+		return this._backgroundTheme;
 	}
 
-	public setTheme(value: THEMES): TanoshiContainerModel {
-		this._theme = value;
+	public setBackgroundTheme(value: THEMES): TanoshiContainerModel {
+		this._backgroundTheme
 		return this;
 	}
 
-	get borders(): string {
-		return this._borders;
+	get borderTheme(): string {
+		return this._borderTheme;
 	}
 
-	public setBorders(value: CONTAINER_BORDERS): TanoshiContainerModel {
-		this._borders = value;
+	public setBorderTheme(value: THEMES): TanoshiContainerModel {
+		this._borderTheme
+		return this;
+	}
+
+	get borderShape(): string {
+		return this._borderShape;
+	}
+
+	public setBorderShape(value: CONTAINER_BORDERS): TanoshiContainerModel {
+		this._borderShape = value;
 		return this;
 	}
 	
