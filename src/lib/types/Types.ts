@@ -1,5 +1,5 @@
 import type { ComponentType } from "svelte";
-import type { TanoshiLabelModel, TanoshiLinkModel, TanoshiTextInputModel } from "$atoms";
+import type { TanoshiLabelModel, TanoshiLinkModel, TanoshiTextInputModel, TanoshiNumberInputModel } from "$atoms";
 import type TanoshiLinkAsNavbarDropdownModel from "../molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdownModel";
 import type TanoshiLinkAsButtonModel from "$molecules/link/TanoshiLinkAsButton/TanoshiLinkAsButtonModel";
 import type TanoshiLinkAsImageModel from "$molecules/link/TanoshiLinkAsImage/TanoshiLinkAsImageModel";
@@ -11,4 +11,4 @@ export type TanoshiNavigationLinkModel = {
     component: ComponentType,
 }
 
-export type TanoshiInputModel = TanoshiTextInputModel
+export type TanoshiInputModel = TanoshiTextInputModel | TanoshiNumberInputModel

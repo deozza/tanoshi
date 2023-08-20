@@ -1,5 +1,3 @@
-import { INPUT_TEXT_TYPES } from "$lib/enums";
-
 export default class TanoshiNumberInputModel {
 	private _id!: string;
 	private _name!: string;

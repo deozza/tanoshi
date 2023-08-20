@@ -1,4 +1,6 @@
 import type TanoshiButtonModel from '$atoms/button/TanoshiButtonModel';
+import { BUTTON_TYPES } from '$lib/enums';
+import FormButtonTypeError from '$lib/errors/FormButtonTypeError';
 import type TanoshiLabelAndInputModel from '$molecules/labelAndInput/TanoshiLabelAndInputModel';
 
 export default class TanoshiFormModel {
@@ -14,8 +16,8 @@ export default class TanoshiFormModel {
 	}
 
 	public setSubmitButton(value: TanoshiButtonModel): TanoshiFormModel {
-		if ('submit' !== value.type) {
-			throw new Error();
+		if (BUTTON_TYPES.Submit !== value.type) {
+			throw new FormButtonTypeError('The submit button must have the type `submit`');
 		}
 
 		this._submitButton = value;
