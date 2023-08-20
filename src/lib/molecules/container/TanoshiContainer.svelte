@@ -82,7 +82,7 @@ div.white {
 }
 
 div.border-white {
-	border-color: var(--white-border-container, var(--white));
+	border: 1px solid var(--white-border-container, var(--white));
 }
 
 div.black {
@@ -90,7 +90,7 @@ div.black {
 }
 
 div.border-black {
-	border-color: var(--black-border-container, var(--black));
+	border: 1px solid var(--black-border-container, var(--black));
 }
 
 div.primary {
@@ -98,25 +98,23 @@ div.primary {
 }
 
 div.border-primary {
-	border-color: var(--primary-border-container, var(--primary));
+	border: 1px solid var(--primary-border-container, var(--primary));
 }
-
 
 div.secondary {
 	background-color: var(--secondary-background-container, var(--secondary));
 }
 
 div.border-secondary {
-	border-color: var(--secondary-border-container, var(--secondary));
+	border: 1px solid var(--secondary-border-container, var(--secondary));
 }
-
 
 div.success {
 	background-color: var(--success-background-container, var(--success));
 }
 
 div.border-success {
-	border-color: var(--success-border-container, var(--success));
+	border: 1px solid var(--success-border-container, var(--success));
 }
 
 div.warning {
@@ -124,7 +122,7 @@ div.warning {
 }
 
 div.border-warning {
-	border-color: var(--warning-border-container, var(--warning));
+	border: 1px solid var(--warning-border-container, var(--warning));
 }
 
 div.danger {
@@ -132,7 +130,7 @@ div.danger {
 }
 
 div.border-danger {
-	border-color: var(--danger-border-container, var(--danger));
+	border: 1px solid var(--danger-border-container, var(--danger));
 }
 
 div.info {
@@ -140,7 +138,7 @@ div.info {
 }
 
 div.border-info {
-	border-color: var(--info-border-container, var(--info));
+	border: 1px solid var(--info-border-container, var(--info));
 }
 
 div.bg-image {
