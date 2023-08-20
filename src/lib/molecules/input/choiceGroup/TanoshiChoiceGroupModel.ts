@@ -3,7 +3,7 @@ import type { TanoshiChoiceAndLabelModel } from '$lib/types/Types';
 export default class TanoshiChoiceGroupModel {
 	private _choices: Array<TanoshiChoiceAndLabelModel> = [];
 	private _id!: string;
-	private _radioValue: string | null = null;
+	private _values: Array<string> = [];
 	private _error: boolean = false;
 	private _errorMessage: string = '';
 
@@ -38,12 +38,22 @@ export default class TanoshiChoiceGroupModel {
 		return this;
 	}
 
-	public get radioValue(): string | null {
-		return this._radioValue;
+	public get values(): Array<string> {
+		return this._values;
+	}
+	
+	public setValues(values: Array<string>): TanoshiChoiceGroupModel {
+		this._values = values;
+		return this;
 	}
 
-	public setRadioValue(value: string): TanoshiChoiceGroupModel {
-		this._radioValue = value;
+	public handleValue(values: string): TanoshiChoiceGroupModel {
+		const index = this._values.indexOf(values);
+		if (index > -1) {
+			this._values.splice(index, 1);
+		} else {
+			this._values.push(values);
+		}
 		return this;
 	}
 
@@ -60,9 +70,11 @@ export default class TanoshiChoiceGroupModel {
 		return this._errorMessage;
 	}
 
-	setErrorMessage(value: string): TanoshiChoiceGroupModel {
+	public setErrorMessage(value: string): TanoshiChoiceGroupModel {
 		this._errorMessage = value;
 		return this;
 	}
+
+
 
 }

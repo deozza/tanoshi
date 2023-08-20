@@ -13,7 +13,6 @@
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Start)
 		.setWidth(WIDTHS.WAuto)
 
-
 	export let tanoshiInputModel: TanoshiChoiceGroupModel;
 
 </script>
@@ -23,7 +22,11 @@
 		{#each tanoshiInputModel.choices as tanoshiChoiceAndLabelModel}
 			<TanoshiContainer tanoshiContainerModel={inputContainerModel}>
 				<TanoshiLabel tanoshiLabelModel={tanoshiChoiceAndLabelModel.label} />
-				<TanoshiChoiceInput tanoshiInputModel={tanoshiChoiceAndLabelModel.input} on:choiced={(e) => tanoshiInputModel.setRadioValue(e.detail)}/>
+				<TanoshiChoiceInput 
+					tanoshiInputModel={tanoshiChoiceAndLabelModel.input} 
+					on:choiced={(e) => tanoshiInputModel.setValues([]).handleValue(e.detail)}
+					on:checked={(e) => tanoshiInputModel.handleValue(e.detail)}
+				/>
 			</TanoshiContainer>
 		{/each}
 

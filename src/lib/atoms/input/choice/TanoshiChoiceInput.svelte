@@ -10,13 +10,15 @@
 	function handleChoiced() {
 		dispatch('choiced', tanoshiInputModel.value);
 	}
+
+	function handleChecked() {
+		dispatch('checked', tanoshiInputModel.value);
+	}
 </script>
 
 <div>
 	{#if tanoshiInputModel.type === INPUT_CHOICES_TYPES.Radio}
 		<input
-			class:border-danger={tanoshiInputModel.error === true}
-			class:text-danger={tanoshiInputModel.error === true}
 			class:readonly={tanoshiInputModel.readonly}
 			id={tanoshiInputModel.id}
 			name={tanoshiInputModel.name}
@@ -30,8 +32,6 @@
 		/>
 		{:else if tanoshiInputModel.type === INPUT_CHOICES_TYPES.Checkbox}
 		<input
-			class:border-danger={tanoshiInputModel.error === true}
-			class:text-danger={tanoshiInputModel.error === true}
 			class:readonly={tanoshiInputModel.readonly}
 			id={tanoshiInputModel.id}
 			name={tanoshiInputModel.name}
@@ -42,10 +42,9 @@
 			type='checkbox'
 			value={tanoshiInputModel.value}
 			bind:checked={tanoshiInputModel.checked}
+			on:change={handleChecked}
+
 		/>
-	{/if}
-	{#if tanoshiInputModel.error}
-		<span class="text-danger">{tanoshiInputModel.errorMessage}</span>
 	{/if}
 </div>
 
