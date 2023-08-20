@@ -18,6 +18,8 @@
 	import TanoshiSelectOptionModel from '$atoms/input/select/option/TanoshiSelectOptionModel';
 	import TanoshiSelectInput from '$molecules/input/select/TanoshiSelectInput.svelte';
 	import TanoshiSelectInputModel from '$molecules/input/select/TanoshiSelectInputModel';
+	import TanoshiTextareaInputModel from '$atoms/input/textarea/TanoshiTextareaInputModel';
+	import TanoshiTextareaInput from '$atoms/input/textarea/TanoshiTextareaInput.svelte';
     export let Hst: Hst;
 
     const emailInput: TanoshiTextInputModel = new TanoshiTextInputModel('Email')
@@ -34,6 +36,9 @@
     const ageInput: TanoshiNumberInputModel = new TanoshiNumberInputModel('Age')
         .setMin(18)
     const ageInputLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(ageInput)
+
+    const descriptionInput: TanoshiTextareaInputModel = new TanoshiTextareaInputModel('Description')
+    const descriptionInputLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(descriptionInput)
 
     const radioChoice1Input: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('choice 1')
     const radioChoice2Input: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('choice 2')
@@ -83,6 +88,7 @@
         .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInput))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(descriptionInputLabel, descriptionInput, TanoshiTextareaInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(tanoshiRadioChoiceGroupLabelModel, tanoshiRadioChoiceGroupModel, TanoshiChoiceGroup))
         .addLabelAndInput(new TanoshiLabelAndInputModel(tanoshiCheckboxChoiceGroupLabelModel, tanoshiCheckboxChoiceGroupModel, TanoshiChoiceGroup))
         .addLabelAndInput(new TanoshiLabelAndInputModel(tanoshiSelectInputLabelModel, tanoshiSelectInputModel, TanoshiSelectInput))
