@@ -12,9 +12,3 @@ export type TanoshiNavigationLinkModel = {
 }
 
 export type TanoshiInputModel = TanoshiTextInputModel
-
-
-export type TanoshiLabelAndInputModel = {
-	tanoshiLabelModel: TanoshiLabelModel,
-	tanoshiInputModel: TanoshiInputModel
-};

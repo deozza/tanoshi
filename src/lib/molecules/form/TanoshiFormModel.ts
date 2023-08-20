@@ -1,6 +1,5 @@
 import type TanoshiButtonModel from '$atoms/button/TanoshiButtonModel';
-import type TanoshiLabelModel from '$atoms/label/TanoshiLabelModel';
-import type { TanoshiInputModel, TanoshiLabelAndInputModel } from '$lib/types/Types';
+import type TanoshiLabelAndInputModel from '$molecules/labelAndInput/TanoshiLabelAndInputModel';
 
 export default class TanoshiFormModel {
 	private _submitButton!: TanoshiButtonModel;
@@ -27,11 +26,8 @@ export default class TanoshiFormModel {
 		return this._labelsAndInputs;
 	}
 
-	public addLabelAndInput(label: TanoshiLabelModel, input: TanoshiInputModel): TanoshiFormModel {
-		const tanoshiLabelAndInputModel: TanoshiLabelAndInputModel = {
-			tanoshiLabelModel: label,
-			tanoshiInputModel: input
-		};
+	public addLabelAndInput(tanoshiLabelAndInputModel: TanoshiLabelAndInputModel): TanoshiFormModel {
+		
 		this._labelsAndInputs.push(tanoshiLabelAndInputModel);
 		return this;
 	}

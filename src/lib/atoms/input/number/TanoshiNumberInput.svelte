@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type TanoshiTextInputModel from './TanoshiTextInputModel';
+	import type TanoshiNumberInputModel from './TanoshiNumberInputModel';
 
-	export let tanoshiInputModel: TanoshiTextInputModel;
+	export let tanoshiInputModel: TanoshiNumberInputModel;
 
 	function handleInput(e: any) {
 		tanoshiInputModel.setValue(e.target.value);
@@ -13,8 +13,8 @@
 		class:border-danger={tanoshiInputModel.error === true}
 		class:text-danger={tanoshiInputModel.error === true}
 		id={tanoshiInputModel.id}
-		maxlength={tanoshiInputModel.maxLength}
-		minlength={tanoshiInputModel.minLength}
+		max={tanoshiInputModel.max}
+		min={tanoshiInputModel.min}
 		name={tanoshiInputModel.name}
 		on:change
 		on:focusout
@@ -22,7 +22,7 @@
 		placeholder={tanoshiInputModel.placeholder}
 		readonly={tanoshiInputModel.readonly}
 		required={tanoshiInputModel.required}
-		type={tanoshiInputModel.type}
+		type='number'
 		value={tanoshiInputModel.value}
 	/>
 

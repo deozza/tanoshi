@@ -31,33 +31,33 @@
 </script>
   
 <Hst.Story title="atoms/input/text/basic" layout={{ type: 'grid', width: 600 }}>
-    <Hst.Variant title="primary">
-        <TanoshiTextInput tanoshiTextInputModel={defaultTextInput} />
+    <Hst.Variant title="default">
+        <TanoshiTextInput tanoshiInputModel={defaultTextInput} />
     </Hst.Variant>
 
 
     <Hst.Variant title="default value">
-        <TanoshiTextInput tanoshiTextInputModel={defaultValueTextInput} />
+        <TanoshiTextInput tanoshiInputModel={defaultValueTextInput} />
     </Hst.Variant>
 
     <Hst.Variant title="placeholder">
-        <TanoshiTextInput tanoshiTextInputModel={placeholderTextInput} />
+        <TanoshiTextInput tanoshiInputModel={placeholderTextInput} />
     </Hst.Variant>
 
     <Hst.Variant title="readonly">
-        <TanoshiTextInput tanoshiTextInputModel={readonlyTextInput} />
+        <TanoshiTextInput tanoshiInputModel={readonlyTextInput} />
     </Hst.Variant>
 
     <Hst.Variant title="required">
-        <TanoshiTextInput tanoshiTextInputModel={requiredTextInput} />
+        <TanoshiTextInput tanoshiInputModel={requiredTextInput} />
     </Hst.Variant>
 
     <Hst.Variant title="error">
-        <TanoshiTextInput tanoshiTextInputModel={errorTextInput} />
+        <TanoshiTextInput tanoshiInputModel={errorTextInput} />
     </Hst.Variant>
 
     <Hst.Variant title="error with message">
-        <TanoshiTextInput tanoshiTextInputModel={errorWithMessageTextInput} />
+        <TanoshiTextInput tanoshiInputModel={errorWithMessageTextInput} />
     </Hst.Variant>
 
 </Hst.Story>
