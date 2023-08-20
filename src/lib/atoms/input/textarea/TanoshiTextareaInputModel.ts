@@ -46,6 +46,10 @@ export default class TanoshiTextareaInputModel {
 		return this._value;
 	}
 
+	set value(value: string) {
+		this._value = value;
+	}
+
 	setValue(value: string | null): TanoshiTextareaInputModel {
 		this._value = value;
 		return this;
