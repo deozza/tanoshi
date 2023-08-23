@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { TanoshiButtonModel, TanoshiHeaderModel } from '$atoms';
-	import { HEADER_TAGS, SIZES } from '$lib';
+	import { CONTAINER_BORDERS, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, HEADER_TAGS, SIZES, THEMES, TanoshiContainerModel, WIDTHS } from '$lib';
     import TanoshiModal from '$molecules/modal/TanoshiModal.svelte';
 	import TanoshiModalModel from '$molecules/modal/TanoshiModalModel';
     import '../../../app.css';
@@ -12,7 +12,13 @@
     const headerModel: TanoshiHeaderModel = new TanoshiHeaderModel('Modal')
         .setTag(HEADER_TAGS.H6)
         .setSize(SIZES.Xl)
-    const defaultModal: TanoshiModalModel = new TanoshiModalModel(buttonModal).setHeader(headerModel);
+    const modalContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
+		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
+		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Between)
+		.setWidth(WIDTHS.MaxW6)
+		.setBorderShape(CONTAINER_BORDERS.Md)
+		.setBackgroundTheme(THEMES.Primary)
+    const defaultModal: TanoshiModalModel = new TanoshiModalModel(buttonModal, modalContainer).setHeader(headerModel);
 </script>
   
 <Hst.Story title="molecules/modal/basic" layout={{ type: 'grid', width: 600 }}>

@@ -13,13 +13,6 @@
     export let showModal: boolean = false;
     let dialog: HTMLDialogElement;
 
-	const modalContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
-		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
-		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Between)
-		.setWidth(WIDTHS.MaxW6)
-		.setBorderShape(CONTAINER_BORDERS.Md)
-		.setBackgroundTheme(THEMES.Primary)
-
 	const headerContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
 		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.End)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
@@ -42,6 +35,12 @@
 	bind:this={dialog}
 	on:close={() => (showModal = false)}
 	on:click|self={() => dialog.close()}
+	class="
+	{tanoshiModalModel.containerModel.backgroundTheme}
+	border-{tanoshiModalModel.containerModel.borderTheme}
+	rounded-{tanoshiModalModel.containerModel.borderShape} 
+	
+	"
 >
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 		
@@ -57,14 +56,87 @@
 		<hr />
 
         <slot name="body" />
-
-        <hr />
-        <slot name="footer" />
-
+		{#if tanoshiModalModel.footerContainerModel}
+			<TanoshiContainer tanoshiContainerModel={tanoshiModalModel.footerContainerModel}>
+				<hr />
+				<slot name="footer" />
+			</TanoshiContainer>
+		{/if}
 </dialog>
 
 <style>
-	
+
+	dialog.transparent {
+		background-color: transparent;
+	}
+
+	dialog.border-transparent {
+		border-color: transparent;
+	}
+
+	dialog.white {
+		background-color: var(--white-background-container, var(--white));
+	}
+
+	dialog.border-white {
+		border: 1px solid var(--white-border-container, var(--white));
+	}
+
+	dialog.black {
+		background-color: var(--black-background-container, var(--black));
+	}
+
+	dialog.border-black {
+		border: 1px solid var(--black-border-container, var(--black));
+	}
+
+	dialog.primary {
+		background-color: var(--primary-background-container, var(--primary));
+	}
+
+	dialog.border-primary {
+		border: 1px solid var(--primary-border-container, var(--primary));
+	}
+
+	dialog.secondary {
+		background-color: var(--secondary-background-container, var(--secondary));
+	}
+
+	dialog.border-secondary {
+		border: 1px solid var(--secondary-border-container, var(--secondary));
+	}
+
+	dialog.success {
+		background-color: var(--success-background-container, var(--success));
+	}
+
+	dialog.border-success {
+		border: 1px solid var(--success-border-container, var(--success));
+	}
+
+	dialog.warning {
+		background-color: var(--warning-background-container, var(--warning));
+	}
+
+	dialog.border-warning {
+		border: 1px solid var(--warning-border-container, var(--warning));
+	}
+
+	dialog.danger {
+		background-color: var(--danger-background-container, var(--danger));
+	}
+
+	dialog.border-danger {
+		border: 1px solid var(--danger-border-container, var(--danger));
+	}
+
+	dialog.info {
+		background-color: var(--info-background-container, var(--info));
+	}
+
+	dialog.border-info {
+		border: 1px solid var(--info-border-container, var(--info));
+	}
 	dialog::backdrop {
 		background: rgba(0, 0, 0, 0.3);
 	}
