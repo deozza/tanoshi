@@ -20,6 +20,8 @@
 	import TanoshiSelectInputModel from '$molecules/input/select/TanoshiSelectInputModel';
 	import TanoshiTextareaInputModel from '$atoms/input/textarea/TanoshiTextareaInputModel';
 	import TanoshiTextareaInput from '$atoms/input/textarea/TanoshiTextareaInput.svelte';
+	import TanoshiFileInputModel from '$atoms/input/file/TanoshiFileInputModel';
+	import TanoshiFileInput from '$atoms/input/file/TanoshiFileInput.svelte';
     export let Hst: Hst;
 
     const emailInput: TanoshiTextInputModel = new TanoshiTextInputModel('Email')
@@ -72,13 +74,17 @@
     const selectOption2: TanoshiSelectOptionModel = new TanoshiSelectOptionModel('option 2', 'option 2')
     const selectOption3: TanoshiSelectOptionModel = new TanoshiSelectOptionModel('option 3', 'option 3')
 
-    const tanoshiSelectInputModel: TanoshiSelectInputModel = new TanoshiSelectInputModel('select')
+    const tanoshiSelectInputModel: TanoshiSelectInputModel = new TanoshiSelectInputModel('Select')
         .addOption(selectOption1)
         .addOption(selectOption2)
         .addOption(selectOption3)
         .setMultiple(true)
 
     const tanoshiSelectInputLabelModel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(tanoshiSelectInputModel)
+
+    const fileInput: TanoshiFileInputModel = new TanoshiFileInputModel('File')
+    const fileInputLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(fileInput)
+
 
     const submitButton: TanoshiButtonModel = new TanoshiButtonModel('submit')
         .setBasicTheme(THEMES.Success)
@@ -92,7 +98,7 @@
         .addLabelAndInput(new TanoshiLabelAndInputModel(tanoshiRadioChoiceGroupLabelModel, tanoshiRadioChoiceGroupModel, TanoshiChoiceGroup))
         .addLabelAndInput(new TanoshiLabelAndInputModel(tanoshiCheckboxChoiceGroupLabelModel, tanoshiCheckboxChoiceGroupModel, TanoshiChoiceGroup))
         .addLabelAndInput(new TanoshiLabelAndInputModel(tanoshiSelectInputLabelModel, tanoshiSelectInputModel, TanoshiSelectInput))
-
+        .addLabelAndInput(new TanoshiLabelAndInputModel(fileInputLabel, fileInput, TanoshiFileInput))
 
     function handleForm(){
 		console.log(defaultForm)
