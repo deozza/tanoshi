@@ -4,7 +4,7 @@
     import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 	import Fa from "svelte-fa/src/index.js";
 
-	import { TanoshiButton, TanoshiButtonModel, TanoshiLink } from "$atoms";
+	import { TanoshiButton, TanoshiButtonModel } from "$atoms";
 	import { CONTAINER_ORIENTATIONS, THEMES, CONTAINER_ITEMS_ALIGNMENTS, HEIGHTS } from "$lib/enums";
 	import { TanoshiContainer, TanoshiContainerModel, TanoshiNavigationModel } from "$molecules";
 
@@ -106,18 +106,6 @@ nav > div{
 nav > div#mobile-menu{
   height: 100vh!important;
   z-index: 10;
-}
-
-.sr-only{
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
 }
 
 @media (max-width: 639px) {
