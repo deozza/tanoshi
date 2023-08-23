@@ -1,8 +1,9 @@
-import type { TanoshiButtonModel } from "$atoms";
+import type { TanoshiButtonModel, TanoshiHeaderModel } from "$atoms";
 import ModalOpenButtonTypeError from "$lib/errors/ModalOpenButtonTypeError";
 
 export default class TanoshiModalModel {
     private _openButton!: TanoshiButtonModel
+    private _headerModel: TanoshiHeaderModel | null = null
 
     constructor(openButton: TanoshiButtonModel) {
         this.setButton(openButton) 
@@ -18,6 +19,15 @@ export default class TanoshiModalModel {
         }
         
         this._openButton = openButton
+        return this
+    }
+
+    get headerModel(): TanoshiHeaderModel | null {
+        return this._headerModel
+    }
+
+    public setHeader(headerModel: TanoshiHeaderModel): TanoshiModalModel {
+        this._headerModel = headerModel
         return this
     }
 }    

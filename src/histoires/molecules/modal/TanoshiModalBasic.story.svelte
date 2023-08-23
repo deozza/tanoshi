@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { TanoshiButtonModel } from '$atoms';
+	import { TanoshiButtonModel, TanoshiHeaderModel } from '$atoms';
+	import { HEADER_TAGS, SIZES } from '$lib';
     import TanoshiModal from '$molecules/modal/TanoshiModal.svelte';
 	import TanoshiModalModel from '$molecules/modal/TanoshiModalModel';
     import '../../../app.css';
@@ -8,16 +9,15 @@
     export let Hst: Hst;
 
     const buttonModal: TanoshiButtonModel = new TanoshiButtonModel('open')
-    const defaultModal: TanoshiModalModel = new TanoshiModalModel(buttonModal);
+    const headerModel: TanoshiHeaderModel = new TanoshiHeaderModel('Modal')
+        .setTag(HEADER_TAGS.H6)
+        .setSize(SIZES.Xl)
+    const defaultModal: TanoshiModalModel = new TanoshiModalModel(buttonModal).setHeader(headerModel);
 </script>
   
 <Hst.Story title="molecules/modal/basic" layout={{ type: 'grid', width: 600 }}>
 
     <TanoshiModal tanoshiModalModel={defaultModal}>
-        <h2 slot="header">
-            modal
-            <small><em>adjective</em> mod·al \ˈmō-dəl\</small>
-        </h2>
     
         <div slot="body">
             <ol class="definition-list">
