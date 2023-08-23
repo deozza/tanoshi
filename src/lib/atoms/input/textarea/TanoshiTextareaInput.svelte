@@ -1,15 +1,11 @@
 <script lang="ts">
-	import type TanoshiTextInputModel from './TanoshiTextInputModel';
+	import type TanoshiTextInputModel from './TanoshiTextareaInputModel';
 
 	export let tanoshiInputModel: TanoshiTextInputModel;
-
-	function handleInput(e: any) {
-		tanoshiInputModel.setValue(e.target.value);
-	}
 </script>
 
 <div class="input-container">
-	<input
+	<textarea
 		class:border-danger={tanoshiInputModel.error === true}
 		class:text-danger={tanoshiInputModel.error === true}
 		id={tanoshiInputModel.id}
@@ -18,12 +14,10 @@
 		name={tanoshiInputModel.name}
 		on:change
 		on:focusout
-		on:input={handleInput}
 		placeholder={tanoshiInputModel.placeholder}
 		readonly={tanoshiInputModel.readonly}
 		required={tanoshiInputModel.required}
-		type={tanoshiInputModel.type}
-		value={tanoshiInputModel.value}
+		bind:value={tanoshiInputModel.value}
 	/>
 
 	{#if tanoshiInputModel.error}
@@ -39,7 +33,7 @@ div.input-container {
 	flex: 2;
 }
 
-input {
+textarea {
 	width: 100%;
 	padding-top: 0.5rem/* 8px */;
 	padding-bottom: 0.5rem/* 8px */;
@@ -50,7 +44,7 @@ input {
 	color: var(--black-text-input, var(--black))
 }
 
-input:read-only:hover {
+textarea:read-only:hover {
 	cursor: not-allowed;
 }
 
@@ -58,12 +52,12 @@ span.text-danger {
 	color: var(--danger-text-input, var(--danger));
 }
 
-input.text-danger, input.text-danger:focus {
+textarea.text-danger, textarea.text-danger:focus {
 	border: 1px solid var(--danger-border-input, var(--danger));
 }
 
 @media (max-width: 639px) {
-	input {
+	textarea {
 		width: 90%;
 	}
 }

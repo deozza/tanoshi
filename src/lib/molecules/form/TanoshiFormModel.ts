@@ -1,11 +1,14 @@
 import type TanoshiButtonModel from '$atoms/button/TanoshiButtonModel';
-import type TanoshiInputModelInterface from '$atoms/input/TanoshiInputModelInterface';
-import type TanoshiLabelModel from '$atoms/label/TanoshiLabelModel';
-import type TanoshiLabelAndInputModelInterface from './TanoshiLabelAndInputModelInterface';
+import { BUTTON_TYPES, THEMES } from '$lib/enums';
+import FormButtonTypeError from '$lib/errors/FormButtonTypeError';
+import type TanoshiLabelAndInputModel from '$molecules/labelAndInput/TanoshiLabelAndInputModel';
 
 export default class TanoshiFormModel {
 	private _submitButton!: TanoshiButtonModel;
-	private _labelsAndInputs: Array<TanoshiLabelAndInputModelInterface> = [];
+	private _labelsAndInputs: Array<TanoshiLabelAndInputModel> = [];
+	private _backgroundTheme: string = THEMES.Transparent;
+	private _borderTheme: string = THEMES.Transparent;
+
 
 	public constructor(submitButton: TanoshiButtonModel) {
 		this.setSubmitButton(submitButton);
@@ -16,24 +19,39 @@ export default class TanoshiFormModel {
 	}
 
 	public setSubmitButton(value: TanoshiButtonModel): TanoshiFormModel {
-		if ('submit' !== value.type) {
-			throw new Error();
+		if (BUTTON_TYPES.Submit !== value.type) {
+			throw new FormButtonTypeError('The submit button must have the type `submit`');
 		}
 
 		this._submitButton = value;
 		return this;
 	}
 
-	get labelsAndInputs(): Array<TanoshiLabelAndInputModelInterface> {
+	get labelsAndInputs(): Array<TanoshiLabelAndInputModel> {
 		return this._labelsAndInputs;
 	}
 
-	public addLabelAndInput(label: TanoshiLabelModel, input: TanoshiInputModelInterface): TanoshiFormModel {
-		const tanoshiLabelAndInputModel: TanoshiLabelAndInputModelInterface = {
-			tanoshiLabelModel: label,
-			tanoshiInputModel: input
-		};
+	public addLabelAndInput(tanoshiLabelAndInputModel: TanoshiLabelAndInputModel): TanoshiFormModel {
+		
 		this._labelsAndInputs.push(tanoshiLabelAndInputModel);
+		return this;
+	}
+
+	get backgroundTheme(): string {
+		return this._backgroundTheme;
+	}
+
+	public setBackgroundTheme(value: THEMES): TanoshiFormModel {
+		this._backgroundTheme = value;
+		return this;
+	}
+
+	get borderTheme(): string {
+		return this._borderTheme;
+	}
+
+	public setBorderTheme(value: THEMES): TanoshiFormModel {
+		this._borderTheme = value;
 		return this;
 	}
 }

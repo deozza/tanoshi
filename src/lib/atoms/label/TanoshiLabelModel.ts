@@ -1,15 +1,16 @@
-import type TanoshiInputModelInterface from '$atoms/input/TanoshiInputModelInterface';
+import type { TanoshiInputModel } from "$lib/types/Types";
 
 export default class TanoshiLabelModel {
-	protected _name!: string;
-	protected _value!: string;
+	private _name!: string;
+	private _value!: string;
+	private _spacing: boolean = true;
 
 	public constructor(name: string = '', value: string = '') {
 		this.setName(name);
-		this.setValue(name);
+		this.setValue(value);
 	}
 
-	initWithInput(tanoshiInputModel: TanoshiInputModelInterface): TanoshiLabelModel {
+	initWithInput(tanoshiInputModel: TanoshiInputModel): TanoshiLabelModel {
 		this.setName(tanoshiInputModel.id);
 		this.setValue(tanoshiInputModel.name);
 		return this;
@@ -30,6 +31,15 @@ export default class TanoshiLabelModel {
 
 	setValue(value: string): TanoshiLabelModel {
 		this._value = value;
+		return this;
+	}
+
+	get spacing(): boolean {
+		return this._spacing;
+	}
+
+	setSpacing(value: boolean): TanoshiLabelModel {
+		this._spacing = value;
 		return this;
 	}
 }

@@ -39,7 +39,7 @@
 	};
 
 	const tanoshiMainContainerModel: TanoshiContainerModel = new TanoshiContainerModel('c')
-		.setTheme(tanoshiAlertModel.theme)
+		.setBackgroundTheme(tanoshiAlertModel.theme)
 		.setSize('w-full');
 
 	const tanoshiCloseContainerModel: TanoshiContainerModel = new TanoshiContainerModel(

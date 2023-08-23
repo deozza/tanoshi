@@ -15,22 +15,22 @@
     export let mobileTheme: THEMES;
 
 	const expandedMobileNavigationContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
-	    .setTheme(mobileTheme)
+	    .setBackgroundTheme(mobileTheme)
 		.setHeight(HEIGHTS.H100VH);
 
     const expandedTopMobileNavigationContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
-	    .setTheme(mobileTheme)
+	    .setBackgroundTheme(mobileTheme)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
 		.setHeight(tanoshiMobileNavigationModel.itemsAtLeft.length > 0 ? HEIGHTS.MINH25PRCT : HEIGHTS.H25PRCT);
 
 	const expandedCenterMobileNavigationContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
-	    .setTheme(mobileTheme)
+	    .setBackgroundTheme(mobileTheme)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
 		.setHeight(tanoshiMobileNavigationModel.itemsAtCenter.length > 0 ? HEIGHTS.MINH25PRCT : HEIGHTS.H25PRCT);
 
 
 	const expandedBottomMobileNavigationContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
-	    .setTheme(mobileTheme)
+	    .setBackgroundTheme(mobileTheme)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
 		.setHeight(tanoshiMobileNavigationModel.itemsAtRight.length > 0 ? HEIGHTS.MINH25PRCT : HEIGHTS.H25PRCT);
 

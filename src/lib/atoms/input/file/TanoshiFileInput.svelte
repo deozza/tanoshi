@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type TanoshiTextInputModel from './TanoshiTextInputModel';
+	import type TanoshiFileInputModel from './TanoshiFileInputModel';
 
-	export let tanoshiInputModel: TanoshiTextInputModel;
+	export let tanoshiInputModel: TanoshiFileInputModel;
 
 	function handleInput(e: any) {
 		tanoshiInputModel.setValue(e.target.value);
@@ -13,8 +13,6 @@
 		class:border-danger={tanoshiInputModel.error === true}
 		class:text-danger={tanoshiInputModel.error === true}
 		id={tanoshiInputModel.id}
-		maxlength={tanoshiInputModel.maxLength}
-		minlength={tanoshiInputModel.minLength}
 		name={tanoshiInputModel.name}
 		on:change
 		on:focusout
@@ -22,8 +20,9 @@
 		placeholder={tanoshiInputModel.placeholder}
 		readonly={tanoshiInputModel.readonly}
 		required={tanoshiInputModel.required}
-		type={tanoshiInputModel.type}
-		value={tanoshiInputModel.value}
+		type='file'
+		multiple={tanoshiInputModel.multiple}
+		accept={tanoshiInputModel.accept}
 	/>
 
 	{#if tanoshiInputModel.error}
@@ -45,8 +44,6 @@ input {
 	padding-bottom: 0.5rem/* 8px */;
 	padding-left: 0.75rem/* 12px */;
 	padding-right: 0.75rem/* 12px */;
-	border-width: 1px;
-	border-radius: 0.375rem/* 6px */;
 	color: var(--black-text-input, var(--black))
 }
 

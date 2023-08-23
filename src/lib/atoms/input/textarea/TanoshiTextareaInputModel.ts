@@ -1,7 +1,4 @@
-import { INPUT_TEXT_TYPES } from "$lib/enums";
-
-export default class TanoshiTextInputModel {
-	private _type: string = '';
+export default class TanoshiTextareaInputModel {
 	private _id!: string;
 	private _name!: string;
 	private _required: boolean = false;
@@ -14,25 +11,15 @@ export default class TanoshiTextInputModel {
 	private _placeholder: string | null = null;
 
 	constructor(name: string) {
-		this.setType(INPUT_TEXT_TYPES.Text);
 		this.setName(name);
 		this.setId(name);
-	}
-
-	get type(): string {
-		return this._type;
-	}
-
-	setType(value: INPUT_TEXT_TYPES): TanoshiTextInputModel {
-		this._type = value;
-		return this;
 	}
 
 	get id(): string {
 		return this._id;
 	}
 
-	setId(value: string): TanoshiTextInputModel {
+	setId(value: string): TanoshiTextareaInputModel {
 		this._id = value;
 		return this;
 	}
@@ -41,7 +28,7 @@ export default class TanoshiTextInputModel {
 		return this._name;
 	}
 
-	setName(value: string): TanoshiTextInputModel {
+	setName(value: string): TanoshiTextareaInputModel {
 		this._name = value;
 		return this;
 	}
@@ -50,7 +37,7 @@ export default class TanoshiTextInputModel {
 		return this._required;
 	}
 
-	setRequired(value: boolean): TanoshiTextInputModel {
+	setRequired(value: boolean): TanoshiTextareaInputModel {
 		this._required = value;
 		return this;
 	}
@@ -59,7 +46,11 @@ export default class TanoshiTextInputModel {
 		return this._value;
 	}
 
-	setValue(value: string | null): TanoshiTextInputModel {
+	set value(value: string) {
+		this._value = value;
+	}
+
+	setValue(value: string | null): TanoshiTextareaInputModel {
 		this._value = value;
 		return this;
 	}
@@ -68,7 +59,7 @@ export default class TanoshiTextInputModel {
 		return this._readonly;
 	}
 
-	setReadonly(value: boolean): TanoshiTextInputModel {
+	setReadonly(value: boolean): TanoshiTextareaInputModel {
 		this._readonly = value;
 		return this;
 	}
@@ -77,7 +68,7 @@ export default class TanoshiTextInputModel {
 		return this._error;
 	}
 
-	setError(value: boolean): TanoshiTextInputModel {
+	setError(value: boolean): TanoshiTextareaInputModel {
 		this._error = value;
 		return this;
 	}
@@ -86,7 +77,7 @@ export default class TanoshiTextInputModel {
 		return this._errorMessage;
 	}
 
-	setErrorMessage(value: string): TanoshiTextInputModel {
+	setErrorMessage(value: string): TanoshiTextareaInputModel {
 		this._errorMessage = value;
 		return this;
 	}
@@ -95,7 +86,7 @@ export default class TanoshiTextInputModel {
 		return this._minLength;
 	}
 
-	setMinLength(value: number): TanoshiTextInputModel {
+	setMinLength(value: number): TanoshiTextareaInputModel {
 		this._minLength = value;
 		return this;
 	}
@@ -104,7 +95,7 @@ export default class TanoshiTextInputModel {
 		return this._maxLength;
 	}
 
-	setMaxLength(value: number): TanoshiTextInputModel {
+	setMaxLength(value: number): TanoshiTextareaInputModel {
 		this._maxLength = value;
 		return this;
 	}
@@ -113,7 +104,7 @@ export default class TanoshiTextInputModel {
 		return this._placeholder;
 	}
 
-	setPlaceholder(value: string): TanoshiTextInputModel {
+	setPlaceholder(value: string): TanoshiTextareaInputModel {
 		this._placeholder = value;
 		return this;
 	}

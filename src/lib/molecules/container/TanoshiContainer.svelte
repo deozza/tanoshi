@@ -9,8 +9,9 @@
 <div
 	class="
 		{tanoshiContainerModel.backgroundImage !== '' && tanoshiContainerModel.backgroundImage !== null ? 'bg-image' : ''}
-		{tanoshiContainerModel.theme} 
-		rounded-{tanoshiContainerModel.borders} 
+		{tanoshiContainerModel.backgroundTheme}
+		border-{tanoshiContainerModel.borderTheme}
+		rounded-{tanoshiContainerModel.borderShape} 
 		flex-{tanoshiContainerModel.desktopOrientation} 
 		{tanoshiContainerModel.desktopSpacing}
 		items-{tanoshiContainerModel.itemsAlignment}
@@ -72,36 +73,72 @@ div.transparent {
 	background-color: transparent;
 }
 
+div.border-transparent {
+	border-color: transparent;
+}
+
 div.white {
-	background-color: var(--white-container, var(--white));
+	background-color: var(--white-background-container, var(--white));
+}
+
+div.border-white {
+	border: 1px solid var(--white-border-container, var(--white));
 }
 
 div.black {
-	background-color: var(--black-container, var(--black));
+	background-color: var(--black-background-container, var(--black));
+}
+
+div.border-black {
+	border: 1px solid var(--black-border-container, var(--black));
 }
 
 div.primary {
-	background-color: var(--primary-container, var(--primary));
+	background-color: var(--primary-background-container, var(--primary));
+}
+
+div.border-primary {
+	border: 1px solid var(--primary-border-container, var(--primary));
 }
 
 div.secondary {
-	background-color: var(--secondary-container, var(--secondary));
+	background-color: var(--secondary-background-container, var(--secondary));
+}
+
+div.border-secondary {
+	border: 1px solid var(--secondary-border-container, var(--secondary));
 }
 
 div.success {
-	background-color: var(--success-container, var(--success));
+	background-color: var(--success-background-container, var(--success));
+}
+
+div.border-success {
+	border: 1px solid var(--success-border-container, var(--success));
 }
 
 div.warning {
-	background-color: var(--warning-container, var(--warning));
+	background-color: var(--warning-background-container, var(--warning));
+}
+
+div.border-warning {
+	border: 1px solid var(--warning-border-container, var(--warning));
 }
 
 div.danger {
-	background-color: var(--danger-container, var(--danger));
+	background-color: var(--danger-background-container, var(--danger));
+}
+
+div.border-danger {
+	border: 1px solid var(--danger-border-container, var(--danger));
 }
 
 div.info {
-	background-color: var(--info-container, var(--info));
+	background-color: var(--info-background-container, var(--info));
+}
+
+div.border-info {
+	border: 1px solid var(--info-border-container, var(--info));
 }
 
 div.bg-image {
