@@ -202,12 +202,20 @@ video {
 	min-width: 100%;
 }
 
+.max-w-12{
+	max-width: 100%;
+}
+
 .w-11{
 	width: 91.666667%;
 }
 
 .min-w-11{
 	min-width: 91.666667%;
+}
+
+.max-w-11{
+	max-width: 91.666667%;
 }
 
 .w-10{
@@ -218,12 +226,20 @@ video {
 	min-width: 83.333333%;
 }
 
+.max-w-10{
+	max-width: 83.333333%;
+}
+
 .w-9{
 	width: 75%;
 }
 
 .min-w-9{
 	min-width: 75%;
+}
+
+.max-w-9{
+	max-width: 75%;
 }
 
 .w-8{
@@ -234,12 +250,20 @@ video {
 	min-width: 66.666667%;
 }
 
+.max-w-8{
+	max-width: 66.666667%;
+}
+
 .w-7{
 	width: 58.333333%;
 }
 
 .min-w-7{
 	min-width: 58.333333%;
+}
+
+.max-w-7{
+	max-width: 58.333333%;
 }
 
 .w-6{
@@ -250,12 +274,20 @@ video {
 	min-width: 50%;
 }
 
+.max-w-6{
+	max-width: 50%;
+}
+
 .w-5{
 	width: 41.666667%;
 }
 
 .min-w-5{
 	min-width: 41.666667%;
+}
+
+.max-w-5{
+	max-width: 41.666667%;
 }
 
 .w-4{
@@ -266,12 +298,20 @@ video {
 	min-width: 33.333333%;
 }
 
+.max-w-4{
+	max-width: 33.333333%;
+}
+
 .w-3{
 	width: 25%;
 }
 
 .min-w-3{
 	min-width: 25%;
+}
+
+.max-w-3{
+	max-width: 25%;
 }
 
 .w-2{
@@ -282,12 +322,20 @@ video {
 	min-width: 16.666667%;
 }
 
+.max-w-2{
+	max-width: 16.666667%;
+}
+
 .w-1{
 	width: 8.333333%;
 }
 
 .min-w-1{
 	min-width: 8.333333%;
+}
+
+.max-w-1{
+	max-width: 8.333333%;
 }
 
 .w-0{
@@ -406,7 +454,17 @@ div.dropdown:hover > ul {
 	display: block;
 }
 
-
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
 
 @media (min-width: 640px) {
 	div.dropdown:hover > ul {
