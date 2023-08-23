@@ -7,6 +7,7 @@ export default class TanoshiModalModel {
     private _containerModel!: TanoshiContainerModel
     private _headerModel: TanoshiHeaderModel | null = null
     private _footerContainerModel: TanoshiContainerModel | null = null
+    private _required: boolean = false
 
     constructor(openButton: TanoshiButtonModel, containerModel: TanoshiContainerModel) {
         this.setButton(openButton) 
@@ -50,6 +51,15 @@ export default class TanoshiModalModel {
 
     public setFooterContainerModel(value: TanoshiContainerModel): TanoshiModalModel {
         this._footerContainerModel = value
+        return this
+    }
+
+    get required(): boolean {
+        return this._required
+    }
+
+    public setRequired(value: boolean): TanoshiModalModel {
+        this._required = value
         return this
     }
 }    

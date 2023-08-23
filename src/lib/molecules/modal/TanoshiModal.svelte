@@ -2,7 +2,7 @@
 	import { TanoshiButtonModel } from "$atoms";
 	import TanoshiButton from "$atoms/button/TanoshiButton.svelte";
 	import TanoshiHeader from "$atoms/typography/header/TanoshiHeader.svelte";
-	import { CONTAINER_BORDERS, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, THEMES, WIDTHS } from "$lib/enums";
+	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, THEMES } from "$lib/enums";
 	import TanoshiContainer from "$molecules/container/TanoshiContainer.svelte";
 	import TanoshiContainerModel from "$molecules/container/TanoshiContainerModel";
     import type TanoshiModalModel from "./TanoshiModalModel";
@@ -27,6 +27,8 @@
 		.setTextHoverTheme(THEMES.Black)
 
     $: if (dialog && showModal) dialog.showModal();
+    $: if (dialog && !showModal) dialog.close();
+
 </script>
 
 <TanoshiButton tanoshiButtonModel={tanoshiModalModel.openButton} on:click={() => (showModal = true)}/>
@@ -34,7 +36,7 @@
 <dialog
 	bind:this={dialog}
 	on:close={() => (showModal = false)}
-	on:click|self={() => dialog.close()}
+	on:click|self={() => {if(tanoshiModalModel.required === false) {dialog.close()}}}
 	class="
 	{tanoshiModalModel.containerModel.backgroundTheme}
 	border-{tanoshiModalModel.containerModel.borderTheme}
@@ -48,17 +50,21 @@
 			{#if tanoshiModalModel.headerModel}
 				<TanoshiHeader tanoshiHeaderModel={tanoshiModalModel.headerModel} />
 			{/if}
-			<TanoshiButton tanoshiButtonModel={closingModalButton} on:click={() => dialog.close()}>
-				<span class="sr-only">Close modal</span>
-				<Fa icon={faTimes} />
-			</TanoshiButton>
+			{#if tanoshiModalModel.required === false}
+				<TanoshiButton tanoshiButtonModel={closingModalButton} on:click={() => dialog.close()}>
+					<span class="sr-only">Close modal</span>
+					<Fa icon={faTimes} />
+				</TanoshiButton>
+			{/if}
 		</TanoshiContainer>
 		<hr />
 
         <slot name="body" />
+		{showModal}
 		{#if tanoshiModalModel.footerContainerModel}
+		<hr />
+
 			<TanoshiContainer tanoshiContainerModel={tanoshiModalModel.footerContainerModel}>
-				<hr />
 				<slot name="footer" />
 			</TanoshiContainer>
 		{/if}
