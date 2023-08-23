@@ -185,9 +185,29 @@ export enum INPUT_CHOICES_TYPES {
 export function getThemeEnumKeyByEnumValue(enumValue: string): THEMES  {
     const enumKey = Object.keys(THEMES).find(
         (key) => THEMES[key as keyof typeof THEMES] === enumValue
-      );
-      if (enumKey !== undefined) {
+    );
+    if (enumKey !== undefined) {
         return THEMES[enumKey as keyof typeof THEMES];
-      }
-      throw new Error(enumValue + ' is not a valid value for enum Themes');
     }
+    throw new Error(enumValue + ' is not a valid value for enum THEMES');
+}
+
+export function getSizeEnumKeyByEnumValue(enumValue: string): SIZES  {
+    const enumKey = Object.keys(SIZES).find(
+        (key) => SIZES[key as keyof typeof SIZES] === enumValue
+    );
+    if (enumKey !== undefined) {
+        return SIZES[enumKey as keyof typeof SIZES];
+    }
+    throw new Error(enumValue + ' is not a valid value for enum SIZES');
+}
+
+export function getWidthEnumKeyByEnumValue(enumValue: string): WIDTHS  {
+    const enumKey = Object.keys(WIDTHS).find(
+        (key) => WIDTHS[key as keyof typeof WIDTHS] === enumValue
+    );
+    if (enumKey !== undefined) {
+        return WIDTHS[enumKey as keyof typeof WIDTHS];
+    }
+    throw new Error(enumValue + ' is not a valid value for enum WIDTHS');
+}

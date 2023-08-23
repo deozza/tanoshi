@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CONTAINER_ORIENTATIONS, CONTAINER_ITEMS_SPACING, CONTAINER_ITEMS_ALIGNMENTS, WIDTHS, THEMES, HEIGHTS } from "$lib/enums";
+	import { CONTAINER_ORIENTATIONS, CONTAINER_ITEMS_SPACING, CONTAINER_ITEMS_ALIGNMENTS, WIDTHS} from "$lib/enums";
 	import { TanoshiContainer, TanoshiContainerModel, TanoshiNavigationModel } from "$molecules";
 	import TanoshiLinkAsNavbarDropdown from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte';
 

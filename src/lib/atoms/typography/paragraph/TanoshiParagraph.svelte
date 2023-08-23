@@ -9,6 +9,7 @@
 <p
 	class="text-{tanoshiParagraphModel.size} p-{tanoshiParagraphModel.theme} text-{tanoshiParagraphModel.alignment}"
 	class:p-spacing={tanoshiParagraphModel.hasSpacing}
+    class:width-auto={tanoshiParagraphModel.widthAuto}
 >
 	{@html tanoshiParagraphModel.content}
 	<slot />
@@ -16,8 +17,12 @@
 
 
 <style>
-	p{
+p{
     width: 100%;
+}
+
+p.width-auto{
+    width: auto;
 }
 
 p.p-spacing {
