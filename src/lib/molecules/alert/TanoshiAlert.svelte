@@ -8,10 +8,8 @@
 	import TanoshiContainerModel from '$lib/molecules/container/TanoshiContainerModel';
 	import TanoshiParagraph from '$atoms/typography/paragraph/TanoshiParagraph.svelte';
 	import TanoshiParagraphModel from '$atoms/typography/paragraph/TanoshiParagraphModel';
-	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, THEMES, getSizeEnumKeyByEnumValue, getThemeEnumKeyByEnumValue, getWidthEnumKeyByEnumValue } from '$lib/enums';
-	import { TanoshiButtonModel } from '$atoms';
-	import TanoshiButton from '$atoms/button/TanoshiButton.svelte';
-	import { text } from '@sveltejs/kit';
+	import { CONTAINER_BORDERS, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, THEMES, getSizeEnumKeyByEnumValue, getThemeEnumKeyByEnumValue, getWidthEnumKeyByEnumValue } from '$lib/enums';
+	import Fa from 'svelte-fa';
 
 	export let tanoshiAlertModel: TanoshiAlertModel;
 
@@ -23,17 +21,13 @@
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
 		.setBackgroundTheme(backgroundTheme)
 		.setWidth(getWidthEnumKeyByEnumValue(tanoshiAlertModel.containerSize))
+		.setBorderShape(CONTAINER_BORDERS.Md)
 
 	const tanoshiTitleModel: TanoshiParagraphModel = new TanoshiParagraphModel(tanoshiAlertModel.title)
 		.setSize(getSizeEnumKeyByEnumValue(tanoshiAlertModel.titleSize))
 		.setHasSpacing(false)
 		.setTheme(textTheme)
 		.setWidthAuto(true)
-
-	const closeButton: TanoshiButtonModel = new TanoshiButtonModel('')
-    	.setBasicTheme(backgroundTheme)
-		.setTextTheme(textTheme)
-		.setIconAtLeft(faTimes);
 
 	$: visible = tanoshiAlertModel.visible;
 
@@ -44,15 +38,18 @@
 </script>
 
 {#if visible === true}
-	<div class={tanoshiAlertModel.containerSize} out:fade>
+	<div class={tanoshiAlertModel.containerSize} out:fade in:fade>
 		<TanoshiContainer tanoshiContainerModel={tanoshiTitleContainerModel} customClasses="alert">
 			<TanoshiParagraph tanoshiParagraphModel={tanoshiTitleModel} />
-
-			<TanoshiButton tanoshiButtonModel={closeButton} on:click={() => close()} />
+			<span on:click={() => close()}>
+				<Fa icon={faTimes} />
+			</span>
 		</TanoshiContainer>
 	</div>
 {/if}
 
 <style>
-
+	div{
+		padding-bottom: 12px;
+	}
 </style>

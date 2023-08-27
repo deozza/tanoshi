@@ -80,7 +80,6 @@
 nav{
 	position: fixed;
 	width: 100vw;
-	z-index: 1;
 	display: block;
 	overflow: hidden;
     inset: 0;
