@@ -1,35 +1,20 @@
+import { BUTTON_SIZES, SIZES, THEMES, WIDTHS } from "$lib/enums";
+
 export default class TanoshiAlertModel {
 	private _title!: string;
-	private _content!: string;
-	private _theme!: string;
-	private _size!: string;
+	private _titleSize!: string;
+	private _backroundTheme!: string;
+	private _titleTheme!: string;
 	private _visible: boolean = true;
+	private _containerSize!: string;
 
-	readonly EXPECTED_THEMES: object = {
-		primary: 'primary',
-		secondary: 'secondary',
-		success: 'success',
-		warning: 'warning',
-		danger: 'danger',
-		info: 'info'
-	};
 
-	readonly EXPECTED_SIZES: object = {
-		sm: 'sm',
-		md: 'md',
-		lg: 'lg',
-		block: 'block'
-	};
-
-	public constructor(title: string, content: string) {
+	public constructor(title: string) {
 		this.setTitle(title);
-		this.setContent(content);
-
-		// @ts-ignore
-		this.setTheme(this.EXPECTED_THEMES.primary);
-
-		// @ts-ignore
-		this.setSize(this.EXPECTED_SIZES.block);
+		this.setBackgroundTheme(THEMES.Primary);
+		this.setTitleTheme(THEMES.Black);
+		this.setTitleSize(SIZES.Xl);
+		this.setContainerSize(WIDTHS.W12);
 	}
 
 	get title(): string {
@@ -41,37 +26,39 @@ export default class TanoshiAlertModel {
 		return this;
 	}
 
-	get content(): string {
-		return this._content;
+	get backgroundTheme(): string {
+		return this._backroundTheme;
 	}
 
-	public setContent(value: string): TanoshiAlertModel {
-		this._content = value;
+	public setBackgroundTheme(value: THEMES): TanoshiAlertModel {
+		this._backroundTheme = value;
 		return this;
 	}
 
-	get theme(): string {
-		return this._theme;
+	get titleTheme(): string {
+		return this._titleTheme;
 	}
 
-	public setTheme(value: string): TanoshiAlertModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_THEMES, value) === false) {
-			throw new Error();
-		}
-
-		this._theme = value;
+	public setTitleTheme(value: THEMES): TanoshiAlertModel {
+		this._titleTheme = value;
 		return this;
 	}
 
-	get size(): string {
-		return this._size;
+	get titleSize(): string {
+		return this._titleSize;
 	}
 
-	public setSize(value: string): TanoshiAlertModel {
-		if (Object.prototype.hasOwnProperty.call(this.EXPECTED_SIZES, value) === false) {
-			throw new Error();
-		}
-		this._size = value;
+	public setTitleSize(value: SIZES): TanoshiAlertModel {
+		this._titleSize = value;
+		return this;
+	}
+
+	get containerSize(): string {
+		return this._containerSize;
+	}
+
+	public setContainerSize(value: WIDTHS): TanoshiAlertModel {
+		this._containerSize = value;
 		return this;
 	}
 

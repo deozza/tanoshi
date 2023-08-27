@@ -6,6 +6,7 @@ export default class TanoshiParagraphModel {
 	private _alignment!: string;
 	private _theme!: string;
 	private _hasSpacing: boolean = true;
+	private _widthAuto: boolean = false;
 
 	constructor(content: string) {
 		this.setContent(content);
@@ -56,6 +57,15 @@ export default class TanoshiParagraphModel {
 
 	public setAlignment(value: TEXT_ALIGNMENT): TanoshiParagraphModel {
 		this._alignment = value;
+		return this;
+	}
+
+	get widthAuto(): boolean {
+		return this._widthAuto;
+	}
+
+	public setWidthAuto(value: boolean): TanoshiParagraphModel {
+		this._widthAuto = value;
 		return this;
 	}
 }

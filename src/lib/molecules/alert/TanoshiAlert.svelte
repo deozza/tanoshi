@@ -1,67 +1,33 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-
-	import Fa from 'svelte-fa/src/index.js';
 	import { faTimes } from '@fortawesome/free-solid-svg-icons/index.js';
+	import './tanoshiAlert.css'
 
 	import type TanoshiAlertModel from './TanoshiAlertModel';
-	import './tanoshiAlert.css';
-
 	import TanoshiContainer from '$lib/molecules/container/TanoshiContainer.svelte';
 	import TanoshiContainerModel from '$lib/molecules/container/TanoshiContainerModel';
-
 	import TanoshiParagraph from '$atoms/typography/paragraph/TanoshiParagraph.svelte';
 	import TanoshiParagraphModel from '$atoms/typography/paragraph/TanoshiParagraphModel';
+	import { CONTAINER_BORDERS, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, THEMES, getSizeEnumKeyByEnumValue, getThemeEnumKeyByEnumValue, getWidthEnumKeyByEnumValue } from '$lib/enums';
+	import Fa from 'svelte-fa';
 
 	export let tanoshiAlertModel: TanoshiAlertModel;
 
-	const SIZE_MATCH: object = {
-		sm: {
-			container: 'px-4',
-			title: 'base',
-			paragraph: 'sm'
-		},
-		md: {
-			container: 'w-6/12 px-5',
-			title: 'lg',
-			paragraph: 'base'
-		},
-		lg: {
-			container: 'w-9/12 px-6',
-			title: 'xl',
-			paragraph: 'base'
-		},
-		block: {
-			container: 'w-full px-6',
-			title: '2xl',
-			paragraph: 'base'
-		}
-	};
+	let backgroundTheme: THEMES = getThemeEnumKeyByEnumValue(tanoshiAlertModel.backgroundTheme)
+	let textTheme: THEMES = getThemeEnumKeyByEnumValue(tanoshiAlertModel.titleTheme)
 
-	const tanoshiMainContainerModel: TanoshiContainerModel = new TanoshiContainerModel('c')
-		.setBackgroundTheme(tanoshiAlertModel.theme)
-		.setSize('w-full');
+	const tanoshiTitleContainerModel: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
+		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Between)
+		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
+		.setBackgroundTheme(backgroundTheme)
+		.setWidth(getWidthEnumKeyByEnumValue(tanoshiAlertModel.containerSize))
+		.setBorderShape(CONTAINER_BORDERS.Md)
 
-	const tanoshiCloseContainerModel: TanoshiContainerModel = new TanoshiContainerModel(
-		'r'
-	).setDesktopSpacing('end');
-	const tanoshiTitleContainerModel: TanoshiContainerModel = new TanoshiContainerModel(
-		'r'
-	).setDesktopSpacing('start');
-	const tanoshiTextContainerModel: TanoshiContainerModel = new TanoshiContainerModel(
-		'r'
-	).setDesktopSpacing('start');
-
-	const tanoshiTitleModel: TanoshiParagraphModel = new TanoshiParagraphModel(
-		tanoshiAlertModel.title
-	)
-		.setDisplaySize(SIZE_MATCH[tanoshiAlertModel.size]['title'])
-		.setHasSpacing(false);
-	const tanoshiParagraphModel: TanoshiParagraphModel = new TanoshiParagraphModel(
-		tanoshiAlertModel.content
-	)
-		.setDisplaySize(SIZE_MATCH[tanoshiAlertModel.size]['paragraph'])
-		.setHasSpacing(false);
+	const tanoshiTitleModel: TanoshiParagraphModel = new TanoshiParagraphModel(tanoshiAlertModel.title)
+		.setSize(getSizeEnumKeyByEnumValue(tanoshiAlertModel.titleSize))
+		.setHasSpacing(false)
+		.setTheme(textTheme)
+		.setWidthAuto(true)
 
 	$: visible = tanoshiAlertModel.visible;
 
@@ -72,20 +38,18 @@
 </script>
 
 {#if visible === true}
-	<div class={SIZE_MATCH[tanoshiAlertModel.size]['container']} out:fade>
-		<TanoshiContainer tanoshiContainerModel={tanoshiMainContainerModel} customClasses="alert">
-			<TanoshiContainer tanoshiContainerModel={tanoshiCloseContainerModel}>
-				<button on:click={() => close()}>
-					<Fa icon={faTimes} />
-				</button>
-			</TanoshiContainer>
-			<TanoshiContainer tanoshiContainerModel={tanoshiTitleContainerModel}>
-				<TanoshiParagraph tanoshiParagraphModel={tanoshiTitleModel} />
-			</TanoshiContainer>
-
-			<TanoshiContainer tanoshiContainerModel={tanoshiTextContainerModel}>
-				<TanoshiParagraph {tanoshiParagraphModel} />
-			</TanoshiContainer>
+	<div class={tanoshiAlertModel.containerSize} out:fade in:fade>
+		<TanoshiContainer tanoshiContainerModel={tanoshiTitleContainerModel} customClasses="alert">
+			<TanoshiParagraph tanoshiParagraphModel={tanoshiTitleModel} />
+			<span on:click={() => close()}>
+				<Fa icon={faTimes} />
+			</span>
 		</TanoshiContainer>
 	</div>
 {/if}
+
+<style>
+	div{
+		padding-bottom: 12px;
+	}
+</style>
