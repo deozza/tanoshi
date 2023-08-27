@@ -20,10 +20,16 @@
     defaultTabContainer.addTab(tab2);
     defaultTabContainer.addTab(tab3);
 
+    const sidebarTabContainer : TanoshiTabContainerModel = new TanoshiTabContainerModel(THEMES.Secondary, THEMES.Primary)
+    .setIsSideBar(true)
+    .addTab(tab1)
+    .addTab(tab2)
+    .addTab(tab3)
     let activeIndex: number = 0;
+
 </script>
   
-<Hst.Story title="molecules/tab/default" layout={{ type: 'grid', width: 600 }}>
+<Hst.Story title="molecules/tab/orientation" layout={{ type: 'grid', width: 600 }}>
 
     <Hst.Variant title="default">
         <TanoshiTabContainer tanoshiTabContainerModel={defaultTabContainer} bind:activeIndex={activeIndex}>
@@ -37,7 +43,20 @@
                 <div>3</div>
             </TanoshiTabContent>
         </TanoshiTabContainer>
+    </Hst.Variant>
 
+    <Hst.Variant title="sidebar">
+        <TanoshiTabContainer tanoshiTabContainerModel={sidebarTabContainer} bind:activeIndex={activeIndex}>
+            <TanoshiTabContent index={0} {activeIndex}>
+                <div>1</div>
+            </TanoshiTabContent>
+            <TanoshiTabContent index={1} {activeIndex}>
+                <div>2</div>
+            </TanoshiTabContent>
+            <TanoshiTabContent index={2} {activeIndex}>
+                <div>3</div>
+            </TanoshiTabContent>
+        </TanoshiTabContainer>
     </Hst.Variant>
 
 </Hst.Story>

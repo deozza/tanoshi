@@ -1,85 +1,86 @@
 <script lang='ts'>
-	import { CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, getThemeEnumKeyByEnumValue } from "$lib/enums";
+	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, WIDTHS } from "$lib/enums";
 	import TanoshiContainer from "$molecules/container/TanoshiContainer.svelte";
 	import TanoshiContainerModel from "$molecules/container/TanoshiContainerModel";
+	import TanoshiTabTitle from "../tabTitle/TanoshiTabTitle.svelte";
 	import type TanoshiTabContainerModel from "./TanoshiTabContainerModel";
 
     export let tanoshiTabContainerModel: TanoshiTabContainerModel;
 
-    const containerModel: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
+    const containerModel: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
         .setDesktopSpacing(CONTAINER_ITEMS_SPACING.Start)
+        .setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Start)
+        .setWidth(WIDTHS.WAuto)
 
-    let active: number = 0
+    const titleContainerModel: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
+        .setDesktopSpacing(CONTAINER_ITEMS_SPACING.Start)
+        .setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Start)
+
+    const contentContainerModel: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
+        .setDesktopSpacing(CONTAINER_ITEMS_SPACING.Start)
+        .setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Start)
+        .setWidth(WIDTHS.WAuto)
+
+
+    if(tanoshiTabContainerModel.isSideBar === true){
+        containerModel.setDesktopOrientation(CONTAINER_ORIENTATIONS.R)
+        titleContainerModel.setDesktopOrientation(CONTAINER_ORIENTATIONS.C).setWidth(WIDTHS.WAuto)
+    }
+
+    export let activeIndex: number = 0
 </script>
 
 <TanoshiContainer tanoshiContainerModel={containerModel}>
-    {#each tanoshiTabContainerModel.tabs as tab, index}
-        <div 
-        class="header-item {tanoshiTabContainerModel.theme}"
-        class:active={active === index}
-        role="tab"
-        tabindex="{index}"
-        on:click={() => active = index}
-        on:keydown={(event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
-                active = index           
-            }
-        }}
-        >
-            <span>{tab.title}</span>
-        </div>
-    {/each}
-</TanoshiContainer>
-<TanoshiContainer tanoshiContainerModel={containerModel}>
-    <slot name="tick" />
-    <slot name="tack" />
-    <slot name="toe" />
-</TanoshiContainer>
+    <TanoshiContainer tanoshiContainerModel={titleContainerModel}>
+        {#each tanoshiTabContainerModel.tabs as tab, index}
+            <TanoshiTabTitle tanoshiTabTitleModel={tab} {index} bind:activeIndex={activeIndex} />
+        {/each}
+        <hr class="border-{tanoshiTabContainerModel.theme}">
 
+    </TanoshiContainer>
+    <TanoshiContainer tanoshiContainerModel={contentContainerModel}>
+        <slot />
+    </TanoshiContainer>
+</TanoshiContainer>
 
 <style>
-
-div.white {
-	background-color: var(--white-background-container, var(--white));
+hr{
+    margin: 0;
+    border: 0;
+    width: 100%;
 }
 
-div.black {
-	background-color: var(--black-background-container, var(--black));
+hr.border-white{
+	border: 1px solid var(--white-border-container, var(--white));
 }
 
-div.primary {
-	background-color: var(--primary-background-container, var(--primary));
+hr.border-black {
+	border: 1px solid var(--black-border-container, var(--black));
 }
 
-div.secondary {
-	background-color: var(--secondary-background-container, var(--secondary));
+hr.border-primary {
+	border: 1px solid var(--primary-border-container, var(--primary));
 }
 
-div.success {
-	background-color: var(--success-background-container, var(--success));
+hr.border-secondary {
+	border: 1px solid var(--secondary-border-container, var(--secondary));
 }
 
-div.warning {
-	background-color: var(--warning-background-container, var(--warning));
+hr.border-success {
+	border: 1px solid var(--success-border-container, var(--success));
 }
 
-div.danger {
-	background-color: var(--danger-background-container, var(--danger));
+hr.border-warning {
+	border: 1px solid var(--warning-border-container, var(--warning));
 }
 
-div.info {
-	background-color: var(--info-background-container, var(--info));
+hr.border-danger {
+	border: 1px solid var(--danger-border-container, var(--danger));
 }
 
-div.header-item {
-    cursor: pointer;
-	padding: 1rem 1.25rem/* 20px */;
-    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-	transition-duration: 150ms;
-	transition-duration: 300ms;	
+hr.border-info {
+	border: 1px solid var(--info-border-container, var(--info));
 }
-div.header-item.active {
-    background-color: #e0e0e0;
-}
+
+
 </style>

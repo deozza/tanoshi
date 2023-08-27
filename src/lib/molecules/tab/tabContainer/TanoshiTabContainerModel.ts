@@ -1,11 +1,12 @@
 import { THEMES } from "$lib/enums";
-import type TanoshiTabModel from "../TanoshiTabModel";
+import type TanoshiTabModel from "../tabTitle/TanoshiTabTitleModel";
 import ThemeError from "$lib/errors/ThemeError";
 
 export default class TanoshiTabContainerModel {
     private _theme!: string;
-    private _currentTabTheme: string;
+    private _currentTabTheme!: string;
     private _tabs!: TanoshiTabModel[];
+    private _isSideBar: boolean = false;
 
     constructor(theme: THEMES = THEMES.Transparent, currentTabTheme: THEMES = THEMES.Primary) {
         this.setTheme(theme);
@@ -48,6 +49,12 @@ export default class TanoshiTabContainerModel {
         return this;
     }
 
+    get isSideBar(): boolean {
+        return this._isSideBar;
+    }
 
-    
+    public setIsSideBar(value: boolean): TanoshiTabContainerModel {
+        this._isSideBar = value;
+        return this;
+    }
 }
