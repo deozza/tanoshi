@@ -1,7 +1,15 @@
 <script lang="ts">
+	import { createEventDispatcher } from 'svelte';
 	import type TanoshiTextInputModel from './TanoshiTextareaInputModel';
 
 	export let tanoshiInputModel: TanoshiTextInputModel;
+
+	const dispatch = createEventDispatcher();
+
+	function handleInput(e: any) {
+		tanoshiInputModel.setValue(e.target.value);
+		dispatch('input', {value: tanoshiInputModel.value, id: tanoshiInputModel.id});
+	}
 </script>
 
 <div class="input-container">
@@ -14,10 +22,10 @@
 		name={tanoshiInputModel.name}
 		on:change
 		on:focusout
+		on:input={handleInput}
 		placeholder={tanoshiInputModel.placeholder}
 		readonly={tanoshiInputModel.readonly}
 		required={tanoshiInputModel.required}
-		bind:value={tanoshiInputModel.value}
 	/>
 
 	{#if tanoshiInputModel.error}

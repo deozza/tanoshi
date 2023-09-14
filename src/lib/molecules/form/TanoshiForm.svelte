@@ -23,6 +23,10 @@
 	function handleForm() {
 		dispatch('submit')
 	}
+
+	function handleInput(e: any){
+		tanoshiFormModel.updateValue(e.detail.id, e.detail.value);
+	}
 </script>
 
 <TanoshiContainer tanoshiContainerModel={formContainerModel}>
@@ -30,7 +34,7 @@
 		<ul>
 			{#each tanoshiFormModel.labelsAndInputs as tanoshiLabelAndInputModel}
 				<li>
-					<TanoshiLabelAndInput {tanoshiLabelAndInputModel}/>
+					<TanoshiLabelAndInput {tanoshiLabelAndInputModel} on:input={handleInput}/>
 				</li>
 			{/each}
 			<li class='space-y-2'>

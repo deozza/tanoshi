@@ -8,7 +8,7 @@ export default class TanoshiFormModel {
 	private _labelsAndInputs: Array<TanoshiLabelAndInputModel> = [];
 	private _backgroundTheme: string = THEMES.Transparent;
 	private _borderTheme: string = THEMES.Transparent;
-
+	private _values: any = {};
 
 	public constructor(submitButton: TanoshiButtonModel) {
 		this.setSubmitButton(submitButton);
@@ -34,6 +34,7 @@ export default class TanoshiFormModel {
 	public addLabelAndInput(tanoshiLabelAndInputModel: TanoshiLabelAndInputModel): TanoshiFormModel {
 		
 		this._labelsAndInputs.push(tanoshiLabelAndInputModel);
+		this._values[tanoshiLabelAndInputModel.input.id] = null;
 		return this;
 	}
 
@@ -52,6 +53,15 @@ export default class TanoshiFormModel {
 
 	public setBorderTheme(value: THEMES): TanoshiFormModel {
 		this._borderTheme = value;
+		return this;
+	}
+
+	public getValues(): any {
+		return this._values;
+	}
+
+	public updateValue(id: string, value: any): TanoshiFormModel {
+		this._values[id] = value;
 		return this;
 	}
 }

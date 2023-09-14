@@ -70,18 +70,28 @@
     const tanoshiCheckboxChoiceGroupLabelModel: TanoshiLabelModel = new TanoshiLabelModel('checkbox', 'Checkbox choices')
     const checkboxChoiceGroupLabelAndInput: TanoshiLabelAndInputModel = new TanoshiLabelAndInputModel(tanoshiCheckboxChoiceGroupLabelModel, tanoshiCheckboxChoiceGroupModel, TanoshiChoiceGroup)
 
+    const selectOptionDefault: TanoshiSelectOptionModel = new TanoshiSelectOptionModel('Select an option', '').setDisabled(true).setSelected(true);
     const selectOption1: TanoshiSelectOptionModel = new TanoshiSelectOptionModel('option 1', 'option 1')
     const selectOption2: TanoshiSelectOptionModel = new TanoshiSelectOptionModel('option 2', 'option 2')
     const selectOption3: TanoshiSelectOptionModel = new TanoshiSelectOptionModel('option 3', 'option 3')
 
     const tanoshiSelectInputModel: TanoshiSelectInputModel = new TanoshiSelectInputModel('Select')
+        .addOption(selectOptionDefault)
+        .addOption(selectOption1)
+        .addOption(selectOption2)
+        .addOption(selectOption3)
+
+    const tanoshiSelectInputLabelModel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(tanoshiSelectInputModel)
+    const selectLabelAndInput: TanoshiLabelAndInputModel = new TanoshiLabelAndInputModel(tanoshiSelectInputLabelModel, tanoshiSelectInputModel, TanoshiSelectInput)
+
+    const tanoshiSelectMultipleInputModel: TanoshiSelectInputModel = new TanoshiSelectInputModel('Select multiple')
         .addOption(selectOption1)
         .addOption(selectOption2)
         .addOption(selectOption3)
         .setMultiple(true)
 
-    const tanoshiSelectInputLabelModel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(tanoshiSelectInputModel)
-    const selectLabelAndInput: TanoshiLabelAndInputModel = new TanoshiLabelAndInputModel(tanoshiSelectInputLabelModel, tanoshiSelectInputModel, TanoshiSelectInput)
+    const tanoshiSelectMultipleInputLabelModel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(tanoshiSelectMultipleInputModel)
+    const selectMultipleLabelAndInput: TanoshiLabelAndInputModel = new TanoshiLabelAndInputModel(tanoshiSelectMultipleInputLabelModel, tanoshiSelectMultipleInputModel, TanoshiSelectInput)
 
     const fileInput: TanoshiFileInputModel = new TanoshiFileInputModel('File')
     const fileInputLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(fileInput)
@@ -113,6 +123,10 @@
 
     <Hst.Variant title="select">
         <TanoshiLabelAndInput tanoshiLabelAndInputModel={selectLabelAndInput}/>
+    </Hst.Variant>
+
+    <Hst.Variant title="select multiple">
+        <TanoshiLabelAndInput tanoshiLabelAndInputModel={selectMultipleLabelAndInput}/>
     </Hst.Variant>
 
     <Hst.Variant title="file">

@@ -13,5 +13,5 @@ export let tanoshiLabelAndInputModel: TanoshiLabelAndInputModel;
 
 <TanoshiContainer tanoshiContainerModel={inputContainerModel}>
 	<TanoshiLabel tanoshiLabelModel={tanoshiLabelAndInputModel.label} />
-	<svelte:component this={tanoshiLabelAndInputModel.component} tanoshiInputModel={tanoshiLabelAndInputModel.input} />
+	<svelte:component this={tanoshiLabelAndInputModel.component} tanoshiInputModel={tanoshiLabelAndInputModel.input} on:input/>
 </TanoshiContainer>

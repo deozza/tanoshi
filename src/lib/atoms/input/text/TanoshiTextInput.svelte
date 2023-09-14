@@ -1,10 +1,14 @@
 <script lang="ts">
 	import type TanoshiTextInputModel from './TanoshiTextInputModel';
+	import { createEventDispatcher } from 'svelte';
 
 	export let tanoshiInputModel: TanoshiTextInputModel;
 
+	const dispatch = createEventDispatcher();
+
 	function handleInput(e: any) {
 		tanoshiInputModel.setValue(e.target.value);
+		dispatch('input', {value: tanoshiInputModel.value, id: tanoshiInputModel.id});
 	}
 </script>
 

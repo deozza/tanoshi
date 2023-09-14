@@ -5,7 +5,10 @@
 
 </script>
 
-<option value={tanoshiSelectOptionModel}>{tanoshiSelectOptionModel.value}</option>
-<style>
-
-</style>
+<option 
+	value={tanoshiSelectOptionModel}
+ 	selected={tanoshiSelectOptionModel.selected}
+ 	disabled={tanoshiSelectOptionModel.disabled}
+>
+ 	{tanoshiSelectOptionModel.name}
+</option>

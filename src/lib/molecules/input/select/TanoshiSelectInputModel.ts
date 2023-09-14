@@ -5,7 +5,7 @@ export default class TanoshiSelectInputModel {
 	private _id!: string;
 	private _options: Array<TanoshiSelectOptionModel> = [];
 	private _multiple: boolean = false;
-	private _selected = [];
+	private _selected : Array<TanoshiSelectOptionModel> = [];
 	private _name!: string;
 	private _required: boolean = false;
 	private _readonly: boolean = false;
@@ -88,6 +88,11 @@ export default class TanoshiSelectInputModel {
 
 	set selected(value: any) {
 		this._selected = value;
+	}
+
+	public addSelected(value: TanoshiSelectOptionModel): TanoshiSelectInputModel {
+		this._selected.push(value);
+		return this;
 	}
 
 	get error(): boolean {

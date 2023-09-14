@@ -1,8 +1,25 @@
 <script lang="ts">
 	import TanoshiSelectOption from "$atoms/input/select/option/TanoshiSelectOption.svelte";
+	import type TanoshiSelectOptionModel from "$atoms/input/select/option/TanoshiSelectOptionModel";
+	import { createEventDispatcher } from "svelte";
 	import type TanoshiSelectInputModel from "./TanoshiSelectInputModel";
 	export let tanoshiInputModel: TanoshiSelectInputModel;
 
+	$: handleInput(tanoshiInputModel.selected)
+	const dispatch = createEventDispatcher();
+	function handleInput(selected: TanoshiSelectOptionModel | Array<TanoshiSelectOptionModel>) {
+		if(Array.isArray(selected)) {
+			let values: Array<string> = [];
+			selected.forEach((option: TanoshiSelectOptionModel) => {
+				values.push(option.value);
+			})
+			dispatch("input", { value: values, id: tanoshiInputModel.id });
+			return;
+		}
+
+		dispatch('input', {value: selected.value, id: tanoshiInputModel.id});
+
+	}
 </script>
 
 <div>

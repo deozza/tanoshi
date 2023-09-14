@@ -22,7 +22,6 @@
 			class:readonly={tanoshiInputModel.readonly}
 			id={tanoshiInputModel.id}
 			name={tanoshiInputModel.name}
-			on:change
 			on:focusout
 			readonly={tanoshiInputModel.readonly}
 			required={tanoshiInputModel.required}
@@ -35,7 +34,6 @@
 			class:readonly={tanoshiInputModel.readonly}
 			id={tanoshiInputModel.id}
 			name={tanoshiInputModel.name}
-			on:change
 			on:focusout
 			readonly={tanoshiInputModel.readonly}
 			required={tanoshiInputModel.required}
