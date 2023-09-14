@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { TanoshiAlertModel } from "$lib";
 	import TanoshiAlert from "$molecules/alert/TanoshiAlert.svelte";
-	import TanoshiAlertContainer from "$molecules/container/alert/TanoshiAlertContainer.svelte";
+	import TanoshiAlertContainer from "$molecules/alert/alertContainer/TanoshiAlertContainer.svelte";
 
     const defaultAlert: TanoshiAlertModel = new TanoshiAlertModel('Alert title');
 	const alerts: Array<TanoshiAlertModel> = [defaultAlert, defaultAlert, defaultAlert]
