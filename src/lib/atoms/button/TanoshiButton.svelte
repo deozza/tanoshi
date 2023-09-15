@@ -1,8 +1,6 @@
 <script lang="ts">
-	import Fa from 'svelte-fa/src/index.js';
-	import { faSpinner } from '@fortawesome/free-solid-svg-icons/index.js';
-
 	import type TanoshiButtonModel from './TanoshiButtonModel';
+	import 'iconify-icon';
 
 	export let tanoshiButtonModel: TanoshiButtonModel;
 </script>
@@ -25,14 +23,14 @@
 	label={tanoshiButtonModel.content}
 >
 	{#if tanoshiButtonModel.isLoading === true}
-		<Fa icon={faSpinner} spin={true} size={'lg'}/>
+		<iconify-icon icon="mdi:loading" class="spin-icon" />
 	{/if}
 	{#if tanoshiButtonModel.iconAtLeft !== null && tanoshiButtonModel.isLoading === false}
-		<Fa icon={tanoshiButtonModel.iconAtLeft} />
+		<iconify-icon icon={tanoshiButtonModel.iconAtLeft} />
 	{/if}
 	{tanoshiButtonModel.content}
 	{#if tanoshiButtonModel.iconAtRight !== null && tanoshiButtonModel.isLoading === false}
-		<Fa icon={tanoshiButtonModel.iconAtRight} />
+		<iconify-icon icon={tanoshiButtonModel.iconAtRight} />
 	{/if}
 
 	<slot />
@@ -289,7 +287,20 @@ button.btn-border-transparent {
     border: none;
 }
 
-:global(button > svg) {
+:global(button > iconify-icon) {
     display: inline-block;
+}
+
+.spin-icon {
+	animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
 </style>

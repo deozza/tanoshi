@@ -2,10 +2,9 @@
 
     import '../../../app.css';
 
-	import { THEMES, TanoshiLinkModel } from '$lib';
+	import { TanoshiLinkModel } from '$lib';
     import type { Hst } from '@histoire/plugin-svelte';
 	import TanoshiLink from '$atoms/link/TanoshiLink.svelte';
-    import { faAppleAlt } from '@fortawesome/free-solid-svg-icons';
     
     export let Hst: Hst;
 

@@ -1,11 +1,10 @@
-import { BUTTON_TYPES, THEMES, SIZES, BUTTON_SIZES } from "$lib/enums";
+import { BUTTON_TYPES, THEMES, BUTTON_SIZES } from "$lib/enums";
 import ThemeError from "$lib/errors/ThemeError";
-import type { IconDefinition } from "@fortawesome/fontawesome-common-types"; 
 
 export default class TanoshiButtonModel {
 	private _content!: string;
-	private _iconAtLeft: IconDefinition | null = null;
-	private _iconAtRight: IconDefinition | null = null;
+	private _iconAtLeft: string | null = null;
+	private _iconAtRight: string | null = null;
 	private _label!: string;
 	private _backgroundTheme!: string;
 	private _backgroundHoverTheme!: string;
@@ -37,20 +36,20 @@ export default class TanoshiButtonModel {
 		return this;
 	}
 
-	get iconAtLeft(): IconDefinition | null {
+	get iconAtLeft(): string | null {
 		return this._iconAtLeft;
 	}
 
-	public setIconAtLeft(value: IconDefinition): TanoshiButtonModel {
+	public setIconAtLeft(value: string): TanoshiButtonModel {
 		this._iconAtLeft = value;
 		return this;
 	}
 
-	get iconAtRight(): IconDefinition | null {
+	get iconAtRight(): string | null {
 		return this._iconAtRight;
 	}
 
-	public setIconAtRight(value: IconDefinition): TanoshiButtonModel {
+	public setIconAtRight(value: string): TanoshiButtonModel {
 		this._iconAtRight = value;
 		return this;
 	}

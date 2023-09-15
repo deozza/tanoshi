@@ -4,12 +4,11 @@
 	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ORIENTATIONS, HEIGHTS, THEMES, getThemeEnumKeyByEnumValue } from '$lib/enums';
 	import { TanoshiContainer } from '$molecules';
 	import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel';
-	import './../../../atoms/link/tanoshiLink.css';
-	import './../../../main.css';
-	import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+	import '../../../atoms/link/tanoshiLink.css';
+	import '../../../main.css';
 
     export let tanoshiLinkModel: TanoshiLinkAsNavbarDropdownModel;
-    tanoshiLinkModel.linkTitle.setIconAtRight(faCaretDown)
+    tanoshiLinkModel.linkTitle.setIconAtRight('mdi:chevron-down')
     let theme: THEMES = getThemeEnumKeyByEnumValue(tanoshiLinkModel.backgroundTheme)
 
     const dropdownContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)

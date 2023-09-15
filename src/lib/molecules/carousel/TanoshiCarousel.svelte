@@ -1,23 +1,30 @@
 <script lang="ts">
-	import Fa from 'svelte-fa/src/index.js';
-  import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons/index.js';
 	import { fade } from 'svelte/transition';
+	import 'iconify-icon';
 
   import TanoshiImageInCarousel from '$atoms/image/TanoshiImageInCarousel.svelte';
   import TanoshiContainer from "$molecules/container/TanoshiContainer.svelte";
   import TanoshiContainerModel from "$molecules/container/TanoshiContainerModel";
-  import { onDestroy, onMount } from 'svelte';
+  import { onDestroy } from 'svelte';
 	import type TanoshiCarouselModel from './TanoshiCarouselModel';
+	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS } from '$lib/enums';
 
   export let tanoshiCarouselModel: TanoshiCarouselModel
   let interval: any;
   let startTouchXAxis: number = 0;
 
-  const paginatorContainer: TanoshiContainerModel = new TanoshiContainerModel('r').setItemsAlignment('center').setDesktopSpacing('centered').setHeight('5px')
-  const carouselContainer: TanoshiContainerModel = new TanoshiContainerModel('c-reverse').setItemsAlignment('center').setHeight(tanoshiCarouselModel.height)
+  const paginatorContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
+    .setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
+    .setDesktopSpacing(CONTAINER_ITEMS_SPACING.Centered)
+    .setCustomHeight('5px')
+  const carouselContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.CReverse)
+    .setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
+    .setCustomHeight(tanoshiCarouselModel.height)
 
   let currentImageIndex: number = 0;
-  $: currentImage = tanoshiCarouselModel.items[currentImageIndex].setHeight(tanoshiCarouselModel.height);
+  $: currentImage = tanoshiCarouselModel
+    .items[currentImageIndex]
+    .setCustomHeight(tanoshiCarouselModel.height);
 
   function moveCarouselForward(manually: boolean = false){
     if(currentImageIndex === tanoshiCarouselModel.items.length - 1){
@@ -92,7 +99,9 @@
 
     <TanoshiContainer tanoshiContainerModel={paginatorContainer} customClasses={'carousel-commands'}>
       {#if tanoshiCarouselModel.showArrows === true}
-        <button type="button" class="btn arrow"  on:click={() => moveCarouselBackward(true)}> <Fa icon={faAngleLeft} /> </button>
+        <button type="button" class="btn arrow"  on:click={() => moveCarouselBackward(true)}> 
+          <iconify-icon icon='mdi:chevron-left' />
+        </button>
       {/if}
 
       {#if tanoshiCarouselModel.showDots === true}
@@ -102,7 +111,9 @@
       {/if}
 
       {#if tanoshiCarouselModel.showArrows === true}
-        <button type="button" class="btn arrow"  on:click={() => moveCarouselForward(true)}> <Fa icon={faAngleRight} /> </button>
+        <button type="button" class="btn arrow"  on:click={() => moveCarouselForward(true)}> 
+          <iconify-icon icon='mdi:chevron-right' />
+        </button>
       {/if}
 
     </TanoshiContainer>  

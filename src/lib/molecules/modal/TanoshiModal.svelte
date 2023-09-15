@@ -6,8 +6,7 @@
 	import TanoshiContainer from "$molecules/container/TanoshiContainer.svelte";
 	import TanoshiContainerModel from "$molecules/container/TanoshiContainerModel";
     import type TanoshiModalModel from "./TanoshiModalModel";
-	import { faTimes } from "@fortawesome/free-solid-svg-icons";
-	import Fa from "svelte-fa";
+	import 'iconify-icon';
 
     export let tanoshiModalModel: TanoshiModalModel;
     export let showModal: boolean = false;
@@ -53,7 +52,7 @@
 			{#if tanoshiModalModel.required === false}
 				<TanoshiButton tanoshiButtonModel={closingModalButton} on:click={() => dialog.close()}>
 					<span class="sr-only">Close modal</span>
-					<Fa icon={faTimes} />
+					<iconify-icon icon='mdi:close' />
 				</TanoshiButton>
 			{/if}
 		</TanoshiContainer>

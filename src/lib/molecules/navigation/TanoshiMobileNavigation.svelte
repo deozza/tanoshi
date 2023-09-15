@@ -1,8 +1,7 @@
 <script lang="ts">
     import { onMount, onDestroy } from 'svelte';
+	import 'iconify-icon';
 
-    import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
-	import Fa from "svelte-fa/src/index.js";
 
 	import { TanoshiButton, TanoshiButtonModel } from "$atoms";
 	import { CONTAINER_ORIENTATIONS, THEMES, CONTAINER_ITEMS_ALIGNMENTS, HEIGHTS } from "$lib/enums";
@@ -59,9 +58,9 @@
 		<TanoshiButton tanoshiButtonModel={mobileMenuButton} on:click={mobileMenuHandler}>
 			<span class="sr-only">Open main menu</span>
 			{#if showMobileMenu === false}
-				<Fa icon={faBars} />
+			<iconify-icon icon='mdi:menu' />
 			{:else}
-				<Fa icon={faTimes} />
+			<iconify-icon icon='mdi:close' />
 			{/if}
 		</TanoshiButton>
 	</TanoshiContainer>

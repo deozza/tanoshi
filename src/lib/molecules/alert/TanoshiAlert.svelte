@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-	import { faTimes } from '@fortawesome/free-solid-svg-icons/index.js';
 	import './tanoshiAlert.css'
+	import 'iconify-icon';
 
 	import type TanoshiAlertModel from './TanoshiAlertModel';
 	import TanoshiContainer from '$lib/molecules/container/TanoshiContainer.svelte';
@@ -9,7 +9,6 @@
 	import TanoshiParagraph from '$atoms/typography/paragraph/TanoshiParagraph.svelte';
 	import TanoshiParagraphModel from '$atoms/typography/paragraph/TanoshiParagraphModel';
 	import { CONTAINER_BORDERS, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, THEMES, getSizeEnumKeyByEnumValue, getThemeEnumKeyByEnumValue, getWidthEnumKeyByEnumValue } from '$lib/enums';
-	import Fa from 'svelte-fa';
 
 	export let tanoshiAlertModel: TanoshiAlertModel;
 
@@ -42,7 +41,7 @@
 		<TanoshiContainer tanoshiContainerModel={tanoshiTitleContainerModel} customClasses="alert">
 			<TanoshiParagraph tanoshiParagraphModel={tanoshiTitleModel} />
 			<span on:click={() => close()}>
-				<Fa icon={faTimes} />
+				<iconify-icon icon='mdi:close' />
 			</span>
 		</TanoshiContainer>
 	</div>

@@ -4,7 +4,7 @@
 
 	import { TanoshiButtonModel } from '$atoms';
 	import TanoshiButton from '$atoms/button/TanoshiButton.svelte';
-	import { BUTTON_SIZES, THEMES } from '$lib';
+	import { BUTTON_SIZES } from '$lib';
     import type { Hst } from '@histoire/plugin-svelte';
     export let Hst: Hst;
 
