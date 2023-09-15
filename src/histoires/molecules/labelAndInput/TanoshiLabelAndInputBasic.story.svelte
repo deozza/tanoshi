@@ -1,13 +1,10 @@
 <script lang="ts">
-	import TanoshiForm from '$molecules/form/TanoshiForm.svelte';
-	import TanoshiFormModel from '$molecules/form/TanoshiFormModel';
-    import TanoshiButtonModel from '$atoms/button/TanoshiButtonModel';
     import TanoshiLabelModel from '$atoms/label/TanoshiLabelModel';
     import TanoshiTextInputModel from '$atoms/input/text/TanoshiTextInputModel';
     import TanoshiTextInput from '$atoms/input/text/TanoshiTextInput.svelte';
     import TanoshiNumberInputModel from '$atoms/input/number/TanoshiNumberInputModel';
     import TanoshiNumberInput from '$atoms/input/number/TanoshiNumberInput.svelte';
-    import { THEMES, BUTTON_TYPES, INPUT_TEXT_TYPES, INPUT_CHOICES_TYPES } from '$lib';
+    import { INPUT_TEXT_TYPES, INPUT_CHOICES_TYPES } from '$lib';
 	import TanoshiLabelAndInputModel from '$molecules/labelAndInput/TanoshiLabelAndInputModel';
     import '../../../app.css';
 
@@ -27,12 +24,17 @@
 
     const emailInput: TanoshiTextInputModel = new TanoshiTextInputModel('Email')
         .setType(INPUT_TEXT_TYPES.Email)
-        .setRequired(true)
     const emailInputLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(emailInput)
     const emailLabelAndInput: TanoshiLabelAndInputModel = new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInput)
 
+    const passwordInput: TanoshiTextInputModel = new TanoshiTextInputModel('Password')
+        .setType(INPUT_TEXT_TYPES.Password)
+
+    const passwordInputLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(passwordInput)
+    const passwordLabelAndInput: TanoshiLabelAndInputModel = new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInput)
+
     const ageInput: TanoshiNumberInputModel = new TanoshiNumberInputModel('Age')
-        .setMin(18)
+
     const ageInputLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(ageInput)
     const ageLabelAndInput: TanoshiLabelAndInputModel = new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInput)
 
@@ -40,9 +42,10 @@
     const descriptionInputLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(descriptionInput)
     const descriptionLabelAndInput: TanoshiLabelAndInputModel = new TanoshiLabelAndInputModel(descriptionInputLabel, descriptionInput, TanoshiTextareaInput)
 
-    const radioChoice1Input: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('choice 1')
-    const radioChoice2Input: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('choice 2')
-    const radioChoice3Input: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('choice 3')
+    const radioChoice1Input: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('radio 1')
+    const radioChoice2Input: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('radio 2')
+    const radioChoice3Input: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('radio 3')
+    
     const radioChoice1InputLabel: TanoshiLabelModel = new TanoshiLabelModel('radio', 'choice 1').setSpacing(false)
     const radioChoice2InputLabel: TanoshiLabelModel = new TanoshiLabelModel('radio', 'choice 2').setSpacing(false)
     const radioChoice3InputLabel: TanoshiLabelModel = new TanoshiLabelModel('radio', 'choice 3').setSpacing(false)
@@ -53,11 +56,13 @@
         .addChoice({label: radioChoice3InputLabel, input: radioChoice3Input})
 
     const tanoshiRadioChoiceGroupLabelModel: TanoshiLabelModel = new TanoshiLabelModel('radio', 'Radio choices')
-    const radioChoiceGroupLabelAndInput: TanoshiLabelAndInputModel = new TanoshiLabelAndInputModel(tanoshiRadioChoiceGroupLabelModel, tanoshiRadioChoiceGroupModel, TanoshiChoiceGroup)
 
-    const checkboxChoice1Input: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('choice 1').setType(INPUT_CHOICES_TYPES.Checkbox)
-    const checkboxChoice2Input: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('choice 2').setType(INPUT_CHOICES_TYPES.Checkbox)
-    const checkboxChoice3Input: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('choice 3').setType(INPUT_CHOICES_TYPES.Checkbox)
+    const tanoshiRadioChoiceGroupLabelAndInput: TanoshiLabelAndInputModel = new TanoshiLabelAndInputModel(tanoshiRadioChoiceGroupLabelModel, tanoshiRadioChoiceGroupModel, TanoshiChoiceGroup)
+
+    const checkboxChoice1Input: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('checkbox 1').setType(INPUT_CHOICES_TYPES.Checkbox)
+    const checkboxChoice2Input: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('checkbox 2').setType(INPUT_CHOICES_TYPES.Checkbox)
+    const checkboxChoice3Input: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('checkbox 3').setType(INPUT_CHOICES_TYPES.Checkbox)
+    
     const checkboxChoice1InputLabel: TanoshiLabelModel = new TanoshiLabelModel('checkbox', 'choice 1').setSpacing(false)
     const checkboxChoice2InputLabel: TanoshiLabelModel = new TanoshiLabelModel('checkbox', 'choice 2').setSpacing(false)
     const checkboxChoice3InputLabel: TanoshiLabelModel = new TanoshiLabelModel('checkbox', 'choice 3').setSpacing(false)
@@ -68,31 +73,37 @@
         .addChoice({label: checkboxChoice3InputLabel, input: checkboxChoice3Input})
 
     const tanoshiCheckboxChoiceGroupLabelModel: TanoshiLabelModel = new TanoshiLabelModel('checkbox', 'Checkbox choices')
-    const checkboxChoiceGroupLabelAndInput: TanoshiLabelAndInputModel = new TanoshiLabelAndInputModel(tanoshiCheckboxChoiceGroupLabelModel, tanoshiCheckboxChoiceGroupModel, TanoshiChoiceGroup)
 
-    const selectOption1: TanoshiSelectOptionModel = new TanoshiSelectOptionModel('option 1', 'option 1')
-    const selectOption2: TanoshiSelectOptionModel = new TanoshiSelectOptionModel('option 2', 'option 2')
-    const selectOption3: TanoshiSelectOptionModel = new TanoshiSelectOptionModel('option 3', 'option 3')
+    const tanoshiCheckboxChoiceGroupLabelAndInput: TanoshiLabelAndInputModel = new TanoshiLabelAndInputModel(tanoshiCheckboxChoiceGroupLabelModel, tanoshiCheckboxChoiceGroupModel, TanoshiChoiceGroup)
+
+    
+    const selectOption1: TanoshiSelectOptionModel = new TanoshiSelectOptionModel('select 1', 'select 1')
+    const selectOption2: TanoshiSelectOptionModel = new TanoshiSelectOptionModel('select 2', 'select 2')
+    const selectOption3: TanoshiSelectOptionModel = new TanoshiSelectOptionModel('select 3', 'select 3')
 
     const tanoshiSelectInputModel: TanoshiSelectInputModel = new TanoshiSelectInputModel('Select')
         .addOption(selectOption1)
         .addOption(selectOption2)
         .addOption(selectOption3)
-        .setMultiple(true)
-
+    
     const tanoshiSelectInputLabelModel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(tanoshiSelectInputModel)
-    const selectLabelAndInput: TanoshiLabelAndInputModel = new TanoshiLabelAndInputModel(tanoshiSelectInputLabelModel, tanoshiSelectInputModel, TanoshiSelectInput)
+
+    const tanoshiSelectLabelAndInput: TanoshiLabelAndInputModel = new TanoshiLabelAndInputModel(tanoshiSelectInputLabelModel, tanoshiSelectInputModel, TanoshiSelectInput)
 
     const fileInput: TanoshiFileInputModel = new TanoshiFileInputModel('File')
+        .setId('file')
+        .setName('file')
     const fileInputLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(fileInput)
     const fileLabelAndInput: TanoshiLabelAndInputModel = new TanoshiLabelAndInputModel(fileInputLabel, fileInput, TanoshiFileInput)
-
-
 </script>
   
 <Hst.Story title="molecules/label and input/basic" layout={{ type: 'grid', width: 600 }}>
     <Hst.Variant title="text">
         <TanoshiLabelAndInput tanoshiLabelAndInputModel={emailLabelAndInput}/>
+    </Hst.Variant>
+
+    <Hst.Variant title="password">
+        <TanoshiLabelAndInput tanoshiLabelAndInputModel={passwordLabelAndInput}/>
     </Hst.Variant>
 
     <Hst.Variant title="number">
@@ -104,18 +115,18 @@
     </Hst.Variant>
 
     <Hst.Variant title="radio">
-        <TanoshiLabelAndInput tanoshiLabelAndInputModel={radioChoiceGroupLabelAndInput}/>
+        <TanoshiLabelAndInput tanoshiLabelAndInputModel={tanoshiRadioChoiceGroupLabelAndInput} />
     </Hst.Variant>
 
     <Hst.Variant title="checkbox">
-        <TanoshiLabelAndInput tanoshiLabelAndInputModel={checkboxChoiceGroupLabelAndInput}/>
+        <TanoshiLabelAndInput tanoshiLabelAndInputModel={tanoshiCheckboxChoiceGroupLabelAndInput} />
     </Hst.Variant>
 
     <Hst.Variant title="select">
-        <TanoshiLabelAndInput tanoshiLabelAndInputModel={selectLabelAndInput}/>
+        <TanoshiLabelAndInput tanoshiLabelAndInputModel={tanoshiSelectLabelAndInput} />
     </Hst.Variant>
 
     <Hst.Variant title="file">
-        <TanoshiLabelAndInput tanoshiLabelAndInputModel={fileLabelAndInput}/>
+        <TanoshiLabelAndInput tanoshiLabelAndInputModel={fileLabelAndInput} />
     </Hst.Variant>
 </Hst.Story>

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import TanoshiSelectOption from "$atoms/input/select/option/TanoshiSelectOption.svelte";
 	import type TanoshiSelectInputModel from "./TanoshiSelectInputModel";
+	
 	export let tanoshiInputModel: TanoshiSelectInputModel;
-
 </script>
 
 <div>
@@ -16,7 +16,7 @@
 			on:focusout
 			readonly={tanoshiInputModel.readonly}
 			required={tanoshiInputModel.required}
-			bind:value={tanoshiInputModel.selected}
+			bind:value={tanoshiInputModel.value}
 			multiple
 		>
 			{#each tanoshiInputModel.options as tanoshiSelectOptionModel}
@@ -32,7 +32,7 @@
 			on:focusout
 			readonly={tanoshiInputModel.readonly}
 			required={tanoshiInputModel.required}
-			bind:value={tanoshiInputModel.selected}
+			bind:value={tanoshiInputModel.value}
 		>
 			{#each tanoshiInputModel.options as tanoshiSelectOptionModel}
 				<TanoshiSelectOption {tanoshiSelectOptionModel} />

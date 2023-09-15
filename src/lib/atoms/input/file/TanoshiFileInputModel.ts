@@ -2,7 +2,7 @@ export default class TanoshiFileInputModel {
 	private _id!: string;
 	private _name!: string;
 	private _required: boolean = false;
-	private _value: number | null = null;
+	private _value: FileList | null = null;
 	private _readonly: boolean = false;
 	private _error: boolean = false;
 	private _errorMessage: string = '';
@@ -42,11 +42,11 @@ export default class TanoshiFileInputModel {
 		return this;
 	}
 
-	get value(): number | null {
+	get value(): FileList | null {
 		return this._value;
 	}
 
-	setValue(value: number | null): TanoshiFileInputModel {
+	setValue(value: FileList | null): TanoshiFileInputModel {
 		this._value = value;
 		return this;
 	}

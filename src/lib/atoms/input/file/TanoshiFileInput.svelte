@@ -3,9 +3,6 @@
 
 	export let tanoshiInputModel: TanoshiFileInputModel;
 
-	function handleInput(e: any) {
-		tanoshiInputModel.setValue(e.target.value);
-	}
 </script>
 
 <div class="input-container">
@@ -16,7 +13,6 @@
 		name={tanoshiInputModel.name}
 		on:change
 		on:focusout
-		on:input={handleInput}
 		placeholder={tanoshiInputModel.placeholder}
 		readonly={tanoshiInputModel.readonly}
 		required={tanoshiInputModel.required}

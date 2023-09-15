@@ -2,10 +2,6 @@
 	import type TanoshiNumberInputModel from './TanoshiNumberInputModel';
 
 	export let tanoshiInputModel: TanoshiNumberInputModel;
-
-	function handleInput(e: any) {
-		tanoshiInputModel.setValue(e.target.value);
-	}
 </script>
 
 <div class="input-container">
@@ -18,12 +14,11 @@
 		name={tanoshiInputModel.name}
 		on:change
 		on:focusout
-		on:input={handleInput}
 		placeholder={tanoshiInputModel.placeholder}
 		readonly={tanoshiInputModel.readonly}
 		required={tanoshiInputModel.required}
 		type='number'
-		value={tanoshiInputModel.value}
+		bind:value={tanoshiInputModel.value}
 	/>
 
 	{#if tanoshiInputModel.error}

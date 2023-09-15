@@ -46,6 +46,10 @@ export default class TanoshiNumberInputModel {
 		return this._value;
 	}
 
+	set value(value: number | null) {
+		this._value = value;
+	}
+
 	setValue(value: number | null): TanoshiNumberInputModel {
 		this._value = value;
 		return this;

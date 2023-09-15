@@ -15,6 +15,15 @@
 
 	export let tanoshiInputModel: TanoshiChoiceGroupModel;
 
+	function handleOnChoice(e: any) {
+		tanoshiInputModel.setValue([]).handleValue(e.detail, null);
+	}
+
+	function handleOnChecked(e: any) {
+		tanoshiInputModel.handleValue(e.detail.value, e.detail.checked);
+	}
+
+
 </script>
 
 <div style="flex: 2">
@@ -24,8 +33,8 @@
 				<TanoshiLabel tanoshiLabelModel={tanoshiChoiceAndLabelModel.label} />
 				<TanoshiChoiceInput 
 					tanoshiInputModel={tanoshiChoiceAndLabelModel.input} 
-					on:choiced={(e) => tanoshiInputModel.setValues([]).handleValue(e.detail)}
-					on:checked={(e) => tanoshiInputModel.handleValue(e.detail)}
+					on:choiced={handleOnChoice}
+					on:checked={handleOnChecked}
 				/>
 			</TanoshiContainer>
 		{/each}

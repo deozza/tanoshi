@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { INPUT_CHOICES_TYPES } from '$lib/enums';
+	import { INPUT_CHOICES_TYPES } from '$lib/enums';	
 	import { createEventDispatcher } from 'svelte';
 	import type TanoshiChoiceInputModel from './TanoshiChoiceInputModel';
 
@@ -12,7 +12,7 @@
 	}
 
 	function handleChecked() {
-		dispatch('checked', tanoshiInputModel.value);
+		dispatch('checked', {value: tanoshiInputModel.value, checked: tanoshiInputModel.checked});
 	}
 </script>
 
@@ -22,20 +22,19 @@
 			class:readonly={tanoshiInputModel.readonly}
 			id={tanoshiInputModel.id}
 			name={tanoshiInputModel.name}
-			on:change
 			on:focusout
 			readonly={tanoshiInputModel.readonly}
 			required={tanoshiInputModel.required}
 			type='radio'
 			value={tanoshiInputModel.value}
 			on:change={handleChoiced}
+			checked={tanoshiInputModel.checked}
 		/>
 		{:else if tanoshiInputModel.type === INPUT_CHOICES_TYPES.Checkbox}
 		<input
 			class:readonly={tanoshiInputModel.readonly}
 			id={tanoshiInputModel.id}
 			name={tanoshiInputModel.name}
-			on:change
 			on:focusout
 			readonly={tanoshiInputModel.readonly}
 			required={tanoshiInputModel.required}
@@ -43,7 +42,6 @@
 			value={tanoshiInputModel.value}
 			bind:checked={tanoshiInputModel.checked}
 			on:change={handleChecked}
-
 		/>
 	{/if}
 </div>
