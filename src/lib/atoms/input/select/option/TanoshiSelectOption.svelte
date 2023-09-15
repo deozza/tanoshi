@@ -6,7 +6,7 @@
 </script>
 
 <option 
-	value={tanoshiSelectOptionModel}
+	value={tanoshiSelectOptionModel.value}
  	selected={tanoshiSelectOptionModel.selected}
  	disabled={tanoshiSelectOptionModel.disabled}
 >

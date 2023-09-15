@@ -25,12 +25,14 @@
     export let Hst: Hst;
 
     const emailInput: TanoshiTextInputModel = new TanoshiTextInputModel('Email')
+        .setName('email')
         .setId('email')
         .setType(INPUT_TEXT_TYPES.Email)
         .setRequired(true)
     const emailInputLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(emailInput)
 
     const passwordInput: TanoshiTextInputModel = new TanoshiTextInputModel('Password')
+        .setName('password')
         .setId('password')
         .setType(INPUT_TEXT_TYPES.Password)
         .setRequired(true)
@@ -38,22 +40,28 @@
     const passwordInputLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(passwordInput)
 
     const ageInput: TanoshiNumberInputModel = new TanoshiNumberInputModel('Age')
+        .setName('age')
         .setId('age')
         .setMin(18)
     const ageInputLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(ageInput)
 
     const descriptionInput: TanoshiTextareaInputModel = new TanoshiTextareaInputModel('Description')
+        .setName('description')
         .setId('description')
 
     const descriptionInputLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(descriptionInput)
 
     const radioChoice1Input: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('radio 1')
+        .setName('radio')
         .setId('radio1')
+        .setChecked(true)
 
     const radioChoice2Input: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('radio 2')
+        .setName('radio')
         .setId('radio2')
 
     const radioChoice3Input: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('radio 3')
+        .setName('radio')
         .setId('radio3')
     
     const radioChoice1InputLabel: TanoshiLabelModel = new TanoshiLabelModel('radio', 'choice 1').setSpacing(false)
@@ -64,19 +72,24 @@
         .addChoice({label: radioChoice1InputLabel, input: radioChoice1Input})
         .addChoice({label: radioChoice2InputLabel, input: radioChoice2Input})
         .addChoice({label: radioChoice3InputLabel, input: radioChoice3Input})
+        .setValue([radioChoice1Input.value])
 
     const tanoshiRadioChoiceGroupLabelModel: TanoshiLabelModel = new TanoshiLabelModel('radio', 'Radio choices')
 
     const checkboxChoice1Input: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('checkbox 1')
         .setId('checkbox1')
+        .setName('checkbox')
         .setType(INPUT_CHOICES_TYPES.Checkbox)
+        .setChecked(true)
 
     const checkboxChoice2Input: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('checkbox 2')
     .setId('checkbox2')
+    .setName('checkbox')
     .setType(INPUT_CHOICES_TYPES.Checkbox)
 
     const checkboxChoice3Input: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('checkbox 3')
         .setId('checkbox3')
+        .setName('checkbox')
         .setType(INPUT_CHOICES_TYPES.Checkbox)
 
     const checkboxChoice1InputLabel: TanoshiLabelModel = new TanoshiLabelModel('checkbox', 'choice 1').setSpacing(false)
@@ -87,38 +100,44 @@
         .addChoice({label: checkboxChoice1InputLabel, input: checkboxChoice1Input})
         .addChoice({label: checkboxChoice2InputLabel, input: checkboxChoice2Input})
         .addChoice({label: checkboxChoice3InputLabel, input: checkboxChoice3Input})
+        .setValue([checkboxChoice1Input.value])
 
     const tanoshiCheckboxChoiceGroupLabelModel: TanoshiLabelModel = new TanoshiLabelModel('checkbox', 'Checkbox choices')
 
-    const selectOption1: TanoshiSelectOptionModel = new TanoshiSelectOptionModel('select1', 'select 1')
-        .setId('select1')
+    const selectOption1: TanoshiSelectOptionModel = new TanoshiSelectOptionModel('select 1', 'select 1')
+        .setId('select')
 
-    const selectOption2: TanoshiSelectOptionModel = new TanoshiSelectOptionModel('select2', 'select 2')
-        .setId('select2')
+    const selectOption2: TanoshiSelectOptionModel = new TanoshiSelectOptionModel('select 2', 'select 2')
+        .setId('select')
         .setSelected(true)
 
-    const selectOption3: TanoshiSelectOptionModel = new TanoshiSelectOptionModel('select3', 'select 3')
-        .setId('select3')
-
+    const selectOption3: TanoshiSelectOptionModel = new TanoshiSelectOptionModel('select 3', 'select 3')
+        .setId('select')
 
     const tanoshiSelectInputModel: TanoshiSelectInputModel = new TanoshiSelectInputModel('Select')
         .setId('select')
+        .setName('select')
         .addOption(selectOption1)
         .addOption(selectOption2)
         .addOption(selectOption3)
-
+        .setValue(selectOption2.value)
+    
     const tanoshiSelectInputLabelModel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(tanoshiSelectInputModel)
 
     const tanoshiSelectMultipleInputModel: TanoshiSelectInputModel = new TanoshiSelectInputModel('Select multiple')
         .setId('selectMultiple')
+        .setName('selectMultiple')
         .addOption(selectOption1)
         .addOption(selectOption2)
         .addOption(selectOption3)
         .setMultiple(true)
+        .setValue([selectOption2.value])
 
     const tanoshiSelectInputMultipleLabelModel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(tanoshiSelectMultipleInputModel)
 
-    const fileInput: TanoshiFileInputModel = new TanoshiFileInputModel('File').setId('file')
+    const fileInput: TanoshiFileInputModel = new TanoshiFileInputModel('File')
+        .setId('file')
+        .setName('file')
     const fileInputLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(fileInput)
 
 
@@ -138,7 +157,7 @@
         .addLabelAndInput(new TanoshiLabelAndInputModel(fileInputLabel, fileInput, TanoshiFileInput))
 
     function handleForm(){
-		console.log(defaultForm.getValues())
+		console.log(defaultForm.values)
 	}
 
 </script>

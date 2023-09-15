@@ -8,10 +8,10 @@
 	const inputContainerModel: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
 
-export let tanoshiLabelAndInputModel: TanoshiLabelAndInputModel;
+	export let tanoshiLabelAndInputModel: TanoshiLabelAndInputModel;
 </script>
 
 <TanoshiContainer tanoshiContainerModel={inputContainerModel}>
 	<TanoshiLabel tanoshiLabelModel={tanoshiLabelAndInputModel.label} />
-	<svelte:component this={tanoshiLabelAndInputModel.component} tanoshiInputModel={tanoshiLabelAndInputModel.input} on:input/>
+	<svelte:component this={tanoshiLabelAndInputModel.component} tanoshiInputModel={tanoshiLabelAndInputModel.input}/>
 </TanoshiContainer>

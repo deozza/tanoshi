@@ -56,8 +56,13 @@ export default class TanoshiFormModel {
 		return this;
 	}
 
-	public getValues(): any {
+	get values(): any {
 		return this._values;
+	}
+
+	public setValues(values: any): TanoshiFormModel {
+		this._values = values;
+		return this;
 	}
 
 	public updateValue(id: string, value: any): TanoshiFormModel {

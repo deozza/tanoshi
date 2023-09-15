@@ -1,17 +1,8 @@
 <script lang="ts">
-	import { createEventDispatcher } from 'svelte';
 	import type TanoshiFileInputModel from './TanoshiFileInputModel';
 
 	export let tanoshiInputModel: TanoshiFileInputModel;
 
-	const dispatch = createEventDispatcher();
-
-	function handleInput(e: any) {
-		const file: FileList = e.target.files[0];
-		tanoshiInputModel.setValue(file);
-		dispatch('input', {value: tanoshiInputModel.value, id: tanoshiInputModel.id});
-
-	}
 </script>
 
 <div class="input-container">
@@ -22,7 +13,6 @@
 		name={tanoshiInputModel.name}
 		on:change
 		on:focusout
-		on:input={handleInput}
 		placeholder={tanoshiInputModel.placeholder}
 		readonly={tanoshiInputModel.readonly}
 		required={tanoshiInputModel.required}

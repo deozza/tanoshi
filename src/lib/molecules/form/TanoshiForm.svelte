@@ -6,6 +6,7 @@
 	import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel';
 	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, getThemeEnumKeyByEnumValue } from '$lib/enums';
 	import TanoshiLabelAndInput from '$molecules/labelAndInput/TanoshiLabelAndInput.svelte';
+	import type TanoshiLabelAndInputModel from '$molecules/labelAndInput/TanoshiLabelAndInputModel';
 
 	export let tanoshiFormModel: TanoshiFormModel;
 
@@ -21,11 +22,10 @@
 	const dispatch = createEventDispatcher();
 
 	function handleForm() {
-		dispatch('submit')
-	}
+		
+		tanoshiFormModel.setValues(tanoshiFormModel.labelsAndInputs.map((labelAndInput: TanoshiLabelAndInputModel) => {return {id: labelAndInput.input.id, value: labelAndInput.input.value}}));
 
-	function handleInput(e: any){
-		tanoshiFormModel.updateValue(e.detail.id, e.detail.value);
+		dispatch('submit')
 	}
 </script>
 
@@ -34,7 +34,7 @@
 		<ul>
 			{#each tanoshiFormModel.labelsAndInputs as tanoshiLabelAndInputModel}
 				<li>
-					<TanoshiLabelAndInput {tanoshiLabelAndInputModel} on:input={handleInput}/>
+					<TanoshiLabelAndInput {tanoshiLabelAndInputModel}/>
 				</li>
 			{/each}
 			<li class='space-y-2'>

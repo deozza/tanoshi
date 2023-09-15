@@ -4,7 +4,7 @@ import type { TanoshiChoiceAndLabelModel } from '$lib/types/Types';
 export default class TanoshiChoiceGroupModel {
 	private _choices: Array<TanoshiChoiceAndLabelModel> = [];
 	private _id!: string;
-	private _values: Array<string> = [];
+	private _value: Array<string> = [];
 	private _error: boolean = false;
 	private _errorMessage: string = '';
 
@@ -45,21 +45,21 @@ export default class TanoshiChoiceGroupModel {
 		return this;
 	}
 
-	public get values(): Array<string> {
-		return this._values;
+	public get value(): Array<string> {
+		return this._value;
 	}
 	
-	public setValues(values: Array<string>): TanoshiChoiceGroupModel {
-		this._values = values;
+	public setValue(value: Array<string>): TanoshiChoiceGroupModel {
+		this._value = value;
 		return this;
 	}
 
-	public handleValue(values: string): TanoshiChoiceGroupModel {
-		const index = this._values.indexOf(values);
-		if (index > -1) {
-			this._values.splice(index, 1);
+	public handleValue(value: string, checked: boolean|null): TanoshiChoiceGroupModel {
+		const index = this._value.indexOf(value);
+		if (index > -1 || checked === false) {
+			this._value.splice(index, 1);
 		} else {
-			this._values.push(values);
+			this._value.push(value);
 		}
 		return this;
 	}

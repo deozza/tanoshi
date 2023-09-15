@@ -4,7 +4,6 @@
 	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ORIENTATIONS, WIDTHS } from '$lib/enums';
 	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
 	import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel';
-	import { createEventDispatcher } from 'svelte';
 	import type TanoshiChoiceGroupModel from './TanoshiChoiceGroupModel';
 
 	const inputGroupContainerModel: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
@@ -16,16 +15,14 @@
 
 	export let tanoshiInputModel: TanoshiChoiceGroupModel;
 
-	const dispatch = createEventDispatcher();
-	function onChoice(e: any) {
-		tanoshiInputModel.setValues([]).handleValue(e.detail)
-		dispatch('input', {value: tanoshiInputModel.values, id: tanoshiInputModel.id});
+	function handleOnChoice(e: any) {
+		tanoshiInputModel.setValue([]).handleValue(e.detail, null);
 	}
 
-	function onChecked(e: any) {
-		tanoshiInputModel.handleValue(e.detail)
-		dispatch('input', {value: tanoshiInputModel.values, id: tanoshiInputModel.id});
+	function handleOnChecked(e: any) {
+		tanoshiInputModel.handleValue(e.detail.value, e.detail.checked);
 	}
+
 
 </script>
 
@@ -36,8 +33,8 @@
 				<TanoshiLabel tanoshiLabelModel={tanoshiChoiceAndLabelModel.label} />
 				<TanoshiChoiceInput 
 					tanoshiInputModel={tanoshiChoiceAndLabelModel.input} 
-					on:choiced={onChoice}
-					on:checked={onChecked}
+					on:choiced={handleOnChoice}
+					on:checked={handleOnChecked}
 				/>
 			</TanoshiContainer>
 		{/each}
