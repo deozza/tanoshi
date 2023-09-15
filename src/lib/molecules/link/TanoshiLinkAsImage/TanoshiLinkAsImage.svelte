@@ -1,6 +1,6 @@
 <script lang="ts">
-	import './../../atoms/link/tanoshiLink.css';
-	import './../../main.css';
+	import '../../../atoms/link/tanoshiLink.css';
+	import '../../../main.css';
 	import TanoshiImage from '$atoms/image/TanoshiImage.svelte';
 	import type TanoshiLinkAsImageModel from './TanoshiLinkAsImageModel';
 
