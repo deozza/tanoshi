@@ -12,13 +12,13 @@
     const noIconLink: TanoshiLinkModel = new TanoshiLinkModel('link')
 
     const iconAtLeftLink: TanoshiLinkModel = new TanoshiLinkModel('link')
-        .setIconAtLeft(faAppleAlt)
+        .setIconAtLeft('mdi:apple')
 
     const iconAtRightLink: TanoshiLinkModel = new TanoshiLinkModel('link')
-        .setIconAtRight(faAppleAlt)
+        .setIconAtRight('mdi:apple')
 
     const onlyIconLink: TanoshiLinkModel = new TanoshiLinkModel('')
-        .setIconAtLeft(faAppleAlt)
+        .setIconAtLeft('mdi:apple')
 
 
 
