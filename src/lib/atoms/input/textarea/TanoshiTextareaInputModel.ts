@@ -9,6 +9,8 @@ export default class TanoshiTextareaInputModel {
 	private _minLength: number | null = null;
 	private _maxLength: number | null = null;
 	private _placeholder: string | null = null;
+	private _rows: number = 3;
+	private _cols: number = 50;
 
 	constructor(name: string) {
 		this.setName(name);
@@ -106,6 +108,24 @@ export default class TanoshiTextareaInputModel {
 
 	setPlaceholder(value: string): TanoshiTextareaInputModel {
 		this._placeholder = value;
+		return this;
+	}
+
+	get rows(): number {
+		return this._rows;
+	}
+
+	setRows(value: number): TanoshiTextareaInputModel {
+		this._rows = value;
+		return this;
+	}
+
+	get cols(): number {
+		return this._cols;
+	}
+
+	setCols(value: number): TanoshiTextareaInputModel {
+		this._cols = value;
 		return this;
 	}
 }

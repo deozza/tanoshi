@@ -64,9 +64,5 @@ input.readonly:hover {
 	cursor: not-allowed;
 }
 
-@media (max-width: 639px) {
-	input {
-		width: 90%;
-	}
-}
+
 </style>

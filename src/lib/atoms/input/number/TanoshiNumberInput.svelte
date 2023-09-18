@@ -32,6 +32,8 @@
 div.input-container {
 	margin: 0.5rem/* 8px */;
 	flex: 2;
+	width: 100%;
+
 }
 
 input {
@@ -58,9 +60,6 @@ input.text-danger, input.text-danger:focus {
 }
 
 @media (max-width: 639px) {
-	input {
-		width: 90%;
-	}
 	div.input-container {
 		margin: 0.5rem 0/* 8px */;
 		flex: 2;

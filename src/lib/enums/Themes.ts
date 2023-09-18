@@ -182,6 +182,14 @@ export enum INPUT_CHOICES_TYPES {
     Checkbox = 'checkbox'
 }
 
+export enum FORM_METHODS {
+    Get = 'GET',
+    Post = 'POST',
+    Put = 'PUT',
+    Delete = 'DELETE',
+    Patch = 'PATCH'
+}
+
 export function getThemeEnumKeyByEnumValue(enumValue: string): THEMES  {
     const enumKey = Object.keys(THEMES).find(
         (key) => THEMES[key as keyof typeof THEMES] === enumValue
