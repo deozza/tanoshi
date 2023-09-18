@@ -13,6 +13,7 @@ export default class TanoshiContainerModel {
 	private _mobileOrientation!: string;
 	private _desktopSpacing!: string;
 	private _mobileSpacing!: string;
+	private _mobileWidth!: string;
 	private _itemsAlignment!: string;
 
 	public constructor(desktopOrientation: CONTAINER_ORIENTATIONS) {
@@ -24,6 +25,7 @@ export default class TanoshiContainerModel {
 		this.setBorderShape(CONTAINER_BORDERS.None);
 		this.setHeight(HEIGHTS.H100PRCT);
 		this.setWidth(WIDTHS.W12);
+		this.setMobileWidth(WIDTHS.W12);
 	}
 
 	get backgroundTheme(): string {
@@ -68,6 +70,15 @@ export default class TanoshiContainerModel {
 
 	public setCustomWidth(value: string): TanoshiContainerModel {
 		this._customWidth = value;
+		return this;
+	}
+
+	get mobileWidth(): string {
+		return this._mobileWidth;
+	}
+
+	public setMobileWidth(value: WIDTHS): TanoshiContainerModel {
+		this._mobileWidth = value;
 		return this;
 	}
 

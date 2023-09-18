@@ -16,6 +16,7 @@
 		{tanoshiContainerModel.desktopSpacing}
 		items-{tanoshiContainerModel.itemsAlignment}
 		{tanoshiContainerModel.width}
+		mobile-{tanoshiContainerModel.mobileWidth}
 		{tanoshiContainerModel.height}
 		{customClasses}
 	"
