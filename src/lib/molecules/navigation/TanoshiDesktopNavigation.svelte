@@ -83,6 +83,8 @@ nav{
 	display: block;
 	overflow: hidden;
     inset: 0;
+	z-index: 0;
+	height: fit-content;
 }
 
 

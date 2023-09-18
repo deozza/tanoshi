@@ -39,53 +39,54 @@
         .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInput))
 
     const primaryForm: TanoshiFormModel = new TanoshiFormModel(submitButton)
-        .setBorderTheme(THEMES.Primary)
         .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInput))
+    primaryForm.container.setBorderTheme(THEMES.Primary)
+    
 
     const secondaryForm: TanoshiFormModel = new TanoshiFormModel(submitButton)
-        .setBorderTheme(THEMES.Secondary)
         .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInput))
+    secondaryForm.container.setBorderTheme(THEMES.Secondary)    
 
 
     const blackForm: TanoshiFormModel = new TanoshiFormModel(submitButton)
-        .setBorderTheme(THEMES.Black)
         .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInput))
+    blackForm.container.setBorderTheme(THEMES.Black)
 
     const whiteForm: TanoshiFormModel = new TanoshiFormModel(submitButton)
-        .setBorderTheme(THEMES.White)
         .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInput))
+    whiteForm.container.setBorderTheme(THEMES.White)
 
     const successForm: TanoshiFormModel = new TanoshiFormModel(submitButton)
-        .setBorderTheme(THEMES.Success)
         .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInput))
+    successForm.container.setBorderTheme(THEMES.Success)
 
     const dangerForm: TanoshiFormModel = new TanoshiFormModel(submitButton)
-        .setBorderTheme(THEMES.Danger)
         .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInput))
+    dangerForm.container.setBorderTheme(THEMES.Danger)
 
     const warningForm: TanoshiFormModel = new TanoshiFormModel(submitButton)
-        .setBorderTheme(THEMES.Warning)
         .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInput))
+    warningForm.container.setBorderTheme(THEMES.Warning)
 
     const infoForm: TanoshiFormModel = new TanoshiFormModel(submitButton)
-        .setBorderTheme(THEMES.Info)
         .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInput))
+    infoForm.container.setBorderTheme(THEMES.Info)
 </script>
   
 <Hst.Story title="molecules/form/border theme" layout={{ type: 'grid', width: 600 }}>
