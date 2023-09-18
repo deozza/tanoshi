@@ -25,7 +25,7 @@
 
 <style>
 div {
-	padding: 0.5rem/* 8px */;
+	padding: 0.5rem 1rem/* 8px */;
 	display: flex;
 	box-sizing: border-box;
 	transition: background-color 0.5s ease;

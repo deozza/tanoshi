@@ -103,6 +103,7 @@
     const emailInputLabel: TanoshiLabelModel = new TanoshiLabelModel()
         .initWithInput(emailInput)
         .setValue('Email')
+		.setTheme(THEMES.Black)
 
     const objectInput: TanoshiTextInputModel = new TanoshiTextInputModel('object')
         .setPlaceholder('object')
@@ -110,6 +111,7 @@
     const objectInputLabel: TanoshiLabelModel = new TanoshiLabelModel()
         .initWithInput(objectInput)
         .setValue('Object')
+		.setTheme(THEMES.Black)
 
     const messageInput: TanoshiTextareaInputModel = new TanoshiTextareaInputModel('message')
         .setPlaceholder('message')
@@ -117,6 +119,7 @@
     const messageInputLabel: TanoshiLabelModel = new TanoshiLabelModel()
         .initWithInput(messageInput)
         .setValue('Message')
+		.setTheme(THEMES.Black)
 
     const submitButton: TanoshiButtonModel = new TanoshiButtonModel('Send')
         .setBasicTheme(THEMES.Primary)
