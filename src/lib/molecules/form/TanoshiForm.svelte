@@ -30,7 +30,7 @@
 		method="{tanoshiFormModel.method}" 
 		action="{tanoshiFormModel.action}"
 		name="{tanoshiFormModel.name}"
-		data-netflify="{tanoshiFormModel.netlifyEnabled}"
+		data-netlify="{tanoshiFormModel.netlifyEnabled}"
 		data-netlify-recaptcha="{tanoshiFormModel.netlifyRecaptchaEnabled}"
 		data-netlify-honeypot="bot-field"
 		>
