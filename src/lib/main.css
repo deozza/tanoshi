@@ -474,6 +474,25 @@ div.dropdown:hover > ul {
 }
 
 @media (max-width: 639px) {
+	.mobile-items-center {
+		align-items: center;
+	}
+	
+	.mobile-items-start {
+		align-items: flex-start;
+	}
+	
+	.mobile-items-end {
+		align-items: flex-end;
+	}
+	
+	.mobile-items-stretch {
+		align-items: stretch;
+	}
+	
+	.mobile-items-baseline {
+		align-items: baseline;
+	}
 	.mobile-w-auto {
 		width: auto;
 	}

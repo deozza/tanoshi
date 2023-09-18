@@ -60,5 +60,9 @@ textarea.text-danger, textarea.text-danger:focus {
 	textarea {
 		width: 90%;
 	}
+	div.input-container {
+		margin: 0.5rem 0/* 8px */;
+		flex: 2;
+	}
 }
 </style>
