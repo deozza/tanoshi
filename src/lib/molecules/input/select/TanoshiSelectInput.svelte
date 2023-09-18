@@ -50,6 +50,8 @@
 div {
 	margin: 0.5rem/* 8px */;
     flex: 2;
+	width: 100%;
+
 }
 select {
 	width: 100%;
@@ -64,11 +66,5 @@ select {
 
 select.readonly:hover {
 	cursor: not-allowed;
-}
-
-@media (max-width: 639px) {
-	select {
-		width: 90%;
-	}
 }
 </style>

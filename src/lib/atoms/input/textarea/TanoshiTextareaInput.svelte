@@ -11,6 +11,8 @@
 		id={tanoshiInputModel.id}
 		maxlength={tanoshiInputModel.maxLength}
 		minlength={tanoshiInputModel.minLength}
+		rows="{tanoshiInputModel.rows}"
+		cols="{tanoshiInputModel.cols}"
 		name={tanoshiInputModel.name}
 		on:change
 		on:focusout
@@ -31,6 +33,7 @@
 div.input-container {
 	margin: 0.5rem/* 8px */;
 	flex: 2;
+	width: 100%;
 }
 
 textarea {
@@ -57,12 +60,8 @@ textarea.text-danger, textarea.text-danger:focus {
 }
 
 @media (max-width: 639px) {
-	textarea {
-		width: 90%;
-	}
 	div.input-container {
 		margin: 0.5rem 0/* 8px */;
-		flex: 2;
 	}
 }
 </style>

@@ -3,8 +3,9 @@
 	import TanoshiTextInput from '$atoms/input/text/TanoshiTextInput.svelte';
 	import TanoshiLink from '$atoms/link/TanoshiLink.svelte';
 	import TanoshiHeader from '$atoms/typography/header/TanoshiHeader.svelte';
-	import { BUTTON_TYPES, CONTAINER_BORDERS, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ORIENTATIONS, HEADER_TAGS, HEIGHTS, INPUT_TEXT_TYPES, SIZES, THEMES, TanoshiContainerModel, TanoshiFormModel, TanoshiLabelAndInputModel, TanoshiLinkAsNavbarDropdownModel, TanoshiNavigationModel, WIDTHS } from '$lib';
+	import { BUTTON_TYPES, CONTAINER_BORDERS, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ORIENTATIONS, HEADER_TAGS, HEIGHTS, INPUT_TEXT_TYPES, SIZES, THEMES, TanoshiAlertModel, TanoshiContainerModel, TanoshiFormModel, TanoshiLabelAndInputModel, TanoshiLinkAsNavbarDropdownModel, TanoshiNavigationModel, WIDTHS } from '$lib';
 	import type { TanoshiNavigationLinkModel } from '$lib/types/Types';
+	import TanoshiAlert from '$molecules/alert/TanoshiAlert.svelte';
 	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
 	import TanoshiForm from '$molecules/form/TanoshiForm.svelte';
 	import TanoshiLinkAsNavbarDropdown from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte';
@@ -123,7 +124,7 @@
         .setBasicTheme(THEMES.Primary)
         .setType(BUTTON_TYPES.Submit)
 
-    const contactForm: TanoshiFormModel = new TanoshiFormModel(submitButton)
+    const contactForm: TanoshiFormModel = new TanoshiFormModel(submitButton, 'contact-form')
         .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(objectInputLabel, objectInput, TanoshiTextInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(messageInputLabel, messageInput, TanoshiTextareaInput))
@@ -132,15 +133,26 @@
         .setBackgroundTheme(THEMES.White)
         .setBorderTheme(THEMES.Primary)
         .setBorderShape(CONTAINER_BORDERS.Md)
+		.setWidth(WIDTHS.W6)
+
+	const defaultAlert: TanoshiAlertModel = new TanoshiAlertModel('Alert title')
+	.setContainerSize(WIDTHS.W6)
+
 </script>
   
 <Hst.Story title="examples/contact page">
     <TanoshiNavigation tanoshiDesktopNavigationModel={primaryDesktopNavigationModel} tanoshiMobileNavigationModel={primaryDesktopNavigationModel} />
 
+
     <main>
+
         <TanoshiContainer tanoshiContainerModel={contactContainer}>
-            <TanoshiHeader tanoshiHeaderModel={contactFormHeader} />
-            <TanoshiForm tanoshiFormModel={contactForm} />
+
+			<TanoshiHeader tanoshiHeaderModel={contactFormHeader} />
+			<TanoshiAlert tanoshiAlertModel={defaultAlert} />
+
+			<TanoshiForm tanoshiFormModel={contactForm} />
+
         </TanoshiContainer>    
     </main>
 </Hst.Story>

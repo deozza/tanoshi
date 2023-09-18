@@ -143,7 +143,7 @@
         .setBasicTheme(THEMES.Success)
         .setType(BUTTON_TYPES.Submit)
 
-    const defaultForm: TanoshiFormModel = new TanoshiFormModel(submitButton)
+    const defaultForm: TanoshiFormModel = new TanoshiFormModel(submitButton, 'default-form')
         .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInput))
@@ -160,6 +160,6 @@
 
 </script>
   
-<Hst.Story title="molecules/form/basic" layout={{ type: 'grid', width: 600 }}>
+<Hst.Story title="molecules/form/basic">
         <TanoshiForm tanoshiFormModel={defaultForm} on:submit={handleForm}/>
 </Hst.Story>
