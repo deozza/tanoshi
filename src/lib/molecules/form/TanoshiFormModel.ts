@@ -1,17 +1,19 @@
 import type TanoshiButtonModel from '$atoms/button/TanoshiButtonModel';
-import { BUTTON_TYPES, THEMES } from '$lib/enums';
+import { BUTTON_TYPES, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ORIENTATIONS, THEMES } from '$lib/enums';
 import FormButtonTypeError from '$lib/errors/FormButtonTypeError';
+import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel';
 import type TanoshiLabelAndInputModel from '$molecules/labelAndInput/TanoshiLabelAndInputModel';
 
 export default class TanoshiFormModel {
 	private _submitButton!: TanoshiButtonModel;
 	private _labelsAndInputs: Array<TanoshiLabelAndInputModel> = [];
-	private _backgroundTheme: string = THEMES.Transparent;
-	private _borderTheme: string = THEMES.Transparent;
 	private _values: any = {};
+	private _container : TanoshiContainerModel;
 
 	public constructor(submitButton: TanoshiButtonModel) {
 		this.setSubmitButton(submitButton);
+		this._container = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
+			.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center);
 	}
 
 	get submitButton(): TanoshiButtonModel {
@@ -38,24 +40,6 @@ export default class TanoshiFormModel {
 		return this;
 	}
 
-	get backgroundTheme(): string {
-		return this._backgroundTheme;
-	}
-
-	public setBackgroundTheme(value: THEMES): TanoshiFormModel {
-		this._backgroundTheme = value;
-		return this;
-	}
-
-	get borderTheme(): string {
-		return this._borderTheme;
-	}
-
-	public setBorderTheme(value: THEMES): TanoshiFormModel {
-		this._borderTheme = value;
-		return this;
-	}
-
 	get values(): any {
 		return this._values;
 	}
@@ -68,5 +52,9 @@ export default class TanoshiFormModel {
 	public updateValue(id: string, value: any): TanoshiFormModel {
 		this._values[id] = value;
 		return this;
+	}
+
+	get container(): TanoshiContainerModel {
+		return this._container;
 	}
 }

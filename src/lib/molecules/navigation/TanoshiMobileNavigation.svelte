@@ -53,7 +53,7 @@
 
 </script>
 
-<nav class:z-10={showMobileMenu === true}>
+<nav >
 	<TanoshiContainer tanoshiContainerModel={navigationMobileContainerModel} >
 		<TanoshiButton tanoshiButtonModel={mobileMenuButton} on:click={mobileMenuHandler}>
 			<span class="sr-only">Open main menu</span>
@@ -95,6 +95,7 @@ nav {
   position: fixed;
   width: 100vw;
   z-index: 10;
+  top: 0
 
 }
 

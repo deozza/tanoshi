@@ -6,7 +6,9 @@
 	import type TanoshiLabelAndInputModel from './TanoshiLabelAndInputModel';
 
 	const inputContainerModel: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
+		.setMobileOrientation(CONTAINER_ORIENTATIONS.C)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
+		.setMobileItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Start)
 
 	export let tanoshiLabelAndInputModel: TanoshiLabelAndInputModel;
 </script>

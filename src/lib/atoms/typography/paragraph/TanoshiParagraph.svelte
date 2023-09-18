@@ -1,6 +1,5 @@
 <script lang="ts">
 	import './../../../main.css';
-	import './tanoshiParagraph.css';
 	import type TanoshiParagraphModel from './TanoshiParagraphModel';
 
 	export let tanoshiParagraphModel: TanoshiParagraphModel;

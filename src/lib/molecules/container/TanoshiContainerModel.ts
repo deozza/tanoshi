@@ -13,17 +13,23 @@ export default class TanoshiContainerModel {
 	private _mobileOrientation!: string;
 	private _desktopSpacing!: string;
 	private _mobileSpacing!: string;
+	private _mobileWidth!: string;
 	private _itemsAlignment!: string;
+	private _mobileItemsAlignment!: string;
 
 	public constructor(desktopOrientation: CONTAINER_ORIENTATIONS) {
 		this.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Start);
+		this.setMobileItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Start);
 		this.setDesktopOrientation(desktopOrientation);
 		this.setMobileOrientation(desktopOrientation);
+		this.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Start);
+		this.setMobileSpacing(CONTAINER_ITEMS_SPACING.Start);
 		this.setBackgroundTheme(THEMES.Transparent);
 		this.setBorderTheme(THEMES.Transparent);
 		this.setBorderShape(CONTAINER_BORDERS.None);
 		this.setHeight(HEIGHTS.H100PRCT);
 		this.setWidth(WIDTHS.W12);
+		this.setMobileWidth(WIDTHS.W12);
 	}
 
 	get backgroundTheme(): string {
@@ -68,6 +74,15 @@ export default class TanoshiContainerModel {
 
 	public setCustomWidth(value: string): TanoshiContainerModel {
 		this._customWidth = value;
+		return this;
+	}
+
+	get mobileWidth(): string {
+		return this._mobileWidth;
+	}
+
+	public setMobileWidth(value: WIDTHS): TanoshiContainerModel {
+		this._mobileWidth = value;
 		return this;
 	}
 
@@ -132,6 +147,15 @@ export default class TanoshiContainerModel {
 
 	public setItemsAlignment(value: CONTAINER_ITEMS_ALIGNMENTS): TanoshiContainerModel {
 		this._itemsAlignment = value;
+		return this;
+	}
+
+	get mobileItemsAlignment(): string {
+		return this._mobileItemsAlignment;
+	}
+
+	public setMobileItemsAlignment(value: CONTAINER_ITEMS_ALIGNMENTS): TanoshiContainerModel {
+		this._mobileItemsAlignment = value;
 		return this;
 	}
 

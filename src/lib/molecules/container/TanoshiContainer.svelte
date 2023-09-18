@@ -13,9 +13,12 @@
 		border-{tanoshiContainerModel.borderTheme}
 		rounded-{tanoshiContainerModel.borderShape} 
 		flex-{tanoshiContainerModel.desktopOrientation} 
+		mobile-flex-{tanoshiContainerModel.mobileOrientation} 
 		{tanoshiContainerModel.desktopSpacing}
 		items-{tanoshiContainerModel.itemsAlignment}
+		mobile-items-{tanoshiContainerModel.mobileItemsAlignment}
 		{tanoshiContainerModel.width}
+		mobile-{tanoshiContainerModel.mobileWidth}
 		{tanoshiContainerModel.height}
 		{customClasses}
 	"
@@ -25,7 +28,7 @@
 
 <style>
 div {
-	padding: 0.5rem/* 8px */;
+	padding: 0.5rem 1rem/* 8px */;
 	display: flex;
 	box-sizing: border-box;
 	transition: background-color 0.5s ease;
@@ -151,7 +154,21 @@ div.bg-image {
  }
 
 
-@media (max-width: 640px) {
+@media (max-width: 639px) {
+	div.mobile-flex-c {
+		flex-direction: column;
+	}
+
+	div.mobile-flex-c-reverse {
+		flex-direction: column-reverse;
+	}
+
+	div.mobile-flex-r {
+		flex-direction: row;
+		justify-items: center;
+		flex-wrap: wrap;
+	}
+
 	div.flex-container{
 		width: 100%;
 	}

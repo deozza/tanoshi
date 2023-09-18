@@ -8,6 +8,7 @@ export default class TanoshiImageModel {
 	private _shape: string = '';
 	private _width: string = WIDTHS.WAuto;
 	private _height: string = HEIGHTS.H100PRCT;
+	private _margin: boolean = true
 
 	constructor(content: string, alt: string) {
 		this.setContent(content);
@@ -93,6 +94,15 @@ export default class TanoshiImageModel {
 		this.setShape(IMAGE_SHAPES.Circled);
 		this.setCustomWidth(value);
 		this.setCustomHeight(value);
+		return this;
+	}
+
+	get margin(): boolean {
+		return this._margin!;
+	}
+
+	public setMargin(value: boolean): TanoshiImageModel {
+		this._margin = value;
 		return this;
 	}
 }

@@ -4,16 +4,11 @@
 	import { createEventDispatcher } from 'svelte';
 	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
 	import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel';
-	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, getThemeEnumKeyByEnumValue } from '$lib/enums';
+	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS } from '$lib/enums';
 	import TanoshiLabelAndInput from '$molecules/labelAndInput/TanoshiLabelAndInput.svelte';
 	import type TanoshiLabelAndInputModel from '$molecules/labelAndInput/TanoshiLabelAndInputModel';
 
 	export let tanoshiFormModel: TanoshiFormModel;
-
-	const formContainerModel: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
-		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
-		.setBackgroundTheme(getThemeEnumKeyByEnumValue(tanoshiFormModel.backgroundTheme))
-		.setBorderTheme(getThemeEnumKeyByEnumValue(tanoshiFormModel.borderTheme))
 	
 	const buttonContainerModel: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
@@ -29,7 +24,7 @@
 	}
 </script>
 
-<TanoshiContainer tanoshiContainerModel={formContainerModel}>
+<TanoshiContainer tanoshiContainerModel={tanoshiFormModel.container}>
 	<form on:submit|preventDefault={handleForm} method="POST">
 		<ul>
 			{#each tanoshiFormModel.labelsAndInputs as tanoshiLabelAndInputModel}

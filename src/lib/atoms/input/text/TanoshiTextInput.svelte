@@ -47,7 +47,7 @@ input {
 	padding-right: 0.75rem/* 12px */;
 	border-width: 1px;
 	border-radius: 0.375rem/* 6px */;
-	color: var(--black-text-input, var(--black))
+	color: var(--black-text-input, var(--black));
 }
 
 input:read-only:hover {
@@ -65,6 +65,11 @@ input.text-danger, input.text-danger:focus {
 @media (max-width: 639px) {
 	input {
 		width: 90%;
+	}
+
+	div.input-container {
+		margin: 0.5rem 0/* 8px */;
+		flex: 2;
 	}
 }
 </style>
