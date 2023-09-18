@@ -25,44 +25,68 @@
 </script>
 
 <TanoshiContainer tanoshiContainerModel={tanoshiFormModel.container}>
-	<form 
-		on:submit|preventDefault={handleForm}
-		method="{tanoshiFormModel.method}" 
-		action="{tanoshiFormModel.action}"
-		name="{tanoshiFormModel.name}"
-		data-netlify="{tanoshiFormModel.netlifyEnabled}"
-		data-netlify-recaptcha="{tanoshiFormModel.netlifyRecaptchaEnabled}"
-		data-netlify-honeypot="bot-field"
-		>
-		<ul>
-			{#each tanoshiFormModel.labelsAndInputs as tanoshiLabelAndInputModel}
+
+	{#if tanoshiFormModel.netlifyEnabled}
+		<form 
+			on:submit|preventDefault={handleForm}
+			method="{tanoshiFormModel.method}" 
+			action="{tanoshiFormModel.action}"
+			name="{tanoshiFormModel.name}"
+			netlify
+			data-netlify-recaptcha="{tanoshiFormModel.netlifyRecaptchaEnabled}"
+			data-netlify-honeypot="bot-field"
+			>
+			<ul>
+				{#each tanoshiFormModel.labelsAndInputs as tanoshiLabelAndInputModel}
+					<li>
+						<TanoshiLabelAndInput {tanoshiLabelAndInputModel}/>
+					</li>
+				{/each}
 				<li>
-					<TanoshiLabelAndInput {tanoshiLabelAndInputModel}/>
+					<input type="hidden" name="form-name" value="{tanoshiFormModel.name}">
 				</li>
-			{/each}
-			<li>
-				<input type="hidden" name="form-name" value="{tanoshiFormModel.name}">
-			</li>
-			<li>
-				<p class="hidden">
-					<label>
-					  Don’t fill this out if you’re human: <input name="bot-field" />
-					</label>
-				  </p>
-			</li>
-			{#if tanoshiFormModel.netlifyRecaptchaEnabled}
 				<li>
-					<div data-netlify-recaptcha="true"></div>
+					<p class="hidden">
+						<label>
+						Don’t fill this out if you’re human: <input name="bot-field" />
+						</label>
+					</p>
 				</li>
-			{/if}
-			<li class='space-y-2'>
-				<TanoshiContainer tanoshiContainerModel={buttonContainerModel}>
-					<TanoshiButton tanoshiButtonModel={tanoshiFormModel.submitButton} />
-				</TanoshiContainer>
-			</li>
-		</ul>
-	</form>
+				{#if tanoshiFormModel.netlifyRecaptchaEnabled}
+					<li>
+						<div data-netlify-recaptcha="true"></div>
+					</li>
+				{/if}
+				<li class='space-y-2'>
+					<TanoshiContainer tanoshiContainerModel={buttonContainerModel}>
+						<TanoshiButton tanoshiButtonModel={tanoshiFormModel.submitButton} />
+					</TanoshiContainer>
+				</li>
+			</ul>
+		</form>
+	{:else}
+		<form 
+			method="{tanoshiFormModel.method}" 
+			action="{tanoshiFormModel.action}"
+			name="{tanoshiFormModel.name}"
+			>
+			<ul>
+				{#each tanoshiFormModel.labelsAndInputs as tanoshiLabelAndInputModel}
+					<li>
+						<TanoshiLabelAndInput {tanoshiLabelAndInputModel}/>
+					</li>
+				{/each}
+				<li class='space-y-2'>
+					<TanoshiContainer tanoshiContainerModel={buttonContainerModel}>
+						<TanoshiButton tanoshiButtonModel={tanoshiFormModel.submitButton} />
+					</TanoshiContainer>
+				</li>
+			</ul>
+		</form>
+	{/if}
+
 </TanoshiContainer>
+	
 
 <style>
 form{
