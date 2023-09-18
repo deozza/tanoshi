@@ -6,13 +6,14 @@
 
 <img
 	class="object-cover {tanoshiImageModel.shape} {tanoshiImageModel.filter} {tanoshiImageModel.width} {tanoshiImageModel.height}"
+	class:margin={tanoshiImageModel.margin}
 	src={tanoshiImageModel.content}
 	alt={tanoshiImageModel.alt}
 />
 
 
 <style>
-	img {
+img.margin {
 	margin: 0.5rem
 }
 

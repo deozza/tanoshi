@@ -81,9 +81,9 @@ nav{
 	position: fixed;
 	width: 100vw;
 	display: block;
-	overflow: hidden;
     inset: 0;
-	z-index: 0;
+	z-index: 1;
+	max-height: 64px;
 }
 
 

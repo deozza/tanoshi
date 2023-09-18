@@ -86,8 +86,6 @@
 
     const contactContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
         .setBackgroundTheme(THEMES.White)
-        .setBorderShape(CONTAINER_BORDERS.Md)
-        .setBorderTheme(THEMES.White)
         .setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
         .setWidth(WIDTHS.MinW10)
         .setHeight(HEIGHTS.MINH100VH)

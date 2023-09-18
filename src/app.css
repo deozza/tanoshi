@@ -21,3 +21,7 @@ img.circledSize {
     height: 48rem;
     width: 48rem;
 }
+
+.item-margin {
+    margin: 1rem;
+}
