@@ -16,8 +16,11 @@
 
 	const dispatch = createEventDispatcher();
 
-	function handleForm() {
+	function handleForm(e: any) {
 		
+		const form: HTMLFormElement = e.target as HTMLFormElement
+		const formData: FormData = new FormData(form)
+		tanoshiFormModel.setFormData(formData)
 		tanoshiFormModel.setValues(tanoshiFormModel.labelsAndInputs.map((labelAndInput: TanoshiLabelAndInputModel) => {return {id: labelAndInput.input.id, value: labelAndInput.input.value}}));
 
 		dispatch('submit')
@@ -28,7 +31,7 @@
 
 	{#if tanoshiFormModel.netlifyEnabled}
 		<form 
-			on:submit|preventDefault={handleForm}
+			on:submit|preventDefault={(e) => handleForm(e)}
 			method="{tanoshiFormModel.method}" 
 			action="{tanoshiFormModel.action}"
 			name="{tanoshiFormModel.name}"

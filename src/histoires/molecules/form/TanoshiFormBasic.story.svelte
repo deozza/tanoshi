@@ -153,6 +153,8 @@
         .addLabelAndInput(new TanoshiLabelAndInputModel(tanoshiSelectInputLabelModel, tanoshiSelectInputModel, TanoshiSelectInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(tanoshiSelectInputMultipleLabelModel, tanoshiSelectMultipleInputModel, TanoshiSelectInput))
         .addLabelAndInput(new TanoshiLabelAndInputModel(fileInputLabel, fileInput, TanoshiFileInput))
+        .setAction('')
+        .setNetlifyEnabled(true)
 
     function handleForm(){
 		console.log(defaultForm.values)

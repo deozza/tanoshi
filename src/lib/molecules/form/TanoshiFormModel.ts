@@ -8,6 +8,7 @@ export default class TanoshiFormModel {
 	private _submitButton!: TanoshiButtonModel;
 	private _labelsAndInputs: Array<TanoshiLabelAndInputModel> = [];
 	private _values: any = {};
+	private _formData: FormData | null = null;
 	private _container : TanoshiContainerModel;
 	private _name: string;
 	private _netlifyEnabled: boolean = false;
@@ -59,6 +60,15 @@ export default class TanoshiFormModel {
 
 	public updateValue(id: string, value: any): TanoshiFormModel {
 		this._values[id] = value;
+		return this;
+	}
+
+	get formData(): FormData | null {
+		return this._formData;
+	}
+
+	public setFormData(value: FormData): TanoshiFormModel {
+		this._formData = value;
 		return this;
 	}
 
