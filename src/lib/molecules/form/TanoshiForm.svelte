@@ -43,9 +43,6 @@
 					</li>
 				{/each}
 				<li>
-					<input type="hidden" name="form-name" value="{tanoshiFormModel.name}">
-				</li>
-				<li>
 					<p class="hidden">
 						<label>
 						Don’t fill this out if you’re human: <input name="bot-field" />
@@ -53,8 +50,10 @@
 					</p>
 				</li>
 				{#if tanoshiFormModel.netlifyRecaptchaEnabled}
-					<li>
-						<div data-netlify-recaptcha="true"></div>
+					<li class="space-y-2">
+						<TanoshiContainer tanoshiContainerModel={buttonContainerModel}>
+							<div data-netlify-recaptcha="true"></div>
+						</TanoshiContainer>
 					</li>
 				{/if}
 				<li class='space-y-2'>
