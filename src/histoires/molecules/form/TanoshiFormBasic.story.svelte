@@ -156,12 +156,18 @@
         .setAction('')
         .setNetlifyEnabled(true)
 
-    function handleForm(){
+    function handleForm(e: any){
 		console.log(defaultForm.values)
+        console.log(defaultForm.formData)
+        console.log(new URLSearchParams(defaultForm.formData).toString())
+
+        console.log(e.detail.formData)
+        console.log(new URLSearchParams(e.detail.formData).toString())
+
 	}
 
 </script>
   
 <Hst.Story title="molecules/form/basic">
-        <TanoshiForm tanoshiFormModel={defaultForm} on:submit={handleForm}/>
+        <TanoshiForm tanoshiFormModel={defaultForm} on:submit={(e) => handleForm(e)}/>
 </Hst.Story>

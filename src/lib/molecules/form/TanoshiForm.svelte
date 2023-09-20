@@ -23,7 +23,7 @@
 		tanoshiFormModel.setFormData(formData)
 		tanoshiFormModel.setValues(tanoshiFormModel.labelsAndInputs.map((labelAndInput: TanoshiLabelAndInputModel) => {return {id: labelAndInput.input.id, value: labelAndInput.input.value}}));
 
-		dispatch('submit')
+		dispatch('submit', tanoshiFormModel)
 	}
 </script>
 
@@ -35,10 +35,11 @@
 			method="{tanoshiFormModel.method}" 
 			action="{tanoshiFormModel.action}"
 			name="{tanoshiFormModel.name}"
-			netlify
 			data-netlify-recaptcha="{tanoshiFormModel.netlifyRecaptchaEnabled}"
-			data-netlify-honeypot="bot-field"
+			netlify-honeypot="bot-field" 
+			data-netlify="true"
 			>
+			<input type="hidden" name="form-name" value="{tanoshiFormModel.name}" />
 			<ul>
 				{#each tanoshiFormModel.labelsAndInputs as tanoshiLabelAndInputModel}
 					<li>
