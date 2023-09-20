@@ -35,7 +35,6 @@
 			method="{tanoshiFormModel.method}" 
 			action="{tanoshiFormModel.action}"
 			name="{tanoshiFormModel.name}"
-			data-netlify-recaptcha="{tanoshiFormModel.netlifyRecaptchaEnabled}"
 			netlify-honeypot="bot-field" 
 			data-netlify="true"
 			>
