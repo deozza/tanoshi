@@ -29,14 +29,10 @@
 
 <TanoshiContainer tanoshiContainerModel={tanoshiFormModel.container}>
 
-	{#if tanoshiFormModel.netlifyEnabled}
+	{#if tanoshiFormModel.preventDefault === true}
 		<form 
 			on:submit|preventDefault={(e) => handleForm(e)}
-			method="{tanoshiFormModel.method}" 
-			action="{tanoshiFormModel.action}"
 			name="{tanoshiFormModel.name}"
-			netlify-honeypot="bot-field" 
-			data-netlify="true"
 			>
 			<input type="hidden" name="form-name" value="{tanoshiFormModel.name}" />
 			<ul>
@@ -45,20 +41,6 @@
 						<TanoshiLabelAndInput {tanoshiLabelAndInputModel}/>
 					</li>
 				{/each}
-				<li>
-					<p class="hidden">
-						<label>
-						Don’t fill this out if you’re human: <input name="bot-field" />
-						</label>
-					</p>
-				</li>
-				{#if tanoshiFormModel.netlifyRecaptchaEnabled}
-					<li class="space-y-2">
-						<TanoshiContainer tanoshiContainerModel={buttonContainerModel}>
-							<div data-netlify-recaptcha="true"></div>
-						</TanoshiContainer>
-					</li>
-				{/if}
 				<li class='space-y-2'>
 					<TanoshiContainer tanoshiContainerModel={buttonContainerModel}>
 						<TanoshiButton tanoshiButtonModel={tanoshiFormModel.submitButton} />
@@ -103,9 +85,5 @@ form > ul{
 form > ul > li.space-y-2{
     margin-right: 1.5rem;
     margin-left: 1.5rem;
-}
-
-form ul li p.hidden{
-	display: none;
 }
 </style>

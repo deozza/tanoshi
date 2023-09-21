@@ -11,10 +11,9 @@ export default class TanoshiFormModel {
 	private _formData: FormData | null = null;
 	private _container : TanoshiContainerModel;
 	private _name: string;
-	private _netlifyEnabled: boolean = false;
-	private _netlifyRecaptchaEnabled: boolean = false;
 	private _method!: string;
 	private _action: string | null = null;
+	private _preventDefault: boolean = false;
 
 	public constructor(submitButton: TanoshiButtonModel, name: string) {
 		this.setSubmitButton(submitButton);
@@ -86,24 +85,6 @@ export default class TanoshiFormModel {
 		return this;
 	}
 
-	get netlifyEnabled(): boolean {
-		return this._netlifyEnabled;
-	}
-
-	public setNetlifyEnabled(value: boolean): TanoshiFormModel {
-		this._netlifyEnabled = value;
-		return this;
-	}
-
-	get netlifyRecaptchaEnabled(): boolean {
-		return this._netlifyRecaptchaEnabled;
-	}
-
-	public setNetlifyRecaptchaEnabled(value: boolean): TanoshiFormModel {
-		this._netlifyRecaptchaEnabled = value;
-		return this;
-	}
-
 	get method(): string {
 		return this._method;
 	}
@@ -119,6 +100,15 @@ export default class TanoshiFormModel {
 
 	public setAction(value: string): TanoshiFormModel {
 		this._action = value;
+		return this;
+	}
+
+	get preventDefault(): boolean {
+		return this._preventDefault;
+	}
+
+	public setPreventDefault(value: boolean): TanoshiFormModel {
+		this._preventDefault = value;
 		return this;
 	}
 }
