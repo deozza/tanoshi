@@ -56,7 +56,7 @@ Create a `app.css` file in the `/src/routes` folder with the following css varia
 
 These are the mandatory CSS variables that will be used to style the components. To get the list of all the options available, check [this page](https://tanoshi.netlify.app/story/src-histoires-configuratiom-story-js)
 
-Then import the css file in your `+layout.page` :
+Then import the CSS file in your `+layout.page` :
 
 ```html
 <script lang="ts">
