@@ -34,7 +34,6 @@
 			on:submit|preventDefault={(e) => handleForm(e)}
 			name="{tanoshiFormModel.name}"
 			>
-			<input type="hidden" name="form-name" value="{tanoshiFormModel.name}" />
 			<ul>
 				{#each tanoshiFormModel.labelsAndInputs as tanoshiLabelAndInputModel}
 					<li>
