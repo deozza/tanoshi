@@ -33,6 +33,7 @@ export {default as TanoshiLinkModel} from "./link/TanoshiLinkModel";
 
 export {default as TanoshiPillMaterial} from "./pill/TanoshiPillMaterial.svelte";
 export {default as TanoshiPillGlass} from "./pill/TanoshiPillGlass.svelte";
+export {default as TanoshiPillNeumorphism} from "./pill/TanoshiPillNeumorphism.svelte";
 export {default as TanoshiPillModel} from "./pill/TanoshiPillModel";
 
 export {default as TanoshiParagraph} from "./typography/paragraph/TanoshiParagraph.svelte";

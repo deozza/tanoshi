@@ -1,11 +1,27 @@
 {
   "name": "tanoshi",
-  "version": "0.12.13",
+  "version": "0.13.0",
   "keywords": [
     "svelte",
     "sveltekit",
     "tanoshi",
-    "design system"
+    "design system",
+    "ui",
+    "component library",
+    "component",
+    "library",
+    "ui library",
+    "ui component",
+    "ui components",
+    "ui components library",
+    "ui components library svelte",
+    "ui components library sveltekit",
+    "material design",
+    "flat design",
+    "flat ui",
+    "glassmorphism",
+    "glassmorphism design",
+    "glassmorphism ui"
   ],
   "license": "MIT",
   "repository": {
