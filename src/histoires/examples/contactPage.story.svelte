@@ -5,11 +5,11 @@
 	import TanoshiHeader from '$atoms/typography/header/TanoshiHeader.svelte';
 	import { BUTTON_TYPES, CONTAINER_BORDERS, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ORIENTATIONS, HEADER_TAGS, HEIGHTS, INPUT_TEXT_TYPES, SIZES, THEMES, TanoshiAlertModel, TanoshiContainerModel, TanoshiFormModel, TanoshiLabelAndInputModel, TanoshiLinkAsNavbarDropdownModel, TanoshiNavigationModel, WIDTHS } from '$lib';
 	import type { TanoshiNavigationLinkModel } from '$lib/types/Types';
-	import TanoshiAlert from '$molecules/alert/TanoshiAlertMaterial.svelte';
-	import TanoshiContainer from '$molecules/container/TanoshiContainerMaterial.svelte';
-	import TanoshiForm from '$molecules/form/TanoshiFormMaterial.svelte';
+	import TanoshiAlertMaterial from '$molecules/alert/TanoshiAlertMaterial.svelte';
+	import TanoshiContainerMaterial from '$molecules/container/TanoshiContainerMaterial.svelte';
+	import TanoshiFormMaterial from '$molecules/form/TanoshiFormMaterial.svelte';
 	import TanoshiLinkAsNavbarDropdown from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte';
-	import TanoshiNavigation from '$molecules/navigation/TanoshiNavigation.svelte';
+	import TanoshiNavigationMaterial from '$molecules/navigation/material/TanoshiNavigationMaterial.svelte';
 
     import '../../app.css';
 
@@ -141,19 +141,17 @@
 </script>
   
 <Hst.Story title="examples/contact page">
-    <TanoshiNavigation tanoshiDesktopNavigationModel={primaryDesktopNavigationModel} tanoshiMobileNavigationModel={primaryDesktopNavigationModel} />
-
+    <TanoshiNavigationMaterial tanoshiDesktopNavigationModel={primaryDesktopNavigationModel} tanoshiMobileNavigationModel={primaryDesktopNavigationModel} />
 
     <main>
-
-        <TanoshiContainer tanoshiContainerModel={contactContainer}>
+        <TanoshiContainerMaterial tanoshiContainerModel={contactContainer}>
 
 			<TanoshiHeader tanoshiHeaderModel={contactFormHeader} />
-			<TanoshiAlert tanoshiAlertModel={defaultAlert} />
+			<TanoshiAlertMaterial tanoshiAlertModel={defaultAlert} />
 
-			<TanoshiForm tanoshiFormModel={contactForm} />
+			<TanoshiFormMaterial tanoshiFormModel={contactForm} />
 
-        </TanoshiContainer>    
+        </TanoshiContainerMaterial>    
     </main>
 </Hst.Story>
 

@@ -1,11 +1,11 @@
 <script lang="ts">
-	import type TanoshiNavigationModel from './TanoshiNavigationModel';
+	import type TanoshiNavigationModel from '../TanoshiNavigationModel';
 
 	import TanoshiContainerModel from '$lib/molecules/container/TanoshiContainerModel';
 	
 	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, getThemeEnumKeyByEnumValue, HEIGHTS, THEMES } from '$lib/enums';
-	import TanoshiDesktopNavigation from './TanoshiDesktopNavigation.svelte';
-	import TanoshiMobileNavigation from './TanoshiMobileNavigation.svelte';
+	import TanoshiMobileNavigationGlass from './TanoshiMobileNavigationGlass.svelte';
+	import TanoshiDesktopNavigationGlass from './TanoshiDesktopNavigationGlass.svelte';
 
 	export let tanoshiDesktopNavigationModel: TanoshiNavigationModel;
 	export let tanoshiMobileNavigationModel: TanoshiNavigationModel;
@@ -27,6 +27,6 @@
 
 </script>
 
-<TanoshiDesktopNavigation bind:tanoshiDesktopNavigationModel={tanoshiDesktopNavigationModel} bind:navigationDesktopContainerModel={navigationDesktopContainerModel} />
+<TanoshiDesktopNavigationGlass bind:tanoshiDesktopNavigationModel={tanoshiDesktopNavigationModel} bind:navigationDesktopContainerModel={navigationDesktopContainerModel} />
 
-<TanoshiMobileNavigation {tanoshiMobileNavigationModel} {navigationMobileContainerModel} {mobileTheme}/>
+<TanoshiMobileNavigationGlass {tanoshiMobileNavigationModel} {navigationMobileContainerModel} {mobileTheme}/>

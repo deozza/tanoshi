@@ -1,14 +1,13 @@
 <script lang="ts">
 
-    import '../../../app.css';
+    import '../../../../app.css';
 
-	import {  THEMES, TanoshiLinkModel, TanoshiNavigationModel } from '$lib';
+	import {  THEMES, TanoshiLinkModel, TanoshiNavigationGlass, TanoshiNavigationModel } from '$lib';
     import type { Hst } from '@histoire/plugin-svelte';
 	import type { TanoshiNavigationLinkModel } from '$lib/types/Types';
 	import TanoshiLink from '$atoms/link/TanoshiLink.svelte';
 	import TanoshiLinkAsNavbarDropdown from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte';
 	import TanoshiLinkAsNavbarDropdownModel from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdownModel';
-	import TanoshiNavigation from '$molecules/navigation/TanoshiNavigation.svelte';
     export let Hst: Hst;
 	const dropdownTitle: TanoshiLinkModel = new TanoshiLinkModel('Dropdown').setTheme(THEMES.White);
 	const linkPrimary: TanoshiLinkModel = new TanoshiLinkModel('Primary').setTheme(THEMES.White);
@@ -218,39 +217,53 @@
         .setItemsAtLeft(logoNavbarModel)
         .setItemsAtCenter(navbarRightItemModels);
 
+	const transparentDesktopNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
+		.setTheme(THEMES.Transparent)
+		.setItemsAtRight(navbarRightItemModels)
+		.setItemsAtCenter(logoNavbarModel)
+
+	const transparentMobileNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
+		.setTheme(THEMES.Transparent)
+		.setItemsAtLeft(logoNavbarModel)
+		.setItemsAtCenter(navbarRightItemModels);
+
 </script>
   
-<Hst.Story title="molecules/navigation/basic">
+<Hst.Story title="molecules/navigation/glass/basic">
     <Hst.Variant title="primary">
-        <TanoshiNavigation tanoshiDesktopNavigationModel={primaryDesktopNavigationModel}  tanoshiMobileNavigationModel={primaryMobileNavigationModel} />
+        <TanoshiNavigationGlass tanoshiDesktopNavigationModel={primaryDesktopNavigationModel}  tanoshiMobileNavigationModel={primaryMobileNavigationModel} />
     </Hst.Variant>
 
     <Hst.Variant title="secondary">
-        <TanoshiNavigation tanoshiDesktopNavigationModel={secondaryDesktopNavigationModel}  tanoshiMobileNavigationModel={secondaryMobileNavigationModel} />
+        <TanoshiNavigationGlass tanoshiDesktopNavigationModel={secondaryDesktopNavigationModel}  tanoshiMobileNavigationModel={secondaryMobileNavigationModel} />
     </Hst.Variant>
 
     <Hst.Variant title="black">
-        <TanoshiNavigation tanoshiDesktopNavigationModel={blackDesktopNavigationModel}  tanoshiMobileNavigationModel={blackMobileNavigationModel} />
+        <TanoshiNavigationGlass tanoshiDesktopNavigationModel={blackDesktopNavigationModel}  tanoshiMobileNavigationModel={blackMobileNavigationModel} />
     </Hst.Variant>
 
     <Hst.Variant title="white">
-        <TanoshiNavigation tanoshiDesktopNavigationModel={whiteDesktopNavigationModel}  tanoshiMobileNavigationModel={whiteMobileNavigationModel} />
+        <TanoshiNavigationGlass tanoshiDesktopNavigationModel={whiteDesktopNavigationModel}  tanoshiMobileNavigationModel={whiteMobileNavigationModel} />
     </Hst.Variant>
 
     <Hst.Variant title="success">
-        <TanoshiNavigation tanoshiDesktopNavigationModel={successDesktopNavigationModel}  tanoshiMobileNavigationModel={successMobileNavigationModel} />
+        <TanoshiNavigationGlass tanoshiDesktopNavigationModel={successDesktopNavigationModel}  tanoshiMobileNavigationModel={successMobileNavigationModel} />
     </Hst.Variant>
 
     <Hst.Variant title="danger">
-        <TanoshiNavigation tanoshiDesktopNavigationModel={dangerDesktopNavigationModel}  tanoshiMobileNavigationModel={dangerMobileNavigationModel} />
+        <TanoshiNavigationGlass tanoshiDesktopNavigationModel={dangerDesktopNavigationModel}  tanoshiMobileNavigationModel={dangerMobileNavigationModel} />
     </Hst.Variant>
 
     <Hst.Variant title="warning">
-        <TanoshiNavigation tanoshiDesktopNavigationModel={warningDesktopNavigationModel}  tanoshiMobileNavigationModel={warningMobileNavigationModel} />
+        <TanoshiNavigationGlass tanoshiDesktopNavigationModel={warningDesktopNavigationModel}  tanoshiMobileNavigationModel={warningMobileNavigationModel} />
     </Hst.Variant>
 
     <Hst.Variant title="info">
-        <TanoshiNavigation tanoshiDesktopNavigationModel={infoDesktopNavigationModel}  tanoshiMobileNavigationModel={infoMobileNavigationModel} />
+        <TanoshiNavigationGlass tanoshiDesktopNavigationModel={infoDesktopNavigationModel}  tanoshiMobileNavigationModel={infoMobileNavigationModel} />
     </Hst.Variant>
+
+	<Hst.Variant title="transparent">
+		<TanoshiNavigationGlass tanoshiDesktopNavigationModel={transparentDesktopNavigationModel}  tanoshiMobileNavigationModel={transparentMobileNavigationModel} />
+	</Hst.Variant>
   
 </Hst.Story>

@@ -6,9 +6,9 @@
 	import TanoshiParagraph from '$atoms/typography/paragraph/TanoshiParagraph.svelte';
 	import { CONTAINER_BORDERS, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, HEADER_TAGS, HEIGHTS, SIZES, THEMES, TanoshiContainerModel, TanoshiLinkAsNavbarDropdownModel, TanoshiNavigationModel, WIDTHS } from '$lib';
 	import type { TanoshiNavigationLinkModel } from '$lib/types/Types';
-	import TanoshiContainer from '$molecules/container/TanoshiContainerMaterial.svelte';
+	import TanoshiContainerMaterial from '$molecules/container/TanoshiContainerMaterial.svelte';
 	import TanoshiLinkAsNavbarDropdown from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte';
-	import TanoshiNavigation from '$molecules/navigation/TanoshiNavigation.svelte';
+	import TanoshiNavigationMaterial from '$molecules/navigation/material/TanoshiNavigationMaterial.svelte';
 
     import '../../app.css';
 
@@ -216,22 +216,22 @@
 </script>
   
 <Hst.Story title="examples/items list">
-    <TanoshiNavigation tanoshiDesktopNavigationModel={primaryDesktopNavigationModel} tanoshiMobileNavigationModel={primaryDesktopNavigationModel} />
+    <TanoshiNavigationMaterial tanoshiDesktopNavigationModel={primaryDesktopNavigationModel} tanoshiMobileNavigationModel={primaryDesktopNavigationModel} />
 
     <main>
-        <TanoshiContainer tanoshiContainerModel={itemsListContainer}>
+        <TanoshiContainerMaterial tanoshiContainerModel={itemsListContainer}>
             <TanoshiHeader tanoshiHeaderModel={itemsListHeader} />
-			<TanoshiContainer tanoshiContainerModel={itemsContainer}>
+			<TanoshiContainerMaterial tanoshiContainerModel={itemsContainer}>
 				{#each itemsListModels as itemModel}
-					<TanoshiContainer tanoshiContainerModel={itemContainer} customClasses={'item-margin'}>
+					<TanoshiContainerMaterial tanoshiContainerModel={itemContainer} customClasses={'item-margin'}>
 						<TanoshiImage tanoshiImageModel={itemModel.image} />
 						<TanoshiParagraph tanoshiParagraphModel={itemModel.title} />
 						<TanoshiParagraph tanoshiParagraphModel={itemModel.availability} />
 						<TanoshiParagraph tanoshiParagraphModel={itemModel.price} />
-					</TanoshiContainer>
+					</TanoshiContainerMaterial>
 				{/each}
-			</TanoshiContainer>    
-        </TanoshiContainer>    
+			</TanoshiContainerMaterial>    
+        </TanoshiContainerMaterial>    
     </main>
 </Hst.Story>
 

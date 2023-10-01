@@ -1,6 +1,6 @@
 <script lang='ts'>
-	import TanoshiAlert from "$molecules/alert/TanoshiAlertMaterial.svelte";
 	import type TanoshiAlertModel from "$molecules/alert/TanoshiAlertModel";
+	import TanoshiAlertGlass from "../TanoshiAlertGlass.svelte";
 
     export let tanoshiAlertModels: Array<TanoshiAlertModel> = [];
 </script>
@@ -8,7 +8,7 @@
 
 <div>
     {#each tanoshiAlertModels as tanoshiAlertModel}
-        <TanoshiAlert {tanoshiAlertModel} />
+        <TanoshiAlertGlass {tanoshiAlertModel} />
     {/each}
 </div>
 

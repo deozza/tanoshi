@@ -4,9 +4,8 @@
 	import TanoshiHeader from '$atoms/typography/header/TanoshiHeader.svelte';
 	import { BUTTON_SIZES, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, HEADER_TAGS,  SIZES, THEMES, TanoshiContainerModel, TanoshiLinkAsNavbarDropdownModel, TanoshiNavigationModel, WIDTHS } from '$lib';
 	import type { TanoshiNavigationLinkModel } from '$lib/types/Types';
-	import TanoshiContainer from '$molecules/container/TanoshiContainerMaterial.svelte';
 	import TanoshiLinkAsNavbarDropdown from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte';
-	import TanoshiNavigation from '$molecules/navigation/TanoshiNavigation.svelte';
+	import TanoshiNavigationMaterial from '$molecules/navigation/material/TanoshiNavigationMaterial.svelte';
 
     import '../../app.css';
 
@@ -14,6 +13,7 @@
 	import TanoshiImage from '$atoms/image/TanoshiImage.svelte';
 	import TanoshiParagraph from '$atoms/typography/paragraph/TanoshiParagraph.svelte';
 	import TanoshiButtonMaterial from '$atoms/button/TanoshiButtonMaterial.svelte';
+	import TanoshiContainerMaterial from '$molecules/container/TanoshiContainerMaterial.svelte';
     export let Hst: Hst;
 
 	const dropdownTitle: TanoshiLinkModel = new TanoshiLinkModel('Dropdown').setTheme(THEMES.White);
@@ -119,20 +119,20 @@
 </script>
   
 <Hst.Story title="examples/product page">
-    <TanoshiNavigation tanoshiDesktopNavigationModel={primaryDesktopNavigationModel} tanoshiMobileNavigationModel={primaryDesktopNavigationModel} />
+    <TanoshiNavigationMaterial tanoshiDesktopNavigationModel={primaryDesktopNavigationModel} tanoshiMobileNavigationModel={primaryDesktopNavigationModel} />
 
     <main>
 		<section>
-			<TanoshiContainer tanoshiContainerModel={presentationSectionContainerModel} >
+			<TanoshiContainerMaterial tanoshiContainerModel={presentationSectionContainerModel} >
 				<TanoshiImage tanoshiImageModel={productImage} />
-				<TanoshiContainer tanoshiContainerModel={productPresentationContainerModel} >
+				<TanoshiContainerMaterial tanoshiContainerModel={productPresentationContainerModel} >
 					<TanoshiHeader tanoshiHeaderModel={productHeader} />
 					<TanoshiParagraph tanoshiParagraphModel={productDescriptionParagraph} />
 					<TanoshiParagraph tanoshiParagraphModel={productPrice} />
 					<TanoshiParagraph tanoshiParagraphModel={productAvailability} />
 					<TanoshiButtonMaterial tanoshiButtonModel={addToCartButton} />
-				</TanoshiContainer>
-			</TanoshiContainer>
+				</TanoshiContainerMaterial>
+			</TanoshiContainerMaterial>
 		</section>
     </main>
 </Hst.Story>

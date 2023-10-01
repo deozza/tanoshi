@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { CONTAINER_ORIENTATIONS, CONTAINER_ITEMS_SPACING, CONTAINER_ITEMS_ALIGNMENTS, WIDTHS} from "$lib/enums";
-	import { TanoshiContainer, TanoshiContainerModel, TanoshiNavigationModel } from "$molecules";
+	import { TanoshiContainerModel, TanoshiNavigationModel } from "$molecules";
 	import TanoshiLinkAsNavbarDropdown from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte';
+	import TanoshiContainerMaterial from '$molecules/container/TanoshiContainerMaterial.svelte';
+	import TanoshiContainerGlass from '$molecules/container/TanoshiContainerGlass.svelte';
 
     export let tanoshiDesktopNavigationModel: TanoshiNavigationModel;
     export let navigationDesktopContainerModel: TanoshiContainerModel;
@@ -28,10 +30,10 @@
 </script>
 
 <nav>
-	<TanoshiContainer tanoshiContainerModel={navigationDesktopContainerModel}>
-		<TanoshiContainer tanoshiContainerModel={tanoshiNavWidthContainerModel}>
+	<TanoshiContainerGlass tanoshiContainerModel={navigationDesktopContainerModel}>
+		<TanoshiContainerMaterial tanoshiContainerModel={tanoshiNavWidthContainerModel}>
 			{#if tanoshiDesktopNavigationModel.itemsAtLeft.length > 0}
-				<TanoshiContainer tanoshiContainerModel={desktopNavigationLeftModuleContainer}>
+				<TanoshiContainerMaterial tanoshiContainerModel={desktopNavigationLeftModuleContainer}>
 					{#each tanoshiDesktopNavigationModel.itemsAtLeft as navbarItemModel }
 						{#if navbarItemModel.component === TanoshiLinkAsNavbarDropdown}
 						<div class="dropdown">
@@ -41,10 +43,10 @@
 							<svelte:component this={navbarItemModel.component} tanoshiLinkModel={navbarItemModel.link} />
 						{/if}
 					{/each}
-				</TanoshiContainer>				
+				</TanoshiContainerMaterial>				
 			{/if}
 			{#if tanoshiDesktopNavigationModel.itemsAtCenter.length > 0}
-				<TanoshiContainer tanoshiContainerModel={desktopNavigationCenterModuleContainer}>
+				<TanoshiContainerMaterial tanoshiContainerModel={desktopNavigationCenterModuleContainer}>
 					{#each tanoshiDesktopNavigationModel.itemsAtCenter as navbarItemModel }
 						{#if navbarItemModel.component === TanoshiLinkAsNavbarDropdown}
 						<div class="dropdown">
@@ -54,10 +56,10 @@
 							<svelte:component this={navbarItemModel.component} tanoshiLinkModel={navbarItemModel.link} />
 						{/if}
 					{/each}
-				</TanoshiContainer>
+				</TanoshiContainerMaterial>
 			{/if}
 			{#if tanoshiDesktopNavigationModel.itemsAtRight.length > 0}
-				<TanoshiContainer tanoshiContainerModel={desktopNavigationRightModuleContainer}>
+				<TanoshiContainerMaterial tanoshiContainerModel={desktopNavigationRightModuleContainer}>
 					{#each tanoshiDesktopNavigationModel.itemsAtRight as navbarItemModel }
 						{#if navbarItemModel.component === TanoshiLinkAsNavbarDropdown}
 						<div class="dropdown">
@@ -67,11 +69,11 @@
 							<svelte:component this={navbarItemModel.component} tanoshiLinkModel={navbarItemModel.link} />
 						{/if}
 					{/each}
-				</TanoshiContainer>
+				</TanoshiContainerMaterial>
 			{/if}
 
-		</TanoshiContainer>
-	</TanoshiContainer>
+		</TanoshiContainerMaterial>
+	</TanoshiContainerGlass>
 </nav>
 
 <style>

@@ -1,14 +1,14 @@
 <script lang="ts">
 	import TanoshiLinkModel from '$atoms/link/TanoshiLinkModel';
 	import TanoshiNavigationModel from '$molecules/navigation/TanoshiNavigationModel';
-	import TanoshiNavigation from '$molecules/navigation/TanoshiNavigation.svelte';
-
+	
 	import '../app.css';
 	import { THEMES } from '$lib';
 	import type { TanoshiNavigationLinkModel } from '$lib/types/Types';
 	import TanoshiLink from '$atoms/link/TanoshiLink.svelte';
 	import TanoshiLinkAsNavbarDropdownModel from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdownModel';
 	import TanoshiLinkAsNavbarDropdown from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte';
+	import TanoshiNavigationMaterial from '$molecules/navigation/material/TanoshiNavigationMaterial.svelte';
 
 	let positionY: number;
 	let divHeight: number;
@@ -94,7 +94,7 @@
 <svelte:window bind:scrollY={positionY} />
 
 <div class="hero-background" bind:clientHeight={divHeight}>
-	<TanoshiNavigation bind:tanoshiDesktopNavigationModel={tanoshiDesktopNavigationModel} {tanoshiMobileNavigationModel} />
+	<TanoshiNavigationMaterial bind:tanoshiDesktopNavigationModel={tanoshiDesktopNavigationModel} {tanoshiMobileNavigationModel} />
 </div>
 
 <main class="relative">

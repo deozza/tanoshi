@@ -1,14 +1,16 @@
 export {default as TanoshiAlert} from "./alert/TanoshiAlertMaterial.svelte";
-export {default as TanoshiAlertContainer} from "./alert/alertContainer/TanoshiAlertContainer.svelte";
+export {default as TanoshiAlertContainer} from "./alert/alertContainer/TanoshiAlertContainerGlass.svelte";
 export {default as TanoshiAlertModel} from "./alert/TanoshiAlertModel";
 
 export {default as TanoshiCarousel} from "./carousel/TanoshiCarousel.svelte";
 export {default as TanoshiCarouselModel} from "./carousel/TanoshiCarouselModel";
 
-export {default as TanoshiContainer} from "./container/TanoshiContainerMaterial.svelte";
+export {default as TanoshiContainerMaterial} from "./container/TanoshiContainerMaterial.svelte";
+export {default as TanoshiContainerGlass} from "./container/TanoshiContainerGlass.svelte";
 export {default as TanoshiContainerModel} from "./container/TanoshiContainerModel";
 
-export {default as TanoshiForm} from "./form/TanoshiFormMaterial.svelte";
+export {default as TanoshiFormMaterial} from "./form/TanoshiFormMaterial.svelte";
+export {default as TanoshiFormGlass} from "./form/TanoshiFormGlass.svelte";
 export {default as TanoshiFormModel} from "./form/TanoshiFormModel";
 
 export {default as TanoshiChoiceGroup} from "./input/choiceGroup/TanoshiChoiceGroup.svelte";
@@ -32,7 +34,8 @@ export {default as TanoshiLinkAsNavbarDropdownModel} from "./link/TanoshiLinkAsN
 export {default as TanoshiModal} from "./modal/TanoshiModal.svelte";
 export {default as TanoshiModalModel} from "./modal/TanoshiModalModel";
 
-export {default as TanoshiNavigation} from "./navigation/TanoshiNavigation.svelte";
+export {default as TanoshiNavigationMaterial} from "./navigation/material/TanoshiNavigationMaterial.svelte";
+export {default as TanoshiNavigationGlass} from "./navigation/glass/TanoshiNavigationGlass.svelte";
 export {default as TanoshiNavigationModel} from "./navigation/TanoshiNavigationModel";
 
 export {default as TanoshiTabContainer} from "./tab/tabContainer/TanoshiTabContainer.svelte";
