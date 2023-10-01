@@ -1,5 +1,5 @@
 <script lang="ts">
-	import TanoshiButton from '$atoms/button/TanoshiButton.svelte';
+	import TanoshiButtonMaterial from '$atoms/button/TanoshiButtonMaterial.svelte';
 	import type TanoshiFormModel from './TanoshiFormModel';
 	import { createEventDispatcher } from 'svelte';
 	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
@@ -42,7 +42,7 @@
 				{/each}
 				<li class='space-y-2'>
 					<TanoshiContainer tanoshiContainerModel={buttonContainerModel}>
-						<TanoshiButton tanoshiButtonModel={tanoshiFormModel.submitButton} />
+						<TanoshiButtonMaterial tanoshiButtonModel={tanoshiFormModel.submitButton} />
 					</TanoshiContainer>
 				</li>
 			</ul>
@@ -61,7 +61,7 @@
 				{/each}
 				<li class='space-y-2'>
 					<TanoshiContainer tanoshiContainerModel={buttonContainerModel}>
-						<TanoshiButton tanoshiButtonModel={tanoshiFormModel.submitButton} />
+						<TanoshiButtonMaterial tanoshiButtonModel={tanoshiFormModel.submitButton} />
 					</TanoshiContainer>
 				</li>
 			</ul>

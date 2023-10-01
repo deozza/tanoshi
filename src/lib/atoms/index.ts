@@ -1,4 +1,4 @@
-export {default as TanoshiButton} from "./button/TanoshiButton.svelte";
+export {default as TanoshiButton} from "./button/TanoshiButtonMaterial.svelte";
 export {default as TanoshiButtonModel} from "./button/TanoshiButtonModel";
 
 export {default as TanoshiImage} from "./image/TanoshiImage.svelte";

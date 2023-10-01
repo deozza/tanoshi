@@ -1,9 +1,9 @@
 <script lang="ts">
 
-    import '../../../app.css';
+    import '../../../../app.css';
 
 	import { TanoshiButtonModel } from '$atoms';
-	import TanoshiButton from '$atoms/button/TanoshiButton.svelte';
+	import TanoshiButtonMaterial from '$atoms/button/TanoshiButtonMaterial.svelte';
 	import { THEMES } from '$lib';
     import type { Hst } from '@histoire/plugin-svelte';
     export let Hst: Hst;
@@ -74,37 +74,37 @@
 
 </script>
   
-<Hst.Story title="atoms/button/outlined" layout={{ type: 'grid', width: 200 }}>
+<Hst.Story title="atoms/button/material/outlined" layout={{ type: 'grid', width: 200 }}>
     <Hst.Variant title="primary">
-        <TanoshiButton tanoshiButtonModel={primaryButton} />
+        <TanoshiButtonMaterial tanoshiButtonModel={primaryButton} />
     </Hst.Variant>
 
     <Hst.Variant title="secondary">
-        <TanoshiButton tanoshiButtonModel={secondaryButton} />
+        <TanoshiButtonMaterial tanoshiButtonModel={secondaryButton} />
     </Hst.Variant>
 
     <Hst.Variant title="white">
-        <TanoshiButton tanoshiButtonModel={whiteButton} />
+        <TanoshiButtonMaterial tanoshiButtonModel={whiteButton} />
     </Hst.Variant>
 
     <Hst.Variant title="black">
-        <TanoshiButton tanoshiButtonModel={blackButton} />
+        <TanoshiButtonMaterial tanoshiButtonModel={blackButton} />
     </Hst.Variant>
 
     <Hst.Variant title="success">
-        <TanoshiButton tanoshiButtonModel={successButton} />
+        <TanoshiButtonMaterial tanoshiButtonModel={successButton} />
     </Hst.Variant>
 
     <Hst.Variant title="danger">
-        <TanoshiButton tanoshiButtonModel={dangerButton} />
+        <TanoshiButtonMaterial tanoshiButtonModel={dangerButton} />
     </Hst.Variant>
 
     <Hst.Variant title="warning">
-        <TanoshiButton tanoshiButtonModel={warningButton} />
+        <TanoshiButtonMaterial tanoshiButtonModel={warningButton} />
     </Hst.Variant>
 
     <Hst.Variant title="info">
-        <TanoshiButton tanoshiButtonModel={infoButton} />
+        <TanoshiButtonMaterial tanoshiButtonModel={infoButton} />
     </Hst.Variant>
 
 </Hst.Story>

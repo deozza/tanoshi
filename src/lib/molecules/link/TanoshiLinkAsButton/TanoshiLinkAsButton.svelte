@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../../../atoms/link/tanoshiLink.css';
 	import '../../../main.css';
-	import TanoshiButton from '$atoms/button/TanoshiButton.svelte';
+	import TanoshiButtonMaterial from '$atoms/button/TanoshiButtonMaterial.svelte';
 	import type TanoshiLinkAsButtonModel from './TanoshiLinkAsButtonModel';
 
 	export let tanoshiLinkModel: TanoshiLinkAsButtonModel;
@@ -15,7 +15,7 @@
 	href={tanoshiLinkModel.link.link}
 	target={tanoshiLinkModel.link.isInternal}
 >
-	<TanoshiButton
+	<TanoshiButtonMaterial
 		tanoshiButtonModel={tanoshiLinkModel.button}
 	/>
 </a>

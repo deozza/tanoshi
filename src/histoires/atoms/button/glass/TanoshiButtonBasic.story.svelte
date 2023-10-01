@@ -1,70 +1,71 @@
 <script lang="ts">
 
-    import '../../../app.css';
+    import '../../../../app.css';
 
 	import { TanoshiButtonModel } from '$atoms';
-	import TanoshiButton from '$atoms/button/TanoshiButton.svelte';
 	import { THEMES } from '$lib';
     import type { Hst } from '@histoire/plugin-svelte';
+	import TanoshiButtonGlass from '$atoms/button/TanoshiButtonGlass.svelte';
     export let Hst: Hst;
 
     const primaryButton: TanoshiButtonModel = new TanoshiButtonModel('Primary')
-        .setGlassTheme(THEMES.Primary)
+        .setBasicTheme(THEMES.Primary)
 
     const secondaryButton: TanoshiButtonModel = new TanoshiButtonModel('Secondary')
-        .setGlassTheme(THEMES.Secondary)
+        .setBasicTheme(THEMES.Secondary)
 
     const whiteButton: TanoshiButtonModel = new TanoshiButtonModel('White')
-        .setGlassTheme(THEMES.White)
+        .setBasicTheme(THEMES.White)
         .setTextTheme(THEMES.White)
         .setTextHoverTheme(THEMES.White)
-        
+
     const blackButton: TanoshiButtonModel = new TanoshiButtonModel('Black')
-        .setGlassTheme(THEMES.Black)
+        .setBasicTheme(THEMES.Black)
 
     const successButton: TanoshiButtonModel = new TanoshiButtonModel('Success')
-        .setGlassTheme(THEMES.Success)
+        .setBasicTheme(THEMES.Success)
 
     const dangerButton: TanoshiButtonModel = new TanoshiButtonModel('Danger')
-        .setGlassTheme(THEMES.Danger)
+        .setBasicTheme(THEMES.Danger)
 
     const warningButton: TanoshiButtonModel = new TanoshiButtonModel('Warning')
-        .setGlassTheme(THEMES.Warning)
+        .setBasicTheme(THEMES.Warning)
 
     const infoButton: TanoshiButtonModel = new TanoshiButtonModel('Info')
-        .setGlassTheme(THEMES.Info)
+        .setBasicTheme(THEMES.Info)
 </script>
   
-<Hst.Story title="atoms/button/glass" layout={{ type: 'grid', width: 200 }}>
+<Hst.Story title="atoms/button/glass/basic" layout={{ type: 'grid', width: 200 }}>
     <Hst.Variant title="primary">
-        <TanoshiButton tanoshiButtonModel={primaryButton} />
+        <TanoshiButtonGlass tanoshiButtonModel={primaryButton} />
     </Hst.Variant>
 
     <Hst.Variant title="secondary">
-        <TanoshiButton tanoshiButtonModel={secondaryButton} />
+        <TanoshiButtonGlass tanoshiButtonModel={secondaryButton} />
     </Hst.Variant>
 
     <Hst.Variant title="white">
-        <TanoshiButton tanoshiButtonModel={whiteButton} />
+        <TanoshiButtonGlass tanoshiButtonModel={whiteButton} />
     </Hst.Variant>
 
     <Hst.Variant title="black">
-        <TanoshiButton tanoshiButtonModel={blackButton} />
+        <TanoshiButtonGlass tanoshiButtonModel={blackButton} />
     </Hst.Variant>
 
     <Hst.Variant title="success">
-        <TanoshiButton tanoshiButtonModel={successButton} />
+        <TanoshiButtonGlass tanoshiButtonModel={successButton} />
     </Hst.Variant>
 
     <Hst.Variant title="danger">
-        <TanoshiButton tanoshiButtonModel={dangerButton} />
+        <TanoshiButtonGlass tanoshiButtonModel={dangerButton} />
     </Hst.Variant>
 
     <Hst.Variant title="warning">
-        <TanoshiButton tanoshiButtonModel={warningButton} />
+        <TanoshiButtonGlass tanoshiButtonModel={warningButton} />
     </Hst.Variant>
 
     <Hst.Variant title="info">
-        <TanoshiButton tanoshiButtonModel={infoButton} />
+        <TanoshiButtonGlass tanoshiButtonModel={infoButton} />
     </Hst.Variant>
+
 </Hst.Story>

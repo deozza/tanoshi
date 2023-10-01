@@ -17,7 +17,6 @@
 	"
 	class:disabled:opacity-50={tanoshiButtonModel.isDisabled === true}
 	class:pointer-events-none={tanoshiButtonModel.isDisabled === true}
-	class:glass={tanoshiButtonModel.glassTheme === true}
 	disabled={tanoshiButtonModel.isDisabled}
 	on:click
 	type={tanoshiButtonModel.type}
@@ -44,11 +43,13 @@
 	margin: 0.5rem;
 	border-width: 1px;
 	border-radius: 0.375rem;
-	transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	transition-duration: 150ms;
 	transition-duration: 300ms;	
 	cursor: pointer;
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	transition-property: color, box-shadow, border, background-color;
 }
 
 button.btn-sm {
@@ -89,19 +90,9 @@ button:disabled {
     opacity: 0.5;
 }
 
-button.glass {
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
-	transition-property: color, box-shadow, border, background-color;
-}
-
 button.btn-primary {
-    background-color: rgba(var(--primary-bg-button, var(--primary)));
-}
-
-button.btn-primary.glass {
 	background-color: rgba(255, 255, 255, 0.05);
-	box-shadow: inset 0px 0px 15px 2px rgba(var(--primary-bg-button, var(--primary)), 0.3), 0px 5px 5px 4px transparent;
+	box-shadow: inset 0px 0px 15px 2px rgba(var(--primary-bg-button, var(--primary)), 0.3);
 }
 
 button.btn-text-primary {
@@ -109,20 +100,12 @@ button.btn-text-primary {
 }
 
 button.btn-border-primary {
-    border: 1px solid rgba(var(--primary-border-button, var(--primary)));
-}
-
-button.btn-border-primary.glass {
 	border: 1px solid rgba(var(--primary-border-button, var(--primary)), 0.5);
 }
 
 button.btn-hover-primary:hover:not([disabled]){
-    background-color: rgba(var(--primary-bg-button-hover, var(--primary-dark)));
-}
-
-button.btn-hover-primary.glass:hover:not([disabled]){
 	background-color: rgba(255, 255, 255, 0.05);
-	box-shadow: inset 0px 0px 20px 3px rgba(var(--primary), 0.6), 0px 5px 5px 4px rgba(0, 0, 0, 0.14);
+	box-shadow: inset 0px 0px 20px 3px rgba(var(--primary), 0.6);
 }
 
 button.btn-text-hover-primary:hover:not([disabled]) {
@@ -134,12 +117,8 @@ button.btn-border-hover-primary:hover:not([disabled]) {
 }
 
 button.btn-secondary {
-    background-color: rgba(var(--secondary-bg-button, var(--secondary)));
-}
-
-button.btn-secondary.glass {
 	background-color: rgba(255, 255, 255, 0.05);
-	box-shadow: inset 0px 0px 15px 2px rgba(var(--secondary-bg-button, var(--secondary)), 0.3), 0px 5px 5px 4px transparent;
+	box-shadow: inset 0px 0px 15px 2px rgba(var(--secondary-bg-button, var(--secondary)), 0.3);
 }
 
 button.btn-text-secondary {
@@ -147,20 +126,12 @@ button.btn-text-secondary {
 }
 
 button.btn-border-secondary {
-    border: 1px solid rgba(var(--secondary-border-button, var(--secondary)));
-}
-
-button.btn-border-secondary.glass {
 	border: 1px solid rgba(var(--secondary-border-button, var(--secondary)), 0.5);
 }
 
 button.btn-hover-secondary:hover:not([disabled]){
-    background-color: rgba(var(--secondary-bg-button-hover, var(--secondary-dark)));
-}
-
-button.btn-hover-secondary.glass:hover:not([disabled]){
 	background-color: rgba(255, 255, 255, 0.05);
-	box-shadow: inset 0px 0px 20px 3px rgba(var(--secondary), 0.6), 0px 5px 5px 4px rgba(0, 0, 0, 0.14);
+	box-shadow: inset 0px 0px 20px 3px rgba(var(--secondary), 0.6);
 }
 
 button.btn-text-hover-secondary:hover:not([disabled]) {
@@ -172,12 +143,8 @@ button.btn-border-hover-secondary:hover:not([disabled]) {
 }
 
 button.btn-success {
-    background-color: rgba(var(--success-bg-button, var(--success)));
-}
-
-button.btn-success.glass {
 	background-color: rgba(255, 255, 255, 0.05);
-	box-shadow: inset 0px 0px 15px 2px rgba(var(--success-bg-button, var(--success)), 0.3), 0px 5px 5px 4px transparent;
+	box-shadow: inset 0px 0px 15px 2px rgba(var(--success-bg-button, var(--success)), 0.3);
 }
 
 button.btn-text-success {
@@ -185,20 +152,12 @@ button.btn-text-success {
 }
 
 button.btn-border-success {
-    border: 1px solid rgba(var(--success-border-button, var(--success)));
-}
-
-button.btn-border-success.glass {
 	border: 1px solid rgba(var(--success-border-button, var(--success)), 0.5);
 }
 
 button.btn-hover-success:hover:not([disabled]){
-    background-color: rgba(var(--success-bg-button-hover, var(--success-dark)));
-}
-
-button.btn-hover-success.glass:hover:not([disabled]){
 	background-color: rgba(255, 255, 255, 0.05);
-	box-shadow: inset 0px 0px 20px 3px rgba(var(--success), 0.6), 0px 5px 5px 4px rgba(0, 0, 0, 0.14);
+	box-shadow: inset 0px 0px 20px 3px rgba(var(--success), 0.6);
 }
 
 button.btn-text-hover-success:hover:not([disabled]) {
@@ -210,12 +169,8 @@ button.btn-border-hover-success:hover:not([disabled]) {
 }
 
 button.btn-warning {
-    background-color: rgba(var(--warning-bg-button, var(--warning)));
-}
-
-button.btn-warning.glass {
 	background-color: rgba(255, 255, 255, 0.05);
-	box-shadow: inset 0px 0px 15px 2px rgba(var(--warning-bg-button, var(--warning)), 0.3), 0px 5px 5px 4px transparent;
+	box-shadow: inset 0px 0px 15px 2px rgba(var(--warning-bg-button, var(--warning)), 0.3);
 }
 
 button.btn-text-warning {
@@ -223,20 +178,12 @@ button.btn-text-warning {
 }
 
 button.btn-border-warning {
-    border: 1px solid rgba(var(--warning-border-button, var(--warning)));
-}
-
-button.btn-border-warning.glass {
 	border: 1px solid rgba(var(--warning-border-button, var(--warning)), 0.5);
 }
 
 button.btn-hover-warning:hover:not([disabled]){
-    background-color: rgba(var(--warning-bg-button-hover, var(--warning-dark)));
-}
-
-button.btn-hover-warning.glass:hover:not([disabled]){
 	background-color: rgba(255, 255, 255, 0.05);
-	box-shadow: inset 0px 0px 20px 3px rgba(var(--warning), 0.6), 0px 5px 5px 4px rgba(0, 0, 0, 0.14);
+	box-shadow: inset 0px 0px 20px 3px rgba(var(--warning), 0.6);
 }
 
 button.btn-text-hover-warning:hover:not([disabled]) {
@@ -248,12 +195,8 @@ button.btn-border-hover-warning:hover:not([disabled]) {
 }
 
 button.btn-danger {
-    background-color: rgba(var(--danger-bg-button, var(--danger)));
-}
-
-button.btn-danger.glass {
 	background-color: rgba(255, 255, 255, 0.05);
-	box-shadow: inset 0px 0px 15px 2px rgba(var(--danger-bg-button, var(--danger)), 0.3), 0px 5px 5px 4px transparent;
+	box-shadow: inset 0px 0px 15px 2px rgba(var(--danger-bg-button, var(--danger)), 0.3);
 }
 
 button.btn-text-danger {
@@ -261,20 +204,12 @@ button.btn-text-danger {
 }
 
 button.btn-border-danger {
-    border: 1px solid rgba(var(--danger-border-button, var(--danger)));
-}
-
-button.btn-border-danger.glass {
 	border: 1px solid rgba(var(--danger-border-button, var(--danger)), 0.5);
 }
 
 button.btn-hover-danger:hover:not([disabled]){
-    background-color: rgba(var(--danger-bg-button-hover, var(--danger-dark)));
-}
-
-button.btn-hover-danger.glass:hover:not([disabled]){
 	background-color: rgba(255, 255, 255, 0.05);
-	box-shadow: inset 0px 0px 20px 3px rgba(var(--danger), 0.6), 0px 5px 5px 4px rgba(0, 0, 0, 0.14);
+	box-shadow: inset 0px 0px 20px 3px rgba(var(--danger), 0.6);
 }
 
 button.btn-text-hover-danger:hover:not([disabled]) {
@@ -286,12 +221,8 @@ button.btn-border-hover-danger:hover:not([disabled]) {
 }
 
 button.btn-info {
-    background-color: rgba(var(--info-bg-button, var(--info)));
-}
-
-button.btn-info.glass {
 	background-color: rgba(255, 255, 255, 0.05);
-	box-shadow: inset 0px 0px 15px 2px rgba(var(--info-bg-button, var(--info)), 0.3), 0px 5px 5px 4px transparent;
+	box-shadow: inset 0px 0px 15px 2px rgba(var(--info-bg-button, var(--info)), 0.3);
 }
 
 button.btn-text-info {
@@ -299,20 +230,12 @@ button.btn-text-info {
 }
 
 button.btn-border-info {
-    border: 1px solid rgba(var(--info-border-button, var(--info)));
-}
-
-button.btn-border-info.glass {
 	border: 1px solid rgba(var(--info-border-button, var(--info)), 0.5);
 }
 
 button.btn-hover-info:hover:not([disabled]){
-    background-color: rgba(var(--info-bg-button-hover, var(--info-dark)));
-}
-
-button.btn-hover-info.glass:hover:not([disabled]){
 	background-color: rgba(255, 255, 255, 0.05);
-	box-shadow: inset 0px 0px 20px 3px rgba(var(--info), 0.6), 0px 5px 5px 4px rgba(0, 0, 0, 0.14);
+	box-shadow: inset 0px 0px 20px 3px rgba(var(--info), 0.6);
 }
 
 button.btn-text-hover-info:hover:not([disabled]) {
@@ -324,12 +247,8 @@ button.btn-border-hover-info:hover:not([disabled]) {
 }
 
 button.btn-white {
-    background-color: rgba(var(--white-bg-button, var(--white)));
-}
-
-button.btn-white.glass {
 	background-color: rgba(255, 255, 255, 0.05);
-	box-shadow: inset 0px 0px 15px 2px rgba(var(--white-bg-button, var(--white)), 0.3), 0px 5px 5px 4px transparent;
+	box-shadow: inset 0px 0px 15px 2px rgba(var(--white-bg-button, var(--white)), 0.3);
 }
 
 button.btn-text-white {
@@ -337,20 +256,12 @@ button.btn-text-white {
 }
 
 button.btn-border-white {
-    border: 1px solid rgba(var(--white-border-button, var(--white)));
-}
-
-button.btn-border-white.glass {
 	border: 1px solid rgba(var(--white-border-button, var(--white)), 0.5);
 }
 
 button.btn-hover-white:hover:not([disabled]){
-    background-color: rgba(var(--white-bg-button-hover, var(--white)));
-}
-
-button.btn-hover-white.glass:hover:not([disabled]){
 	background-color: rgba(255, 255, 255, 0.05);
-	box-shadow: inset 0px 0px 20px 3px rgba(var(--white), 0.6), 0px 5px 5px 4px rgba(0, 0, 0, 0.14);
+	box-shadow: inset 0px 0px 20px 3px rgba(var(--white), 0.6);
 }
 
 button.btn-text-hover-white:hover:not([disabled]) {
@@ -362,12 +273,8 @@ button.btn-border-hover-white:hover:not([disabled]) {
 }
 
 button.btn-black {
-    background-color: rgba(var(--black-bg-button, var(--black)));
-}
-
-button.btn-black.glass {
 	background-color: rgba(255, 255, 255, 0.05);
-	box-shadow: inset 0px 0px 15px 2px rgba(var(--black-bg-button, var(--black)), 0.3), 0px 5px 5px 4px transparent;
+	box-shadow: inset 0px 0px 15px 2px rgba(var(--black-bg-button, var(--black)), 0.3);
 }
 
 button.btn-text-black {
@@ -375,20 +282,12 @@ button.btn-text-black {
 }
 
 button.btn-border-black {
-    border: 1px solid rgba(var(--black-border-button, var(--black)));
-}
-
-button.btn-border-black.glass {
 	border: 1px solid rgba(var(--black-border-button, var(--black)), 0.5);
 }
 
 button.btn-hover-black:hover:not([disabled]){
-    background-color: rgba(var(--black-bg-button-hover, var(--black)));
-}
-
-button.btn-hover-black.glass:hover:not([disabled]){
 	background-color: rgba(255, 255, 255, 0.05);
-	box-shadow: inset 0px 0px 20px 3px rgba(var(--black), 0.6), 0px 5px 5px 4px rgba(0, 0, 0, 0.14);
+	box-shadow: inset 0px 0px 20px 3px rgba(var(--black), 0.6);
 }
 
 button.btn-text-hover-black:hover:not([disabled]) {

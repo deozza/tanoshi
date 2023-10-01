@@ -2,10 +2,10 @@
     import { onMount, onDestroy } from 'svelte';
 	import 'iconify-icon';
 
-
-	import { TanoshiButton, TanoshiButtonModel } from "$atoms";
 	import { CONTAINER_ORIENTATIONS, THEMES, CONTAINER_ITEMS_ALIGNMENTS, HEIGHTS } from "$lib/enums";
 	import { TanoshiContainer, TanoshiContainerModel, TanoshiNavigationModel } from "$molecules";
+	import TanoshiButtonMaterial from "$atoms/button/TanoshiButtonMaterial.svelte";
+	import { TanoshiButtonModel } from '$atoms';
 
     export let tanoshiMobileNavigationModel: TanoshiNavigationModel;
 
@@ -55,14 +55,14 @@
 
 <nav >
 	<TanoshiContainer tanoshiContainerModel={navigationMobileContainerModel} >
-		<TanoshiButton tanoshiButtonModel={mobileMenuButton} on:click={mobileMenuHandler}>
+		<TanoshiButtonMaterial tanoshiButtonModel={mobileMenuButton} on:click={mobileMenuHandler}>
 			<span class="sr-only">Open main menu</span>
 			{#if showMobileMenu === false}
 			<iconify-icon icon='mdi:menu' />
 			{:else}
 			<iconify-icon icon='mdi:close' />
 			{/if}
-		</TanoshiButton>
+		</TanoshiButtonMaterial>
 	</TanoshiContainer>
 
 	{#if showMobileMenu === true}

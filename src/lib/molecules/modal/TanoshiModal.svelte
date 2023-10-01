@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { TanoshiButtonModel } from "$atoms";
-	import TanoshiButton from "$atoms/button/TanoshiButton.svelte";
+	import TanoshiButtonMaterial from "$atoms/button/TanoshiButtonMaterial.svelte";
 	import TanoshiHeader from "$atoms/typography/header/TanoshiHeader.svelte";
 	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, THEMES } from "$lib/enums";
 	import TanoshiContainer from "$molecules/container/TanoshiContainer.svelte";
@@ -30,7 +30,7 @@
 
 </script>
 
-<TanoshiButton tanoshiButtonModel={tanoshiModalModel.openButton} on:click={() => (showModal = true)}/>
+<TanoshiButtonMaterial tanoshiButtonModel={tanoshiModalModel.openButton} on:click={() => (showModal = true)}/>
 
 <dialog
 	bind:this={dialog}
@@ -50,10 +50,10 @@
 				<TanoshiHeader tanoshiHeaderModel={tanoshiModalModel.headerModel} />
 			{/if}
 			{#if tanoshiModalModel.required === false}
-				<TanoshiButton tanoshiButtonModel={closingModalButton} on:click={() => dialog.close()}>
+				<TanoshiButtonMaterial tanoshiButtonModel={closingModalButton} on:click={() => dialog.close()}>
 					<span class="sr-only">Close modal</span>
 					<iconify-icon icon='mdi:close' />
-				</TanoshiButton>
+				</TanoshiButtonMaterial>
 			{/if}
 		</TanoshiContainer>
 		<hr />

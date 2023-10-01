@@ -1,9 +1,9 @@
 <script lang="ts">
 
-    import '../../../app.css';
+    import '../../../../app.css';
 
 	import { TanoshiButtonModel } from '$atoms';
-	import TanoshiButton from '$atoms/button/TanoshiButton.svelte';
+	import TanoshiButtonMaterial from '$atoms/button/TanoshiButtonMaterial.svelte';
 	import { THEMES } from '$lib';
     import type { Hst } from '@histoire/plugin-svelte';
     export let Hst: Hst;
@@ -27,20 +27,20 @@
 
 </script>
   
-<Hst.Story title="atoms/button/icons" layout={{ type: 'grid', width: 600 }}>
+<Hst.Story title="atoms/button/material/icons" layout={{ type: 'grid', width: 600 }}>
     <Hst.Variant title="default">
-        <TanoshiButton tanoshiButtonModel={defaultButton} />
+        <TanoshiButtonMaterial tanoshiButtonModel={defaultButton} />
     </Hst.Variant>
 
     <Hst.Variant title="icon at left">
-        <TanoshiButton tanoshiButtonModel={buttonWithIconAtLeft} />
+        <TanoshiButtonMaterial tanoshiButtonModel={buttonWithIconAtLeft} />
     </Hst.Variant>
 
     <Hst.Variant title="icon at right">
-        <TanoshiButton tanoshiButtonModel={buttonWithIconAtRight} />
+        <TanoshiButtonMaterial tanoshiButtonModel={buttonWithIconAtRight} />
     </Hst.Variant>
 
     <Hst.Variant title="icon at both sides">
-        <TanoshiButton tanoshiButtonModel={buttonWithIconAtBothSides} />
+        <TanoshiButtonMaterial tanoshiButtonModel={buttonWithIconAtBothSides} />
     </Hst.Variant>
 </Hst.Story>

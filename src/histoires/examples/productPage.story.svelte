@@ -1,22 +1,19 @@
 <script lang="ts">
-	import { TanoshiButtonModel, TanoshiHeaderModel, TanoshiImageModel, TanoshiLabelModel, TanoshiLinkModel, TanoshiParagraphModel, TanoshiTextInputModel, TanoshiTextareaInput, TanoshiTextareaInputModel } from '$atoms';
-	import TanoshiTextInput from '$atoms/input/text/TanoshiTextInput.svelte';
+	import { TanoshiButtonModel, TanoshiHeaderModel, TanoshiImageModel, TanoshiLinkModel, TanoshiParagraphModel } from '$atoms';
 	import TanoshiLink from '$atoms/link/TanoshiLink.svelte';
 	import TanoshiHeader from '$atoms/typography/header/TanoshiHeader.svelte';
-	import { BUTTON_SIZES, BUTTON_TYPES, CONTAINER_BORDERS, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, HEADER_TAGS, HEIGHTS, INPUT_TEXT_TYPES, SIZES, THEMES, TanoshiContainerModel, TanoshiFormModel, TanoshiLabelAndInputModel, TanoshiLinkAsNavbarDropdownModel, TanoshiNavigationModel, WIDTHS } from '$lib';
+	import { BUTTON_SIZES, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, HEADER_TAGS,  SIZES, THEMES, TanoshiContainerModel, TanoshiLinkAsNavbarDropdownModel, TanoshiNavigationModel, WIDTHS } from '$lib';
 	import type { TanoshiNavigationLinkModel } from '$lib/types/Types';
 	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
-	import TanoshiForm from '$molecules/form/TanoshiForm.svelte';
 	import TanoshiLinkAsNavbarDropdown from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte';
 	import TanoshiNavigation from '$molecules/navigation/TanoshiNavigation.svelte';
 
     import '../../app.css';
 
     import type { Hst } from '@histoire/plugin-svelte';
-	import TanoshiImageShape from '../atoms/image/TanoshiImageShape.story.svelte';
 	import TanoshiImage from '$atoms/image/TanoshiImage.svelte';
 	import TanoshiParagraph from '$atoms/typography/paragraph/TanoshiParagraph.svelte';
-	import TanoshiButton from '$atoms/button/TanoshiButton.svelte';
+	import TanoshiButtonMaterial from '$atoms/button/TanoshiButtonMaterial.svelte';
     export let Hst: Hst;
 
 	const dropdownTitle: TanoshiLinkModel = new TanoshiLinkModel('Dropdown').setTheme(THEMES.White);
@@ -133,7 +130,7 @@
 					<TanoshiParagraph tanoshiParagraphModel={productDescriptionParagraph} />
 					<TanoshiParagraph tanoshiParagraphModel={productPrice} />
 					<TanoshiParagraph tanoshiParagraphModel={productAvailability} />
-					<TanoshiButton tanoshiButtonModel={addToCartButton} />
+					<TanoshiButtonMaterial tanoshiButtonModel={addToCartButton} />
 				</TanoshiContainer>
 			</TanoshiContainer>
 		</section>
