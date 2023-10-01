@@ -1,5 +1,5 @@
 <script lang='ts'>
-	import TanoshiAlert from "$molecules/alert/TanoshiAlert.svelte";
+	import TanoshiAlert from "$molecules/alert/TanoshiAlertMaterial.svelte";
 	import type TanoshiAlertModel from "$molecules/alert/TanoshiAlertModel";
 
     export let tanoshiAlertModels: Array<TanoshiAlertModel> = [];

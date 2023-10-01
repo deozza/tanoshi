@@ -30,7 +30,7 @@ p.p-spacing {
 }
 
 p.p-black {
-	color: rgba(var(--black-text-header, var(--black-dark)));
+	color: rgba(var(--black-text-header, var(--black)));
 }
 
 p.p-white {

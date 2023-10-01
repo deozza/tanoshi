@@ -4,7 +4,7 @@
 	import 'iconify-icon';
 
 	import type TanoshiAlertModel from './TanoshiAlertModel';
-	import TanoshiContainer from '$molecules/container/TanoshiContainerMaterial.svelte';
+	import TanoshiContainerGlass from '$molecules/container/TanoshiContainerGlass.svelte';
 	import TanoshiContainerModel from '$lib/molecules/container/TanoshiContainerModel';
 	import TanoshiParagraph from '$atoms/typography/paragraph/TanoshiParagraph.svelte';
 	import TanoshiParagraphModel from '$atoms/typography/paragraph/TanoshiParagraphModel';
@@ -38,12 +38,12 @@
 
 {#if visible === true}
 	<div class={tanoshiAlertModel.containerSize} out:fade in:fade>
-		<TanoshiContainer tanoshiContainerModel={tanoshiTitleContainerModel} customClasses="alert">
+		<TanoshiContainerGlass tanoshiContainerModel={tanoshiTitleContainerModel} customClasses="alert">
 			<TanoshiParagraph tanoshiParagraphModel={tanoshiTitleModel} />
 			<span on:click={() => close()}>
-				<iconify-icon icon='mdi:close' />
+				<iconify-icon icon='mdi:close' style="color: { tanoshiTitleModel.theme === THEMES.White ? 'white' : 'black' }"/>
 			</span>
-		</TanoshiContainer>
+		</TanoshiContainerGlass>
 	</div>
 {/if}
 

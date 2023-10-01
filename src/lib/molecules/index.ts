@@ -1,4 +1,4 @@
-export {default as TanoshiAlert} from "./alert/TanoshiAlert.svelte";
+export {default as TanoshiAlert} from "./alert/TanoshiAlertMaterial.svelte";
 export {default as TanoshiAlertContainer} from "./alert/alertContainer/TanoshiAlertContainer.svelte";
 export {default as TanoshiAlertModel} from "./alert/TanoshiAlertModel";
 
