@@ -1,7 +1,7 @@
 <script lang="ts">
 	import TanoshiButtonMaterial from '$atoms/button/TanoshiButtonMaterial.svelte';
 	import type TanoshiFormModel from './TanoshiFormModel';
-	import { createEventDispatcher } from 'svelte';
+	import { createEventDispatcher, type ComponentType } from 'svelte';
 	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
 	import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel';
 	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS } from '$lib/enums';
@@ -9,6 +9,7 @@
 	import type TanoshiLabelAndInputModel from '$molecules/labelAndInput/TanoshiLabelAndInputModel';
 
 	export let tanoshiFormModel: TanoshiFormModel;
+	export let tanoshiButtonComponent: ComponentType = TanoshiButtonMaterial;
 	
 	const buttonContainerModel: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
@@ -42,7 +43,7 @@
 				{/each}
 				<li class='space-y-2'>
 					<TanoshiContainer tanoshiContainerModel={buttonContainerModel}>
-						<TanoshiButtonMaterial tanoshiButtonModel={tanoshiFormModel.submitButton} />
+						<svelte:component this={tanoshiButtonComponent} tanoshiButtonModel={tanoshiFormModel.submitButton} />
 					</TanoshiContainer>
 				</li>
 			</ul>
@@ -61,7 +62,7 @@
 				{/each}
 				<li class='space-y-2'>
 					<TanoshiContainer tanoshiContainerModel={buttonContainerModel}>
-						<TanoshiButtonMaterial tanoshiButtonModel={tanoshiFormModel.submitButton} />
+						<svelte:component this={tanoshiButtonComponent} tanoshiButtonModel={tanoshiFormModel.submitButton} />
 					</TanoshiContainer>
 				</li>
 			</ul>

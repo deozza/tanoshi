@@ -86,34 +86,34 @@ h6{
 }
 
 .h-black {
-	color: var(--black-text-header, var(--black-dark));
+	color: rgba(var(--black-text-header, var(--black-dark)));
 }
 
 .h-white {
-	color: var(--white-text-header, var(--white-dark));
+	color: rgba(var(--white-text-header, var(--white-dark)));
 }
 
 .h-primary {
-	color: var(--primary-text-header, var(--primary-dark));
+	color: rgba(var(--primary-text-header, var(--primary-dark)));
 }
 
 .h-secondary {
-	color: var(--secondary-text-header, var(--secondary-dark));
+	color: rgba(var(--secondary-text-header, var(--secondary-dark)));
 }
 
 .h-success {
-	color: var(--success-text-header, var(--success-dark));
+	color: rgba(var(--success-text-header, var(--success-dark)));
 }
 
 .h-warning {
-	color: var(--warning-text-header, var(--warning-dark));
+	color: rgba(var(--warning-text-header, var(--warning-dark)));
 }
 
 .h-danger {
-	color: var(--danger-text-header, var(--danger-dark));
+	color: rgba(var(--danger-text-header, var(--danger-dark)));
 }
 
 .h-info {
-	color: var(--info-text-header, var(--info-dark));
+	color: rgba(var(--info-text-header, var(--info-dark)));
 }
 </style>

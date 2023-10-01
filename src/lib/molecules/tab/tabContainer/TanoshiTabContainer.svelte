@@ -51,36 +51,34 @@ hr{
 }
 
 hr.border-white{
-	border: 1px solid var(--white-border-container, var(--white));
+	border: 1px solid rgba(var(--white-border-container, var(--white)));
 }
 
 hr.border-black {
-	border: 1px solid var(--black-border-container, var(--black));
+	border: 1px solid rgba(var(--black-border-container, var(--black)));
 }
 
 hr.border-primary {
-	border: 1px solid var(--primary-border-container, var(--primary));
+	border: 1px solid rgba(var(--primary-border-container, var(--primary)));
 }
 
 hr.border-secondary {
-	border: 1px solid var(--secondary-border-container, var(--secondary));
+	border: 1px solid rgba(var(--secondary-border-container, var(--secondary)));
 }
 
 hr.border-success {
-	border: 1px solid var(--success-border-container, var(--success));
+	border: 1px solid rgba(var(--success-border-container, var(--success)));
 }
 
 hr.border-warning {
-	border: 1px solid var(--warning-border-container, var(--warning));
+	border: 1px solid rgba(var(--warning-border-container, var(--warning)));
 }
 
 hr.border-danger {
-	border: 1px solid var(--danger-border-container, var(--danger));
+	border: 1px solid rgba(var(--danger-border-container, var(--danger)));
 }
 
 hr.border-info {
-	border: 1px solid var(--info-border-container, var(--info));
+	border: 1px solid rgba(var(--info-border-container, var(--info)));
 }
-
-
 </style>

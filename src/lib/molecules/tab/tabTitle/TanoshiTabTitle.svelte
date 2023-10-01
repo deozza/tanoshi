@@ -29,36 +29,36 @@ div.header-item.transparent, div.header-item.active.active-transparent {
 }
 
 div.header-item.white, div.header-item.active.active-white {
-	background-color: var(--white-background-container, var(--white));
+	background-color: rgba(var(--white-background-container, var(--white)));
 }
 
 
 div.header-item.black, div.header-item.active.active-black {
-	background-color: var(--black-background-container, var(--black));
+	background-color: rgba(var(--black-background-container, var(--black)));
 }
 
 div.header-item.primary, div.header-item.active.active-primary {
-	background-color: var(--primary-background-container, var(--primary));
+	background-color: rgba(var(--primary-background-container, var(--primary)));
 }
 
 div.header-item.secondary, div.header-item.active.active-secondary {
-	background-color: var(--secondary-background-container, var(--secondary));
+	background-color: rgba(var(--secondary-background-container, var(--secondary)));
 }
 
 div.header-item.success, div.header-item.active.active-success {
-	background-color: var(--success-background-container, var(--success));
+	background-color: rgba(var(--success-background-container, var(--success)));
 }
 
 div.header-item.warning, div.header-item.active.active-warning {
-	background-color: var(--warning-background-container, var(--warning));
+	background-color: rgba(var(--warning-background-container, var(--warning)));
 }
 
 div.header-item.danger, div.header-item.active.active-danger {
-	background-color: var(--danger-background-container, var(--danger));
+	background-color: rgba(var(--danger-background-container, var(--danger)));
 }
 
 div.header-item.info, div.header-item.active.active-info {
-	background-color: var(--info-background-container, var(--info));
+	background-color: rgba(var(--info-background-container, var(--info)));
 }
 
 div.header-item {

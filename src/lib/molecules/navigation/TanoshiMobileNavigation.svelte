@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { onMount, onDestroy } from 'svelte';
+    import { onMount, onDestroy, type ComponentType } from 'svelte';
 	import 'iconify-icon';
 
 	import { CONTAINER_ORIENTATIONS, THEMES, CONTAINER_ITEMS_ALIGNMENTS, HEIGHTS } from "$lib/enums";
@@ -8,10 +8,10 @@
 	import { TanoshiButtonModel } from '$atoms';
 
     export let tanoshiMobileNavigationModel: TanoshiNavigationModel;
-
     export let navigationMobileContainerModel: TanoshiContainerModel;
-
     export let mobileTheme: THEMES;
+	export let tanoshiButtonComponent: ComponentType = TanoshiButtonMaterial;
+
 
 	const expandedMobileNavigationContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
 	    .setBackgroundTheme(mobileTheme)
@@ -55,14 +55,14 @@
 
 <nav >
 	<TanoshiContainer tanoshiContainerModel={navigationMobileContainerModel} >
-		<TanoshiButtonMaterial tanoshiButtonModel={mobileMenuButton} on:click={mobileMenuHandler}>
+		<svelte:component this={tanoshiButtonComponent}  tanoshiButtonModel={mobileMenuButton} on:click={mobileMenuHandler}>
 			<span class="sr-only">Open main menu</span>
 			{#if showMobileMenu === false}
 			<iconify-icon icon='mdi:menu' />
 			{:else}
 			<iconify-icon icon='mdi:close' />
 			{/if}
-		</TanoshiButtonMaterial>
+		</svelte:component>
 	</TanoshiContainer>
 
 	{#if showMobileMenu === true}

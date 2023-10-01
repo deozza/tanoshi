@@ -81,78 +81,68 @@ div.border-transparent {
 }
 
 div.white {
-	background-color: var(--white-background-container, var(--white));
+	background-color: rgba(var(--white-background-container, var(--white)));
 }
 
 div.border-white {
-	border: 1px solid var(--white-border-container, var(--white));
+	border: 1px solid rgba(var(--white-border-container, var(--white)));
 }
 
 div.black {
-	background-color: var(--black-background-container, var(--black));
+	background-color: rgba(var(--black-background-container, var(--black)));
 }
 
 div.border-black {
-	border: 1px solid var(--black-border-container, var(--black));
+	border: 1px solid rgba(var(--black-border-container, var(--black)));
 }
 
 div.primary {
-	background-color: var(--primary-background-container, var(--primary));
+	background-color: rgba(var(--primary-background-container, var(--primary)));
 }
 
 div.border-primary {
-	border: 1px solid var(--primary-border-container, var(--primary));
+	border: 1px solid rgba(var(--primary-border-container, var(--primary)));
 }
 
 div.secondary {
-	background-color: var(--secondary-background-container, var(--secondary));
+	background-color: rgba(var(--secondary-background-container, var(--secondary)));
 }
 
 div.border-secondary {
-	border: 1px solid var(--secondary-border-container, var(--secondary));
+	border: 1px solid rgba(var(--secondary-border-container, var(--secondary)));
 }
 
 div.success {
-	background-color: var(--success-background-container, var(--success));
+	background-color: rgba(var(--success-background-container, var(--success)));
 }
 
 div.border-success {
-	border: 1px solid var(--success-border-container, var(--success));
+	border: 1px solid rgba(var(--success-border-container, var(--success)));
 }
 
 div.warning {
-	background-color: var(--warning-background-container, var(--warning));
+	background-color: rgba(var(--warning-background-container, var(--warning)));
 }
 
 div.border-warning {
-	border: 1px solid var(--warning-border-container, var(--warning));
+	border: 1px solid rgba(var(--warning-border-container, var(--warning)));
 }
 
 div.danger {
-	background-color: var(--danger-background-container, var(--danger));
+	background-color: rgba(var(--danger-background-container, var(--danger)));
 }
 
 div.border-danger {
-	border: 1px solid var(--danger-border-container, var(--danger));
+	border: 1px solid rgba(var(--danger-border-container, var(--danger)));
 }
 
 div.info {
-	background-color: var(--info-background-container, var(--info));
+	background-color: rgba(var(--info-background-container, var(--info)));
 }
 
 div.border-info {
-	border: 1px solid var(--info-border-container, var(--info));
+	border: 1px solid rgba(var(--info-border-container, var(--info)));
 }
-
-div.bg-image {
-	 background-image: url('https://wallpapers.com/images/featured/kawaii-cat-7va4ri70il24d2u7.jpg');
-	 background-size: cover;
-	 background-position: center;
-	 background-repeat: no-repeat;
-	 top: 0;
-	 left: 0;
- }
-
 
 @media (max-width: 639px) {
 	div.mobile-flex-c {

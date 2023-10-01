@@ -5,11 +5,14 @@
 	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, THEMES } from "$lib/enums";
 	import TanoshiContainer from "$molecules/container/TanoshiContainer.svelte";
 	import TanoshiContainerModel from "$molecules/container/TanoshiContainerModel";
+	import type { ComponentType } from "svelte";
     import type TanoshiModalModel from "./TanoshiModalModel";
 	import 'iconify-icon';
 
     export let tanoshiModalModel: TanoshiModalModel;
     export let showModal: boolean = false;
+	export let tanoshiButtonComponent: ComponentType = TanoshiButtonMaterial;
+
     let dialog: HTMLDialogElement;
 
 	const headerContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
@@ -30,7 +33,7 @@
 
 </script>
 
-<TanoshiButtonMaterial tanoshiButtonModel={tanoshiModalModel.openButton} on:click={() => (showModal = true)}/>
+<svelte:component this={tanoshiButtonComponent} tanoshiButtonModel={tanoshiModalModel.openButton} on:click={() => (showModal = true)}/>
 
 <dialog
 	bind:this={dialog}
@@ -50,10 +53,10 @@
 				<TanoshiHeader tanoshiHeaderModel={tanoshiModalModel.headerModel} />
 			{/if}
 			{#if tanoshiModalModel.required === false}
-				<TanoshiButtonMaterial tanoshiButtonModel={closingModalButton} on:click={() => dialog.close()}>
+				<svelte:component this={tanoshiButtonComponent}  tanoshiButtonModel={closingModalButton} on:click={() => dialog.close()}>
 					<span class="sr-only">Close modal</span>
 					<iconify-icon icon='mdi:close' />
-				</TanoshiButtonMaterial>
+				</svelte:component>
 			{/if}
 		</TanoshiContainer>
 		<hr />
@@ -80,67 +83,67 @@
 	}
 
 	dialog.white {
-		background-color: var(--white-background-container, var(--white));
+		background-color: rgba(var(--white-background-container, var(--white)));
 	}
 
 	dialog.border-white {
-		border: 1px solid var(--white-border-container, var(--white));
+		border: 1px solid rgba(var(--white-border-container, var(--white)));
 	}
 
 	dialog.black {
-		background-color: var(--black-background-container, var(--black));
+		background-color: rgba(var(--black-background-container, var(--black)));
 	}
 
 	dialog.border-black {
-		border: 1px solid var(--black-border-container, var(--black));
+		border: 1px solid rgba(var(--black-border-container, var(--black)));
 	}
 
 	dialog.primary {
-		background-color: var(--primary-background-container, var(--primary));
+		background-color: rgba(var(--primary-background-container, var(--primary)));
 	}
 
 	dialog.border-primary {
-		border: 1px solid var(--primary-border-container, var(--primary));
+		border: 1px solid rgba(var(--primary-border-container, var(--primary)));
 	}
 
 	dialog.secondary {
-		background-color: var(--secondary-background-container, var(--secondary));
+		background-color: rgba(var(--secondary-background-container, var(--secondary)));
 	}
 
 	dialog.border-secondary {
-		border: 1px solid var(--secondary-border-container, var(--secondary));
+		border: 1px solid rgba(var(--secondary-border-container, var(--secondary)));
 	}
 
 	dialog.success {
-		background-color: var(--success-background-container, var(--success));
+		background-color: rgba(var(--success-background-container, var(--success)));
 	}
 
 	dialog.border-success {
-		border: 1px solid var(--success-border-container, var(--success));
+		border: 1px solid rgba(var(--success-border-container, var(--success)));
 	}
 
 	dialog.warning {
-		background-color: var(--warning-background-container, var(--warning));
+		background-color: rgba(var(--warning-background-container, var(--warning)));
 	}
 
 	dialog.border-warning {
-		border: 1px solid var(--warning-border-container, var(--warning));
+		border: 1px solid rgba(var(--warning-border-container, var(--warning)));
 	}
 
 	dialog.danger {
-		background-color: var(--danger-background-container, var(--danger));
+		background-color: rgba(var(--danger-background-container, var(--danger)));
 	}
 
 	dialog.border-danger {
-		border: 1px solid var(--danger-border-container, var(--danger));
+		border: 1px solid rgba(var(--danger-border-container, var(--danger)));
 	}
 
 	dialog.info {
-		background-color: var(--info-background-container, var(--info));
+		background-color: rgba(var(--info-background-container, var(--info)));
 	}
 
 	dialog.border-info {
-		border: 1px solid var(--info-border-container, var(--info));
+		border: 1px solid rgba(var(--info-border-container, var(--info)));
 	}
 	dialog::backdrop {
 		background: rgba(0, 0, 0, 0.3);

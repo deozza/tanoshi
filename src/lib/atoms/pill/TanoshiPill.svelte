@@ -42,102 +42,99 @@ span.pill-lg {
 }
 
 span.pill-primary {
-    background-color: var(--primary-bg-pill, var(--primary));
+    background-color: rgba(var(--primary-bg-pill, var(--primary)));
 }
 
 span.pill-text-primary {
-    color: var(--primary-text-pill, var(--primary));
+    color: rgba(var(--primary-text-pill, var(--primary)));
 }
 
 span.pill-border-primary {
-    border: 1px solid var(--primary-border-pill, var(--primary));
+    border: 1px solid rgba(var(--primary-border-pill, var(--primary)));
 }
 
-
 span.pill-secondary {
-    background-color: var(--secondary-bg-pill, var(--secondary));
+    background-color: rgba(var(--secondary-bg-pill, var(--secondary)));
 }
 
 span.pill-text-secondary {
-    color: var(--secondary-text-pill, var(--secondary));
+    color: rgba(var(--secondary-text-pill, var(--secondary)));
 }
 
 span.pill-border-secondary {
-    border: 1px solid var(--secondary-border-pill, var(--secondary));
+    border: 1px solid rgba(var(--secondary-border-pill, var(--secondary)));
 }
 
 span.pill-success {
-    background-color: var(--success-bg-pill, var(--success));
+    background-color: rgba(var(--success-bg-pill, var(--success)));
 }
 
 span.pill-text-success {
-    color: var(--success-text-pill, var(--success));
+    color: rgba(var(--success-text-pill, var(--success)));
 }
 
 span.pill-border-success {
-    border: 1px solid var(--success-border-pill, var(--success));
+    border: 1px solid rgba(var(--success-border-pill, var(--success)));
 }
 
-
 span.pill-warning {
-    background-color: var(--warning-bg-pill, var(--warning));
+    background-color: rgba(var(--warning-bg-pill, var(--warning)));
 }
 
 span.pill-text-warning {
-    color: var(--warning-text-pill, var(--warning));
+    color: rgba(var(--warning-text-pill, var(--warning)));
 }
 
 span.pill-border-warning {
-    border: 1px solid var(--warning-border-pill, var(--warning));
+    border: 1px solid rgba(var(--warning-border-pill, var(--warning)));
 }
 
-
 span.pill-danger {
-    background-color: var(--danger-bg-pill, var(--danger));
+    background-color: rgba(var(--danger-bg-pill, var(--danger)));
 }
 
 span.pill-text-danger {
-    color: var(--danger-text-pill, var(--danger));
+    color: rgba(var(--danger-text-pill, var(--danger)));
 }
 
 span.pill-border-danger {
-    border: 1px solid var(--danger-border-pill, var(--danger));
+    border: 1px solid rgba(var(--danger-border-pill, var(--danger)));
 }
 
 span.pill-info {
-    background-color: var(--info-bg-pill, var(--info));
+    background-color: rgba(var(--info-bg-pill, var(--info)));
 }
 
 span.pill-text-info {
-    color: var(--info-text-pill, var(--info));
+    color: rgba(var(--info-text-pill, var(--info)));
 }
 
 span.pill-border-info {
-    border: 1px solid var(--info-border-pill, var(--info));
+    border: 1px solid rgba(var(--info-border-pill, var(--info)));
 }
 
 span.pill-white {
-    background-color: var(--white-bg-pill, var(--white));
+    background-color: rgba(var(--white-bg-pill, var(--white)));
 }
 
 span.pill-text-white {
-    color: var(--white-text-pill, var(--white));
+    color: rgba(var(--white-text-pill, var(--white)));
 }
 
 span.pill-border-white {
-    border: 1px solid var(--white-border-pill, var(--white));
+    border: 1px solid rgba(var(--white-border-pill, var(--white)));
 }
 
 span.pill-black {
-    background-color: var(--black-bg-pill, var(--black));
+    background-color: rgba(var(--black-bg-pill, var(--black)));
 }
 
 span.pill-text-black {
-    color: var(--black-text-pill, var(--black));
+    color: rgba(var(--black-text-pill, var(--black)));
 }
 
 span.pill-border-black {
-    border: 1px solid var(--black-border-pill, var(--black));
+    border: 1px solid rgba(var(--black-border-pill, var(--black)));
 }
 
 </style>

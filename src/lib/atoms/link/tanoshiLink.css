@@ -8,67 +8,67 @@ a {
 }
 
 a.a-black {
-	color: var(--black-text-link, var(--black));
+	color: rgba(var(--black-text-link, var(--black)));
 }
 
 a.a-black:hover {
-	color: var(--black-text-link-hover, var(--black-dark));
+	color: rgba(var(--black-text-link-hover, var(--black-dark)));
 }
 
 a.a-white {
-	color: var(--white-text-link, var(--white));
+	color: rgba(var(--white-text-link, var(--white)));
 }
 
 a.a-white:hover {
-	color: var(--white-text-link-hover, var(--white-dark));
+	color: rgba(var(--white-text-link-hover, var(--white-dark)));
 }
 
 a.a-primary {
-	color: var(--primary-text-link, var(--primary));
+	color: rgba(var(--primary-text-link, var(--primary)));
 }
 
 a.a-primary:hover {
-	color: var(--primary-text-link-hover, var(--primary-dark));
+	color: rgba(var(--primary-text-link-hover, var(--primary-dark)));
 }
 
 a.a-secondary {
-	color: var(--secondary-text-link, var(--secondary));
+	color: rgba(var(--secondary-text-link, var(--secondary)));
 }
 
 a.a-secondary:hover {
-	color: var(--secondary-text-link-hover, var(--secondary-dark));
+	color: rgba(var(--secondary-text-link-hover, var(--secondary-dark)));
 }
 
 a.a-success {
-	color: var(--success-text-link, var(--success));
+	color: rgba(var(--success-text-link, var(--success)));
 }
 
 a.a-success:hover {
-	color: var(--success-text-link-hover, var(--success-dark));
+	color: rgba(var(--success-text-link-hover, var(--success-dark)));
 }
 
 a.a-warning {
-	color: var(--warning-text-link, var(--warning));
+	color: rgba(var(--warning-text-link, var(--warning)));
 }
 
 a.a-warning:hover {
-	color: var(--warning-text-link-hover, var(--warning-dark));
+	color: rgba(var(--warning-text-link-hover, var(--warning-dark)));
 }
 
 a.a-danger {
-	color: var(--danger-text-link, var(--danger));
+	color: rgba(var(--danger-text-link, var(--danger)));
 }
 
 a.a-danger:hover {
-	color: var(--danger-text-link-hover, var(--danger-dark));
+	color: rgba(var(--danger-text-link-hover, var(--danger-dark)));
 }
 
 a.a-info {
-	color: var(--info-text-link, var(--info));
+	color: rgba(var(--info-text-link, var(--info)));
 }
 
 a.a-info:hover {
-	color: var(--info-text-link-hover, var(--info-dark));
+	color: rgba(var(--info-text-link-hover, var(--info-dark)));
 }
 
 a > svg {
