@@ -6,23 +6,29 @@
 	import TanoshiButtonMaterial from '$atoms/button/TanoshiButtonMaterial.svelte';
 	import { THEMES } from '$lib';
     import type { Hst } from '@histoire/plugin-svelte';
+	import TanoshiIconModel from '$atoms/icon/TanoshiIconModel';
     export let Hst: Hst;
 
     const defaultButton: TanoshiButtonModel = new TanoshiButtonModel('Primary')
         .setBasicTheme(THEMES.Primary)
 
+    const accountIcon: TanoshiIconModel = new TanoshiIconModel('mdi:accountIcon')
+		.setColor('white')
+		.setHeight(20)
+		.setWidth(20);
+
     const buttonWithIconAtLeft: TanoshiButtonModel = new TanoshiButtonModel('Icon at left')
         .setBasicTheme(THEMES.Primary)
-        .setIconAtLeft('mdi:account-circle')
+        .setIconAtLeft(accountIcon)
 
     const buttonWithIconAtRight: TanoshiButtonModel = new TanoshiButtonModel('Icon at right')
         .setBasicTheme(THEMES.Primary)
-        .setIconAtRight('mdi:account-circle')
+        .setIconAtRight(accountIcon)
 
     const buttonWithIconAtBothSides: TanoshiButtonModel = new TanoshiButtonModel('Icon at both sides')
         .setBasicTheme(THEMES.Primary)
-        .setIconAtLeft('mdi:account-circle')
-        .setIconAtRight('mdi:account-circle')
+        .setIconAtLeft(accountIcon)
+        .setIconAtRight(accountIcon)
         
 
 </script>

@@ -32,7 +32,6 @@ div.header-item.white, div.header-item.active.active-white {
 	background-color: rgba(var(--white-background-container, var(--white)));
 }
 
-
 div.header-item.black, div.header-item.active.active-black {
 	background-color: rgba(var(--black-background-container, var(--black)));
 }
@@ -68,6 +67,10 @@ div.header-item {
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	transition-duration: 150ms;
 	transition-duration: 300ms;	
+}
+
+div.header-item:hover:not(.active) {
+    cursor: pointer;
 }
 
 </style>

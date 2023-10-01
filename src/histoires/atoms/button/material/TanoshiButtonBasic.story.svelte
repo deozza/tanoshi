@@ -16,6 +16,8 @@
 
     const whiteButton: TanoshiButtonModel = new TanoshiButtonModel('White')
         .setBasicTheme(THEMES.White)
+        .setTextTheme(THEMES.Black)
+        .setTextHoverTheme(THEMES.White)
 
     const blackButton: TanoshiButtonModel = new TanoshiButtonModel('Black')
         .setBasicTheme(THEMES.Black)

@@ -1,5 +1,6 @@
 export {default as TanoshiButtonMaterial} from "./button/TanoshiButtonMaterial.svelte";
 export {default as TanoshiButtonGlass} from "./button/TanoshiButtonGlass.svelte";
+export {default as TanoshiButtonNeumorphism} from "./button/TanoshiButtonNeumorphism.svelte";
 export {default as TanoshiButtonModel} from "./button/TanoshiButtonModel";
 
 export {default as TanoshiImage} from "./image/TanoshiImage.svelte";
