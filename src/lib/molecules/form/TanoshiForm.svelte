@@ -2,7 +2,7 @@
 	import TanoshiButtonMaterial from '$atoms/button/TanoshiButtonMaterial.svelte';
 	import type TanoshiFormModel from './TanoshiFormModel';
 	import { createEventDispatcher, type ComponentType } from 'svelte';
-	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
+	import TanoshiContainer from '$molecules/container/TanoshiContainerMaterial.svelte';
 	import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel';
 	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS } from '$lib/enums';
 	import TanoshiLabelAndInput from '$molecules/labelAndInput/TanoshiLabelAndInput.svelte';

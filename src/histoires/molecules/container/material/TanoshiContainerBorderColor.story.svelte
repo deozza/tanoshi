@@ -1,10 +1,10 @@
 <script lang="ts">
 
-    import '../../../app.css';
+    import '../../../../app.css';
 
 	import { CONTAINER_ORIENTATIONS, THEMES, TanoshiContainerModel } from '$lib';
     import type { Hst } from '@histoire/plugin-svelte';
-	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
+	import TanoshiContainerMaterial from '$molecules/container/TanoshiContainerMaterial.svelte';
     export let Hst: Hst;
 
     const primaryContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
@@ -32,78 +32,78 @@
         .setBorderTheme(THEMES.Info)
 </script>
   
-<Hst.Story title="molecules/container/border color" layout={{ type: 'grid', width: 600 }}>
+<Hst.Story title="molecules/container/material/border color" layout={{ type: 'grid', width: 600 }}>
 
     <Hst.Variant title="primary">
-        <TanoshiContainer tanoshiContainerModel={primaryContainer} >
+        <TanoshiContainerMaterial tanoshiContainerModel={primaryContainer} >
             <span>1</span>
             <span>2</span>
             <span>3</span>
             <span>4</span>
-        </TanoshiContainer>
+        </TanoshiContainerMaterial>
     </Hst.Variant>
 
     <Hst.Variant title="secondary">
-        <TanoshiContainer tanoshiContainerModel={secondaryContainer} >
+        <TanoshiContainerMaterial tanoshiContainerModel={secondaryContainer} >
             <span>1</span>
             <span>2</span>
             <span>3</span>
             <span>4</span>
-        </TanoshiContainer>
+        </TanoshiContainerMaterial>
     </Hst.Variant> 
 
     <Hst.Variant title="white">
-        <TanoshiContainer tanoshiContainerModel={whiteContainer} >
+        <TanoshiContainerMaterial tanoshiContainerModel={whiteContainer} >
             <span>1</span>
             <span>2</span>
             <span>3</span>
             <span>4</span>
-        </TanoshiContainer>
+        </TanoshiContainerMaterial>
     </Hst.Variant>
 
     <Hst.Variant title="black">
-        <TanoshiContainer tanoshiContainerModel={blackContainer} >
+        <TanoshiContainerMaterial tanoshiContainerModel={blackContainer} >
             <span>1</span>
             <span>2</span>
             <span>3</span>
             <span>4</span>
-        </TanoshiContainer>
+        </TanoshiContainerMaterial>
     </Hst.Variant>
 
     <Hst.Variant title="success">
-        <TanoshiContainer tanoshiContainerModel={successContainer} >
+        <TanoshiContainerMaterial tanoshiContainerModel={successContainer} >
             <span>1</span>
             <span>2</span>
             <span>3</span>
             <span>4</span>
-        </TanoshiContainer>
+        </TanoshiContainerMaterial>
     </Hst.Variant>
 
     <Hst.Variant title="warning">
-        <TanoshiContainer tanoshiContainerModel={warningContainer} >
+        <TanoshiContainerMaterial tanoshiContainerModel={warningContainer} >
             <span>1</span>
             <span>2</span>
             <span>3</span>
             <span>4</span>
-        </TanoshiContainer>
+        </TanoshiContainerMaterial>
     </Hst.Variant>
 
     <Hst.Variant title="danger">
-        <TanoshiContainer tanoshiContainerModel={dangerContainer} >
+        <TanoshiContainerMaterial tanoshiContainerModel={dangerContainer} >
             <span>1</span>
             <span>2</span>
             <span>3</span>
             <span>4</span>
-        </TanoshiContainer>
+        </TanoshiContainerMaterial>
     </Hst.Variant>
 
     <Hst.Variant title="info">
-        <TanoshiContainer tanoshiContainerModel={infoContainer} >
+        <TanoshiContainerMaterial tanoshiContainerModel={infoContainer} >
             <span>1</span>
             <span>2</span>
             <span>3</span>
             <span>4</span>
-        </TanoshiContainer>
+        </TanoshiContainerMaterial>
     </Hst.Variant>
 
 </Hst.Story>

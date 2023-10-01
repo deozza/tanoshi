@@ -6,7 +6,7 @@
 	import TanoshiParagraph from '$atoms/typography/paragraph/TanoshiParagraph.svelte';
 	import { CONTAINER_BORDERS, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, HEADER_TAGS, HEIGHTS, SIZES, THEMES, TanoshiContainerModel, TanoshiLinkAsNavbarDropdownModel, TanoshiNavigationModel, WIDTHS } from '$lib';
 	import type { TanoshiNavigationLinkModel } from '$lib/types/Types';
-	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
+	import TanoshiContainer from '$molecules/container/TanoshiContainerMaterial.svelte';
 	import TanoshiLinkAsNavbarDropdown from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte';
 	import TanoshiNavigation from '$molecules/navigation/TanoshiNavigation.svelte';
 

@@ -1,6 +1,6 @@
 <script lang='ts'>
 	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, WIDTHS } from "$lib/enums";
-	import TanoshiContainer from "$molecules/container/TanoshiContainer.svelte";
+	import TanoshiContainer from "$molecules/container/TanoshiContainerMaterial.svelte";
 	import TanoshiContainerModel from "$molecules/container/TanoshiContainerModel";
 	import TanoshiTabTitle from "../tabTitle/TanoshiTabTitle.svelte";
 	import type TanoshiTabContainerModel from "./TanoshiTabContainerModel";

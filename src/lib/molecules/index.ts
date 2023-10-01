@@ -5,7 +5,7 @@ export {default as TanoshiAlertModel} from "./alert/TanoshiAlertModel";
 export {default as TanoshiCarousel} from "./carousel/TanoshiCarousel.svelte";
 export {default as TanoshiCarouselModel} from "./carousel/TanoshiCarouselModel";
 
-export {default as TanoshiContainer} from "./container/TanoshiContainer.svelte";
+export {default as TanoshiContainer} from "./container/TanoshiContainerMaterial.svelte";
 export {default as TanoshiContainerModel} from "./container/TanoshiContainerModel";
 
 export {default as TanoshiForm} from "./form/TanoshiForm.svelte";

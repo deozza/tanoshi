@@ -3,7 +3,7 @@
 	import TanoshiButtonMaterial from "$atoms/button/TanoshiButtonMaterial.svelte";
 	import TanoshiHeader from "$atoms/typography/header/TanoshiHeader.svelte";
 	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, THEMES } from "$lib/enums";
-	import TanoshiContainer from "$molecules/container/TanoshiContainer.svelte";
+	import TanoshiContainer from "$molecules/container/TanoshiContainerMaterial.svelte";
 	import TanoshiContainerModel from "$molecules/container/TanoshiContainerModel";
 	import type { ComponentType } from "svelte";
     import type TanoshiModalModel from "./TanoshiModalModel";

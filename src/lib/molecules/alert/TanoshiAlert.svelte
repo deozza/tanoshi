@@ -4,11 +4,11 @@
 	import 'iconify-icon';
 
 	import type TanoshiAlertModel from './TanoshiAlertModel';
-	import TanoshiContainer from '$lib/molecules/container/TanoshiContainer.svelte';
+	import TanoshiContainer from '$molecules/container/TanoshiContainerMaterial.svelte';
 	import TanoshiContainerModel from '$lib/molecules/container/TanoshiContainerModel';
 	import TanoshiParagraph from '$atoms/typography/paragraph/TanoshiParagraph.svelte';
 	import TanoshiParagraphModel from '$atoms/typography/paragraph/TanoshiParagraphModel';
-	import { CONTAINER_BORDERS, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, THEMES, WIDTHS, getSizeEnumKeyByEnumValue, getThemeEnumKeyByEnumValue, getWidthEnumKeyByEnumValue } from '$lib/enums';
+	import { CONTAINER_BORDERS, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, THEMES, WIDTHS, getSizeEnumKeyByEnumValue, getThemeEnumKeyByEnumValue } from '$lib/enums';
 
 	export let tanoshiAlertModel: TanoshiAlertModel;
 

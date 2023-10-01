@@ -1,10 +1,10 @@
 <script lang="ts">
 
-    import '../../../app.css';
+    import '../../../../app.css';
 
-	import { CONTAINER_ORIENTATIONS, THEMES, TanoshiContainerModel } from '$lib';
+	import { CONTAINER_ORIENTATIONS, TanoshiContainerModel } from '$lib';
     import type { Hst } from '@histoire/plugin-svelte';
-	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
+	import TanoshiContainerGlass from '$molecules/container/TanoshiContainerGlass.svelte';
     export let Hst: Hst;
 
     const rowContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
@@ -15,32 +15,32 @@
 
 </script>
   
-<Hst.Story title="molecules/container/orientations" layout={{ type: 'grid', width: 600 }}>
+<Hst.Story title="molecules/container/glass/orientations" layout={{ type: 'grid', width: 600 }}>
     <Hst.Variant title="row">
-        <TanoshiContainer tanoshiContainerModel={rowContainer} >
+        <TanoshiContainerGlass tanoshiContainerModel={rowContainer} >
             <span>1</span>
             <span>2</span>
             <span>3</span>
             <span>4</span>
-        </TanoshiContainer>
+        </TanoshiContainerGlass>
     </Hst.Variant>
 
     <Hst.Variant title="column">
-        <TanoshiContainer tanoshiContainerModel={columnContainer} >
+        <TanoshiContainerGlass tanoshiContainerModel={columnContainer} >
             <span>1</span>
             <span>2</span>
             <span>3</span>
             <span>4</span>
-        </TanoshiContainer>
+        </TanoshiContainerGlass>
     </Hst.Variant>
 
     <Hst.Variant title="column reverse">
-        <TanoshiContainer tanoshiContainerModel={columnReverseContainer} >
+        <TanoshiContainerGlass tanoshiContainerModel={columnReverseContainer} >
             <span>1</span>
             <span>2</span>
             <span>3</span>
             <span>4</span>
-        </TanoshiContainer>
+        </TanoshiContainerGlass>
     </Hst.Variant>
 </Hst.Story>
 

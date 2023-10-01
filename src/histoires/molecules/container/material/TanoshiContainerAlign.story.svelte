@@ -1,10 +1,10 @@
 <script lang="ts">
 
-    import '../../../app.css';
+    import '../../../../app.css';
 
-	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ORIENTATIONS, THEMES, TanoshiContainerModel } from '$lib';
+	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ORIENTATIONS, TanoshiContainerModel } from '$lib';
     import type { Hst } from '@histoire/plugin-svelte';
-	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
+	import TanoshiContainerMaterial from '$molecules/container/TanoshiContainerMaterial.svelte';
     export let Hst: Hst;
 
     const baselineContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
@@ -25,50 +25,50 @@
 
 </script>
   
-<Hst.Story title="molecules/container/align" layout={{ type: 'grid', width: 600 }}>
+<Hst.Story title="molecules/container/material/align" layout={{ type: 'grid', width: 600 }}>
     <Hst.Variant title="baseline">
-        <TanoshiContainer tanoshiContainerModel={baselineContainer} >
+        <TanoshiContainerMaterial tanoshiContainerModel={baselineContainer} >
             <span>1</span>
             <span>2</span>
             <span>3</span>
             <span>4</span>
-        </TanoshiContainer>
+        </TanoshiContainerMaterial>
     </Hst.Variant>
 
     <Hst.Variant title="start">
-        <TanoshiContainer tanoshiContainerModel={startContainer} >
+        <TanoshiContainerMaterial tanoshiContainerModel={startContainer} >
             <span>1</span>
             <span>2</span>
             <span>3</span>
             <span>4</span>
-        </TanoshiContainer>
+        </TanoshiContainerMaterial>
     </Hst.Variant>
 
     <Hst.Variant title="center">
-        <TanoshiContainer tanoshiContainerModel={centerContainer} >
+        <TanoshiContainerMaterial tanoshiContainerModel={centerContainer} >
             <span>1</span>
             <span>2</span>
             <span>3</span>
             <span>4</span>
-        </TanoshiContainer>
+        </TanoshiContainerMaterial>
     </Hst.Variant>
 
     <Hst.Variant title="end">
-        <TanoshiContainer tanoshiContainerModel={endContainer} >
+        <TanoshiContainerMaterial tanoshiContainerModel={endContainer} >
             <span>1</span>
             <span>2</span>
             <span>3</span>
             <span>4</span>
-        </TanoshiContainer>
+        </TanoshiContainerMaterial>
     </Hst.Variant>
 
     <Hst.Variant title="stretch">
-        <TanoshiContainer tanoshiContainerModel={stretchContainer} >
+        <TanoshiContainerMaterial tanoshiContainerModel={stretchContainer} >
             <span>1</span>
             <span>2</span>
             <span>3</span>
             <span>4</span>
-        </TanoshiContainer>
+        </TanoshiContainerMaterial>
     </Hst.Variant>
 </Hst.Story>
 

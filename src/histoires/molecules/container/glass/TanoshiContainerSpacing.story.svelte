@@ -1,10 +1,10 @@
 <script lang="ts">
 
-    import '../../../app.css';
+    import '../../../../app.css';
 
-	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, THEMES, TanoshiContainerModel } from '$lib';
+	import { CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, TanoshiContainerModel } from '$lib';
     import type { Hst } from '@histoire/plugin-svelte';
-	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
+	import TanoshiContainerGlass from '$molecules/container/TanoshiContainerGlass.svelte';
     export let Hst: Hst;
 
     const startContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
@@ -27,60 +27,60 @@
 
 </script>
   
-<Hst.Story title="molecules/container/spacing" layout={{ type: 'grid', width: 600 }}>
+<Hst.Story title="molecules/container/glass/spacing" layout={{ type: 'grid', width: 600 }}>
 
     <Hst.Variant title="start">
-        <TanoshiContainer tanoshiContainerModel={startContainer} >
+        <TanoshiContainerGlass tanoshiContainerModel={startContainer} >
             <span>1</span>
             <span>2</span>
             <span>3</span>
             <span>4</span>
-        </TanoshiContainer>
+        </TanoshiContainerGlass>
     </Hst.Variant>
 
     <Hst.Variant title="center">
-        <TanoshiContainer tanoshiContainerModel={centerContainer} >
+        <TanoshiContainerGlass tanoshiContainerModel={centerContainer} >
             <span>1</span>
             <span>2</span>
             <span>3</span>
             <span>4</span>
-        </TanoshiContainer>
+        </TanoshiContainerGlass>
     </Hst.Variant>
 
     <Hst.Variant title="end">
-        <TanoshiContainer tanoshiContainerModel={endContainer} >
+        <TanoshiContainerGlass tanoshiContainerModel={endContainer} >
             <span>1</span>
             <span>2</span>
             <span>3</span>
             <span>4</span>
-        </TanoshiContainer>
+        </TanoshiContainerGlass>
     </Hst.Variant>
 
     <Hst.Variant title="between">
-        <TanoshiContainer tanoshiContainerModel={betweenContainer} >
+        <TanoshiContainerGlass tanoshiContainerModel={betweenContainer} >
             <span>1</span>
             <span>2</span>
             <span>3</span>
             <span>4</span>
-        </TanoshiContainer>
+        </TanoshiContainerGlass>
     </Hst.Variant>
 
     <Hst.Variant title="around">
-        <TanoshiContainer tanoshiContainerModel={aroundContainer} >
+        <TanoshiContainerGlass tanoshiContainerModel={aroundContainer} >
             <span>1</span>
             <span>2</span>
             <span>3</span>
             <span>4</span>
-        </TanoshiContainer>
+        </TanoshiContainerGlass>
     </Hst.Variant>
 
     <Hst.Variant title="evenly">
-        <TanoshiContainer tanoshiContainerModel={evenlyContainer} >
+        <TanoshiContainerGlass tanoshiContainerModel={evenlyContainer} >
             <span>1</span>
             <span>2</span>
             <span>3</span>
             <span>4</span>
-        </TanoshiContainer>
+        </TanoshiContainerGlass>
     </Hst.Variant>
 </Hst.Story>
 

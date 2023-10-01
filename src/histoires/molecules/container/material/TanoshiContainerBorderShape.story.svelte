@@ -1,10 +1,10 @@
 <script lang="ts">
 
-    import '../../../app.css';
+    import '../../../../app.css';
 
 	import { CONTAINER_BORDERS, CONTAINER_ORIENTATIONS, THEMES, TanoshiContainerModel } from '$lib';
     import type { Hst } from '@histoire/plugin-svelte';
-	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
+	import TanoshiContainerMaterial from '$molecules/container/TanoshiContainerMaterial.svelte';
     export let Hst: Hst;
 
     const noneContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
@@ -21,33 +21,33 @@
 
 </script>
   
-<Hst.Story title="molecules/container/border shape" layout={{ type: 'grid', width: 600 }}>
+<Hst.Story title="molecules/container/material/border shape" layout={{ type: 'grid', width: 600 }}>
 
     <Hst.Variant title="none">
-        <TanoshiContainer tanoshiContainerModel={noneContainer} >
+        <TanoshiContainerMaterial tanoshiContainerModel={noneContainer} >
             <span>1</span>
             <span>2</span>
             <span>3</span>
             <span>4</span>
-        </TanoshiContainer>
+        </TanoshiContainerMaterial>
     </Hst.Variant>
 
     <Hst.Variant title="md">
-        <TanoshiContainer tanoshiContainerModel={mdContainer} >
+        <TanoshiContainerMaterial tanoshiContainerModel={mdContainer} >
             <span>1</span>
             <span>2</span>
             <span>3</span>
             <span>4</span>
-        </TanoshiContainer>
+        </TanoshiContainerMaterial>
     </Hst.Variant> 
 
     <Hst.Variant title="full">
-        <TanoshiContainer tanoshiContainerModel={fullContainer} >
+        <TanoshiContainerMaterial tanoshiContainerModel={fullContainer} >
             <span>1</span>
             <span>2</span>
             <span>3</span>
             <span>4</span>
-        </TanoshiContainer>
+        </TanoshiContainerMaterial>
     </Hst.Variant>
 
 </Hst.Story>
