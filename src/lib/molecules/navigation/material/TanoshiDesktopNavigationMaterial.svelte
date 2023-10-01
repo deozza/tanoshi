@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { CONTAINER_ORIENTATIONS, CONTAINER_ITEMS_SPACING, CONTAINER_ITEMS_ALIGNMENTS, WIDTHS} from "$lib/enums";
-	import { TanoshiContainerMaterial, TanoshiContainerModel, TanoshiNavigationModel } from "$molecules";
+	import { TanoshiContainerMaterial, TanoshiContainerModel } from "$molecules";
 	import TanoshiLinkAsNavbarDropdown from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte';
+	import type TanoshiDesktopNavigationModel from "../TanoshiMobileNavigationModel";
 
-    export let tanoshiDesktopNavigationModel: TanoshiNavigationModel;
+    export let tanoshiDesktopNavigationModel: TanoshiDesktopNavigationModel;
     export let navigationDesktopContainerModel: TanoshiContainerModel;
 
 	$: desktopNavigationLeftModuleContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)

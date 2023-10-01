@@ -1,7 +1,7 @@
 import { THEMES } from '$lib/enums';
 import type { TanoshiNavigationLinkModel } from '$lib/types/Types';
 
-export default class TanoshiNavigationModel {
+export default class TanoshiDesktopNavigationModel {
 	private _itemsAtLeft: Array<TanoshiNavigationLinkModel> = [];
 	private _itemsAtCenter: Array<TanoshiNavigationLinkModel> = [];
 	private _itemsAtRight: Array<TanoshiNavigationLinkModel> = [];
@@ -15,12 +15,12 @@ export default class TanoshiNavigationModel {
 		return this._itemsAtLeft;
 	}
 
-	public setItemsAtLeft(value: Array<TanoshiNavigationLinkModel>): TanoshiNavigationModel {
+	public setItemsAtLeft(value: Array<TanoshiNavigationLinkModel>): TanoshiDesktopNavigationModel {
 		this._itemsAtLeft = value;
 		return this;
 	}
 
-	public addItemAtLeft(value: TanoshiNavigationLinkModel): TanoshiNavigationModel {
+	public addItemAtLeft(value: TanoshiNavigationLinkModel): TanoshiDesktopNavigationModel {
 		this._itemsAtLeft = [...this._itemsAtLeft, value];
 		return this;
 	}
@@ -29,12 +29,12 @@ export default class TanoshiNavigationModel {
 		return this._itemsAtCenter;
 	}
 
-	public setItemsAtCenter(value: Array<TanoshiNavigationLinkModel>): TanoshiNavigationModel {
+	public setItemsAtCenter(value: Array<TanoshiNavigationLinkModel>): TanoshiDesktopNavigationModel {
 		this._itemsAtCenter = value;
 		return this;
 	}
 
-	public addItemAtCenter(value: TanoshiNavigationLinkModel): TanoshiNavigationModel {
+	public addItemAtCenter(value: TanoshiNavigationLinkModel): TanoshiDesktopNavigationModel {
 		this._itemsAtCenter = [...this._itemsAtCenter, value];
 		return this;
 	}
@@ -43,12 +43,12 @@ export default class TanoshiNavigationModel {
 		return this._itemsAtRight;
 	}
 
-	public setItemsAtRight(value: Array<TanoshiNavigationLinkModel>): TanoshiNavigationModel {
+	public setItemsAtRight(value: Array<TanoshiNavigationLinkModel>): TanoshiDesktopNavigationModel {
 		this._itemsAtRight = value;
 		return this;
 	}
 
-	public addItemAtRight(value: TanoshiNavigationLinkModel): TanoshiNavigationModel {
+	public addItemAtRight(value: TanoshiNavigationLinkModel): TanoshiDesktopNavigationModel {
 		this._itemsAtRight = [...this._itemsAtRight, value];
 		return this;
 	}
@@ -57,7 +57,7 @@ export default class TanoshiNavigationModel {
 		return this._theme;
 	}
 
-	public setTheme(value: THEMES): TanoshiNavigationModel {
+	public setTheme(value: THEMES): TanoshiDesktopNavigationModel {
 		this._theme = value;
 		return this;
 	}

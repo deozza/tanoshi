@@ -1,14 +1,14 @@
 <script lang="ts">
-	import type TanoshiNavigationModel from '../TanoshiNavigationModel';
-
 	import TanoshiContainerModel from '$lib/molecules/container/TanoshiContainerModel';
 	
 	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, getThemeEnumKeyByEnumValue, HEIGHTS, THEMES } from '$lib/enums';
 	import TanoshiMobileNavigationMaterial from './TanoshiMobileNavigationMaterial.svelte';
 	import TanoshiDesktopNavigationMaterial from './TanoshiDesktopNavigationMaterial.svelte';
+	import type TanoshiMobileNavigationModel from '../TanoshiDesktopNavigationModel';
+	import type TanoshiDesktopNavigationModel from '../TanoshiMobileNavigationModel';
 
-	export let tanoshiDesktopNavigationModel: TanoshiNavigationModel;
-	export let tanoshiMobileNavigationModel: TanoshiNavigationModel;
+	export let tanoshiDesktopNavigationModel: TanoshiDesktopNavigationModel;
+	export let tanoshiMobileNavigationModel: TanoshiMobileNavigationModel;
 
 	$: desktopTheme = getThemeEnumKeyByEnumValue(tanoshiDesktopNavigationModel.theme)
 	const mobileTheme: THEMES | undefined = getThemeEnumKeyByEnumValue(tanoshiMobileNavigationModel.theme)

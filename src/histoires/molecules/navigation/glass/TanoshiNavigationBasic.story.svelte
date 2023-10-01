@@ -2,19 +2,20 @@
 
     import '../../../../app.css';
 
-	import {  THEMES, TanoshiLinkModel, TanoshiNavigationGlass, TanoshiNavigationModel } from '$lib';
+	import {  THEMES, TanoshiLinkModel, TanoshiNavigationGlass } from '$lib';
     import type { Hst } from '@histoire/plugin-svelte';
 	import type { TanoshiNavigationLinkModel } from '$lib/types/Types';
 	import TanoshiLink from '$atoms/link/TanoshiLink.svelte';
 	import TanoshiLinkAsNavbarDropdown from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte';
 	import TanoshiLinkAsNavbarDropdownModel from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdownModel';
+	import TanoshiMobileNavigationModel from '$molecules/navigation/TanoshiDesktopNavigationModel';
+	import TanoshiDesktopNavigationModel from '$molecules/navigation/TanoshiMobileNavigationModel';
     export let Hst: Hst;
 	const dropdownTitle: TanoshiLinkModel = new TanoshiLinkModel('Dropdown').setTheme(THEMES.White);
 	const linkPrimary: TanoshiLinkModel = new TanoshiLinkModel('Primary').setTheme(THEMES.White);
 	const linkSecondary: TanoshiLinkModel = new TanoshiLinkModel('Secondary').setTheme(THEMES.White);
 	const linkSuccess: TanoshiLinkModel = new TanoshiLinkModel('Success').setTheme(THEMES.White);
 
-    const dropdownTitleBlack: TanoshiLinkModel = new TanoshiLinkModel('Dropdown').setTheme(THEMES.Black);
 	const linkPrimaryBlack: TanoshiLinkModel = new TanoshiLinkModel('Primary').setTheme(THEMES.Black);
 	const linkSecondaryBlack: TanoshiLinkModel = new TanoshiLinkModel('Secondary').setTheme(THEMES.Black);
 	const linkSuccessBlack: TanoshiLinkModel = new TanoshiLinkModel('Success').setTheme(THEMES.Black);
@@ -137,95 +138,95 @@
 		}
 	]
 
-    const primaryDesktopNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
+    const primaryDesktopNavigationModel: TanoshiDesktopNavigationModel = new TanoshiDesktopNavigationModel()
         .setTheme(THEMES.Primary)
         .setItemsAtRight(navbarRightItemModels)
         .setItemsAtCenter(logoNavbarModel)
 
-    const primaryMobileNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
+    const primaryMobileNavigationModel: TanoshiMobileNavigationModel = new TanoshiMobileNavigationModel()
         .setTheme(THEMES.Primary)
-        .setItemsAtLeft(logoNavbarModel)
-        .setItemsAtCenter(navbarRightItemModels);
+        .setItemsWhenClosed(logoNavbarModel)
+        .setItemsWhenOpened(navbarRightItemModels);
 
-    const secondaryDesktopNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
+    const secondaryDesktopNavigationModel: TanoshiDesktopNavigationModel = new TanoshiDesktopNavigationModel()
         .setTheme(THEMES.Secondary)
         .setItemsAtRight(navbarRightItemModels)
         .setItemsAtCenter(logoNavbarModel)
 
-    const secondaryMobileNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
+    const secondaryMobileNavigationModel: TanoshiMobileNavigationModel = new TanoshiMobileNavigationModel()
         .setTheme(THEMES.Secondary)
-        .setItemsAtLeft(logoNavbarModel)
-        .setItemsAtCenter(navbarRightItemModels);
+        .setItemsWhenClosed(logoNavbarModel)
+        .setItemsWhenOpened(navbarRightItemModels);
 
-    const blackDesktopNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
+    const blackDesktopNavigationModel: TanoshiDesktopNavigationModel = new TanoshiDesktopNavigationModel()
 		.setTheme(THEMES.Black)
 		.setItemsAtRight(navbarRightItemModels)
 		.setItemsAtCenter(logoNavbarModel)
 
-	const blackMobileNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
+	const blackMobileNavigationModel: TanoshiMobileNavigationModel = new TanoshiMobileNavigationModel()
 		.setTheme(THEMES.Black)
-		.setItemsAtLeft(logoNavbarModel)
-		.setItemsAtCenter(navbarRightItemModels);
+		.setItemsWhenClosed(logoNavbarModel)
+		.setItemsWhenOpened(navbarRightItemModels);
 
-    const whiteDesktopNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
+    const whiteDesktopNavigationModel: TanoshiDesktopNavigationModel = new TanoshiDesktopNavigationModel()
         .setTheme(THEMES.White)
         .setItemsAtRight(navbarRightItemModelsBlack)
         .setItemsAtCenter(logoNavbarModelBlack)
 
-    const whiteMobileNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
+    const whiteMobileNavigationModel: TanoshiMobileNavigationModel = new TanoshiMobileNavigationModel()
         .setTheme(THEMES.White)
-        .setItemsAtLeft(logoNavbarModel)
-        .setItemsAtCenter(navbarRightItemModels);
+        .setItemsWhenClosed(logoNavbarModel)
+        .setItemsWhenOpened(navbarRightItemModels);
 
-    const successDesktopNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
+    const successDesktopNavigationModel: TanoshiDesktopNavigationModel = new TanoshiDesktopNavigationModel()
         .setTheme(THEMES.Success)
         .setItemsAtRight(navbarRightItemModels)
         .setItemsAtCenter(logoNavbarModel)
 
-    const successMobileNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
+    const successMobileNavigationModel: TanoshiMobileNavigationModel = new TanoshiMobileNavigationModel()
         .setTheme(THEMES.Success)
-        .setItemsAtLeft(logoNavbarModel)
-        .setItemsAtCenter(navbarRightItemModels);
+        .setItemsWhenClosed(logoNavbarModel)
+        .setItemsWhenOpened(navbarRightItemModels);
 
-    const dangerDesktopNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
+    const dangerDesktopNavigationModel: TanoshiDesktopNavigationModel = new TanoshiDesktopNavigationModel()
         .setTheme(THEMES.Danger)
         .setItemsAtRight(navbarRightItemModels)
         .setItemsAtCenter(logoNavbarModel)
 
-    const dangerMobileNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
+    const dangerMobileNavigationModel: TanoshiMobileNavigationModel = new TanoshiMobileNavigationModel()
         .setTheme(THEMES.Danger)
-        .setItemsAtLeft(logoNavbarModel)
-        .setItemsAtCenter(navbarRightItemModels);
+        .setItemsWhenClosed(logoNavbarModel)
+        .setItemsWhenOpened(navbarRightItemModels);
 
-    const warningDesktopNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
+    const warningDesktopNavigationModel: TanoshiDesktopNavigationModel = new TanoshiDesktopNavigationModel()
         .setTheme(THEMES.Warning)
         .setItemsAtRight(navbarRightItemModels)
         .setItemsAtCenter(logoNavbarModel)
 
-    const warningMobileNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
+    const warningMobileNavigationModel: TanoshiMobileNavigationModel = new TanoshiMobileNavigationModel()
         .setTheme(THEMES.Warning)
-        .setItemsAtLeft(logoNavbarModel)
-        .setItemsAtCenter(navbarRightItemModels);
+        .setItemsWhenClosed(logoNavbarModel)
+        .setItemsWhenOpened(navbarRightItemModels);
 
-    const infoDesktopNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
+    const infoDesktopNavigationModel: TanoshiDesktopNavigationModel = new TanoshiDesktopNavigationModel()
         .setTheme(THEMES.Info)
         .setItemsAtRight(navbarRightItemModels)
         .setItemsAtCenter(logoNavbarModel)
 
-    const infoMobileNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
+    const infoMobileNavigationModel: TanoshiMobileNavigationModel = new TanoshiMobileNavigationModel()
         .setTheme(THEMES.Info)
-        .setItemsAtLeft(logoNavbarModel)
-        .setItemsAtCenter(navbarRightItemModels);
+        .setItemsWhenClosed(logoNavbarModel)
+        .setItemsWhenOpened(navbarRightItemModels);
 
-	const transparentDesktopNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
+	const transparentDesktopNavigationModel: TanoshiDesktopNavigationModel = new TanoshiDesktopNavigationModel()
 		.setTheme(THEMES.Transparent)
 		.setItemsAtRight(navbarRightItemModels)
 		.setItemsAtCenter(logoNavbarModel)
 
-	const transparentMobileNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
+	const transparentMobileNavigationModel: TanoshiMobileNavigationModel = new TanoshiMobileNavigationModel()
 		.setTheme(THEMES.Transparent)
-		.setItemsAtLeft(logoNavbarModel)
-		.setItemsAtCenter(navbarRightItemModels);
+		.setItemsWhenClosed(logoNavbarModel)
+		.setItemsWhenOpened(navbarRightItemModels);
 
 </script>
   

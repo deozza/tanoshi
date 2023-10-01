@@ -75,7 +75,7 @@ div.evenly {
 
 div.transparent {
 	background-color: rgba(255, 255, 255, 0.2);
-	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	box-shadow: 2px 2px 10px 4px rgba(0, 0, 0, 0.2);
 }
 
 div.border-transparent {
@@ -84,7 +84,7 @@ div.border-transparent {
 
 div.white {
 	background-color: rgba(var(--white-background-container, var(--white)), 0.2);
-	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	box-shadow: 2px 2px 10px 4px rgba(0, 0, 0, 0.2);
 }
 
 div.border-white {
@@ -93,7 +93,7 @@ div.border-white {
 
 div.black {
 	background-color: rgba(var(--black-background-container, var(--black)), 0.2);
-	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	box-shadow: 2px 2px 10px 4px rgba(0, 0, 0, 0.2);
 }
 
 div.border-black {
@@ -102,7 +102,7 @@ div.border-black {
 
 div.primary {
 	background-color: rgba(var(--primary-background-container, var(--primary)), 0.2);
-	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	box-shadow: 2px 2px 10px 4px rgba(0, 0, 0, 0.2);
 }
 
 div.border-primary {
@@ -111,7 +111,7 @@ div.border-primary {
 
 div.secondary {
 	background-color: rgba(var(--secondary-background-container, var(--secondary)), 0.2);
-	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	box-shadow: 2px 2px 10px 4px rgba(0, 0, 0, 0.2);
 }
 
 div.border-secondary {
@@ -120,7 +120,7 @@ div.border-secondary {
 
 div.success {
 	background-color: rgba(var(--success-background-container, var(--success)), 0.2);
-	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	box-shadow: 2px 2px 10px 4px rgba(0, 0, 0, 0.2);
 }
 
 div.border-success {
@@ -129,7 +129,7 @@ div.border-success {
 
 div.warning {
 	background-color: rgba(var(--warning-background-container, var(--warning)), 0.2);
-	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	box-shadow: 2px 2px 10px 4px rgba(0, 0, 0, 0.2);
 }
 
 div.border-warning {
@@ -138,7 +138,7 @@ div.border-warning {
 
 div.danger {
 	background-color: rgba(var(--danger-background-container, var(--danger)), 0.2);
-	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	box-shadow: 2px 2px 10px 4px rgba(0, 0, 0, 0.2);
 }
 
 div.border-danger {
@@ -147,7 +147,7 @@ div.border-danger {
 
 div.info {
 	background-color: rgba(var(--info-background-container, var(--info)), 0.2);
-	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	box-shadow: 2px 2px 10px 4px rgba(0, 0, 0, 0.2);
 }
 
 div.border-info {

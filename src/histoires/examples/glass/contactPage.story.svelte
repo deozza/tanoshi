@@ -1,15 +1,17 @@
 <script lang="ts">
 	import { TanoshiButtonModel, TanoshiHeaderModel, TanoshiLabelModel, TanoshiLinkModel, TanoshiTextInputModel, TanoshiTextareaInput, TanoshiTextareaInputModel } from '$atoms';
-	import TanoshiButtonGlass from '$atoms/button/TanoshiButtonGlass.svelte';
+	import TanoshiButtonMaterial from '$atoms/button/TanoshiButtonMaterial.svelte';
 	import TanoshiTextInput from '$atoms/input/text/TanoshiTextInput.svelte';
 	import TanoshiLink from '$atoms/link/TanoshiLink.svelte';
 	import TanoshiHeader from '$atoms/typography/header/TanoshiHeader.svelte';
-	import { BUTTON_TYPES, CONTAINER_BORDERS, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ORIENTATIONS, HEADER_TAGS, HEIGHTS, INPUT_TEXT_TYPES, SIZES, THEMES, TanoshiAlertModel, TanoshiContainerModel, TanoshiFormModel, TanoshiLabelAndInputModel, TanoshiLinkAsNavbarDropdownModel, TanoshiNavigationGlass, TanoshiNavigationModel, WIDTHS } from '$lib';
+	import { BUTTON_TYPES, CONTAINER_BORDERS, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ORIENTATIONS, HEADER_TAGS, HEIGHTS, INPUT_TEXT_TYPES, SIZES, THEMES, TanoshiAlertModel, TanoshiContainerModel, TanoshiFormModel, TanoshiLabelAndInputModel, TanoshiLinkAsNavbarDropdownModel, TanoshiNavigationGlass, WIDTHS } from '$lib';
 	import type { TanoshiNavigationLinkModel } from '$lib/types/Types';
 	import TanoshiAlertGlass from '$molecules/alert/TanoshiAlertGlass.svelte';
 	import TanoshiContainerMaterial from '$molecules/container/TanoshiContainerMaterial.svelte';
 	import TanoshiFormGlass from '$molecules/form/TanoshiFormGlass.svelte';
 	import TanoshiLinkAsNavbarDropdown from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte';
+	import TanoshiMobileNavigationModel from '$molecules/navigation/TanoshiDesktopNavigationModel';
+	import TanoshiDesktopNavigationModel from '$molecules/navigation/TanoshiMobileNavigationModel';
 
     import '../../../app.css';
 
@@ -80,13 +82,18 @@
 		}
 	]
 
-    const primaryDesktopNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
+    const primaryDesktopNavigationModel: TanoshiDesktopNavigationModel = new TanoshiDesktopNavigationModel()
         .setTheme(THEMES.Primary)
         .setItemsAtRight(navbarRightItemModels)
         .setItemsAtCenter(logoNavbarModel)
 
+	const primaryMobileNavigationModel: TanoshiMobileNavigationModel = new TanoshiMobileNavigationModel()
+        .setTheme(THEMES.Primary)
+        .setItemsWhenOpened(navbarRightItemModels)
+        .setItemsWhenClosed(logoNavbarModel)
+
     const contactContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
-        .setBackgroundTheme(THEMES.Black)
+        .setBackgroundTheme(THEMES.Transparent)
         .setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
         .setWidth(WIDTHS.MinW10)
         .setHeight(HEIGHTS.MINH100VH)
@@ -136,21 +143,21 @@
 		.setWidth(WIDTHS.W6)
 
 	const defaultAlert: TanoshiAlertModel = new TanoshiAlertModel('Alert title')
-		.setContainerSize(WIDTHS.W6)
+		.setContainerSize(WIDTHS.W12)
 		.setTitleTheme(THEMES.White)
 
 </script>
   
 <Hst.Story title="examples/glass/contact page">
-    <TanoshiNavigationGlass tanoshiDesktopNavigationModel={primaryDesktopNavigationModel} tanoshiMobileNavigationModel={primaryDesktopNavigationModel} />
+    <TanoshiNavigationGlass tanoshiDesktopNavigationModel={primaryDesktopNavigationModel} tanoshiMobileNavigationModel={primaryMobileNavigationModel} />
 
     <main>
-        <TanoshiContainerMaterial tanoshiContainerModel={contactContainer}>
+        <TanoshiContainerMaterial tanoshiContainerModel={contactContainer} customClasses={'bg-gradient'}>
 
 			<TanoshiHeader tanoshiHeaderModel={contactFormHeader} />
 			<TanoshiAlertGlass tanoshiAlertModel={defaultAlert} />
 
-			<TanoshiFormGlass tanoshiFormModel={contactForm} tanoshiButtonComponent={TanoshiButtonGlass} />
+			<TanoshiFormGlass tanoshiFormModel={contactForm} tanoshiButtonComponent={TanoshiButtonMaterial} />
 
         </TanoshiContainerMaterial>    
     </main>

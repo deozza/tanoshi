@@ -14,6 +14,10 @@
     import '../../../app.css';
 
     import type { Hst } from '@histoire/plugin-svelte';
+	import TanoshiContainerGlass from '$molecules/container/TanoshiContainerGlass.svelte';
+	import TanoshiButtonMaterial from '$atoms/button/TanoshiButtonMaterial.svelte';
+	import TanoshiMobileNavigationModel from '$molecules/navigation/TanoshiDesktopNavigationModel';
+	import TanoshiDesktopNavigationModel from '$molecules/navigation/TanoshiMobileNavigationModel';
     export let Hst: Hst;
 
 	const dropdownTitle: TanoshiLinkModel = new TanoshiLinkModel('Dropdown').setTheme(THEMES.White);
@@ -80,21 +84,27 @@
 		}
 	]
 
-    const primaryDesktopNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
+    const primaryDesktopNavigationModel: TanoshiDesktopNavigationModel = new TanoshiDesktopNavigationModel()
         .setTheme(THEMES.Primary)
         .setItemsAtRight(navbarRightItemModels)
         .setItemsAtCenter(logoNavbarModel)
+
+
+	const primaryMobileNavigationModel: TanoshiMobileNavigationModel = new TanoshiMobileNavigationModel()
+        .setTheme(THEMES.Primary)
+        .setItemsWhenOpened(navbarRightItemModels)
+        .setItemsWhenClosed(logoNavbarModel)
 
 	const presentationSectionContainerModel: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
 		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Between)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
 		.setWidth(WIDTHS.W12)
-		.setBackgroundTheme(THEMES.Black)
+		.setBackgroundTheme(THEMES.Transparent)
 
 	const productImage: TanoshiImageModel = new TanoshiImageModel('https://picsum.photos/800/1000', 'img')
 	const productPresentationContainerModel: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
 		.setWidth(WIDTHS.W6)
-		.setBackgroundTheme(THEMES.Black)
+		.setBackgroundTheme(THEMES.Transparent)
 	const productHeader: TanoshiHeaderModel = new TanoshiHeaderModel('Product title')
 		.setTheme(THEMES.White)
 		.setTag(HEADER_TAGS.H1)
@@ -119,19 +129,19 @@
 </script>
   
 <Hst.Story title="examples/glass/product page">
-    <TanoshiNavigationGlass tanoshiDesktopNavigationModel={primaryDesktopNavigationModel} tanoshiMobileNavigationModel={primaryDesktopNavigationModel} />
+    <TanoshiNavigationGlass tanoshiDesktopNavigationModel={primaryDesktopNavigationModel} tanoshiMobileNavigationModel={primaryMobileNavigationModel} />
 
     <main>
 		<section>
-			<TanoshiContainerMaterial tanoshiContainerModel={presentationSectionContainerModel} >
+			<TanoshiContainerMaterial tanoshiContainerModel={presentationSectionContainerModel} customClasses={'bg-gradient'} >
 				<TanoshiImage tanoshiImageModel={productImage} />
-				<TanoshiContainerMaterial tanoshiContainerModel={productPresentationContainerModel} >
+				<TanoshiContainerGlass tanoshiContainerModel={productPresentationContainerModel} >
 					<TanoshiHeader tanoshiHeaderModel={productHeader} />
 					<TanoshiParagraph tanoshiParagraphModel={productDescriptionParagraph} />
 					<TanoshiParagraph tanoshiParagraphModel={productPrice} />
 					<TanoshiParagraph tanoshiParagraphModel={productAvailability} />
-					<TanoshiButtonGlass tanoshiButtonModel={addToCartButton} />
-				</TanoshiContainerMaterial>
+					<TanoshiButtonMaterial tanoshiButtonModel={addToCartButton} />
+				</TanoshiContainerGlass>
 			</TanoshiContainerMaterial>
 		</section>
     </main>

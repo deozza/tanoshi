@@ -9,6 +9,8 @@
 	import TanoshiContainerGlass from '$molecules/container/TanoshiContainerGlass.svelte';
 	import TanoshiContainerMaterial from '$molecules/container/TanoshiContainerMaterial.svelte';
 	import TanoshiLinkAsNavbarDropdown from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte';
+	import TanoshiMobileNavigationModel from '$molecules/navigation/TanoshiDesktopNavigationModel';
+	import TanoshiDesktopNavigationModel from '$molecules/navigation/TanoshiMobileNavigationModel';
 	import TanoshiNavigationGlass from '$molecules/navigation/glass/TanoshiNavigationGlass.svelte';
 
     import '../../../app.css';
@@ -80,13 +82,18 @@
 		}
 	]
 
-    const primaryDesktopNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
+    const primaryDesktopNavigationModel: TanoshiDesktopNavigationModel = new TanoshiDesktopNavigationModel()
         .setTheme(THEMES.Primary)
         .setItemsAtRight(navbarRightItemModels)
         .setItemsAtCenter(logoNavbarModel)
 
+	const primaryMobileNavigationModel: TanoshiMobileNavigationModel = new TanoshiMobileNavigationModel()
+        .setTheme(THEMES.Primary)
+        .setItemsWhenOpened(navbarRightItemModels)
+        .setItemsWhenClosed(logoNavbarModel)
+
     const itemsListContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
-        .setBackgroundTheme(THEMES.Black)
+        .setBackgroundTheme(THEMES.Transparent)
         .setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
         .setWidth(WIDTHS.W12)
         .setHeight(HEIGHTS.MINH100VH)
@@ -100,7 +107,7 @@
 		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Start)
 
 	const itemContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
-		.setBorderTheme(THEMES.Secondary)
+		.setBorderTheme(THEMES.Black)
 		.setBorderShape(CONTAINER_BORDERS.Md)
 		.setWidth(WIDTHS.WAuto)
 	
@@ -217,10 +224,10 @@
 </script>
   
 <Hst.Story title="examples/glass/items list">
-    <TanoshiNavigationGlass tanoshiDesktopNavigationModel={primaryDesktopNavigationModel} tanoshiMobileNavigationModel={primaryDesktopNavigationModel} />
+    <TanoshiNavigationGlass tanoshiDesktopNavigationModel={primaryDesktopNavigationModel} tanoshiMobileNavigationModel={primaryMobileNavigationModel} />
 
     <main>
-        <TanoshiContainerMaterial tanoshiContainerModel={itemsListContainer}>
+        <TanoshiContainerMaterial tanoshiContainerModel={itemsListContainer} customClasses={'bg-gradient'}>
             <TanoshiHeader tanoshiHeaderModel={itemsListHeader} />
 			<TanoshiContainerMaterial tanoshiContainerModel={itemsContainer}>
 				{#each itemsListModels as itemModel}

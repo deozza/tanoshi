@@ -36,7 +36,7 @@ export {default as TanoshiModalModel} from "./modal/TanoshiModalModel";
 
 export {default as TanoshiNavigationMaterial} from "./navigation/material/TanoshiNavigationMaterial.svelte";
 export {default as TanoshiNavigationGlass} from "./navigation/glass/TanoshiNavigationGlass.svelte";
-export {default as TanoshiNavigationModel} from "./navigation/TanoshiNavigationModel";
+export {default as TanoshiNavigationModel} from "./navigation/TanoshiDesktopNavigationModel";
 
 export {default as TanoshiTabContainer} from "./tab/tabContainer/TanoshiTabContainer.svelte";
 export {default as TanoshiTabContainerModel} from "./tab/tabContainer/TanoshiTabContainerModel";

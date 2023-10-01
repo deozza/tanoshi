@@ -17,22 +17,10 @@
 	    .setBackgroundTheme(mobileTheme)
 		.setHeight(HEIGHTS.H100VH);
 
-    const expandedTopMobileNavigationContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
-	    .setBackgroundTheme(mobileTheme)
-		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
-		.setHeight(tanoshiMobileNavigationModel.itemsAtLeft.length > 0 ? HEIGHTS.MINH25PRCT : HEIGHTS.H25PRCT);
-
 	const expandedCenterMobileNavigationContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
 	    .setBackgroundTheme(mobileTheme)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
-		.setHeight(tanoshiMobileNavigationModel.itemsAtCenter.length > 0 ? HEIGHTS.MINH25PRCT : HEIGHTS.H25PRCT);
-
-
-	const expandedBottomMobileNavigationContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
-	    .setBackgroundTheme(mobileTheme)
-		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
-		.setHeight(tanoshiMobileNavigationModel.itemsAtRight.length > 0 ? HEIGHTS.MINH25PRCT : HEIGHTS.H25PRCT);
-
+		.setHeight(tanoshiMobileNavigationModel.itemsWhenClosed.length > 0 ? HEIGHTS.MINH25PRCT : HEIGHTS.H25PRCT);
 
 	const mobileMenuButton: TanoshiButtonModel = new TanoshiButtonModel('')
     	.setBasicTheme(mobileTheme);
@@ -63,25 +51,19 @@
 			<iconify-icon icon='mdi:close' />
 			{/if}
 		</svelte:component>
+
+		{#each tanoshiMobileNavigationModel.itemsWhenClosed as tanoshiNavigationLinkModel}
+			<svelte:component this={tanoshiNavigationLinkModel.component} tanoshiLinkModel={tanoshiNavigationLinkModel.link} />
+		{/each}
 	</TanoshiContainerMaterial>
 
 	{#if showMobileMenu === true}
 		<div id="mobile-menu">
 			<TanoshiContainerMaterial tanoshiContainerModel={expandedMobileNavigationContainer}>
-				<TanoshiContainerMaterial tanoshiContainerModel={expandedTopMobileNavigationContainer}>
-					{#each tanoshiMobileNavigationModel.itemsAtLeft as tanoshiNavigationLinkModel}
-					<svelte:component this={tanoshiNavigationLinkModel.component} tanoshiLinkModel={tanoshiNavigationLinkModel.link} />
-				{/each}
-				</TanoshiContainerMaterial>
 				<TanoshiContainerMaterial tanoshiContainerModel={expandedCenterMobileNavigationContainer}>
-					{#each tanoshiMobileNavigationModel.itemsAtCenter as tanoshiNavigationLinkModel}
-					<svelte:component this={tanoshiNavigationLinkModel.component} tanoshiLinkModel={tanoshiNavigationLinkModel.link} />
-				{/each}
-				</TanoshiContainerMaterial>
-				<TanoshiContainerMaterial tanoshiContainerModel={expandedBottomMobileNavigationContainer}>
-					{#each tanoshiMobileNavigationModel.itemsAtRight as tanoshiNavigationLinkModel}
-					<svelte:component this={tanoshiNavigationLinkModel.component} tanoshiLinkModel={tanoshiNavigationLinkModel.link} />
-				{/each}
+					{#each tanoshiMobileNavigationModel.itemsWhenClosed as tanoshiNavigationLinkModel}
+						<svelte:component this={tanoshiNavigationLinkModel.component} tanoshiLinkModel={tanoshiNavigationLinkModel.link} />
+					{/each}
 				</TanoshiContainerMaterial>
 			</TanoshiContainerMaterial>
 		</div>
