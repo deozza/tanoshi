@@ -7,7 +7,7 @@
 	import TanoshiLinkAsNavbarDropdown from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte';
 	import TanoshiNavigationMaterial from '$molecules/navigation/material/TanoshiNavigationMaterial.svelte';
 
-    import '../../app.css';
+    import '../../../app.css';
 
     import type { Hst } from '@histoire/plugin-svelte';
 	import TanoshiImage from '$atoms/image/TanoshiImage.svelte';
@@ -118,7 +118,7 @@
 
 </script>
   
-<Hst.Story title="examples/product page">
+<Hst.Story title="examples/material/product page">
     <TanoshiNavigationMaterial tanoshiDesktopNavigationModel={primaryDesktopNavigationModel} tanoshiMobileNavigationModel={primaryDesktopNavigationModel} />
 
     <main>

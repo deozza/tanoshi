@@ -74,7 +74,8 @@ div.evenly {
 }
 
 div.transparent {
-	background-color: transparent;
+	background-color: rgba(255, 255, 255, 0.2);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 div.border-transparent {
