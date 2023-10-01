@@ -12,6 +12,7 @@ export default class TanoshiButtonModel {
 	private _borderHoverTheme!: string;
 	private _textTheme!: string;
 	private _textHoverTheme!: string;
+	private _glassTheme: boolean = false;
 	private _type!: string;
 	private _size!: string;
 	private _isDisabled: boolean = false;
@@ -105,7 +106,7 @@ export default class TanoshiButtonModel {
 	}
 
 	public setTextTheme(value: THEMES): TanoshiButtonModel {
-		if(this._backgroundTheme === value ) {
+		if(this._glassTheme === false && this._backgroundTheme === value ) {
 			throw new ThemeError('Background and text themes cannot be the same');
 		}
 		
@@ -118,11 +119,21 @@ export default class TanoshiButtonModel {
 	}
 
 	public setTextHoverTheme(value: THEMES): TanoshiButtonModel {
-		if(this._backgroundHoverTheme === value ) {
+		if(this._glassTheme === false && this._backgroundHoverTheme === value ) {
 			throw new ThemeError('Background and text themes cannot be the same');
 		}
 		
 		this._textHoverTheme = value;
+		return this;
+	}
+
+	get glassTheme(): boolean {
+		return this._glassTheme;
+	}
+
+	public setGlassTheme(value: THEMES): TanoshiButtonModel {
+		this._glassTheme = true;
+		this.setBasicTheme(value);
 		return this;
 	}
 

@@ -17,6 +17,7 @@
 	"
 	class:disabled:opacity-50={tanoshiButtonModel.isDisabled === true}
 	class:pointer-events-none={tanoshiButtonModel.isDisabled === true}
+	class:glass={tanoshiButtonModel.glassTheme === true}
 	disabled={tanoshiButtonModel.isDisabled}
 	on:click
 	type={tanoshiButtonModel.type}
@@ -50,18 +51,19 @@
 	cursor: pointer;
 }
 
-button.btn-md {
-	height: 2.5rem/* 40px */;
-	padding-left: 1.25rem/* 20px */;
-	padding-right: 1.25rem/* 20px */;
-}
-
 button.btn-sm {
 	height: 2rem/* 32px */;
 	padding-left: 1rem/* 16px */;
 	padding-right: 1rem/* 16px */;
 	font-size: 0.875rem/* 14px */;
 	line-height: 1.25rem/* 20px */;
+}
+
+button.btn-md {
+	height: 2.5rem/* 40px */;
+	padding-left: 1.25rem/* 20px */;
+	padding-right: 1.25rem/* 20px */;
+	font-size: 1rem/* 16px */;
 }
 
 button.btn-lg {
@@ -87,196 +89,314 @@ button:disabled {
     opacity: 0.5;
 }
 
+button.glass {
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	transition-property: color, box-shadow, border, background-color;
+}
+
 button.btn-primary {
-    background-color: var(--primary-bg-button, var(--primary));
+    background-color: rgba(var(--primary-bg-button, var(--primary)));
+}
+
+button.btn-primary.glass {
+	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0px 0px 15px 2px rgba(var(--primary-bg-button, var(--primary)), 0.3), 0px 5px 5px 4px transparent;
 }
 
 button.btn-text-primary {
-    color: var(--primary-text-button, var(--primary));
+    color: rgba(var(--primary-text-button, var(--primary)));
 }
 
 button.btn-border-primary {
-    border: 1px solid var(--primary-border-button, var(--primary));
+    border: 1px solid rgba(var(--primary-border-button, var(--primary)));
+}
+
+button.btn-border-primary.glass {
+	border: 1px solid rgba(var(--primary-border-button, var(--primary)), 0.5);
 }
 
 button.btn-hover-primary:hover:not([disabled]){
-    background-color: var(--primary-bg-button-hover, var(--primary-dark));
+    background-color: rgba(var(--primary-bg-button-hover, var(--primary-dark)));
+}
+
+button.btn-hover-primary.glass:hover:not([disabled]){
+	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0px 0px 20px 3px rgba(var(--primary), 0.6), 0px 5px 5px 4px rgba(0, 0, 0, 0.14);
 }
 
 button.btn-text-hover-primary:hover:not([disabled]) {
-    color: var(--primary-text-button-hover, var(--primary-dark));
+    color: rgba(var(--primary-text-button-hover, var(--primary-dark)));
 }
 
 button.btn-border-hover-primary:hover:not([disabled]) {
-    border: 1px solid var(--primary-border-button-hover, var(--primary-dark));
+    border: 1px solid rgba(var(--primary-border-button-hover, var(--primary-dark)));
 }
 
 button.btn-secondary {
-    background-color: var(--secondary-bg-button, var(--secondary));
+    background-color: rgba(var(--secondary-bg-button, var(--secondary)));
+}
+
+button.btn-secondary.glass {
+	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0px 0px 15px 2px rgba(var(--secondary-bg-button, var(--secondary)), 0.3), 0px 5px 5px 4px transparent;
 }
 
 button.btn-text-secondary {
-    color: var(--secondary-text-button, var(--secondary));
+    color: rgba(var(--secondary-text-button, var(--secondary)));
 }
 
 button.btn-border-secondary {
-    border: 1px solid var(--secondary-border-button, var(--secondary));
+    border: 1px solid rgba(var(--secondary-border-button, var(--secondary)));
+}
+
+button.btn-border-secondary.glass {
+	border: 1px solid rgba(var(--secondary-border-button, var(--secondary)), 0.5);
 }
 
 button.btn-hover-secondary:hover:not([disabled]){
-    background-color: var(--secondary-bg-button-hover, var(--secondary-dark));
+    background-color: rgba(var(--secondary-bg-button-hover, var(--secondary-dark)));
+}
+
+button.btn-hover-secondary.glass:hover:not([disabled]){
+	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0px 0px 20px 3px rgba(var(--secondary), 0.6), 0px 5px 5px 4px rgba(0, 0, 0, 0.14);
 }
 
 button.btn-text-hover-secondary:hover:not([disabled]) {
-    color: var(--secondary-text-button-hover, var(--secondary-dark));
+    color: rgba(var(--secondary-text-button-hover, var(--secondary-dark)));
 }
 
 button.btn-border-hover-secondary:hover:not([disabled]) {
-    border: 1px solid var(--secondary-border-button-hover, var(--secondary-dark));
+    border: 1px solid rgba(var(--secondary-border-button-hover, var(--secondary-dark)));
 }
 
 button.btn-success {
-    background-color: var(--success-bg-button, var(--success));
+    background-color: rgba(var(--success-bg-button, var(--success)));
+}
+
+button.btn-success.glass {
+	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0px 0px 15px 2px rgba(var(--success-bg-button, var(--success)), 0.3), 0px 5px 5px 4px transparent;
 }
 
 button.btn-text-success {
-    color: var(--success-text-button, var(--success));
+    color: rgba(var(--success-text-button, var(--success)));
 }
 
 button.btn-border-success {
-    border: 1px solid var(--success-border-button, var(--success));
+    border: 1px solid rgba(var(--success-border-button, var(--success)));
+}
+
+button.btn-border-success.glass {
+	border: 1px solid rgba(var(--success-border-button, var(--success)), 0.5);
 }
 
 button.btn-hover-success:hover:not([disabled]){
-    background-color: var(--success-bg-button-hover, var(--success-dark));
+    background-color: rgba(var(--success-bg-button-hover, var(--success-dark)));
+}
+
+button.btn-hover-success.glass:hover:not([disabled]){
+	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0px 0px 20px 3px rgba(var(--success), 0.6), 0px 5px 5px 4px rgba(0, 0, 0, 0.14);
 }
 
 button.btn-text-hover-success:hover:not([disabled]) {
-    color: var(--success-text-button-hover, var(--success-dark));
+    color: rgba(var(--success-text-button-hover, var(--success-dark)));
 }
 
 button.btn-border-hover-success:hover:not([disabled]) {
-    border: 1px solid var(--success-border-button-hover, var(--success-dark));
+    border: 1px solid rgba(var(--success-border-button-hover, var(--success-dark)));
 }
 
 button.btn-warning {
-    background-color: var(--warning-bg-button, var(--warning));
+    background-color: rgba(var(--warning-bg-button, var(--warning)));
+}
+
+button.btn-warning.glass {
+	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0px 0px 15px 2px rgba(var(--warning-bg-button, var(--warning)), 0.3), 0px 5px 5px 4px transparent;
 }
 
 button.btn-text-warning {
-    color: var(--warning-text-button, var(--warning));
+    color: rgba(var(--warning-text-button, var(--warning)));
 }
 
 button.btn-border-warning {
-    border: 1px solid var(--warning-border-button, var(--warning));
+    border: 1px solid rgba(var(--warning-border-button, var(--warning)));
+}
+
+button.btn-border-warning.glass {
+	border: 1px solid rgba(var(--warning-border-button, var(--warning)), 0.5);
 }
 
 button.btn-hover-warning:hover:not([disabled]){
-    background-color: var(--warning-bg-button-hover, var(--warning-dark));
+    background-color: rgba(var(--warning-bg-button-hover, var(--warning-dark)));
+}
+
+button.btn-hover-warning.glass:hover:not([disabled]){
+	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0px 0px 20px 3px rgba(var(--warning), 0.6), 0px 5px 5px 4px rgba(0, 0, 0, 0.14);
 }
 
 button.btn-text-hover-warning:hover:not([disabled]) {
-    color: var(--warning-text-button-hover, var(--warning-dark));
+    color: rgba(var(--warning-text-button-hover, var(--warning-dark)));
 }
 
 button.btn-border-hover-warning:hover:not([disabled]) {
-    border: 1px solid var(--warning-border-button-hover, var(--warning-dark));
+    border: 1px solid rgba(var(--warning-border-button-hover, var(--warning-dark)));
 }
 
 button.btn-danger {
-    background-color: var(--danger-bg-button, var(--danger));
+    background-color: rgba(var(--danger-bg-button, var(--danger)));
+}
+
+button.btn-danger.glass {
+	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0px 0px 15px 2px rgba(var(--danger-bg-button, var(--danger)), 0.3), 0px 5px 5px 4px transparent;
 }
 
 button.btn-text-danger {
-    color: var(--danger-text-button, var(--danger));
+    color: rgba(var(--danger-text-button, var(--danger)));
 }
 
 button.btn-border-danger {
-    border: 1px solid var(--danger-border-button, var(--danger));
+    border: 1px solid rgba(var(--danger-border-button, var(--danger)));
+}
+
+button.btn-border-danger.glass {
+	border: 1px solid rgba(var(--danger-border-button, var(--danger)), 0.5);
 }
 
 button.btn-hover-danger:hover:not([disabled]){
-    background-color: var(--danger-bg-button-hover, var(--danger-dark));
+    background-color: rgba(var(--danger-bg-button-hover, var(--danger-dark)));
+}
+
+button.btn-hover-danger.glass:hover:not([disabled]){
+	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0px 0px 20px 3px rgba(var(--danger), 0.6), 0px 5px 5px 4px rgba(0, 0, 0, 0.14);
 }
 
 button.btn-text-hover-danger:hover:not([disabled]) {
-    color: var(--danger-text-button-hover, var(--danger-dark));
+    color: rgba(var(--danger-text-button-hover, var(--danger-dark)));
 }
 
 button.btn-border-hover-danger:hover:not([disabled]) {
-    border: 1px solid var(--danger-border-button-hover, var(--danger-dark));
+    border: 1px solid rgba(var(--danger-border-button-hover, var(--danger-dark)));
 }
 
 button.btn-info {
-    background-color: var(--info-bg-button, var(--info));
+    background-color: rgba(var(--info-bg-button, var(--info)));
+}
+
+button.btn-info.glass {
+	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0px 0px 15px 2px rgba(var(--info-bg-button, var(--info)), 0.3), 0px 5px 5px 4px transparent;
 }
 
 button.btn-text-info {
-    color: var(--info-text-button, var(--info));
+    color: rgba(var(--info-text-button, var(--info)));
 }
 
 button.btn-border-info {
-    border: 1px solid var(--info-border-button, var(--info));
+    border: 1px solid rgba(var(--info-border-button, var(--info)));
+}
+
+button.btn-border-info.glass {
+	border: 1px solid rgba(var(--info-border-button, var(--info)), 0.5);
 }
 
 button.btn-hover-info:hover:not([disabled]){
-    background-color: var(--info-bg-button-hover, var(--info-dark));
+    background-color: rgba(var(--info-bg-button-hover, var(--info-dark)));
+}
+
+button.btn-hover-info.glass:hover:not([disabled]){
+	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0px 0px 20px 3px rgba(var(--info), 0.6), 0px 5px 5px 4px rgba(0, 0, 0, 0.14);
 }
 
 button.btn-text-hover-info:hover:not([disabled]) {
-    color: var(--info-text-button-hover, var(--info-dark));
+    color: rgba(var(--info-text-button-hover, var(--info-dark)));
 }
 
 button.btn-border-hover-info:hover:not([disabled]) {
-    border: 1px solid var(--info-border-button-hover, var(--info-dark));
+    border: 1px solid rgba(var(--info-border-button-hover, var(--info-dark)));
 }
 
 button.btn-white {
-    background-color: var(--white-bg-button, var(--white));
+    background-color: rgba(var(--white-bg-button, var(--white)));
+}
+
+button.btn-white.glass {
+	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0px 0px 15px 2px rgba(var(--white-bg-button, var(--white)), 0.3), 0px 5px 5px 4px transparent;
 }
 
 button.btn-text-white {
-    color: var(--white-text-button, var(--white));
+    color: rgba(var(--white-text-button, var(--white)));
 }
 
 button.btn-border-white {
-    border: 1px solid var(--white-border-button, var(--white));
+    border: 1px solid rgba(var(--white-border-button, var(--white)));
+}
+
+button.btn-border-white.glass {
+	border: 1px solid rgba(var(--white-border-button, var(--white)), 0.5);
 }
 
 button.btn-hover-white:hover:not([disabled]){
-    background-color: var(--white-bg-button-hover, var(--white));
+    background-color: rgba(var(--white-bg-button-hover, var(--white)));
+}
+
+button.btn-hover-white.glass:hover:not([disabled]){
+	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0px 0px 20px 3px rgba(var(--white), 0.6), 0px 5px 5px 4px rgba(0, 0, 0, 0.14);
 }
 
 button.btn-text-hover-white:hover:not([disabled]) {
-    color: var(--white-text-button-hover, var(--white));
+    color: rgba(var(--white-text-button-hover, var(--white)));
 }
 
 button.btn-border-hover-white:hover:not([disabled]) {
-    border: 1px solid var(--white-border-button-hover, var(--white));
+    border: 1px solid rgba(var(--white-border-button-hover, var(--white)));
 }
 
 button.btn-black {
-    background-color: var(--black-bg-button, var(--black));
+    background-color: rgba(var(--black-bg-button, var(--black)));
+}
+
+button.btn-black.glass {
+	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0px 0px 15px 2px rgba(var(--black-bg-button, var(--black)), 0.3), 0px 5px 5px 4px transparent;
 }
 
 button.btn-text-black {
-    color: var(--black-text-button, var(--black));
+    color: rgba(var(--black-text-button, var(--black)));
 }
 
 button.btn-border-black {
-    border: 1px solid var(--black-border-button, var(--black));
+    border: 1px solid rgba(var(--black-border-button, var(--black)));
+}
+
+button.btn-border-black.glass {
+	border: 1px solid rgba(var(--black-border-button, var(--black)), 0.5);
 }
 
 button.btn-hover-black:hover:not([disabled]){
-    background-color: var(--black-bg-button-hover, var(--black));
+    background-color: rgba(var(--black-bg-button-hover, var(--black)));
+}
+
+button.btn-hover-black.glass:hover:not([disabled]){
+	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0px 0px 20px 3px rgba(var(--black), 0.6), 0px 5px 5px 4px rgba(0, 0, 0, 0.14);
 }
 
 button.btn-text-hover-black:hover:not([disabled]) {
-    color: var(--black-text-button-hover, var(--black));
+    color: rgba(var(--black-text-button-hover, var(--black)));
 }
 
 button.btn-border-hover-black:hover:not([disabled]) {
-    border: 1px solid var(--black-border-button-hover, var(--black));
+    border: 1px solid rgba(var(--black-border-button-hover, var(--black)));
 }
 
 button.btn-transparent {
