@@ -1,11 +1,11 @@
 <script lang="ts">
 
-    import '../../../app.css';
+    import '../../../../app.css';
 
 	import { TanoshiPillModel } from '$atoms';
-	import TanoshiPill from '$atoms/pill/TanoshiPill.svelte';
 	import { THEMES } from '$lib';
     import type { Hst } from '@histoire/plugin-svelte';
+	import TanoshiPillMaterial from '$atoms/pill/TanoshiPillMaterial.svelte';
     export let Hst: Hst;
 
     const primaryPill: TanoshiPillModel = new TanoshiPillModel('Primary')
@@ -50,37 +50,37 @@
 
 </script>
   
-<Hst.Story title="atoms/pill/outlined" layout={{ type: 'grid', width: 200}}>
+<Hst.Story title="atoms/pill/material/outlined" layout={{ type: 'grid', width: 200}}>
     <Hst.Variant title="primary">
-        <TanoshiPill tanoshiPillModel={primaryPill} />
+        <TanoshiPillMaterial tanoshiPillModel={primaryPill} />
     </Hst.Variant>
 
     <Hst.Variant title="secondary">
-        <TanoshiPill tanoshiPillModel={secondaryPill} />
+        <TanoshiPillMaterial tanoshiPillModel={secondaryPill} />
     </Hst.Variant>
 
     <Hst.Variant title="white">
-        <TanoshiPill tanoshiPillModel={whitePill} />
+        <TanoshiPillMaterial tanoshiPillModel={whitePill} />
     </Hst.Variant>
 
     <Hst.Variant title="black">
-        <TanoshiPill tanoshiPillModel={blackPill} />
+        <TanoshiPillMaterial tanoshiPillModel={blackPill} />
     </Hst.Variant>
 
     <Hst.Variant title="success">
-        <TanoshiPill tanoshiPillModel={successPill} />
+        <TanoshiPillMaterial tanoshiPillModel={successPill} />
     </Hst.Variant>
 
     <Hst.Variant title="danger">
-        <TanoshiPill tanoshiPillModel={dangerPill} />
+        <TanoshiPillMaterial tanoshiPillModel={dangerPill} />
     </Hst.Variant>
 
     <Hst.Variant title="warning">
-        <TanoshiPill tanoshiPillModel={warningPill} />
+        <TanoshiPillMaterial tanoshiPillModel={warningPill} />
     </Hst.Variant>
 
     <Hst.Variant title="info">
-        <TanoshiPill tanoshiPillModel={infoPill} />
+        <TanoshiPillMaterial tanoshiPillModel={infoPill} />
     </Hst.Variant>
 
 </Hst.Story>

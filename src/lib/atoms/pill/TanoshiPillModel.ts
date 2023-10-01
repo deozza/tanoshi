@@ -48,7 +48,7 @@ export default class TanoshiPillModel {
 
 	public setTextTheme(value: THEMES): TanoshiPillModel {
 		if(this._backgroundTheme === value ) {
-			throw new ThemeError('Background and text themes cannot be the same');
+			//throw new ThemeError('Background and text themes cannot be the same');
 		}
 		
 		this._textTheme = value;

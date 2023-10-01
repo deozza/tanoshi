@@ -1,10 +1,10 @@
 <script lang="ts">
 
-    import '../../../app.css';
+    import '../../../../app.css';
 
 	import { THEMES, TanoshiPillModel } from '$lib';
     import type { Hst } from '@histoire/plugin-svelte';
-	import TanoshiPill from '$atoms/pill/TanoshiPill.svelte';
+	import TanoshiPillGlass from '$atoms/pill/TanoshiPillGlass.svelte';
     export let Hst: Hst;
 
     const primaryPill: TanoshiPillModel = new TanoshiPillModel('Primary')
@@ -15,6 +15,7 @@
 
     const whitePill: TanoshiPillModel = new TanoshiPillModel('White')
         .setBasicTheme(THEMES.White)
+        .setTextTheme(THEMES.White)
 
     const blackPill: TanoshiPillModel = new TanoshiPillModel('Black')
         .setBasicTheme(THEMES.Black)
@@ -32,37 +33,37 @@
         .setBasicTheme(THEMES.Info)
 </script>
   
-<Hst.Story title="atoms/pill/basic" layout={{ type: 'grid', width: 200 }}>
+<Hst.Story title="atoms/pill/glass/basic" layout={{ type: 'grid', width: 200 }}>
     <Hst.Variant title="primary">
-        <TanoshiPill tanoshiPillModel={primaryPill} />
+        <TanoshiPillGlass tanoshiPillModel={primaryPill} />
     </Hst.Variant>
 
     <Hst.Variant title="secondary">
-        <TanoshiPill tanoshiPillModel={secondaryPill} />
+        <TanoshiPillGlass tanoshiPillModel={secondaryPill} />
     </Hst.Variant>
 
     <Hst.Variant title="white">
-        <TanoshiPill tanoshiPillModel={whitePill} />
+        <TanoshiPillGlass tanoshiPillModel={whitePill} />
     </Hst.Variant>
 
     <Hst.Variant title="black">
-        <TanoshiPill tanoshiPillModel={blackPill} />
+        <TanoshiPillGlass tanoshiPillModel={blackPill} />
     </Hst.Variant>
 
     <Hst.Variant title="success">
-        <TanoshiPill tanoshiPillModel={successPill} />
+        <TanoshiPillGlass tanoshiPillModel={successPill} />
     </Hst.Variant>
 
     <Hst.Variant title="danger">
-        <TanoshiPill tanoshiPillModel={dangerPill} />
+        <TanoshiPillGlass tanoshiPillModel={dangerPill} />
     </Hst.Variant>
 
     <Hst.Variant title="warning">
-        <TanoshiPill tanoshiPillModel={warningPill} />
+        <TanoshiPillGlass tanoshiPillModel={warningPill} />
     </Hst.Variant>
 
     <Hst.Variant title="info">
-        <TanoshiPill tanoshiPillModel={infoPill} />
+        <TanoshiPillGlass tanoshiPillModel={infoPill} />
     </Hst.Variant>
 
 </Hst.Story>

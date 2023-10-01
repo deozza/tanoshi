@@ -1,4 +1,5 @@
-export {default as TanoshiButton} from "./button/TanoshiButtonMaterial.svelte";
+export {default as TanoshiButtonMaterial} from "./button/TanoshiButtonMaterial.svelte";
+export {default as TanoshiButtonGlass} from "./button/TanoshiButtonGlass.svelte";
 export {default as TanoshiButtonModel} from "./button/TanoshiButtonModel";
 
 export {default as TanoshiImage} from "./image/TanoshiImage.svelte";
@@ -29,7 +30,8 @@ export {default as TanoshiLabelModel} from "./label/TanoshiLabelModel";
 export {default as TanoshiLink} from "./link/TanoshiLink.svelte";
 export {default as TanoshiLinkModel} from "./link/TanoshiLinkModel";
 
-export {default as TanoshiPill} from "./pill/TanoshiPill.svelte";
+export {default as TanoshiPillMaterial} from "./pill/TanoshiPillMaterial.svelte";
+export {default as TanoshiPillGlass} from "./pill/TanoshiPillGlass.svelte";
 export {default as TanoshiPillModel} from "./pill/TanoshiPillModel";
 
 export {default as TanoshiParagraph} from "./typography/paragraph/TanoshiParagraph.svelte";
