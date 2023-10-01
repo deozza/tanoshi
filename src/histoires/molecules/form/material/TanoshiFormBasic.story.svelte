@@ -1,5 +1,5 @@
 <script lang="ts">
-	import TanoshiForm from '$molecules/form/TanoshiForm.svelte';
+	import TanoshiFormGlass from '$molecules/form/TanoshiFormGlass.svelte';
 	import TanoshiFormModel from '$molecules/form/TanoshiFormModel';
     import TanoshiButtonModel from '$atoms/button/TanoshiButtonModel';
     import TanoshiLabelModel from '$atoms/label/TanoshiLabelModel';
@@ -9,7 +9,7 @@
     import TanoshiNumberInput from '$atoms/input/number/TanoshiNumberInput.svelte';
     import { THEMES, BUTTON_TYPES, INPUT_TEXT_TYPES, INPUT_CHOICES_TYPES } from '$lib';
 	import TanoshiLabelAndInputModel from '$molecules/labelAndInput/TanoshiLabelAndInputModel';
-    import '../../../app.css';
+    import '../../../../app.css';
 
     import type { Hst } from '@histoire/plugin-svelte';
 	import TanoshiChoiceInputModel from '$atoms/input/choice/TanoshiChoiceInputModel';
@@ -167,6 +167,6 @@
 
 </script>
   
-<Hst.Story title="molecules/form/basic">
-        <TanoshiForm tanoshiFormModel={defaultForm} on:submit={(e) => handleForm(e)}/>
+<Hst.Story title="molecules/form/glass/basic">
+        <TanoshiFormGlass tanoshiFormModel={defaultForm} on:submit={(e) => handleForm(e)}/>
 </Hst.Story>

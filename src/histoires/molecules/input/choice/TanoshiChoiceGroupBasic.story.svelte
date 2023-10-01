@@ -1,5 +1,5 @@
 <script lang="ts">
-	import TanoshiForm from '$molecules/form/TanoshiForm.svelte';
+	import TanoshiForm from '$molecules/form/TanoshiFormMaterial.svelte';
     import TanoshiLabelModel from '$atoms/label/TanoshiLabelModel';
 
     import type { Hst } from '@histoire/plugin-svelte';

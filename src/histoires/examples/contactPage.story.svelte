@@ -7,7 +7,7 @@
 	import type { TanoshiNavigationLinkModel } from '$lib/types/Types';
 	import TanoshiAlert from '$molecules/alert/TanoshiAlertMaterial.svelte';
 	import TanoshiContainer from '$molecules/container/TanoshiContainerMaterial.svelte';
-	import TanoshiForm from '$molecules/form/TanoshiForm.svelte';
+	import TanoshiForm from '$molecules/form/TanoshiFormMaterial.svelte';
 	import TanoshiLinkAsNavbarDropdown from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte';
 	import TanoshiNavigation from '$molecules/navigation/TanoshiNavigation.svelte';
 

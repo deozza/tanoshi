@@ -2,11 +2,12 @@
 	import TanoshiButtonMaterial from '$atoms/button/TanoshiButtonMaterial.svelte';
 	import type TanoshiFormModel from './TanoshiFormModel';
 	import { createEventDispatcher, type ComponentType } from 'svelte';
-	import TanoshiContainer from '$molecules/container/TanoshiContainerMaterial.svelte';
 	import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel';
 	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS } from '$lib/enums';
 	import TanoshiLabelAndInput from '$molecules/labelAndInput/TanoshiLabelAndInput.svelte';
 	import type TanoshiLabelAndInputModel from '$molecules/labelAndInput/TanoshiLabelAndInputModel';
+	import TanoshiContainerGlass from '$molecules/container/TanoshiContainerGlass.svelte';
+	import TanoshiContainerMaterial from '$molecules/container/TanoshiContainerMaterial.svelte';
 
 	export let tanoshiFormModel: TanoshiFormModel;
 	export let tanoshiButtonComponent: ComponentType = TanoshiButtonMaterial;
@@ -28,7 +29,7 @@
 	}
 </script>
 
-<TanoshiContainer tanoshiContainerModel={tanoshiFormModel.container}>
+<TanoshiContainerGlass tanoshiContainerModel={tanoshiFormModel.container}>
 
 	{#if tanoshiFormModel.preventDefault === true}
 		<form 
@@ -42,9 +43,9 @@
 					</li>
 				{/each}
 				<li class='space-y-2'>
-					<TanoshiContainer tanoshiContainerModel={buttonContainerModel}>
+					<TanoshiContainerMaterial tanoshiContainerModel={buttonContainerModel}>
 						<svelte:component this={tanoshiButtonComponent} tanoshiButtonModel={tanoshiFormModel.submitButton} />
-					</TanoshiContainer>
+					</TanoshiContainerMaterial>
 				</li>
 			</ul>
 		</form>
@@ -61,15 +62,15 @@
 					</li>
 				{/each}
 				<li class='space-y-2'>
-					<TanoshiContainer tanoshiContainerModel={buttonContainerModel}>
+					<TanoshiContainerMaterial tanoshiContainerModel={buttonContainerModel}>
 						<svelte:component this={tanoshiButtonComponent} tanoshiButtonModel={tanoshiFormModel.submitButton} />
-					</TanoshiContainer>
+					</TanoshiContainerMaterial>
 				</li>
 			</ul>
 		</form>
 	{/if}
 
-</TanoshiContainer>
+</TanoshiContainerGlass>
 	
 
 <style>
