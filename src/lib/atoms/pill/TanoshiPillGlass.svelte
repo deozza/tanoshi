@@ -10,6 +10,7 @@
 	pill-border-{tanoshiPillModel.borderTheme}
 	pill-text-{tanoshiPillModel.textTheme}
 	pill-{tanoshiPillModel.size}"
+	class:no-padding={tanoshiPillModel.hasPadding === false}
 >
 	{tanoshiPillModel.content}
 </span>

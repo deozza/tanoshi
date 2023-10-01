@@ -466,6 +466,10 @@ div.dropdown:hover > ul {
     border-width: 0;
 }
 
+.no-padding {
+	padding: 0px!important;
+}
+
 @media (min-width: 640px) {
 	div.dropdown:hover > ul {
 		background: #777;

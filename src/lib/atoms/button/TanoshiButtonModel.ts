@@ -16,6 +16,7 @@ export default class TanoshiButtonModel {
 	private _size!: string;
 	private _isDisabled: boolean = false;
 	private _isLoading: boolean = false;
+	private _hasPadding: boolean = true;
 
 	public constructor(content: string) {
 		this.setContent(content);
@@ -166,6 +167,15 @@ export default class TanoshiButtonModel {
 	public setLoaderOff() : TanoshiButtonModel {
 		this._isLoading = false;
 		this.setIsDisabled(false)
+		return this;
+	}
+
+	get hasPadding(): boolean {
+		return this._hasPadding;
+	}
+
+	public setHasPadding(value: boolean): TanoshiButtonModel {
+		this._hasPadding = value;
 		return this;
 	}
 

@@ -22,6 +22,8 @@
 		{tanoshiContainerModel.height}
 		{customClasses}
 	"
+    class:no-padding={tanoshiContainerModel.hasPadding === false}
+
 >
 	<slot />
 </div>

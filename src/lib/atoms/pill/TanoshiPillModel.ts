@@ -7,6 +7,7 @@ export default class TanoshiPillModel {
 	private _borderTheme!: string;
 	private _textTheme!: string;
 	private _size!: string;
+	private _hasPadding: boolean = true;
 
 	constructor(content: string) {
 		this.setContent(content);
@@ -61,6 +62,15 @@ export default class TanoshiPillModel {
 
 	public setSize(value: BUTTON_SIZES): TanoshiPillModel {
 		this._size = value;
+		return this;
+	}
+
+	get hasPadding(): boolean {
+		return this._hasPadding;
+	}
+
+	public setHasPadding(value: boolean): TanoshiButtonModel {
+		this._hasPadding = value;
 		return this;
 	}
 

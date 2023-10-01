@@ -17,6 +17,7 @@
 	"
 	class:disabled:opacity-50={tanoshiButtonModel.isDisabled === true}
 	class:pointer-events-none={tanoshiButtonModel.isDisabled === true}
+	class:no-padding={tanoshiButtonModel.hasPadding === false}
 	disabled={tanoshiButtonModel.isDisabled}
 	on:click
 	type={tanoshiButtonModel.type}
