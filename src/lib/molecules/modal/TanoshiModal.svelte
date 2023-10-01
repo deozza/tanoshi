@@ -2,12 +2,13 @@
 	import { TanoshiButtonModel } from "$atoms";
 	import TanoshiButtonMaterial from "$atoms/button/TanoshiButtonMaterial.svelte";
 	import TanoshiHeader from "$atoms/typography/header/TanoshiHeader.svelte";
-	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, THEMES } from "$lib/enums";
+	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, THEMES, getThemeEnumKeyByEnumValue } from "$lib/enums";
 	import TanoshiContainer from "$molecules/container/TanoshiContainerMaterial.svelte";
 	import TanoshiContainerModel from "$molecules/container/TanoshiContainerModel";
 	import type { ComponentType } from "svelte";
     import type TanoshiModalModel from "./TanoshiModalModel";
 	import 'iconify-icon';
+	import TanoshiIconModel from "$atoms/icon/TanoshiIconModel";
 
     export let tanoshiModalModel: TanoshiModalModel;
     export let showModal: boolean = false;
@@ -23,10 +24,16 @@
 		headerContainer.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Between)
 	}
 
+	const closeIcon: TanoshiIconModel = new TanoshiIconModel('mdi:close')
+		.setColor(THEMES.Black)
+		.setHeight(16)
+		.setWidth(16);
+
 	const closingModalButton: TanoshiButtonModel = new TanoshiButtonModel('')
     	.setBasicTheme(THEMES.Transparent)
 		.setTextTheme(THEMES.Black)
 		.setTextHoverTheme(THEMES.Black)
+		.setIconAtLeft(closeIcon)
 
     $: if (dialog && showModal) dialog.showModal();
     $: if (dialog && !showModal) dialog.close();
@@ -54,8 +61,7 @@
 			{/if}
 			{#if tanoshiModalModel.required === false}
 				<svelte:component this={tanoshiButtonComponent}  tanoshiButtonModel={closingModalButton} on:click={() => dialog.close()}>
-					<span class="sr-only">Close modal</span>
-					<iconify-icon icon='mdi:close' />
+	
 				</svelte:component>
 			{/if}
 		</TanoshiContainer>

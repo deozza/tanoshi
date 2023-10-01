@@ -1,8 +1,17 @@
 <script lang="ts">
+	import TanoshiIcon from '$atoms/icon/TanoshiIcon.svelte';
+	import TanoshiIconModel from '$atoms/icon/TanoshiIconModel';
+	import { getThemeEnumKeyByEnumValue } from '$lib/enums';
 	import type TanoshiButtonModel from './TanoshiButtonModel';
 	import 'iconify-icon';
 
 	export let tanoshiButtonModel: TanoshiButtonModel;
+
+	const loadingIcon: TanoshiIconModel = new TanoshiIconModel('mdi:loading')
+		.setIsSpinning(true)
+		.setColor(getThemeEnumKeyByEnumValue(tanoshiButtonModel.textTheme))
+		.setHeight(16)
+		.setWidth(16);
 </script>
 
 <button
@@ -24,14 +33,16 @@
 	label={tanoshiButtonModel.content}
 >
 	{#if tanoshiButtonModel.isLoading === true}
-		<iconify-icon icon="mdi:loading" class="spin-icon" />
+		<TanoshiIcon tanoshiIconModel={loadingIcon} />
 	{/if}
 	{#if tanoshiButtonModel.iconAtLeft !== null && tanoshiButtonModel.isLoading === false}
-		<iconify-icon icon={tanoshiButtonModel.iconAtLeft} />
+		<TanoshiIcon tanoshiIconModel={tanoshiButtonModel.iconAtLeft} />
 	{/if}
+
 	{tanoshiButtonModel.content}
+	
 	{#if tanoshiButtonModel.iconAtRight !== null && tanoshiButtonModel.isLoading === false}
-		<iconify-icon icon={tanoshiButtonModel.iconAtRight} />
+		<TanoshiIcon tanoshiIconModel={tanoshiButtonModel.iconAtRight} />
 	{/if}
 
 	<slot />

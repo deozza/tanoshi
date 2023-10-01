@@ -2,10 +2,12 @@
     import { onMount, onDestroy, type ComponentType } from 'svelte';
 	import 'iconify-icon';
 
-	import { CONTAINER_ORIENTATIONS, THEMES, CONTAINER_ITEMS_ALIGNMENTS, HEIGHTS } from "$lib/enums";
+	import { CONTAINER_ORIENTATIONS, THEMES, CONTAINER_ITEMS_ALIGNMENTS, HEIGHTS, getThemeEnumKeyByEnumValue } from "$lib/enums";
 	import { TanoshiContainerMaterial, TanoshiContainerModel, TanoshiNavigationModel } from "$molecules";
 	import TanoshiButtonMaterial from "$atoms/button/TanoshiButtonMaterial.svelte";
 	import { TanoshiButtonModel } from '$atoms';
+	import TanoshiIconModel from '$atoms/icon/TanoshiIconModel';
+	import TanoshiIcon from '$atoms/icon/TanoshiIcon.svelte';
 
     export let tanoshiMobileNavigationModel: TanoshiNavigationModel;
     export let navigationMobileContainerModel: TanoshiContainerModel;
@@ -20,10 +22,20 @@
 	const expandedCenterMobileNavigationContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
 	    .setBackgroundTheme(mobileTheme)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
-		.setHeight(tanoshiMobileNavigationModel.itemsWhenClosed.length > 0 ? HEIGHTS.MINH25PRCT : HEIGHTS.H25PRCT);
+		.setHeight(HEIGHTS.MINH25PRCT);
 
 	const mobileMenuButton: TanoshiButtonModel = new TanoshiButtonModel('')
     	.setBasicTheme(mobileTheme);
+
+	const closeIcon: TanoshiIconModel = new TanoshiIconModel('mdi:close')
+		.setColor('white')
+		.setHeight(20)
+		.setWidth(20);
+
+	const menuIcon: TanoshiIconModel = new TanoshiIconModel('mdi:menu')
+		.setColor('white')
+		.setHeight(20)
+		.setWidth(20);
 
     let showMobileMenu: boolean = false;
 
@@ -46,9 +58,10 @@
 		<svelte:component this={tanoshiButtonComponent}  tanoshiButtonModel={mobileMenuButton} on:click={mobileMenuHandler}>
 			<span class="sr-only">Open main menu</span>
 			{#if showMobileMenu === false}
-			<iconify-icon icon='mdi:menu' />
+				<TanoshiIcon tanoshiIconModel={menuIcon} />
 			{:else}
-			<iconify-icon icon='mdi:close' />
+				<TanoshiIcon tanoshiIconModel={closeIcon} />
+
 			{/if}
 		</svelte:component>
 

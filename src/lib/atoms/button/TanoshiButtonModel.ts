@@ -1,10 +1,11 @@
+import type TanoshiIconModel from "$atoms/icon/TanoshiIconModel";
 import { BUTTON_TYPES, THEMES, BUTTON_SIZES } from "$lib/enums";
 import ThemeError from "$lib/errors/ThemeError";
 
 export default class TanoshiButtonModel {
 	private _content!: string;
-	private _iconAtLeft: string | null = null;
-	private _iconAtRight: string | null = null;
+	private _iconAtLeft: TanoshiIconModel | null = null;
+	private _iconAtRight: TanoshiIconModel | null = null;
 	private _label!: string;
 	private _backgroundTheme!: string;
 	private _backgroundHoverTheme!: string;
@@ -37,20 +38,20 @@ export default class TanoshiButtonModel {
 		return this;
 	}
 
-	get iconAtLeft(): string | null {
+	get iconAtLeft(): TanoshiIconModel | null {
 		return this._iconAtLeft;
 	}
 
-	public setIconAtLeft(value: string): TanoshiButtonModel {
+	public setIconAtLeft(value: TanoshiIconModel): TanoshiButtonModel {
 		this._iconAtLeft = value;
 		return this;
 	}
 
-	get iconAtRight(): string | null {
+	get iconAtRight(): TanoshiIconModel | null {
 		return this._iconAtRight;
 	}
 
-	public setIconAtRight(value: string): TanoshiButtonModel {
+	public setIconAtRight(value: TanoshiIconModel): TanoshiButtonModel {
 		this._iconAtRight = value;
 		return this;
 	}

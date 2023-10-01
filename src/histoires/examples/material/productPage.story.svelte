@@ -14,6 +14,9 @@
 	import TanoshiParagraph from '$atoms/typography/paragraph/TanoshiParagraph.svelte';
 	import TanoshiButtonMaterial from '$atoms/button/TanoshiButtonMaterial.svelte';
 	import TanoshiContainerMaterial from '$molecules/container/TanoshiContainerMaterial.svelte';
+	import TanoshiDesktopNavigationModel from '$molecules/navigation/TanoshiMobileNavigationModel';
+	import TanoshiMobileNavigationModel from '$molecules/navigation/TanoshiDesktopNavigationModel';
+	import TanoshiIconModel from '$atoms/icon/TanoshiIconModel';
     export let Hst: Hst;
 
 	const dropdownTitle: TanoshiLinkModel = new TanoshiLinkModel('Dropdown').setTheme(THEMES.White);
@@ -80,10 +83,15 @@
 		}
 	]
 
-    const primaryDesktopNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
+    const primaryDesktopNavigationModel: TanoshiDesktopNavigationModel = new TanoshiDesktopNavigationModel()
         .setTheme(THEMES.Primary)
         .setItemsAtRight(navbarRightItemModels)
         .setItemsAtCenter(logoNavbarModel)
+
+	const primaryMobileNavigationModel: TanoshiMobileNavigationModel = new TanoshiMobileNavigationModel()
+        .setTheme(THEMES.Primary)
+        .setItemsWhenOpened(navbarRightItemModels)
+        .setItemsWhenClosed(logoNavbarModel)
 
 	const presentationSectionContainerModel: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
 		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Between)
@@ -111,15 +119,22 @@
 	const productAvailability: TanoshiParagraphModel = new TanoshiParagraphModel('In stock')
 		.setTheme(THEMES.Success)
 		.setHasSpacing(true)
+
+	const cartIcon: TanoshiIconModel = new TanoshiIconModel('mdi:cart')
+		.setColor(THEMES.White)
+		.setHeight(20)
+		.setWidth(20)
+		
+
 	const addToCartButton: TanoshiButtonModel = new TanoshiButtonModel('Add to cart')
 		.setBasicTheme(THEMES.Success)
 		.setSize(BUTTON_SIZES.Block)
-		.setIconAtRight('mdi-cart')
+		.setIconAtRight(cartIcon)
 
 </script>
   
 <Hst.Story title="examples/material/product page">
-    <TanoshiNavigationMaterial tanoshiDesktopNavigationModel={primaryDesktopNavigationModel} tanoshiMobileNavigationModel={primaryDesktopNavigationModel} />
+    <TanoshiNavigationMaterial tanoshiDesktopNavigationModel={primaryDesktopNavigationModel} tanoshiMobileNavigationModel={primaryMobileNavigationModel} />
 
     <main>
 		<section>

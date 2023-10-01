@@ -1,7 +1,7 @@
 <script lang="ts">
 	import TanoshiContainerModel from '$lib/molecules/container/TanoshiContainerModel';
 	
-	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, getThemeEnumKeyByEnumValue, HEIGHTS, THEMES } from '$lib/enums';
+	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, getThemeEnumKeyByEnumValue, HEIGHTS, THEMES, WIDTHS } from '$lib/enums';
 	import TanoshiMobileNavigationMaterial from './TanoshiMobileNavigationMaterial.svelte';
 	import TanoshiDesktopNavigationMaterial from './TanoshiDesktopNavigationMaterial.svelte';
 	import type TanoshiMobileNavigationModel from '../TanoshiDesktopNavigationModel';
@@ -21,9 +21,12 @@
 
 	const navigationMobileContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
 		.setBackgroundTheme(mobileTheme)
-		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Start)
+		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Between)
+		.setMobileSpacing(CONTAINER_ITEMS_SPACING.Between)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
+		.setMobileItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
 		.setHeight(HEIGHTS.HAUTO)
+		.setMobileWidth(WIDTHS.W12)
 
 </script>
 

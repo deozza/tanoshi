@@ -470,6 +470,8 @@ div.dropdown:hover > ul {
 	padding: 0px!important;
 }
 
+
+
 @media (min-width: 640px) {
 	div.dropdown:hover > ul {
 		background: #777;

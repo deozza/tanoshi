@@ -8,6 +8,8 @@
 	import type { TanoshiNavigationLinkModel } from '$lib/types/Types';
 	import TanoshiContainerMaterial from '$molecules/container/TanoshiContainerMaterial.svelte';
 	import TanoshiLinkAsNavbarDropdown from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte';
+	import TanoshiMobileNavigationModel from '$molecules/navigation/TanoshiDesktopNavigationModel';
+	import TanoshiDesktopNavigationModel from '$molecules/navigation/TanoshiMobileNavigationModel';
 	import TanoshiNavigationMaterial from '$molecules/navigation/material/TanoshiNavigationMaterial.svelte';
 
     import '../../../app.css';
@@ -79,10 +81,16 @@
 		}
 	]
 
-    const primaryDesktopNavigationModel: TanoshiNavigationModel = new TanoshiNavigationModel()
+    const primaryDesktopNavigationModel: TanoshiDesktopNavigationModel = new TanoshiDesktopNavigationModel()
         .setTheme(THEMES.Primary)
         .setItemsAtRight(navbarRightItemModels)
         .setItemsAtCenter(logoNavbarModel)
+
+	
+	const primaryMobileNavigationModel: TanoshiMobileNavigationModel = new TanoshiMobileNavigationModel()
+        .setTheme(THEMES.Primary)
+        .setItemsWhenOpened(navbarRightItemModels)
+        .setItemsWhenClosed(logoNavbarModel)
 
     const itemsListContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
         .setBackgroundTheme(THEMES.White)
@@ -216,7 +224,7 @@
 </script>
   
 <Hst.Story title="examples/material/items list">
-    <TanoshiNavigationMaterial tanoshiDesktopNavigationModel={primaryDesktopNavigationModel} tanoshiMobileNavigationModel={primaryDesktopNavigationModel} />
+    <TanoshiNavigationMaterial tanoshiDesktopNavigationModel={primaryDesktopNavigationModel} tanoshiMobileNavigationModel={primaryMobileNavigationModel} />
 
     <main>
         <TanoshiContainerMaterial tanoshiContainerModel={itemsListContainer}>

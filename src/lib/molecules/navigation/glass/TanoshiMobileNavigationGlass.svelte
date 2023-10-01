@@ -2,13 +2,15 @@
     import { onMount, onDestroy, type ComponentType } from 'svelte';
 	import 'iconify-icon';
 
-	import { CONTAINER_ORIENTATIONS, THEMES, CONTAINER_ITEMS_ALIGNMENTS, HEIGHTS } from "$lib/enums";
+	import { CONTAINER_ORIENTATIONS, THEMES, CONTAINER_ITEMS_ALIGNMENTS, HEIGHTS, getThemeEnumKeyByEnumValue } from "$lib/enums";
 	import { TanoshiContainerModel } from "$molecules";
 	import TanoshiButtonMaterial from "$atoms/button/TanoshiButtonMaterial.svelte";
 	import { TanoshiButtonModel } from '$atoms';
 	import TanoshiContainerGlass from '$molecules/container/TanoshiContainerGlass.svelte';
 	import TanoshiContainerMaterial from '$molecules/container/TanoshiContainerMaterial.svelte';
 	import type TanoshiMobileNavigationModel from '../TanoshiDesktopNavigationModel';
+	import TanoshiIconModel from '$atoms/icon/TanoshiIconModel';
+	import TanoshiIcon from '$atoms/icon/TanoshiIcon.svelte';
 
     export let tanoshiMobileNavigationModel: TanoshiMobileNavigationModel;
     export let navigationMobileContainerModel: TanoshiContainerModel;
@@ -23,10 +25,20 @@
 	const expandedCenterMobileNavigationContainer = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
 	    .setBackgroundTheme(THEMES.Transparent)
 		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
-		.setHeight(tanoshiMobileNavigationModel.itemsWhenOpened.length > 0 ? HEIGHTS.MINH25PRCT : HEIGHTS.H25PRCT);
+		.setHeight(HEIGHTS.MINH25PRCT);
 
 	const mobileMenuButton: TanoshiButtonModel = new TanoshiButtonModel('')
     	.setBasicTheme(THEMES.Transparent);
+
+	const closeIcon: TanoshiIconModel = new TanoshiIconModel('mdi:close')
+		.setColor('white')
+		.setHeight(20)
+		.setWidth(20);
+
+	const menuIcon: TanoshiIconModel = new TanoshiIconModel('mdi:menu')
+		.setColor(getThemeEnumKeyByEnumValue(tanoshiMobileNavigationModel.itemsWhenClosed[0].link.theme))
+		.setHeight(20)
+		.setWidth(20);
 
     let showMobileMenu: boolean = false;
 
@@ -49,9 +61,9 @@
 		<svelte:component this={tanoshiButtonComponent}  tanoshiButtonModel={mobileMenuButton} on:click={mobileMenuHandler}>
 			<span class="sr-only">Open main menu</span>
 			{#if showMobileMenu === false}
-			<iconify-icon icon='mdi:menu' height='20' width='20' />
+				<TanoshiIcon tanoshiIconModel={menuIcon} />
 			{:else}
-			<iconify-icon icon='mdi:close' height='20' width='20' />
+				<TanoshiIcon tanoshiIconModel={closeIcon} />
 			{/if}
 		</svelte:component>
 

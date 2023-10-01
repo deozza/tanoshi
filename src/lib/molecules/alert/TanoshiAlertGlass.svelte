@@ -9,6 +9,8 @@
 	import TanoshiParagraph from '$atoms/typography/paragraph/TanoshiParagraph.svelte';
 	import TanoshiParagraphModel from '$atoms/typography/paragraph/TanoshiParagraphModel';
 	import { CONTAINER_BORDERS, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, THEMES, WIDTHS, getSizeEnumKeyByEnumValue, getThemeEnumKeyByEnumValue } from '$lib/enums';
+	import TanoshiIconModel from '$atoms/icon/TanoshiIconModel';
+	import TanoshiIcon from '$atoms/icon/TanoshiIcon.svelte';
 
 	export let tanoshiAlertModel: TanoshiAlertModel;
 
@@ -30,6 +32,11 @@
 
 	$: visible = tanoshiAlertModel.visible;
 
+	const closeIcon: TanoshiIconModel = new TanoshiIconModel('mdi:close')
+		.setColor(getThemeEnumKeyByEnumValue(textTheme))
+		.setHeight(16)
+		.setWidth(16);
+
 	function close() {
 		tanoshiAlertModel.setVisible(false);
 		tanoshiAlertModel = tanoshiAlertModel;
@@ -41,7 +48,7 @@
 		<TanoshiContainerGlass tanoshiContainerModel={tanoshiTitleContainerModel} customClasses="alert">
 			<TanoshiParagraph tanoshiParagraphModel={tanoshiTitleModel} />
 			<span on:click={() => close()}>
-				<iconify-icon icon='mdi:close' style="color: { tanoshiTitleModel.theme === THEMES.White ? 'white' : 'black' }"/>
+				<TanoshiIcon tanoshiIconModel={closeIcon} />
 			</span>
 		</TanoshiContainerGlass>
 	</div>
@@ -51,5 +58,9 @@
 	div{
 		padding-bottom: 24px;
 		padding-top: 24px;
+	}
+
+	:global(span > iconify-icon:hover) {
+		cursor: pointer;
 	}
 </style>
