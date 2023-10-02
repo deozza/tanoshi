@@ -8,11 +8,11 @@
 	import TanoshiParagraph from '$atoms/typography/paragraph/TanoshiParagraph.svelte';
 	import TanoshiParagraphModel from '$atoms/typography/paragraph/TanoshiParagraphModel';
 	import { CONTAINER_BORDERS, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, THEMES, WIDTHS, getSizeEnumKeyByEnumValue, getThemeEnumKeyByEnumValue } from '$lib/enums';
-	import TanoshiContainerMaterial from '$molecules/container/TanoshiContainerMaterial.svelte';
 	import TanoshiIconModel from '$atoms/icon/TanoshiIconModel';
 	import TanoshiIcon from '$atoms/icon/TanoshiIcon.svelte';
-	import TanoshiButtonMaterial from '$atoms/button/TanoshiButtonMaterial.svelte';
+	import TanoshiContainerNeumorphism from '$molecules/container/TanoshiContainerNeumorphism.svelte';
 	import { TanoshiButtonModel } from '$atoms';
+	import TanoshiButtonNeumorphism from '$atoms/button/TanoshiButtonNeumorphism.svelte';
 
 	export let tanoshiAlertModel: TanoshiAlertModel;
 
@@ -52,10 +52,10 @@
 
 {#if visible === true}
 	<div class={tanoshiAlertModel.containerSize} out:fade in:fade>
-		<TanoshiContainerMaterial tanoshiContainerModel={tanoshiTitleContainerModel} customClasses="alert">
+		<TanoshiContainerNeumorphism tanoshiContainerModel={tanoshiTitleContainerModel} customClasses="alert">
 			<TanoshiParagraph tanoshiParagraphModel={tanoshiTitleModel} />
-			<TanoshiButtonMaterial tanoshiButtonModel={closeButton} on:click={() => close()}/>
-		</TanoshiContainerMaterial>
+			<TanoshiButtonNeumorphism tanoshiButtonModel={closeButton} on:click={() => close()}/>
+		</TanoshiContainerNeumorphism>
 	</div>
 {/if}
 
@@ -63,9 +63,5 @@
 	div{
 		padding-bottom: 24px;
 		padding-top: 24px;
-	}
-
-	:global(span > iconify-icon:hover) {
-		cursor: pointer;
 	}
 </style>

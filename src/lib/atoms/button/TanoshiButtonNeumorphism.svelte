@@ -23,6 +23,7 @@
 	btn-text-hover-{tanoshiButtonModel.textHoverTheme}
 	btn-border-hover-{tanoshiButtonModel.borderHoverTheme}
 	btn-{tanoshiButtonModel.size}
+	btn-rounded-{tanoshiButtonModel.shape}
 	"
 	class:disabled:opacity-50={tanoshiButtonModel.isDisabled === true}
 	class:pointer-events-none={tanoshiButtonModel.isDisabled === true}
@@ -49,7 +50,7 @@
 
 
 <style>
-	button {
+button {
 	margin: 0.5rem;
 	border-width: 1px;
 	border-radius: 0.375rem;
@@ -90,6 +91,10 @@ button.btn-block {
 	font-size: 1.125rem/* 18px */;
 	line-height: 1.75rem/* 28px */;
 	margin: 0px;
+}
+
+button.btn-rounded-full {
+	border-radius: 9999px;
 }
 
 button:disabled {

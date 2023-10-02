@@ -1,5 +1,5 @@
 import type TanoshiIconModel from "$atoms/icon/TanoshiIconModel";
-import { BUTTON_TYPES, THEMES, BUTTON_SIZES } from "$lib/enums";
+import { BUTTON_TYPES, THEMES, BUTTON_SIZES, CONTAINER_BORDERS } from "$lib/enums";
 import ThemeError from "$lib/errors/ThemeError";
 
 export default class TanoshiButtonModel {
@@ -10,6 +10,7 @@ export default class TanoshiButtonModel {
 	private _backgroundTheme!: string;
 	private _backgroundHoverTheme!: string;
 	private _borderTheme!: string;
+	private _shape!: string;
 	private _borderHoverTheme!: string;
 	private _textTheme!: string;
 	private _textHoverTheme!: string;
@@ -83,13 +84,21 @@ export default class TanoshiButtonModel {
 		return this;
 	}
 
-
 	get borderTheme(): string {
 		return this._borderTheme;
 	}
 
 	public setBorderTheme(value: THEMES): TanoshiButtonModel {
 		this._borderTheme = value;
+		return this;
+	}
+
+	get shape(): string {
+		return this._shape;
+	}
+
+	public setShape(value: CONTAINER_BORDERS): TanoshiButtonModel {
+		this._shape = value;
 		return this;
 	}
 

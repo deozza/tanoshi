@@ -1,5 +1,9 @@
-export {default as TanoshiAlert} from "./alert/TanoshiAlertMaterial.svelte";
-export {default as TanoshiAlertContainer} from "./alert/alertContainer/TanoshiAlertContainerGlass.svelte";
+export {default as TanoshiAlertMaterial} from "./alert/TanoshiAlertMaterial.svelte";
+export {default as TanoshiAlertGlass} from "./alert/TanoshiAlertMaterial.svelte";
+export {default as TanoshiAlertNeumorphism} from "./alert/TanoshiAlertNeumorphism.svelte";
+export {default as TanoshiAlertContainerMaterial} from "./alert/alertContainer/TanoshiAlertContainerMaterial.svelte";
+export {default as TanoshiAlertContainerGlass} from "./alert/alertContainer/TanoshiAlertContainerGlass.svelte";
+export {default as TanoshiAlertContainerNeumorphism} from "./alert/alertContainer/TanoshiAlertContainerNeumorphism.svelte";
 export {default as TanoshiAlertModel} from "./alert/TanoshiAlertModel";
 
 export {default as TanoshiCarousel} from "./carousel/TanoshiCarousel.svelte";

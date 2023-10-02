@@ -11,6 +11,8 @@
 	import { CONTAINER_BORDERS, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, THEMES, WIDTHS, getSizeEnumKeyByEnumValue, getThemeEnumKeyByEnumValue } from '$lib/enums';
 	import TanoshiIconModel from '$atoms/icon/TanoshiIconModel';
 	import TanoshiIcon from '$atoms/icon/TanoshiIcon.svelte';
+	import TanoshiButtonMaterial from '$atoms/button/TanoshiButtonMaterial.svelte';
+	import { TanoshiButtonModel } from '$atoms';
 
 	export let tanoshiAlertModel: TanoshiAlertModel;
 
@@ -37,6 +39,11 @@
 		.setHeight(16)
 		.setWidth(16);
 
+	const closeButton: TanoshiButtonModel = new TanoshiButtonModel('')
+		.setBasicTheme(THEMES.Transparent)
+		.setIconAtLeft(closeIcon)
+		.setShape(CONTAINER_BORDERS.Full)
+
 	function close() {
 		tanoshiAlertModel.setVisible(false);
 		tanoshiAlertModel = tanoshiAlertModel;
@@ -47,9 +54,7 @@
 	<div class={tanoshiAlertModel.containerSize} out:fade in:fade>
 		<TanoshiContainerGlass tanoshiContainerModel={tanoshiTitleContainerModel} customClasses="alert">
 			<TanoshiParagraph tanoshiParagraphModel={tanoshiTitleModel} />
-			<span on:click={() => close()}>
-				<TanoshiIcon tanoshiIconModel={closeIcon} />
-			</span>
+			<TanoshiButtonMaterial tanoshiButtonModel={closeButton} on:click={() => close()}/>
 		</TanoshiContainerGlass>
 	</div>
 {/if}
