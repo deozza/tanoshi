@@ -7,6 +7,7 @@ export {default as TanoshiCarouselModel} from "./carousel/TanoshiCarouselModel";
 
 export {default as TanoshiContainerMaterial} from "./container/TanoshiContainerMaterial.svelte";
 export {default as TanoshiContainerGlass} from "./container/TanoshiContainerGlass.svelte";
+export {default as TanoshiContainerNeumorphism} from "./container/TanoshiContainerNeumorphism.svelte";
 export {default as TanoshiContainerModel} from "./container/TanoshiContainerModel";
 
 export {default as TanoshiFormMaterial} from "./form/TanoshiFormMaterial.svelte";
