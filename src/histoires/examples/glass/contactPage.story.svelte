@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { TanoshiButtonModel, TanoshiHeaderModel, TanoshiLabelModel, TanoshiLinkModel, TanoshiTextInputModel, TanoshiTextareaInput, TanoshiTextareaInputModel } from '$atoms';
+	import { TanoshiButtonModel, TanoshiHeaderModel, TanoshiLabelModel, TanoshiLinkModel, TanoshiTextInputModel, TanoshiTextareaInputMaterial, TanoshiTextareaInputModel } from '$atoms';
 	import TanoshiButtonMaterial from '$atoms/button/TanoshiButtonMaterial.svelte';
-	import TanoshiTextInput from '$atoms/input/text/TanoshiTextInput.svelte';
+	import TanoshiTextInputMaterial from '$atoms/input/text/TanoshiTextInputMaterial.svelte';
 	import TanoshiLink from '$atoms/link/TanoshiLink.svelte';
 	import TanoshiHeader from '$atoms/typography/header/TanoshiHeader.svelte';
 	import { BUTTON_TYPES, CONTAINER_BORDERS, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ORIENTATIONS, HEADER_TAGS, HEIGHTS, INPUT_TEXT_TYPES, SIZES, THEMES, TanoshiAlertModel, TanoshiContainerModel, TanoshiFormModel, TanoshiLabelAndInputModel, TanoshiLinkAsNavbarDropdownModel, TanoshiNavigationGlass, WIDTHS } from '$lib';
@@ -132,9 +132,9 @@
         .setType(BUTTON_TYPES.Submit)
 
     const contactForm: TanoshiFormModel = new TanoshiFormModel(submitButton, 'contact-form')
-        .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInput))
-        .addLabelAndInput(new TanoshiLabelAndInputModel(objectInputLabel, objectInput, TanoshiTextInput))
-        .addLabelAndInput(new TanoshiLabelAndInputModel(messageInputLabel, messageInput, TanoshiTextareaInput))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInputMaterial))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(objectInputLabel, objectInput, TanoshiTextInputMaterial))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(messageInputLabel, messageInput, TanoshiTextareaInputMaterial))
     
     contactForm.container
         .setBackgroundTheme(THEMES.White)

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { TanoshiTextInputModel } from '$atoms';
-	import TanoshiTextInput from '$atoms/input/text/TanoshiTextInput.svelte';
+	import TanoshiTextInputMaterial from '$atoms/input/text/TanoshiTextInputMaterial.svelte';
 	import { INPUT_TEXT_TYPES } from '$lib';
 
     import '../../../../app.css';
@@ -26,23 +26,23 @@
   
 <Hst.Story title="atoms/input/text/types" layout={{ type: 'grid', width: 600 }}>
     <Hst.Variant title="default">
-        <TanoshiTextInput tanoshiInputModel={defaultTextInput} />
+        <TanoshiTextInputMaterial tanoshiInputModel={defaultTextInput} />
     </Hst.Variant>
 
     <Hst.Variant title="password">
-        <TanoshiTextInput tanoshiInputModel={passwordTextInput} />
+        <TanoshiTextInputMaterial tanoshiInputModel={passwordTextInput} />
     </Hst.Variant>
 
     <Hst.Variant title="email">
-        <TanoshiTextInput tanoshiInputModel={emailTextInput} />
+        <TanoshiTextInputMaterial tanoshiInputModel={emailTextInput} />
     </Hst.Variant>
 
     <Hst.Variant title="tel">
-        <TanoshiTextInput tanoshiInputModel={telTextInput} />
+        <TanoshiTextInputMaterial tanoshiInputModel={telTextInput} />
     </Hst.Variant>
 
     <Hst.Variant title="color">
-        <TanoshiTextInput tanoshiInputModel={colorTextInput} />
+        <TanoshiTextInputMaterial tanoshiInputModel={colorTextInput} />
     </Hst.Variant>
 
 </Hst.Story>

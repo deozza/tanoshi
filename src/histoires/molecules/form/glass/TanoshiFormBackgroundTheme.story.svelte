@@ -4,9 +4,9 @@
     import TanoshiButtonModel from '$atoms/button/TanoshiButtonModel';
     import TanoshiLabelModel from '$atoms/label/TanoshiLabelModel';
     import TanoshiTextInputModel from '$atoms/input/text/TanoshiTextInputModel';
-    import TanoshiTextInput from '$atoms/input/text/TanoshiTextInput.svelte';
+    import TanoshiTextInputMaterial from '$atoms/input/text/TanoshiTextInputMaterial.svelte';
     import TanoshiNumberInputModel from '$atoms/input/number/TanoshiNumberInputModel';
-    import TanoshiNumberInput from '$atoms/input/number/TanoshiNumberInput.svelte';
+    import TanoshiNumberInputMaterial from '$atoms/input/number/TanoshiNumberInputMaterial.svelte';
     import { THEMES, BUTTON_TYPES, INPUT_TEXT_TYPES } from '$lib';
 	import TanoshiLabelAndInputModel from '$molecules/labelAndInput/TanoshiLabelAndInputModel';
     import '../../../../app.css';
@@ -37,58 +37,58 @@
         .setType(BUTTON_TYPES.Submit)
 
     const defaultForm: TanoshiFormModel = new TanoshiFormModel(submitButton, 'default-form')
-        .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInput))
-        .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInput))
-        .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInput))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInputMaterial))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInputMaterial))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInputMaterial))
 
     const primaryForm: TanoshiFormModel = new TanoshiFormModel(submitButton, 'primary-form')
-        .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInput))
-        .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInput))
-        .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInput))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInputMaterial))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInputMaterial))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInputMaterial))
     primaryForm.container.setBackgroundTheme(THEMES.Primary)
 
     const secondaryForm: TanoshiFormModel = new TanoshiFormModel(submitButton, 'secondary-form')
-        .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInput))
-        .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInput))
-        .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInput))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInputMaterial))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInputMaterial))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInputMaterial))
     secondaryForm.container.setBackgroundTheme(THEMES.Secondary)
 
     const blackForm: TanoshiFormModel = new TanoshiFormModel(submitButton, 'black-form')
-        .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInput))
-        .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInput))
-        .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInput))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInputMaterial))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInputMaterial))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInputMaterial))
     blackForm.container.setBackgroundTheme(THEMES.Black)
 
     const whiteForm: TanoshiFormModel = new TanoshiFormModel(submitButton, 'white-form')
-        .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputBlackLabel, emailInput, TanoshiTextInput))
-        .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputBlackLabel, passwordInput, TanoshiTextInput))
-        .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputBlackLabel, ageInput, TanoshiNumberInput))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputBlackLabel, emailInput, TanoshiTextInputMaterial))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputBlackLabel, passwordInput, TanoshiTextInputMaterial))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputBlackLabel, ageInput, TanoshiNumberInputMaterial))
     whiteForm.container.setBackgroundTheme(THEMES.White)
 
     const successForm: TanoshiFormModel = new TanoshiFormModel(submitButton, 'success-form')
-        .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInput))
-        .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInput))
-        .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInput))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInputMaterial))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInputMaterial))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInputMaterial))
     successForm.container.setBackgroundTheme(THEMES.Success)
 
 
     const dangerForm: TanoshiFormModel = new TanoshiFormModel(submitButton, 'danger-form')
-        .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInput))
-        .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInput))
-        .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInput))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInputMaterial))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInputMaterial))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInputMaterial))
     dangerForm.container.setBackgroundTheme(THEMES.Danger)
     
 
     const warningForm: TanoshiFormModel = new TanoshiFormModel(submitButton, 'warning-form')
-        .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInput))
-        .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInput))
-        .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInput))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInputMaterial))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInputMaterial))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInputMaterial))
     warningForm.container.setBackgroundTheme(THEMES.Warning)
 
     const infoForm: TanoshiFormModel = new TanoshiFormModel(submitButton, 'info-form')
-        .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInput))
-        .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInput))
-        .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInput))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInputMaterial))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInputMaterial))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInputMaterial))
     infoForm.container.setBackgroundTheme(THEMES.Info)
 </script>
   

@@ -4,9 +4,9 @@
     import TanoshiButtonModel from '$atoms/button/TanoshiButtonModel';
     import TanoshiLabelModel from '$atoms/label/TanoshiLabelModel';
     import TanoshiTextInputModel from '$atoms/input/text/TanoshiTextInputModel';
-    import TanoshiTextInput from '$atoms/input/text/TanoshiTextInput.svelte';
+    import TanoshiTextInputMaterial from '$atoms/input/text/TanoshiTextInputMaterial.svelte';
     import TanoshiNumberInputModel from '$atoms/input/number/TanoshiNumberInputModel';
-    import TanoshiNumberInput from '$atoms/input/number/TanoshiNumberInput.svelte';
+    import TanoshiNumberInputMaterial from '$atoms/input/number/TanoshiNumberInputMaterial.svelte';
     import { THEMES, BUTTON_TYPES, INPUT_TEXT_TYPES, INPUT_CHOICES_TYPES } from '$lib';
 	import TanoshiLabelAndInputModel from '$molecules/labelAndInput/TanoshiLabelAndInputModel';
     import '../../../../app.css';
@@ -19,7 +19,7 @@
 	import TanoshiSelectInput from '$molecules/input/select/TanoshiSelectInput.svelte';
 	import TanoshiSelectInputModel from '$molecules/input/select/TanoshiSelectInputModel';
 	import TanoshiTextareaInputModel from '$atoms/input/textarea/TanoshiTextareaInputModel';
-	import TanoshiTextareaInput from '$atoms/input/textarea/TanoshiTextareaInput.svelte';
+	import TanoshiTextareaInputMaterial from '$atoms/input/textarea/TanoshiTextareaInputMaterial.svelte';
 	import TanoshiFileInputModel from '$atoms/input/file/TanoshiFileInputModel';
 	import TanoshiFileInput from '$atoms/input/file/TanoshiFileInput.svelte';
     export let Hst: Hst;
@@ -144,10 +144,10 @@
         .setType(BUTTON_TYPES.Submit)
 
     const defaultForm: TanoshiFormModel = new TanoshiFormModel(submitButton, 'default-form')
-        .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInput))
-        .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInput))
-        .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInput))
-        .addLabelAndInput(new TanoshiLabelAndInputModel(descriptionInputLabel, descriptionInput, TanoshiTextareaInput))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInputMaterial))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInputMaterial))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInputMaterial))
+        .addLabelAndInput(new TanoshiLabelAndInputModel(descriptionInputLabel, descriptionInput, TanoshiTextareaInputMaterial))
         .addLabelAndInput(new TanoshiLabelAndInputModel(tanoshiRadioChoiceGroupLabelModel, tanoshiRadioChoiceGroupModel, TanoshiChoiceGroup))
         .addLabelAndInput(new TanoshiLabelAndInputModel(tanoshiCheckboxChoiceGroupLabelModel, tanoshiCheckboxChoiceGroupModel, TanoshiChoiceGroup))
         .addLabelAndInput(new TanoshiLabelAndInputModel(tanoshiSelectInputLabelModel, tanoshiSelectInputModel, TanoshiSelectInput))

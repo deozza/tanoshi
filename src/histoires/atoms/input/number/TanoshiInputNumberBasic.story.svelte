@@ -1,5 +1,5 @@
 <script lang="ts">
-	import TanoshiNumberInput from '$atoms/input/number/TanoshiNumberInput.svelte';
+	import TanoshiNumberInputMaterial from '$atoms/input/number/TanoshiNumberInputMaterial.svelte';
 	import TanoshiNumberInputModel from '$atoms/input/number/TanoshiNumberInputModel';
 
 
@@ -33,31 +33,31 @@
   
 <Hst.Story title="atoms/input/number/basic" layout={{ type: 'grid', width: 600 }}>
     <Hst.Variant title="default">
-        <TanoshiNumberInput tanoshiInputModel={defaultNumberInput} />
+        <TanoshiNumberInputMaterial tanoshiInputModel={defaultNumberInput} />
     </Hst.Variant>
 
     <Hst.Variant title="default value">
-        <TanoshiNumberInput tanoshiInputModel={defaultValueNumberInput} />
+        <TanoshiNumberInputMaterial tanoshiInputModel={defaultValueNumberInput} />
     </Hst.Variant>
 
     <Hst.Variant title="placeholder">
-        <TanoshiNumberInput tanoshiInputModel={placeholderNumberInput} />
+        <TanoshiNumberInputMaterial tanoshiInputModel={placeholderNumberInput} />
     </Hst.Variant>
 
     <Hst.Variant title="readonly">
-        <TanoshiNumberInput tanoshiInputModel={readonlyNumberInput} />
+        <TanoshiNumberInputMaterial tanoshiInputModel={readonlyNumberInput} />
     </Hst.Variant>
 
     <Hst.Variant title="required">
-        <TanoshiNumberInput tanoshiInputModel={requiredNumberInput} />
+        <TanoshiNumberInputMaterial tanoshiInputModel={requiredNumberInput} />
     </Hst.Variant>
 
     <Hst.Variant title="error">
-        <TanoshiNumberInput tanoshiInputModel={errorNumberInput} />
+        <TanoshiNumberInputMaterial tanoshiInputModel={errorNumberInput} />
     </Hst.Variant>
 
     <Hst.Variant title="error with message">
-        <TanoshiNumberInput tanoshiInputModel={errorWithMessageNumberInput} />
+        <TanoshiNumberInputMaterial tanoshiInputModel={errorWithMessageNumberInput} />
     </Hst.Variant>
 
 </Hst.Story>
