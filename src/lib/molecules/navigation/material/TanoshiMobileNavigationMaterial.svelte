@@ -74,7 +74,7 @@
 		<div id="mobile-menu">
 			<TanoshiContainerMaterial tanoshiContainerModel={expandedMobileNavigationContainer}>
 				<TanoshiContainerMaterial tanoshiContainerModel={expandedCenterMobileNavigationContainer}>
-					{#each tanoshiMobileNavigationModel.itemsWhenClosed as tanoshiNavigationLinkModel}
+					{#each tanoshiMobileNavigationModel.itemsWhenOpened as tanoshiNavigationLinkModel}
 						<svelte:component this={tanoshiNavigationLinkModel.component} tanoshiLinkModel={tanoshiNavigationLinkModel.link} />
 					{/each}
 				</TanoshiContainerMaterial>
