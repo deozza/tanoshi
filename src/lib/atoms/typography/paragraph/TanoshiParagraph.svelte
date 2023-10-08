@@ -30,34 +30,34 @@ p.p-spacing {
 }
 
 p.p-black {
-	color: var(--black-text-header, var(--black-dark));
+	color: rgba(var(--black-text-header, var(--black)));
 }
 
 p.p-white {
-    color: var(--white-text-header, var(--white));
+    color: rgba(var(--white-text-header, var(--white)));
 }
 
 p.p-primary {
-    color: var(--primary-text-header, var(--primary-dark));
+    color: rgba(var(--primary-text-header, var(--primary-dark)));
 }
 
 p.p-secondary {
-    color: var(--secondary-text-header, var(--secondary-dark));
+    color: rgba(var(--secondary-text-header, var(--secondary-dark)));
 }
 
 p.p-success {
-    color: var(--success-text-header, var(--success-dark));
+    color: rgba(var(--success-text-header, var(--success-dark)));
 }
 
 p.p-warning {
-    color: var(--warning-text-header, var(--warning-dark));
+    color: rgba(var(--warning-text-header, var(--warning-dark)));
 }
 
 p.p-danger {
-    color: var(--danger-text-header, var(--danger-dark));
+    color: rgba(var(--danger-text-header, var(--danger-dark)));
 }
 
 p.p-info {
-    color: var(--info-text-header, var(--info-dark));
+    color: rgba(var(--info-text-header, var(--info-dark)));
 }
 </style>

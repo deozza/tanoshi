@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Tanoshi is a component library built the atomic way. Create beautiful pages easily with configurable typescript objects. You won't need to write CSS or HTML anyumore.
+Tanoshi is a component library built the atomic way. Create beautiful pages easily with configurable typescript objects. You won't need to write CSS or HTML anymore.
 
 ## Why using Tanoshi ?
 

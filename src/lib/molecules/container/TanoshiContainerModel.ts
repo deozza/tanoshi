@@ -16,6 +16,8 @@ export default class TanoshiContainerModel {
 	private _mobileWidth!: string;
 	private _itemsAlignment!: string;
 	private _mobileItemsAlignment!: string;
+	private _hasPadding: boolean = true;
+
 
 	public constructor(desktopOrientation: CONTAINER_ORIENTATIONS) {
 		this.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Start);
@@ -165,6 +167,15 @@ export default class TanoshiContainerModel {
 
 	public setMobileSpacing(value: CONTAINER_ITEMS_SPACING): TanoshiContainerModel {
 		this._mobileSpacing = value;
+		return this;
+	}
+
+	get hasPadding(): boolean {
+		return this._hasPadding;
+	}
+
+	public setHasPadding(value: boolean): TanoshiContainerModel {
+		this._hasPadding = value;
 		return this;
 	}
 }

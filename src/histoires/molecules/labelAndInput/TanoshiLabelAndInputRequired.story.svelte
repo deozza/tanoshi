@@ -1,9 +1,9 @@
 <script lang="ts">
     import TanoshiLabelModel from '$atoms/label/TanoshiLabelModel';
     import TanoshiTextInputModel from '$atoms/input/text/TanoshiTextInputModel';
-    import TanoshiTextInput from '$atoms/input/text/TanoshiTextInput.svelte';
+    import TanoshiTextInputMaterial from '$atoms/input/text/TanoshiTextInputMaterial.svelte';
     import TanoshiNumberInputModel from '$atoms/input/number/TanoshiNumberInputModel';
-    import TanoshiNumberInput from '$atoms/input/number/TanoshiNumberInput.svelte';
+    import TanoshiNumberInputMaterial from '$atoms/input/number/TanoshiNumberInputMaterial.svelte';
     import { INPUT_TEXT_TYPES, INPUT_CHOICES_TYPES } from '$lib';
 	import TanoshiLabelAndInputModel from '$molecules/labelAndInput/TanoshiLabelAndInputModel';
     import '../../../app.css';
@@ -16,7 +16,7 @@
 	import TanoshiSelectInput from '$molecules/input/select/TanoshiSelectInput.svelte';
 	import TanoshiSelectInputModel from '$molecules/input/select/TanoshiSelectInputModel';
 	import TanoshiTextareaInputModel from '$atoms/input/textarea/TanoshiTextareaInputModel';
-	import TanoshiTextareaInput from '$atoms/input/textarea/TanoshiTextareaInput.svelte';
+	import TanoshiTextareaInputMaterial from '$atoms/input/textarea/TanoshiTextareaInputMaterial.svelte';
 	import TanoshiFileInputModel from '$atoms/input/file/TanoshiFileInputModel';
 	import TanoshiFileInput from '$atoms/input/file/TanoshiFileInput.svelte';
 	import TanoshiLabelAndInput from '$molecules/labelAndInput/TanoshiLabelAndInput.svelte';
@@ -26,23 +26,23 @@
         .setType(INPUT_TEXT_TYPES.Email)
         .setRequired(true)
     const emailInputLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(emailInput)
-    const emailLabelAndInput: TanoshiLabelAndInputModel = new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInput)
+    const emailLabelAndInput: TanoshiLabelAndInputModel = new TanoshiLabelAndInputModel(emailInputLabel, emailInput, TanoshiTextInputMaterial)
 
     const passwordInput: TanoshiTextInputModel = new TanoshiTextInputModel('Password')
         .setType(INPUT_TEXT_TYPES.Password)
         .setRequired(true)
     const passwordInputLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(passwordInput)
-    const passwordLabelAndInput: TanoshiLabelAndInputModel = new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInput)
+    const passwordLabelAndInput: TanoshiLabelAndInputModel = new TanoshiLabelAndInputModel(passwordInputLabel, passwordInput, TanoshiTextInputMaterial)
 
     const ageInput: TanoshiNumberInputModel = new TanoshiNumberInputModel('Age')
         .setRequired(true)
     const ageInputLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(ageInput)
-    const ageLabelAndInput: TanoshiLabelAndInputModel = new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInput)
+    const ageLabelAndInput: TanoshiLabelAndInputModel = new TanoshiLabelAndInputModel(ageInputLabel, ageInput, TanoshiNumberInputMaterial)
 
     const descriptionInput: TanoshiTextareaInputModel = new TanoshiTextareaInputModel('Description')
         .setRequired(true)
     const descriptionInputLabel: TanoshiLabelModel = new TanoshiLabelModel().initWithInput(descriptionInput)
-    const descriptionLabelAndInput: TanoshiLabelAndInputModel = new TanoshiLabelAndInputModel(descriptionInputLabel, descriptionInput, TanoshiTextareaInput)
+    const descriptionLabelAndInput: TanoshiLabelAndInputModel = new TanoshiLabelAndInputModel(descriptionInputLabel, descriptionInput, TanoshiTextareaInputMaterial)
 
     const radioChoice1Input: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('radio 1').setRequired(true)
     const radioChoice2Input: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('radio 2').setRequired(true)

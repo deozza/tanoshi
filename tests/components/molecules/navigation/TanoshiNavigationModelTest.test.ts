@@ -1,6 +1,6 @@
 import { test, expect } from 'vitest';
 
-import TanoshiNavigationModel from '$molecules/navigation/TanoshiNavigationModel';
+import TanoshiNavigationModel from '$molecules/navigation/TanoshiDesktopNavigationModel';
 
 test('default values are valid', () => {
 	const defaultNavigation: TanoshiNavigationModel = new TanoshiNavigationModel();

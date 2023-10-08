@@ -1,4 +1,4 @@
-import { INPUT_TEXT_TYPES } from "$lib/enums";
+import { CONTAINER_BORDERS, INPUT_TEXT_TYPES, THEMES } from "$lib/enums";
 
 export default class TanoshiTextInputModel {
 	private _type: string = '';
@@ -12,11 +12,19 @@ export default class TanoshiTextInputModel {
 	private _minLength: number | null = null;
 	private _maxLength: number | null = null;
 	private _placeholder: string | null = null;
+	private _backgroundTheme!: string;
+	private _textTheme!: string;
+	private _borderTheme!: string;
+	private _borderShape!: string;
 
 	constructor(name: string) {
 		this.setType(INPUT_TEXT_TYPES.Text);
 		this.setName(name);
 		this.setId(name);
+		this.setBackgroundTheme(THEMES.White);
+		this.setTextTheme(THEMES.Black);
+		this.setBorderTheme(THEMES.Black);
+		this.setBorderShape(CONTAINER_BORDERS.Md);
 	}
 
 	get type(): string {
@@ -79,6 +87,10 @@ export default class TanoshiTextInputModel {
 
 	setError(value: boolean): TanoshiTextInputModel {
 		this._error = value;
+		if(value === true) {
+			this.setBorderTheme(THEMES.Danger);
+			this.setTextTheme(THEMES.Danger);
+		}
 		return this;
 	}
 
@@ -115,6 +127,42 @@ export default class TanoshiTextInputModel {
 
 	setPlaceholder(value: string): TanoshiTextInputModel {
 		this._placeholder = value;
+		return this;
+	}
+
+	get backgroundTheme(): string {
+		return this._backgroundTheme;
+	}
+
+	setBackgroundTheme(value: THEMES): TanoshiTextInputModel {
+		this._backgroundTheme = value;
+		return this;
+	}
+
+	get textTheme(): string {
+		return this._textTheme;
+	}
+
+	setTextTheme(value: THEMES): TanoshiTextInputModel {
+		this._textTheme = value;
+		return this;
+	}
+
+	get borderTheme(): string {
+		return this._borderTheme;
+	}
+
+	setBorderTheme(value: THEMES): TanoshiTextInputModel {
+		this._borderTheme = value;
+		return this;
+	}
+
+	get borderShape(): string {
+		return this._borderShape;
+	}
+
+	setBorderShape(value: CONTAINER_BORDERS): TanoshiTextInputModel {
+		this._borderShape = value;
 		return this;
 	}
 }

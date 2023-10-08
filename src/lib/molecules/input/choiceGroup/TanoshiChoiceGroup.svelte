@@ -2,7 +2,7 @@
 	import TanoshiChoiceInput from '$atoms/input/choice/TanoshiChoiceInput.svelte';
 	import TanoshiLabel from '$atoms/label/TanoshiLabel.svelte';
 	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ORIENTATIONS, WIDTHS } from '$lib/enums';
-	import TanoshiContainer from '$molecules/container/TanoshiContainer.svelte';
+	import TanoshiContainer from '$molecules/container/TanoshiContainerMaterial.svelte';
 	import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel';
 	import type TanoshiChoiceGroupModel from './TanoshiChoiceGroupModel';
 

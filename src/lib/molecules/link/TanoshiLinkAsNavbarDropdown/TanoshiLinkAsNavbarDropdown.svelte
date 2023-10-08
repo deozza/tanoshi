@@ -2,7 +2,7 @@
 	import type TanoshiLinkAsNavbarDropdownModel from './TanoshiLinkAsNavbarDropdownModel';
 	import { TanoshiLink } from '$atoms';
 	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ORIENTATIONS, HEIGHTS, THEMES, getThemeEnumKeyByEnumValue } from '$lib/enums';
-	import { TanoshiContainer } from '$molecules';
+	import { TanoshiContainerMaterial } from '$molecules';
 	import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel';
 	import '../../../atoms/link/tanoshiLink.css';
 	import '../../../main.css';
@@ -18,14 +18,14 @@
 </script>
 
 
-<TanoshiContainer tanoshiContainerModel={dropdownContainer} customClasses={"dropdown"}>
+<TanoshiContainerMaterial tanoshiContainerModel={dropdownContainer} customClasses={"dropdown"}>
     <TanoshiLink tanoshiLinkModel={tanoshiLinkModel.linkTitle} />
     <ul class="{theme}">
         {#each tanoshiLinkModel.links as link}
             <li><svelte:component this={link.component} tanoshiLinkModel={link.link} /></li>
         {/each}
     </ul>
-</TanoshiContainer>
+</TanoshiContainerMaterial>
 
 
 <style>

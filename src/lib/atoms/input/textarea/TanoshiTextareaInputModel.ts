@@ -1,3 +1,5 @@
+import { CONTAINER_BORDERS, THEMES } from "$lib/enums";
+
 export default class TanoshiTextareaInputModel {
 	private _id!: string;
 	private _name!: string;
@@ -11,10 +13,18 @@ export default class TanoshiTextareaInputModel {
 	private _placeholder: string | null = null;
 	private _rows: number = 3;
 	private _cols: number = 50;
+	private _backgroundTheme!: string;
+	private _textTheme!: string;
+	private _borderTheme!: string;
+	private _borderShape!: string;
 
 	constructor(name: string) {
 		this.setName(name);
 		this.setId(name);
+		this.setBackgroundTheme(THEMES.White);
+		this.setTextTheme(THEMES.Black);
+		this.setBorderTheme(THEMES.Black);
+		this.setBorderShape(CONTAINER_BORDERS.Md);
 	}
 
 	get id(): string {
@@ -126,6 +136,42 @@ export default class TanoshiTextareaInputModel {
 
 	setCols(value: number): TanoshiTextareaInputModel {
 		this._cols = value;
+		return this;
+	}
+
+	get backgroundTheme(): string {
+		return this._backgroundTheme;
+	}
+
+	setBackgroundTheme(value: THEMES): TanoshiTextareaInputModel {
+		this._backgroundTheme = value;
+		return this;
+	}
+
+	get textTheme(): string {
+		return this._textTheme;
+	}
+
+	setTextTheme(value: THEMES): TanoshiTextareaInputModel {
+		this._textTheme = value;
+		return this;
+	}
+
+	get borderTheme(): string {
+		return this._borderTheme;
+	}
+
+	setBorderTheme(value: THEMES): TanoshiTextareaInputModel {
+		this._borderTheme = value;
+		return this;
+	}
+
+	get borderShape(): string {
+		return this._borderShape;
+	}
+
+	setBorderShape(value: CONTAINER_BORDERS): TanoshiTextareaInputModel {
+		this._borderShape = value;
 		return this;
 	}
 }

@@ -1,10 +1,13 @@
 <script lang="ts">
 	import '../../../atoms/link/tanoshiLink.css';
 	import '../../../main.css';
-	import TanoshiButton from '$atoms/button/TanoshiButton.svelte';
+	import TanoshiButtonMaterial from '$atoms/button/TanoshiButtonMaterial.svelte';
 	import type TanoshiLinkAsButtonModel from './TanoshiLinkAsButtonModel';
+	import type { ComponentType } from 'svelte';
 
 	export let tanoshiLinkModel: TanoshiLinkAsButtonModel;
+	export let tanoshiButtonComponent: ComponentType = TanoshiButtonMaterial;
+
 </script>
 
 <a
@@ -15,7 +18,5 @@
 	href={tanoshiLinkModel.link.link}
 	target={tanoshiLinkModel.link.isInternal}
 >
-	<TanoshiButton
-		tanoshiButtonModel={tanoshiLinkModel.button}
-	/>
+	<svelte:component this={tanoshiButtonComponent} tanoshiButtonModel={tanoshiLinkModel.button} />
 </a>

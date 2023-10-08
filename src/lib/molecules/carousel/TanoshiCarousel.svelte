@@ -3,7 +3,7 @@
 	import 'iconify-icon';
 
   import TanoshiImageInCarousel from '$atoms/image/TanoshiImageInCarousel.svelte';
-  import TanoshiContainer from "$molecules/container/TanoshiContainer.svelte";
+  import TanoshiContainer from "$molecules/container/TanoshiContainerMaterial.svelte";
   import TanoshiContainerModel from "$molecules/container/TanoshiContainerModel";
   import { onDestroy } from 'svelte';
 	import type TanoshiCarouselModel from './TanoshiCarouselModel';

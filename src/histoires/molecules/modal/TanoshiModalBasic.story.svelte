@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { TanoshiButtonModel, TanoshiHeaderModel } from '$atoms';
-	import TanoshiButton from '$atoms/button/TanoshiButton.svelte';
+	import TanoshiButtonMaterial from '$atoms/button/TanoshiButtonMaterial.svelte';
 	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, HEADER_TAGS, SIZES, THEMES, TanoshiContainerModel, WIDTHS } from '$lib';
     import TanoshiModal from '$molecules/modal/TanoshiModal.svelte';
 	import TanoshiModalModel from '$molecules/modal/TanoshiModalModel';
@@ -118,7 +118,7 @@
             </div>
 
             <div slot="footer">
-                <TanoshiButton tanoshiButtonModel={cancelButton} on:click={() => showModal = false}/>
+                <TanoshiButtonMaterial tanoshiButtonModel={cancelButton} on:click={() => showModal = false}/>
             </div>
         </TanoshiModal>
     </Hst.Variant>
@@ -146,7 +146,7 @@
             </div>
 
             <div slot="footer">
-                <TanoshiButton tanoshiButtonModel={cancelButton} on:click={() => showModal = false}/>
+                <TanoshiButtonMaterial tanoshiButtonModel={cancelButton} on:click={() => showModal = false}/>
             </div>
         </TanoshiModal>
     </Hst.Variant>
