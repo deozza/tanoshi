@@ -155,7 +155,7 @@
 			<TanoshiHeader tanoshiHeaderModel={contactFormHeader} />
 			<TanoshiAlertGlass tanoshiAlertModel={defaultAlert} />
 
-			<TanoshiFormGlass tanoshiFormModel={contactForm} tanoshiButtonComponent={TanoshiButtonMaterial} />
+			<TanoshiFormGlass tanoshiFormModel={contactForm}/>
 
         </TanoshiContainerMaterial>    
     </main>

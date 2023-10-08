@@ -18,5 +18,5 @@
 	href={tanoshiLinkModel.link.link}
 	target={tanoshiLinkModel.link.isInternal}
 >
-	<svelte:component this={tanoshiButtonComponent} tanoshiButtonModel={tanoshiLinkModel.button} />
+	<svelte:component this={tanoshiLinkModel.tanoshiButtonComponent} tanoshiButtonModel={tanoshiLinkModel.button} />
 </a>
