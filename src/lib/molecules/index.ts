@@ -16,6 +16,7 @@ export {default as TanoshiContainerModel} from "./container/TanoshiContainerMode
 
 export {default as TanoshiFormMaterial} from "./form/TanoshiFormMaterial.svelte";
 export {default as TanoshiFormGlass} from "./form/TanoshiFormGlass.svelte";
+export {default as TanoshiFormNeumorphism} from "./form/TanoshiFormNeumorphism.svelte";
 export {default as TanoshiFormModel} from "./form/TanoshiFormModel";
 
 export {default as TanoshiChoiceGroup} from "./input/choiceGroup/TanoshiChoiceGroup.svelte";

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import TanoshiFormMaterial from '$molecules/form/TanoshiFormMaterial.svelte';
+	import TanoshiFormGlass from '$molecules/form/TanoshiFormGlass.svelte';
 	import TanoshiFormModel from '$molecules/form/TanoshiFormModel';
     import TanoshiButtonModel from '$atoms/button/TanoshiButtonModel';
     import TanoshiLabelModel from '$atoms/label/TanoshiLabelModel';
@@ -89,40 +89,40 @@
     infoForm.container.setBorderTheme(THEMES.Info)
 </script>
   
-<Hst.Story title="molecules/form/material/border theme" layout={{ type: 'grid', width: 600 }}>
+<Hst.Story title="molecules/form/glass/border theme" layout={{ type: 'grid', width: 600 }}>
     <Hst.Variant title="default">
-        <TanoshiFormMaterial tanoshiFormModel={defaultForm} />
+        <TanoshiFormGlass tanoshiFormModel={defaultForm} />
     </Hst.Variant>
 
     <Hst.Variant title="primary">
-        <TanoshiFormMaterial tanoshiFormModel={primaryForm} />
+        <TanoshiFormGlass tanoshiFormModel={primaryForm} />
     </Hst.Variant>
 
     <Hst.Variant title="secondary">
-        <TanoshiFormMaterial tanoshiFormModel={secondaryForm} />
+        <TanoshiFormGlass tanoshiFormModel={secondaryForm} />
     </Hst.Variant>
 
     <Hst.Variant title="black">
-        <TanoshiFormMaterial tanoshiFormModel={blackForm} />
+        <TanoshiFormGlass tanoshiFormModel={blackForm} />
     </Hst.Variant>
 
     <Hst.Variant title="white">
-        <TanoshiFormMaterial tanoshiFormModel={whiteForm} />
+        <TanoshiFormGlass tanoshiFormModel={whiteForm} />
     </Hst.Variant>
 
     <Hst.Variant title="success">
-        <TanoshiFormMaterial tanoshiFormModel={successForm} />
+        <TanoshiFormGlass tanoshiFormModel={successForm} />
     </Hst.Variant>
 
     <Hst.Variant title="danger">
-        <TanoshiFormMaterial tanoshiFormModel={dangerForm} />
+        <TanoshiFormGlass tanoshiFormModel={dangerForm} />
     </Hst.Variant>
 
     <Hst.Variant title="warning">
-        <TanoshiFormMaterial tanoshiFormModel={warningForm} />
+        <TanoshiFormGlass tanoshiFormModel={warningForm} />
     </Hst.Variant>
 
     <Hst.Variant title="info">
-        <TanoshiFormMaterial tanoshiFormModel={infoForm} />
+        <TanoshiFormGlass tanoshiFormModel={infoForm} />
     </Hst.Variant>
 </Hst.Story>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import TanoshiFormGlass from '$molecules/form/TanoshiFormGlass.svelte';
+	import TanoshiFormMaterial from '$molecules/form/TanoshiFormMaterial.svelte';
 	import TanoshiFormModel from '$molecules/form/TanoshiFormModel';
     import TanoshiButtonModel from '$atoms/button/TanoshiButtonModel';
     import TanoshiLabelModel from '$atoms/label/TanoshiLabelModel';
@@ -167,6 +167,6 @@
 
 </script>
   
-<Hst.Story title="molecules/form/glass/basic">
-        <TanoshiFormGlass tanoshiFormModel={defaultForm} on:submit={(e) => handleForm(e)}/>
+<Hst.Story title="molecules/form/material/basic">
+        <TanoshiFormMaterial tanoshiFormModel={defaultForm} on:submit={(e) => handleForm(e)}/>
 </Hst.Story>
