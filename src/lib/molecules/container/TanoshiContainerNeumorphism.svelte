@@ -4,6 +4,7 @@
 
 	export let tanoshiContainerModel: TanoshiContainerModel;
 	export let customClasses: string = '';
+	export let pushedStyled: boolean = false;
 </script>
 
 <div
@@ -23,6 +24,7 @@
 		{customClasses}
 	"
 	class:no-padding={tanoshiContainerModel.hasPadding === false}
+	class:pushed={pushedStyled === true}
 >
 	<slot />
 </div>
@@ -78,6 +80,10 @@ div.white {
 	box-shadow:  8px 8px 15px rgba(var(--white-dark-bg-container, var(--white-dark))), -8px -8px 15px rgba(var(--white-light-bg-container, var(--white-light)));
 }
 
+div.white.pushed {
+	box-shadow: inset 8px 8px 15px rgba(var(--white-dark-bg-container, var(--white-dark))), inset -8px -8px 15px rgba(var(--white-light-bg-container, var(--white-light)));
+}
+
 div.border-white {
 	border: 1px solid rgba(var(--white-border-container, var(--white)));
 }
@@ -85,6 +91,10 @@ div.border-white {
 div.black {
     background-color: rgba(var(--black-bg-container, var(--black)));
 	box-shadow:  8px 8px 15px rgba(var(--black-dark-bg-container, var(--black-dark))), -8px -8px 15px rgba(var(--black-light-bg-container, var(--black-light)));
+}
+
+div.black.pushed {
+	box-shadow: inset 8px 8px 15px rgba(var(--black-dark-bg-container, var(--black-dark))), inset -8px -8px 15px rgba(var(--black-light-bg-container, var(--black-light)));
 }
 
 div.border-black {
@@ -96,6 +106,10 @@ div.primary {
 	box-shadow:  8px 8px 15px rgba(var(--primary-dark-bg-container, var(--primary-dark))), -8px -8px 15px rgba(var(--primary-light-bg-container, var(--primary-light)));
 }
 
+div.primary.pushed {
+	box-shadow: inset 8px 8px 15px rgba(var(--primary-dark-bg-container, var(--primary-dark))), inset -8px -8px 15px rgba(var(--primary-light-bg-container, var(--primary-light)));
+}
+
 div.border-primary {
 	border: 1px solid rgba(var(--primary-border-container, var(--primary)));
 }
@@ -103,6 +117,10 @@ div.border-primary {
 div.secondary {
     background-color: rgba(var(--secondary-bg-container, var(--secondary)));
 	box-shadow:  8px 8px 15px rgba(var(--secondary-dark-bg-container, var(--secondary-dark))), -8px -8px 15px rgba(var(--secondary-light-bg-container, var(--secondary-light)));
+}
+
+div.secondary.pushed {
+	box-shadow: inset 8px 8px 15px rgba(var(--secondary-dark-bg-container, var(--secondary-dark))), inset -8px -8px 15px rgba(var(--secondary-light-bg-container, var(--secondary-light)));
 }
 
 div.border-secondary {
@@ -114,6 +132,10 @@ div.success {
 	box-shadow:  8px 8px 15px rgba(var(--success-dark-bg-container, var(--success-dark))), -8px -8px 15px rgba(var(--success-light-bg-container, var(--success-light)));
 }
 
+div.success.pushed {
+	box-shadow: inset 8px 8px 15px rgba(var(--success-dark-bg-container, var(--success-dark))), inset -8px -8px 15px rgba(var(--success-light-bg-container, var(--success-light)));
+}
+
 div.border-success {
 	border: 1px solid rgba(var(--success-border-container, var(--success)));
 }
@@ -121,6 +143,10 @@ div.border-success {
 div.warning {
     background-color: rgba(var(--warning-bg-container, var(--warning)));
 	box-shadow:  8px 8px 15px rgba(var(--warning-dark-bg-container, var(--warning-dark))), -8px -8px 15px rgba(var(--warning-light-bg-container, var(--warning-light)));
+}
+
+div.warning.pushed {
+	box-shadow: inset 8px 8px 15px rgba(var(--warning-dark-bg-container, var(--warning-dark))), inset -8px -8px 15px rgba(var(--warning-light-bg-container, var(--warning-light)));
 }
 
 div.border-warning {
@@ -132,6 +158,10 @@ div.danger {
 	box-shadow:  8px 8px 15px rgba(var(--danger-dark-bg-container, var(--danger-dark))), -8px -8px 15px rgba(var(--danger-light-bg-container, var(--danger-light)));
 }
 
+div.danger.pushed {
+	box-shadow: inset 8px 8px 15px rgba(var(--danger-dark-bg-container, var(--danger-dark))), inset -8px -8px 15px rgba(var(--danger-light-bg-container, var(--danger-light)));
+}
+
 div.border-danger {
 	border: 1px solid rgba(var(--danger-border-container, var(--danger)));
 }
@@ -139,6 +169,10 @@ div.border-danger {
 div.info {
     background-color: rgba(var(--info-bg-container, var(--info)));
 	box-shadow:  8px 8px 15px rgba(var(--info-dark-bg-container, var(--info-dark))), -8px -8px 15px rgba(var(--info-light-bg-container, var(--info-light)));
+}
+
+div.info.pushed {
+	box-shadow: inset 8px 8px 15px rgba(var(--info-dark-bg-container, var(--info-dark))), inset -8px -8px 15px rgba(var(--info-light-bg-container, var(--info-light)));
 }
 
 div.border-info {

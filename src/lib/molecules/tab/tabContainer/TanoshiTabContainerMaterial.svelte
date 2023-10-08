@@ -1,8 +1,8 @@
 <script lang='ts'>
 	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, WIDTHS } from "$lib/enums";
-	import TanoshiContainer from "$molecules/container/TanoshiContainerMaterial.svelte";
+	import TanoshiContainerMaterial from "$molecules/container/TanoshiContainerMaterial.svelte";
 	import TanoshiContainerModel from "$molecules/container/TanoshiContainerModel";
-	import TanoshiTabTitle from "../tabTitle/TanoshiTabTitle.svelte";
+	import TanoshiTabTitleMaterial from "../tabTitle/TanoshiTabTitleMaterial.svelte";
 	import type TanoshiTabContainerModel from "./TanoshiTabContainerModel";
 
     export let tanoshiTabContainerModel: TanoshiTabContainerModel;
@@ -30,22 +30,23 @@
     export let activeIndex: number = 0
 </script>
 
-<TanoshiContainer tanoshiContainerModel={containerModel}>
-    <TanoshiContainer tanoshiContainerModel={titleContainerModel}>
+<TanoshiContainerMaterial tanoshiContainerModel={containerModel}>
+    <TanoshiContainerMaterial tanoshiContainerModel={titleContainerModel}>
         {#each tanoshiTabContainerModel.tabs as tab, index}
-            <TanoshiTabTitle tanoshiTabTitleModel={tab} {index} bind:activeIndex={activeIndex} />
+            <TanoshiTabTitleMaterial tanoshiTabTitleModel={tab} {index} bind:activeIndex={activeIndex} />
         {/each}
         <hr class="border-{tanoshiTabContainerModel.theme}">
 
-    </TanoshiContainer>
-    <TanoshiContainer tanoshiContainerModel={contentContainerModel}>
+    </TanoshiContainerMaterial>
+    <TanoshiContainerMaterial tanoshiContainerModel={contentContainerModel}>
         <slot />
-    </TanoshiContainer>
-</TanoshiContainer>
+    </TanoshiContainerMaterial>
+</TanoshiContainerMaterial>
 
 <style>
 hr{
     margin: 0;
+    margin-bottom: 2rem;
     border: 0;
     width: 100%;
 }

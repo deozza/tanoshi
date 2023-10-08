@@ -43,10 +43,13 @@ export {default as TanoshiNavigationMaterial} from "./navigation/material/Tanosh
 export {default as TanoshiNavigationGlass} from "./navigation/glass/TanoshiNavigationGlass.svelte";
 export {default as TanoshiNavigationModel} from "./navigation/TanoshiDesktopNavigationModel";
 
-export {default as TanoshiTabContainer} from "./tab/tabContainer/TanoshiTabContainer.svelte";
+export {default as TanoshiTabContainerMaterial} from "./tab/tabContainer/TanoshiTabContainerMaterial.svelte";
+export {default as TanoshiTabContainerNeumorphism} from "./tab/tabContainer/TanoshiTabContainerNeumorphism.svelte";
 export {default as TanoshiTabContainerModel} from "./tab/tabContainer/TanoshiTabContainerModel";
 
-export {default as TanoshiTabContent} from "./tab/tabContent/TanoshiTabContent.svelte";
+export {default as TanoshiTabContentMaterial} from "./tab/tabContent/TanoshiTabContentMaterial.svelte";
+export {default as TanoshiTabContentNeumorphism} from "./tab/tabContent/TanoshiTabContentNeumorphism.svelte";
 
-export {default as TanoshiTabTitle} from "./tab/tabTitle/TanoshiTabTitle.svelte";
+export {default as TanoshiTabTitleMaterial} from "./tab/tabTitle/TanoshiTabTitleMaterial.svelte";
+export {default as TanoshiTabTitleNeumorphism} from "./tab/tabTitle/TanoshiTabTitleNeumorphism.svelte";
 export {default as TanoshiTabTitleModel} from "./tab/tabTitle/TanoshiTabTitleModel";

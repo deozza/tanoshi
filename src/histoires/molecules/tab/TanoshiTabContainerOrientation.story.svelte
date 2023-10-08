@@ -4,10 +4,10 @@
 
     import type { Hst } from '@histoire/plugin-svelte';
 	import TanoshiTabTitleModel from '$molecules/tab/tabTitle/TanoshiTabTitleModel';
-	import TanoshiTabContainer from '$molecules/tab/tabContainer/TanoshiTabContainer.svelte';
+	import TanoshiTabContainerMaterial from '$molecules/tab/tabContainer/TanoshiTabContainerMaterial.svelte';
 	import TanoshiTabContainerModel from '$molecules/tab/tabContainer/TanoshiTabContainerModel';
 	import { THEMES } from '$lib';
-	import TanoshiTabContent from '$molecules/tab/tabContent/TanoshiTabContent.svelte';
+	import TanoshiTabContentMaterial from '$molecules/tab/tabContent/TanoshiTabContentMaterial.svelte';
     export let Hst: Hst;
 
     const defaultTabContainer : TanoshiTabContainerModel = new TanoshiTabContainerModel(THEMES.Secondary, THEMES.Primary)
@@ -32,31 +32,31 @@
 <Hst.Story title="molecules/tab/orientation" layout={{ type: 'grid', width: 600 }}>
 
     <Hst.Variant title="default">
-        <TanoshiTabContainer tanoshiTabContainerModel={defaultTabContainer} bind:activeIndex={activeIndex}>
-            <TanoshiTabContent index={0} {activeIndex}>
+        <TanoshiTabContainerMaterial tanoshiTabContainerModel={defaultTabContainer} bind:activeIndex={activeIndex}>
+            <TanoshiTabContentMaterial index={0} {activeIndex}>
                 <div>1</div>
-            </TanoshiTabContent>
-            <TanoshiTabContent index={1} {activeIndex}>
+            </TanoshiTabContentMaterial>
+            <TanoshiTabContentMaterial index={1} {activeIndex}>
                 <div>2</div>
-            </TanoshiTabContent>
-            <TanoshiTabContent index={2} {activeIndex}>
+            </TanoshiTabContentMaterial>
+            <TanoshiTabContentMaterial index={2} {activeIndex}>
                 <div>3</div>
-            </TanoshiTabContent>
-        </TanoshiTabContainer>
+            </TanoshiTabContentMaterial>
+        </TanoshiTabContainerMaterial>
     </Hst.Variant>
 
     <Hst.Variant title="sidebar">
-        <TanoshiTabContainer tanoshiTabContainerModel={sidebarTabContainer} bind:activeIndex={activeIndex}>
-            <TanoshiTabContent index={0} {activeIndex}>
+        <TanoshiTabContainerMaterial tanoshiTabContainerModel={sidebarTabContainer} bind:activeIndex={activeIndex}>
+            <TanoshiTabContentMaterial index={0} {activeIndex}>
                 <div>1</div>
-            </TanoshiTabContent>
-            <TanoshiTabContent index={1} {activeIndex}>
+            </TanoshiTabContentMaterial>
+            <TanoshiTabContentMaterial index={1} {activeIndex}>
                 <div>2</div>
-            </TanoshiTabContent>
-            <TanoshiTabContent index={2} {activeIndex}>
+            </TanoshiTabContentMaterial>
+            <TanoshiTabContentMaterial index={2} {activeIndex}>
                 <div>3</div>
-            </TanoshiTabContent>
-        </TanoshiTabContainer>
+            </TanoshiTabContentMaterial>
+        </TanoshiTabContainerMaterial>
     </Hst.Variant>
 
 </Hst.Story>

@@ -54,9 +54,6 @@ button {
 	margin: 0.5rem;
 	border-width: 1px;
 	border-radius: 0.375rem;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-	transition-duration: 150ms;
-	transition-duration: 300ms;	
 	cursor: pointer;
 }
 
