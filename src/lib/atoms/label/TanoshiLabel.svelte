@@ -15,34 +15,34 @@
 
 <style>
 label.black {
-	color: var(--black-text-header, var(--black-dark));
+	color: rgba(var(--black-text-header, var(--black-dark)));
 }
 
 label.white {
-    color: var(--white-text-header, var(--white));
+    color: rgba(var(--white-text-header, var(--white)));
 }
 
 label.primary {
-    color: var(--primary-text-header, var(--primary-dark));
+    color: rgba(var(--primary-text-header, var(--primary-dark)));
 }
 
 label.secondary {
-    color: var(--secondary-text-header, var(--secondary-dark));
+    color: rgba(var(--secondary-text-header, var(--secondary-dark)));
 }
 
 label.success {
-    color: var(--success-text-header, var(--success-dark));
+    color: rgba(var(--success-text-header, var(--success-dark)));
 }
 
 label.warning {
-    color: var(--warning-text-header, var(--warning-dark));
+    color: rgba(var(--warning-text-header, var(--warning-dark)));
 }
 
 label.danger {
-    color: var(--danger-text-header, var(--danger-dark));
+    color: rgba(var(--danger-text-header, var(--danger-dark)));
 }
 
 label.info {
-    color: var(--info-text-header, var(--info-dark));
+    color: rgba(var(--info-text-header, var(--info-dark)));
 }
 </style>
