@@ -2,22 +2,20 @@
 	import { TanoshiButtonModel, TanoshiHeaderModel, TanoshiImageModel, TanoshiLinkModel, TanoshiParagraphModel } from '$atoms';
 	import TanoshiLink from '$atoms/link/TanoshiLink.svelte';
 	import TanoshiHeader from '$atoms/typography/header/TanoshiHeader.svelte';
-	import { BUTTON_SIZES, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, HEADER_TAGS,  SIZES, THEMES, TanoshiContainerModel, TanoshiLinkAsNavbarDropdownModel, TanoshiNavigationModel, WIDTHS } from '$lib';
+	import { BUTTON_SIZES, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, HEADER_TAGS,  SIZES, THEMES, TanoshiContainerModel, TanoshiDesktopNavigationModel, TanoshiLinkAsNavbarDropdownModel, TanoshiMobileNavigationModel, WIDTHS } from '$lib';
 	import type { TanoshiNavigationLinkModel } from '$lib/types/Types';
 	import TanoshiLinkAsNavbarDropdown from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte';
 	import TanoshiImage from '$atoms/image/TanoshiImage.svelte';
 	import TanoshiParagraph from '$atoms/typography/paragraph/TanoshiParagraph.svelte';
 	import TanoshiContainerMaterial from '$molecules/container/TanoshiContainerMaterial.svelte';
 	import TanoshiNavigationGlass from '$molecules/navigation/glass/TanoshiNavigationGlass.svelte';
-	import TanoshiButtonGlass from '$atoms/button/TanoshiButtonGlass.svelte';
+	import TanoshiContainerGlass from '$molecules/container/TanoshiContainerGlass.svelte';
+	import TanoshiButtonMaterial from '$atoms/button/TanoshiButtonMaterial.svelte';
 
     import '../../../app.css';
 
     import type { Hst } from '@histoire/plugin-svelte';
-	import TanoshiContainerGlass from '$molecules/container/TanoshiContainerGlass.svelte';
-	import TanoshiButtonMaterial from '$atoms/button/TanoshiButtonMaterial.svelte';
-	import TanoshiMobileNavigationModel from '$molecules/navigation/TanoshiDesktopNavigationModel';
-	import TanoshiDesktopNavigationModel from '$molecules/navigation/TanoshiMobileNavigationModel';
+	import TanoshiIconModel from '$atoms/icon/TanoshiIconModel';
     export let Hst: Hst;
 
 	const dropdownTitle: TanoshiLinkModel = new TanoshiLinkModel('Dropdown').setTheme(THEMES.White);
@@ -121,10 +119,16 @@
 	const productAvailability: TanoshiParagraphModel = new TanoshiParagraphModel('In stock')
 		.setTheme(THEMES.Success)
 		.setHasSpacing(true)
+
+	const cartIcon: TanoshiIconModel = new TanoshiIconModel('mdi:cart')
+		.setColor(THEMES.White)
+		.setHeight(20)
+		.setWidth(20)
+
 	const addToCartButton: TanoshiButtonModel = new TanoshiButtonModel('Add to cart')
 		.setBasicTheme(THEMES.Success)
 		.setSize(BUTTON_SIZES.Block)
-		.setIconAtRight('mdi-cart')
+		.setIconAtRight(cartIcon)
 
 </script>
   

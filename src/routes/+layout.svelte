@@ -1,6 +1,6 @@
 <script lang="ts">
 	import TanoshiLinkModel from '$atoms/link/TanoshiLinkModel';
-	import TanoshiNavigationModel from '$molecules/navigation/TanoshiDesktopNavigationModel';
+	import TanoshiNavigationModel from '$molecules/navigation/TanoshiMobileNavigationModel';
 	
 	import '../app.css';
 	import { THEMES } from '$lib';

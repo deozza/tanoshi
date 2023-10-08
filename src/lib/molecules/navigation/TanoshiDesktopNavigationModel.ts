@@ -1,48 +1,63 @@
 import { THEMES } from '$lib/enums';
 import type { TanoshiNavigationLinkModel } from '$lib/types/Types';
 
-export default class TanoshiMobileNavigationModel {
-	private _itemsWhenClosed: Array<TanoshiNavigationLinkModel> = [];
-	private _itemsWhenOpened: Array<TanoshiNavigationLinkModel> = [];
+export default class TanoshiDesktopNavigationModel {
+	private _itemsAtLeft: Array<TanoshiNavigationLinkModel> = [];
+	private _itemsAtCenter: Array<TanoshiNavigationLinkModel> = [];
+	private _itemsAtRight: Array<TanoshiNavigationLinkModel> = [];
 	private _theme!: string;
 
 	public constructor() {
 		this.setTheme(THEMES.Primary);
 	}
 
-	get itemsWhenClosed(): Array<TanoshiNavigationLinkModel> {
-		return this._itemsWhenClosed;
+	get itemsAtLeft(): Array<TanoshiNavigationLinkModel> {
+		return this._itemsAtLeft;
 	}
 
-	public setItemsWhenClosed(value: Array<TanoshiNavigationLinkModel>): TanoshiMobileNavigationModel {
-		this._itemsWhenClosed = value;
+	public setItemsAtLeft(value: Array<TanoshiNavigationLinkModel>): TanoshiDesktopNavigationModel {
+		this._itemsAtLeft = value;
 		return this;
 	}
 
-	public addItemAtWhenClosed(value: TanoshiNavigationLinkModel): TanoshiMobileNavigationModel {
-		this._itemsWhenClosed = [...this._itemsWhenClosed, value];
+	public addItemAtLeft(value: TanoshiNavigationLinkModel): TanoshiDesktopNavigationModel {
+		this._itemsAtLeft = [...this._itemsAtLeft, value];
 		return this;
 	}
 
-	get itemsWhenOpened(): Array<TanoshiNavigationLinkModel> {
-		return this._itemsWhenOpened;
+	get itemsAtCenter(): Array<TanoshiNavigationLinkModel> {
+		return this._itemsAtCenter;
 	}
 
-	public setItemsWhenOpened(value: Array<TanoshiNavigationLinkModel>): TanoshiMobileNavigationModel {
-		this._itemsWhenOpened = value;
+	public setItemsAtCenter(value: Array<TanoshiNavigationLinkModel>): TanoshiDesktopNavigationModel {
+		this._itemsAtCenter = value;
 		return this;
 	}
 
-	public addItemAtWhenOpened(value: TanoshiNavigationLinkModel): TanoshiMobileNavigationModel {
-		this._itemsWhenOpened = [...this._itemsWhenOpened, value];
+	public addItemAtCenter(value: TanoshiNavigationLinkModel): TanoshiDesktopNavigationModel {
+		this._itemsAtCenter = [...this._itemsAtCenter, value];
 		return this;
 	}
-	
+
+	get itemsAtRight(): Array<TanoshiNavigationLinkModel> {
+		return this._itemsAtRight;
+	}
+
+	public setItemsAtRight(value: Array<TanoshiNavigationLinkModel>): TanoshiDesktopNavigationModel {
+		this._itemsAtRight = value;
+		return this;
+	}
+
+	public addItemAtRight(value: TanoshiNavigationLinkModel): TanoshiDesktopNavigationModel {
+		this._itemsAtRight = [...this._itemsAtRight, value];
+		return this;
+	}
+
 	get theme(): string {
 		return this._theme;
 	}
 
-	public setTheme(value: THEMES): TanoshiMobileNavigationModel {
+	public setTheme(value: THEMES): TanoshiDesktopNavigationModel {
 		this._theme = value;
 		return this;
 	}

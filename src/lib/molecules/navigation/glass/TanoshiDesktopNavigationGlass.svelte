@@ -4,7 +4,7 @@
 	import TanoshiLinkAsNavbarDropdown from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte';
 	import TanoshiContainerMaterial from '$molecules/container/TanoshiContainerMaterial.svelte';
 	import TanoshiContainerGlass from '$molecules/container/TanoshiContainerGlass.svelte';
-	import type TanoshiDesktopNavigationModel from "../TanoshiMobileNavigationModel";
+	import type TanoshiDesktopNavigationModel from "../TanoshiDesktopNavigationModel";
 
     export let tanoshiDesktopNavigationModel: TanoshiDesktopNavigationModel;
     export let navigationDesktopContainerModel: TanoshiContainerModel;

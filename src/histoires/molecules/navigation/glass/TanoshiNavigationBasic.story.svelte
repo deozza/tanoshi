@@ -2,14 +2,13 @@
 
     import '../../../../app.css';
 
-	import {  THEMES, TanoshiLinkModel, TanoshiNavigationGlass } from '$lib';
+	import {  THEMES, TanoshiDesktopNavigationModel, TanoshiLinkModel, TanoshiMobileNavigationModel, TanoshiNavigationGlass } from '$lib';
     import type { Hst } from '@histoire/plugin-svelte';
 	import type { TanoshiNavigationLinkModel } from '$lib/types/Types';
 	import TanoshiLink from '$atoms/link/TanoshiLink.svelte';
 	import TanoshiLinkAsNavbarDropdown from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte';
 	import TanoshiLinkAsNavbarDropdownModel from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdownModel';
-	import TanoshiMobileNavigationModel from '$molecules/navigation/TanoshiDesktopNavigationModel';
-	import TanoshiDesktopNavigationModel from '$molecules/navigation/TanoshiMobileNavigationModel';
+
     export let Hst: Hst;
 	const dropdownTitle: TanoshiLinkModel = new TanoshiLinkModel('Dropdown').setTheme(THEMES.White);
 	const linkPrimary: TanoshiLinkModel = new TanoshiLinkModel('Primary').setTheme(THEMES.White);

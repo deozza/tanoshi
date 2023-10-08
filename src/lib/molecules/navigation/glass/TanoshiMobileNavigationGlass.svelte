@@ -8,7 +8,7 @@
 	import { TanoshiButtonModel } from '$atoms';
 	import TanoshiContainerGlass from '$molecules/container/TanoshiContainerGlass.svelte';
 	import TanoshiContainerMaterial from '$molecules/container/TanoshiContainerMaterial.svelte';
-	import type TanoshiMobileNavigationModel from '../TanoshiDesktopNavigationModel';
+	import type TanoshiMobileNavigationModel from '../TanoshiMobileNavigationModel';
 	import TanoshiIconModel from '$atoms/icon/TanoshiIconModel';
 	import TanoshiIcon from '$atoms/icon/TanoshiIcon.svelte';
 

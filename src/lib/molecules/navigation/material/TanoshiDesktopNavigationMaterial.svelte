@@ -2,7 +2,7 @@
 	import { CONTAINER_ORIENTATIONS, CONTAINER_ITEMS_SPACING, CONTAINER_ITEMS_ALIGNMENTS, WIDTHS} from "$lib/enums";
 	import { TanoshiContainerMaterial, TanoshiContainerModel } from "$molecules";
 	import TanoshiLinkAsNavbarDropdown from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte';
-	import type TanoshiDesktopNavigationModel from "../TanoshiMobileNavigationModel";
+	import type TanoshiDesktopNavigationModel from "../TanoshiDesktopNavigationModel";
 
     export let tanoshiDesktopNavigationModel: TanoshiDesktopNavigationModel;
     export let navigationDesktopContainerModel: TanoshiContainerModel;

@@ -2,14 +2,14 @@
     import { onMount, onDestroy, type ComponentType } from 'svelte';
 	import 'iconify-icon';
 
-	import { CONTAINER_ORIENTATIONS, THEMES, CONTAINER_ITEMS_ALIGNMENTS, HEIGHTS, getThemeEnumKeyByEnumValue } from "$lib/enums";
-	import { TanoshiContainerMaterial, TanoshiContainerModel, TanoshiNavigationModel } from "$molecules";
+	import { CONTAINER_ORIENTATIONS, THEMES, CONTAINER_ITEMS_ALIGNMENTS, HEIGHTS } from "$lib/enums";
+	import { TanoshiContainerMaterial, TanoshiContainerModel, TanoshiMobileNavigationModel } from "$molecules";
 	import TanoshiButtonMaterial from "$atoms/button/TanoshiButtonMaterial.svelte";
 	import { TanoshiButtonModel } from '$atoms';
 	import TanoshiIconModel from '$atoms/icon/TanoshiIconModel';
 	import TanoshiIcon from '$atoms/icon/TanoshiIcon.svelte';
 
-    export let tanoshiMobileNavigationModel: TanoshiNavigationModel;
+    export let tanoshiMobileNavigationModel: TanoshiMobileNavigationModel;
     export let navigationMobileContainerModel: TanoshiContainerModel;
     export let mobileTheme: THEMES;
 	export let tanoshiButtonComponent: ComponentType = TanoshiButtonMaterial;

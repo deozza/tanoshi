@@ -2,21 +2,19 @@
 	import { TanoshiButtonModel, TanoshiHeaderModel, TanoshiImageModel, TanoshiLinkModel, TanoshiParagraphModel } from '$atoms';
 	import TanoshiLink from '$atoms/link/TanoshiLink.svelte';
 	import TanoshiHeader from '$atoms/typography/header/TanoshiHeader.svelte';
-	import { BUTTON_SIZES, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, HEADER_TAGS,  SIZES, THEMES, TanoshiContainerModel, TanoshiLinkAsNavbarDropdownModel, TanoshiNavigationModel, WIDTHS } from '$lib';
+	import { BUTTON_SIZES, CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, HEADER_TAGS,  SIZES, THEMES, TanoshiContainerModel, TanoshiDesktopNavigationModel, TanoshiLinkAsNavbarDropdownModel, TanoshiMobileNavigationModel, WIDTHS } from '$lib';
 	import type { TanoshiNavigationLinkModel } from '$lib/types/Types';
 	import TanoshiLinkAsNavbarDropdown from '$molecules/link/TanoshiLinkAsNavbarDropdown/TanoshiLinkAsNavbarDropdown.svelte';
 	import TanoshiNavigationMaterial from '$molecules/navigation/material/TanoshiNavigationMaterial.svelte';
-
-    import '../../../app.css';
-
-    import type { Hst } from '@histoire/plugin-svelte';
 	import TanoshiImage from '$atoms/image/TanoshiImage.svelte';
 	import TanoshiParagraph from '$atoms/typography/paragraph/TanoshiParagraph.svelte';
 	import TanoshiButtonMaterial from '$atoms/button/TanoshiButtonMaterial.svelte';
 	import TanoshiContainerMaterial from '$molecules/container/TanoshiContainerMaterial.svelte';
-	import TanoshiDesktopNavigationModel from '$molecules/navigation/TanoshiMobileNavigationModel';
-	import TanoshiMobileNavigationModel from '$molecules/navigation/TanoshiDesktopNavigationModel';
 	import TanoshiIconModel from '$atoms/icon/TanoshiIconModel';
+    import '../../../app.css';
+
+    import type { Hst } from '@histoire/plugin-svelte';
+
     export let Hst: Hst;
 
 	const dropdownTitle: TanoshiLinkModel = new TanoshiLinkModel('Dropdown').setTheme(THEMES.White);

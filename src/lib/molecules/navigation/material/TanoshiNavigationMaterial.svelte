@@ -4,8 +4,8 @@
 	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, getThemeEnumKeyByEnumValue, HEIGHTS, THEMES, WIDTHS } from '$lib/enums';
 	import TanoshiMobileNavigationMaterial from './TanoshiMobileNavigationMaterial.svelte';
 	import TanoshiDesktopNavigationMaterial from './TanoshiDesktopNavigationMaterial.svelte';
-	import type TanoshiMobileNavigationModel from '../TanoshiDesktopNavigationModel';
-	import type TanoshiDesktopNavigationModel from '../TanoshiMobileNavigationModel';
+	import type TanoshiMobileNavigationModel from '../TanoshiMobileNavigationModel';
+	import type TanoshiDesktopNavigationModel from '../TanoshiDesktopNavigationModel';
 
 	export let tanoshiDesktopNavigationModel: TanoshiDesktopNavigationModel;
 	export let tanoshiMobileNavigationModel: TanoshiMobileNavigationModel;
