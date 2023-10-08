@@ -31,7 +31,7 @@
 
 </script>
   
-<Hst.Story title="atoms/input/number/basic" layout={{ type: 'grid', width: 600 }}>
+<Hst.Story title="atoms/input/number/input customisation" layout={{ type: 'grid', width: 600 }}>
     <Hst.Variant title="default">
         <TanoshiNumberInputMaterial tanoshiInputModel={defaultNumberInput} />
     </Hst.Variant>

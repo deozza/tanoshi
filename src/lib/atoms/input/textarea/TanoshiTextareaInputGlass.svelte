@@ -51,19 +51,20 @@ textarea.bg-transparent {
 }
 
 textarea.bg-primary {
-	background-color: rgba(var(--primary-bg-input, var(--primary)));
-}
+	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0px 0px 15px 2px rgba(var(--primary-bg-input, var(--primary)), 0.3);}
 
 textarea.text-primary {
 	color: rgba(var(--primary-text-input, var(--primary)));
 }
 
 textarea.border-primary {
-	border: 1px solid rgba(var(--primary-border-input, var(--primary)));
+	border: 1px solid rgba(var(--primary-border-input, var(--primary)), 0.5);
 }
 
 textarea.bg-secondary {
-	background-color: rgba(var(--secondary-bg-input, var(--secondary)));
+	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0px 0px 15px 2px rgba(var(--secondary-bg-input, var(--secondary)), 0.3);
 }
 
 textarea.text-secondary {
@@ -71,11 +72,12 @@ textarea.text-secondary {
 }
 
 textarea.border-secondary {
-	border: 1px solid rgba(var(--secondary-border-input, var(--secondary)));
+	border: 1px solid rgba(var(--secondary-border-input, var(--secondary)), 0.5);
 }
 
 textarea.bg-success {
-	background-color: rgba(var(--success-bg-input, var(--success)));
+	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0px 0px 15px 2px rgba(var(--success-bg-input, var(--success)), 0.3);
 }
 
 textarea.text-success {
@@ -83,11 +85,12 @@ textarea.text-success {
 }
 
 textarea.border-success {
-	border: 1px solid rgba(var(--success-border-input, var(--success)));
+	border: 1px solid rgba(var(--success-border-input, var(--success)), 0.5);
 }
 
 textarea.bg-info {
-	background-color: rgba(var(--info-bg-input, var(--info)));
+	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0px 0px 15px 2px rgba(var(--info-bg-input, var(--info)), 0.3);
 }
 
 textarea.text-info {
@@ -95,11 +98,12 @@ textarea.text-info {
 }
 
 textarea.border-info {
-	border: 1px solid rgba(var(--info-border-input, var(--info)));
+	border: 1px solid rgba(var(--info-border-input, var(--info)), 0.5);
 }
 
 textarea.bg-warning {
-	background-color: rgba(var(--warning-bg-input, var(--warning)));
+	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0px 0px 15px 2px rgba(var(--warning-bg-input, var(--warning)), 0.3);
 }
 
 textarea.text-warning {
@@ -107,23 +111,25 @@ textarea.text-warning {
 }
 
 textarea.border-warning {
-	border: 1px solid rgba(var(--warning-border-input, var(--warning)));
+	border: 1px solid rgba(var(--warning-border-input, var(--warning)), 0.5);
 }
 
 textarea.bg-danger {
-	background-color: rgba(var(--danger-bg-input, var(--danger)));
+	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0px 0px 15px 2px rgba(var(--danger-bg-input, var(--danger)), 0.3);
 }
 
-textarea.text-danger, textarea.text-danger:focus {
-	border: 1px solid rgba(var(--danger-border-input, var(--danger)));
+textarea.text-danger {
+	color: rgba(var(--danger-text-input, var(--danger)));
 }
 
 textarea.border-danger {
-	border: 1px solid rgba(var(--danger-border-input, var(--danger)));
+	border: 1px solid rgba(var(--danger-border-input, var(--danger)), 0.5);
 }
 
 textarea.bg-white {
-	background-color: rgba(var(--white-bg-input, var(--white)));
+	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0px 0px 15px 2px rgba(var(--white-bg-input, var(--white)), 0.3);
 }
 
 textarea.text-white {
@@ -131,11 +137,12 @@ textarea.text-white {
 }
 
 textarea.border-white {
-	border: 1px solid rgba(var(--white-border-input, var(--white)));
+	border: 1px solid rgba(var(--white-border-input, var(--white)), 0.5);
 }
 
 textarea.bg-black {
-	background-color: rgba(var(--black-bg-input, var(--black)));
+	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0px 0px 15px 2px rgba(var(--black-bg-input, var(--black)), 0.3);
 }
 
 textarea.text-black {
@@ -143,8 +150,9 @@ textarea.text-black {
 }
 
 textarea.border-black {
-	border: 1px solid rgba(var(--black-border-input, var(--black)));
+	border: 1px solid rgba(var(--black-border-input, var(--black)), 0.5);
 }
+
 
 span.text-danger {
 	color: rgba(var(--danger-text-input, var(--danger)));

@@ -42,7 +42,7 @@ input {
 	padding-bottom: 0.5rem/* 8px */;
 	padding-left: 0.75rem/* 12px */;
 	padding-right: 0.75rem/* 12px */;
-	color: var(--black-text-input, var(--black))
+	color: rgba(var(--black-text-input, var(--black)))
 }
 
 input:read-only:hover {
@@ -50,11 +50,11 @@ input:read-only:hover {
 }
 
 span.text-danger {
-	color: var(--danger-text-input, var(--danger));
+	color: rgba(var(--danger-text-input, var(--danger)));
 }
 
 input.text-danger, input.text-danger:focus {
-	border: 1px solid var(--danger-border-input, var(--danger));
+	border: 1px solid rgba(var(--danger-border-input, var(--danger)));
 }
 
 </style>

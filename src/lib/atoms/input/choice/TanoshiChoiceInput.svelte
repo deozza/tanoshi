@@ -57,7 +57,7 @@ input {
 	padding-right: 0.75rem/* 12px */;
 	border-width: 1px;
 	border-radius: 0.375rem/* 6px */;
-	color: var(--black-text-input, var(--black))
+	color: rgba(var(--black-text-input, var(--black)))
 }
 
 input.readonly:hover {
