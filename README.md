@@ -35,26 +35,41 @@ Create a `app.css` file in the `/src/routes` folder with the following css varia
 
 ```css
 :root{
-    --primary: rgb(217, 119, 52);
-    --primary-dark: rgb(108, 68, 28);
-    --secondary: rgb(107 114 128);
-    --secondary-dark: rgb(75 85 99);
-    --success: rgb(34 197 94);
-    --success-dark: rgb(22 163 74);
-    --warning: rgb(234 179 8);
-    --warning-dark: rgb(202 138 4);
-    --danger: rgb(239 68 68);
-    --danger-dark: rgb(220 38 38);
-    --info: rgb(103 232 249);
-    --info-dark: rgb(34 211 238);
-    --white: rgb(255 255 255);
-    --white-dark: rgb(100 116 139);
-    --black: rgb(60, 59, 59);
-    --black-dark: rgb(4, 4, 4);
+    --primary: 217, 119, 52;
+    --primary-dark: 108, 68, 28;
+    --secondary: 107, 114, 128;
+    --secondary-dark: 75, 85, 99;
+    --success: 34, 197, 94;
+    --success-dark: 22, 163, 74;
+    --warning: 234, 179, 8;
+    --warning-dark: 202, 138, 4;
+    --danger: 239, 68, 68;
+    --danger-dark: 220 38, 38;
+    --info: 103, 232, 249;
+    --info-dark: 34, 211, 238;
+    --white: 255 255 255;
+    --white-dark: 100, 116, 139;
+    --black: 60, 59, 59;
+    --black-dark: 4, 4, 4;
 }
 ```
 
-These are the mandatory CSS variables that will be used to style the components. To get the list of all the options available, check [this page](https://tanoshi.netlify.app/story/src-histoires-configuratiom-story-js)
+These are the mandatory CSS variables that will be used to style the components.
+
+If you are using Neumophormism elements, you also need to add `light` variations of your CSS variables : 
+
+```css
+:root{
+    --primary-light: 237, 139, 72
+    --primary: 217, 119, 52;
+    --primary-dark: 108, 68, 28;
+    --secondary-light: 127, 134, 148;
+    --secondary: 107, 114, 128;
+    --secondary-dark: 75, 85. 99;
+# and so on...
+```
+
+To get the list of all the options available, check [this page](https://tanoshi.netlify.app/story/src-histoires-configuratiom-story-js)
 
 Then import the CSS file in your `+layout.page` :
 
