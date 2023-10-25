@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type TanoshiLinkAsNavbarDropdownModel from './TanoshiLinkAsNavbarDropdownModel';
 	import { TanoshiLink } from '$atoms';
-	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ORIENTATIONS, HEIGHTS, THEMES, getThemeEnumKeyByEnumValue } from '$lib/enums';
+	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ORIENTATIONS, HEIGHTS, NAVIGATION_ORIENTATIONS, THEMES, getThemeEnumKeyByEnumValue } from '$lib/enums';
 	import { TanoshiContainerMaterial } from '$molecules';
 	import TanoshiContainerModel from '$molecules/container/TanoshiContainerModel';
 	import '../../../atoms/link/tanoshiLink.css';
@@ -9,6 +9,9 @@
 
     export let tanoshiLinkModel: TanoshiLinkAsNavbarDropdownModel;
     tanoshiLinkModel.linkTitle.setIconAtRight('mdi:chevron-down')
+
+	export let navbarOrientation: NAVIGATION_ORIENTATIONS = NAVIGATION_ORIENTATIONS.Horizontal;
+
     let theme: THEMES = getThemeEnumKeyByEnumValue(tanoshiLinkModel.backgroundTheme)
 
     const dropdownContainer: TanoshiContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.C)
@@ -20,7 +23,9 @@
 
 <TanoshiContainerMaterial tanoshiContainerModel={dropdownContainer} customClasses={"dropdown"}>
     <TanoshiLink tanoshiLinkModel={tanoshiLinkModel.linkTitle} />
-    <ul class="{theme}">
+    <ul 
+	class="{theme} {navbarOrientation}"
+	>
         {#each tanoshiLinkModel.links as link}
             <li><svelte:component this={link.component} tanoshiLinkModel={link.link} /></li>
         {/each}
@@ -34,6 +39,10 @@ ul {
 	position: absolute;
 }
 
+ul.vertical {
+	position: relative;
+}
+
 ul li {
 	display: flex;
 	flex-direction: column;
@@ -42,7 +51,7 @@ ul li {
 
 ul.transparent {
 	background-color: transparent;
-	border: 1px solid var(--primary);
+	border: 1px solid rgba(var(--primary));
 }
 
 ul.white {
