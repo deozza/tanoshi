@@ -122,12 +122,6 @@
 
 
 <style>
-  .carousel-commands {
-    z-index: 10;
-    position: relative;
-    bottom: 40px;
-}
-
 button.arrow{
     margin-left: 1.25rem/* 20px */;
     margin-right: 1.25rem/* 20px */;

@@ -108,10 +108,3 @@
     </Hst.Variant>
 
 </Hst.Story>
-
-<style>
-    :global(.space) {
-        padding: 1rem;
-        margin: 1rem;
-    }
-</style>
