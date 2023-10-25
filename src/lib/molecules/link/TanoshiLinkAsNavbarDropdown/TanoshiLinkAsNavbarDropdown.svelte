@@ -46,35 +46,35 @@ ul.transparent {
 }
 
 ul.white {
-	background-color: var(--white-container, var(--white));
+	background-color: rgba(var(--white-container, var(--white)));
 }
 
 ul.black {
-	background-color: var(--black-container, var(--black));
+	background-color: rgba(var(--black-container, var(--black)));
 }
 
 ul.primary {
-	background-color: var(--primary-container, var(--primary));
+	background-color: rgba(var(--primary-container, var(--primary)));
 }
 
 ul.secondary {
-	background-color: var(--secondary-container, var(--secondary));
+	background-color: rgba(var(--secondary-container, var(--secondary)));
 }
 
 ul.success {
-	background-color: var(--success-container, var(--success));
+	background-color: rgba(var(--success-container, var(--success)));
 }
 
 ul.warning {
-	background-color: var(--warning-container, var(--warning));
+	background-color: rgba(var(--warning-container, var(--warning)));
 }
 
 ul.danger {
-	background-color: var(--danger-container, var(--danger));
+	background-color: rgba(var(--danger-container, var(--danger)));
 }
 
 ul.info {
-	background-color: var(--info-container, var(--info));
+	background-color: rgba(var(--info-container, var(--info)));
 }
 
 @media (max-width: 639px) {
