@@ -60,6 +60,8 @@
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
 	transition-property: color, box-shadow, border, background-color;
+	display: flex;
+	align-items: center;
 }
 
 button.btn-sm {
@@ -314,18 +316,5 @@ button.btn-transparent {
 
 button.btn-border-transparent {
     border: none;
-}
-
-:global(button > iconify-icon) {
-    display: inline-block;
-}
-
-@keyframes spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
 }
 </style>
