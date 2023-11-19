@@ -3,7 +3,7 @@
 
 	import TanoshiContainerModel from '$lib/molecules/container/TanoshiContainerModel';
 	
-	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, getThemeEnumKeyByEnumValue, HEIGHTS, THEMES, WIDTHS } from '$lib/enums';
+	import { CONTAINER_ITEMS_ALIGNMENTS, CONTAINER_ITEMS_SPACING, CONTAINER_ORIENTATIONS, getThemeEnumKeyByEnumValue, HEIGHTS, NAVIGATION_ORIENTATIONS, THEMES, WIDTHS } from '$lib/enums';
 	import TanoshiMobileNavigationGlass from './TanoshiMobileNavigationGlass.svelte';
 	import TanoshiDesktopNavigationGlass from './TanoshiDesktopNavigationGlass.svelte';
 	import type TanoshiDesktopNavigationModel from '../TanoshiDesktopNavigationModel';
@@ -13,11 +13,16 @@
 
 	$: desktopTheme = getThemeEnumKeyByEnumValue(tanoshiDesktopNavigationModel.theme)
 	const mobileTheme: THEMES | undefined = getThemeEnumKeyByEnumValue(tanoshiMobileNavigationModel.theme)
-	
+	let itemsAlignment: CONTAINER_ITEMS_ALIGNMENTS = CONTAINER_ITEMS_ALIGNMENTS.Center;
+
+	if(tanoshiDesktopNavigationModel.orientation === NAVIGATION_ORIENTATIONS.Vertical) {
+		itemsAlignment = CONTAINER_ITEMS_ALIGNMENTS.Start;
+	}
+
 	$: navigationDesktopContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
 		.setBackgroundTheme(desktopTheme)
 		.setDesktopSpacing(CONTAINER_ITEMS_SPACING.Centered)
-		.setItemsAlignment(CONTAINER_ITEMS_ALIGNMENTS.Center)
+		.setItemsAlignment(itemsAlignment)
 		.setHeight(HEIGHTS.HAUTO)
 
 	const navigationMobileContainerModel = new TanoshiContainerModel(CONTAINER_ORIENTATIONS.R)
