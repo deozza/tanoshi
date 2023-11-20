@@ -12,7 +12,7 @@
     const defaultButton: TanoshiButtonModel = new TanoshiButtonModel('Primary')
         .setBasicTheme(THEMES.Primary)
 
-    const accountIcon: TanoshiIconModel = new TanoshiIconModel('mdi:accountIcon')
+    const accountIcon: TanoshiIconModel = new TanoshiIconModel('mdi:account')
 		.setColor('white')
 		.setHeight(20)
 		.setWidth(20);

@@ -17,7 +17,6 @@
 
     const requiredChoiceInput: TanoshiChoiceInputModel = new TanoshiChoiceInputModel('value')
         .setRequired(true)
-
 </script>
   
 <Hst.Story title="atoms/input/choice/radio" layout={{ type: 'grid', width: 600 }}>
@@ -36,13 +35,4 @@
     <Hst.Variant title="required">
         <TanoshiChoiceInput tanoshiInputModel={requiredChoiceInput} />
     </Hst.Variant>
-
-    <Hst.Variant title="error">
-        <TanoshiChoiceInput tanoshiInputModel={errorChoiceInput} />
-    </Hst.Variant>
-
-    <Hst.Variant title="error with message">
-        <TanoshiChoiceInput tanoshiInputModel={errorWithMessageChoiceInput} />
-    </Hst.Variant>
-
 </Hst.Story>

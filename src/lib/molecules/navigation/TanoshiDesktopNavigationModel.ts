@@ -1,4 +1,4 @@
-import { THEMES } from '$lib/enums';
+import { NAVIGATION_ORIENTATIONS, THEMES } from '$lib/enums';
 import type { TanoshiNavigationLinkModel } from '$lib/types/Types';
 
 export default class TanoshiDesktopNavigationModel {
@@ -6,9 +6,11 @@ export default class TanoshiDesktopNavigationModel {
 	private _itemsAtCenter: Array<TanoshiNavigationLinkModel> = [];
 	private _itemsAtRight: Array<TanoshiNavigationLinkModel> = [];
 	private _theme!: string;
+	private _orientation!: string;
 
 	public constructor() {
 		this.setTheme(THEMES.Primary);
+		this.setOrientation(NAVIGATION_ORIENTATIONS.Horizontal);
 	}
 
 	get itemsAtLeft(): Array<TanoshiNavigationLinkModel> {
@@ -59,6 +61,15 @@ export default class TanoshiDesktopNavigationModel {
 
 	public setTheme(value: THEMES): TanoshiDesktopNavigationModel {
 		this._theme = value;
+		return this;
+	}
+
+	get orientation(): string {
+		return this._orientation;
+	}
+
+	public setOrientation(value: NAVIGATION_ORIENTATIONS): TanoshiDesktopNavigationModel {
+		this._orientation = value;
 		return this;
 	}
 }

@@ -55,6 +55,8 @@ button {
 	border-width: 1px;
 	border-radius: 0.375rem;
 	cursor: pointer;
+	display: flex;
+	align-items: center;
 }
 
 button.btn-sm {
@@ -267,16 +269,4 @@ button.btn-text-hover-black:hover:not([disabled]) {
     color: rgba(var(--black-text-button-hover, var(--black)));
 }
 
-:global(button > iconify-icon) {
-    display: inline-block;
-}
-
-@keyframes spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
-}
 </style>

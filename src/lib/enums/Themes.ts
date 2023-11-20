@@ -219,3 +219,13 @@ export function getWidthEnumKeyByEnumValue(enumValue: string): WIDTHS  {
     }
     throw new Error(enumValue + ' is not a valid value for enum WIDTHS');
 }
+
+export function getNavigationOrientationEnumKeyByEnumValue(enumValue: string): NAVIGATION_ORIENTATIONS  {
+    const enumKey = Object.keys(NAVIGATION_ORIENTATIONS).find(
+        (key) => NAVIGATION_ORIENTATIONS[key as keyof typeof NAVIGATION_ORIENTATIONS] === enumValue
+    );
+    if (enumKey !== undefined) {
+        return NAVIGATION_ORIENTATIONS[enumKey as keyof typeof NAVIGATION_ORIENTATIONS];
+    }
+    throw new Error(enumValue + ' is not a valid value for enum NAVIGATION_ORIENTATIONS');
+}
