@@ -11,7 +11,7 @@
 </script>
 
 <a
-	class="text-{tanoshiLinkModel.displaySize} a-{tanoshiLinkModel.theme} text-{tanoshiLinkModel.aligment}"
+	class="text-{tanoshiLinkModel.displaySize} a-{tanoshiLinkModel.theme} a-hover-{tanoshiLinkModel.hoverTtheme} text-{tanoshiLinkModel.aligment}"
 	href={tanoshiLinkModel.link}
 	target={tanoshiLinkModel.isInternal}
 >

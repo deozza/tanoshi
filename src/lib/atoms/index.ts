@@ -48,3 +48,5 @@ export {default as TanoshiParagraphModel} from "./typography/paragraph/TanoshiPa
 export {default as TanoshiHeader} from "./typography/header/TanoshiHeader.svelte";
 export {default as TanoshiHeaderModel} from "./typography/header/TanoshiHeaderModel";
 
+export {default as TanoshiIconModel} from "./icon/TanoshiIconModel";
+export {default as TanoshiIcon} from "./icon/TanoshiIcon.svelte";

@@ -9,6 +9,7 @@ export default class TanoshiLinkModel {
 	private _displaySize!: string;
 	private _alignment!: string;
 	private _theme!: string;
+	private _hoverTheme!: string;
 
 	constructor(content: string) {
 		this.setContent(content);
@@ -16,6 +17,7 @@ export default class TanoshiLinkModel {
 		this.setIsInternal(true);
 		this.setDisplaySize(SIZES.Md);
 		this.setTheme(THEMES.Black);
+		this.setHoverTheme(THEMES.Black);
 		this.setAligment(TEXT_ALIGNMENT.Left);
 	}
 
@@ -76,6 +78,15 @@ export default class TanoshiLinkModel {
 
 	public setTheme(value: THEMES): TanoshiLinkModel {
 		this._theme = value;
+		return this;
+	}
+
+	get hoverTtheme(): string {
+		return this._hoverTheme;
+	}
+
+	public setHoverTheme(value: THEMES): TanoshiLinkModel {
+		this._hoverTheme = value;
 		return this;
 	}
 

@@ -11,7 +11,7 @@ a.a-black {
 	color: rgba(var(--black-text-link, var(--black)));
 }
 
-a.a-black:hover {
+a.a-hover-black:hover {
 	color: rgba(var(--black-text-link-hover, var(--black-dark)));
 }
 
@@ -19,7 +19,7 @@ a.a-white {
 	color: rgba(var(--white-text-link, var(--white)));
 }
 
-a.a-white:hover {
+a.a-hover-white:hover {
 	color: rgba(var(--white-text-link-hover, var(--white-dark)));
 }
 
@@ -27,7 +27,7 @@ a.a-primary {
 	color: rgba(var(--primary-text-link, var(--primary)));
 }
 
-a.a-primary:hover {
+a.a-hover-primary:hover {
 	color: rgba(var(--primary-text-link-hover, var(--primary-dark)));
 }
 
@@ -35,7 +35,7 @@ a.a-secondary {
 	color: rgba(var(--secondary-text-link, var(--secondary)));
 }
 
-a.a-secondary:hover {
+a.a-hover-secondary:hover {
 	color: rgba(var(--secondary-text-link-hover, var(--secondary-dark)));
 }
 
@@ -43,7 +43,7 @@ a.a-success {
 	color: rgba(var(--success-text-link, var(--success)));
 }
 
-a.a-success:hover {
+a.a-hover-success:hover {
 	color: rgba(var(--success-text-link-hover, var(--success-dark)));
 }
 
@@ -51,7 +51,7 @@ a.a-warning {
 	color: rgba(var(--warning-text-link, var(--warning)));
 }
 
-a.a-warning:hover {
+a.a-hover-warning:hover {
 	color: rgba(var(--warning-text-link-hover, var(--warning-dark)));
 }
 
@@ -59,7 +59,7 @@ a.a-danger {
 	color: rgba(var(--danger-text-link, var(--danger)));
 }
 
-a.a-danger:hover {
+a.a-hover-danger:hover {
 	color: rgba(var(--danger-text-link-hover, var(--danger-dark)));
 }
 
@@ -67,7 +67,7 @@ a.a-info {
 	color: rgba(var(--info-text-link, var(--info)));
 }
 
-a.a-info:hover {
+a.a-hover-info:hover {
 	color: rgba(var(--info-text-link-hover, var(--info-dark)));
 }
 
