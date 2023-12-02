@@ -4,6 +4,7 @@
 	import 'iconify-icon';
 
 	import type TanoshiLinkModel from './TanoshiLinkModel';
+	import TanoshiIcon from '$atoms/icon/TanoshiIcon.svelte';
 
 	export let tanoshiLinkModel: TanoshiLinkModel;
 
@@ -16,10 +17,10 @@
 	target={tanoshiLinkModel.isInternal}
 >
 	{#if tanoshiLinkModel.iconAtLeft !== null}
-	<iconify-icon icon={tanoshiLinkModel.iconAtLeft} />
+		<TanoshiIcon tanoshiIconModel={tanoshiLinkModel.iconAtLeft} />
 	{/if}
 	{tanoshiLinkModel.content}
 	{#if tanoshiLinkModel.iconAtRight !== null}
-	<iconify-icon icon={tanoshiLinkModel.iconAtRight} />
+		<TanoshiIcon tanoshiIconModel={tanoshiLinkModel.iconAtRight} />
 	{/if}
 </a>

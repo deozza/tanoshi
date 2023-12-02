@@ -3,6 +3,7 @@ export default class TanoshiIconModel {
     private _height!: number;
     private _width!: number;
     private _color!: string;
+    private _customStyle!: string;
     private _isSpinning: boolean = false;
 
     public constructor(icon: string) {
@@ -10,6 +11,7 @@ export default class TanoshiIconModel {
         this.setHeight(10);
         this.setWidth(10);
         this.setColor('#000000');
+        this.setCustomStyle('');
     }
 
     get icon(): string {
@@ -45,6 +47,15 @@ export default class TanoshiIconModel {
 
     public setColor(value: string): TanoshiIconModel {
         this._color = value;
+        return this;
+    }
+
+    get customStyle(): string {
+        return this._customStyle;
+    }
+
+    public setCustomStyle(value: string): TanoshiIconModel {
+        this._customStyle = value;
         return this;
     }
 

@@ -10,7 +10,7 @@
     icon="{tanoshiIconModel.icon}" 
     height="{tanoshiIconModel.height}px"
     width="{tanoshiIconModel.width}px"
-    style="color: {tanoshiIconModel.color};"
+    style="color: {tanoshiIconModel.color}; {tanoshiIconModel.customStyle}"
     class:spin-icon={tanoshiIconModel.isSpinning === true}
 />
 

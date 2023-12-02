@@ -1,9 +1,10 @@
+import type TanoshiIconModel from "$atoms/icon/TanoshiIconModel";
 import { SIZES, TEXT_ALIGNMENT, THEMES } from "$lib/enums";
 
 export default class TanoshiLinkModel {
 	private _content!: string;
-	private _iconAtLeft: string | null = null;
-	private _iconAtRight: string | null = null;
+	private _iconAtLeft: TanoshiIconModel | null = null;
+	private _iconAtRight: TanoshiIconModel | null = null;
 	private _link!: string;
 	private _isInternal!: string;
 	private _displaySize!: string;
@@ -30,20 +31,20 @@ export default class TanoshiLinkModel {
 		return this;
 	}
 
-	get iconAtLeft(): string | null {
+	get iconAtLeft(): TanoshiIconModel | null {
 		return this._iconAtLeft;
 	}
 
-	public setIconAtLeft(value: string): TanoshiLinkModel {
+	public setIconAtLeft(value: TanoshiIconModel): TanoshiLinkModel {
 		this._iconAtLeft = value;
 		return this;
 	}
 
-	get iconAtRight(): string | null {
+	get iconAtRight(): TanoshiIconModel | null {
 		return this._iconAtRight;
 	}
 
-	public setIconAtRight(value: string): TanoshiLinkModel {
+	public setIconAtRight(value: TanoshiIconModel): TanoshiLinkModel {
 		this._iconAtRight = value;
 		return this;
 	}

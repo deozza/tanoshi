@@ -1,4 +1,4 @@
 export * from'./atoms';
 export * from './molecules';
 export * from './enums';
-export * from './types'
+export * from './types/Types'
